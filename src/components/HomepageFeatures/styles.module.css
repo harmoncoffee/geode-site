@@ -26,7 +26,7 @@
 .aboutSection {
     width: 100%;
     padding: 3rem 0;
-    background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+    background: var(--ifm-color-primary-lighter);
     text-align: center;
 }
 
@@ -49,14 +49,12 @@
 .aboutTagline {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--ifm-color-primary);
     margin-bottom: 2.7rem;
 }
 
 .aboutDescription {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: var(--ifm-font-color-base);
     margin-bottom: 1rem;
 }
 
@@ -76,8 +74,6 @@
     border-radius: 6px;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--ifm-font-color-base);
-    background: var(--ifm-background-surface-color);
     text-decoration: none;
     transition: background 0.2s, border-color 0.2s;
 }
@@ -86,7 +82,6 @@
     background: var(--ifm-color-emphasis-100);
     border-color: var(--ifm-color-emphasis-400);
     text-decoration: none;
-    color: var(--ifm-font-color-base);
 }
 
 .actionButtons {
@@ -99,6 +94,7 @@
 
 .downloadButton {
     min-width: 160px;
+    background-color: var(--ifm-color-primary);
 }
 
 .forkButton {
