@@ -90,22 +90,12 @@ const config: Config = {
               type: 'docSidebar',
               sidebarId: 'community',
               position: 'left',
-              label: 'Community',
+              label: 'Resources',
               docsPluginId: 'community',
           },
           {
               href: `https://issues.apache.org/jira/browse/GEODE/`,
-              label: 'Jira',
-              position: 'left',
-          },
-          {
-              href: `https://stackoverflow.com/search?q=Apache%20Geode`,
-              label: 'StackOverflow',
-              position: 'left',
-          },
-          {
-              href: `https://x.com/apachegeode`,
-              label: 'X (formerly Twitter)',
+              label: 'Issue Tracker',
               position: 'left',
           },
           {
