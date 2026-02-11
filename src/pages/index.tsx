@@ -24,10 +24,10 @@ import HomepageFeatures from '../components/HomepageFeatures';
 
 export default function Home(): JSX.Element {
     return (
-        <Layout title='Apache Geode'>
+        <Layout title='Apache Geode™'>
             <header className={clsx('hero', styles.heroBanner)}>
                 <div className="container">
-                    <h1 className="hero__title">Apache Geode</h1>
+                	<h1>Apache Geode™</h1>
                 </div>
             </header>
             <main>

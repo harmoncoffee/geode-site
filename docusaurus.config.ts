@@ -26,7 +26,7 @@ const mainRepoName = "geode";
 const siteRepoName = "geode-site";
 
 const config: Config = {
-  title: `Apache Geode™`,
+  title: `Providing low latency, high concurrency data management solutions since 2002.`,
   tagline: `Providing low latency, high concurrency data management solutions since 2002.`,
   favicon: 'img/favicon.ico',
 
@@ -81,7 +81,7 @@ const config: Config = {
     image: 'img/logo.png',
     navbar: {
       logo: {
-        alt: 'Logo',
+        alt: 'Apache Geode™',
         src: 'img/logo.png',
         srcDark: 'img/apache_geode_logo_white.png',
       },

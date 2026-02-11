@@ -24,12 +24,29 @@
   --ifm-color-secondary: #1E90FF;
   --ifm-color-gray: #3C3C3C;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-footer-background-color: white;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='dark'] {
+  --ifm-footer-background-color: #1B1B1B;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+	font-size: 275%;
+}
+
+h2 {
+	font-size: 200%;
+}
+
+h3 {
+	font-size: 150%;
+}
+
+h4 {
+	font-size: 125%;
 }
 
 .navbar__logo img {
