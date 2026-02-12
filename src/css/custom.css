@@ -50,7 +50,7 @@ h4 {
 }
 
 .navbar__logo img {
-  width: 100%;
+  width: auto%;
 }
 
 .header-github-link:hover {
