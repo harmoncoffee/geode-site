@@ -1,0 +1,93 @@
+﻿
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+ provides a variety of management tools you can use to manage a  cluster.
+
+The  management and monitoring tools allow you to configure all members and processes of a cluster, monitor operations in the system, and start and stop the members. Internally,  uses Java MBeans, specifically MXBeans, to expose management controls and monitoring features. You can monitor and control  by writing Java programs that use these MXBeans, or you can use one of several tools provided with  to monitor and manage your cluster. The primary tool for these tasks is the gfsh command-line tool, as described in this section.
+
+ provides the following tools to manage a  installation:
+
+## gfsh Command-line tool
+
+The gfsh command line tool provides a set of commands you use to configure, manage, and monitor a cluster. gfsh is the recommended tool for managing your cluster.
+
+Use gfsh to:
+
+-   Start and stop  processes, such as locators and cache servers
+-   Deploy applications
+-   Create and destroy regions
+-   Execute functions
+-   Manage disk stores
+-   Import and export data
+-   Monitor  processes
+-   Launch  monitoring tools
+-   Shut down a cluster
+-   Script various operations involving  members
+-   Save the configuration for all members of a cluster
+
+gfsh runs in its own shell, or you can [execute gfsh commands directly from the OS command line](../../tools_modules/gfsh/os_command_line_execution.html#topic_fpf_y1g_tp). gfsh can interact with remote systems [using the http protocol](../../configuring/cluster_config/gfsh_remote.html). You can also [write scripts that run in a gfsh shell](../../tools_modules/gfsh/command_scripting.html#concept_9B2F7550F16C4717831AD40A56922259) to automate system startup.
+
+You can use gfsh to create shared cluster configurations for your cluster. You can define configurations that apply to the entire cluster, or that apply only to groups of similar members that all share a common configuration.  locators maintain these configurations as a hidden region and distribute the configuration to all locators in the cluster. The locator also persists the shared configurations on disk as `cluster.xml` and `cluster.properties` files. You can use those shared cluster configuration files to re-start your system, migrate the system to a new environment, add new members to a cluster, or to restore existing members after a failure.
+
+A basic cluster configuration consists of:
+
+-   `cluster.xml` file shared by the cluster
+-   `cluster.properties` file shared by the cluster
+-   Deployed jar files containing application Java classes.
+
+See [Overview of the Cluster Configuration Service](../../configuring/cluster_config/gfsh_persist.html) and [Cluster Configuration Files and Troubleshooting](../../configuring/cluster_config/gfsh_config_troubleshooting.html#concept_ylt_2cb_y4) for additional details on gfsh cluster configuration files.
+
+Using the gfsh tool, you can easily migrate a -based application from a development environment into a testing or production environment.
+
+## Executing gfsh commands with the management API
+
+You can also use 's management APIs to execute gfsh commands in a Java class. See [Executing gfsh Commands through the Management API](gfsh_and_management_api.html#concept_451F0978285245E69C3E8DE795BD8635).
+
+## Member Configuration Management
+
+When you issue gfsh commands and have the cluster configuration service enabled (on a locator),  saves the configurations created within gfsh by building a `cluster.xml` and `cluster.properties` files for the entire cluster, or group of members.
+
+You can also directly create configurations using `cache.xml` and `gemfire.properties` files and manage the members individually.
+
+## Java Management Extension (JMX) MBeans
+
+ uses a federated Open MBean strategy to manage and monitor all members of the cluster. Your Java classes interact with a single MBeanServer that aggregates MBeans from other local and remote members. Using this strategy gives you a consolidated, single-agent view of the cluster.
+
+'s implementation of JMX is industry-standard and friendly to generic JMX clients. You can monitor or manage the cluster by using any third-party tool that is compliant with JMX. For example, JConsole.
+
+See [ Management and Monitoring](management_and_monitoring.html)
+
+##  Java API
+
+The  API provides a set of Java classes you can use to manage and monitor a cluster. See the `org.apache.geode.management` package in the javadocs.
+
+##  Pulse
+
+ Pulse is a Web Application that provides a graphical dashboard for monitoring vital, real-time health and performance of  clusters, members, and regions.
+
+Use Pulse to examine total memory, CPU, and disk space used by members, uptime statistics, client connections, and critical notifications. Pulse communicates with a  JMX manager to provide a complete view of your  deployment.
+
+See [ Pulse](../../tools_modules/pulse/pulse-overview.html).
+
+## JConsole
+
+JConsole is a JMX monitoring utility provided with a Java Development Kit (JDK). You use gfsh to connect to , and then launch JConsole with a gfsh command. The JConsole application allows you to browse MBeans, attributes, operations, and notifications. See [Browsing  MBeans through JConsole](mbeans_jconsole.html).
+
+
+

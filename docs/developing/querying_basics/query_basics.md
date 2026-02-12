@@ -1,0 +1,56 @@
+﻿---
+title:  Querying with OQL
+---
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+This section provides a high-level introduction to  querying such as building a query string and describes query language features.
+
+<a id="querying_with_oql__section_828A9660B5014DCAA883A58A45E6B51A"></a>
+ provides a SQL-like querying language that allows you to access data stored in  regions. Since  regions are key-value stores where values can range from simple byte arrays to complex nested objects,  uses a query syntax based on OQL (Object Query Language) to query region data. OQL and SQL have many syntactical similarities, however they have significant differences. For example, while OQL does not offer all of the capabilities of SQL like aggregates, OQL does allow you to execute queries on complex object graphs, query object attributes and invoke object methods.
+
+The syntax of a typical  OQL query is:
+
+``` pre
+[IMPORT package]
+SELECT [DISTINCT] projectionList
+FROM collection1, [collection2, â€¦]
+[WHERE clause]
+[ORDER BY order_criteria [desc]]
+```
+
+Therefore, a simple  OQL query resembles the following:
+
+``` pre
+SELECT DISTINCT * FROM /exampleRegion WHERE status = â€˜activeâ€™
+```
+
+An important characteristic of  querying to note is that by default,  queries on the values of a region and not on keys. To obtain keys from a region, you must use the keySet path expression on the queried region. For example, `/exampleRegion.keySet`.
+
+For those new to the  querying, see also the [ Querying FAQ and Examples](../../getting_started/querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E).
+
+## Advantages of OQL
+
+The following list describes some of the advantages of using an OQL-based querying language:
+
+-   You can query on any arbitrary object
+-   You can navigate object collections
+-   You can invoke methods and access the behavior of objects
+-   Data mapping is supported
+-   You are not required to declare types. Since you do not need type definitions, you can work across multiple languages
+-   You are not constrained by a schema

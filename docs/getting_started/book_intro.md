@@ -1,0 +1,44 @@
+﻿
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+A tutorial demonstrates features, and a main features section describes key functionality.
+
+-   **[About ](geode_overview.html)**
+
+     is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.
+
+-   **[Main Features of ](product_intro.html)**
+
+    This section summarizes the main features and key functionality of .
+
+-   **[Prerequisites and Installation Instructions](../prereq_and_install.html)**
+
+    Each host of  that meets a small set of prerequisites may follow the provided installation instructions.
+
+-   **[Upgrading ](upgrade/upgrade_overview.html)**
+
+-   **[ in 15 Minutes or Less](15_minute_quickstart_gfsh.html)**
+
+    Need a quick introduction to ? Take this brief tour to try out basic features and functionality.
+
+-   **[Introduction to  Clients](intro_to_clients.html)**
+
+    Basic starting points for a variety of  clients.
+
+
