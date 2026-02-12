@@ -83,7 +83,7 @@ const config: Config = {
       logo: {
         alt: 'Apache Geode™',
         src: 'img/logo.png',
-        srcDark: 'img/apache_geode_logo_white.png',
+        srcDark: 'img/logo-dark.png',
       },
       items: [
           {

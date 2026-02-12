@@ -17,18 +17,55 @@
  * under the License.
  */
 
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 
+function HomepageLogo() {
+	const [isDarkTheme, setIsDarkTheme] = useState(false);
+  
+	useEffect(() => {
+    // Check initial theme
+    const checkTheme = () => {
+      setIsDarkTheme(
+        document.documentElement.getAttribute('data-theme') === 'dark'
+      );
+    };
+
+    // Check initial theme
+    checkTheme();
+
+    // Create a MutationObserver to watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
+
+    // Cleanup observer
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className={clsx(styles.heroBanner)}>
+      <img 
+        src={isDarkTheme ? '/img/logo-dark.png' : '/img/logo.png'}
+        alt="Apache Geode™"
+        className={clsx(styles.heroLogo)}
+      />
+    </div>
+  );
+}
+
 export default function Home(): JSX.Element {
     return (
         <Layout title='Apache Geode™'>
             <header className={clsx('hero', styles.heroBanner)}>
-                <div className="container">
-                	<h1>Apache Geode™</h1>
-                </div>
+					<div className="container">
+							<HomepageLogo />
+					</div>
             </header>
             <main>
               <HomepageFeatures/>
