@@ -153,7 +153,8 @@ const FeatureList: FeatureItem[] = [
         ),
     },
 ];
-function Feature({title, description}: FeatureItem) {
+
+function Feature({ title, description }: FeatureItem) {
     return (
         <div className={clsx('col col--4')}>
             <div className="text--center padding-horiz--md">
@@ -183,8 +184,9 @@ function BottomAboutSection() {
     return (
         <div className={styles.aboutSection}>
             <div className="container">
-					<div className={styles.aboutContent}>
-										<h2>How does Geode work?</h2>
+							<div className={styles.aboutContent}>
+										<h2>FAQs</h2>
+										<h3>How does Geode work?</h3>
                     <p className={styles.aboutDescription}>
                         Geode pools memory, CPU, network resources, and optionally local disk across multiple processes
                         to manage application objects and behavior. It uses dynamic replication and data partitioning
@@ -193,9 +195,9 @@ function BottomAboutSection() {
                         management system that provides reliable asynchronous event notifications and guaranteed message
                         delivery.
                     </p>
-										<h2>Who uses Geode?</h2>
+										<h3>Who uses Geode?</h3>
                     <p className={styles.aboutDescription}>
-                        Apache Geode is a mature, robust technology originally developed by GemStone Systems.
+                        Apache Geode™ is a mature, robust technology originally developed by GemStone Systems.
                         Commercially available as GemFire™, it was first deployed in the financial sector as the transactional, low-latency data engine used in Wall Street trading platforms.
                         Today Apache Geode technology is used by hundreds of enterprise customers for high-scale business applications that must meet low latency and 24x7 availability requirements.
                     </p>

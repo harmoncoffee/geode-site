@@ -26,7 +26,7 @@ const mainRepoName = "geode";
 const siteRepoName = "geode-site";
 
 const config: Config = {
-  title: `Apache Geode™`,
+  title: `Providing low latency, high concurrency data management solutions since 2002.`,
   tagline: `Providing low latency, high concurrency data management solutions since 2002.`,
   favicon: 'img/favicon.ico',
 
@@ -81,7 +81,7 @@ const config: Config = {
     image: 'img/logo.png',
     navbar: {
       logo: {
-        alt: 'Logo',
+        alt: 'Apache Geode™',
         src: 'img/logo.png',
         srcDark: 'img/apache_geode_logo_white.png',
       },
@@ -90,22 +90,12 @@ const config: Config = {
               type: 'docSidebar',
               sidebarId: 'community',
               position: 'left',
-              label: 'Community',
+              label: 'Resources',
               docsPluginId: 'community',
           },
           {
               href: `https://issues.apache.org/jira/browse/GEODE/`,
-              label: 'Jira',
-              position: 'left',
-          },
-          {
-              href: `https://stackoverflow.com/search?q=Apache%20Geode`,
-              label: 'StackOverflow',
-              position: 'left',
-          },
-          {
-              href: `https://x.com/apachegeode`,
-              label: 'X (formerly Twitter)',
+              label: 'Issue Tracker',
               position: 'left',
           },
           {
