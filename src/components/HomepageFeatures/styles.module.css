@@ -41,7 +41,7 @@
 .aboutContent {
     max-width: 800px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
 }
 
 .aboutHeading {
@@ -52,8 +52,9 @@
 
 .aboutTagline {
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 450;
     margin-bottom: 2.7rem;
+    text-align: center;
 }
 
 .aboutDescription {
@@ -71,26 +72,31 @@
 
 /* Buttons */
 
-.actionButton {
-    display: flex;
+.primaryButton {
     justify-content: flex-start;
     gap: 1rem;
-    margin-top: 2rem;
+    margin: 1rem;
     flex-wrap: wrap;
-}
-
-.downloadButton {
-    min-width: 160px;
+	min-width: 160px;
     background-color: var(--ifm-color-primary);
 }
 
+.primaryButton:hover {
+    background: var(--ifm-color-secondary);
+    color: #fff;
+}
+
 .secondaryButton {
-    min-width: 160px;
-    border-color: var(--ifm-color-primary);
+	justify-content: flex-start;
+    gap: 1rem;
+    margin: 1rem;
+    flex-wrap: wrap;
+	min-width: 160px;
+    background-color: none;
     color: var(--ifm-color-primary);
 }
 
 .secondaryButton:hover {
-    background: var(--ifm-color-primary);
-    color: #fff;
+    background: none;
+    color: var(--ifm-color-secondary)
 }
