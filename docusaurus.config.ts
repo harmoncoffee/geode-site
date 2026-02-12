@@ -20,7 +20,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
+ 
 const projectName = "geode";
 const mainRepoName = "geode";
 const siteRepoName = "geode-site";
