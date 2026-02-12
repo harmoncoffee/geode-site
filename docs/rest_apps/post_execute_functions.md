@@ -1,5 +1,5 @@
 ﻿---
-title: POST /geode/v1/functions/{functionId}
+title: POST /geode/v1/functions/functionId
 ---
 
 <!--
@@ -29,7 +29,7 @@ Execute function on an entire cluster or on a specified region, members, and mem
 
 ## Parameters
 
-- **{functionId}** This required parameter is the name of the function to execute. Place it in the resource URL, as in the example request: `AddFreeItemToOrders`.
+- **`{functionId}`** This required parameter is the name of the function to execute. Place it in the resource URL, as in the example request: `AddFreeItemToOrders`.
 - **onRegion** This optional parameter specifies the target region for the function. You can only invoke a function on a single region. Substitute the region's name for `regionname` within the sample syntax `onRegion=regionname`.
 - **onMembers** This optional parameter specifies the target members of the function. For multiple members, specify a comma-delimited list of member names, as in the sample `onMembers=member1,member2`.
 - **onGroups** This optional parameter specifies the target groups of the function. For multiple groups, specify a comma-delimited list of group names, as in the sample `onGroups=membergroup1,membergroup2`.

@@ -1,5 +1,8 @@
 ﻿---
 title:  Apache Geode Documentation
+sidebar_label: Apache Geode Documentation
+sidebar_position: 1
+slug: /
 ---
 
 <!--

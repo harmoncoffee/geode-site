@@ -1,4 +1,6 @@
-﻿
+﻿---
+title:  Apache Geode in 15 Minutes or Less
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

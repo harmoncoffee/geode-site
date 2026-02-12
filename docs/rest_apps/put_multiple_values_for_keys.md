@@ -1,5 +1,5 @@
 ﻿---
-title:  PUT /geode/v1/{region}/{key1},{key2},...{keyN}
+title:  PUT /geode/v1/region/key1,key2,...keyN
 ---
 
 <!--
@@ -29,7 +29,7 @@ http://<hostname_or_http-service-bind-address>:<http-service-port>/geode/v1/{reg
 
 ## Parameters
 
-See [PUT /geode/v1/{region}/{key}?op=REPLACE](put_replace_data.html#topic_itv_mg5_m4) and [PUT /geode/v1/{region}/{key}?op=CAS](put_update_cas_data.html#topic_itv_mg5_m4).
+See [PUT /geode/v1/region/key?op=REPLACE](put_replace_data.html#topic_itv_mg5_m4) and [PUT /geode/v1/region/key?op=CAS](put_update_cas_data.html#topic_itv_mg5_m4).
 
 ## Example Request
 

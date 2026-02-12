@@ -21,11 +21,11 @@ limitations under the License.
 
 Each host of  that meets a small set of prerequisites may follow the provided installation instructions.
 
--   **[Host Machine Requirements](getting_started/system_requirements/host_machine.html)**
+-   **[Host Machine Requirements](host_machine)**
 
-    Host machines must meet a set of requirements for .
+    Host machines must meet a set of requirements for Apache Geode.
 
--   **[How to Install](getting_started/installation/install_standalone.html)**
+-   **[How to Install](install_standalone)**
 
     Build from source or use the ZIP or TAR distribution to install  on every physical and virtual machine that will run .
 

@@ -1,4 +1,8 @@
-﻿
+﻿---
+title:  Getting Started with Apache Geode
+sidebar_label: Getting Started with Apache Geode
+sidebar_position: 1
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

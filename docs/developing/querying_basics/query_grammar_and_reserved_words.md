@@ -28,19 +28,19 @@ A nonterminal symbol that has to appear at some place within the grammar on the 
  ***t***   
 A terminal symbol (shown in italic bold).
 
-x y   
-x followed by y
+`x y `  
+`x followed by y`
 
-x | y   
-x or y
+`x | y`   
+`x or y`
 
-(x | y)   
-x or y
+`(x | y)   `
+`x or y`
 
-\[ x \]   
-x or empty
+`\[ x \]`   
+`x or empty`
 
-{ x }   
+`{ x }`   
 A possibly empty sequence of x.
 
  *comment*   

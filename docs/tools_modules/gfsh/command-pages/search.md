@@ -36,52 +36,15 @@ search lucene --name=value --region=value --queryString=value --defaultField=val
 
 **Parameters, search lucene:**
 
-<table>
-<colgroup>
-<col width="33%" />
-<col width="34%" />
-<col width="33%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Description</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="keyword parmname">&#8209;&#8209;name</span></td>
-<td><em>Required</em>. Name of the Lucene index to search.</td>
-<td> </td>
-</tr>
-<tr>
-<td><span class="keyword parmname">&#8209;&#8209;region</span></td>
-<td><em>Required</em>. Name/Path of the region where the Lucene index exists.</td>
-<td> </td>
-</tr>
-<tr>
-<td><span class="keyword parmname" style="whitespace:nowrap;">&#8209;&#8208;queryString</span></td>
-<td><em>Required</em>. Query string to search the Lucene index. Use <code>__REGION_VALUE_FIELD</code> as the field name within the query string when the field is a primitive value. Surround a string with double quote marks to do an exact match of the string.</td>
-<td> </td>
-</tr>
-<tr>
-<td><span class="keyword parmname" style="whitespace:nowrap;">&#8209;&#8208;defaultField</span></td>
-<td><em>Required</em>. Default field to search in. <code>__REGION_VALUE_FIELD</code> identifies the field as a primitive value.</td>
-<td> </td>
-</tr>
-<tr>
-<td><span class="keyword parmname">&#8209;&#8209;limit</span></td>
-<td>Number of search results needed.</td>
-<td>If the parameter is not specified: -1</td>
-</tr>
-<tr>
-<td><span class="keyword parmname">&#8209;&#8209;keys-only</span></td>
-<td>Return only keys of search results.</td>
-<td>If the parameter is not specified: false</td>
-</tr>
-</tbody>
-</table>
+| Name | Description | Default Value |
+|---|---|---|
+| `--name` | **Required.** Name of the Lucene index to search. |  |
+| `--region` | **Required.** Name/Path of the region where the Lucene index exists. |  |
+| `--queryString` | **Required.** Query string to search the Lucene index. Use `__REGION_VALUE_FIELD` as the field name when the field is a primitive value. Surround a string with double quotes to perform an exact match. |  |
+| `--defaultField` | **Required.** Default field to search in. `__REGION_VALUE_FIELD` identifies the field as a primitive value. |  |
+| `--limit` | Number of search results to return. | If not specified: `-1` |
+| `--keys-only` | Return only the keys of search results. | If not specified: `false` |
+
 
 **Example Commands:**
 

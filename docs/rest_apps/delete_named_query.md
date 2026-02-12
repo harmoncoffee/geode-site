@@ -1,5 +1,5 @@
 ﻿---
-title:  DELETE /geode/v1/queries/{queryId}
+title:  DELETE /geode/v1/queries/queryId
 ---
 
 <!--
@@ -31,7 +31,7 @@ http://<hostname_or_http-service-bind-address>:<http-service-port>/geode/v1/quer
 
 | Parameter | Description                        | Example Values |
 |-----------|------------------------------------|----------------|
-| {queryId} | QueryID for named query to delete. | selectOrders   |
+| `{queryId}` | QueryID for named query to delete. | selectOrders   |
 
 ## Example Request
 

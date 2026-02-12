@@ -116,10 +116,10 @@ If no resources (regions) are available in the cluster, the call returns a 404 N
 
 You can read data from a region by using any of the following REST-enabled mechanisms:
 
--   **GET /geode/v1/{region}?limit=ALL** - Read all entries in a region
--   **GET /geode/v1/{region}?limit=*N*** - Read a limited number of entries in a region
--   **GET /geode/v1/{region}/keys** - List all keys in a region
--   **GET /geode/v1/{region}/{keys}** - Read data for specific key or keys in a region
+-   **GET `/geode/v1/{region}?limit=ALL`** - Read all entries in a region
+-   **GET `/geode/v1/{region}?limit=N`** - Read a limited number of entries in a region
+-   **GET `/geode/v1/{region}/keys`** - List all keys in a region
+-   **GET `/geode/v1/{region}/{keys}`** - Read data for specific key or keys in a region
 
 **Reading Entries**
 

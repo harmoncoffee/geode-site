@@ -57,7 +57,7 @@ Specify an `http-service-port` for the developer REST service, as the default po
     <img src="../images/swagger_region_endpoints.png" class="image" />
 5.  In the list of **region** endpoints, click on the **GET /v1** endpoint link. The page displays additional request and response information about the API. <img src="../images/swagger_v1.png" id="concept_rlr_y3c_54__image_kx2_2dm_x4" class="image" />
 6.  Click the **Try it out!** button. Any regions you added in step 5 are returned in the response body. <img src="../images/swagger_v1_response.png" id="concept_rlr_y3c_54__image_y2p_tdm_x4" class="image" />
-7.  Add an entry to the region by expanding the **POST /v1/{region}** endpoint. <img src="../images/swagger_post_region.png" id="concept_rlr_y3c_54__image_sfk_c2m_x4" class="image" />
+7.  Add an entry to the region by expanding the **POST /v1/`{region}`** endpoint. <img src="../images/swagger_post_region.png" id="concept_rlr_y3c_54__image_sfk_c2m_x4" class="image" />
 8.  Click the **Try it out!** button to see the response body and response code. <img src="../images/swagger_post_region_response.png" id="concept_rlr_y3c_54__image_pmx_k2m_x4" class="image" />
 
 You can use the Swagger interface to try out additional  API endpoints and view sample responses.
