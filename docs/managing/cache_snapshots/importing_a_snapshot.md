@@ -1,5 +1,7 @@
 ﻿---
 title:  Importing Cache and Region Snapshots
+sidebar_label: Importing Cache and Region Snapshots
+sidebar_position: 3
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Disk Store File Names and Extensions
+sidebar_label: Disk Store File Names and Extensions
+sidebar_position: 2
 ---
 
 <!--

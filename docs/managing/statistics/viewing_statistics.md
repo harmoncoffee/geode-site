@@ -1,5 +1,7 @@
 ﻿---
 title:  Viewing Archived Statistics
+sidebar_label: Viewing Archived Statistics
+sidebar_position: 5
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Organizing Servers Into Logical Member Groups
+sidebar_label: Organizing Servers Into Logical Member Groups
+sidebar_position: 5
 ---
 
 <!--

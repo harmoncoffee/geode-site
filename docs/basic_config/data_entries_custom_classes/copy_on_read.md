@@ -1,5 +1,7 @@
 ﻿---
 title:  Copy on Read Behavior
+sidebar_label: Copy on Read Behavior
+sidebar_position: 2
 ---
 
 <!--

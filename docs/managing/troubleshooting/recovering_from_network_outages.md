@@ -1,5 +1,7 @@
 ﻿---
 title:  Understanding and Recovering from Network Outages
+sidebar_label: Understanding and Recovering from Network Outages
+sidebar_position: 9
 ---
 
 <!--

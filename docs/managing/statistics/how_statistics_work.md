@@ -1,5 +1,7 @@
 ﻿---
 title:  How Statistics Work
+sidebar_label: How Statistics Work
+sidebar_position: 1
 ---
 
 <!--

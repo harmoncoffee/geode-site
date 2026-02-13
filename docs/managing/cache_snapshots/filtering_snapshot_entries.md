@@ -1,5 +1,7 @@
 ﻿---
 title:  Filtering Entries During Import or Export
+sidebar_label: Filtering Entries During Import or Export
+sidebar_position: 4
 ---
 
 <!--

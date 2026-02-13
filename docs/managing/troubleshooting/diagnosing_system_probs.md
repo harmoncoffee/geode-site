@@ -1,5 +1,7 @@
 ﻿---
 title:  Diagnosing System Problems
+sidebar_label: Diagnosing System Problems
+sidebar_position: 2
 ---
 
 <!--

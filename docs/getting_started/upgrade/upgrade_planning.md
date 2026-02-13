@@ -1,5 +1,7 @@
 ﻿---
 title:  Planning an Upgrade
+sidebar_label: Planning an Upgrade
+sidebar_position: 1
 ---
 
 <!--

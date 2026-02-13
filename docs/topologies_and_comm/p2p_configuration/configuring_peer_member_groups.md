@@ -1,5 +1,7 @@
 ﻿---
-title:  Organizing Peers into Logical Member Groups
+title: Organizing Peers into Logical Member Groups
+sidebar_label: Organizing Peers into Logical Member Groups
+sidebar_position: 3
 ---
 
 <!--

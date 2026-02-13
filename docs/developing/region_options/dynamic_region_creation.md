@@ -1,5 +1,7 @@
 ﻿---
 title:  Creating Regions Dynamically
+sidebar_label: Creating Regions Dynamically
+sidebar_position: 4
 ---
 
 <!--

@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Overview of Geode Management and Monitoring Tools
+sidebar_label: Overview of Geode Management and Monitoring Tools
+sidebar_position: 2
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

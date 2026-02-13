@@ -1,5 +1,7 @@
 ﻿---
 title:  Planning Topology and Communication
+sidebar_label: Planning Topology and Communication
+sidebar_position: 2
 ---
 
 <!--

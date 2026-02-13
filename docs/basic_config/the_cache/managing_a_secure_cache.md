@@ -1,5 +1,7 @@
 ﻿---
 title:  Managing a Cache in a Secure System
+sidebar_label: Managing a Cache in a Secure System
+sidebar_position: 4
 ---
 
 <!--

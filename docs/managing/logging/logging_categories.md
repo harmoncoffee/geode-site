@@ -1,5 +1,7 @@
 ﻿---
 title:  Understanding Log Messages and Their Categories
+sidebar_label: Understanding Log Messages and Their Categories
+sidebar_position: 2
 ---
 
 <!--

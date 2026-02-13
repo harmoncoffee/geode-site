@@ -1,5 +1,7 @@
 ﻿---
 title:  Management and Monitoring Features
+sidebar_label: Management and Monitoring Features
+sidebar_position: 1
 ---
 
 <!--

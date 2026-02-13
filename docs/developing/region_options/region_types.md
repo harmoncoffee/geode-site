@@ -1,5 +1,7 @@
 ﻿---
 title:  Region Types
+sidebar_label: Region Types
+sidebar_position: 2
 ---
 
 <!--

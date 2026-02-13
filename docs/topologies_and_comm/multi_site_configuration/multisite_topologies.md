@@ -1,5 +1,7 @@
 ﻿---
 title:  Multi-site (WAN) Topologies
+sidebar_label: Multi-site (WAN) Topologies
+sidebar_position: 2
 ---
 
 <!--

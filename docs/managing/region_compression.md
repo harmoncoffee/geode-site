@@ -1,5 +1,7 @@
 ﻿---
 title: Region Compression
+sidebar_label: Region Compression
+sidebar_position: 5
 ---
 
 <!--

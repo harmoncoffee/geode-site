@@ -1,5 +1,7 @@
 ﻿---
 title:  Creating Backups for System Recovery and Operational Management
+sidebar_label: Creating Backups for System Recovery and Operational Management
+sidebar_position: 8
 ---
 
 <!--

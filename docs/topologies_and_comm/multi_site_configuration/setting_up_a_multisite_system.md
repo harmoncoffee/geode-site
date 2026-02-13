@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring a Multi-site (WAN) System
+sidebar_label: Configuring a Multi-site (WAN) System
+sidebar_position: 3
 ---
 
 <!--

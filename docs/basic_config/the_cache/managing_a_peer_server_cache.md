@@ -1,5 +1,7 @@
 ﻿---
 title:  Managing a Peer or Server Cache
+sidebar_label: Managing a Peer or Server Cache
+sidebar_position: 2
 ---
 
 <!--

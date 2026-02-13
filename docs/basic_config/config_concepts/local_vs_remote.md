@@ -1,5 +1,7 @@
 ﻿---
 title:  Local and Remote Membership and Caching
+sidebar_label: Local and Remote Membership and Caching
+sidebar_position: 4
 ---
 
 <!--

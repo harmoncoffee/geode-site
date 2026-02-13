@@ -1,5 +1,7 @@
 ﻿---
 title:  Region Data Stores and Data Accessors
+sidebar_label: Region Data Stores and Data Accessors
+sidebar_position: 3
 ---
 
 <!--

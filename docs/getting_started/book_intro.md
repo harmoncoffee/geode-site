@@ -31,7 +31,7 @@ A tutorial demonstrates features, and a main features section describes key func
 
     This section summarizes the main features and key functionality of .
 
--   **[Prerequisites and Installation Instructions](../prereq_and_install.html)**
+-   **[Prerequisites and Installation Instructions](prerequisites/prereq_and_install.html)**
 
     Each host of  that meets a small set of prerequisites may follow the provided installation instructions.
 

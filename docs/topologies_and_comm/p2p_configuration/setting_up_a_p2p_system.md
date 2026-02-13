@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring Peer-to-Peer Discovery
+sidebar_label: Configuring Peer-to-Peer Discovery
+sidebar_position: 1
 ---
 
 <!--

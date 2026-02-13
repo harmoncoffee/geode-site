@@ -1,5 +1,7 @@
 ﻿---
 title:  UDP Communication
+sidebar_label: UDP Communication
+sidebar_position: 8
 ---
 
 <!--

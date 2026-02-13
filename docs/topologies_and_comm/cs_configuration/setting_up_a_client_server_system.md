@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring a Client/Server System
+sidebar_label: Configuring a Client/Server System
+sidebar_position: 4
 ---
 
 <!--

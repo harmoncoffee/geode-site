@@ -1,5 +1,7 @@
 ﻿---
 title:  Managing a Client Cache
+sidebar_label: Managing a Client Cache
+sidebar_position: 3
 ---
 
 <!--

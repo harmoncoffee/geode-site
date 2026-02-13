@@ -1,5 +1,7 @@
 ﻿---
 title:  Transient Region and Entry Statistics
+sidebar_label: Transient Region and Entry Statistics
+sidebar_position: 2
 ---
 
 <!--

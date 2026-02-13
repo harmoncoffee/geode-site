@@ -1,5 +1,7 @@
 ﻿---
 title:  Usage and Performance Notes
+sidebar_label:  Usage and Performance Notes
+sidebar_position: 1
 ---
 
 <!--

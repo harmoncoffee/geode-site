@@ -1,5 +1,7 @@
 ﻿---
-title:  Fine-Tuning Your Client/Server Configuration
+title: Fine-Tuning Your Client/Server Configuration
+sidebar_label: Fine-Tuning Your Client/Server Configuration
+sidebar_position: 7
 ---
 
 <!--

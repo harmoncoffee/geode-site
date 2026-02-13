@@ -1,5 +1,7 @@
 ﻿---
 title:  How Disk Stores Work
+sidebar_label: How Disk Stores Work
+sidebar_position: 1
 ---
 
 <!--

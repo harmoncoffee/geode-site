@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Configure Apache Geode to Handle Network Partitioning
+sidebar_label: Configure Apache Geode to Handle Network Partitioning
+sidebar_position: 5
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

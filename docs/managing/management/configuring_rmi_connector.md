@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring RMI Registry Ports and RMI Connectors
+sidebar_label: Configuring RMI Registry Ports and RMI Connectors
+sidebar_position: 6
 ---
 
 <!--

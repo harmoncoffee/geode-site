@@ -1,5 +1,7 @@
 ﻿---
 title:  Restoring Redundancy in Partitioned Regions
+sidebar_label:  Restoring Redundancy in Partitioned Regions
+sidebar_position: 9
 ---
 
 <!--

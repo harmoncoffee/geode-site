@@ -1,5 +1,7 @@
 ﻿---
 title:  Set Up Logging
+sidebar_label: Set Up Logging
+sidebar_position: 4
 ---
 
 <!--

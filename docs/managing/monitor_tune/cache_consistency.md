@@ -1,5 +1,7 @@
 ﻿---
 title:  Maintaining Cache Consistency
+sidebar_label: Maintaining Cache Consistency
+sidebar_position: 10
 ---
 
 <!--

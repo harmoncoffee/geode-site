@@ -1,5 +1,7 @@
 ﻿---
 title:  Requirements for Using Custom Classes in Data Caching
+sidebar_label: Requirements for Using Custom Classes in Data Caching
+sidebar_position: 3
 ---
 
 <!--

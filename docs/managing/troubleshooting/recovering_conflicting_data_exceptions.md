@@ -1,5 +1,7 @@
 ﻿---
 title:  Recovering from ConfictingPersistentDataExceptions
+sidebar_label: Recovering from ConfictingPersistentDataExceptions
+sidebar_position: 7
 ---
 
 <!--

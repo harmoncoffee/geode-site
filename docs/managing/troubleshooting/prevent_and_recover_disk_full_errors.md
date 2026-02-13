@@ -1,5 +1,7 @@
 ﻿---
 title:  Preventing and Recovering from Disk Full Errors
+sidebar_label: Preventing and Recovering from Disk Full Errors
+sidebar_position: 8
 ---
 
 <!--

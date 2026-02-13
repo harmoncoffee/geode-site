@@ -1,5 +1,7 @@
 ﻿---
 title:  Exporting Cache and Region Snapshots
+sidebar_label: Exporting Cache and Region Snapshots
+sidebar_position: 2
 ---
 
 <!--

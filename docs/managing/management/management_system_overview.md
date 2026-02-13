@@ -1,5 +1,7 @@
 ﻿---
-title:  Architecture and Components
+title: Architecture and Components
+sidebar_label: Architecture and Components
+sidebar_position: 3
 ---
 
 <!--

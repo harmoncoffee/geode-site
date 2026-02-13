@@ -1,5 +1,7 @@
 ﻿---
 title:  Upgrading Clients
+sidebar_label: Upgrading Clients
+sidebar_position: 4
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Region Shortcuts and Custom Named Region Attributes
+sidebar_label: Region Shortcuts and Custom Named Region Attributes
+sidebar_position: 3
 ---
 
 <!--

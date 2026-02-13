@@ -1,5 +1,7 @@
 ﻿---
 title:  Managing RegionServices for Multiple Secure Users
+sidebar_label:  Managing RegionServices for Multiple Secure Users
+sidebar_position: 5
 ---
 
 <!--

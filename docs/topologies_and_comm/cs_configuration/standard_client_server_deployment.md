@@ -1,5 +1,7 @@
 ﻿---
 title:  Standard Client/Server Deployment
+sidebar_label: Standard Client/Server Deployment
+sidebar_position: 1
 ---
 
 <!--

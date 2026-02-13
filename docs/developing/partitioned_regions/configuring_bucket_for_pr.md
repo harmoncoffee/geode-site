@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring the Number of Buckets for a Partitioned Region
+sidebar_label: Configuring the Number of Buckets for a Partitioned Region
+sidebar_position: 3
 ---
 
 <!--

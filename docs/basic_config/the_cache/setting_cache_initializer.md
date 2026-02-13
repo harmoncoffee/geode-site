@@ -1,5 +1,7 @@
 ﻿---
 title:  Launching an Application after Initializing the Cache
+sidebar_label: Launching an Application after Initializing the Cache
+sidebar_position: 6
 ---
 
 <!--

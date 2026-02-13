@@ -1,5 +1,7 @@
 ﻿---
 title:  Start Up and Shut Down with Disk Stores
+sidebar_label: Start Up and Shut Down with Disk Stores
+sidebar_position: 6
 ---
 
 <!--

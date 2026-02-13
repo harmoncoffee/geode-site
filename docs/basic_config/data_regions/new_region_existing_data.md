@@ -1,5 +1,7 @@
 ﻿---
-title:  Building a New Region with Existing Content
+title: Building a New Region with Existing Content
+sidebar_label: Building a New Region with Existing Content
+sidebar_position: 7
 ---
 
 <!--

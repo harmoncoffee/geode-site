@@ -1,5 +1,7 @@
 ﻿---
 title:  Naming, Searching, and Creating Log Files
+sidebar_label: Naming, Searching, and Creating Log Files
+sidebar_position: 3
 ---
 
 <!--

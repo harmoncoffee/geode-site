@@ -1,5 +1,7 @@
 ﻿---
 title: Managing Heap Memory
+sidebar_label: Managing Heap Memory
+sidebar_position: 1
 ---
 
 <!--

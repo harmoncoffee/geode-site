@@ -1,5 +1,7 @@
 ﻿---
 title:  Slow distributed-ack Messages
+sidebar_label:  Slow distributed-ack Messages
+sidebar_position: 6
 ---
 
 <!--

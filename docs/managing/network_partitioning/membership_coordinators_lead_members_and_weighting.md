@@ -1,5 +1,7 @@
 ﻿---
 title:  Membership Coordinators, Lead Members and Member Weighting
+sidebar_label: Membership Coordinators, Lead Members and Member Weighting
+sidebar_position: 3
 ---
 
 <!--

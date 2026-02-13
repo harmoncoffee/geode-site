@@ -1,5 +1,7 @@
 ﻿---
 title:  Disk Store Operation Logs
+sidebar_label: Disk Store Operation Logs
+sidebar_position: 3
 ---
 
 <!--

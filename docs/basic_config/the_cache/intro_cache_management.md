@@ -1,5 +1,7 @@
 ﻿---
 title:  Introduction to Cache Management
+sidebar_label: Introduction to Cache Management
+sidebar_position: 1
 ---
 
 <!--

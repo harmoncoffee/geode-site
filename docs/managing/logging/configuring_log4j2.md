@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Advanced Users—Configuring Log4j 2 for Geode
+sidebar_label: Advanced Users—Configuring Log4j 2 for Geode
+sidebar_position: 5
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

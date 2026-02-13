@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: How Geode Logging Works 
+sidebar_label: How Geode Logging Works
+sidebar_position: 1
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

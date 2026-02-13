@@ -1,5 +1,7 @@
 ﻿---
 title:  Managing Region Attributes
+sidebar_label: Managing Region Attributes
+sidebar_position: 5
 ---
 
 <!--

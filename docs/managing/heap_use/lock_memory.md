@@ -1,5 +1,7 @@
 ﻿---
 title: Locking Memory (Linux Systems Only)
+sidebar_label: Locking Memory (Linux Systems Only)
+sidebar_position: 3
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
-title:  How Member Discovery Works
+title: How Member Discovery Works
+sidebar_label: How Member Discovery Works
+sidebar_position: 3
 ---
 
 <!--

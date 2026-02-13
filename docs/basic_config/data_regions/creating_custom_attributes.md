@@ -1,5 +1,7 @@
 ﻿---
 title:  Creating Custom Attributes for Regions and Entries
+sidebar_label: Creating Custom Attributes for Regions and Entries
+sidebar_position: 6
 ---
 
 <!--

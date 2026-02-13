@@ -1,5 +1,7 @@
 ﻿---
 title:  Topology Types
+sidebar_label: Topology Types
+sidebar_position: 1
 ---
 
 <!--

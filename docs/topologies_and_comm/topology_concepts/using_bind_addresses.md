@@ -1,5 +1,7 @@
 ﻿---
 title:  Using Bind Addresses
+sidebar_label: Using Bind Addresses
+sidebar_position: 5
 ---
 
 <!--

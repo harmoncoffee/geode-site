@@ -1,5 +1,7 @@
 ﻿---
 title:  Cluster Members
+sidebar_label: Cluster Members
+sidebar_position: 1
 ---
 
 <!--

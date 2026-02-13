@@ -1,5 +1,7 @@
 ﻿---
 title:  Moving Partitioned Region Data to Another Member
+sidebar_label: Moving Partitioned Region Data to Another Member
+sidebar_position: 10
 ---
 
 <!--

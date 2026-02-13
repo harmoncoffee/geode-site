@@ -1,5 +1,6 @@
-﻿
-
+﻿---
+title: Developing with Apache Geode
+---
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more
 contributor license agreements.  See the NOTICE file distributed with
@@ -17,7 +18,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*Developing with * explains main concepts of application programming with . It describes how to plan and implement regions, data serialization, event handling, delta propagation, transactions, and more.
+*Developing with Apache Geode* explains main concepts of application programming with . It describes how to plan and implement regions, data serialization, event handling, delta propagation, transactions, and more.
 
 For information about  REST application development, see [Developing REST Applications for ](../rest_apps/book_intro.html).
 

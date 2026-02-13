@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring Partitioned Regions
+sidebar_label: Configuring Partitioned Regions
+sidebar_position: 2
 ---
 
 <!--

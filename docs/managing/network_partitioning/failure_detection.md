@@ -1,5 +1,7 @@
 ﻿---
 title:  Failure Detection and Membership Views
+sidebar_label: Failure Detection and Membership Views
+sidebar_position: 2
 ---
 
 <!--

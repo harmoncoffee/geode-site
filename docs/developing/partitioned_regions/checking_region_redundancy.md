@@ -1,5 +1,7 @@
 ﻿---
 title:  Checking Redundancy in Partitioned Regions
+sidebar_label: Checking Redundancy in Partitioned Regions
+sidebar_position: 8
 ---
 
 <!--

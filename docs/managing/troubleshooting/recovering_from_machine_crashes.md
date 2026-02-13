@@ -1,5 +1,7 @@
 ﻿---
 title:  Recovering from Machine Crashes
+sidebar_label: Recovering from Machine Crashes
+sidebar_position: 6
 ---
 
 <!--

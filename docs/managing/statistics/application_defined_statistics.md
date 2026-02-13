@@ -1,5 +1,7 @@
 ﻿---
 title:  Application-Defined and Custom Statistics
+sidebar_label: Application-Defined and Custom Statistics
+sidebar_position: 3
 ---
 
 <!--

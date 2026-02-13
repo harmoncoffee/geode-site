@@ -1,5 +1,7 @@
 ﻿---
 title:  System Failure and Recovery
+sidebar_label: System Failure and Recovery
+sidebar_position: 3
 ---
 
 <!--

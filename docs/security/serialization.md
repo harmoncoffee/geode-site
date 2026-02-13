@@ -1,5 +1,7 @@
 ﻿---
 title:  Serialization
+sidebar_label: Serialization
+sidebar_position: 9
 ---
 
 <!--

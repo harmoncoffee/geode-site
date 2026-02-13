@@ -1,5 +1,7 @@
 ﻿---
 title: Managing Off-Heap Memory
+sidebar_label: Managing Off-Heap Memory
+sidebar_position: 2
 ---
 
 <!--

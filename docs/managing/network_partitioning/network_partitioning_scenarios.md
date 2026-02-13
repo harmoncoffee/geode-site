@@ -1,5 +1,7 @@
 ﻿---
 title:  Network Partitioning Scenarios
+sidebar_label: Network Partitioning Scenarios
+sidebar_position: 4
 ---
 
 <!--

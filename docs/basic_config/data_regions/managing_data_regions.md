@@ -1,5 +1,7 @@
 ﻿---
 title: Region Management
+sidebar_label: Region Management
+sidebar_position: 1
 ---
 
 <!--

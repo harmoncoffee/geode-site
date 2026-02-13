@@ -1,5 +1,7 @@
 ﻿---
 title:  Managing Data Entries
+sidebar_label: Managing Data Entries
+sidebar_position: 1
 ---
 
 <!--

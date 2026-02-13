@@ -1,5 +1,7 @@
 ﻿---
 title:  Executing gfsh Commands through the Management API
+sidebar_label: Executing gfsh Commands through the Management API
+sidebar_position: 7
 ---
 
 <!--

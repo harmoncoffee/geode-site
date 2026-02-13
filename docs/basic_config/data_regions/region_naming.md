@@ -1,5 +1,7 @@
 ﻿---
 title:  Region Naming
+sidebar_label: Region Naming
+sidebar_position: 2
 ---
 
 <!--

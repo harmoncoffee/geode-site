@@ -1,5 +1,7 @@
 ﻿---
 title:  Storage and Distribution Options
+sidebar_label: Storage and Distribution Options
+sidebar_position: 1
 ---
 
 <!--

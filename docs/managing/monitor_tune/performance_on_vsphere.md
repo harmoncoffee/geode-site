@@ -1,7 +1,8 @@
 ﻿---
 title: Improving Performance on vSphere
+sidebar_label: Improving Performance on vSphere
+sidebar_position: 2
 ---
-
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more
 contributor license agreements.  See the NOTICE file distributed with

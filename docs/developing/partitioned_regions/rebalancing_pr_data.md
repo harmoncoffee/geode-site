@@ -1,5 +1,7 @@
 ﻿---
 title:  Rebalancing Partitioned Region Data
+sidebar_label: Rebalancing Partitioned Region Data
+sidebar_position: 7
 ---
 
 <!--

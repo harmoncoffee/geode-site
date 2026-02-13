@@ -1,5 +1,5 @@
 ﻿---
-title:  Introduction to geode Clients
+title:  Introduction to Geode Clients
 ---
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

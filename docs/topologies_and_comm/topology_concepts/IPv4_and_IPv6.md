@@ -1,5 +1,7 @@
 ﻿---
 title:  Choosing Between IPv4 and IPv6
+sidebar_label: Choosing Between IPv4 and IPv6
+sidebar_position: 6
 ---
 
 <!--

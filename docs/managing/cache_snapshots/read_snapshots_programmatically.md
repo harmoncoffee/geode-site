@@ -1,5 +1,7 @@
 ﻿---
 title:  Reading Snapshots Programmatically
+sidebar_label: Reading Snapshots Programmatically
+sidebar_position: 5
 ---
 
 <!--

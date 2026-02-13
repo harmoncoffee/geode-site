@@ -1,5 +1,7 @@
 ﻿---
 title:  Log Messages and Solutions
+sidebar_label: Log Messages and Solutions
+sidebar_position: 10
 ---
 
 <!--

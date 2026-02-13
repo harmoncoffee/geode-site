@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring Peer Communication
+sidebar_label: Configuring Peer Communication
+sidebar_position: 2
 ---
 
 <!--

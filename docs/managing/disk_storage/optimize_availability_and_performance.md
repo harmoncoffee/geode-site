@@ -1,5 +1,7 @@
 ﻿---
 title:  Optimizing a System with Disk Stores
+sidebar_label: Optimizing a System with Disk Stores
+sidebar_position: 5
 ---
 
 <!--

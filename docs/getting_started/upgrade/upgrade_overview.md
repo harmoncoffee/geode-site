@@ -1,6 +1,8 @@
-﻿
-
-
+﻿---
+title: Upgrading Apache Geode 
+sidebar_label: Upgrading Apache Geode
+sidebar_position: 1
+---
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more
 contributor license agreements.  See the NOTICE file distributed with
@@ -18,7 +20,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-To upgrade an existing installation to a new version of ,
+To upgrade an existing installation to a new version of Apache Geode,
 follow these general steps:
 
 1. Back up your current system.

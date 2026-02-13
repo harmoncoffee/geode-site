@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring and Using Statistics
+sidebar_label: Configuring and Using Statistics
+sidebar_position: 4
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  How Communication Works
+sidebar_label: How Communication Works
+sidebar_position: 4
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Storing and Retrieving Region Shortcuts and Custom Named Region Attributes
+sidebar_label: Storing and Retrieving Region Shortcuts and Custom Named Region Attributes
+sidebar_position: 4
 ---
 
 <!--

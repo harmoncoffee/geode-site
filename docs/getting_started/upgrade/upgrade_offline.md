@@ -1,5 +1,7 @@
 ﻿---
 title:  Offline Upgrade
+sidebar_label: Offline Upgrade
+sidebar_position: 3
 ---
 
 <!--

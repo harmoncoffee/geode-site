@@ -1,5 +1,7 @@
 ﻿---
 title:  Producing Artifacts for Troubleshooting
+sidebar_label: Producing Artifacts for Troubleshooting
+sidebar_position: 1
 ---
 
 <!--

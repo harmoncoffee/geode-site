@@ -1,5 +1,7 @@
 ﻿---
 title:  Disable TCP SYN Cookies
+sidebar_label: Disable TCP SYN Cookies
+sidebar_position: 1
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Understanding Partitioning
+sidebar_label: Understanding Partitioning
+sidebar_position: 1
 ---
 
 <!--

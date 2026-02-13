@@ -1,5 +1,7 @@
 ﻿---
 title:  How Network Partitioning Management Works
+sidebar_label: How Network Partitioning Management Works
+sidebar_position: 1
 ---
 
 <!--

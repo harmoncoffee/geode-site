@@ -1,5 +1,7 @@
 ﻿---
 title:  Preventing Network Partitions
+sidebar_label: Preventing Network Partitions
+sidebar_position: 6
 ---
 
 <!--

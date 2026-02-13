@@ -1,5 +1,7 @@
 ﻿---
 title:  Client/Server Example Configurations
+sidebar_label: Client/Server Example Configurations
+sidebar_position: 6
 ---
 
 <!--

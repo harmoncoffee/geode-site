@@ -1,5 +1,7 @@
 ﻿---
 title:  Rolling Upgrade
+sidebar_label: Rolling Upgrade
+sidebar_position: 2
 ---
 
 <!--
