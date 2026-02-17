@@ -160,8 +160,8 @@ const config: Config = {
       logo: {
         width: 200,
         src: "/img/asf_logo.svg",
-        href: "https://geode.apache.org/",
-        alt: "Apache Geode logo"
+        href: "https://www.apache.org/",
+        alt: "ASF logo"
       },
       copyright: `<div>
       <a href="https://www.apache.org" target="_blank"></a>
