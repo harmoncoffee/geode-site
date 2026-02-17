@@ -144,14 +144,6 @@ const FeatureList: FeatureItem[] = [
             </>
         ),
     },
-    {
-        title: '',
-        description: (
-            <>
-
-            </>
-        ),
-    },
 ];
 
 function Feature({ title, description }: FeatureItem) {
