@@ -165,7 +165,7 @@ function TopAboutSection() {
                     <p className={styles.aboutTagline}> Apache Geode™ is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.</p>
 										<div className={styles.aboutButtons}>
 												<a className={clsx('button button--lg', styles.primaryButton)} href="https://github.com/apache/geode/releases">Download Geode</a>
-												<a className={clsx('button button--lg', styles.secondaryButton)} href="https://github.com/apache/geode/releases">Learn more</a>
+												<a className={clsx('button button--lg', styles.secondaryButton)} href="https://cwiki.apache.org/confluence/display/geode/">Learn more</a>
 										</div>
                 </div>
             </div>
@@ -179,21 +179,19 @@ function BottomAboutSection() {
             <div className="container">
 							<div className={styles.aboutContent}>
 										<h2>FAQs</h2>
-										<h3>How does Geode work?</h3>
+										<h3>What is Geode?</h3>
                     <p className={styles.aboutDescription}>
-                        Geode pools memory, CPU, network resources, and optionally local disk across multiple processes
-                        to manage application objects and behavior. It uses dynamic replication and data partitioning
-                        techniques to implement high availability, improved performance, scalability, and fault
-                        tolerance. In addition to being a distributed data container, Apache Geode is an in-memory data
-                        management system that provides reliable asynchronous event notifications and guaranteed message
-                        delivery.
-                    </p>
+                  		Apache Geode™ is an in-memory distributed database designed to provide high performance, low latency, extreme scale-out concurrency and consistency for data storage. Unlike traditional relational databases with scaling limitations, Geode scales out horizontally across many nodes to provide low latency response for thousands of concurrent read and write operations on terabytes of data in memory. Unlike many in-memory data grids, Geode can maintain a high degree of data consistency across many concurrent transactions and can operate as a highly available, resilient service. This makes it possible for users to deploy mission critical applications at very high scale.
+										</p>
+										<h3>Why should I use Geode?</h3>
+	                  <p className={styles.aboutDescription}>
+											Application developers and IT architects who need extremely fast processing and consistent data using open source software often run into trouble. When their applications are required to support thousands of concurrent transactions that access hundreds of gigabytes of operational data, they start having performance problems, or problems with the integrity of data. Geode helps solve these problems.
+										</p>
 										<h3>Who uses Geode?</h3>
                     <p className={styles.aboutDescription}>
-                        Apache Geode™ is a mature, robust technology originally developed by GemStone Systems.
-                        Commercially available as GemFire™, it was first deployed in the financial sector as the transactional, low-latency data engine used in Wall Street trading platforms.
-                        Today Apache Geode technology is used by hundreds of enterprise customers for high-scale business applications that must meet low latency and 24x7 availability requirements.
-                    </p>
+                      Apache Geode™ is a mature, robust technology originally developed by GemStone Systems. Commercially available as GemFire™, it was first deployed in the financial sector as the transactional, low-latency data engine used in Wall Street trading platforms. Today Apache Geode technology is used by hundreds of enterprise customers for high-scale business applications that must meet low latency and 24x7 availability requirements.
+										</p>
+										<a className={clsx('button button--lg', styles.primaryButton)} href="https://cwiki.apache.org/confluence/display/GEODE/FAQ">Read more</a>
                 </div>
             </div>
         </div>

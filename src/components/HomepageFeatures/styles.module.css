@@ -79,7 +79,7 @@
 .primaryButton {
     justify-content: flex-start;
     gap: 1rem;
-    margin: 1rem;
+    margin: 1rem 1rem 1rem 0;
     flex-wrap: wrap;
 	min-width: 160px;
     background-color: var(--ifm-color-primary);
@@ -93,7 +93,7 @@
 .secondaryButton {
 	justify-content: flex-start;
     gap: 1rem;
-    margin: 1rem;
+    margin: 1rem 1rem 1rem 0;
     flex-wrap: wrap;
 	min-width: 160px;
     background-color: none;
