@@ -45,20 +45,19 @@
 }
 
 .aboutHeading {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--ifm-color-primary-darker);
+    margin: 2rem 0 0.7rem 0;
+    font-weight: 600;
 }
 
 .aboutTagline {
-    font-size: 1.2rem;
-    font-weight: 450;
+    font-size: 125%;
+    font-weight: 500;
     margin-bottom: 2.7rem;
     text-align: center;
 }
 
 .aboutDescription {
-    font-size: 1.05rem;
+    font-size: 110%;
     line-height: 1.7;
     margin-bottom: 1rem;
 }
@@ -74,6 +73,22 @@
     width: 100%;
 }
 
+[data-theme='dark'] .featuresSection {
+    background: #242526;
+}
+
+.featuresTitle {
+    padding: 2.3rem 0 2.3rem 0;
+    text-align: center;
+    font-size: 275%;
+    font-weight: 650;
+}
+
+.featuresHeading {
+	padding: 2.1rem 0 0 0;
+    font-weight: 600;
+}
+
 /* Buttons */
 
 .primaryButton {
@@ -85,7 +100,17 @@
     background-color: var(--ifm-color-primary);
 }
 
+[data-theme='dark'] .primaryButton {
+    color: var(--ifm-color-primary-darker);
+    background-color: var(--ifm-color-primary-lighter)
+}
+
 .primaryButton:hover {
+    background: var(--ifm-color-secondary);
+    color: #fff;
+}
+
+[data-theme='dark'] .primaryButton:hover {
     background: var(--ifm-color-secondary);
     color: #fff;
 }
@@ -98,9 +123,20 @@
 	min-width: 160px;
     background-color: none;
     color: var(--ifm-color-primary);
+    border: 1px solid;
+}
+
+[data-theme='dark'] .secondaryButton {
+    color: var(--ifm-color-primary-lighter);
+    border: 1px solid;
 }
 
 .secondaryButton:hover {
     background: none;
-    color: var(--ifm-color-secondary)
+    color: var(--ifm-color-secondary);
+}
+
+[data-theme='dark'] .secondaryButton:hover {
+    background: none;
+    color: var(--ifm-color-secondary);
 }

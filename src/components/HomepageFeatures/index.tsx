@@ -28,25 +28,23 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Replication and Partitioning',
+    title: '👥 Replication and Partitioning',
     description: (
       <>
-          Data can easily be partitioned (sharded) or replicated between nodes allowing performance to scale as needed.
-          Durability is ensured through redundant in-memory copies and disk-based persistence.
+          Data can easily be partitioned (sharded) or replicated between nodes allowing performance to scale as needed. Durability is ensured through redundant in-memory copies and disk-based persistence.
       </>
     ),
   },
   {
-    title: 'Persistence',
+    title: '🧊 Persistence',
     description: (
       <>
-          Super fast write-ahead-logging (WAL) persistence with a shared-nothing architecture that is optimized for fast
-          parallel recovery of nodes or an entire cluster.
+          Super fast write-ahead-logging (WAL) persistence with a shared-nothing architecture that is optimized for fast parallel recovery of nodes or an entire cluster.
       </>
     ),
   },
   {
-    title: 'Performance',
+    title: '🚀 Performance',
     description: (
       <>
           Linear-scaling low latency for transactions, reads,
@@ -55,71 +53,63 @@ const FeatureList: FeatureItem[] = [
     ),
   },
     {
-        title: 'In-Memory Storage',
+        title: '🧠 In-Memory Storage',
         description: (
             <>
-                Blazing fast in-memory storage optimized for large heaps, with the option of using off-heap storage,
-                compression and features such as disk-overflow, eviction and expiration of data.
+                Blazing fast in-memory storage optimized for large heaps, with the option of using off-heap storage, compression and features such as disk-overflow, eviction and expiration of data.
             </>
         ),
     },
     {
-        title: 'Functions',
+        title: '⚙️ Functions',
         description: (
             <>
-                Distributed location-aware user functions can be deployed and executed by the same nodes storing
-                relevant sharded data for fast parallel processing. Failed operations can be retried on replicant nodes.
+                Distributed location-aware user functions can be deployed and executed by the same nodes storing relevant sharded data for fast parallel processing. Failed operations can be retried on replicant nodes.
             </>
         ),
     },
     {
-        title: 'Transactions',
+        title: '🔀 Transactions',
         description: (
             <>
-                ACID distributed transactions support efficient and safe coordinated operations on colocated data.
-                Transactions can be initiated or suspended by either a client or a server.
+                ACID distributed transactions support efficient and safe coordinated operations on colocated data. Transactions can be initiated or suspended by either a client or a server.
             </>
         ),
     },
     {
-        title: 'OQL and Indexes',
+        title: '🗂️ OQL and Indexes',
         description: (
             <>
-                Object Query Language allows distributed query execution on hot and cold data, with SQL-like
-                capabilities, including joins. Multiple kinds of indexes can be defined and consistently
-                maintained across the cluster.
+                Object Query Language allows distributed query execution on hot and cold data, with SQL-like capabilities, including joins. Multiple kinds of indexes can be defined and consistently maintained across the cluster.
             </>
         ),
     },
     {
-        title: 'Events',
+        title: '💡 Events',
         description: (
             <>
-                Clients can be notified about server-side data events, and servers can react synchronously or
-                asynchronously with guaranteed delivery of ordered events.
+                Clients can be notified about server-side data events, and servers can react synchronously or asynchronously with guaranteed delivery of ordered events.
             </>
         ),
     },
     {
-        title: 'Clustering',
+        title: '🫧 Clustering',
         description: (
             <>
-                Highly scalable, robust advanced clustering technology with failure detection,
-                dynamic scaling, and network-partition detection algorithms.
+                Highly scalable, robust advanced clustering technology with failure detection, dynamic scaling, and network-partition detection algorithms.
             </>
         ),
     },
     {
-        title: 'Multi-Cluster',
+        title: '🎡 Multi-Cluster',
         description: (
             <>
-                Geode clusters can be replicated over WAN in various topologies:
-                active-active, active-passive, ring, hub-spoke, star, etc.
+                Geode clusters can be replicated over WAN in various topologies: active-active, active-passive, ring, hub-spoke, star, etc.
             </>
         ),
     },
     {
-        title: 'Continuous Query',
+        title: '🔎 Continuous Query',
         description: (
             <>
                 Clients can stay up to date by registering OQL queries with the Geode servers,
@@ -128,7 +118,7 @@ const FeatureList: FeatureItem[] = [
         ),
     },
     {
-        title: 'Clients',
+        title: '⌨️ Clients',
         description: (
             <>
                 Clients are available for Java, C++, and C# .NET Framework. A REST API is available for all other languages.
@@ -136,7 +126,7 @@ const FeatureList: FeatureItem[] = [
         ),
     },
     {
-        title: 'Adapters',
+        title: '🔌 Adapters',
         description: (
             <>
                 Geode can be used as a drop-in replacement for memcached,
@@ -149,8 +139,8 @@ const FeatureList: FeatureItem[] = [
 function Feature({ title, description }: FeatureItem) {
     return (
         <div className={clsx('col col--4')}>
-            <div className="text--center padding-horiz--md">
-                <Heading as="h3">{title}</Heading>
+            <div className="text--left padding-horiz--md">
+                <Heading as="h3" className={styles.featuresHeading}>{title}</Heading>
                 <p>{description}</p>
             </div>
         </div>
@@ -178,18 +168,18 @@ function BottomAboutSection() {
         <div className={styles.aboutSection}>
             <div className="container">
 							<div className={styles.aboutContent}>
-										<h2>FAQs</h2>
-										<h3>What is Geode?</h3>
+										<Heading as="h2" className={styles.aboutHeading}>FAQs</Heading>
+										<Heading as="h3" className={styles.aboutHeading}>What is Geode?</Heading>
                     <p className={styles.aboutDescription}>
-                  		Apache Geode™ is an in-memory distributed database designed to provide high performance, low latency, extreme scale-out concurrency and consistency for data storage. Unlike traditional relational databases with scaling limitations, Geode scales out horizontally across many nodes to provide low latency response for thousands of concurrent read and write operations on terabytes of data in memory. Unlike many in-memory data grids, Geode can maintain a high degree of data consistency across many concurrent transactions and can operate as a highly available, resilient service. This makes it possible for users to deploy mission critical applications at very high scale.
+                  		Apache Geode™ is an in-memory distributed database designed to provide high performance, low latency, extreme scale-out concurrency and consistency for data storage. Unlike traditional relational databases with scaling limitations, Geode scales out horizontally across many nodes to provide low latency response for thousands of concurrent read and write operations on terabytes of data in memory. And unlike many in-memory data grids, Geode can maintain a high degree of data consistency across many concurrent transactions and can operate as a highly available, resilient service. This makes possible the deployment mission-critical applications at very high scale.
 										</p>
-										<h3>Why should I use Geode?</h3>
+										<Heading as="h3" className={styles.aboutHeading}>Why should I use Geode?</Heading>
 	                  <p className={styles.aboutDescription}>
 											Application developers and IT architects who need extremely fast processing and consistent data using open source software often run into trouble. When their applications are required to support thousands of concurrent transactions that access hundreds of gigabytes of operational data, they start having performance problems, or problems with the integrity of data. Geode helps solve these problems.
 										</p>
-										<h3>Who uses Geode?</h3>
+										<Heading as="h3" className={styles.aboutHeading}>Who uses Geode?</Heading>
                     <p className={styles.aboutDescription}>
-                      Apache Geode™ is a mature, robust technology originally developed by GemStone Systems. Commercially available as GemFire™, it was first deployed in the financial sector as the transactional, low-latency data engine used in Wall Street trading platforms. Today Apache Geode technology is used by hundreds of enterprise customers for high-scale business applications that must meet low latency and 24x7 availability requirements.
+                      Apache Geode™ is a mature, robust technology originally developed by GemStone Systems. Commercially available as GemFire™, it was first deployed in the financial sector as the transactional, low-latency data engine used in Wall Street trading platforms. Today, hundreds of enterprise customers use Geode technology for high-scale business applications that must meet low latency and 24x7 availability requirements.
 										</p>
 										<a className={clsx('button button--md', styles.primaryButton)} href="https://cwiki.apache.org/confluence/display/GEODE/FAQ">Read more</a>
                 </div>
@@ -205,8 +195,9 @@ export default function HomepageFeatures(): JSX.Element {
 
             <div className={styles.featuresSection}>
                 <div className="container">
-                    <div className="row">
-                        {FeatureList.map((props, idx) => (
+									<Heading as="h2" className={styles.featuresTitle}>Key features</Heading>		
+											<div className="row">
+		                        {FeatureList.map((props, idx) => (
                             <Feature key={idx} {...props} />
                         ))}
                     </div>
