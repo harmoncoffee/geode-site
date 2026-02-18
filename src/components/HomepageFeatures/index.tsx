@@ -191,7 +191,7 @@ function BottomAboutSection() {
                     <p className={styles.aboutDescription}>
                       Apache Geode™ is a mature, robust technology originally developed by GemStone Systems. Commercially available as GemFire™, it was first deployed in the financial sector as the transactional, low-latency data engine used in Wall Street trading platforms. Today Apache Geode technology is used by hundreds of enterprise customers for high-scale business applications that must meet low latency and 24x7 availability requirements.
 										</p>
-										<a className={clsx('button button--lg', styles.primaryButton)} href="https://cwiki.apache.org/confluence/display/GEODE/FAQ">Read more</a>
+										<a className={clsx('button button--md', styles.primaryButton)} href="https://cwiki.apache.org/confluence/display/GEODE/FAQ">Read more</a>
                 </div>
             </div>
         </div>
