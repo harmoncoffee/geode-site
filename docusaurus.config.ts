@@ -167,7 +167,7 @@ const config: Config = {
       <a href="https://www.apache.org" target="_blank"></a>
                 <p>Copyright © 2026 The Apache Software Foundation, Licensed under the Apache License, Version 2.0.</p>
                 <p> Apache Geode, Apache, Geode, the Apache logo, and the Apache Geode project logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p>
-                <p>Modified and Modernized for Apache Geode by <a href="https://github.com/harmoncoffee">@harmoncoffee</a> and <a href="https://github.com/semioticrobotic">@semioticrobotic</a>.</p>
+                <p>Modified and modernized for the Apache Geode 💎 project by <a href="https://github.com/harmoncoffee">@harmoncoffee</a> and <a href="https://github.com/semioticrobotic">@semioticrobotic</a>.</p>
       </div>`,
     },
     prism: {
