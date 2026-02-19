@@ -89,7 +89,7 @@ Then on the cache server side, reference the modified region attributes template
 <region name="gemfire_modules_sessions" refid="MY_SESSIONS"/>
 ```
 
--   **[Interactive Configuration Reference for the tc Server Module](../../tools_modules/http_session_mgmt/interactive_mode_ref.html)**
+-   **[Interactive Configuration Reference for the tc Server Module](../http_session_mgmt/interactive_mode_ref.html)**
 
     This section describes each prompt when entering into interactive configuration mode of the  HTTP Session Management Module for tc Server.
 

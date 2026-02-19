@@ -598,7 +598,7 @@ gfsh>create jndi-binding --name=jndi1 --type=SIMPLE \
 
 ## <a id="create_lucene_index" class="no-quick-link"></a>create lucene index
 
-Create a Lucene index. For details on Lucene index creation, see [Apache Lucene Integration](../../../tools_modules/lucene_integration.html).
+Create a Lucene index. For details on Lucene index creation, see [Apache Lucene Integration](../../lucene_integration.html).
 
 For additional Lucene-related gfsh commands, see [describe lucene index](describe.html#describe_lucene_index), [destroy lucene index](destroy.html#destroy_lucene_index), [list lucene indexes](list.html#list_lucene_indexes) and [search lucene](search.html#search_lucene).
 

@@ -39,17 +39,17 @@ The security framework permits authentication of connecting components and autho
 
     A cluster using authentication bars malicious peers or clients, and deters inadvertent access to its cache.
 
--   **[Authorization](../security/authorization_overview.html)**
+-   **[Authorization](/authorization_overview.html)**
 
     Client operations on a cache server can be restricted or completely blocked based on the roles and permissions assigned to the credentials submitted by the client.
 
--   **[Post Processing of Region Data](../security/post_processing.html)**
+-   **[Post Processing of Region Data](/post_processing.html)**
 
--   **[SSL](../security/ssl_overview.html)**
+-   **[SSL](/ssl_overview.html)**
 
     SSL protects your data in transit between applications.
 
--   **[Serialization](../security/serialization.html)**
+-   **[Serialization](/serialization.html)**
 
     This section describes the serialization mechanisms available in Apache Geode, including global serialization filters and PDX serialization.
 

@@ -49,10 +49,12 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          sidebarPath: './docs/sidebars.ts',
-          editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
-        },
+          docs: {
+              path: 'docs/geode',
+              routeBasePath: 'docs',
+              sidebarPath: require.resolve('./sidebars.geode.ts'),
+              editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+          },
         blog: {
           blogSidebarCount: 'ALL',
           blogSidebarTitle: 'All our posts',
@@ -74,6 +76,37 @@ const config: Config = {
                 routeBasePath: 'community',
                 sidebarPath: './community/sidebars.ts',
                 editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+            },
+        ],
+        /**
+         * Geode Native C++ docs
+         */
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'geode_native_cpp',
+                path: 'docs/geode_native_cpp',
+                routeBasePath: 'docs/geode_native_cpp',
+                sidebarPath: require.resolve('./sidebars.geode_native_cpp.ts'),
+                editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+                showLastUpdateTime: true,
+                showLastUpdateAuthor: true,
+            },
+        ],
+
+        /**
+         * Geode Native .NET docs
+         */
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'geode_native_dotnet',
+                path: 'docs/geode_native_dotnet',
+                routeBasePath: 'docs/geode_native_dotnet',
+                sidebarPath: require.resolve('./sidebars.geode_native_dotnet.ts'),
+                editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+                showLastUpdateTime: true,
+                showLastUpdateAuthor: true,
             },
         ],
     ],
@@ -104,8 +137,16 @@ const config: Config = {
               label: 'Wiki',
               position: 'left',
           },
-
-        {type: 'docSidebar', sidebarId: 'docs', position: 'right', label: 'Docs'},
+          {
+              type: 'dropdown',
+              label: 'Docs',
+              position: 'right',
+              items: [
+                  { type: 'doc', docsPluginId: 'default', docId: 'about_geode', label: 'Geode' },
+                  { type: 'doc', docsPluginId: 'geode_native_cpp', docId: 'about_geode', label: 'Geode Native (C++)' },
+                  { type: 'doc', docsPluginId: 'geode_native_dotnet', docId: 'about_geode', label: 'Geode Native (.NET)' },
+              ],
+          },
         {to: '/blog', label: 'Blog', position: 'right'},
         {
           type: 'dropdown',
