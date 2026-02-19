@@ -19,23 +19,23 @@ limitations under the License.
 
 *Reference* documents  properties, region attributes, the `cache.xml` file, cache memory requirements, and statistics.
 
--   **[gemfire.properties and gfsecurity.properties ( Properties)](../reference/topics/gemfire_properties.html)**
+-   **[gemfire.properties and gfsecurity.properties ( Properties)](/topics/gemfire_properties.html)**
 
     You use the `gemfire.properties` settings to join a cluster and configure cluster member behavior. Cluster members include applications, the cache server, the locator, and other  processes.
 
--   **[cache.xml](../reference/topics/chapter_overview_cache_xml.html)**
+-   **[cache.xml](/topics/chapter_overview_cache_xml.html)**
 
     Use the cache.xml file to set up general cache facilities and behavior and to create and initialize cached data regions. These sections document cache.xml requirements; provide hierarchical diagrams of `<cache>` and `<client-cache>      `elements; and describe the function of each element.
 
--   **[Region Shortcuts](../reference/topics/chapter_overview_regionshortcuts.html)**
+-   **[Region Shortcuts](/topics/chapter_overview_regionshortcuts.html)**
 
     This topic describes the various region shortcuts you can use to configure  regions.
 
--   **[Exceptions and System Failures](../reference/topics/handling_exceptions_and_failures.html)**
+-   **[Exceptions and System Failures](/topics/handling_exceptions_and_failures.html)**
 
     Your application needs to catch certain classes to handle all the exceptions and system failures thrown by .
 
--   **[Memory Requirements for Cached Data](../reference/topics/memory_requirements_for_cache_data.html)**
+-   **[Memory Requirements for Cached Data](/topics/memory_requirements_for_cache_data.html)**
 
      solutions architects need to estimate resource requirements for meeting application performance, scalability and availability goals.
 

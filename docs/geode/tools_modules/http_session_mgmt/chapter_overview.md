@@ -27,39 +27,39 @@ The  HTTP Session Management modules provide fast, scalable, and reliable sessio
 
 These modules are included with the  product distribution, and installation .zip files can be found in the `tools/Modules` directory of your product installation.
 
--   **[HTTP Session Management Quick Start](../../tools_modules/http_session_mgmt/quick_start.html)**
+-   **[HTTP Session Management Quick Start](../http_session_mgmt/quick_start.html)**
 
     In this section you download, install, and set up the HTTP Session Management modules.
 
--   **[Advantages of Using  for Session Management](../../tools_modules/http_session_mgmt/http_why_use_gemfire.html)**
+-   **[Advantages of Using  for Session Management](../http_session_mgmt/http_why_use_gemfire.html)**
 
     The HTTP Session Management Module enables you to customize how you manage your session data.
 
--   **[Common Topologies for HTTP Session Management](../../tools_modules/http_session_mgmt/common_gemfire_topologies.html)**
+-   **[Common Topologies for HTTP Session Management](../http_session_mgmt/common_gemfire_topologies.html)**
 
     Decide which topology is best for your usage. The module configuration process is slightly different for each topology.
 
--   **[General Information on HTTP Session Management](../../tools_modules/http_session_mgmt/tc_additional_info.html)**
+-   **[General Information on HTTP Session Management](../http_session_mgmt/tc_additional_info.html)**
 
     This section provides information on sticky load balancers, session expiration, additional  property changes, serialization and more.
 
--   **[Session State Log Files](../../tools_modules/http_session_mgmt/session_state_log_files.html)**
+-   **[Session State Log Files](../http_session_mgmt/session_state_log_files.html)**
 
     Several log files are written by the various parts of the session management code.
 
--   **[Configuring Non-Sticky Sessions](../../tools_modules/http_session_mgmt/configuring_non_sticky_sessions.html)**
+-   **[Configuring Non-Sticky Sessions](../http_session_mgmt/configuring_non_sticky_sessions.html)**
 
     This section describes the configuration of non-sticky sessions.
 
--   **[Securing HTTP Session Deserialization](../../tools_modules/http_session_mgmt/session_security_filter.html)**
+-   **[Securing HTTP Session Deserialization](../http_session_mgmt/session_security_filter.html)**
 
     Configure ObjectInputFilter (JEP 290) to protect against deserialization vulnerabilities and secure your session data.
 
--   **[HTTP Session Management Module for Tomcat](../../tools_modules/http_session_mgmt/session_mgmt_tomcat.html)**
+-   **[HTTP Session Management Module for Tomcat](../http_session_mgmt/session_mgmt_tomcat.html)**
 
     You set up and use the module by modifying Tomcat's `server.xml` and `context.xml` files. Supports Tomcat 10.1 and later (Jakarta EE).
 
--   **[HTTP Session Management Module for AppServers](../../tools_modules/http_session_mgmt/session_mgmt_weblogic.html)**
+-   **[HTTP Session Management Module for AppServers](../http_session_mgmt/session_mgmt_weblogic.html)**
 
     You implement session caching with the HTTP Session Management Module for AppServers with a special filter, defined in the `web.xml`, which is configured to intercept and wrap all requests.
 

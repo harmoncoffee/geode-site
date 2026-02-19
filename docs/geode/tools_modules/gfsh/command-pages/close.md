@@ -21,11 +21,11 @@ limitations under the License.
 
 Close durable client CQs and durable clients.
 
--   **[close durable-client](../../../tools_modules/gfsh/command-pages/close.html#topic_4125AAAB9FE44CD787166E48B694C41D)**
+-   **[close durable-client](../../gfsh/command-pages/close.html#topic_4125AAAB9FE44CD787166E48B694C41D)**
 
     Attempts to close a durable client. The client must be disconnected for this command to work.
 
--   **[close durable-cq](../../../tools_modules/gfsh/command-pages/close.html#topic_1BC15B3132BA480DB227921A9B3ABDD1)**
+-   **[close durable-cq](../../gfsh/command-pages/close.html#topic_1BC15B3132BA480DB227921A9B3ABDD1)**
 
     Closes the durable continuous query (CQ) registered by the durable client and drain events held for the durable CQ from the subscription queue.
 

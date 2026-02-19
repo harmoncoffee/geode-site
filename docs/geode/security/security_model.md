@@ -25,7 +25,7 @@ solutions require user-specific design and implementation. Geode's default confi
 and performance without any input needed from the user. Because of this, certain security measures like 
 **[authentication](authentication_overview.html)**, 
 **[authorization](authorization_overview.html)**,
-**[serialization](../security/serialization.html)** and 
+**[serialization](/serialization.html)** and 
 **[over-the-wire encryption](ssl_overview.html)** 
 are absent from a default Geode installation.
 It is highly recommended that users review Geode's security capabilities and implement them as they see fit. See the 
