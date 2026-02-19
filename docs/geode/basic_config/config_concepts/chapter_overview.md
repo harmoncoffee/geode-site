@@ -19,23 +19,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-To work with your  applications, you use a combination of configuration files and application code.
+To work with your Apache Geode applications, you use a combination of configuration files and application code.
 
 -   **[Cluster Members](distributed_system_member_configuration.html)**
 
-    Cluster members are programs that connect to a  cluster. You configure members to belong to a single cluster, and you can optionally configure them to be clients or servers to members in other clusters, and to communicate with other clusters.
+    Cluster members are programs that connect to a Geode cluster. You configure members to belong to a single cluster, and you can optionally configure them to be clients or servers to members in other clusters, and to communicate with other clusters.
 
--   **[Setting Properties](../gemfire_properties/setting_distributed_properties.html)**
+-   **[Setting Properties](../gemfire_properties/setting_distributed_properties.html)** Geode 
 
      provides a default cluster configuration for out-of-the-box systems. To use non-default configurations and to fine-tune your member communication, you can use a mix of various options to customize your cluster configuration.
 
 -   **[Options for Configuring the Cache and Data Regions](../the_cache/setting_cache_properties.html)**
 
-    To populate your  cache and fine-tune its storage and distribution behavior, you need to define cached data regions and provide custom configuration for the cache and regions.
+    To populate your Apache Geode cache and fine-tune its storage and distribution behavior, you need to define cached data regions and provide custom configuration for the cache and regions.
 
 -   **[Local and Remote Membership and Caching](local_vs_remote.html)**
 
-    For many  discussions, you need to understand the difference between local and remote membership and caching.
+    For many Apache Geode discussions, you need to understand the difference between local and remote membership and caching.
 
 
 

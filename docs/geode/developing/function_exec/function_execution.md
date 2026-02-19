@@ -35,7 +35,7 @@ Code the methods you need for the function. These steps do not have to be done i
 
 - Implement `getId` to return a unique name for your function. You can use this name to access the function through the `FunctionService` API.
 - For high availability:
-    1.  Code `isHa` to return true to indicate to  that it can re-execute your function after one or more members fails
+    1.  Code `isHa` to return true to indicate to Geode that it can re-execute your function after one or more members fails
     2.  Code your function to return a result
     3.  Code `hasResult` to return true
 
@@ -57,7 +57,7 @@ See [Authorization of Function Execution](../../security/implementing_authorizat
         -   For partitioned regions, the `PartitionRegionHelper` provides access to additional information and data for the region. For single regions, use `getLocalDataForContext`. For colocated regions, use `getLocalColocatedRegions`.
             **Note:**
             When you use `PartitionRegionHelper.getLocalDataForContext`, `putIfAbsent` may not return expected results if you are working on local data set instead of the region.
-    4.  To propagate an error condition or exception back to the caller of the function, throw a FunctionException from the `execute` method.  transmits the exception back to the caller as if it had been thrown on the calling side. See the Java API documentation for [FunctionException](/org/apache/geode/cache/execute/FunctionException.html) for more information.
+    4.  To propagate an error condition or exception back to the caller of the function, throw a FunctionException from the `execute` method. Geode transmits the exception back to the caller as if it had been thrown on the calling side. See the Java API documentation for [FunctionException](/org/apache/geode/cache/execute/FunctionException.html) for more information.
 
 Example function code:
 
@@ -124,7 +124,7 @@ To register a function by using `gfsh`:
 
 If another JAR file is deployed (either with the same JAR filename or another filename) with the same Function, the new implementation of the Function will be registered, overwriting the old one. If a JAR file is undeployed, any Functions that were auto-registered at the time of deployment will be unregistered. Since deploying a JAR file that has the same name multiple times results in the JAR being un-deployed and re-deployed, Functions in the JAR will be unregistered and re-registered each time this occurs. If a Function with the same ID is registered from multiple differently named JAR files, the Function will be unregistered if either of those JAR files is re-deployed or un-deployed.
 
-See [Deploying Application JARs to  Members](../../configuring/cluster_config/deploying_application_jars.html#concept_4436C021FB934EC4A330D27BD026602C) for more details on deploying JAR files.
+See [Deploying Application JARs to Apache Geode Members](../../configuring/cluster_config/deploying_application_jars.html#concept_4436C021FB934EC4A330D27BD026602C) for more details on deploying JAR files.
 
 ## <a id="function_execution__section_1D1056F843044F368FB76F47061FCD50" class="no-quick-link"></a>Register the Function Programmatically
 
@@ -232,7 +232,7 @@ List result = (List)rc.getResult();
 To customize results collecting:
 
 1.  Write a class that extends `ResultCollector` and code the methods to store and retrieve the results as you need. Note that the methods are of two types:
-    1.  `addResult` and `endResults` are called by  when results arrive from the `Function` instance `SendResults` methods
+    1.  `addResult` and `endResults` are called by Geode when results arrive from the `Function` instance `SendResults` methods
     2.  `getResult` is available to your executing application (the one that calls `Execution.execute`) to retrieve the results
 
 2.  Use high availability for `onRegion` functions that have been coded for it:

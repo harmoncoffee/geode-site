@@ -21,13 +21,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Be aware of possible connection problems that can result from running a firewall on your machine.
+Be aware of possible connection problems that can result from running a firewall on your machine. Apache Geode 
 
  is a network-centric distributed system, so if you have a firewall running on your machine it could cause connection problems. For example, your connections may fail if your firewall places restrictions on inbound or outbound permissions for Java-based sockets. You may need to modify your firewall configuration to permit traffic to Java applications running on your machine. The specific configuration depends on the firewall you are using.
 
-As one example, firewalls may close connections to  due to timeout settings. If a firewall senses no activity in a certain time period, it may close a connection and open a new connection when activity resumes, which can cause some confusion about which connections you have.
+As one example, firewalls may close connections to Geode due to timeout settings. If a firewall senses no activity in a certain time period, it may close a connection and open a new connection when activity resumes, which can cause some confusion about which connections you have.
 
-For more information on how  client and servers connect, see the following topics:
+For more information on how Geode client and servers connect, see the following topics:
 
 -   [How Client/Server Connections Work](../../topologies_and_comm/topology_concepts/how_the_pool_manages_connections.html#how_the_pool_manages_connections)
 -   [Socket Communication](../../managing/monitor_tune/socket_communication.html)

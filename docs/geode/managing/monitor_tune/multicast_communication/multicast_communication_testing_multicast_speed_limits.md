@@ -121,7 +121,7 @@ where:
 </table>
 
 **Note:**
-If your  cluster runs across several subnets, start a receiver on each subnet.
+If your Geode cluster runs across several subnets, start a receiver on each subnet.
 
 In the receiverâ€™s output, look at the Lost/Total Datagrams columns for the number and percentage of lost packets out of the total sent.
 

@@ -19,10 +19,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-You can deploy your  configuration files in your system directory structure or in jar files. You determine how you want to deploy your configuration files and set them up accordingly.
+You can deploy your Apache Geode configuration files in your system directory structure or in jar files. You determine how you want to deploy your configuration files and set them up accordingly.
 
 **Note:**
-If you use the cluster configuration service to create and manage your  cluster configuration, the procedures described in this section are not needed because  automatically manages the distribution of the configuration files and jar files to members of the cluster. See [Overview of the Cluster Configuration Service](../cluster_config/gfsh_persist.html).
+If you use the cluster configuration service to create and manage your Apache Geode cluster configuration, the procedures described in this section are not needed because Geode automatically manages the distribution of the configuration files and jar files to members of the cluster. See [Overview of the Cluster Configuration Service](../cluster_config/gfsh_persist.html).
 
 You can use the procedures described in this section to distribute configurations that are member-specific, or for situations where you do not want to use the cluster configuration service.
 

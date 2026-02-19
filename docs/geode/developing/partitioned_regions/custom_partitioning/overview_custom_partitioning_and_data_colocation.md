@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-You can customize how  groups your partitioned region data with custom partitioning and data colocation.
+You can customize how Apache Geode groups your partitioned region data with custom partitioning and data colocation.
 
 -   **[Understanding Custom Partitioning and Data Colocation](custom_partitioning_and_data_colocation.html)**
 
@@ -29,7 +29,7 @@ You can customize how  groups your partitioned region data with custom partition
 
 -   **[Standard Custom Partitioning](standard_custom_partitioning.html)**
 
-    By default,  partitions each data entry into a bucket using a hashing policy on the key. Additionally, the physical location of the key-value pair is abstracted away from the application. You can change these policies for a partitioned region by providing a standard partition resolver that maps entries to a set of buckets called a partition.
+    By default, Geode Geode partitions each data entry into a bucket using a hashing policy on the key. Additionally, the physical location of the key-value pair is abstracted away from the application. You can change these policies for a partitioned region by providing a standard partition resolver that maps entries to a set of buckets called a partition.
 
 -   **[Fixed Custom Partitioning](fixed_custom_partitioning.html)**
 

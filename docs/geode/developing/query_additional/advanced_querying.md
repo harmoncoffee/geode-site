@@ -32,20 +32,20 @@ This section includes advanced querying topics such as using query indexes, usin
 -   **[Timeouts for Long-Running Queries](../query_additional/query_timeout.html)**
 
     Configure a timeout value for long running queries, such that they do
-not complete, and  throws an exception when a 
+not complete, and Geode throws an exception when a 
 query runs for longer than the configured value.
 
 -   **[Using Query Bind Parameters](../query_additional/using_query_bind_parameters.html)**
 
-    Using query bind parameters in  queries is similar to using prepared statements in SQL where parameters can be set during query execution. This allows you to build a query once and execute it multiple times by passing the query conditions during run time.
+    Using query bind parameters in Geode queries is similar to using prepared statements in SQL where parameters can be set during query execution. This allows you to build a query once and execute it multiple times by passing the query conditions during run time.
 
 -   **[Querying a Specific Member](../query_additional/querying-a-specific-member.html)**
 
     A query may return different results depending on the member on which it is executed.
 
--   **[Querying Partitioned Regions](../querying_basics/querying_partitioned_regions.html)**
+-   **[Querying Partitioned Regions](../querying_basics/querying_partitioned_regions.html)** Geode 
 
-     allows you to manage and store large amounts of data across distributed nodes using partitioned regions. The basic unit of storage for a partitioned region is a bucket, which resides on a  node and contains all the entries that map to a single hashcode. In a typical partitioned region query, the system distributes the query to all buckets across all nodes, then merges the result sets and sends back the query results.
+     allows you to manage and store large amounts of data across distributed nodes using partitioned regions. The basic unit of storage for a partitioned region is a bucket, which resides on a Geode node and contains all the entries that map to a single hashcode. In a typical partitioned region query, the system distributes the query to all buckets across all nodes, then merges the result sets and sends back the query results.
 
 -   **[Query Debugging](../query_additional/query_debugging.html)**
 

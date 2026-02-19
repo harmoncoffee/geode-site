@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The locator is a  process that tells new, connecting members where running members are located and provides load balancing for server use.
+The locator is a Geode process that tells new, connecting members where running members are located and provides load balancing for server use.
 
 <a id="running_the_locator__section_E9C98E8756524552BEA9B0CA49A2069E"></a>
 You can run locators as peer locators, server locators, or both:
@@ -31,13 +31,13 @@ You can run locators as peer locators, server locators, or both:
 
 By default, locators run as peer and server locators.
 
-You can run the locator standalone or embedded within another  process. Running your locators standalone provides the highest reliability and availability of the locator service as a whole.
+You can run the locator standalone or embedded within another Geode process. Running your locators standalone provides the highest reliability and availability of the locator service as a whole.
 
 ## <a id="running_the_locator__section_0733348268AF4D5F8851B999A6A36C53" class="no-quick-link"></a>Locator Configuration and Log Files
 
 Locator configuration and log files have the following properties:
 
--   When you start a standalone locator using `gfsh`, `gfsh` will automatically load the required JAR file `lib/geode-dependencies.jar` into the CLASSPATH of the JVM process. If you start a standalone locator using the `LocatorLauncher` API, you must specify this JAR file inside the command used to launch the locator process. For more information on CLASSPATH settings in , see [Setting Up the CLASSPATH](../../getting_started/setup_classpath.html). You can modify the CLASSPATH by specifying the `--classpath` parameter.
+-   When you start a standalone locator using `gfsh`, `gfsh` will automatically load the required JAR file `lib/geode-dependencies.jar` into the CLASSPATH of the JVM process. If you start a standalone locator using the `LocatorLauncher` API, you must specify this JAR file inside the command used to launch the locator process. For more information on CLASSPATH settings in Geode , see [Setting Up the CLASSPATH](../../getting_started/setup_classpath.html). You can modify the CLASSPATH by specifying the `--classpath` parameter.
 -   Locators are members of the cluster just like any other member. In terms of `mcast-port` and `locators` configuration, a locator should be configured in the same manner as a server. Therefore, if there are two other locators in the cluster, each locator should reference the other locators (just like a server member would). For example:
 
     ``` pre
@@ -83,7 +83,7 @@ Use the following guidelines to start the locator:
     -   When starting up multiple locators, do not start them up in parallel (in other words, simultaneously). As a best practice, you should wait approximately 30 seconds for the first locator to complete startup before starting any other locators. To check the successful startup of a locator, check for locator log files. To view the uptime of a running locator, you can use the `gfsh status locator` command.
 
 -   **Embedded (colocated) locator**. Manage a colocated locator at member startup or through the APIs:
-    -   Use the `gemfire.properties` `start-locator` setting to start the locator automatically inside your  member. See the [Reference](../../reference/book_intro.html#reference). The locator stops automatically when the member exits. The property has the following syntax:
+    -   Use the `gemfire.properties` `start-locator` setting to start the locator automatically inside your Geode member. See the [Reference](../../reference/book_intro.html#reference). The locator stops automatically when the member exits. The property has the following syntax:
 
         ``` pre
         #gemfire.properties

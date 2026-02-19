@@ -37,7 +37,7 @@ A query string follows the rules specified by the query language and grammar. It
 
 The components listed above can all be part of the query string, but none of the components are required. At a minimum, a query string contains an expression that can be evaluated against specified data.
 
-The following sections provide guidelines for the query language building blocks that are used when writing typical  queries.
+The following sections provide guidelines for the query language building blocks that are used when writing typical Geode queries.
 
 -   **[IMPORT Statement](../query_select/the_import_statement.html)**
 

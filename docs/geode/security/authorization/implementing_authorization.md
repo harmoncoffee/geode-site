@@ -31,7 +31,7 @@ the principal will be granted permission to carry out the operation. It returns 
 a return value of `true` permits the operation, and a return value of `false` prevents the operation.
 The operation can also throw an `AuthenticationExpiredException`.
 
-In case of an `AuthenticationExpiredException` the  client code will make one automatic attempt
+In case of an `AuthenticationExpiredException` the Geode client code will make one automatic attempt
 to re-connect to the member that sent the exception.
 
 A well-designed `authorize` method will have or will have a way of obtaining

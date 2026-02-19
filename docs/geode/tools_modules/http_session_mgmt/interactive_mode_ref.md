@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section describes each prompt when entering into interactive configuration mode of the  HTTP Session Management Module for tc Server.
+This section describes each prompt when entering into interactive configuration mode of the Geode HTTP Session Management Module for tc Server.
 
 ``` pre
   Please enter a value for 'geode-cs.maximum.vm.heap.size.mb'. Default '512':
@@ -30,15 +30,15 @@ This section describes each prompt when entering into interactive configuration 
 The above properties allow you to fine-tune your JVM heap and garbage collector. For more information, refer to [Managing Heap and Off-heap Memory](../../managing/heap_use/heap_management.html#resource_manager).
 
 ``` pre
-  Please specify whether to enable a  listener that logs session create, 
+  Please specify whether to enable a Geode listener that logs session create, 
   update, destroy and expiration events. Default 'false':
 ```
 
-The above property determines whether a debug cache listener is added to the session region. When true, info-level messages are logged to the  log when sessions are created, updated, invalidated, or expired.
+The above property determines whether a debug cache listener is added to the session region. When true, info-level messages are logged to the Geode log when sessions are created, updated, invalidated, or expired.
 
 ``` pre
 With the geode-p2p template:
-  Please specify whether to maintain a local  cache. Default 'false':
+  Please specify whether to maintain a local Geode Geode cache. Default 'false':
   
 With the geode-cs template:
   Please specify whether to maintain a local  cache. Default 'true':
@@ -48,7 +48,7 @@ The above property determines whether a local cache is enabled; if this paramete
 
 ``` pre
 With the geode-p2p template:
-  Please enter the id of the attributes of the  region used to cache 
+  Please enter the id of the attributes of the Geode Geode region used to cache 
       sessions.
   Default 'REPLICATE':
 
@@ -61,7 +61,7 @@ With the geode-cs template:
 The above property determines the ID of the attributes for the cache region; possible values include PARTITION, PARTITION\_REDUNDANT, PARTITION\_PERSISTENT, REPLICATE, REPLICATE\_PERSISTENT, and any other region shortcut that can be found in [Region Shortcuts and Custom Named Region Attributes](../../basic_config/data_regions/region_shortcuts.html). When using a partitioned region attribute, it is recommended that you use PARTITION\_REDUNDANT (rather than PARTITION) to ensure that the failure of a server does not result in lost session data.
 
 ``` pre
-  Please enter the name of the  region used to cache sessions. 
+  Please enter the name of the Geode region used to cache sessions. 
   Default 'gemfire_modules_sessions':
 ```
 
@@ -104,33 +104,33 @@ You can change the name of the cache configuration file with the above property.
 The above properties allow you to control the critical and eviction watermarks for the heap. By default, the critical watermark is disabled (set to 0.0) and the eviction watermark is set to 80%.
 
 ``` pre
-Please enter the list of locators used by  members to discover each other. 
+Please enter the list of locators used by Geode members to discover each other. 
 The format is a comma-separated list of host[port]. Default ' ':
 ```
 
 The above property specifies the list of locators.
 
 ``` pre
-  Please enter the name of the file used to log  messages. 
+  Please enter the name of the file used to log Geode messages. 
   Default 'gemfire_modules.log':
 ```
 
-The above property determines the file name for the  log file.
+The above property determines the file name for the Geode log file.
 
 ``` pre
 Applicable to the geode-p2p template ONLY:
-  Please specify whether to rebalance the  cache at startup.
+  Please specify whether to rebalance the Geode cache at startup.
   Default 'false':
 ```
 
 This property allows you to rebalance a partitioned  cache when a new  peer starts up.
 
 ``` pre
-  Please enter the name of the file used to store  statistics. 
+  Please enter the name of the file used to store Geode statistics. 
   Default 'gemfire_modules.gfs':
 ```
 
-The above property determines the filename for the  statistics file.
+The above property determines the filename for the Geode statistics file.
 
 ``` pre
   Please specify whether  statistic sampling should be enabled. 

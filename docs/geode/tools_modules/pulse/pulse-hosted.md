@@ -23,11 +23,11 @@ Host Pulse on a dedicated Web application server to make the Pulse application a
 
 To host Pulse on a Web application server:
 
-1.  Set the `http-service-port` property to zero (`-Dgemfire.http-service-port=0`) when you start your  JMX Manager nodes. Setting this property to zero disables the embedded Web server for hosting the Pulse application.
+1.  Set the `http-service-port` property to zero (`-Dgemfire.http-service-port=0`) when you start your Geode JMX Manager nodes. Setting this property to zero disables the embedded Web server for hosting the Pulse application.
 
-2.  Deploy the Pulse Web application to your application server.  installs the
+2.  Deploy the Pulse Web application to your application server. Geode installs the
 `geode-pulse-n.n.n.war` file (where `n.n.n` is a version number) in the `tools/Pulse` subdirectory
-of your  installation directory. Depending on your application server, you may need to copy the
+of your Geode installation directory. Depending on your application server, you may need to copy the
 `pulse.war` file to a deployment directory or use a configuration tool to deploy the file.
 
 3.  Stop the Web application server and locate the Pulse configuration in the `WEB-INF/classes` subdirectory.
@@ -49,16 +49,16 @@ of your  installation directory. Depending on your application server, you may n
     <tr>
     <td><code class="ph codeph">pulse.useLocator</code></td>
     <td>Specify &quot;true&quot; to configure Pulse to connect to a  Locator member, or &quot;false&quot; to connect directly to a JMX Manager.
-    <p>When Pulse connects to a  locator, the locator provides the address and port of an available JMX Manager to use for monitoring the cluster. In most production deployments, you should connect Pulse to a locator instance; this allows Pulse to provide monitoring services using any available JMX Manager.</p>
+    <p>When Pulse connects to a Geode locator, the locator provides the address and port of an available JMX Manager to use for monitoring the cluster. In most production deployments, you should connect Pulse to a locator instance; this allows Pulse to provide monitoring services using any available JMX Manager.</p>
     <p>If you specify &quot;false,&quot; Pulse connects directly to a specific JMX Manager. If this manager is not available, the Pulse connection fails, even if another JMX Manager is available in the cluster.</p></td>
     </tr>
     <tr>
     <td><code class="ph codeph">pulse.host</code></td>
-    <td>Specify the DNS name or IP address of the  locator or JMX Manager machine to which Pulse should connect. You specify either a locator or JMX Manager address depending on how you configured the <code class="ph codeph">pulse.useLocator</code> property.</td>
+    <td>Specify the DNS name or IP address of the Geode locator or JMX Manager machine to which Pulse should connect. You specify either a locator or JMX Manager address depending on how you configured the <code class="ph codeph">pulse.useLocator</code> property.</td>
     </tr>
     <tr>
     <td><code class="ph codeph">pulse.port</code></td>
-    <td>Specify the port number of the  locator or the HTTP port number of the JMX Manager to which Pulse should connect. You specify either a locator or JMX Manager port depending on how you configured the <code class="ph codeph">pulse.useLocator</code> property.
+    <td>Specify the port number of the Geode locator or the HTTP port number of the JMX Manager to which Pulse should connect. You specify either a locator or JMX Manager port depending on how you configured the <code class="ph codeph">pulse.useLocator</code> property.
     <p>If you configured <code class="ph codeph">pulse.useLocator=false</code>, then <code class="ph codeph">pulse.port</code> must correspond to the <code class="ph codeph">http-service-port</code> setting of the JMX Manager.</p></td>
     </tr>
     </tbody>

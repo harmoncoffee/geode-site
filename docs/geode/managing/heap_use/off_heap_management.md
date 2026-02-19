@@ -20,14 +20,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="managing-off-heap-memory"></a>
+<a id="managing-off-heap-memory"></a> Geode 
 
 
  can be configured to store region values in off-heap memory, which is memory within the JVM that is not subject to Java garbage collection.
 
 Garbage collection (GC) within a JVM can prove to be a performance impediment. A server cannot exert control over when garbage collection within the JVM heap memory takes place, and the server has little control over the triggers for invocation. Off-heap memory offloads values to a storage area that is not subject to Java GC. By taking advantage of off-heap storage, an application can reduce the amount of heap storage that is subject to GC overhead.
 
-Off-heap memory works in conjunction with the heap, it does not replace it. The keys are stored in heap memory space. 's own memory manager handles the off-heap memory with better performance than the Java garbage collector would for certain sets of region data.
+Off-heap memory works in conjunction with the heap, it does not replace it. The keys are stored in heap memory space. Geode 's own memory manager handles the off-heap memory with better performance than the Java garbage collector would for certain sets of region data.
 
 The resource manager monitors the contents of off-heap memory and invokes memory management operations in accordance with two thresholds similar to those used for monitoring the JVM heap: `eviction-off-heap-percentage` and `critical-off-heap-percentage`.
 
@@ -61,7 +61,7 @@ Off-heap storage is best suited to data patterns where:
 -   The values do not need to be frequently deserialized
 -   Many of the values are long-lived reference data
 
-Be aware that  has to perform extra work to access the data stored in off-heap memory since it is stored in serialized form. This extra work may cause some use cases to run slower in an off-heap configuration, even though they use less memory and avoid garbage collection overhead. However, even with the extra deserialization, off-heap storage may give you the best performance. Features that may increase overhead include
+Be aware that Geode has to perform extra work to access the data stored in off-heap memory since it is stored in serialized form. This extra work may cause some use cases to run slower in an off-heap configuration, even though they use less memory and avoid garbage collection overhead. However, even with the extra deserialization, off-heap storage may give you the best performance. Features that may increase overhead include
 
 -   frequent updates
 -   stored values of widely varying sizes
@@ -76,7 +76,7 @@ Region values that are less than or equal to eight bytes in size will not reside
 
 ## Controlling Off-heap Use with the Resource Manager
 
-The  resource manager controls off-heap memory by means of two thresholds, in much the same way as it does JVM heap memory. See [Using the  Resource Manager](heap_management.html#how_the_resource_manager_works). The resource manager prevents the cache from consuming too much off-heap memory by evicting old data. If the off-heap memory manager is unable to keep up, the resource manager refuses additions to the cache until the off-heap memory manager has freed an adequate amount of memory.
+The Geode resource manager controls off-heap memory by means of two thresholds, in much the same way as it does JVM heap memory. See [Using the Geode Resource Manager](heap_management.html#how_the_resource_manager_works). The resource manager prevents the cache from consuming too much off-heap memory by evicting old data. If the off-heap memory manager is unable to keep up, the resource manager refuses additions to the cache until the off-heap memory manager has freed an adequate amount of memory.
 
 The resource manager has two threshold settings, each expressed as a percentage of the total off-heap memory. Both are disabled by default.
 
@@ -154,7 +154,7 @@ off-heap-memory-size=4096m
 off-heap-memory-size=120g
 ```
 
-See [gemfire.properties and gfsecurity.properties ( Properties)](../../reference/topics/gemfire_properties.html) for details.
+See [gemfire.properties and gfsecurity.properties ( Geode Properties)](../../reference/topics/gemfire_properties.html) for details.
 
 The cache.xml file supports one region attribute:
 
@@ -189,7 +189,7 @@ For example:
 </cache>
 ```
 
-## <a id="managing-off-heap-memory__section_o4s_tg5_gv" class="no-quick-link"></a>Tuning Off-heap Memory Usage
+## <a id="managing-off-heap-memory__section_o4s_tg5_gv" class="no-quick-link"></a>Tuning Off-heap Memory Usage Geode 
 
  collects statistics on off-heap memory usage which you can view with the gfsh `show metrics` command. See [Off-Heap (OffHeapMemoryStats)](../../reference/statistics_list.html#topic_ohc_tjk_w5) for a description of available off-heap statistics.
 

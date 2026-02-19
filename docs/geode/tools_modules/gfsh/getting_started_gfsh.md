@@ -25,7 +25,7 @@ The `gfsh` utility provides useful features for a shell environment, including c
 
 **To view a list of available gfsh commands, press Tab at an empty prompt.**
 
-The list of commands you see depends on whether you are connected to a  cluster. If you are not connected, you see a list of local commands that are available.
+The list of commands you see depends on whether you are connected to a Geode cluster. If you are not connected, you see a list of local commands that are available.
 
 **Use the hint command to get information on a particular topic.**
 
@@ -33,7 +33,7 @@ The hint command displays a one-line description and associated commands for a s
 
 ``` pre
 gfsh>hint Data
-User data as stored in regions of the  distributed system.
+User data as stored in regions of the Geode distributed system.
 
 clear defined indexes: Clears all the defined indexes.
 create defined indexes: Creates all the defined indexes.

@@ -17,11 +17,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The `JSONFormatter` API allows you to put JSON formatted documents into regions and retrieve them later by storing the documents internally as PdxInstances.
+The `JSONFormatter` API allows you to put JSON formatted documents into regions and retrieve them later by storing the documents internally as PdxInstances. Geode 
 
- supports the use of JSON formatted documents natively. When you add a JSON document to a  cache, you call the JSONFormatter APIs to transform them into the PDX format (as a `PdxInstance`), which enables  to understand the JSON document at a field level.
+ supports the use of JSON formatted documents natively. When you add a JSON document to a Geode cache, you call the JSONFormatter APIs to transform them into the PDX format (as a `PdxInstance`), which enables Geode to understand the JSON document at a field level.
 
-In terms of querying and indexing, because the documents are stored internally as PDX, applications can index on any field contained inside the JSON document including any nested field (within JSON objects or JSON arrays.) Any queries run on these stored documents will return PdxInstances as results. To update a JSON document stored in  , you can execute a function on the PdxInstance.
+In terms of querying and indexing, because the documents are stored internally as PDX, applications can index on any field contained inside the JSON document including any nested field (within JSON objects or JSON arrays.) Any queries run on these stored documents will return PdxInstances as results. To update a JSON document stored in Geode , you can execute a function on the PdxInstance.
 
 You can then use the `JSONFormatter` to convert the PdxInstance results back into the JSON document.
 
@@ -29,14 +29,14 @@ You can then use the `JSONFormatter` to convert the PdxInstance results back int
 
 The `JSONFormatter` class has four static methods that are used to convert JSON document into PdxInstances and then to convert those PdxInstances back into JSON document.
 
-You need to call the following methods before putting any JSON document into the  region:
+You need to call the following methods before putting any JSON document into the Geode region:
 
 -   `fromJSON`. Creates a PdxInstance from a JSON byte array. Returns the PdxInstance.
 -   `fromJSON`. Creates a PdxInstance from a JSON string. Returns the PdxInstance.
 
-After putting the JSON document into a region as a PdxInstance, you can execute standard  queries and create indexes on the JSON document in the same manner you would query or index any other  PdxInstance.
+After putting the JSON document into a region as a PdxInstance, you can execute standard Geode queries and create indexes on the JSON document in the same manner you would query or index any other Geode PdxInstance.
 
-After executing a  query or calling `region.get`, you can use the following methods to convert a PdxInstance back into the JSON format:
+After executing a Geode query or calling `region.get`, you can use the following methods to convert a PdxInstance back into the JSON format:
 
 -   `toJSON`. Reads a PdxInstance and returns a JSON string.
 -   `toJSONByteArray`. Reads a PdxInstance and returns a JSON byte array.
@@ -45,7 +45,7 @@ For more information on using the JSONFormatter, see the Java API documentation 
 
 # Sorting Behavior of Serialized JSON Fields
 
-By default,  serialization creates a unique pdx typeID for each unique JSON document, even if the
+By default, Geode serialization creates a unique pdx typeID for each unique JSON document, even if the
 only difference between the JSON documents is the order in which their fields are specified. 
 
 If you prefer that JSON documents which differ only in the order in which their fields are specified

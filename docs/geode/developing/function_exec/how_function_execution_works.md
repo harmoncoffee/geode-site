@@ -21,7 +21,7 @@ limitations under the License.
 
 ## <a id="how_function_execution_works__section_881D2FF6761B4D689DDB46C650E2A2E1" class="no-quick-link"></a>Where Functions Are Executed
 
-You can execute data-independent functions or data-dependent functions in  in the following places:
+You can execute data-independent functions or data-dependent functions in Geode in the following places:
 
 **For Data-independent Functions**
 
@@ -45,7 +45,7 @@ the function.
 The required permissions for authorization are provided by
 the function's `Function.getRequiredPermissions()` method.
 See [Authorization of Function Execution](../../security/implementing_authorization.html#AuthorizeFcnExecution) for a discussion of this method.
-2.  Given successful authorization,
+2.  Given successful authorization, Geode 
  invokes the function on all members where it
 needs to run. The locations are determined by the `FunctionService` `on*`
 method calls, region configuration, and any filters.
@@ -54,7 +54,7 @@ method calls, region configuration, and any filters.
 
 ## <a id="how_function_execution_works__section_14FF9932C7134C5584A14246BB4D4FF6" class="no-quick-link"></a>Highly Available Functions
 
-Generally, function execution errors are returned to the calling application. You can code for high availability for `onRegion` functions that return a result, so  automatically retries a function if it does not execute successfully. You must code and configure the function to be highly available, and the calling application must invoke the function using the results collector `getResult` method.
+Generally, function execution errors are returned to the calling application. You can code for high availability for `onRegion` functions that return a result, so Geode automatically retries a function if it does not execute successfully. You must code and configure the function to be highly available, and the calling application must invoke the function using the results collector `getResult` method.
 
 When a failure (such as an execution error or member crash while executing) occurs, the system responds by:
 

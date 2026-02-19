@@ -20,7 +20,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-To upgrade an existing installation to a new version of Apache Geode,
+To upgrade an existing installation to a new version of Apache Geode Apache Geode,
 follow these general steps:
 
 1. Back up your current system.
@@ -41,7 +41,7 @@ you will need to accomplish the upgrade. Then select the appropriate upgrade pro
 
 -   **[Planning an Upgrade](upgrade_planning.html)**
 
-    This section discusses the upgrade paths for various 
+    This section discusses the upgrade paths for various Apache Geode 
     versions, and it lists information you need to know before you begin
     the upgrade process.
 

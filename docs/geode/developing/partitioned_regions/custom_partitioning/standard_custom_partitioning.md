@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-By default,  partitions each data entry
+By default, Geode partitions each data entry
 into a bucket using a hashing policy on the key.
 Additionally, the physical location of the key-value pair
 is abstracted away from the application.
@@ -44,7 +44,7 @@ To custom-partition your region data, follow two steps:
 
 -   Implement the `org.apache.geode.cache.PartitionResolver` interface
 in one of the following ways,
-listed here in the search order used by :
+listed here in the search order used by Geode :
     -   **Using a custom class**. Implement the `PartitionResolver` within your class, and then specify your class as the partition
 resolver during region creation.
     -   **Using the key's class**. Have the entry key's class implement the `PartitionResolver` interface.
@@ -83,7 +83,7 @@ desired bucket.
 `getRoutingObject`.  Do not use the value associated with the key or any additional metadata in the implementation of `getRoutingObject`.
 Do not use `getOperation` or `getValue`.
 
-**Implementing the String Prefix Partition Resolver**
+**Implementing the String Prefix Partition Resolver** Geode 
 
  provides an implementation of a
 string-based partition resolver in
@@ -97,7 +97,7 @@ will be returned by `getRoutingObject`.
 
 **Configuring the Partition Resolver Region Attribute**
 
-Configure the region so  finds your resolver
+Configure the region so Geode finds your resolver
 for all region operations.
 
 - **Custom class**.

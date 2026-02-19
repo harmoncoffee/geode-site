@@ -39,7 +39,7 @@ $ gfsh
  / /__/ / ____/  _____/ / /    / /
 /______/_/      /______/_/    /_/
 
-Monitor and Manage 
+Monitor and Manage Geode 
 gfsh>
 ```
 
@@ -176,7 +176,7 @@ If the server starts successfully, the following output appears:
 
 ``` pre
 gfsh>start server --name=server1 --locators=localhost[10334]
-Starting a  Server in /home/username/gfsh_tutorial/server1/server1.log...
+Starting a Geode Server in /home/username/gfsh_tutorial/server1/server1.log...
 ...
 Server in /home/username/gfsh_tutorial/server1 on 192.0.2.0[40404] as server1
 is currently online.
@@ -288,7 +288,7 @@ Because only one server is in the cluster at the moment, the command creates the
 
 ``` pre
 gfsh>start server --name=server2 --server-port=40405
-Starting a  Server in /home/username/gfsh_tutorial/server2...
+Starting a Geode Server in /home/username/gfsh_tutorial/server2...
 ...
 Server in /home/username/gfsh_tutorial/server2 on 192.0.2.0[40405] as
 server2 is currently online.

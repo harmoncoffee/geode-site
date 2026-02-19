@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section shows the hierarchy of `<client-cache>` element sub-elements that you use to configure  caches and clients.
+This section shows the hierarchy of `<client-cache>` element sub-elements that you use to configure Geode caches and clients.
 
 For details, see [&lt;client-cache&gt; Element Reference.](client-cache.html)
 

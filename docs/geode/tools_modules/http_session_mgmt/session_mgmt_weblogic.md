@@ -21,15 +21,15 @@ limitations under the License.
 
 You implement session caching with the HTTP Session Management Module for AppServers with a special filter, defined in the `web.xml`, which is configured to intercept and wrap all requests.
 
-You can use this HTTP module with a variety of application servers. Wrapping each request allows the interception of `getSession()` calls to be handled by  instead of the native container. This approach is a generic solution, which is supported by any container that implements the Jakarta Servlet 6.0 specification (Jakarta EE 10).
+You can use this HTTP module with a variety of application servers. Wrapping each request allows the interception of `getSession()` calls to be handled by Geode instead of the native container. This approach is a generic solution, which is supported by any container that implements the Jakarta Servlet 6.0 specification (Jakarta EE 10).
 
 -   **[Setting Up the HTTP Module for AppServers](../http_session_mgmt/weblogic_setting_up_the_module.html)**
 
     To use the module, you need to modify your application's `web.xml` files. Configuration is slightly different depending on the topology you are setting up.
 
--   **[Changing the Default  Configuration in the AppServers Module](../http_session_mgmt/weblogic_changing_gf_default_cfg.html)**
+-   **[Changing the Default Geode Configuration in the AppServers Module](../http_session_mgmt/weblogic_changing_gf_default_cfg.html)**
 
-    By default, the AppServers module will run  automatically with preconfigured settings. You can change these  settings.
+    By default, the AppServers module will run Geode automatically with preconfigured settings. You can change these Geode settings.
 
 
 

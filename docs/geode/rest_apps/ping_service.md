@@ -49,7 +49,7 @@ GET /gemfire/v1/ping
 | Status Code               | Description                                                                                |
 |---------------------------|--------------------------------------------------------------------------------------------|
 | 404 NOT FOUND             | The Developer REST API service is not available.                                           |
-| 500 INTERNAL SERVER ERROR | Encountered error at server. Check the  exception trace. |
+| 500 INTERNAL SERVER ERROR | Encountered error at server. Check the Geode exception trace. |
 
 
 

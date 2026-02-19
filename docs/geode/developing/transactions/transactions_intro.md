@@ -23,7 +23,7 @@ limitations under the License.
 
 This section introduces  transactions.
  offers an API for client applications
-that do transactional work.
+that do transactional work. Geode 
  implements optimistic transactions,
 choosing the much higher transaction performance they offer over the slow,
 locking methods of a traditional relational database.
@@ -45,7 +45,7 @@ Consistency requires that data written within a transaction must observe the key
 ### <a id="transaction_semantics__section_126A24EC499D4CF39AE766A0B526A9A5" class="no-quick-link"></a>Isolation
 
 Isolation is the level at which transactional state is
-visible to system components.
+visible to system components. Geode 
  transactions have repeatable read isolation.
 Once the committed value is read for a given key,
 it always returns that same value.
@@ -66,7 +66,7 @@ See [Changing the Handling of Dirty Reads](design_considerations.html#transactio
 ### <a id="transaction_semantics__section_F092E368724945BCBF8E5DCB36B97EB4" class="no-quick-link"></a>Durability
 
 Relational databases provide durability by using disk storage for
-recovery and transaction logging.
+recovery and transaction logging. Geode 
  is optimized for performance
 and does not support on-disk durability for transactions.
 

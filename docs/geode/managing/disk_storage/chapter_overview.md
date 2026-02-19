@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-With  disk stores, you can persist data to disk as a backup to your in-memory copy and overflow data to disk when memory use gets too high.
+With Apache Geode disk stores, you can persist data to disk as a backup to your in-memory copy and overflow data to disk when memory use gets too high.
 
 -   **[How Disk Stores Work](how_disk_stores_work.html)**
 
@@ -31,11 +31,11 @@ With  disk stores, you can persist data to disk as a backup to your in-memory co
 
 -   **[Disk Store Operation Logs](operation_logs.html)**
 
-    At creation, each operation log is initialized at the disk store's `max-oplog-size`, with the size divided between the `crf` and `drf` files. When the oplog is closed,  shrinks the files to the space used in each file.
+    At creation, each operation log is initialized at the disk store's `max-oplog-size`, with the size divided between the `crf` and `drf` files. When the oplog is closed, Apache Geode shrinks the files to the space used in each file.
 
 -   **[Configuring Disk Stores](overview_using_disk_stores.html)**
 
-    In addition to the disk stores you specify,  has a default disk store that it uses when disk use is configured with no disk store name specified. You can modify default disk store behavior.
+    In addition to the disk stores you specify, Apache Geode has a default disk store that it uses when disk use is configured with no disk store name specified. You can modify default disk store behavior.
 
 -   **[Optimizing a System with Disk Stores](optimize_availability_and_performance.html)**
 

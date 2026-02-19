@@ -19,9 +19,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The  data storage and distribution models put your data in the right place at the right time. You should understand all the options for data storage in  before you configure your data regions.
+The Apache Geode data storage and distribution models put your data in the right place at the right time. You should understand all the options for data storage in Geode before you configure your data regions.
 
--   **[Storage and Distribution Options](storage_distribution_options.html)**
+-   **[Storage and Distribution Options](storage_distribution_options.html)** Geode 
 
      provides several models for data storage and distribution, including partitioned or replicated regions as well as distributed or non-distributed regions (local cache storage).
 

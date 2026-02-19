@@ -33,7 +33,7 @@ Check the following sections for more information:
 
 -   **[How Function Execution Works](how_function_execution_works.html)**
 
--   **[Executing a Function in ](function_execution.html)**
+-   **[Executing a Function in Apache Geode ](function_execution.html)**
 
 
 

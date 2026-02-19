@@ -21,7 +21,7 @@ limitations under the License.
 <a id="topic_7BCB054803CF48FE8688394C5C39000A"></a>
 
 
-Check the status of the cluster configuration service and  member processes, including locators, gateway receivers, gateway senders, and servers.
+Check the status of the cluster configuration service and Geode member processes, including locators, gateway receivers, gateway senders, and servers.
 
 -   **[status cluster-config-service](#topic_ts1_qb1_dk2)**
 

@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The cluster configuration service exports and imports configurations created using `gfsh` for an entire  cluster.
+The cluster configuration service exports and imports configurations created using `gfsh` for an entire Apache Geode cluster.
 
 The cluster configuration service saves the cluster configuration as you create regions, disk-stores and other objects using `gfsh` commands. You can export this configuration as well as any jar files that contain application files to a ZIP archive and then import this configuration to create a new cluster.
 
@@ -32,7 +32,7 @@ cluster in a ZIP archive. This ZIP file contains subdirectories for cluster-leve
 directory for each group specified in the cluster. The contents of these directories are described
 in [Cluster Configuration Files and Troubleshooting](gfsh_config_troubleshooting.html#concept_ylt_2cb_y4).
 
-To export a cluster configuration, run the `gfsh` `export cluster-configuration` command while connected to a  cluster. For example:
+To export a cluster configuration, run the `gfsh` `export cluster-configuration` command while connected to a Geode cluster. For example:
 
 ``` pre
 export cluster-configuration --zip-file-name=/home/username/configs/myClusterConfig.zip

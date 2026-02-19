@@ -17,19 +17,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-By default, the Tomcat module will run  automatically with pre-configured settings. You can change these  settings.
+By default, the Tomcat module will run Geode automatically with pre-configured settings. You can change these Geode settings.
 
 Here are the default settings:
 
 -   Locators are used for member discovery.
 -   The region name is set to `gemfire_modules_sessions`.
 -   The cache region is replicated for peer-to-peer configurations and partitioned (with redundancy turned on) for client/server configurations.
--    clients have local caching turned on and when the local cache needs to evict data, it will evict least-recently-used (LRU) data first.
+- Geode clients have local caching turned on and when the local cache needs to evict data, it will evict least-recently-used (LRU) data first.
 
 **Note:**
 On the application server side, the default inactive interval for session expiration is set to 30 minutes. To change this value, refer to [Session Expiration](tc_additional_info.html#tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4).
 
-## <a id="tomcat_changing_gf_default_cfg__section_changing_sys_props" class="no-quick-link"></a>Changing  Distributed System Properties
+## <a id="tomcat_changing_gf_default_cfg__section_changing_sys_props" class="no-quick-link"></a>Changing Geode Distributed System Properties Geode 
 
  system properties must be set by adding properties to Tomcat's `server.xml` file. When setting properties, use the following syntax:
 
@@ -54,19 +54,19 @@ If the `xxxLifecycleListener` is a `PeerToPeerCacheLifecycleListener`, then a mi
  /> 
 ```
 
-The list of Tomcat's configurable `server.xml` system properties includes any of the properties that can be specified in 's `gemfire.properties` file. The following list contains some of the properties that can be configured.
+The list of Tomcat's configurable `server.xml` system properties includes any of the properties that can be specified in Geode 's `gemfire.properties` file. The following list contains some of the properties that can be configured.
 
 | Property                                 | Description                           | Default  |
 |------------------------------------------|---------------------------------------|----------|
 | cache-xml-file                            | name of the cache configuration file | `cache-peer.xml` for peer-to-peer, `cache-client.xml` for client/server |
-| locators (only for peer-to-peer topology) | (required) list of locators (host\[port\]) used by  members; if a single locator listens on its default port, then set this value to `"localhost[10334]"` | empty string                                                            |
+| locators (only for peer-to-peer topology) | (required) list of locators (host\[port\]) used by Geode members; if a single locator listens on its default port, then set this value to `"localhost[10334]"` | empty string                                                            |
 | log-file                                  | name of the  log file | `gemfire_modules.log`   |
 | statistic-archive-file                    | name of the  statistics file                    | `gemfire_modules.gfs` |
-| statistic-sampling-enabled                | whether  statistics sampling is enabled         | false                 |
+| statistic-sampling-enabled                | whether Geode statistics sampling is enabled         | false                 |
 
 For more information on these properties, along with the full list of properties, see the [Reference](../../reference/book_intro.html#reference).
 
-In addition to the standard  system properties, the following cache-specific properties can also be configured with the `LifecycleListener`.
+In addition to the standard Geode system properties, the following cache-specific properties can also be configured with the `LifecycleListener`.
 
 | Property               | Description                                                                                     | Default      |
 |------------------------|-------------------------------------------------------------------------------------------------|--------------|
@@ -74,11 +74,11 @@ In addition to the standard  system properties, the following cache-specific pro
 | evictionHeapPercentage | percentage of heap at which session eviction begins                                             | 80.0         |
 | rebalance              | whether a rebalance of the cache should be done when the application server instance is started | false        |
 
-Although these properties are not part of the standard  system properties, they apply to the entire JVM instance and are therefore also handled by the `LifecycleListener`. For more information about managing the heap, refer to [Managing Heap and Off-heap Memory](../../managing/heap_use/heap_management.html#resource_manager).
+Although these properties are not part of the standard Geode system properties, they apply to the entire JVM instance and are therefore also handled by the `LifecycleListener`. For more information about managing the heap, refer to [Managing Heap and Off-heap Memory](../../managing/heap_use/heap_management.html#resource_manager).
 
 ## <a id="tomcat_changing_gf_default_cfg__section_changing_cache_config_props" class="no-quick-link"></a>Changing Cache Configuration Properties
 
-To edit  cache properties such as the name and the characteristics of the cache region, you add these properties to Tomcat's `context.xml` file. When adding properties, unless otherwise specified, use the following syntax:
+To edit Geode cache properties such as the name and the characteristics of the cache region, you add these properties to Tomcat's `context.xml` file. When adding properties, unless otherwise specified, use the following syntax:
 
 ``` pre
 <Manager 
@@ -104,7 +104,7 @@ For example, this entry creates a partitioned region by the name of "my\_region"
 The following parameters are the cache configuration parameters that can be added to Tomcat's `context.xml` file.
 
 <dt>**CommitSessionValve**</dt>
-<dd>Whether to wait until the end of the HTTP request to save all session attribute changes to the  cache; if the configuration line is present in the application's `context.xml` file, then only one put will be performed into the cache for the session per HTTP request. If the configuration line is not included, then the session is saved each time the `setAttribute` or `removeAttribute` method is invoked. As a consequence, multiple puts are performed into the cache during a single session. This configuration setting is recommended for any applications that modify the session frequently during a single HTTP request.</dd>
+<dd>Whether to wait until the end of the HTTP request to save all session attribute changes to the Geode cache; if the configuration line is present in the application's `context.xml` file, then only one put will be performed into the cache for the session per HTTP request. If the configuration line is not included, then the session is saved each time the `setAttribute` or `removeAttribute` method is invoked. As a consequence, multiple puts are performed into the cache during a single session. This configuration setting is recommended for any applications that modify the session frequently during a single HTTP request.</dd>
 
 Default: Set
 
@@ -119,7 +119,7 @@ To disable this configuration, remove or comment out the following line from Tom
 
 Default: `false`
 
-The  API equivalent to setting this parameter:
+The Geode API equivalent to setting this parameter:
 
 ``` pre
 // Create factory
@@ -133,7 +133,7 @@ factory.addCacheListener(new DebugCacheListener());
 
 Default: `false` for peer-to-peer, `true` for client/server
 
-The  API equivalent to setting this parameter:
+The Geode Geode API equivalent to setting this parameter:
 
 ``` pre
 // For peer-to-peer members: 
@@ -159,7 +159,7 @@ Cache.createRegionFactory(regionAttributesId);
 
 Default: gemfire\_modules\_sessions
 
-The  API equivalent to setting this parameter:
+The Geode API equivalent to setting this parameter:
 
 ``` pre
 // Creates a region with the specified name 

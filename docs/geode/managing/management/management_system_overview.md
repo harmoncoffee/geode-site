@@ -19,9 +19,9 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
-'s management and monitoring system consists of one JMX Manager node (there should only be one) and one or more managed nodes within a cluster. All members in the cluster are manageable through MBeans and  Management Service APIs.
+'s management and monitoring system consists of one JMX Manager node (there should only be one) and one or more managed nodes within a cluster. All members in the cluster are manageable through MBeans and Geode Management Service APIs.
 
 ## <a id="concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_ABE7007BE3C244FBA0418C4B5BE7E1F2" class="no-quick-link"></a>Architecture
 
@@ -29,20 +29,20 @@ The following diagram depicts the architecture of the management and monitoring 
 
 <img src="../../images/JMX_Architecture.png" id="concept_1BAE2CE1146B4347ABD61F50B9F9781F__image_1E9E8575E13D4087BC47B6A288097B7A" class="image" />
 
-In this architecture every  member is manageable. All  MBeans for the local  processes are automatically registered in the Platform MBeanServer (the default MBeanServer of each JVM that hosts platform MXBeans.)
+In this architecture every Geode member is manageable. All Geode MBeans for the local Geode processes are automatically registered in the Platform MBeanServer (the default MBeanServer of each JVM that hosts platform MXBeans.)
 
 ## <a id="concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_1CF2B237C16F4095A609E62F0C7146C1" class="no-quick-link"></a>Managed Node
 
 Each member of a cluster is a managed node. Any node that is not currently also acting as a JMX Manager node is referred to simply as a managed node. A managed node has the following resources so that it can answer JMX queries both locally and remotely:
 
--   Local MXBeans that represent the locally monitored components on the node. See [List of  JMX MBeans](list_of_mbeans.html#topic_4BCF867697C3456D96066BAD7F39FC8B) for a list of possible MXBeans existing for the managed node.
+-   Local MXBeans that represent the locally monitored components on the node. See [List of Geode JMX MBeans](list_of_mbeans.html#topic_4BCF867697C3456D96066BAD7F39FC8B) for a list of possible MXBeans existing for the managed node.
 -   Built-in platform MBeans.
 
 ## <a id="concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_8604838507194C8B86F1420FBA46894C" class="no-quick-link"></a>JMX Manager Node
 
-A JMX Manager node is a member that can manage other  members---that is, other managed nodes---as well as itself. A JMX Manager node can manage all other members in the cluster.
+A JMX Manager node is a member that can manage other Geode members---that is, other managed nodes---as well as itself. A JMX Manager node can manage all other members in the cluster.
 
-To convert a managed node to a JMX Manager node, you configure the  property `jmx-manager=true`, in the `gemfire.properties` file, and start the member as a JMX Manager node.
+To convert a managed node to a JMX Manager node, you configure the Geode property `jmx-manager=true`, in the `gemfire.properties` file, and start the member as a JMX Manager node.
 
 You start the member as a JMX Manager node when you provide `--J=-Dgemfire.jmx-manager=true` as an argument to either the `start server` or `start locator` command. See [Starting a JMX Manager](jmx_manager_operations.html#topic_686158E9AFBD47518BE1B4BEB232C190) for more information.
 
@@ -66,19 +66,19 @@ JConsole (and other similar JMX clients that support Sun's Attach API) can conne
 
 JConsole (and other JMX clients) can connect to any JVM if that JVM is configured to start an RMI connector. This allows remote connections from other machines.
 
-JConsole can connect to any  member, but if it connects to a non-JMX-Manager member, JConsole only detects the local MBeans for the node, and not MBeans for the cluster.
+JConsole can connect to any Geode member, but if it connects to a non-JMX-Manager member, JConsole only detects the local MBeans for the node, and not MBeans for the cluster.
 
-When a  locator or server becomes a JMX Manager for the cluster, it enables the RMI connector. JConsole can then connect only to that one JVM to view the MBeans for the entire cluster. It does not need to connect to all the other JVMs.  manages the inter-JVM communication required to provide a federated view of all MBeans in the cluster.
+When a Geode locator or server becomes a JMX Manager for the cluster, it enables the RMI connector. JConsole can then connect only to that one JVM to view the MBeans for the entire cluster. It does not need to connect to all the other JVMs. Geode manages the inter-JVM communication required to provide a federated view of all MBeans in the cluster.
 
 `gfsh` can only connect to a JMX Manager or to a locator. If connected to a locator, the locator provides the necessary connection information for the existing JMX Manager. If the locator detects a JMX Manager is not already running in the cluster, the locator makes itself a JMX Manager. gfsh cannot connect to other non-Manager or non-locator members.
 
 For information on how to configure the RMI registry and RMI connector, see [Configuring RMI Registry Ports and RMI Connectors](configuring_rmi_connector.html#concept_BC793A7ACF9A4BD9A29C2DCC6894767D).
 
-## <a id="concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_A3F9E1594982480DA019CBA3E93CA895" class="no-quick-link"></a>Management APIs
+## <a id="concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_A3F9E1594982480DA019CBA3E93CA895" class="no-quick-link"></a>Management APIs Geode 
 
- management APIs represent the  cluster to a JMX user. However, they do not provide functionality that is otherwise present in JMX. They only provide a gateway into various services exclusively offered by  monitoring and management.
+ management APIs represent the Geode cluster to a JMX user. However, they do not provide functionality that is otherwise present in JMX. They only provide a gateway into various services exclusively offered by Geode monitoring and management.
 
-The entry point to  management is through the ManagementService interface. For example, to create an instance of the Management Service:
+The entry point to Geode management is through the ManagementService interface. For example, to create an instance of the Management Service:
 
 ``` pre
 ManagementService service = ManagementService.getManagementService(cache);
@@ -86,12 +86,12 @@ ManagementService service = ManagementService.getManagementService(cache);
 
 The resulting ManagementService instance is specific to the provided cache and its cluster. The implementation of getManagementService is a singleton for now but may eventually support multiple cache instances.
 
-You can use the  management APIs to accomplish the following tasks:
+You can use the Geode management APIs to accomplish the following tasks:
 
 -   Monitor the health status of clients.
 -   Obtain the status and results of individual disk backups.
 -   View metrics related to disk usage and performance for a particular member.
--   Browse  properties set for a particular member.
+-   Browse Geode properties set for a particular member.
 -   View JVM metrics such as memory, heap, and thread usage.
 -   View network metrics, such as bytes received and sent.
 -   View partition region attributes such as total number of buckets, redundant copy, and maximum memory information.
@@ -106,9 +106,9 @@ You can also execute gfsh commands using the ManagementService API. See [Executi
 
 This section lists the currently available tools for managing and monitoring :
 
--   **gfsh**.  command-line interface that provides a simple & powerful command shell that supports the administration, debugging and deployment of  applications. It features context sensitive help, scripting and the ability to invoke any commands from within the application using a simple API. See [gfsh](../../tools_modules/gfsh/chapter_overview.html).
--   ** Pulse**. Easy-to-use, browser-based dashboard for monitoring  deployments.  Pulse provides an integrated view of all  members within a cluster. See [ Pulse](../../tools_modules/pulse/pulse-overview.html).
--   **Pulse Data Browser**. This  Pulse utility provides a graphical interface for performing OQL ad-hoc queries in a  cluster. See [Data Browser](../../tools_modules/pulse/pulse-views.html#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__sec_pulsedatabrowser).
+-   **gfsh**.  command-line interface that provides a simple & powerful command shell that supports the administration, debugging and deployment of Geode applications. It features context sensitive help, scripting and the ability to invoke any commands from within the application using a simple API. See [gfsh](../../tools_modules/gfsh/chapter_overview.html).
+-   ** Geode Pulse**. Easy-to-use, browser-based dashboard for monitoring  deployments.  Pulse provides an integrated view of all Geode members within a cluster. See [ Geode Pulse](../../tools_modules/pulse/pulse-overview.html).
+-   **Pulse Data Browser**. This Geode Pulse utility provides a graphical interface for performing OQL ad-hoc queries in a Geode cluster. See [Data Browser](../../tools_modules/pulse/pulse-views.html#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__sec_pulsedatabrowser).
 -   **Other Java Monitoring Tools such as JConsole and jvisualvm.** JConsole is a JMX-based management and monitoring tool provided in the Java 2 Platform that provides information on the performance and consumption of resources by Java applications. See [http://docs.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html](http://docs.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html). **Java VisualVM (jvisualvm)** is a profiling tool for analyzing your Java Virtual Machine. Java VisualVM is useful to Java application developers to troubleshoot applications and to monitor and improve the applications' performance. Java VisualVM can allow developers to generate and analyse heap dumps, track down memory leaks, perform and monitor garbage collection, and perform lightweight memory and CPU profiling. For more details on using jvisualvm, see [http://docs.oracle.com/javase/6/docs/technotes/tools/share/jvisualvm.html](http://docs.oracle.com/javase/6/docs/technotes/tools/share/jvisualvm.html).
 
 

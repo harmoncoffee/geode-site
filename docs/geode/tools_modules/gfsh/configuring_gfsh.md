@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The `gfsh.bat` and `gfsh` bash script automatically append the required  and JDK .jar libraries to your existing CLASSPATH. There are user-configurable properties you can set for security, environment variables, logging, and troubleshooting.
+The `gfsh.bat` and `gfsh` bash script automatically append the required Apache Geode and JDK .jar libraries to your existing CLASSPATH. There are user-configurable properties you can set for security, environment variables, logging, and troubleshooting.
 
 
 ## <a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_0D2EEA7A9ED54DFDB2E1EE955E47921E" class="no-quick-link"></a>JAR Libraries in CLASSPATH
@@ -34,7 +34,7 @@ On some operating systems, you may need to ensure that the hostname of your mach
 
 ## <a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_3FA4CD2B451B4A30A12D30DDE8DF8619" class="no-quick-link"></a>Configuring gfsh Security
 
-Since `gfsh` must connect to a JMX Manager member to run certain commands (namely those commands that manage and monitor other members), JMX Manager configuration properties can affect `gfsh` security. In `gemfire.properties`, the following  properties can affect `gfsh` connection settings to the JMX Manager:
+Since `gfsh` must connect to a JMX Manager member to run certain commands (namely those commands that manage and monitor other members), JMX Manager configuration properties can affect `gfsh` security. In `gemfire.properties`, the following Geode properties can affect `gfsh` connection settings to the JMX Manager:
 
 -   `jmx-manager-ssl`
 -   `jmx-manager-port`
@@ -92,7 +92,7 @@ gfsh writes several log files for any members that are started via gfsh. Useful 
 
 ## Viewing Standard Output and Standard Error
 
-By default,  does not show messages written by the application to standard output and
+By default, Geode does not show messages written by the application to standard output and
 standard error. To allow these messages to be written to the locator and server log files, respectively,
 specify the `--redirect-output` option with the gfsh `start locator` or `start server` commands. For
 example, the following command causes `stdout` and `stderr` messages to be written to the
@@ -123,9 +123,9 @@ A history of commands that have been executed successfully is logged in `.gfsh.h
 
 ## <a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_C84414FF16AB4279A43A41C6C8B61A7E" class="no-quick-link"></a>JMX Manager Update Rate and System Monitoring
 
-When you perform data operations (such as put) and then monitor the state of the system (such as using the gfsh `show metrics` command or  Pulse), the monitored system may not immediately reflect the most recent operations. For example, if you perform a put operation and then immediately execute the `show metrics` gfsh command, you may not see the correct number of entries in the region. The management layer updates every 2 seconds. Wait a few seconds after performing operational activity to see the most accurate results.
+When you perform data operations (such as put) and then monitor the state of the system (such as using the gfsh `show metrics` command or Geode Pulse), the monitored system may not immediately reflect the most recent operations. For example, if you perform a put operation and then immediately execute the `show metrics` gfsh command, you may not see the correct number of entries in the region. The management layer updates every 2 seconds. Wait a few seconds after performing operational activity to see the most accurate results.
 
-You can modify the `jmx-manager-update-rate` property in `gemfire.properties` to increase or decrease the rate (specified in milliseconds) at which updates are pushed to the JMX Manager. This property setting should be greater than or equal to the `statistic-sample-rate`. You may want to increase this rate if you are experiencing performance issues; however, setting this value too high will cause stale values to be seen in `gfsh` and  Pulse.
+You can modify the `jmx-manager-update-rate` property in `gemfire.properties` to increase or decrease the rate (specified in milliseconds) at which updates are pushed to the JMX Manager. This property setting should be greater than or equal to the `statistic-sample-rate`. You may want to increase this rate if you are experiencing performance issues; however, setting this value too high will cause stale values to be seen in `gfsh` and Geode Pulse.
 
 ## Formatting of Results
 

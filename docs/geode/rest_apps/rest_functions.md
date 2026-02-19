@@ -17,17 +17,17 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
  functions allows you to write and execute server-side transactions and data operations. These may include anything ranging from initializing components or third-party services or aggregating data.
 
 -   **[GET /geode/v1/functions](get_functions.html)**
 
-    List all registered  functions in the cluster.
+    List all registered Geode functions in the cluster.
 
 -   **[POST /geode/v1/functions/\{functionId\}](post_execute_functions.html)**
 
-    Execute  function on entire cluster or on a specified region, members and member groups.
+    Execute Geode function on entire cluster or on a specified region, members and member groups.
 
 
 

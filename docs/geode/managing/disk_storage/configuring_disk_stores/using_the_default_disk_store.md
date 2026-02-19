@@ -24,7 +24,7 @@ limitations under the License.
 You can modify the behavior of the default disk store by specifying the attributes you want for the disk store named "DEFAULT".
 
 <a id="using_the_default_disk_store__section_7D6E1A05D28840AC8606EF0D88E9B373"></a>
-Whenever you use disk stores without specifying the disk store to use,  uses the disk store named "DEFAULT".
+Whenever you use disk stores without specifying the disk store to use, Geode uses the disk store named "DEFAULT".
 
 For example, these region and queue configurations specify persistence and/or overflow, but do not specify the disk-store-name. Because no disk store is specified, these use the disk store named "DEFAULT".
 

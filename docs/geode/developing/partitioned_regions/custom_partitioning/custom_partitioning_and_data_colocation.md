@@ -25,13 +25,13 @@ Custom partitioning and data colocation can be used separately or in conjunction
 
 ## <a id="custom_partitioning_and_data_colocation__section_ABFEE9CB17AF44F1AE252AC10FB5E999" class="no-quick-link"></a>Custom Partitioning
 
-Use custom partitioning to group like entries into region buckets within a region. By default,  assigns new entries to buckets based on the entry key's hash code. With custom partitioning, you can assign your entries to buckets in whatever way you want.
+Use custom partitioning to group like entries into region buckets within a region. By default, Geode assigns new entries to buckets based on the entry key's hash code. With custom partitioning, you can assign your entries to buckets in whatever way you want.
 
 You can generally get better performance if you use custom partitioning to group similar data within a region. For example, a query run on all accounts created in January runs faster if all January account data is hosted by a single member. Grouping all data for a single customer can improve performance of data operations that work on customer data. Data aware function execution also takes advantage of custom partitioning.
 
 With custom partitioning, you have two choices:
 
--   **Standard custom partitioning**. With standard custom partitioning, you group entries into buckets, but you do not specify where the buckets reside.  always keeps the entries in the buckets you have specified, but may move the buckets around for load balancing.
+-   **Standard custom partitioning**. With standard custom partitioning, you group entries into buckets, but you do not specify where the buckets reside. Geode always keeps the entries in the buckets you have specified, but may move the buckets around for load balancing.
 See [Standard Custom Partitioning](standard_custom_partitioning.html) for
 implementation and configuration details.
 -   **Fixed custom partitioning**. With fixed custom partitioning,
@@ -44,7 +44,7 @@ You name specific members as primary and secondary hosts of each partition.
 
     Fixed partitioning has these requirements and caveats:
 
-    -    cannot rebalance fixed partition region data, because it cannot move the buckets around among the host members. You must carefully consider your expected data loads for the partitions you create.
+    - Geode cannot rebalance fixed partition region data, because it cannot move the buckets around among the host members. You must carefully consider your expected data loads for the partitions you create.
     -   With fixed partitioning, the region configuration is different between host members. Each member identifies the named partitions it hosts, and whether it is hosting the primary copy or a secondary copy. You then program a fixed-partition resolver to return the partition id, so the entry is placed on the right members. Only one member can be primary for a particular partition name, and that member cannot be the partition's secondary.
 
     See [Fixed Custom Partitioning](fixed_custom_partitioning.html) for
@@ -52,7 +52,7 @@ implementation and configuration details.
 
 ## <a id="custom_partitioning_and_data_colocation__section_D2C66951FE38426F9C05050D2B9028D8" class="no-quick-link"></a>Data Colocation Between Regions
 
-With data colocation,  stores entries that are related across multiple data regions in a single member.  does this by storing all of the regions' buckets with the same ID together in the same member. During rebalancing operations,  moves these bucket groups together or not at all.
+With data colocation, Geode stores entries that are related across multiple data regions in a single member. Geode does this by storing all of the regions' buckets with the same ID together in the same member. During rebalancing operations, Geode moves these bucket groups together or not at all.
 
 So, for example, if you have one region with customer contact information and another region with customer orders, you can use colocation to keep all contact information and all orders for a single customer in a single member. This way, any operation done for a single customer uses the cache of only a single member.
 
@@ -60,7 +60,7 @@ This figure shows two regions with data colocation where the data is partitioned
 
 <img src="../../images_svg/colocated_partitioned_regions.svg" id="custom_partitioning_and_data_colocation__image_525AC474950F473ABCDE8E372583C5DF" class="image" />
 
-Data colocation requires the same data partitioning mechanism for all of the colocated regions. You can use the default partitioning provided by  or any of the custom partitioning strategies.
+Data colocation requires the same data partitioning mechanism for all of the colocated regions. You can use the default partitioning provided by Geode or any of the custom partitioning strategies.
 
 You must use the same high availability settings across your colocated regions.
 

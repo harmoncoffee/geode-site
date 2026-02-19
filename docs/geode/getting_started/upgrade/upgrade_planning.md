@@ -62,20 +62,20 @@ cluster during a rolling upgrade.
 
 ## <a id="version_compatibilities" class="no-quick-link"></a>Version Compatibilities
 
-Your choice of upgrade procedure depends, in part, on the versions of  involved.
+Your choice of upgrade procedure depends, in part, on the versions of Apache Geode involved.
 
 - **Version Compatibility Between Peers and Cache Servers**
 
-    For best reliability and performance, all server components of a  system should run the same version of the software.
+    For best reliability and performance, all server components of a Geode system should run the same version of the software.
     For the purposes of a rolling upgrade, you can have peers or cache servers running different minor
-    versions of  at the same time, as long as the major version is the same. For example,
+    versions of Apache Geode at the same time, as long as the major version is the same. For example,
     some components can continue to run under version  while you are in the process of upgrading to
     version .
 
 - **Version Compatibility Between Clients and Servers**
 
-    Client/server access is backward compatible. An  cluster can be accessed by clients using any previous version. However, clients
-    cannot connect to servers running older versions of . For example, a client running   can access a cluster
+    Client/server access is backward compatible. An Apache Geode cluster can be accessed by clients using any previous version. However, clients
+    cannot connect to servers running older versions of Apache Geode . For example, a client running   can access a cluster
     running  , but a client running   could not connect to a cluster running  .
 
 - **Version Compatibility Between Sites in Multi-Site (WAN) Deployments**

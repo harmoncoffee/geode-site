@@ -19,11 +19,11 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
  output files are optional and can become quite large. Work with your system administrator to determine where to place them to avoid interfering with other system activities.
 
-<a id="managing_output_files__section_F0CEA4299D274801B9AB700C074F178F"></a>
+<a id="managing_output_files__section_F0CEA4299D274801B9AB700C074F178F"></a> Geode 
  includes several types of optional output files as described below.
 
 -   **Log Files**. Comprehensive logging messages to help you confirm system configuration and to debug problems in configuration and code. Configure log file behavior in the `gemfire.properties` file. See [Logging](../../managing/logging/logging.html#concept_30DB86B12B454E168B80BB5A71268865).

@@ -15,31 +15,31 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Apache Geode 
 
  provides APIs and tools for managing your cluster and monitoring the health of your members.
 
--   **[Management and Monitoring Features](management_and_monitoring_features.html)**
+-   **[Management and Monitoring Features](management_and_monitoring_features.html)** Apache Geode 
 
      uses a federated Open MBean strategy to manage and monitor all members of the cluster. This strategy gives you a consolidated, single-agent view of the cluster.
 
--   **[Overview of  Management and Monitoring Tools](mm_overview.html)**
+-   **[Overview of Geode Management and Monitoring Tools](mm_overview.html)** Geode Geode 
 
-     provides a variety of management tools you can use to manage a  cluster.
+     provides a variety of management tools you can use to manage a Geode cluster.
 
 -   **[Architecture and Components](management_system_overview.html)**
 
-    's management and monitoring system consists of one JMX Manager node (there should only be one) and one or more managed nodes within a cluster. All members in the cluster are manageable through MBeans and  Management Service APIs.
+    's management and monitoring system consists of one JMX Manager node (there should only be one) and one or more managed nodes within a cluster. All members in the cluster are manageable through MBeans and Geode Management Service APIs.
 
 -   **[JMX Manager Operations](jmx_manager_node.html#topic_36C918B4202D45F3AC225FFD23B11D7C)**
 
     Any member can host an embedded JMX Manager, which provides a federated view of all MBeans for the cluster. The member can be configured to be a manager at startup or anytime during its life by invoking the appropriate API calls on the ManagementService.
 
--   **[Federated MBean Architecture](mbean_architecture.html)**
+-   **[Federated MBean Architecture](mbean_architecture.html)** Geode 
 
-     uses MBeans to manage and monitor different parts of . 's federated MBean architecture is scalable and allows you to have a single-agent view of a  cluster.
+     uses MBeans to manage and monitor different parts of . 's federated MBean architecture is scalable and allows you to have a single-agent view of a Geode cluster.
 
--   **[Configuring RMI Registry Ports and RMI Connectors](configuring_rmi_connector.html)**
+-   **[Configuring RMI Registry Ports and RMI Connectors](configuring_rmi_connector.html)** Geode 
 
      programmatically emulates out-of-the-box JMX provided by Java and creates a JMXServiceURL with RMI Registry and RMI Connector ports on all manageable members.
 

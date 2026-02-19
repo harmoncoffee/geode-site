@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-**Note:** This feature is experimental and is subject to change in future releases of .
+**Note:** This feature is experimental and is subject to change in future releases of Apache Geode .
 
 The cluster management service enables you to change the configuration of
 the cluster using a REST interface,
@@ -42,7 +42,7 @@ Having a locator running is sufficient.
 
 - Not all gfsh commands and options are available with this REST interface.
 
-Currently,  provides a Java client to interact with
+Currently, Geode provides a Java client to interact with
 the REST interface.
 There is also a Golang client that interacts with the REST interface.
 

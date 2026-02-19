@@ -15,9 +15,9 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
- uses [Micrometer](https://micrometer.io) to provide an interface for emitting user focused metrics, instrumented in code, to a variety of different consuming Application Performance Monitoring (APM) tools.  has Micrometer instrumentation added to a subset of information available, which can be easily emitted from a Meter Registry.
+ uses [Micrometer](https://micrometer.io) to provide an interface for emitting user focused metrics, instrumented in code, to a variety of different consuming Application Performance Monitoring (APM) tools. Geode has Micrometer instrumentation added to a subset of information available, which can be easily emitted from a Meter Registry.
 
 By default, Micrometer is enabeled and can emit metrics to any meter registry. However, time-based meters are available only when the `time-statistics` property is turned on.
 
@@ -28,8 +28,8 @@ The `MetricsSession` and `MetricsPublishingService` interfaces may change.
 
     Using Micrometer may require configuration, and in order to emit Micrometer metrics to one of the supported APM tools, or to a custom format/tool, a Meter Registry and accompanying publishing service will need to be used.
 
--   **[Micrometer meters and tags](micrometer-meters.html)**
+-   **[Micrometer meters and tags](micrometer-meters.html)** Geode 
 
-     contains a set of meters, instrumented statistics, that provide information about each individual member of a cluster. Every member within a  cluster will can emit a set of meters of different types, timer, gauge, and counters that are specific to the member.
+     contains a set of meters, instrumented statistics, that provide information about each individual member of a cluster. Every member within a Geode cluster will can emit a set of meters of different types, timer, gauge, and counters that are specific to the member.
 Each meter has a set of common tags, a name/value pair, that helps users identify where a meter is located in the cluster. There are also meter specific tags that vary based on the meter itself.
 

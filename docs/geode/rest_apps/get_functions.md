@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-List all registered  functions in the cluster.
+List all registered Geode functions in the cluster.
 
 ## Resource URL
 
@@ -62,7 +62,7 @@ Location: https://localhost:8080/geode/v1/functions
 | Status Code               | Description                                                                                                                      |
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | 404 NOT FOUND             | Returned if no functions are found in the cluster.                                                                               |
-| 500 INTERNAL SERVER ERROR | Error encountered at  server. Check the HTTP response body for a stack trace of the exception. |
+| 500 INTERNAL SERVER ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
 
 
 

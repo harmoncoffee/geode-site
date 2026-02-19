@@ -22,14 +22,14 @@ limitations under the License.
 <a id="topic_686158E9AFBD47518BE1B4BEB232C190"></a>
 
 
-JMX Manager nodes are members that manage other  members (as well as themselves). A JMX Manager node can manage all other members in the cluster. Typically a locator will function as the JMX Manager, but you can also turn any other member such as a server into a JMX Manager node as well.
+JMX Manager nodes are members that manage other Geode members (as well as themselves). A JMX Manager node can manage all other members in the cluster. Typically a locator will function as the JMX Manager, but you can also turn any other member such as a server into a JMX Manager node as well.
 
-To allow a server to become a JMX Manager you configure  property `jmx-manager=true`, in the server's`gemfire.properties` file. This property configures the node to become a JMX Manager node passively; if gfsh cannot locate a JMX Manager when connecting to the cluster, the server node will be started as a JMX Manager node.
+To allow a server to become a JMX Manager you configure Geode property `jmx-manager=true`, in the server's`gemfire.properties` file. This property configures the node to become a JMX Manager node passively; if gfsh cannot locate a JMX Manager when connecting to the cluster, the server node will be started as a JMX Manager node.
 
 **Note:**
 The default property setting for all locators is `gemfire.jmx-manager=true`. For other members, the default property setting is `gemfire.jmx-manager=false`.
 
-To force a server to become a JMX Manager node whenever it is started, set the  properties `jmx-manager-start=true` and `jmx-manager=true` in the server's gemfire.properties file. Note that both of these properties must be set to true for the node.
+To force a server to become a JMX Manager node whenever it is started, set the Geode properties `jmx-manager-start=true` and `jmx-manager=true` in the server's gemfire.properties file. Note that both of these properties must be set to true for the node.
 
 To start the member as a JMX Manager node on the command line, provide`                     --J=-Dgemfire.jmx-manager-start=true and --J=-Dgemfire.jmx-manager=true` as arguments to either the `start server` or `start                     locator` command.
 
@@ -50,7 +50,7 @@ The following is an example of starting a new locator that also starts an embedd
 
 ``` pre
 gfsh>start locator --name=locator1
-Starting a  Locator in /Users/username/apache-geode/locator1...
+Starting a Geode Locator in /Users/username/apache-geode/locator1...
 ....
 Locator in /Users/username/apache-geode/locator1 on 192.0.2.0[10334] as locator1
 is currently online.
@@ -88,7 +88,7 @@ In the `gemfire.properties` file, you configure a JMX manager as follows.
 
 | Property | Description | Default |
 |---|---|---|
-| `http-service-port` | If non-zero, starts an embedded HTTP service that listens on this port. The HTTP service is used to host the Pulse Web application. If you are hosting the Pulse web app on your own web server, disable this embedded HTTP service by setting this property to zero. Ignored if `jmx-manager` is false. | 7070 |
+| `http-service-port` | If non-zero, starts an embedded HTTP service that listens on this port. The HTTP service is used to host the Geode Pulse Web application. If you are hosting the Pulse web app on your own web server, disable this embedded HTTP service by setting this property to zero. Ignored if `jmx-manager` is false. | 7070 |
 | `http-service-bind-address` | If set, the member binds the embedded HTTP service to the specified address. If this property is not set but the HTTP service is enabled using `http-service-port`, the service binds to the member’s local address. | *not set* |
 | `jmx-manager` | If `true`, this member can become a JMX Manager. All other `jmx-manager-*` properties are used when it becomes a JMX Manager. If this property is false, all other `jmx-manager-*` properties are ignored.<br/><br/>The default value is `true` on locators. | false (with Locator exception) |
 | `jmx-manager-access-file` | By default the JMX Manager allows full access to all MBeans by any client. If this property is set to a file name, clients can be restricted to read-only access. The access level can be configured per user defined in the password file. See Oracle’s documentation for `com.sun.management.jmxremote.access.file`. Ignored if `jmx-manager` is false or `jmx-manager-port` is zero. | *not set* |

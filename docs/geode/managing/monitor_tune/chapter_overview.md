@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-A collection of tools and controls allow you to monitor and adjust  performance.
+A collection of tools and controls allow you to monitor and adjust Apache Geode performance.
 
 -   **[Disabling TCP SYN Cookies](disabling_tcp_syn_cookies.html)**
 
@@ -27,7 +27,7 @@ A collection of tools and controls allow you to monitor and adjust  performance.
 
 -   **[Improving Performance on vSphere](performance_on_vsphere.html)**
 
-    This topic provides guidelines for tuning vSphere virtualized environments that host  deployments.
+    This topic provides guidelines for tuning vSphere virtualized environments that host Apache Geode deployments.
 
 -   **[Performance Controls](performance_controls.html)**
 
@@ -45,7 +45,7 @@ A collection of tools and controls allow you to monitor and adjust  performance.
 
     In systems with distributed-ack regions, a sudden large number of distributed-no-ack operations can cause distributed-ack operations to take a long time to complete.
 
--   **[Socket Communication](socket_communication.html)**
+-   **[Socket Communication](socket_communication.html)** Geode 
 
      processes communicate using TCP/IP and UDP unicast and multicast protocols. In all cases, communication uses sockets that you can tune to optimize performance.
 
@@ -55,11 +55,11 @@ A collection of tools and controls allow you to monitor and adjust  performance.
 
 -   **[Multicast Communication](multicast_communication.html)**
 
-    You can make configuration adjustments to improve the UDP multicast performance of peer-to-peer communication in your  system.
+    You can make configuration adjustments to improve the UDP multicast performance of peer-to-peer communication in your Geode system.
 
 -   **[Maintaining Cache Consistency](cache_consistency.html)**
 
-    Maintaining data consistency between caches in a distributed  system is vital for ensuring its functional integrity and preventing data loss.
+    Maintaining data consistency between caches in a distributed Geode system is vital for ensuring its functional integrity and preventing data loss.
 
 
 

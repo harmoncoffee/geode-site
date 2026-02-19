@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Build from source or use the TAR distribution to install  on every physical and virtual machine that will run .
+Build from source or use the TAR distribution to install Apache Geode on every physical and virtual machine that will run Apache Geode .
 
 ## Build from Source on Unix
 
@@ -103,7 +103,7 @@ Build from source or use the TAR distribution to install  on every physical and 
     set JAVA_HOME="C:\Program Files\Java\jdk-.0."
     ```
 
-4.  Add the  scripts to your PATH environment variable. On Linux/Unix platforms:
+4.  Add the Geode scripts to your PATH environment variable. On Linux/Unix platforms:
 
     ``` pre
     PATH=$PATH:$JAVA_HOME/bin:path_to_product/bin
@@ -116,7 +116,7 @@ Build from source or use the TAR distribution to install  on every physical and 
     set PATH=%PATH%;%JAVA_HOME%\bin;path_to_product\bin 
     ```
 
-5.  To verify the installation, type `gfsh version` at the command line and note that the output lists the installed version of . For example:
+5.  To verify the installation, type `gfsh version` at the command line and note that the output lists the installed version of Geode . For example:
 
     ``` pre
     $ gfsh version

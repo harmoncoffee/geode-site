@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-To use the  HTTP module with Tomcat application servers, you will need to modify Tomcat's `server.xml` and `context.xml` files.
+To use the Geode HTTP module with Tomcat application servers, you will need to modify Tomcat's `server.xml` and `context.xml` files.
 
 Configuration is slightly different depending on the topology you are setting up: [peer-to-peer](#tomcat_setting_up_the_module_p2p) or [client/server](#tomcat_setting_up_the_module_cs). Refer to [Common Topologies for HTTP Session Management](common_gemfire_topologies.html#common_gemfire_topologies) for more information.
 
@@ -27,11 +27,11 @@ Configuration is slightly different depending on the topology you are setting up
 
 <img src="../../images_svg/http_module_p2p_with_locator.svg" id="tomcat_setting_up_the_module__image_bsm_2gf_sv" class="image" />
 
-To run  in a peer-to-peer configuration, you must first start a  locator, then configure Tomcat to join the cluster as a peer member.
+To run Geode in a peer-to-peer configuration, you must first start a Geode locator, then configure Tomcat to join the cluster as a peer member.
 
 ### Starting the Locator
 
-Start a  locator using `gfsh`:
+Start a Geode locator using `gfsh`:
 
 ``` pre
 $ gfsh start locator --name=locator1 --port=10334
@@ -62,7 +62,7 @@ For Tomcat 10.1 and later (Jakarta EE 10):
 
 <img src="../../images_svg/http_module_cs_with_locator.svg" id="tomcat_setting_up_the_module__image_aqn_jjf_sv" class="image" />
 
-To run  in a client/server configuration, the application server will operate as a  client. To do this, add the following line to `$CATALINA_HOME$/conf/server.xml` within the `<Server>` tag:
+To run  in a client/server configuration, the application server will operate as a Geode client. To do this, add the following line to `$CATALINA_HOME$/conf/server.xml` within the `<Server>` tag:
 
 ``` pre
 <Listener className="org.apache.geode.modules.session.catalina.ClientServerCacheLifecycleListener"/>
@@ -78,11 +78,11 @@ For Tomcat 10.1 and later (Jakarta EE 10):
 
 **Note:** Tomcat 10.1+ implements Jakarta EE 10 with Servlet 6.0 specification and uses the Jakarta EE namespace (`jakarta.servlet.*`) instead of the legacy `javax.servlet.*` namespace. Ensure your application has been migrated to Jakarta EE 10 before using this module. Support for Tomcat 7, 8, and 9 has been discontinued.
 
-The application server operates as a  client in this configuration.
+The application server operates as a Geode client in this configuration.
 
 ### Setting the CLASSPATH
 
-Set the CLASSPATH environment variable to include Tomcat and  module libraries. This CLASSPATH is required when starting the locator and server.
+Set the CLASSPATH environment variable to include Tomcat and Geode module libraries. This CLASSPATH is required when starting the locator and server.
 
 For a client/server setup using Apache Tomcat v10.1+ and Geode v2.x, the CLASSPATH should include:
 
@@ -108,14 +108,14 @@ $ gfsh start server --name=server1 --locators=localhost[10334] --server-port=0 \
 
 ## <a id="tomcat_setting_up_the_module__section_2B97047AB30A4C549D91AD258657FBA6" class="no-quick-link"></a>Starting the Application Server
 
-Once you've updated the XML configuration files, you are now ready to start your Tomcat instance. Refer to your application server documentation for starting the application server. Once started,  will automatically launch within the application server process.
+Once you've updated the XML configuration files, you are now ready to start your Tomcat instance. Refer to your application server documentation for starting the application server. Once started, Geode will automatically launch within the application server process.
 
-**Note:**
- session state management provides its own clustering functionality. If you are using , you should NOT turn on Tomcat clustering as well.
+**Note:** Geode 
+ session state management provides its own clustering functionality. If you are using Geode , you should NOT turn on Tomcat clustering as well.
 
-## <a id="tomcat_setting_up_the_module__section_3E186713737E4D5383E23B41CDFED59B" class="no-quick-link"></a>Verifying that  Started
+## <a id="tomcat_setting_up_the_module__section_3E186713737E4D5383E23B41CDFED59B" class="no-quick-link"></a>Verifying that Geode Started
 
-You can verify that  has successfully started by inspecting the Tomcat log file. For example:
+You can verify that Geode has successfully started by inspecting the Tomcat log file. For example:
 
 ``` pre
 15-Jul-2025 10:25:11.483 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/user/workspace/apache-tomcat-10.1.x/webapps/host-manager] has finished in [1,688] ms
@@ -133,7 +133,7 @@ You can verify the cluster configuration by using `gfsh` to list cluster members
 $ gfsh -e "connect --locator=localhost[10334]" -e "list members"
 ```
 
-You should see two members: the locator and the Tomcat server. The Tomcat server appears as a full member of the  distributed system.
+You should see two members: the locator and the Tomcat server. The Tomcat server appears as a full member of the Geode distributed system.
 
 ``` pre
 Member Count : 2
@@ -165,13 +165,13 @@ server1     | 192.168.1.100(server1:67890)
 
 **Problem:** Tomcat logs show `ClassNotFoundException: org.apache.geode.modules.util.BootstrappingFunction` (client/server only)
 
-**Solution:** Ensure you started the locator and server with the `--classpath` option as shown in the client/server configuration. The  server must have access to the session module classes.
+**Solution:** Ensure you started the locator and server with the `--classpath` option as shown in the client/server configuration. The Geode server must have access to the session module classes.
 
 ---
 
 **Problem:** Tomcat fails with "Connection refused" when connecting to locator (peer-to-peer only)
 
-**Solution:** Ensure the  locator is running before starting Tomcat. Use `gfsh list members` or `lsof -i :10334` to verify the locator is listening on the configured port.
+**Solution:** Ensure the Geode locator is running before starting Tomcat. Use `gfsh list members` or `lsof -i :10334` to verify the locator is listening on the configured port.
 
 ---
 

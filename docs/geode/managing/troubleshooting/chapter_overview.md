@@ -35,7 +35,7 @@ This section provides strategies for handling common errors and failure situatio
 
 -   **[Handling Forced Cache Disconnection Using Autoreconnect](../member-reconnect.html)**
 
-    A  member may be forcibly disconnected from a cluster if the member is unresponsive for a period of time, or if a network partition separates one or more members into a group that is too small to act as the cluster.
+    A Geode member may be forcibly disconnected from a cluster if the member is unresponsive for a period of time, or if a network partition separates one or more members into a group that is too small to act as the cluster.
 
 -   **[Recovering from Application and Cache Server Crashes](recovering_from_app_crashes.html)**
 
@@ -47,11 +47,11 @@ This section provides strategies for handling common errors and failure situatio
 
 -   **[Recovering from ConflictingPersistentDataExceptions](recovering_conflicting_data_exceptions.html)**
 
-    A `ConflictingPersistentDataException` while starting up persistent members indicates that you have multiple copies of some persistent data, and  cannot determine which copy to use.
+    A `ConflictingPersistentDataException` while starting up persistent members indicates that you have multiple copies of some persistent data, and Geode cannot determine which copy to use.
 
 -   **[Preventing and Recovering from Disk Full Errors](prevent_and_recover_disk_full_errors.html)**
 
-    It is important to monitor the disk usage of  members. If a member lacks sufficient disk space for a disk store, the member attempts to shut down the disk store and its associated cache, and logs an error message. A shutdown due to a member running out of disk space can cause loss of data, data file corruption, log file corruption and other error conditions that can negatively impact your applications.
+    It is important to monitor the disk usage of Geode members. If a member lacks sufficient disk space for a disk store, the member attempts to shut down the disk store and its associated cache, and logs an error message. A shutdown due to a member running out of disk space can cause loss of data, data file corruption, log file corruption and other error conditions that can negatively impact your applications.
 
 -   **[Understanding and Recovering from Network Outages](recovering_from_network_outages.html)**
 

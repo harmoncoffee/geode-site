@@ -33,14 +33,14 @@ the server.
 
 <img src="../../images/expiration.png" />
 
-## <a id="how_expiration_works__section_B6C55A610F4243ED8F1986E8A98858CF" class="no-quick-link"></a>Expiration Types
+## <a id="how_expiration_works__section_B6C55A610F4243ED8F1986E8A98858CF" class="no-quick-link"></a>Expiration Types Apache Geode 
 
  provides two types of expiration, each triggered by a time-based threshold. These can co-exist; they are not mutually exclusive.
 
 -   **Time to live (TTL)**. The amount of time, in seconds, the object may remain in the cache after the last creation or update. For entries, the counter is set to zero for create and put operations. Region counters are reset when the region is created and when an entry has its counter reset. The TTL expiration attributes are `region-time-to-live` and `entry-time-to-live`.
 -   **Idle timeout**. The amount of time, in seconds, the object may remain in the cache after the last access. The idle timeout counter for an object is reset any time its TTL counter is reset. In addition, an entryâ€™s idle timeout counter is reset any time the entry is accessed through a get operation or a netSearch . The idle timeout counter for a region is reset whenever the idle timeout is reset for one of its entries. Idle timeout expiration attributes are: `region-idle-time` and `entry-idle-time`.
 
-## <a id="how_expiration_works__section_BA995343EF584104B9853CFE4CAD88AD" class="no-quick-link"></a>Expiration Actions
+## <a id="how_expiration_works__section_BA995343EF584104B9853CFE4CAD88AD" class="no-quick-link"></a>Expiration Actions Apache Geode 
 
  provides the following expiration actions:
 

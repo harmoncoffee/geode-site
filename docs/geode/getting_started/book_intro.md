@@ -23,25 +23,25 @@ limitations under the License.
 
 A tutorial demonstrates features, and a main features section describes key functionality.
 
--   **[About ](geode_overview.html)**
+-   **[About Apache Geode ](geode_overview.html)** Apache Geode 
 
      is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.
 
--   **[Main Features of ](product_intro.html)**
+-   **[Main Features of Apache Geode ](product_intro.html)**
 
-    This section summarizes the main features and key functionality of .
+    This section summarizes the main features and key functionality of Apache Geode .
 
 -   **[Prerequisites and Installation Instructions](prerequisites/prereq_and_install.html)**
 
-    Each host of  that meets a small set of prerequisites may follow the provided installation instructions.
+    Each host of Apache Geode that meets a small set of prerequisites may follow the provided installation instructions.
 
--   **[Upgrading ](upgrade/upgrade_overview.html)**
+-   **[Upgrading Apache Geode ](upgrade/upgrade_overview.html)**
 
--   **[ in 15 Minutes or Less](15_minute_quickstart_gfsh.html)**
+-   **[ Apache Geode in 15 Minutes or Less](15_minute_quickstart_gfsh.html)**
 
-    Need a quick introduction to ? Take this brief tour to try out basic features and functionality.
+    Need a quick introduction to Apache Geode ? Take this brief tour to try out basic features and functionality.
 
--   **[Introduction to  Clients](intro_to_clients.html)**
+-   **[Introduction to Geode Clients](intro_to_clients.html)**
 
     Basic starting points for a variety of  clients.
 

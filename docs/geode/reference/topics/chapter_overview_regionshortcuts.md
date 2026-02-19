@@ -19,9 +19,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This topic describes the various region shortcuts you can use to configure  regions.
+This topic describes the various region shortcuts you can use to configure Geode regions.
 
-Region shortcuts are groupings of pre-configured attributes that define the characteristics of a region. You can use a region shortcut as a starting point when configuring regions and you can add additional configurations to customize your application. To reference a region shortcut in a  `cache.xml` file, use the `refid` attribute of the `<region>` element. For example:
+Region shortcuts are groupings of pre-configured attributes that define the characteristics of a region. You can use a region shortcut as a starting point when configuring regions and you can add additional configurations to customize your application. To reference a region shortcut in a Geode `cache.xml` file, use the `refid` attribute of the `<region>` element. For example:
 
 ``` pre
 <region name="myRegion" refid="PARTITION_REDUNDANT"/>
@@ -52,7 +52,7 @@ If you change the cache.xml file that defines a region, you must restart the mem
 
 For more information about configuring regions, see [Region Management](../../basic_config/data_regions/managing_data_regions.html).
 
-For more information about using the various types of  regions and when to use them, see [Region Types](../../developing/region_options/region_types.html#region_types).
+For more information about using the various types of Geode regions and when to use them, see [Region Types](../../developing/region_options/region_types.html#region_types).
      
 For a quick reference listing all region shortcuts, see [Region Shortcuts Quick Reference](region_shortcuts_table.html).
 

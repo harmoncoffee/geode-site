@@ -37,7 +37,7 @@ See [Disk Store Commands](../../tools_modules/gfsh/quick_ref_commands_by_area.ht
 
 -   **[Altering When Buffers Are Flushed to Disk](managing_disk_buffer_flushes.html)**
 
-    You can configure  to write immediately to disk and you may be able to modify your operating system behavior to perform buffer flushes more frequently.
+    You can configure Geode to write immediately to disk and you may be able to modify your operating system behavior to perform buffer flushes more frequently.
 
 
 

@@ -19,20 +19,20 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Apache Geode 
 
  is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.
 
-<a id="concept_3B5E445B19884680900161BDF25E32C9__section_itx_b41_mr"></a>
- pools memory, CPU, network resources, and optionally local disk across multiple processes to manage application objects and behavior. It uses dynamic replication and data partitioning techniques to implement high availability, improved performance, scalability, and fault tolerance. In addition to being a distributed data container,  is an in-memory data management system that provides reliable asynchronous event notifications and guaranteed message delivery.
+<a id="concept_3B5E445B19884680900161BDF25E32C9__section_itx_b41_mr"></a> Geode 
+ pools memory, CPU, network resources, and optionally local disk across multiple processes to manage application objects and behavior. It uses dynamic replication and data partitioning techniques to implement high availability, improved performance, scalability, and fault tolerance. In addition to being a distributed data container, Geode is an in-memory data management system that provides reliable asynchronous event notifications and guaranteed message delivery.
 
 ## <a id="concept_3B5E445B19884680900161BDF25E32C9__section_0031B81824874FC18F0828DB66150833" class="no-quick-link"></a>Main Concepts and Components
 
-*Caches* are an abstraction that describe a node in a  cluster. Application architects can arrange these nodes in peer-to-peer or client/server topologies.
+*Caches* are an abstraction that describe a node in a Geode cluster. Application architects can arrange these nodes in peer-to-peer or client/server topologies.
 
 Within each cache, you define data *regions*. Data regions are analogous to tables in a relational database and manage data in a distributed fashion as name/value pairs. A *replicated* region stores identical copies of the data on each cache member of a cluster. A *partitioned* region spreads the data among cache members. After the system is configured, client applications can access the distributed data in regions without knowledge of the underlying system architecture. You can define listeners to create notifications about when data has changed, and you can define expiration criteria to delete obsolete data in a region.
 
-For large production systems,  provides *locators*. Locators provide both discovery and load balancing services. You configure clients with a list of locator services and the locators maintain a dynamic list of member servers. By default,  clients and servers use port 40404 to discover each other.
+For large production systems, Geode provides *locators*. Locators provide both discovery and load balancing services. You configure clients with a list of locator services and the locators maintain a dynamic list of member servers. By default, Geode clients and servers use port 40404 to discover each other.
 
-For more information on product features, see [Main Features of ](product_intro.html).
+For more information on product features, see [Main Features of Apache Geode ](product_intro.html).
 

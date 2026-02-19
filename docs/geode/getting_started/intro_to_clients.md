@@ -24,18 +24,18 @@ This section provides basic starting points for a variety of  clients, along
 with very rudimentary connect, put, get operations, and then a reference to more in-depth docs and examples on
 how to use the client.
 
-For an in-depth look at how to use  clients, see [Client/Server Configuration](../topologies_and_comm/cs_configuration/chapter_overview.html).
+For an in-depth look at how to use Apache Geode clients, see [Client/Server Configuration](../topologies_and_comm/cs_configuration/chapter_overview.html).
 
 ## <a id="client-intro-installing"></a>Installing 
 
 You can download  from the website, run a Docker image, or install with homebrew on OSX.
 See [How to Install Apache Geode](installation/install_standalone.html) for details.
 
-## <a id="client-intro-starting"></a>Starting an  Cluster
+## <a id="client-intro-starting"></a>Starting an Apache Geode Cluster
 
 For client tests and examples, start a simple cluster and create an example region.
 
-Start an  cluster with one locator and one server.
+Start an Apache Geode cluster with one locator and one server.
 
 ```
 $ gfsh 
@@ -49,19 +49,19 @@ Create a region called "helloWorld".
 gfsh> create region --name=helloWorld --type=PARTITION 
 ```
 
-When you are through running client tests and examples, shut down the  cluster:
+When you are through running client tests and examples, shut down the Apache Geode cluster:
 
 ```
 gfsh> shutdown --include-locators=true
 ```
 
-## <a id="client-intro-java"></a> Java Client
+## <a id="client-intro-java"></a> Apache Geode Java Client
 
 For a conventional Java client, provide the dependencies that are appropriate for your build
 environment. (The Spring Boot framework, described later, provides a utility that generates these
 dependencies for you.)
 
-Examples are shown here for Maven and Gradle. Replace $VERSION with the version of
+Examples are shown here for Maven and Gradle. Replace $VERSION with the version of Apache Geode 
  that you have installed.
 
 
@@ -87,7 +87,7 @@ dependencies {
 ```
 
 
-**Simple Put and Get with  Java client**
+**Simple Put and Get with Apache Geode Java client**
  
 ```
 public static void main(String[] args) {
@@ -200,16 +200,16 @@ Spring Boot for Apache Geode is very powerful and robust.  We recommend looking 
 
 - [Spring Boot for Apache Geode Reference Guide](https://docs.spring.io/spring-boot-data-geode-build/1.4.x/reference/html5/)
 
-## <a id="client-intro-native"></a> Native Clients 
+## <a id="client-intro-native"></a> Apache Geode Native Clients 
 
-To begin using the  Native Clients, you must first build the  Native Client libraries from the source code. 
-You can download the  Native Source code here
+To begin using the Apache Geode Native Clients, you must first build the Apache Geode Native Client libraries from the source code. 
+You can download the Apache Geode Native Source code here
 `https://geode.apache.org/releases`, then refer to the `BUILDING.md` file in the source release to compile the libraries.
 
 
-### <a id="client-intro-native-dotnet"></a> Native .NET Client
+### <a id="client-intro-native-dotnet"></a> Apache Geode Native .NET Client
 
-**Put, Get and Remove with  Native .NET Client (C#)**
+**Put, Get and Remove with Apache Geode Native .NET Client (C#)**
 
 ```
 using System;
@@ -275,9 +275,9 @@ namespace Apache.Geode.Examples.PutGetRemove
 - [Apache Geode Native Client .NET API Reference](https://geode.apache.org/releases/latest/dotnetdocs/hierarchy.html)
 
 
-### <a id="client-intro-native-cpp"></a> Native C++ Client
+### <a id="client-intro-native-cpp"></a> Apache Geode Native C++ Client
 
-**Put, Get, and Remove with  Native C++ Client**
+**Put, Get, and Remove with Apache Geode Native C++ Client**
 
 ```
 #include <iostream>

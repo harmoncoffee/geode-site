@@ -24,7 +24,7 @@ limitations under the License.
 The security implementation of every installation is unique. These examples are provided for illustrative purposes only and must not be used in a production environment.
 
 The examples demonstrate the basics for implementing both user authorization (`SecurityManager.authorize`) and method invocation authorization (`MethodInvocationAuthorizer.authorize`) during query executions.
-The remainder of the examples may be found within the  source code under the `geode-core/src/main/java/org/apache/geode/examples/security` directory.
+The remainder of the examples may be found within the Apache Geode source code under the `geode-core/src/main/java/org/apache/geode/examples/security` directory.
 
 ## <a id="user_authorization_example"></a>User Authorization Example
 

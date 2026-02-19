@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section provides information on sticky load balancers, session expiration, additional  property changes, serialization and more.
+This section provides information on sticky load balancers, session expiration, additional Geode property changes, serialization and more.
 
 ## <a id="tc_additional_info__section_78F53B3F4301466EA0E5DF277CF33A71" class="no-quick-link"></a>Sticky Load Balancers
 
@@ -30,20 +30,20 @@ as a possible [load balancing](http://static.springsource.com/projects/ers/4.0/g
 ## <a id="tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4" class="no-quick-link"></a>Session Expiration
 
 To set the session expiration value, you must change the `session-timeout` value specified in your application server's `WEB-INF/web.xml` file. 
-This value will override the  inactive interval, which is specified in Tomcat, for example, by `maxInactiveInterval` within `context.xml`.
+This value will override the Geode inactive interval, which is specified in Tomcat, for example, by `maxInactiveInterval` within `context.xml`.
 
-When a session expires, it gets removed from the application server and from all  servers when running in client-server mode.
+When a session expires, it gets removed from the application server and from all Geode servers when running in client-server mode.
 
-## <a id="tc_additional_info__section_5CE5FF6F55DB462E8B2A336A0AF7515E" class="no-quick-link"></a>Making Additional  Property Changes
+## <a id="tc_additional_info__section_5CE5FF6F55DB462E8B2A336A0AF7515E" class="no-quick-link"></a>Making Additional Geode Property Changes
 
-If you want to change additional  property values, refer to instructions on manually changing property values as specified in the  module documentation for Tomcat ([Changing the Default  Configuration in the Tomcat Module](tomcat_changing_gf_default_cfg.html#tomcat_changing_gf_default_cfg)) and Application Servers ([Changing the Default  Configuration in the AppServers Module](weblogic_changing_gf_default_cfg.html#weblogic_changing_gf_default_cfg)).
+If you want to change additional Geode property values, refer to instructions on manually changing property values as specified in the Geode module documentation for Tomcat ([Changing the Default Geode Geode Configuration in the Tomcat Module](tomcat_changing_gf_default_cfg.html#tomcat_changing_gf_default_cfg)) and Application Servers ([Changing the Default  Configuration in the AppServers Module](weblogic_changing_gf_default_cfg.html#weblogic_changing_gf_default_cfg)).
 
 ## <a id="tc_additional_info__section_0013BDC875A44344B7B062F46AFA073C" class="no-quick-link"></a>Module Version Information
 
-To acquire  module version information, look in the web server's log file for a message similar to:
+To acquire Geode module version information, look in the web server's log file for a message similar to:
 
 ``` pre
-INFO: Initializing  Modules
+INFO: Initializing Geode Modules
 Java version:   1.0.0 user1 041216 2016-11-12 11:18:37 -0700
           javac .0.
 Native version: native code unavailable

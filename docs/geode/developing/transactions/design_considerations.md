@@ -23,7 +23,7 @@ limitations under the License.
 
 Designs that incorporate more complex features introduce further
 considerations.
-This section discusses how transactions interact with other 
+This section discusses how transactions interact with other Geode 
  features.
 
 -  **[Colocate Partitioned Regions](#colocate-PRs)**
@@ -147,7 +147,7 @@ Configure this strict isolation model with the property:
 
 This property causes read operations to succeed only when they
 read a consistent pre- or post-transactional state.
-If not consistent,
+If not consistent, Geode 
  throws a `CommitConflictException`.
 
 

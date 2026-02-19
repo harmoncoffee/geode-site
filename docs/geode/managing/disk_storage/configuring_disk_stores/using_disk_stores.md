@@ -24,7 +24,7 @@ limitations under the License.
 You define disk stores in your cache, then you assign them to your regions and queues by setting the `disk-store-name` attribute in your region and queue configurations.
 
 **Note:**
-Besides the disk stores you specify,  has a default disk store that it uses when disk use is configured with no disk store name specified. By default, this disk store is saved to the applicationâ€™s working directory. You can change its behavior, as indicated in [Create and Configure Your Disk Stores](using_disk_stores.html#defining_disk_stores__section_37BC5A4D84B34DB49E489DD4141A4884) and [Modifying the Default Disk Store](using_the_default_disk_store.html#using_the_default_disk_store).
+Besides the disk stores you specify, Apache Geode has a default disk store that it uses when disk use is configured with no disk store name specified. By default, this disk store is saved to the applicationâ€™s working directory. You can change its behavior, as indicated in [Create and Configure Your Disk Stores](using_disk_stores.html#defining_disk_stores__section_37BC5A4D84B34DB49E489DD4141A4884) and [Modifying the Default Disk Store](using_the_default_disk_store.html#using_the_default_disk_store).
 
 -   [Design Your Disk Stores](using_disk_stores.html#defining_disk_stores__section_0CD724A12EE4418587046AAD9EEC59C5)
 -   [Create and Configure Your Disk Stores](using_disk_stores.html#defining_disk_stores__section_37BC5A4D84B34DB49E489DD4141A4884)
@@ -33,11 +33,11 @@ Besides the disk stores you specify,  has a default disk store that it uses when
 
 ## <a id="defining_disk_stores__section_0CD724A12EE4418587046AAD9EEC59C5" class="no-quick-link"></a>Design Your Disk Stores
 
-Before you begin, you should understand  [Basic Configuration and Programming](../../basic_config/book_intro.html).
+Before you begin, you should understand Geode [Basic Configuration and Programming](../../basic_config/book_intro.html).
 
 1.  Work with your system designers and developers to plan for anticipated disk storage requirements in your testing and production caching systems. Take into account space and functional requirements.
     -   For efficiency, separate data that is only overflowed in separate disk stores from data that is persisted or persisted and overflowed. Regions can be overflowed, persisted, or both. Server subscription queues are only overflowed.
-    -   When calculating your disk requirements, figure in your data modification patterns and your compaction strategy.  creates each oplog file at the max-oplog-size, which defaults to 1 GB. Obsolete operations are removed from the oplogs only during compaction, so you need enough space to store all operations that are done between compactions. For regions where you are doing a mix of updates and deletes, if you use automatic compaction, a good upper bound for the required disk space is
+    -   When calculating your disk requirements, figure in your data modification patterns and your compaction strategy. Geode creates each oplog file at the max-oplog-size, which defaults to 1 GB. Obsolete operations are removed from the oplogs only during compaction, so you need enough space to store all operations that are done between compactions. For regions where you are doing a mix of updates and deletes, if you use automatic compaction, a good upper bound for the required disk space is
 
         ``` pre
         (1 / (compaction_threshold/100) ) * data size
@@ -51,7 +51,7 @@ Before you begin, you should understand  [Basic Configuration and Programming](.
 
 ## <a id="defining_disk_stores__section_37BC5A4D84B34DB49E489DD4141A4884" class="no-quick-link"></a>Create and Configure Your Disk Stores
 
-1.  In the locations you have chosen, create all directories you will specify for your disk stores to use.  throws an exception if the specified directories are not available when a disk store is created. You do not need to populate these directories with anything.
+1.  In the locations you have chosen, create all directories you will specify for your disk stores to use. Geode throws an exception if the specified directories are not available when a disk store is created. You do not need to populate these directories with anything.
 2.  Open a `gfsh` prompt and connect to the cluster.
 3.  At the `gfsh` prompt, create and configure a disk store:
     -  Specify the name (`--name`) of the disk-store.

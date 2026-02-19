@@ -28,7 +28,7 @@ Follow these guidelines to use custom domain classes for your cached entry keys 
 Each memberâ€™s `CLASSPATH` must include classes for all objects the member accesses.
 
 -   For Java applications, use the standard Java `CLASSPATH`.
--   For the cache server process, use the `CLASSPATH` environment variable or the `gfsh start server`'s `--classpath` parameter. See [Running  Server Processes](../../configuring/running/running_the_cacheserver.html).
+-   For the cache server process, use the `CLASSPATH` environment variable or the `gfsh start server`'s `--classpath` parameter. See [Running Geode Server Processes](../../configuring/running/running_the_cacheserver.html).
 
 Data is sent between clients and servers in serialized form and the server stores client data in serialized form. The server does not need to deserialize data to send it to another client or to access it through a `PDXInstance`, but it does need to deserialize it to access it in other ways. The server `CLASSPATH` must include the classes for:
 
@@ -38,9 +38,9 @@ Data is sent between clients and servers in serialized form and the server store
 
 For information on `PdxInstance`s, see [Data Serialization](../../developing/data_serialization/chapter_overview.html#data_serialization).
 
-## <a id="using_custom_classes__section_57EB5D02C06947B4BDE75A49286D581D" class="no-quick-link"></a>Data Serialization
+## <a id="using_custom_classes__section_57EB5D02C06947B4BDE75A49286D581D" class="no-quick-link"></a>Data Serialization Geode 
 
- serializes data entry keys and values for distribution, so all data that  moves out of the local cache for any reason must be serializable. Additionally, partitioned regions store data in serialized form. Almost every configuration requires serialization.
+ serializes data entry keys and values for distribution, so all data that Geode moves out of the local cache for any reason must be serializable. Additionally, partitioned regions store data in serialized form. Almost every configuration requires serialization.
 
 For information on the requirements and options for data serialization, see [Data Serialization](../../developing/data_serialization/chapter_overview.html#data_serialization).
 

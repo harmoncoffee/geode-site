@@ -21,12 +21,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-A  member may be forcibly disconnected from a  cluster if the member is unresponsive for a period of time, or if a network partition separates one or more members into a group that is too small to act as the cluster.
+A Geode member may be forcibly disconnected from a Geode cluster if the member is unresponsive for a period of time, or if a network partition separates one or more members into a group that is too small to act as the cluster.
 
 ## How the Autoreconnection Process Works
 
 After being disconnected from a cluster,
-a  member shuts down and, by default, automatically restarts into 
+a Geode member shuts down and, by default, automatically restarts into 
 a "reconnecting" state,
 while periodically attempting to rejoin the cluster
 by contacting a list of known locators.
@@ -59,11 +59,11 @@ enable-cluster-configuration = false
 
 After the cache has reconnected, applications must fetch a reference to the new Cache, Regions, DistributedSystem and other artifacts. Old references will continue to throw cancellation exceptions like `CacheClosedException(cause=ForcedDisconnectException)`.
 
-See the  `DistributedSystem` and `Cache` Java API documentation for more information.
+See the Geode `DistributedSystem` and `Cache` Java API documentation for more information.
 
 ## Managing the Autoreconnection Process
 
-By default a  member will try to reconnect until it is told to stop by using the `DistributedSystem.stopReconnecting()` or `Cache.stopReconnecting()` method. You can disable automatic reconnection entirely by setting `disable-auto-reconnect`  property to "true."
+By default a Geode member will try to reconnect until it is told to stop by using the `DistributedSystem.stopReconnecting()` or `Cache.stopReconnecting()` method. You can disable automatic reconnection entirely by setting `disable-auto-reconnect` Geode property to "true."
 
 You can use `DistributedSystem` and `Cache` callback methods to perform actions during the reconnect process, or to cancel the reconnect process if necessary.
 

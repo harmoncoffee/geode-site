@@ -137,13 +137,13 @@ create async-event-queue --id=value --listener=value [--groups=value(,value)*]
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;persistent</span></td>
-<td>Boolean value that determines whether  persists this queue.</td>
+<td>Boolean value that determines whether Geode persists this queue.</td>
 <td>false
 <p>If specified with out a value, default is true.</p></td>
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;disk-store</span></td>
-<td>Named disk store to use for storing queue overflow, or for persisting the queue. If you specify a value, the named disk store must exist. If you specify a null value,  uses the default disk store for overflow and queue persistence.</td>
+<td>Named disk store to use for storing queue overflow, or for persisting the queue. If you specify a value, the named disk store must exist. If you specify a null value, Geode Geode uses the default disk store for overflow and queue persistence.</td>
 <td>Â </td>
 </tr>
 <tr>
@@ -435,7 +435,7 @@ Creates a gateway sender on one or more members of a cluster.
 See [Gateway Senders](../../../topologies_and_comm/topology_concepts/multisite_overview.html).
 
 **Note:**
-The gateway sender configuration for a specific sender `id` must be identical on each  member that hosts the gateway sender.
+The gateway sender configuration for a specific sender `id` must be identical on each Geode member that hosts the gateway sender.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 

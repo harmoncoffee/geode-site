@@ -19,7 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
  provides region shortcut settings, with preset region configurations for the most common region types. For the easiest configuration, start with a shortcut setting and customize as needed. You can also store your own custom configurations in the cache for use by multiple regions.
 
@@ -27,7 +27,7 @@ limitations under the License.
 You configure automated management of data regions and their entries through region shortcuts and region attributes. These region configuration settings determine such things as where the data resides, how the region is managed in memory, reliability behavior, and the automatic loading, distribution, and expiration of data entries.
 
 **Note:**
-Whenever possible, use region shortcuts to configure your region, and further customize behavior using region attributes. The shortcut settings are preset with the most common region configurations.
+Whenever possible, use region shortcuts to configure your region, and further customize behavior using region attributes. The shortcut settings are preset with the most common region configurations. Geode 
 
  provides a number of predefined, shortcut region attributes settings for your use. You can also define your own custom region attributes and store them with an identifier for later retrieval. Both types of stored attributes are referred to as named region attributes. You can create and store your attribute settings in the `cache.xml` file and through the API.
 
@@ -64,7 +64,7 @@ You can select the most common region attributes settings from â€™s predefi
 -   **`org.apache.geode.cache.RegionShortcut`**. For peers and servers.
 -   **`org.apache.geode.cache.client.ClientRegionShortcut`**. For clients.
 
-Shortcut attributes are a convenience only. They are just named attributes that  has already stored for you. You can override their settings by storing new attributes with the same id as the predefined attributes.
+Shortcut attributes are a convenience only. They are just named attributes that Geode has already stored for you. You can override their settings by storing new attributes with the same id as the predefined attributes.
 
 For a full list of all available region shortcuts, see [Region Shortcuts Quick Reference](../../reference/topics/region_shortcuts_table.html#reference_ufj_5kz_4k).
 
@@ -85,7 +85,7 @@ These are the primary options available in the region shortcut settings. The nam
 
 **Data Eviction**
 
--   **`HEAP_LRU`**. Causes least recently used data to be evicted from memory when the  resource manager determines that the cache has reached configured storage limits.
+-   **`HEAP_LRU`**. Causes least recently used data to be evicted from memory when the Geode Geode resource manager determines that the cache has reached configured storage limits.
 
 **Disk Storage**
 

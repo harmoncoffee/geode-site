@@ -23,7 +23,7 @@ This section provides help and usage information on all `gfsh` commands, listed 
 
 -   **[alter](../gfsh/command-pages/alter.html)**
 
-    Modify an existing  resource.
+    Modify an existing Geode resource.
 
 -   **[backup disk-store](../gfsh/command-pages/backup.html)**
 
@@ -123,7 +123,7 @@ This section provides help and usage information on all `gfsh` commands, listed 
 
 -   **[list](../gfsh/command-pages/list.html)**
 
-    List existing  resources such as deployed applications, disk-stores, functions, members, servers, and regions.
+    List existing Geode resources such as deployed applications, disk-stores, functions, members, servers, and regions.
 
 -   **[load-balance gateway-sender](../gfsh/command-pages/load-balance.html)**
 
@@ -151,7 +151,7 @@ This section provides help and usage information on all `gfsh` commands, listed 
 
 -   **[query](../gfsh/command-pages/query.html)**
 
-    Run queries against  regions.
+    Run queries against Geode regions.
 
 -   **[rebalance](../gfsh/command-pages/rebalance.html)**
 
@@ -203,7 +203,7 @@ This section provides help and usage information on all `gfsh` commands, listed 
 
 -   **[status](../gfsh/command-pages/status.html)**
 
-    Check the status of the cluster configuration service, partitioned region redundancy and  member processes, including locators, gateway receivers, gateway senders, and servers.
+    Check the status of the cluster configuration service, partitioned region redundancy and Geode member processes, including locators, gateway receivers, gateway senders, and servers.
 
 -   **[stop](../gfsh/command-pages/stop.html)**
 

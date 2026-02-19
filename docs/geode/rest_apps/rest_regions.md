@@ -25,7 +25,7 @@ See also [Data Regions](../basic_config/data_regions/chapter_overview.html#data_
 
 -   **[GET /geode/v1](get_regions.html)**
 
-    List all available resources (regions) in the  cluster.
+    List all available resources (regions) in the Geode cluster.
 
 -   **[GET /geode/v1/\{region\}](get_region_data.html)**
 

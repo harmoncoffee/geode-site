@@ -51,7 +51,7 @@ Response Payload: null
 | Status Code               | Description                                                                                                                      |
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | 404 NOT FOUND             | Returned if the region or specified key is not found.                                                                            |
-| 500 INTERNAL SERVER ERROR | Error encountered at  server. Check the HTTP response body for a stack trace of the exception. |
+| 500 INTERNAL SERVER ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
 
 
 

@@ -36,7 +36,7 @@ expected to either return an object representing a principal or throw an `Authen
 or `AuthenticationExpiredException`. The principal object is what is passed on to the `authorize` method
 which is discussed in detail in the [authorization](authorization_overview.html) section.
 
-In case of an `AuthenticationExpiredException` the  client code will make one automatic attempt
+In case of an `AuthenticationExpiredException` the Geode client code will make one automatic attempt
 to re-connect to the member that sent the exception.
 
 A well-designed `authenticate` method will have a set of known credentials, such as user and password pairs, that can be

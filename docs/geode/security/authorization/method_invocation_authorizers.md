@@ -21,14 +21,14 @@ limitations under the License.
 
 ## <a id="overview"></a>Overview
 
-When the `SecurityManager` is enabled, by default  throws a `NotAuthorizedException` when a `method` within a query is invoked and does not belong to the list of default allowed methods, given in [RestrictedMethodAuthorizer](method_invocation_authorizers.html#restrictedMethodAuthorizer).
+When the `SecurityManager` is enabled, by default Geode throws a `NotAuthorizedException` when a `method` within a query is invoked and does not belong to the list of default allowed methods, given in [RestrictedMethodAuthorizer](method_invocation_authorizers.html#restrictedMethodAuthorizer).
 
 The `MethodInvocationAuthorizer` is used to determine whether a specific method invocation on a given object should be allowed or denied during the execution of a particular OQL query.
 
-Allowing users to execute arbitrary methods on any object present within the  member's classpath could impact the integrity of the data and the system on which  is running.
+Allowing users to execute arbitrary methods on any object present within the Geode member's classpath could impact the integrity of the data and the system on which Geode is running.
 In order to avoid this problem, it is always recommended to enable a `SecurityManager` at the cluster level, give users only the permissions they require, and configure a `MethodInvocationAuthorizer` that meets your needs.
 
-The main threats to which a  cluster might be exposed without a `MethodInvocationAuthorizer` are highlighted below. 
+The main threats to which a Geode cluster might be exposed without a `MethodInvocationAuthorizer` are highlighted below. 
 
 **Java Reflection**
 
@@ -69,7 +69,7 @@ Allows the user to mutate the state of specific `entries`.
  provides four authorizers out of the box, each one designed and implemented for a specific use case in mind.
 It is recommended to always use one of these authorizers, and only implement your own if your use case needs are not already met by one of them.
 
-All of the implementations provided by  are designed to prevent security problems and have been thoroughly tested.
+All of the implementations provided by Geode are designed to prevent security problems and have been thoroughly tested.
 Extra care should be taken, however, when configuring the internals of some of the authorizers as an incorrect configuration might introduce security holes into the system. 
 
 The table below shows a summary of which security threats are fully addressed by each authorizer and which ones might be exploitable, depending on how they are configured (details are shown later for each implementation).
@@ -78,7 +78,7 @@ The table below shows a summary of which security threats are fully addressed by
 
 ### <a id="restrictedMethodAuthorizer"></a>RestrictedMethodAuthorizer
 
-The default `MethodInvocationAuthorizer` used by  to determine whether a method is allowed to be executed on a specific object instance or not.
+The default `MethodInvocationAuthorizer` used by Geode to determine whether a method is allowed to be executed on a specific object instance or not.
 
 The implementation forbids the invocation of all methods during a query execution, except for the ones shown below:
 
@@ -93,11 +93,11 @@ The implementation forbids the invocation of all methods during a query executio
 | `java.util.Map.Entry`, `org.apache.geode.cache.Region.Entry`              | `getKey`, `getValue` |
 | `java.util.Collection`, `java.util.Map`, `org.apache.geode.cache.Region`  | `get`, `entrySet`, `keySet`, `values`, `getEntries`, `getValues`, `containsKey` |  
 
-The authorizer also provides utilities that can be used by custom implementations to determine whether a method is permanently forbidden or, if the method belongs to , whether it is considered safe to be used within a query execution.
+The authorizer also provides utilities that can be used by custom implementations to determine whether a method is permanently forbidden or, if the method belongs to Geode , whether it is considered safe to be used within a query execution.
  
 The methods `getClass`, `readObject`, `readResolve`, `readObjectNoData`, `writeObject` and `writeReplace` are permanently forbidden.
 
-The below table shows those methods that belong to  and are considered safe (for methods on `org.apache.geode.cache.Region`, the authorizer also verifies that the user has the `DATA:READ:RegionName` permission).
+The below table shows those methods that belong to Geode and are considered safe (for methods on `org.apache.geode.cache.Region`, the authorizer also verifies that the user has the `DATA:READ:RegionName` permission).
 
 | Class                                     | Allowed Methods                                                                 |
 |-------------------------------------------|---------------------------------------------------------------------------------|
@@ -168,7 +168,7 @@ It is important to note that the query engine does not have any information abou
 The actual check to determine whether a method is allowed or not must be executed while the objects are being traversed by the query engine in runtime.
 
 The query engine, however, remembers whether a specific method has been already authorized or not for the current query execution context, meaning that **the authorization will be executed only once in the lifetime of a particular query 
-for every new method seen while traversing the objects**. Nevertheless, the authorizer implementation must be highly performant as it will be invoked by  in runtime during the actual query execution.
+for every new method seen while traversing the objects**. Nevertheless, the authorizer implementation must be highly performant as it will be invoked by Geode in runtime during the actual query execution.
 
 ### Implementing a Method Authorizer 
 
@@ -195,5 +195,5 @@ If the CQ has methods forbidden by the newly configured `MethodInvocationAuthori
 
 **Note:**
 In order to improve performance, the continuous query engine uses an internal cache to avoid executing the query in scenarios for which the answer can be automatically inferred.
-These results might become invalid after applying the new security rules, so  disables the usage of this optimization until the member is restarted or the query is registered again.
+These results might become invalid after applying the new security rules, so Geode disables the usage of this optimization until the member is restarted or the query is registered again.
 

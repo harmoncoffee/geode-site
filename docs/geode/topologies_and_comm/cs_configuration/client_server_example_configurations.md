@@ -64,7 +64,7 @@ gfsh>start server --name=server1 --server-port=40404
 
 See `start server`.
 
-The clientâ€™s `cache.xml` `<client-cache>` declaration automatically configures it as a standalone  application.
+The clientâ€™s `cache.xml` `<client-cache>` declaration automatically configures it as a standalone Geode application.
 
 The client's `cache.xml`:
 

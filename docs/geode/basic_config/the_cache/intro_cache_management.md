@@ -26,11 +26,11 @@ The cache provides in-memory storage and management for your data.
 <a id="concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_B364B076EB5843DAAC28EE2805686453"></a>
 You organize your data in the cache into *data regions*, each with its own configurable behavior. You store your data into your regions in key/value pairs called *data entries*. The cache also provides features like transactions, data querying, disk storage management, and logging. See the Javadocs for `org.apache.geode.cache.Cache`.
 
-You generally configure caches using the `gfsh` command-line utility or a combination of XML declarations and API calls.  loads and processes your XML declarations when you first create the cache.
+You generally configure caches using the `gfsh` command-line utility or a combination of XML declarations and API calls. Geode loads and processes your XML declarations when you first create the cache. Geode 
 
  has one cache type for managing server and peer caches and one for managing client caches. The cache server process automatically creates its server cache at startup. In your application process, the cache creation returns an instance of the server/peer or client cache. From that point on, you manage the cache through API calls in your application.
 
-## <a id="concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_20973C59F1C94E35A02CE6582503205A" class="no-quick-link"></a>The Caching APIs
+## <a id="concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_20973C59F1C94E35A02CE6582503205A" class="no-quick-link"></a>The Caching APIs Geode 
 
 's caching APIs provide specialized behavior for different system member types and security settings.
 
@@ -82,9 +82,9 @@ The steps in this section use `gemfire.properties` and `cache.xml` file examples
 The XML examples may not include the full `cache.xml` file listing. All of your declarative cache configuration must conform to the cache XSD at
 [http://geode.apache.org/schema/cache/cache-1.0.xsd](http://geode.apache.org/schema/cache/cache-1.0.xsd).
 
-For all of your  applications:
+For all of your Geode applications:
 
-1.  Create your `Cache`, for peer/server applications, or `ClientCache`, for client applications. This connects to the  system you have configured and initializes any configured data regions. Use your cache instance to access your regions and perform your application work.
+1.  Create your `Cache`, for peer/server applications, or `ClientCache`, for client applications. This connects to the Geode system you have configured and initializes any configured data regions. Use your cache instance to access your regions and perform your application work.
 2.  Close your cache when you are done. This frees up resources and disconnects your application from the cluster in an orderly manner.
 
 Follow the instructions in the subtopics under [Cache Management](chapter_overview.html#the_cache) to customize your cache creation and closure for your application needs. You may need to combine more than one of the sets of instructions. For example, to create a client cache in a system with security, you would follow the instructions for creating and closing a client cache and for creating and closing a cache in a secure system.

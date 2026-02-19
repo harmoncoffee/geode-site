@@ -21,9 +21,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-You can configure  to write immediately to disk and you may be able to modify your operating system behavior to perform buffer flushes more frequently.
+You can configure Geode to write immediately to disk and you may be able to modify your operating system behavior to perform buffer flushes more frequently.
 
-Typically,  writes disk data into the operating system's disk buffers and the operating system periodically flushes the buffers to disk. Increasing the frequency of writes to disk decreases the likelihood of data loss from application or machine crashes, but it impacts performance. Your other option, which may give you better performance, is to use 's in-memory data backups. Do this by storing your data in multiple replicated regions or in partitioned regions that are configured with redundant copies. See [Region Types](../../developing/region_options/region_types.html#region_types).
+Typically, Geode writes disk data into the operating system's disk buffers and the operating system periodically flushes the buffers to disk. Increasing the frequency of writes to disk decreases the likelihood of data loss from application or machine crashes, but it impacts performance. Your other option, which may give you better performance, is to use Geode 's in-memory data backups. Do this by storing your data in multiple replicated regions or in partitioned regions that are configured with redundant copies. See [Region Types](../../developing/region_options/region_types.html#region_types).
 
 ## <a id="disk_buffer_flushes__section_448348BD28B14F478D81CC2EDC6C7049" class="no-quick-link"></a>Modifying Disk Flushes for the Operating System
 
@@ -31,9 +31,9 @@ You may be able to change the operating system settings for periodic flushes. Yo
 
 ## <a id="disk_buffer_flushes__section_D1068505581A43EE8395DBE97297C60F" class="no-quick-link"></a>Modifying  to Flush Buffers on Disk Writes
 
-You can have  flush the disk buffers on every disk write. Do this by setting the system property `gemfire.syncWrites` to true at the command line when you start your  member. You can only modify this setting when you start a member. When this is set,  uses a Java `RandomAccessFile` with the flags "rwd", which causes every file update to be written synchronously to the storage device. This only guarantees your data if your disk stores are on a local device. See the Java documentation for `java.IO.RandomAccessFile`.
+You can have Geode flush the disk buffers on every disk write. Do this by setting the system property `gemfire.syncWrites` to true at the command line when you start your Geode member. You can only modify this setting when you start a member. When this is set, Geode uses a Java `RandomAccessFile` with the flags "rwd", which causes every file update to be written synchronously to the storage device. This only guarantees your data if your disk stores are on a local device. See the Java documentation for `java.IO.RandomAccessFile`.
 
-To modify the setting for a  application, add this to the java command line when you start the member:
+To modify the setting for a Geode application, add this to the java command line when you start the member:
 
 ``` pre
 -Dgemfire.syncWrites=true

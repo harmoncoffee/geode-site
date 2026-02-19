@@ -19,11 +19,11 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
  supports TCP KeepAlive to prevent socket connections from being timed out.
 
-The `gemfire.setTcpKeepAlive` system property prevents connections that appear idle from being timed out (for example, by a firewall.) When configured to true,  enables the SO\_KEEPALIVE option for individual sockets. This operating system-level setting allows the socket to send verification checks (ACK requests) to remote systems in order to determine whether or not to keep the socket connection alive.
+The `gemfire.setTcpKeepAlive` system property prevents connections that appear idle from being timed out (for example, by a firewall.) When configured to true, Geode enables the SO\_KEEPALIVE option for individual sockets. This operating system-level setting allows the socket to send verification checks (ACK requests) to remote systems in order to determine whether or not to keep the socket connection alive.
 
 **Note:**
 The time intervals for sending the first ACK KeepAlive request, the subsequent ACK requests and the number of requests to send before closing the socket is configured on the operating system level.

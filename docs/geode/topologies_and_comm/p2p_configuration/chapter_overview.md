@@ -27,7 +27,7 @@ Use peer-to-peer configuration to set member discovery and communication within 
 
 -   **[Configuring Peer Communication](setting_up_peer_communication.html)**
 
-    By default  uses TCP for communication between members of a single cluster. You can modify this at the member and region levels.
+    By default Apache Geode uses TCP for communication between members of a single cluster. You can modify this at the member and region levels.
 
 -   **[Organizing Peers into Logical Member Groups](configuring_peer_member_groups.html)**
 

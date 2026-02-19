@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section provides explanations of  Log  messages with potential resolutions.
+This section provides explanations of Geode Log  messages with potential resolutions.
 
 Depending on how your system is configured, log files can be found in a number of locations.
 See [Log File Locations](../../security/security-audit.html#topic_5B6DF783A14241399DC25C6EE8D0048A) and
@@ -48,7 +48,7 @@ destroying data or overflowing it to disk, which can overwhelm the disk.
 
 **Potential Resolutions:**
 
-NOTE:   eviction is not truly compatible with G1GC given how G1GC behaves and how eviction assumes that garbage will be collected.
+NOTE: Geode eviction is not truly compatible with G1GC given how G1GC behaves and how eviction assumes that garbage will be collected.
 
 You should consider increasing the total heap.   This will increase tenured space, and potentially eliminate these messages.   You can also increase your eviction-threshold percentage, but this can risk growing heap to the point where you encounter heap fragmentation issues.   
 
@@ -95,11 +95,11 @@ evictionThresholdClearBytes:22280142848]
 
 **Meaning:**
 
-This message requires **URGENT** action.   You are in danger of  distributed system issues where a member, or members, may be kicked out with potential major business impact.  The live objects are driving heap consumption above your critical threshold, so either garbage collection is proving ineffective or your usage has increased unexpectedly, taking you to much higher levels of heap consumption.  Take action **immediately** if you ever see this, even if you were not negatively impacted at the time.  
+This message requires **URGENT** action.   You are in danger of Geode distributed system issues where a member, or members, may be kicked out with potential major business impact.  The live objects are driving heap consumption above your critical threshold, so either garbage collection is proving ineffective or your usage has increased unexpectedly, taking you to much higher levels of heap consumption.  Take action **immediately** if you ever see this, even if you were not negatively impacted at the time.  
 
 **Potential Resolutions:**
 
-If you do not already have  eviction in place, acting as a level of protection
+If you do not already have Geode eviction in place, acting as a level of protection
 to keep heap consumption lower, consider incorporating some flavor of eviction.  G1GC and other
 newer collectors are not really compatible with HEAP_LRU eviction, so you would need to incorporate
 entry count or memory-based eviction.
@@ -114,7 +114,7 @@ have a maximum of 1g of overhead.  This means that setting the critical-threshol
 completely fine for a 100g heap.  If you are seeing tenured heap growth with no entry count growth
 over time, this is likely indicative of a leak. You will need to take heap dumps and analyze them to
 determine why the heap is growing.  It could be only temporary, if queries are running and driving
-heap consumption, but this should resolve itself, since  will terminate
+heap consumption, but this should resolve itself, since Geode will terminate
 queries and eliminate that garbage.
 
 If you are using G1GC, it is possible that you are not setting your InitiatingHeapOccupancyPercent
@@ -335,7 +335,7 @@ To take action, check the â€œReasonâ€ seen in some of the logs, and tak
 is rare, it is likely not an issue.  If frequent, however, you definitely want to research and tune
 the system to eliminate these messages.  If you are seeing the â€œno longer suspectingâ€ message, that
 means that you should also see the â€œSuspecting memberâ€ message shown above.  However, depending on
-your version of , It may require debug level logging to see that message.
+your version of Geode , It may require debug level logging to see that message.
 
 
 ## <a id="secondshaveelapsed"></a>&lt;n&gt; Seconds Have Elapsed
@@ -437,7 +437,7 @@ split.
 
 **Meaning:**
 
-  This is a warning that you have chosen a configuration that makes you more susceptible to data consistency issues if you experience a network partition, or â€œsplit brainâ€.   If you do choose this configuration and experience network issues that create a â€œsplit brainâ€ scenario, where your distributed system splits into two separate distributed systems (DS), then it is possible that your data will diverge.   Specifically, you could do puts into a region in DS A that do not make it into DS B, while also doing puts into DS B that do not make it into DS A.  will be unable to resolve this situation for you as you try to recover the system back into a single, healthy DS.
+  This is a warning that you have chosen a configuration that makes you more susceptible to data consistency issues if you experience a network partition, or â€œsplit brainâ€.   If you do choose this configuration and experience network issues that create a â€œsplit brainâ€ scenario, where your distributed system splits into two separate distributed systems (DS), then it is possible that your data will diverge.   Specifically, you could do puts into a region in DS A that do not make it into DS B, while also doing puts into DS B that do not make it into DS A. Geode will be unable to resolve this situation for you as you try to recover the system back into a single, healthy DS.
 
 **Potential Resolutions:**
 
@@ -460,13 +460,13 @@ issue. Check the GC, memory, and CPU statistics.
 
 **Meaning:**
 
-  **URGENT** action is needed. You are experiencing JVM Pauses, where the JVM is preventing  from running at all for the given amount of time.  This is only logged when the delay is at least 3 seconds more than your configured statistic-sample-rate.   You are vulnerable to having members kicked out of the distributed system.  
+  **URGENT** action is needed. You are experiencing JVM Pauses, where the JVM is preventing Geode from running at all for the given amount of time.  This is only logged when the delay is at least 3 seconds more than your configured statistic-sample-rate.   You are vulnerable to having members kicked out of the distributed system.  
 
 **Potential Resolutions:**
 
-  This is almost always caused by GC related behavior.   To diagnose such issues, make sure to enable GC logging in your environment.   If you have GC logs, search for â€œFull GCâ€, â€œconcurrent mode failureâ€, â€œexhaustedâ€, and other similar issues that drive long pauses.    If you do open a ticket for assistance, please have  logs, stats, and GC logs ready to provide them prior to opening the ticket.     
+  This is almost always caused by GC related behavior.   To diagnose such issues, make sure to enable GC logging in your environment.   If you have GC logs, search for â€œFull GCâ€, â€œconcurrent mode failureâ€, â€œexhaustedâ€, and other similar issues that drive long pauses.    If you do open a ticket for assistance, please have Geode logs, stats, and GC logs ready to provide them prior to opening the ticket.     
 
-If this is urgent and you need immediate resolution without having time to fine tune GC, one possible temporary patch is to increase the member-timeout in the gemfire.properties file.  This would make  more tolerant of processes being somewhat unresponsive for longer durations.
+If this is urgent and you need immediate resolution without having time to fine tune GC, one possible temporary patch is to increase the member-timeout in the gemfire.properties file.  This would make Geode more tolerant of processes being somewhat unresponsive for longer durations.
 
 
 ## <a id="redundancyhasdroppedbelownconfigurecopies"></a>Redundancy has dropped below &lt;n&gt; configured copies
@@ -520,11 +520,11 @@ This message requires **URGENT** action.  These messages indicate that you have 
 
 **Potential Resolutions:**
 
-If you have increased load recently, or are using an old, legacy default value of 800 for max-connections, you may want to consider increasing this setting, regardless.  Many customers use 2000, or even 5000 for those that do not want  to be throttling their performance/activity trying to conserve resources. 
+If you have increased load recently, or are using an old, legacy default value of 800 for max-connections, you may want to consider increasing this setting, regardless.  Many customers use 2000, or even 5000 for those that do not want Geode to be throttling their performance/activity trying to conserve resources. 
 
 That said, if this number of connections is unexpected, you are potentially experiencing issues with
 connection timeouts, driving retry activity and a thrashing of resources that can cause the number
-of outstanding client connections and threads to be exhausted. You can observe this by examining  statistics using a tool like VSD, or, if
+of outstanding client connections and threads to be exhausted. You can observe this by examining Geode statistics using a tool like VSD, or, if
 using JMX, you can monitor usage with the CacheServeMXBean getClientConnectionCount() method.  If
 you ever see unexpected spikes in this value, but are not seeing other symptoms, such as timeouts,
 perhaps you simply need to increase the max-connections appropriately.
@@ -534,7 +534,7 @@ to an insufficient read-timeout in the client side pool configuration, or an ins
 queue on the server side. Another setting that warrants investigation is the
 BridgeServer.HANDSHAKE_POOL_SIZE.  If you have not altered this setting in your system properties,
 you are likely using the default value of 4, which has been seen to be insufficient for many
-environments.  Recommend increasing this  system property to at least 20.
+environments.  Recommend increasing this Geode system property to at least 20.
 
 
 ## <a id="pccservicemetricscomponentfailingtoconnect"></a>PCC service metrics component failing to connect to locator/server
@@ -568,7 +568,7 @@ io.pivotal.cloudcache.metrics.cli.JMXPropertiesEmitter.main(JMXPropertiesEmitter
 
 **Meaning:**
 
- Every VM in PCC for locators or servers has its own service-metrics component. The job of this component is to periodically check the health of the  server/locator processes running. The way it does that job is by making an RMI call to the JMX manager. When it cannot connect to the locator/server process, it starts logging these errors in its own log.
+ Every VM in PCC for locators or servers has its own service-metrics component. The job of this component is to periodically check the health of the Geode server/locator processes running. The way it does that job is by making an RMI call to the JMX manager. When it cannot connect to the locator/server process, it starts logging these errors in its own log.
 
 
 ## <a id="sslhandshakeexception"></a>SSLHandshakeException:  &lt;version&gt; is disabled
@@ -710,7 +710,7 @@ tid=0x164] Initialization of region _B__RegionName_32 completed
 
 **Meaning:**
 
- This set of messages are related to the initialization of Partitioned regions.   They indicate where the  system is retrieving each bucket from to perform this initialization.  In the above example, bucket 32 for region â€œRegionNameâ€ is being retrieved from member gemfire-server-1 as  believes this to be the most recent data for that bucket.   This is the â€œrequesting initial imageâ€ message above.   The â€œInitialization of region `<>` completed message can be useful to determine where each specific bucket, for each specific region, is located across the membership.
+ This set of messages are related to the initialization of Partitioned regions.   They indicate where the Geode system is retrieving each bucket from to perform this initialization.  In the above example, bucket 32 for region â€œRegionNameâ€ is being retrieved from member gemfire-server-1 as Geode believes this to be the most recent data for that bucket.   This is the â€œrequesting initial imageâ€ message above.   The â€œInitialization of region `<>` completed message can be useful to determine where each specific bucket, for each specific region, is located across the membership.
 
 **Potential Resolution:**
 
@@ -885,7 +885,7 @@ Apache.Geode.Client.Region`2[[System.__Canon, mscorlib],[System.__Canon, mscorli
 
 **Meaning:**
 
- This is evidence of the connection pool getting overwhelmed on the client side and not a problem on the  server side. 
+ This is evidence of the connection pool getting overwhelmed on the client side and not a problem on the Geode server side. 
 Resolution: Increase the max-connections property to higher value as appropriate on pool settings on native client.
 
 
@@ -1096,7 +1096,7 @@ null.
 
 **Meaning:**
 
- When a client with subscription-enabled="true" is started, messages like below will be logged in the  client log. If subscription-redundancy is not set, there will be one of these; if it is set to 1, there will be two, etc. The Cache Client Updater Thread is the thread waiting for events from the server. If no other server is available to which the Cache Client Updater Thread is connected, then above error message will be logged:
+ When a client with subscription-enabled="true" is started, messages like below will be logged in the Geode client log. If subscription-redundancy is not set, there will be one of these; if it is set to 1, there will be two, etc. The Cache Client Updater Thread is the thread waiting for events from the server. If no other server is available to which the Cache Client Updater Thread is connected, then above error message will be logged:
 
 **Potential Resolutions:**
 
@@ -1213,7 +1213,7 @@ tenured heap garbage collection has occurred.  New tenured heap consumption:
 
  This message occurs when a tenured space garbage collection has occurred.  The goal is to provide the customer with a very accurate read for how much heap is actually consumed.   External monitors do not know when a collection has occurred.   The value specified is how much live data exists in tenured heap.   
 
-If you see this value constantly increasing over time, without a similar rate of increase of  entries, then this warrants some investigation into potential leaks.    Short term increases due to queries, for example, are not worthy of concern, other than providing an indication that finer tuning may be warranted.   The short term data resulting from a query would hopefully be fulfilled using the young generation heap, most of the time.
+If you see this value constantly increasing over time, without a similar rate of increase of Geode entries, then this warrants some investigation into potential leaks.    Short term increases due to queries, for example, are not worthy of concern, other than providing an indication that finer tuning may be warranted.   The short term data resulting from a query would hopefully be fulfilled using the young generation heap, most of the time.
 
 **Potential Resolutions:**
 
@@ -1261,11 +1261,11 @@ Socket send buffer size is 6710884 instead of the requested 16777215.
 
 **Meaning:**
 
- This may require configuration change, to give more optimal behavior.   This message tells you that your  configuration is specifying a larger socket-buffer-size that the lower OS is going to permit.   Hence, you see this message, and perhaps less than optimal behavior.   
+ This may require configuration change, to give more optimal behavior.   This message tells you that your Geode configuration is specifying a larger socket-buffer-size that the lower OS is going to permit.   Hence, you see this message, and perhaps less than optimal behavior.   
 
 **Potential Resolutions:**
 
-Make sure to set all members OS configurations to be the same, similar enough to avoid having this less than optimal potential chunking of messages when sending messages between members of the  distributed system.
+Make sure to set all members OS configurations to be the same, similar enough to avoid having this less than optimal potential chunking of messages when sending messages between members of the Geode distributed system.
 
 
 ## <a id="quorumhasbeenlost"></a>quorum has been lost
@@ -1342,7 +1342,7 @@ Note: This message generally comes with a full stack trace showing the forceDisc
 
 **Potential Resolutions:**
 
-Follow the guidance provided in the, â€œquorum has been lost,â€ message.    We definitely recommend having enable-network-partition-detection=true set to protect you from split brain driving the data in your split (now 2) distributed systems diverging and becoming unrecoverable without manual intervention.    Do some research to determine whether some network event drove the  cluster into this state due to an inability to communicate across the distributed system.
+Follow the guidance provided in the, â€œquorum has been lost,â€ message.    We definitely recommend having enable-network-partition-detection=true set to protect you from split brain driving the data in your split (now 2) distributed systems diverging and becoming unrecoverable without manual intervention.    Do some research to determine whether some network event drove the Geode cluster into this state due to an inability to communicate across the distributed system.
 
 ## <a id="memberhadaweightofn"></a>&lt;member&gt; had a weight of &lt;n&gt;
 **Log Message:**
@@ -1378,7 +1378,7 @@ all <n> thread pool threads are in use for greater than <t> ms
 
 **Category:** Operations
 
-**Meaning:**  This requires some action to achieve optimal behavior.   If you see this message, it means that your normal behavior requires more than the configured number of function execution threads, set using DistributionManager.MAX_FE_THREADS.   The default has increased recently, but if you see this message, regardless of the current setting `<n>` shown in the example message, it indicates that your function executions will potentially take longer, due to  behavior.    
+**Meaning:**  This requires some action to achieve optimal behavior.   If you see this message, it means that your normal behavior requires more than the configured number of function execution threads, set using DistributionManager.MAX_FE_THREADS.   The default has increased recently, but if you see this message, regardless of the current setting `<n>` shown in the example message, it indicates that your function executions will potentially take longer, due to Geode behavior.    
 
 **Potential Resolutions:**
 

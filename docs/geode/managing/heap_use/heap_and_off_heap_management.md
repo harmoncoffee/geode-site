@@ -23,11 +23,11 @@ By default,  uses the JVM heap.  also offers an option to store data off heap. T
 
 -   **[Heap memory management](heap_management.html)**
 
-    Tips to optimize your application's performance by tuning the way  uses the JVM heap.
+    Tips to optimize your application's performance by tuning the way Apache Geode uses the JVM heap.
 
 -   **[Off-heap memory management](off_heap_management.html)**
 
-    How to configure  to store region values in off-heap memory, which is memory within the JVM that is not subject to Java garbage collection.
+    How to configure Geode to store region values in off-heap memory, which is memory within the JVM that is not subject to Java garbage collection.
 
 -   **[Locking memory](lock_memory.html)**
 

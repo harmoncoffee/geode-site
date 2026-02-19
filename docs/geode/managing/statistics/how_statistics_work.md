@@ -20,7 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-Each application or cache server that joins the cluster can collect and archive statistical data for analyzing system performance.
+Each application or cache server that joins the cluster can collect and archive statistical data for analyzing system performance. Geode 
 
  statistics can be enabled for a cluster, for an application, for a server, or for a region. Statistics gathered for a cluster, an application, or a cache server are saved to a file and can be archived, whereas region statistics are transient and accessible only through the API.
 
@@ -29,8 +29,8 @@ Set the configuration attributes that control cluster, application, or cache sta
 
 When Java applications and servers join a cluster, they can be configured via the cluster configuration service to enable statistics sampling and whether to archive the statistics that are gathered.
 
-**Note:**
- statistics use the Java `System.nanoTimer` for nanosecond timing. This method provides nanosecond precision, but not necessarily nanosecond accuracy. For more information, see the online Java documentation for `System.nanoTimer` for the JRE you are using with .
+**Note:** Geode 
+ statistics use the Java `System.nanoTimer` for nanosecond timing. This method provides nanosecond precision, but not necessarily nanosecond accuracy. For more information, see the online Java documentation for `System.nanoTimer` for the JRE you are using with Geode .
 
 Statistics sampling provides valuable information for ongoing system tuning and troubleshooting. Sampling statistics at the default sample rate does not impact overall cluster performance. We recommend enabling statistics sampling in production environments.
 

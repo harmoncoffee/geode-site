@@ -17,13 +17,13 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
- uses MBeans to manage and monitor different parts of . 's federated MBean architecture is scalable and allows you to have a single-agent view of a  cluster.
+ uses MBeans to manage and monitor different parts of . 's federated MBean architecture is scalable and allows you to have a single-agent view of a Geode cluster.
 
-## <a id="concept_40A475F186E249C597681069C835CF65__section_19948055E4184110910B11CD979A923A" class="no-quick-link"></a>Federation of  MBeans and MBeanServers
+## <a id="concept_40A475F186E249C597681069C835CF65__section_19948055E4184110910B11CD979A923A" class="no-quick-link"></a>Federation of Geode MBeans and MBeanServers
 
-Federation of the MBeanServers means that one member, the JMX Manager Node, can provide a proxied view of all the MBeans that the MBeanServer hosts. Federation also means that operations and notifications are spread across the cluster.
+Federation of the MBeanServers means that one member, the JMX Manager Node, can provide a proxied view of all the MBeans that the MBeanServer hosts. Federation also means that operations and notifications are spread across the cluster. Geode 
 
  federation takes care of the following functionality:
 
@@ -34,7 +34,7 @@ Federation of the MBeanServers means that one member, the JMX Manager Node, can 
 
 ## <a id="concept_40A475F186E249C597681069C835CF65__section_AD13594ADA814194897488CF96BCC479" class="no-quick-link"></a>MBean Proxy Naming Conventions
 
-Each  MBean follows a particular naming convention for easier grouping. For example:
+Each Geode MBean follows a particular naming convention for easier grouping. For example:
 
 ``` pre
 GemFire:type=Member,service=LockService,name=<dlsName>,memberName=<memberName>
@@ -52,11 +52,11 @@ GemFire:type=Member,member=<Node1>
 
 ## <a id="concept_40A475F186E249C597681069C835CF65__section_8F9D375A185E476FB50E7D6E30BE2FC7" class="no-quick-link"></a>Use of MXBeans
 
-In its Management API,  provides MXBeans to ensure that any MBeans that are created are usable by any client, including remote clients, without requiring the client to access specific classes in order to access contents of the MBean.
+In its Management API, Geode provides MXBeans to ensure that any MBeans that are created are usable by any client, including remote clients, without requiring the client to access specific classes in order to access contents of the MBean.
 
-## <a id="concept_40A475F186E249C597681069C835CF65__section_DCC1B2AB80B04E8CBED041C1F3BDAB5F" class="no-quick-link"></a>MBean Proxy Creation
+## <a id="concept_40A475F186E249C597681069C835CF65__section_DCC1B2AB80B04E8CBED041C1F3BDAB5F" class="no-quick-link"></a>MBean Proxy Creation Geode 
 
- proxies are inherently local MBeans. Every  JMX manager member hosts proxies pointing to the local MBeans of every managed node. Proxy MBeans will also emit any notification emitted by local MBeans in managed nodes when an event occurs in that managed node.
+ proxies are inherently local MBeans. Every Geode JMX manager member hosts proxies pointing to the local MBeans of every managed node. Proxy MBeans will also emit any notification emitted by local MBeans in managed nodes when an event occurs in that managed node.
 
 **Note:**
 Aggregate MBeans on the JMX Manager node are not proxied.

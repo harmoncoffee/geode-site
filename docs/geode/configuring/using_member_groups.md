@@ -19,11 +19,11 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Apache Geode 
 
  allows you to organize your cluster members into logical member groups.
 
-The use of member groups in  is optional. The benefit of using member groups is the ability to coordinate certain operations on members based on logical group membership. For example, by defining and using member groups you can:
+The use of member groups in Apache Geode is optional. The benefit of using member groups is the ability to coordinate certain operations on members based on logical group membership. For example, by defining and using member groups you can:
 
 -   Alter a subset of configuration properties for a specific member or members. See [alter runtime](../../tools_modules/gfsh/command-pages/alter.html#topic_7E6B7E1B972D4F418CB45354D1089C2B) in `gfsh`.
 -   Perform certain disk operations like disk-store compaction across a member group. See [Disk Store Commands](../../tools_modules/gfsh/quick_ref_commands_by_area.html#topic_1ACC91B493EE446E89EC7DBFBBAE00EA) for a list of commands.

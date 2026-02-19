@@ -19,9 +19,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section describes how to remove .
+This section describes how to remove Geode .
 
-Shut down any running  processes and then remove the entire directory tree. No additional system modifications or modification of Windows registry entries are needed.
+Shut down any running Geode processes and then remove the entire directory tree. No additional system modifications or modification of Windows registry entries are needed.
 
 
 

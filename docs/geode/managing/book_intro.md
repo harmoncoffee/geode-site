@@ -17,9 +17,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-*Managing * describes how to plan and implement tasks associated with managing, monitoring, and troubleshooting .
+*Managing Apache Geode * describes how to plan and implement tasks associated with managing, monitoring, and troubleshooting .
 
--   **[ Management and Monitoring](management/management_and_monitoring.html)**
+-   **[ Management and Monitoring](management/management_and_monitoring.html)** Apache Geode 
 
      provides APIs and tools for managing your cluster and monitoring the health of your cluster members.
 
@@ -29,7 +29,7 @@ limitations under the License.
 
 -   **[Disk Storage](disk_storage/chapter_overview.html)**
 
-    With  disk stores, you can persist data to disk as a backup to your in-memory copy and overflow data to disk when memory use gets too high.
+    With Apache Geode disk stores, you can persist data to disk as a backup to your in-memory copy and overflow data to disk when memory use gets too high.
 
 -   **[Cache and Region Snapshots](cache_snapshots/chapter_overview.html)**
 
@@ -45,7 +45,7 @@ limitations under the License.
 
 -   **[Performance Tuning and Configuration](monitor_tune/chapter_overview.html)**
 
-    A collection of tools and controls allow you to monitor and adjust  performance.
+    A collection of tools and controls allow you to monitor and adjust Apache Geode performance.
 
 -   **[Logging](logging/logging.html)**
 
@@ -53,7 +53,7 @@ limitations under the License.
 
 -   **[Statistics](statistics/chapter_overview.html)**
 
-    Every application and server in a cluster can access statistical data about  operations. You can configure the gathering of statistics by using the `alter runtime` command of `gfsh` or in the `gemfire.properties` file to facilitate system analysis and troubleshooting.
+    Every application and server in a cluster can access statistical data about Apache Geode operations. You can configure the gathering of statistics by using the `alter runtime` command of `gfsh` or in the `gemfire.properties` file to facilitate system analysis and troubleshooting.
 
 -   **[Troubleshooting and System Recovery](troubleshooting/chapter_overview.html)**
 

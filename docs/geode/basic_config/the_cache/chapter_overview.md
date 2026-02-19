@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The  cache is the entry point to  caching management.  provides different APIs and XML configuration models to support the behaviors of different members.
+The Geode cache is the entry point to Geode caching management. Geode provides different APIs and XML configuration models to support the behaviors of different members.
 
 -   **[Introduction to Cache Management](intro_cache_management.html)**
 
@@ -39,7 +39,7 @@ The  cache is the entry point to  caching management.  provides different APIs a
 
 -   **[Managing RegionServices for Multiple Secure Users](managing_a_multiuser_cache.html)**
 
-    In a secure system, you can create clients with multiple, secure connections to the servers from each client. The most common use case is a  client embedded in an application server that supports data requests from many users. Each user may be authorized to access a subset of data on the servers. For example, customer users may be allowed to see and update only their own orders and shipments.
+    In a secure system, you can create clients with multiple, secure connections to the servers from each client. The most common use case is a Geode client embedded in an application server that supports data requests from many users. Each user may be authorized to access a subset of data on the servers. For example, customer users may be allowed to see and update only their own orders and shipments.
 
 -   **[Launching an Application after Initializing the Cache](setting_cache_initializer.html)**
 

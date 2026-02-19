@@ -21,7 +21,7 @@ limitations under the License.
 
 
 
-List existing  resources such as deployed applications, disk-stores, functions, members, servers, and regions.
+List existing Geode resources such as deployed applications, disk-stores, functions, members, servers, and regions.
 
 -   **[list async-event-queues](#topic_j22_kzk_2l)**
 
@@ -37,7 +37,7 @@ List existing  resources such as deployed applications, disk-stores, functions, 
 
 -   **[list disk-stores](#topic_BC14AD57EA304FB3845766898D01BD04)**
 
-    List all available disk stores across the  cluster
+    List all available disk stores across the Geode cluster
 
 -   **[list durable-cqs](#topic_66016A698C334F4EBA19B99F51B0204B)**
 

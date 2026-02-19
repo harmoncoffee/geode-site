@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-To populate your  cache and fine-tune its storage and distribution behavior, you need to define cached data regions and provide custom configuration for the cache and regions.
+To populate your Apache Geode cache and fine-tune its storage and distribution behavior, you need to define cached data regions and provide custom configuration for the cache and regions.
 
 <a id="setting_cache_properties__section_FB536C90C219432D93E872CBD49D66B1"></a>
 Cache configuration properties define:
@@ -31,7 +31,7 @@ Cache configuration properties define:
 
 Configure the cache and its data regions through one or more of these methods:
 
--   Through a persistent configuration that you define when issuing commands that use the gfsh command line utility. The gfsh utility supports the administration, debugging, and deployment of  processes and applications. You can use gfsh to configure regions, locators, servers, disk stores, event queues, and other objects.
+-   Through a persistent configuration that you define when issuing commands that use the gfsh command line utility. The gfsh utility supports the administration, debugging, and deployment of Apache Geode processes and applications. You can use gfsh to configure regions, locators, servers, disk stores, event queues, and other objects.
 
     As you issue commands, gfsh saves a set of configurations that apply to the entire cluster and also saves configurations that only apply to defined groups of members within the cluster. You can re-use these configurations to create a cluster. See [Overview of the Cluster Configuration Service](../../configuring/cluster_config/gfsh_persist.html).
 

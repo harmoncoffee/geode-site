@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-In addition to basic region management, distributed and replicated regions include options for things like push and pull distribution models, global locking, and region entry versions to ensure consistency across  members.
+In addition to basic region management, distributed and replicated regions include options for things like push and pull distribution models, global locking, and region entry versions to ensure consistency across Geode members.
 
 -   **[How Distribution Works](how_distribution_works.html)**
 
@@ -27,7 +27,7 @@ In addition to basic region management, distributed and replicated regions inclu
 
 -   **[Options for Region Distribution](choosing_level_of_dist.html)**
 
-    You can use distribution with and without acknowledgment, or global locking for your region distribution. Regions that are configured for distribution with acknowledgment can also be configured to resolve concurrent updates consistently across all  members that host the region.
+    You can use distribution with and without acknowledgment, or global locking for your region distribution. Regions that are configured for distribution with acknowledgment can also be configured to resolve concurrent updates consistently across all Geode members that host the region.
 
 -   **[How Replication and Preloading Work](how_replication_works.html)**
 

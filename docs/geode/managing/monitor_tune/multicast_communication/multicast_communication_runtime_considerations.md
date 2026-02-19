@@ -25,7 +25,7 @@ When you use multicast for messaging and data distribution, you need to understa
 
 **Multicast Health Monitor**
 
-The  management and monitoring system is supplemented by a `maxRetransmissionRatio` health
+The Geode management and monitoring system is supplemented by a `maxRetransmissionRatio` health
 monitoring setting for cluster members. This ratio is the number of retransmission
 requests received divided by the number of multicast datagrams written. If the ratio is at 1.0, the
 member is retransmitting as many packets as it originally sent. Retransmissions are point-to-point,
@@ -37,11 +37,11 @@ multicast to transmit cache updates. The new member is added, which is running o
 multicast enabled. As a result, there is a retransmission request for every cache update, and the
 `maxRetransmissionRatio` changes to 1.0.
 
-**Controlling Memory Use on  Hosts with Multicast**
+**Controlling Memory Use on Geode Hosts with Multicast**
 
 Running out of memory can impede a memberâ€™s performance and eventually lead to severe errors.
 
-When data is distributed over multicast,  incurs a fixed overhead of memory reserved for transmission buffers. A specified amount of memory is reserved for each distributed region. These producer-side buffers are used only when a receiver is not getting enough CPU to read from its own receiving buffer as quickly as the producer is sending. In this case, the receiver complains of lost data. The producer then retrieves the data, if it still exists in its buffer, and resends to the receiver.
+When data is distributed over multicast, Geode incurs a fixed overhead of memory reserved for transmission buffers. A specified amount of memory is reserved for each distributed region. These producer-side buffers are used only when a receiver is not getting enough CPU to read from its own receiving buffer as quickly as the producer is sending. In this case, the receiver complains of lost data. The producer then retrieves the data, if it still exists in its buffer, and resends to the receiver.
 
 Tuning the transmission buffers requires a careful balance. Larger buffers mean that more data remains available for retransmission, providing more protection in case of a problem. On the other hand, a larger amount of reserved memory means that less memory is available for caching.
 

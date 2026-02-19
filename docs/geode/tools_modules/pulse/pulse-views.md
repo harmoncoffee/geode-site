@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Pulse provides a variety of different views to help you monitor  clusters, members, and regions.
+Pulse provides a variety of different views to help you monitor Geode clusters, members, and regions.
 
 The following sections provide an overview of the main Pulse views:
 
@@ -37,19 +37,19 @@ The cluster view is a high-level overview of the cluster. It is displayed immedi
 
 Use these basic controls while in Cluster view:
 
-1.  Click Members or Data to display information about  members or data regions in the cluster.
-2.  Click the display icons to display the  members using icon view, block view, or table view. Note that icon view is available only when displaying Members.
+1.  Click Members or Data to display information about Geode members or data regions in the cluster.
+2.  Click the display icons to display the Geode members using icon view, block view, or table view. Note that icon view is available only when displaying Members.
 
-    For example, the following shows  Members displayed in table view:
+    For example, the following shows Geode Members displayed in table view:
 
     <img src="../../images/member_view_list.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_npw_sq3_wn" class="image" />
-    -   While in block view or table view, click the name of a  member to display additional information in the [Member View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_3629814A3DF64D31A190495782DB0DBF).
+    -   While in block view or table view, click the name of a Geode member to display additional information in the [Member View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_3629814A3DF64D31A190495782DB0DBF).
     -   Click Topology, Server Groups, or Redundancy Zones to filter the view based on all members in the topology, configured server groups, or configured redundancy zones.
-    The following shows  Regions displayed in table view:
+    The following shows Geode Regions displayed in table view:
     <img src="../../images/pulse-region-detail.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_glp_1jr_54" class="image" />
     -   While in block view or table view, click the name of a  region to display additional information in the [Region View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_D151776BAC8B4704A71F37F8B5CE063D).
 
-3.  While in icon view, click a host machine icon to display the  members on that machine.
+3.  While in icon view, click a host machine icon to display the Geode members on that machine.
 4.  In the Alerts pane, click the severity tabs to filter the message display by the level of severity.
 
 **Cluster View Screen Components**
@@ -87,7 +87,7 @@ The following table describes the data pieces displayed on the Cluster View scre
 
 # <a id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_3629814A3DF64D31A190495782DB0DBF" class="no-quick-link"></a>Member View
 
-When you select an individual  member in Cluster View, Pulse displays the regions available on that member, as well as member-specific information such as the configured listen ports.
+When you select an individual Geode member in Cluster View, Pulse displays the regions available on that member, as well as member-specific information such as the configured listen ports.
 
 <img src="../../images/pulse_member_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_EDBD3D333B2741DCAA5CB94719B507B7" class="image imageleft" width="624" />
 
@@ -155,7 +155,7 @@ The following table describes the data elements displayed on the Region View scr
 
 # <a id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__sec_pulsedatabrowser" class="no-quick-link"></a>Data Browser
 
-The Pulse Data Browser enables you to query region data. Note that there are two key attributes available on DistributedSystemMXBean (see [List of  JMX MBeans](../../managing/management/list_of_mbeans.html#topic_4BCF867697C3456D96066BAD7F39FC8B)) that you can use to configure limits for the result sets displayed in Data Browser:
+The Pulse Data Browser enables you to query region data. Note that there are two key attributes available on DistributedSystemMXBean (see [List of Geode JMX MBeans](../../managing/management/list_of_mbeans.html#topic_4BCF867697C3456D96066BAD7F39FC8B)) that you can use to configure limits for the result sets displayed in Data Browser:
 
 -   `QueryResultSetLimit` limits the number of rows that Data Browser queries return. 1000 rows are displayed by default.
 -   `QueryCollectionsDepth` limits the number of elements of a collection that Data Browser queries return. This attribute applies to query results contain collections such as Map, List, and so forth. The default value is 100 elements.
@@ -169,7 +169,7 @@ The following shows an example Data Browser view:
 Use these basic controls while in Data Browser view:
 
 1.  Search for the name of a specific region.
-2.  Select one or more regions to display the  members that host those regions. The hosting  members appear in the Region Members section.
+2.  Select one or more regions to display the Geode members that host those regions. The hosting Geode members appear in the Region Members section.
 3.  Select one or more members from the Region Members section to restrict query results to those members.
 4.  Type in the text of a query to execute. See [Querying](../../developing/querying_basics/chapter_overview.html).
 5.  Display a list of previously-executed queries. Double-click on a query from the history list to copy it to the Query Editor, or delete the query from your history.

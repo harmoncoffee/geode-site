@@ -24,7 +24,7 @@ limitations under the License.
 
 Use the latest supported version of the guest OS, and use Java large paging.
 
--   **Use the latest supported version of the guest operating system**. This guideline is probably the most important. Upgrade the guest OS to a recent version supported by . For example, for RHEL, use at least version 7.0 or for SLES, use at least 11.0. For Windows, use Windows Server 2012. For RedHat Linux users, it is particularly beneficial to use RHEL 7 since there are specific enhancements in the RHEL 7 release that improve virtualized latency sensitive workloads.
+-   **Use the latest supported version of the guest operating system**. This guideline is probably the most important. Upgrade the guest OS to a recent version supported by Geode . For example, for RHEL, use at least version 7.0 or for SLES, use at least 11.0. For Windows, use Windows Server 2012. For RedHat Linux users, it is particularly beneficial to use RHEL 7 since there are specific enhancements in the RHEL 7 release that improve virtualized latency sensitive workloads.
 -   **Use Java large paging in guest OS**. Configure Java on the guest OS to use large pages. Add the following command line option when launching Java:
 
     ``` pre
@@ -36,7 +36,7 @@ Use the latest supported version of the guest OS, and use Java large paging.
 This section provides VMware-recommended NUMA, CPU, and BIOS settings for your hardware and virtual machines.
 
 -   Always enable hyper-threading, and do not overcommit CPU.
--   For most production  servers, always use virtual machines with at least two vCPUs .
+-   For most production Apache Geode servers, always use virtual machines with at least two vCPUs .
 -   Apply non-uniform memory access (NUMA) locality by sizing virtual machines to fit within the NUMA node.
 -   VMware recommends the following BIOS settings:
     -   **BIOS Power Management Mode:** Maximum Performance.
@@ -74,7 +74,7 @@ These guidelines help you reduce latency.
 
     **Note:**
     Disabling interrupt coalescing can reduce latency in virtual machines; however, it can impact performance and cause higher CPU utilization. It can also defeat the benefits of large receive offloads (LRO) because some physical NICs (such as Intel 10GbE NICs) automatically disable LRO when interrupt coalescing is disabled.
-This type of tuning benefits  workloads, but it can hurt other non- workloads that are memory throughput-bound, as opposed to latency sensitive as in the case of  workloads.
+This type of tuning benefits Geode workloads, but it can hurt other non- Apache Geode workloads that are memory throughput-bound, as opposed to latency sensitive as in the case of Geode workloads.
 See [http://kb.vmware.com/kb/1027511](http://kb.vmware.com/kb/1027511) for more details.
 
 -   **Virtual NIC:** Use the following guidelines when configuring your virtual NICs:
@@ -88,7 +88,7 @@ This topic discusses use limitations of vSphere vMotion, including its use with 
 When vMotion migrations occur, there is an expected temporary drop in the performance of both read-operation and write-operation workloads.
 These workloads resume their normal rate of operation once the vMotion migration of the servers is completed.
 
-VMware recommends that all vMotion migration activity of  members occurs over 10GbE, during periods of low activity and scheduled maintenance windows.
+VMware recommends that all vMotion migration activity of Apache Geode members occurs over 10GbE, during periods of low activity and scheduled maintenance windows.
 Test vMotion migrations in your own environment to assess differences in workload, networking, and scale.
 
 If you wish to prevent automatic VMware vSphere vMotionÂ® operations that can affect response times, place VMware vSphere Distributed Resource Schedulerâ„¢ (DRS) in manual mode when you first commission the data management system.
@@ -98,34 +98,34 @@ If you wish to prevent automatic VMware vSphere vMotionÂ® operations that can 
 This section provides guidelines on JVM instances and placement of redundant copies of cached data.
 
 -   Have one JVM instance per virtual machine.
--   Increasing the heap space to service the demand for more data is better than installing a second instance of a JVM on a single virtual machine. If increasing the JVM heap size is not an option, consider placing the second JVM on a separate newly created virtual machine, thus promoting more effective horizontal scalability. As you increase the number of  servers, also increase the number of virtual machines to maintain a 1:1:1 ratio among the  server, the JVM, and the virtual machines.
--   Size for a minimum of four vCPU virtual machines with one  server running in one JVM instance. This allows ample CPU cycles for the garbage collector, and the rest for user transactions.
--   Because  can place redundant copies of cached data on any virtual machine, it is possible to inadvertently place two redundant data copies on the same ESX/ESXi host. This is not optimal if a host fails. To create a more robust configuration, use VM1-to-VM2 anti-affinity rules, to indicate to vSphere that VM1 and VM2 can never be placed on the same host because they hold redundant data copies.
+-   Increasing the heap space to service the demand for more data is better than installing a second instance of a JVM on a single virtual machine. If increasing the JVM heap size is not an option, consider placing the second JVM on a separate newly created virtual machine, thus promoting more effective horizontal scalability. As you increase the number of Apache Geode servers, also increase the number of virtual machines to maintain a 1:1:1 ratio among the Apache Geode server, the JVM, and the virtual machines.
+-   Size for a minimum of four vCPU virtual machines with one Apache Geode server running in one JVM instance. This allows ample CPU cycles for the garbage collector, and the rest for user transactions.
+-   Because Apache Geode can place redundant copies of cached data on any virtual machine, it is possible to inadvertently place two redundant data copies on the same ESX/ESXi host. This is not optimal if a host fails. To create a more robust configuration, use VM1-to-VM2 anti-affinity rules, to indicate to vSphere that VM1 and VM2 can never be placed on the same host because they hold redundant data copies.
 
 ## <a id="topic_567308E9DE07406BB5BF420BE77B6558" class="no-quick-link"></a>Virtual Machine Memory Reservation
 
 This section provides guidelines for sizing and setting memory.
 
 -   Set memory reservation at the virtual machine level so that ESXi provides and locks down the needed physical memory upon virtual machine startup. Once allocated, ESXi does not allow the memory to be taken away.
--   Do not overcommit memory for  hosts.
--   When sizing memory for a  server within one JVM on one virtual machine, the total reserved memory for the virtual machine should not exceed what is available within one NUMA node for optimal performance.
+-   Do not overcommit memory for Geode hosts.
+-   When sizing memory for a Geode server within one JVM on one virtual machine, the total reserved memory for the virtual machine should not exceed what is available within one NUMA node for optimal performance.
 
 ## <a id="topic_424B940584044CF6A685E86802548A27" class="no-quick-link"></a>vSphere High Availability and 
 
 On  virtual machines, disable vSphere High Availability (HA).
 
-If you are using a dedicated  DRS cluster, then you can disable HA across the cluster. However, if you are using a shared cluster, exclude  virtual machines from vSphere HA.
+If you are using a dedicated Apache Geode DRS cluster, then you can disable HA across the cluster. However, if you are using a shared cluster, exclude Geode virtual machines from vSphere HA.
 
-Additionally, to support high availability, you can also set up anti-affinity rules between the  virtual machines to prevent two  servers from running on the same ESXi host within the same DRS cluster.
+Additionally, to support high availability, you can also set up anti-affinity rules between the Apache Geode virtual machines to prevent two Apache Geode servers from running on the same ESXi host within the same DRS cluster.
 
 ## <a id="topic_913B15841C4249A68697F3D91281A645" class="no-quick-link"></a>Storage Guidelines
 
 This section provides storage guidelines for persistence files, binaries, logs, and more.
 
--   Use the PVSCSI driver for I/O intensive  workloads.
+-   Use the PVSCSI driver for I/O intensive Apache Geode workloads.
 -   Align disk partitions at the VMFS and guest operating system levels.
--   Provision VMDK files as eagerzeroedthick to avoid lazy zeroing for  members.
--   Use separate VMDKs for  persistence files, binaries, and logs.
+-   Provision VMDK files as eagerzeroedthick to avoid lazy zeroing for Apache Geode members.
+-   Use separate VMDKs for Apache Geode persistence files, binaries, and logs.
 -   Map a dedicated LUN to each VMDK.
 -   For Linux virtual machines, use NOOP scheduling as the I/O scheduler instead of Completely Fair Queuing (CFQ). Starting with the Linux kernel 2.6, CFQ is the default I/O scheduler in many Linux distributions. See [http://kb.vmware.com/kb/2011861](http://kb.vmware.com/kb/2011861) for more information.
 

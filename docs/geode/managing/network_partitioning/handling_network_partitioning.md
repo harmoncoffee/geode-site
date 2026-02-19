@@ -47,7 +47,7 @@ The system uses a combination of member coordinators and system members, designa
     ```
 
 -   Configure regions you want to protect from network partitioning with a scope setting of `DISTRIBUTED_ACK` or `GLOBAL`. Do not use `DISTRIBUTED_NO_ACK` scope. This prevents operations from being performed throughout the cluster before a network partition is detected.
-    **Note:**
+    **Note:** Geode 
      issues an alert if it detects `DISTRIBUTED_NO_ACK` regions when network partition detection is enabled:
 
     ``` pre

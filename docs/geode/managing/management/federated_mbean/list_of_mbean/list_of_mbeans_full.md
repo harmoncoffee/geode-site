@@ -32,7 +32,7 @@ The JMX Manager node includes all local beans listed under [Managed Node MBeans]
 
 ## <a id="topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_7B878B450B994514BDFE96571F0D3827" class="no-quick-link"></a>ManagerMXBean
 
-Represents the  Management layer for the hosting member. Controls the scope of management. This MBean provides `start` and `stop` methods to turn a managed node into a JMX Manager node or to stop a node from being a JMX Manager. For potential managers (`jmx-manager=true` and `jmx-manager-start=false`), this MBean is created when a Locator requests it.
+Represents the Geode Management layer for the hosting member. Controls the scope of management. This MBean provides `start` and `stop` methods to turn a managed node into a JMX Manager node or to stop a node from being a JMX Manager. For potential managers (`jmx-manager=true` and `jmx-manager-start=false`), this MBean is created when a Locator requests it.
 
 **Note:**
 You must configure the node to allow it to become a JMX Manager. See [Configuring a JMX Manager](jmx_manager_operations.html#topic_263072624B8D4CDBAD18B82E07AA44B6) for configuration information.
@@ -54,9 +54,9 @@ System-wide aggregate MBean that provides a high-level view of the entire cluste
 
 The DistributedSystemMXBean provides APIs for performing cluster-wide operations such as backing up all members, shutting down all members or showing various cluster metrics.
 
-You can attach a standard JMX NotificationListener to this MBean to listen for notifications throughout the cluster. See [ JMX MBean Notifications](mbean_notifications.html) for more information.
+You can attach a standard JMX NotificationListener to this MBean to listen for notifications throughout the cluster. See [ Geode JMX MBean Notifications](mbean_notifications.html) for more information.
 
-This MBean also provides some MBean model navigation APIS. These APIs should be used to navigate through all the MBeans exposed by a  System.
+This MBean also provides some MBean model navigation APIS. These APIs should be used to navigate through all the MBeans exposed by a Geode System.
 
 **MBean Details**
 
@@ -120,7 +120,7 @@ JMX Manager nodes will have managed node MBeans for themselves since they are al
 
 ## <a id="topic_48194A5BDF3F40F68E95A114DD702413__section_796A989549304BF7A536A33A913322A4" class="no-quick-link"></a>MemberMXBean
 
-Member's local view of its connection and cache. It is the primary gateway to manage a particular member. It exposes member level attributes and statistics. Some operations like `createCacheServer()` and `createManager()` will help to create some  resources. Any JMX client can connect to the MBean server and start managing a  Member by using this MBean.
+Member's local view of its connection and cache. It is the primary gateway to manage a particular member. It exposes member level attributes and statistics. Some operations like `createCacheServer()` and `createManager()` will help to create some Geode resources. Any JMX client can connect to the MBean server and start managing a Geode Member by using this MBean.
 
 See [MemberMXBean Notifications](list_of_mbean_notifications.html#reference_czt_hq2_vj) for a list of notifications emitted by this MBean.
 

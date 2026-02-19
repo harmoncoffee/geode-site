@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-By default,  partitions each data entry into a bucket using a hashing policy on the key. 
+By default, Geode partitions each data entry into a bucket using a hashing policy on the key. 
 Additionally, the physical location of the key-value pair 
 is abstracted away from the application.
 You can change these policies for a partitioned region by providing
@@ -44,7 +44,7 @@ These steps differ based on which partition resolver is used.
 
 -   Implement the `org.apache.geode.cache.PartitionResolver` interface
 within one of the following locations,
-listed here in the search order used by :
+listed here in the search order used by Geode :
     -   **Within a custom class**. Specify this class as the partition
 resolver during region creation.
     -   **Within the key's class**. For keys implemented as objects,
@@ -208,7 +208,7 @@ All entries within a partition will be on a single server.
 
 **Configuring Standard Partitioning**
 
--   Configure the region so  finds your resolver
+-   Configure the region so Geode finds your resolver
 for all region operations.
 How you do this depends on where you chose to implement
 your custom partitioning.

@@ -75,7 +75,7 @@ If possible, your TCP/IP buffer size settings should match across your installat
     ```
 
 **Note:**
-WAN deployments increase the messaging demands on a  system. To avoid hangs related to WAN messaging, always use the default setting of <code class="ph codeph">conserve-sockets=false</code> for  members that participate in a WAN deployment.
+WAN deployments increase the messaging demands on a Geode system. To avoid hangs related to WAN messaging, always use the default setting of <code class="ph codeph">conserve-sockets=false</code> for Geode members that participate in a WAN deployment.
 
 ## <a id="socket_comm__section_4A7C60D4471A4339884AA5AAC97B4DAA" class="no-quick-link"></a>Multi-site (WAN) Socket Requirements
 

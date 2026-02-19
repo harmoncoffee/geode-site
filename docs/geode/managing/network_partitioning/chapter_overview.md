@@ -17,15 +17,15 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Apache Geode 
 
  architecture and management features help detect and resolve network partition problems.
 
--   **[How Network Partitioning Management Works](how_network_partitioning_management_works.html)**
+-   **[How Network Partitioning Management Works](how_network_partitioning_management_works.html)** Geode 
 
      handles network outages by using a weighting system to determine whether the remaining available members have a sufficient quorum to continue as a cluster.
 
--   **[Failure Detection and Membership Views](failure_detection.html)**
+-   **[Failure Detection and Membership Views](failure_detection.html)** Geode 
 
      uses failure detection to remove unresponsive members from membership views.
 
@@ -37,7 +37,7 @@ limitations under the License.
 
     This topic describes network partitioning scenarios and what happens to the partitioned sides of the cluster.
 
--   **[Configure  to Handle Network Partitioning](handling_network_partitioning.html)**
+-   **[Configure Apache Geode to Handle Network Partitioning](handling_network_partitioning.html)**
 
     This section lists the configuration steps for network partition detection.
 

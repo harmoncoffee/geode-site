@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<a id="topic_long-running-queries"></a>
+<a id="topic_long-running-queries"></a> Geode 
 
  can monitor and throw an exception when
 a query runs longer than a configured amount of time.
@@ -33,5 +33,5 @@ A value of -1 explicitly disables the timeout.
 
 When enabled, a query that runs longer than the configured timeout
 will be cancelled such that it does not finish,
-and  throws a `QueryExecutionTimeoutException`.
+and Geode throws a `QueryExecutionTimeoutException`.
 

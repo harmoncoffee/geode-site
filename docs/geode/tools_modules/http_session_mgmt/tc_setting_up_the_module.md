@@ -98,17 +98,17 @@ In Windows:
   $ ./tcruntime-ctl.bat my_instance_name start
 ```
 
-Refer to the [tc Server](http://www.vmware.com/products/vfabric-tcserver) documentation for more information. Once started,  will automatically launch within the application server process.
+Refer to the [tc Server](http://www.vmware.com/products/vfabric-tcserver) documentation for more information. Once started, Geode will automatically launch within the application server process.
 
-**Note:**
- session state management provides its own clustering functionality. If you are using , you should NOT turn on Tomcat clustering as well.
+**Note:** Geode 
+ session state management provides its own clustering functionality. If you are using Geode , you should NOT turn on Tomcat clustering as well.
 
 To verify that the system is running, check the log file for a message similar to:
 
 ``` pre
 Mar 29, 2016 8:38:31 AM org.apache.geode.modules.session.bootstrap.AbstractCache
 lifecycleEvent
-INFO: Initializing  Modules
+INFO: Initializing Geode Modules
 Modules version: 1.0.0
 Java version:   1.0.0 user1 032916 2016-11-29 07:49:26 -0700
 javac .0.
@@ -118,5 +118,5 @@ Source repository: develop
 Running on: /192.0.2.0, 8 cpu(s), x86_64 Mac OS X 10.11.4
 ```
 
-Information is also logged within the  log file, which by default is named `gemfire_modules.log`.
+Information is also logged within the Geode log file, which by default is named `gemfire_modules.log`.
 

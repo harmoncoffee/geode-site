@@ -21,12 +21,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-For replicated, distributed, and local regions,  provides a standard set of statistics for the region and its entries.
+For replicated, distributed, and local regions, Geode provides a standard set of statistics for the region and its entries. Geode 
 
  gathers these statistics when the `--enable-statistics` parameter of the `create region` command of `gfsh` is set to true or in cache.xml the region attribute `statistics-enabled` is set to true.
 
 **Note:**
-Unlike other  statistics, these region and entry statistics are not archived and cannot be charted.
+Unlike other Geode statistics, these region and entry statistics are not archived and cannot be charted.
 
 **Note:**
 Enabling these statistics requires extra memory per entry. See [Memory Requirements for Cached Data](../../reference/topics/memory_requirements_for_cache_data.html#calculating_memory_requirements).

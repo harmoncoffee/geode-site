@@ -19,9 +19,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section documents all `cache.xml` elements that you use to configure  clients. All elements are sub-elements of the `<client-cache>` element.
+This section documents all `cache.xml` elements that you use to configure Geode clients. All elements are sub-elements of the `<client-cache>` element.
 
-For  server configuration, see [&lt;cache&gt; Element Reference](cache_xml.html).
+For Geode server configuration, see [&lt;cache&gt; Element Reference](cache_xml.html).
 
 API: `org.apache.geode.cache.client.ClientCacheFactory` and `PoolFactory` interfaces.
 
@@ -312,7 +312,7 @@ Specifies the configuration for the Portable Data eXchange (PDX) method of seria
 
 ## <a id="cc-pdx-serializer" class="no-quick-link"></a>&lt;pdx-serializer&gt;
 
-Allows you to configure the PdxSerializer for this  member.
+Allows you to configure the PdxSerializer for this Geode member.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements. See [&lt;class-name&gt; and &lt;parameter&gt;](cache_xml.html#class-name_parameter).
 
@@ -744,7 +744,7 @@ An event-handler plug-in that allows you to receive before-event notification fo
 
 ## <a id="cc-cache-listener" class="no-quick-link"></a>&lt;cache-listener&gt;
 
-An event-handler plug-in that receives after-event notification of changes to the region and its entries. Any number of cache listeners can be defined for a region in any member.  offers several listener types with callbacks to handle data and process events. Depending on the `data-policy` and the `interest-policy` subscription attributes, a cache listener may receive only events that originate in the local cache, or it may receive those events along with events that originate remotely.
+An event-handler plug-in that receives after-event notification of changes to the region and its entries. Any number of cache listeners can be defined for a region in any member. Geode offers several listener types with callbacks to handle data and process events. Depending on the `data-policy` and the `interest-policy` subscription attributes, a cache listener may receive only events that originate in the local cache, or it may receive those events along with events that originate remotely.
 
 Specify the Java class for the cache listener and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements. See [&lt;class-name&gt; and &lt;parameter&gt;](cache_xml.html#class-name_parameter).
 
@@ -795,7 +795,7 @@ Using the maximum attribute, specifies maximum region capacity based on entry co
 
 ## <a id="cc-lru-heap-percentage" class="no-quick-link"></a>&lt;lru-heap-percentage&gt;
 
-Runs evictions when the  resource manager says to. The manager orders evictions when the total cache size is over the heap percentage limit specified in the manager configuration. You can declare a Java class that implements the ObjectSizer interface to measure the size of objects in the Region.
+Runs evictions when the Geode resource manager says to. The manager orders evictions when the total cache size is over the heap percentage limit specified in the manager configuration. You can declare a Java class that implements the ObjectSizer interface to measure the size of objects in the Region.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements. See [&lt;class-name&gt; and &lt;parameter&gt;](cache_xml.html#class-name_parameter).
 
@@ -860,7 +860,7 @@ Specifies the binding for a data-source used in transaction management. See [Con
 
 ## <a id="cc-jndi-binding" class="no-quick-link"></a>&lt;jndi-binding&gt;
 
-For every datasource that is bound to the JNDI tree, there should be one `<jndi-binding>` element. This element describes the property and the configuration of the datasource.  uses the attributes of the `<jndi-binding>` element for configuration. Use the `<config-property>` element to configure properties for the datasource.
+For every datasource that is bound to the JNDI tree, there should be one `<jndi-binding>` element. This element describes the property and the configuration of the datasource. Geode uses the attributes of the `<jndi-binding>` element for configuration. Use the `<config-property>` element to configure properties for the datasource.
 
 We recommend that you set the username and password with the `user-name` and `password` jndi-binding attributes rather than using the `<config-property>` element.
 
@@ -1302,7 +1302,7 @@ Set of serializer or instantiator tags to register customer DataSerializer exten
 
 ## <a id="cc-serializer" class="no-quick-link"></a>&lt;serializer&gt;
 
-Allows you to configure the DataSerializer for this  member. It registers a custom class which extends DataSerializer to support custom serialization of non-modifiable object types inside .
+Allows you to configure the DataSerializer for this Geode member. It registers a custom class which extends DataSerializer to support custom serialization of non-modifiable object types inside Geode .
 
 Specify the Java class for the `DataSerializer` and its initialization parameters with the `<class-name>` sub-element.
 
@@ -1310,7 +1310,7 @@ Specify the Java class for the `DataSerializer` and its initialization parameter
 
 ## <a id="cc-instantiator" class="no-quick-link"></a>&lt;instantiator&gt;
 
-An Instantiator registers a custom class which implements the `DataSerializable` interface to support custom object serialization inside .
+An Instantiator registers a custom class which implements the `DataSerializable` interface to support custom object serialization inside Geode .
 
 Specify the Java class and its initialization parameters with the `<class-name>` sub-element.
 

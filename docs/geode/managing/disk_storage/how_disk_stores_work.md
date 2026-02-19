@@ -29,7 +29,7 @@ Disk storage is available for these items:
 -   **Regions**. Persist and/or overflow data from regions.
 -   **Serverâ€™s client subscription queues**. Overflow the messaging queues to control memory use.
 -   **Gateway sender queues**. Persist these for high availability. These queues always overflow.
--   **PDX serialization metadata**. Persist metadata about objects you serialize using  PDX serialization.
+-   **PDX serialization metadata**. Persist metadata about objects you serialize using Geode PDX serialization.
 
 Each member has its own set of disk stores, and they are completely separate from the disk stores of any other member. For each disk store, define where and how the data is stored to disk. You can store data from multiple regions and queues in a single disk store.
 
@@ -37,7 +37,7 @@ This figure shows a member with disk stores D through R defined. The member has 
 
 <img src="../../images/diskStores-1.gif" id="how_disk_stores_work__image_CB7972998C4A40B2A02550B97A723536" class="image" />
 
-## <a id="how_disk_stores_work__section_433EEEA1560D40DD9842200181EB1D0A" class="no-quick-link"></a>What  Writes to the Disk Store
+## <a id="how_disk_stores_work__section_433EEEA1560D40DD9842200181EB1D0A" class="no-quick-link"></a>What Geode Writes to the Disk Store Geode 
 
  writes the following to the disk store:
 
@@ -46,13 +46,13 @@ This figure shows a member with disk stores D through R defined. The member has 
 -   A disk store identifier
 -   Which regions are in the disk store, specified by region name and including selected attributes
 -   Names of colocated regions on which the regions in the disk store depend
--   A record of all operations on the regions
+-   A record of all operations on the regions Geode 
 
  does not write indexes to disk.
 
 ## <a id="how_disk_stores_work__section_C1A047CD5518499D94A0E9A0328F6DB8" class="no-quick-link"></a>Disk Store State
 
-The files for a disk store are used by  as a group. Treat them as a single entity. If you copy them, copy them all together. Do not change the file names.
+The files for a disk store are used by Geode as a group. Treat them as a single entity. If you copy them, copy them all together. Do not change the file names.
 
 Disk store access and management differs according to whether the member is online or offline.
 While a member is running, its disk stores are online. When the member exits and is not running, its disk stores are offline.

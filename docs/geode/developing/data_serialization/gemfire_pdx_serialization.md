@@ -15,17 +15,17 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
 's Portable Data eXchange (PDX) is a cross-language data format that can reduce the cost of distributing and serializing your objects. PDX stores data in named fields that you can access individually, to avoid the cost of deserializing the entire data object. PDX also allows you to mix versions of objects where you have added or removed fields.
 
--   **[ PDX Serialization Features](PDX_Serialization_Features.html)**
+-   **[ Geode PDX Serialization Features](PDX_Serialization_Features.html)** Geode 
 
      PDX serialization offers several advantages in terms of functionality.
 
 -   **[High Level Steps for Using PDX Serialization](use_pdx_high_level_steps.html)**
 
-    To use PDX serialization, you can configure and use 's reflection-based autoserializer, or you can program the serialization of your objects by using the PDX interfaces and classes.
+    To use PDX serialization, you can configure and use Geode 's reflection-based autoserializer, or you can program the serialization of your objects by using the PDX interfaces and classes.
 
 -   **[Using Automatic Reflection-Based PDX Serialization](auto_serialization.html)**
 
@@ -43,7 +43,7 @@ limitations under the License.
 
     A `PdxInstance` is a light-weight wrapper around PDX serialized bytes. It provides applications with run-time access to fields of a PDX serialized object.
 
--   **[Adding JSON Documents to the  Cache](jsonformatter_pdxinstances.html)**
+-   **[Adding JSON Documents to the Geode Cache](jsonformatter_pdxinstances.html)**
 
     The `JSONFormatter` API allows you to put JSON formatted documents into regions and retrieve them later by storing the documents internally as PdxInstances.
 
@@ -51,7 +51,7 @@ limitations under the License.
 
     You can use the `PdxInstanceFactory` interface to create a `PdxInstance` from raw data when the domain class is not available on the server.
 
--   **[Persisting PDX Metadata to Disk](persist_pdx_metadata_to_disk.html)**
+-   **[Persisting PDX Metadata to Disk](persist_pdx_metadata_to_disk.html)** Geode 
 
      allows you to persist PDX metadata to disk and specify the disk store to use.
 

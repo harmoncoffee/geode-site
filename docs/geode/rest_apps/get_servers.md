@@ -59,7 +59,7 @@ Content-Type: application/json; charset=utf-8
 
 | Status Code               | Description                                                                                 |
 |---------------------------|---------------------------------------------------------------------------------------------|
-| 500 INTERNAL SERVER ERROR | Returned if  throws an error while executing the request. |
+| 500 INTERNAL SERVER ERROR | Returned if Geode throws an error while executing the request. |
 
 
 

@@ -17,9 +17,9 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
- uses a query syntax based on OQL (Object Query Language) to query region data. Since  regions are key-value stores, values can range from simple byte arrays to complex nested objects.
+ uses a query syntax based on OQL (Object Query Language) to query region data. Since Geode regions are key-value stores, values can range from simple byte arrays to complex nested objects.
 
 -   **[GET /geode/v1/queries](get_queries.html)**
 

@@ -18,47 +18,47 @@ limitations under the License.
 -->
 
 
-The Java Transaction API, JTA, is a standard Java interface you can use to coordinate
+The Java Transaction API, JTA, is a standard Java interface you can use to coordinate Geode 
  transactions and JDBC transactions globally under one umbrella. 
 
-You can use JTA global transactions to coordinate  transactions and JDBC transactions.
+You can use JTA global transactions to coordinate Geode transactions and JDBC transactions.
 
-JTA provides direct coordination between the  cache and another transactional
+JTA provides direct coordination between the Geode cache and another transactional
 resource, such as a database. The parties involved in a JTA transaction include:
 
 -   The Java application, responsible for starting the global transaction
 -   The JTA transaction manager, responsible for opening, committing, and rolling back transactions
-- The transaction resource managers, including the  transaction manager
-and the JDBC resource manager, responsible for managing operations in the  cache and database, respectively
+- The transaction resource managers, including the Geode transaction manager
+and the JDBC resource manager, responsible for managing operations in the Geode cache and database, respectively
 
 Using JTA, your application controls all transactions in the same standard way, whether the
-transactions act on the  cache, a JDBC resource, or both together. When a JTA
-global transaction is finished, the  transaction and the database transaction are
+transactions act on the Geode cache, a JDBC resource, or both together. When a JTA
+global transaction is finished, the Geode transaction and the database transaction are
 both complete.
 
-When using JTA global transactions with , you have two options:
+When using JTA global transactions with Geode , you have two options:
 
 -  Coordinate with an external JTA transaction manager in a container (such as WebLogic or JBoss)
 -  Set  as the â€œlast resourceâ€ while using a container (such as WebLogic or JBoss) as the JTA transaction manager
 
 An application creates a global transaction by using `javax.transaction.UserTransaction` bound to
 the JNDI context `java:/UserTransaction` to start and terminate transactions. During the
-transaction, cache operations are done through  as usual.
+transaction, cache operations are done through Geode as usual.
 
 **Note:**
 See the Java documentation for more information on topics such as JTA, `javax.transaction`, committing and rolling back global transactions, and the related exceptions.
 
--   **[Coordinating with External JTA Transactions Managers](#concept_cp1_zx1_wk)**
+-   **[Coordinating with External JTA Transactions Managers](#concept_cp1_zx1_wk)** Geode 
 
      can work with the JTA transaction managers of several containers like JBoss, WebLogic, GlassFish, and so on.
 
--   **[Using  as the "Last Resource" in a Container-Managed JTA Transaction](#concept_csy_vfb_wk)**
+-   **[Using Geode as the "Last Resource" in a Container-Managed JTA Transaction](#concept_csy_vfb_wk)**
 
-    The "last resource" feature in certain third party containers such as WebLogic allow the use one non-XAResource (such as ) in a transaction with multiple XAResources while ensuring consistency.
+    The "last resource" feature in certain third party containers such as WebLogic allow the use one non-XAResource (such as Geode Geode ) in a transaction with multiple XAResources while ensuring consistency.
 
--   **[Behavior of  Cache Writers and Loaders Under JTA](cache_plugins_with_jta.html)**
+-   **[Behavior of Geode Cache Writers and Loaders Under JTA](cache_plugins_with_jta.html)**
 
-    When  participates in a global transactions, you can still have  cache writers and cache loaders operating in the usual way.
+    When Geode participates in a global transactions, you can still have Geode cache writers and cache loaders operating in the usual way.
 
 -   **[Turning Off JTA Transactions](turning_off_jta.html)**
 
@@ -66,37 +66,37 @@ See the Java documentation for more information on topics such as JTA, `javax.tr
 
 <a id="concept_cp1_zx1_wk"></a>
 
-# Coordinating with External JTA Transaction Managers
+# Coordinating with External JTA Transaction Managers Geode 
 
  can work with the JTA transaction managers of several containers such as JBoss, WebLogic, GlassFish, and so on.
 
-At startup  looks for a TransactionManager
-(`javax.transaction.TransactionManager`) that has been bound to its JNDI context. When
- finds such an external transaction manager, all  region
+At startup Geode looks for a TransactionManager
+(`javax.transaction.TransactionManager`) that has been bound to its JNDI context. When Geode 
+ finds such an external transaction manager, all Geode region
 operations (such as get and put) will participate in global transactions hosted by this external JTA
 transaction manager.
 
-This figure shows the high-level operation of a JTA global transaction whose resources include a  cache and a database.
+This figure shows the high-level operation of a JTA global transaction whose resources include a Geode cache and a database.
 
 <img src="../../images/transactions_jta_app_server.png" id="concept_cp1_zx1_wk__image_C2935E48415349659FC39BF5C7E75579" class="image" />
 
 An externally coordinated JTA global transaction is run in the following manner:
 
-1.  Each region operation looks up for presence of a global transaction. If one is detected, then a  transaction is started automatically, and we register a `javax.transaction.Synchronization` callback with the external JTA transaction manager.
-2.  At transaction commit,  gets a `beforeCommit()` callback from the external JTA transaction manager.  does all locking and conflict detection at this time. If this fails, an exception is thrown back to JTA transaction manager, which then cancels the transaction.
+1.  Each region operation looks up for presence of a global transaction. If one is detected, then a Geode transaction is started automatically, and we register a `javax.transaction.Synchronization` callback with the external JTA transaction manager.
+2.  At transaction commit, Geode gets a `beforeCommit()` callback from the external JTA transaction manager.  does all locking and conflict detection at this time. If this fails, an exception is thrown back to JTA transaction manager, which then cancels the transaction.
 3.  After a successful `beforeCommit()`callback, JTA transaction manager asks other data sources to commit their transaction.
-4.   then gets a `afterCommit()` callback in which changes are applied to the cache and distributed to other members.
+4. Geode then gets a `afterCommit()` callback in which changes are applied to the cache and distributed to other members.
 
 You can disable JTA in any region that should not participate in JTA transactions. See [Turning Off JTA Transactions](turning_off_jta.html#concept_nw2_5gs_xk).
 
 ## <a id="task_j3g_3mn_1l" class="no-quick-link"></a>How to Run a JTA Transaction Coordinated by an External Transaction Manager
 
-Use the following procedure to run a  global JTA transaction coordinated by an external JTA transaction manager.
+Use the following procedure to run a Geode global JTA transaction coordinated by an external JTA transaction manager.
 
 1.  **Configure the external data sources in the external container.** Do not configure the data sources in cache.xml . They are not guaranteed to get bound to the JNDI tree.
 2.  
 
-    Configure  for any necessary transactional behavior in the `cache.xml` file. For example, enable `copy-on-read` and specify a transaction listener, as needed. See [Copy on Read Behavior](../../basic_config/data_entries_custom_classes/copy_on_read.html).
+    Configure Geode for any necessary transactional behavior in the `cache.xml` file. For example, enable `copy-on-read` and specify a transaction listener, as needed. See [Copy on Read Behavior](../../basic_config/data_entries_custom_classes/copy_on_read.html).
 3.  
 
     Make sure that JTA transactions are enabled for the regions that will participate in the transaction. See [Turning Off JTA Transactions](turning_off_jta.html#concept_nw2_5gs_xk) for details. 
@@ -115,24 +115,24 @@ Use the following procedure to run a  global JTA transaction coordinated by an e
 
 <a id="concept_csy_vfb_wk"></a>
 
-# Using  as the "Last Resource" in a Container-Managed JTA Transaction
+# Using Geode as the "Last Resource" in a Container-Managed JTA Transaction
 
 The "last resource" feature in certain third party containers such as WebLogic allow the use of one
 non-XAResource (such as ) in a transaction with multiple XAResources while
 ensuring consistency.
 
-In the previous two JTA transaction use cases, if the  member fails after the
-other data sources commit but before  receives the `afterCommit` callback,
+In the previous two JTA transaction use cases, if the Geode member fails after the
+other data sources commit but before Geode receives the `afterCommit` callback, Geode 
  and the other data sources may become inconsistent. To prevent this from
-occurring, you can use the container's "last resource optimization" feature, with
- set as the "last resource". Using  as the last resource
-ensures that in the event of failure,  remains consistent with the other
+occurring, you can use the container's "last resource optimization" feature, with Geode 
+ set as the "last resource". Using Geode as the last resource
+ensures that in the event of failure, Geode remains consistent with the other
 XAResources involved in the transaction.
 
-To accomplish this, the application server container must use a JCA Resource Adapter to accomodate
+To accomplish this, the application server container must use a JCA Resource Adapter to accomodate Geode 
  as the transaction's last resource. The transaction manager of the container
 first issues a "prepare" message to the participating XAResources. If the XAResources all accept the
-transaction, then the manager issues a "commit" instruction to the non-XAResource (in this case,
+transaction, then the manager issues a "commit" instruction to the non-XAResource (in this case, Geode Geode 
 ). The non-XAResource (in this case, ) participates as a
 local transaction resource. If the non-XAResource fails, then the transaction manager can rollback
 the XAResources.
@@ -141,10 +141,10 @@ the XAResources.
 
 <a id="task_sln_x3b_wk"></a>
 
-## How to Run JTA Transactions with  as a "Last Resource"
+## How to Run JTA Transactions with Geode as a "Last Resource"
 
 1.  Locate the version-specific `geode-jca` RAR file within 
-the `lib` directory of your  installation. 
+the `lib` directory of your Geode installation. 
 2.  Add your container-specific XML file to the `geode-jca` RAR file.
     1. Create a container-specific resource adapter XML file named `<container>-ra.xml`.  
       For example, a WebLogic resource adapter XML file might look like this:
@@ -173,7 +173,7 @@ the `lib` directory of your  installation.
         ```
 3.  Make sure that the `geode-dependencies.jar` is accessible in the CLASSPATH of the JTA transaction coordinator container.
 4.  Deploy the version-specific `geode-jca` RAR file on the JTA transaction coordinator container. When deploying the file, you specify the JNDI name and so on. 
-5.  Configure  for any necessary transactional behavior. Enable `copy-on-read` and specify a transaction listener, if you need one.  See [Copy on Read Behavior](../../basic_config/data_entries_custom_classes/copy_on_read.html).
+5.  Configure Geode for any necessary transactional behavior. Enable `copy-on-read` and specify a transaction listener, if you need one.  See [Copy on Read Behavior](../../basic_config/data_entries_custom_classes/copy_on_read.html).
 6.  Get an initial context through `org.apache.geode.cache.GemFireCache.getJNDIContext`. For example:
 
     ``` pre
@@ -182,13 +182,13 @@ the `lib` directory of your  installation.
 
     This returns `javax.naming.Context` and gives you the JNDI associated with the cache. The context contains the `TransactionManager`, `UserTransaction`, and any configured JDBC resource manager.
 
-7.  Start and commit the global transaction using the `UserTransaction` object rather than with 's `CacheTransactionManager`. 
+7.  Start and commit the global transaction using the `UserTransaction` object rather than with Geode 's `CacheTransactionManager`. 
 
     ``` pre
     UserTransaction txManager = (UserTransaction)ctx.lookup("java:/UserTransaction");
     ```
 
-8.  Obtain a  connection.
+8.  Obtain a Geode connection.
 
     ``` pre
     GFConnectionFactory cf = (GFConnectionFactory) ctx.lookup("gfe/jca");

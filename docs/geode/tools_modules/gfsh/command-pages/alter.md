@@ -21,7 +21,7 @@ limitations under the License.
 <a id="topic_9323467A645D4F2B82EC236448030D14"></a>
 
 
-Modify an existing  resource.
+Modify an existing Geode resource.
 
 -   **[alter async-event-queue](#topic_alter_async_event_queue)**
 

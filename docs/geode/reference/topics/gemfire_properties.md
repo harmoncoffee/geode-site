@@ -17,13 +17,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-You use the `gemfire.properties` settings to join a cluster and configure system member behavior. Cluster members include applications, the cache server, the locator, and other  processes.
+You use the `gemfire.properties` settings to join a cluster and configure system member behavior. Cluster members include applications, the cache server, the locator, and other Geode processes.
 
 You can place any security-related (properties that begin with `security-*`) configuration properties in `gemfire.properties` into a separate `gfsecurity.properties` file. Placing these configuration settings in a separate file allows you to restrict access to security configuration data. This way, you can still allow read or write access for your `gemfire.properties` file.
 
 You can also define provider-specific properties ("ssl" properties) in `gfsecurity.properties` instead of defining them at the command-line or in your environment.
 
-You can specify non-ASCII text in your properties files by using Unicode escape sequences. See [Using Non-ASCII Strings in  Property Files](non-ascii_strings_in_config_files.html) for more details.
+You can specify non-ASCII text in your properties files by using Unicode escape sequences. See [Using Non-ASCII Strings in Apache Geode Property Files](non-ascii_strings_in_config_files.html) for more details.
 
 <strong>Note:</strong>
 Unless otherwise indicated, these settings only affect activities within this cluster - not activities between clients and servers or between a gateway sender and gateway receiver in a multi-site installation.
@@ -143,5 +143,5 @@ Unless otherwise indicated, these settings only affect activities within this cl
 
 -   **[Using Non-ASCII Strings in  Property Files](../topics/non-ascii_strings_in_config_files.html)**
 
-    You can specify Unicode (non-ASCII) characters in  property files by using a `\uXXXX` escape sequence.
+    You can specify Unicode (non-ASCII) characters in Apache Geode property files by using a `\uXXXX` escape sequence.
 

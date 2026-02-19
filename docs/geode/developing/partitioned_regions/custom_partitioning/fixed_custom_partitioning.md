@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-By default,  partitions each data entry
+By default, Geode partitions each data entry
 into a bucket using a hashing policy on the key.
 Additionally, the physical location of the key-value pair is
 abstracted away from the application.
@@ -47,7 +47,7 @@ These steps differ based on which partition resolver is used.
 
 -   Implement the `org.apache.geode.cache.FixedPartitionResolver`
 interface within one of the following locations,
-listed here in the search order used by :
+listed here in the search order used by Geode :
     -   **Custom class**. Specify this class as the partition resolver during region creation.
     -   **Entry key**. For keys implemented as objects, define the interface for the key's class.
     -   **Within the cache callback class**. Implement the interface

@@ -28,9 +28,9 @@ There are several different port settings that need to be considered when using 
 
 -   Port that the cache server listens on. This is configurable using the `cache-server` element in cache.xml, on the CacheServer class in Java APIs, and as a command line option to the `gfsh start server` command.
 
-    By default, if not otherwise specified,  clients and servers discover each other on a pre-defined port (**40404**) on the localhost.
+    By default, if not otherwise specified, Geode clients and servers discover each other on a pre-defined port (**40404**) on the localhost.
 
--   Locator port.  clients can use the locator to automatically discover cache servers. The locator port is configurable as a command-line option to the `gfsh start locator` command. Locators are used in the peer-to-peer cache deployments to discover other processes. They can be used by clients to locate servers as an alternative to configuring clients with a collection of server addresses and ports.
+-   Locator port. Geode clients can use the locator to automatically discover cache servers. The locator port is configurable as a command-line option to the `gfsh start locator` command. Locators are used in the peer-to-peer cache deployments to discover other processes. They can be used by clients to locate servers as an alternative to configuring clients with a collection of server addresses and ports.
 
     By default, if not otherwise specified,  locators use the default port **10334**.
 
@@ -39,7 +39,7 @@ There are several different port settings that need to be considered when using 
 
 ## **Limiting Ephemeral Ports for Peer-to-Peer Membership**
 
-By default,  assigns *ephemeral* ports, that is, temporary ports assigned from a designated range, which can encompass a large number of possible ports. When a firewall is present, the ephemeral port range usually must be limited to a much smaller number, for example six. If you are configuring P2P communications through a firewall, you must also set the TCP port for each process and ensure that UDP traffic is allowed through the firewall.
+By default, Geode assigns *ephemeral* ports, that is, temporary ports assigned from a designated range, which can encompass a large number of possible ports. When a firewall is present, the ephemeral port range usually must be limited to a much smaller number, for example six. If you are configuring P2P communications through a firewall, you must also set the TCP port for each process and ensure that UDP traffic is allowed through the firewall.
 
 ## **Properties for Firewall and Port Configuration**
 
@@ -187,7 +187,7 @@ This table contains properties potentially involved in firewall behavior, with a
 
 Each gateway receiver uses a single port to accept connections from gateway senders in other
 systems. The configuration of a gateway receiver specifies a range of possible port values
-to use.  selects an available port from the specified range when the gateway
+to use. Geode selects an available port from the specified range when the gateway
 receiver starts. Configure your firewall so that the full range of possible port values is
 accessible by gateway senders from across the WAN.
 

@@ -29,11 +29,11 @@ You set up and use the module by modifying Tomcat's `server.xml` and `context.xm
 
 -   **[Setting Up the HTTP Module for Tomcat](../http_session_mgmt/tomcat_setting_up_the_module.html)**
 
-    To use the  HTTP module with Tomcat application servers, you will need to modify Tomcat's `server.xml` and `context.xml` files.
+    To use the Geode HTTP module with Tomcat application servers, you will need to modify Tomcat's `server.xml` and `context.xml` files.
 
--   **[Changing the Default  Configuration in the Tomcat Module](../http_session_mgmt/tomcat_changing_gf_default_cfg.html)**
+-   **[Changing the Default Geode Configuration in the Tomcat Module](../http_session_mgmt/tomcat_changing_gf_default_cfg.html)**
 
-    By default, the Tomcat module will run  automatically with pre-configured settings. You can change these  settings.
+    By default, the Tomcat module will run Geode automatically with pre-configured settings. You can change these Geode settings.
 
 
 

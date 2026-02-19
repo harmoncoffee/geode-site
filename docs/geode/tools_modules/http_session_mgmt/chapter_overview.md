@@ -19,19 +19,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The  HTTP Session Management modules provide fast, scalable, and reliable session replication for HTTP servers without requiring application changes.
+The Apache Geode HTTP Session Management modules provide fast, scalable, and reliable session replication for HTTP servers without requiring application changes. Apache Geode 
 
  offers HTTP session management modules for Tomcat and AppServers.
 
 **Note:** As of version 2.x, Geode only supports Tomcat 10.1 and later versions (Jakarta EE namespace). Support for Tomcat 7, 8, 9, and Pivotal tc Server has been discontinued.
 
-These modules are included with the  product distribution, and installation .zip files can be found in the `tools/Modules` directory of your product installation.
+These modules are included with the Apache Geode product distribution, and installation .zip files can be found in the `tools/Modules` directory of your product installation.
 
 -   **[HTTP Session Management Quick Start](../http_session_mgmt/quick_start.html)**
 
     In this section you download, install, and set up the HTTP Session Management modules.
 
--   **[Advantages of Using  for Session Management](../http_session_mgmt/http_why_use_gemfire.html)**
+-   **[Advantages of Using Geode for Session Management](../http_session_mgmt/http_why_use_gemfire.html)**
 
     The HTTP Session Management Module enables you to customize how you manage your session data.
 
@@ -41,7 +41,7 @@ These modules are included with the  product distribution, and installation .zip
 
 -   **[General Information on HTTP Session Management](../http_session_mgmt/tc_additional_info.html)**
 
-    This section provides information on sticky load balancers, session expiration, additional  property changes, serialization and more.
+    This section provides information on sticky load balancers, session expiration, additional Geode property changes, serialization and more.
 
 -   **[Session State Log Files](../http_session_mgmt/session_state_log_files.html)**
 

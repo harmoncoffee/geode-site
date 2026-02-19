@@ -31,9 +31,9 @@ If you would prefer to manually change the `server.xml` and `context.xml` files 
 
     To set up the HTTP Module for tc Server, start a tc Server instance with the appropriate tc Server template based on your preferred topology.
 
--   **[Changing the Default  Configuration in the tc Server Module](../http_session_mgmt/tc_changing_gf_default_cfg.html)**
+-   **[Changing the Default Geode Configuration in the tc Server Module](../http_session_mgmt/tc_changing_gf_default_cfg.html)**
 
-    By default, the tc Server HTTP module will run  automatically with pre-configured settings. You can change these  settings.
+    By default, the tc Server HTTP module will run Geode automatically with pre-configured settings. You can change these Geode settings.
 
 
 

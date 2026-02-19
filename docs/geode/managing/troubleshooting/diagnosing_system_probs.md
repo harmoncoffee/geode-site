@@ -105,13 +105,13 @@ Response:
 Response: Check these possible causes.
 
 -   Network problemâ€”the most common cause. First, try to ping the other hosts.
--   Firewall problems. If members of your distributed  system are located outside the LAN, check whether the firewall is blocking communication.  is a network-centric distributed system, so if you have a firewall running on your machine, it could cause connection problems. For example, your connections may fail if your firewall places restrictions on inbound or outbound permissions for Java-based sockets. You may need to modify your firewall configuration to permit traffic to Java applications running on your machine. The specific configuration depends on the firewall you are using.
+-   Firewall problems. If members of your distributed Geode system are located outside the LAN, check whether the firewall is blocking communication. Geode is a network-centric distributed system, so if you have a firewall running on your machine, it could cause connection problems. For example, your connections may fail if your firewall places restrictions on inbound or outbound permissions for Java-based sockets. You may need to modify your firewall configuration to permit traffic to Java applications running on your machine. The specific configuration depends on the firewall you are using.
 -   Wrong multicast port when using multicast for membership. Check the `gemfire.properties` file of this application or cache server to see that the mcast-port is configured correctly. If you are running multiple clusters at your site, each cluster must use a unique multicast port.
 -   Can not connect to locator (when using TCP for discovery).
     -   Check that the locators attribute in this processâ€™s `gemfire.properties` has the correct IP address for the locator.
     -   Check that the locator process is running. If not, see instructions for related problem, [Data distribution has stopped, although member processes are running](diagnosing_system_probs.html#diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2).
     -   Bind address set incorrectly on a multi-homed host. When you specify the bind address, use the IP address rather than the host name. Sometimes multiple network adapters are configured with the same hostname. See [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview.html#concept_7628F498DB534A2D8A99748F5DA5DC94) for more information about using bind addresses.
--   Wrong version of  . A version mismatch can cause the process to hang or crash. Check the software version with the gemfire version command.
+-   Wrong version of Geode . A version mismatch can cause the process to hang or crash. Check the software version with the gemfire version command.
 
 ## <a id="diagnosing_system_probs__section_D607C96A6CBE42FD880F1463A20A8BEF" class="no-quick-link"></a>Member process seems to hang
 
@@ -127,7 +127,7 @@ Either the process canâ€™t find the configuration file or, if it is an appl
 Response:
 
 -   Check that the `gemfire.properties` file is in the right directory.
--   Make sure the process is not picking up settings from another `gemfire.properties` file earlier in the search path.  looks for a `gemfire.properties` file in the current working directory, the home directory, and the CLASSPATH, in that order.
+-   Make sure the process is not picking up settings from another `gemfire.properties` file earlier in the search path. Geode looks for a `gemfire.properties` file in the current working directory, the home directory, and the CLASSPATH, in that order.
 -   For an application, check the documentation to see whether it does programmatic configuration. If so, the properties that are set programmatically cannot be reset in a `gemfire.properties` file. See your applicationâ€™s customer support group for configuration changes.
 
 ## <a id="diagnosing_system_probs__section_B0698527A4DF4D84877B1AF66291ABFD" class="no-quick-link"></a>Cache creation fails - must match schema definition root
@@ -146,7 +146,7 @@ Exception in thread "main" org.apache.geode.cache.CacheXmlException:
 While reading Cache XML file:/C:/gemfire/cache.xml.
 Error while parsing XML, caused by org.xml.sax.SAXParseException:
 Document root element "cache", must match DOCTYPE root "client-cache".
-```
+``` Geode 
 
  declarative cache creation uses one of two root element pairs: `cache` or `client-cache`. The name must be the same in both places.
 
@@ -267,12 +267,12 @@ The process may be hitting its virtual address space limits. The virtual address
 
 ## <a id="diagnosing_system_probs__section_B49BD03F4CA241C7BED4A2C4D5936A7A" class="no-quick-link"></a>PartitionedRegionDistributionException
 
-The org.apache.geode.cache.PartitionedRegionDistributionException appears when  fails after many attempts to complete a distributed operation. This exception indicates that no data store member can be found to perform a destroy, invalidate, or get operation.
+The org.apache.geode.cache.PartitionedRegionDistributionException appears when Geode fails after many attempts to complete a distributed operation. This exception indicates that no data store member can be found to perform a destroy, invalidate, or get operation.
 
 Response:
 
 -   Check the network for traffic congestion or a broken connection to a member.
--   Look at the overall installation for problems, such as operations at the application level set to a higher priority than the  processes.
+-   Look at the overall installation for problems, such as operations at the application level set to a higher priority than the Geode Geode processes.
 -   If you keep seeing PartitionedRegionDistributionException, you should evaluate whether you need to start more members.
 
 ## <a id="diagnosing_system_probs__section_7DE15A6C99974821B6CA418BC2AF98F1" class="no-quick-link"></a>PartitionedRegionStorageException
@@ -334,7 +334,7 @@ Increase the default socket timeout setting for the member. This timeout is set 
 
 ## <a id="diagnosing_system_probs__section_8C7CB2EA0A274DAF90083FECE0BF3B1F" class="no-quick-link"></a>Member logs ForcedDisconnectException, Cache and DistributedSystem forcibly closed
 
-A cluster memberâ€™s Cache and DistributedSystem are forcibly closed by the system membership coordinator if it becomes sick or too slow to respond to heartbeat requests. When this happens, listeners receive RegionDestroyed notification with an opcode of FORCED\_DISCONNECT. The  log file for the member shows a ForcedDisconnectException with the message
+A cluster memberâ€™s Cache and DistributedSystem are forcibly closed by the system membership coordinator if it becomes sick or too slow to respond to heartbeat requests. When this happens, listeners receive RegionDestroyed notification with an opcode of FORCED\_DISCONNECT. The Geode log file for the member shows a ForcedDisconnectException with the message
 
 ``` pre
 This member has been forced out of the cluster because it did not respond
@@ -411,7 +411,7 @@ If you are experiencing slow performance and are sending large objects (multiple
 
 ## <a id="diagnosing_system_probs__section_F93DD765FF2A43439D3FF7936F8883DE" class="no-quick-link"></a>Canâ€™t get Windows performance data
 
-Attempting to run performance measurements for  on Windows can produce this error message:
+Attempting to run performance measurements for Geode on Windows can produce this error message:
 
 ``` pre
 Can't get Windows performance data. RegQueryValueEx returned 5
@@ -421,7 +421,7 @@ This error can occur because incorrect information is returned when a Win32 appl
 
 Response:
 
-To successfully acquire Windows performance data, you need to verify that you have the proper registry key access permissions in the system registry. In particular, make sure that Perflib in the following registry path is readable (KEY\_READ access) by the  process:
+To successfully acquire Windows performance data, you need to verify that you have the proper registry key access permissions in the system registry. In particular, make sure that Perflib in the following registry path is readable (KEY\_READ access) by the Geode process:
 
 ``` pre
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Perflib
@@ -429,7 +429,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Perflib
 
 An example of reasonable security on the performance data would be to grant administrators KEY\_ALL\_ACCESS access and interactive users KEY\_READ access. This particular configuration would prevent non-administrator remote users from querying performance data.
 
-See [http://support.microsoft.com/kb/310426](http://support.microsoft.com/kb/310426) and [http://support.microsoft.com/kb/146906](http://support.microsoft.com/kb/146906) for instructions about how to ensure that  processes have access to the registry keys associated with performance.
+See [http://support.microsoft.com/kb/310426](http://support.microsoft.com/kb/310426) and [http://support.microsoft.com/kb/146906](http://support.microsoft.com/kb/146906) for instructions about how to ensure that Geode processes have access to the registry keys associated with performance.
 
 ## <a id="diagnosing_system_probs__section_E70C332303A242BEAE9D2C0A2EE70E0A" class="no-quick-link"></a>Java applications on 64-bit platforms hang or use 100% CPU
 

@@ -30,11 +30,11 @@ You can configure most elements of the cache.xml file and apply it to your entir
 
 -   **[&lt;cache&gt; Element Hierarchy](../topics/cache-elements-list.html)**
 
-    This section shows the hierarchy of `<cache>` element sub-elements that you use to configure  caches and servers.
+    This section shows the hierarchy of `<cache>` element sub-elements that you use to configure Geode caches and servers.
 
 -   **[&lt;cache&gt; Element Reference](../topics/cache_xml.html)**
 
-    This section documents the `cache.xml` sub-elements used for  server configuration. All elements are sub-elements of the `<cache>` element.
+    This section documents the `cache.xml` sub-elements used for Geode server configuration. All elements are sub-elements of the `<cache>` element.
 
 -   **[&lt;client-cache&gt; Element Hierarchy](../topics/client-cache-elements-list.html)**
 

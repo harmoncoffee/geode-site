@@ -19,15 +19,15 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
  provides a default configuration for out-of-the-box systems. To use non-default configurations and to fine-tune your member communication, you can use a mix of various options to customize your configuration.
 
-<a id="setting_distributed_properties__section_67EBCC53EB174B108DA7271E2CD2B76C"></a>
- properties are used to join a cluster and configure system member behavior. Configure your  properties through the `gemfire.properties` file, the Java API, or command-line input. Generally, you store all your properties in the `gemfire.properties` file, but you may need to provide properties through other means, for example, to pass in security properties for a username and password that you have received from keyboard input.
+<a id="setting_distributed_properties__section_67EBCC53EB174B108DA7271E2CD2B76C"></a> Geode 
+ properties are used to join a cluster and configure system member behavior. Configure your Geode properties through the `gemfire.properties` file, the Java API, or command-line input. Generally, you store all your properties in the `gemfire.properties` file, but you may need to provide properties through other means, for example, to pass in security properties for a username and password that you have received from keyboard input.
 
 **Note:**
-Check with your  system administrator before changing properties through the API, including the `gemfire.properties` and `gfsecurity.properties` settings. The system administrator may need to set properties at the command line or in configuration files. Any change made through the API overrides those other settings.
+Check with your Geode system administrator before changing properties through the API, including the `gemfire.properties` and `gfsecurity.properties` settings. The system administrator may need to set properties at the command line or in configuration files. Any change made through the API overrides those other settings.
 
 **Note:**
 The product `defaultConfigs` directory has a sample `gemfire.properties` file with all default settings.
@@ -68,7 +68,7 @@ Set properties by any combination of the following. The system looks for the set
         gfsh>start server --name=server_name --mcast-port=10338 --properties-file=serverConfig/gemfire.properties --security-properties-file=gfsecurity.properties
         ```
 
-        See [Running  Server Processes](../../configuring/running/running_the_cacheserver.html) for more information on running cache servers.
+        See [Running Geode Server Processes](../../configuring/running/running_the_cacheserver.html) for more information on running cache servers.
 
 3.  Entry in a `gemfire.properties` file. See [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/running/deploying_config_files.html). Example:
 

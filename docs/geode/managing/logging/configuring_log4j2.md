@@ -21,11 +21,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Basic  logging configuration is configured via the `gemfire.properties` file. This topic is intended for advanced users who need increased control over logging due to integration with third-party libraries.
+Basic Geode logging configuration is configured via the `gemfire.properties` file. This topic is intended for advanced users who need increased control over logging due to integration with third-party libraries.
 
 An example `log4j2.xml` can be located within the product distribution at `$GEODE/config/log4j2.xml`.
 
-To specify your own `log4j2.xml` configuration file (or anything else supported by Log4j 2 such as .json or .yaml), use the following flag when starting up your JVM or  member:
+To specify your own `log4j2.xml` configuration file (or anything else supported by Log4j 2 such as .json or .yaml), use the following flag when starting up your JVM or Geode member:
 
 ``` pre
 -Dlog4j.configurationFile=<location-of-your-file>
@@ -46,28 +46,28 @@ For example, if you are using:
 
 See [http://logging.apache.org/log4j/2.x/faq.html](http://logging.apache.org/log4j/2.x/faq.html) for more examples.
 
-All three of the above JAR files are in the full distribution of Log4J 2.25.3 which can be downloaded at [http://logging.apache.org/log4j/2.x/download.html](http://logging.apache.org/log4j/2.x/download.html). Download the appropriate bridge, adapter, or binding JARs to ensure that  logging is integrated with every logging API used in various third-party libraries or in your own applications.
+All three of the above JAR files are in the full distribution of Log4J 2.25.3 which can be downloaded at [http://logging.apache.org/log4j/2.x/download.html](http://logging.apache.org/log4j/2.x/download.html). Download the appropriate bridge, adapter, or binding JARs to ensure that Geode logging is integrated with every logging API used in various third-party libraries or in your own applications.
 
-**Note:**
+**Note:** Apache Geode 
  has been tested with Log4j 2.25.3. As newer versions of Log4j 2 come out, you can find 2.25.3 under Previous Releases on that page.
 
 ## Customizing Your Own log4j2.xml File
 
 Advanced users may want to move away entirely from setting `log-*` gemfire properties and instead specify their own `log4j2.xml` using `-Dlog4j.configurationFile`.
 
-Custom Log4j 2 configuration in  comes with some caveats and notes:
+Custom Log4j 2 configuration in Geode comes with some caveats and notes:
 
 -   Do not use `"monitorInterval="` in your `log4j2.xml` file, because doing so can have significant performance impact. This setting instructs Log4j 2 to monitor the log4j2.xml config file at runtime and automatically reload and reconfigure if the file changes.
--   's default `log4j2.xml` specifies status="FATAL" because Log4j 2's StatusLogger generates warnings to standard out at ERROR level anytime  stops its AlertAppender or LogWriterAppender.  uses a lot of concurrent threads that are executing code with log statements; these threads may be logging while the  appenders are being stopped.
--   's default `log4j2.xml` specifies `shutdownHook="disable"` because  has a shutdown hook which disconnects the DistributedSystem and closes the Cache, which is executing the code that performs logging. If the Log4J2 shutdown hook stops logging before  completes its shutdown, Log4j 2 will attempt to start back up. This restart in turn attempts to register another Log4j 2 shutdown hook which fails resulting in a FATAL level message logged by Log4j 2.
--   The GEODE\_VERBOSE marker (Log4J2 Marker are discussed on [http://logging.apache.org/log4j/2.x/manual/markers.html](http://logging.apache.org/log4j/2.x/manual/markers.html)) can be used to enable additional verbose log statements at TRACE level. Many log statements are enabled simply by enabling DEBUG or TRACE. However, even more log statements can be further enabled by using MarkerFilter to accept GEODE\_VERBOSE. The default  `log4j2.xml` disables GEODE\_VERBOSE with this line:
+- Geode 's default `log4j2.xml` specifies status="FATAL" because Log4j 2's StatusLogger generates warnings to standard out at ERROR level anytime Geode stops its AlertAppender or LogWriterAppender. Geode uses a lot of concurrent threads that are executing code with log statements; these threads may be logging while the Geode appenders are being stopped.
+- Geode 's default `log4j2.xml` specifies `shutdownHook="disable"` because Geode has a shutdown hook which disconnects the DistributedSystem and closes the Cache, which is executing the code that performs logging. If the Log4J2 shutdown hook stops logging before Geode completes its shutdown, Log4j 2 will attempt to start back up. This restart in turn attempts to register another Log4j 2 shutdown hook which fails resulting in a FATAL level message logged by Log4j 2.
+-   The GEODE\_VERBOSE marker (Log4J2 Marker are discussed on [http://logging.apache.org/log4j/2.x/manual/markers.html](http://logging.apache.org/log4j/2.x/manual/markers.html)) can be used to enable additional verbose log statements at TRACE level. Many log statements are enabled simply by enabling DEBUG or TRACE. However, even more log statements can be further enabled by using MarkerFilter to accept GEODE\_VERBOSE. The default Geode `log4j2.xml` disables GEODE\_VERBOSE with this line:
 
     ``` pre
     <MarkerFilter marker="GEODE_VERBOSE" onMatch="DENY" onMismatch="NEUTRAL"/>
     ```
 
-    You can enable the GEODE\_VERBOSE log statements by changing `onMatch="DENY"` to `onMatch="ACCEPT"`. Typically, it's more useful to simply enable DEBUG or TRACE on certain classes or packages instead of for the entire  product. However, this setting can be used for internal debugging purposes if all other debugging methods fail.
--   The usage of filters can have an impact on performance.  has some logging optimizations that are deactivated when filters are used (except for the GEODE_VERBOSE marker mentioned previously).
+    You can enable the GEODE\_VERBOSE log statements by changing `onMatch="DENY"` to `onMatch="ACCEPT"`. Typically, it's more useful to simply enable DEBUG or TRACE on certain classes or packages instead of for the entire Geode product. However, this setting can be used for internal debugging purposes if all other debugging methods fail.
+-   The usage of filters can have an impact on performance. Geode has some logging optimizations that are deactivated when filters are used (except for the GEODE_VERBOSE marker mentioned previously).
 
 - Geode's custom Log4j 2 Appenders can be used in a custom log4j2.xml. This requires:
  

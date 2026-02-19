@@ -33,7 +33,7 @@ You can also write:
 <TRACE> select * from /exampleRegion
 ```
 
-Before the query is executed and once it completes,  will log messages in `$GEMFIRE_DIR/system.log` with the following information:
+Before the query is executed and once it completes, Geode will log messages in `$GEMFIRE_DIR/system.log` with the following information:
 
 ``` pre
 [info 2011/08/29 11:24:35.462 PDT CqServer <main> tid=0x1] Starting query: select * from /exampleRegion

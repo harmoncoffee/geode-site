@@ -22,13 +22,13 @@ limitations under the License.
 
 ## Micrometer Meters
 
-Micrometer meters are similar to  statistics in that they have different types.  uses the three main meter types: counter, gauge, and timer.
+Micrometer meters are similar to Geode statistics in that they have different types. Geode uses the three main meter types: counter, gauge, and timer.
 
 - A counter is a numerical value that only goes up.
 - A gauge is a numerical value that can go up or down.
 - A timer is a counter combined with an ever growing summary of the time each thing being counted has taken to finish.
 
-There are other types of meters available in Micrometer, but they are not currently being used in .
+There are other types of meters available in Micrometer, but they are not currently being used in Geode .
 
 Every meter in Micrometer has the following attributes, but may also have more than these depending on the meter type:
 
@@ -38,9 +38,9 @@ Every meter in Micrometer has the following attributes, but may also have more t
 -   `Units`: the unit of the value
 -   `Tags`: key/value string pairs to define facts about the meter
 
-### Meters supplied by Micrometer
+### Meters supplied by Micrometer Geode 
  has been instrumented with a set of Micrometer provided meters, called binders, which contain one or many individual meters with pre-defined types and tags.
-The following are a subset of the Micrometer binders that have been added to :
+The following are a subset of the Micrometer binders that have been added to Geode :
 
 *JVM specific*
 
@@ -55,7 +55,7 @@ The following are a subset of the Micrometer binders that have been added to :
 -   FileDescriptorMetrics
 
 ### Meters specific to 
-There are  specific meters that have been instrumented to allow developers to monitor certain aspects of the  cluster. The namespace used for these metrics includes the Apache Geode (e.g. geode.*) product name as a means to distinguish this meter from others similar to it in downstream systems. The following meters have been added to :
+There are  specific meters that have been instrumented to allow developers to monitor certain aspects of the Geode cluster. The namespace used for these metrics includes the Apache Geode (e.g. geode.*) product name as a means to distinguish this meter from others similar to it in downstream systems. The following meters have been added to Geode :
 
 | Meter:              | geode.cache.entries |
 |---------------------|---------------------|
@@ -84,9 +84,9 @@ There are  specific meters that have been instrumented to allow developers to mo
 | Tag:                |  result: hit/miss   |
 
 
-## Common tags
+## Common tags Geode 
  meters all contain tags, also referred to as labels or dimensions, depending upon which Application Performance Monitoring (APM) tool is being utilized. Micrometer offers a concept of `common` tags that exist on every meter within a meter registry.
-In , the following common tags have been provided to add context to each meter:
+In Geode , the following common tags have been provided to add context to each meter:
 
 -   `cluster`: The distributed system id associated with this member
 -   `host`: The hostname the member exists on, could be the same as another if collocated
@@ -94,5 +94,5 @@ In , the following common tags have been provided to add context to each meter:
 -   `member.type`: locator, server, locator-server
 
 
-Please submit a pull request to Apache Geode if there are more metrics you would like to see added to .
+Please submit a pull request to Apache Geode if there are more metrics you would like to see added to Geode .
 

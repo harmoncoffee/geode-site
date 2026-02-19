@@ -16,10 +16,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_czt_hq2_vk"></a>
+<a id="topic_czt_hq2_vk"></a> Apache Geode 
 
 
- MBeans emit notifications when specific events occur or if an alert is raised in the  system. Using standard JMX APIs, users can add notification handlers to listen for these events.
+ MBeans emit notifications when specific events occur or if an alert is raised in the Geode system. Using standard JMX APIs, users can add notification handlers to listen for these events.
 
 -   **[Notification Federation](notification_federation_and_alerts.html)**
 
@@ -27,7 +27,7 @@ limitations under the License.
 
 -   **[List of JMX MBean Notifications](list_of_mbean_notifications.html)**
 
-    This topic lists all available JMX notifications emitted by  MBeans.
+    This topic lists all available JMX notifications emitted by Geode MBeans.
 
 
 

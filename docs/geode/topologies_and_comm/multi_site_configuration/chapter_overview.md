@@ -23,7 +23,7 @@ Use the multi-site configuration to scale horizontally between disparate, loosel
 
 -   **[How Multi-site (WAN) Systems Work](../topology_concepts/how_multisite_systems_work.html)**
 
-    The  multi-site implementation connects disparate clusters. The systems act as one when they are coupled, and they act as independent systems when communication between sites fails. The coupling is tolerant of weak or slow links between cluster sites. A wide-area network (WAN) is the main use case for the multi-site topology.
+    The Apache Geode multi-site implementation connects disparate clusters. The systems act as one when they are coupled, and they act as independent systems when communication between sites fails. The coupling is tolerant of weak or slow links between cluster sites. A wide-area network (WAN) is the main use case for the multi-site topology.
 
 -   **[Multi-site (WAN) Topologies](multisite_topologies.html)**
 
@@ -35,7 +35,7 @@ Use the multi-site configuration to scale horizontally between disparate, loosel
 
 -   **[Filtering Events for Multi-Site (WAN) Distribution](../../developing/events/filtering_multisite_events.html)**
 
-    You can optionally create gateway sender and/or gateway receiver filters to control which events are queued and distributed to a remote site, or to modify the data stream that is transmitted between  sites.
+    You can optionally create gateway sender and/or gateway receiver filters to control which events are queued and distributed to a remote site, or to modify the data stream that is transmitted between Geode sites.
 
 -   **[Resolving Conflicting Events](../../developing/events/resolving_multisite_conflicts.html)**
 

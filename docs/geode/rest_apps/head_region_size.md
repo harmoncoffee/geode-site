@@ -55,9 +55,9 @@ Resource-Count: 8192
 
 | Status Code               | Description                                                                                 |
 |---------------------------|---------------------------------------------------------------------------------------------|
-| 400 Bad Request           | Returned if  throws an error while executing the request. |
+| 400 Bad Request           | Returned if Geode throws an error while executing the request. |
 | 404 Resource Not Found    | Region does not exist.                                                                      |
-| 500 Internal Server Error |  has thown an error or exception.                         |
+| 500 Internal Server Error | Geode has thown an error or exception.                         |
 
 
 

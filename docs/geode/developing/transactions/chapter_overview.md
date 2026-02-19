@@ -21,7 +21,7 @@ limitations under the License.
  
 This section describes  transactions.
  offers an API for client applications that do
-transactional work.
+transactional work. Geode 
  implements optimistic transactions, 
 with the familiar `begin`, `commit`, and `rollback` methods
 that implement the same operations as in 
@@ -29,7 +29,7 @@ relational database transactions methods.
 
 -   **[Adherence to ACID Promises](transactions_intro.html)**
   
-    This section explains the ways in which 's
+    This section explains the ways in which Geode 's
 implementation of optimistic transactions provides ACID semantics.
 
 -   **[Code Examples](directed_example.html)**

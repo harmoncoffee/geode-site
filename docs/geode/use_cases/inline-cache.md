@@ -22,7 +22,7 @@ An inline cache holds region entries for a client application.
 
 ## Description of an Inline Cache
 
-A cache is formed from a region within a  cluster,
+A cache is formed from a region within a Geode cluster,
 and the cache sits between the client application and a
 backing data store.
 

@@ -22,7 +22,7 @@ limitations under the License.
 <a id="topic_resume_command"></a>
 
 
-Modify an existing  resource.
+Modify an existing Geode resource.
 
 -   **[resume async-event-queue-dispatcher](#topic_resume_async_event_queue_dispatcher)**
 

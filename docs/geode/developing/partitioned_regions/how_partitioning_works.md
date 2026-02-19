@@ -32,15 +32,15 @@ For each member where you define the region, you can choose how much space to al
 
 A cluster can have multiple partitioned regions, and it can mix partitioned regions with distributed regions and local regions. The usual requirement for unique region names, except for regions with local scope, still applies. A single member can host multiple partitioned regions.
 
-## <a id="how_partitioning_works__section_260C2455FC8C40A094B39BF585D06B7D" class="no-quick-link"></a>Data Partitioning
+## <a id="how_partitioning_works__section_260C2455FC8C40A094B39BF585D06B7D" class="no-quick-link"></a>Data Partitioning Geode 
 
- automatically determines the physical location of data in the members that host a partitioned region's data.  breaks partitioned region data into units of storage known as buckets and stores each bucket in a region host member. Buckets are distributed in accordance to the memberâ€™s region attribute settings.
+ automatically determines the physical location of data in the members that host a partitioned region's data. Geode breaks partitioned region data into units of storage known as buckets and stores each bucket in a region host member. Buckets are distributed in accordance to the memberâ€™s region attribute settings.
 
 When an entry is created, it is assigned to a bucket. Keys are grouped together in a bucket and always remain there. If the configuration allows, the buckets may be moved between members to balance the load.
 
 You must run the data stores needed to accommodate storage for the partitioned regionâ€™s buckets. You can start new data stores on the fly. When a new data store creates the region, it takes responsibility for as many buckets as allowed by the partitioned region and member configuration.
 
-You can customize how  groups your partitioned region data with custom partitioning and data colocation.
+You can customize how Geode groups your partitioned region data with custom partitioning and data colocation.
 
 ## <a id="how_partitioning_works__section_155F9D4AB539473F848FD05E413B21B3" class="no-quick-link"></a>Partitioned Region Operation
 
@@ -54,8 +54,8 @@ Keep the following in mind about partitioned regions:
 
 -   Partitioned regions never run asynchronously. Operations in partitioned regions always wait for acknowledgement from the caches containing the original data entry and any redundant copies.
 -   A partitioned region needs a cache loader in every region data store (`local-max-memory` &gt; 0).
--    distributes the data buckets as evenly as possible across all members storing the partitioned region data, within the limits of any custom partitioning or data colocation that you use. The number of buckets allotted for the partitioned region determines the granularity of data storage and thus how evenly the data can be distributed. The number of buckets is a total for the entire region across the cluster.
--   In rebalancing data for the region,  moves buckets, but does not move data around inside the buckets.
+- Geode distributes the data buckets as evenly as possible across all members storing the partitioned region data, within the limits of any custom partitioning or data colocation that you use. The number of buckets allotted for the partitioned region determines the granularity of data storage and thus how evenly the data can be distributed. The number of buckets is a total for the entire region across the cluster.
+-   In rebalancing data for the region, Geode moves buckets, but does not move data around inside the buckets.
 -   You can query partitioned regions, but there are certain limitations. See [Querying Partitioned Regions](../querying_basics/querying_partitioned_regions.html#querying_partitioned_regions) for more information.
 
 

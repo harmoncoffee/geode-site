@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Execute function on an entire cluster or on a specified region, members, and member groups.
+Execute Geode function on an entire cluster or on a specified region, members, and member groups.
 
 ## Resource URL
 
@@ -41,7 +41,7 @@ http://serverURL/functions/SampleFunction?onRegion=TestPartitionRegion&filter=ke
 
 - Any *function arguments* are passed in the request body in JSON format. The content of the arguments depends on how the function is defined. Each function argument must be written as a JSON object (enclosed in braces `{ }`) and using `@type` to declare its type. `@value` can be used to specify a scalar value. Nested JSON objects (`{ }`) or JSON collections (`[ ]`) are not accepted.
 
-Collections of Java objects cannot be specified as parameters in JSON format, so if a function expects a collection of objects as one of its arguments (for example, `function(List<Item> list)`), it cannot be called using the REST API.
+Collections of Java objects cannot be specified as parameters in JSON format, so if a function expects a collection of objects as one of its arguments (for example, `function(List<Item> list)`), it cannot be called using the Geode REST API.
 
 Following are some examples of functions and their arguments in JSON format:
 

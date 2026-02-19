@@ -19,12 +19,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section provides a high-level introduction to  querying such as building a query string and describes query language features.
+This section provides a high-level introduction to Geode querying such as building a query string and describes query language features.
 
-<a id="querying_with_oql__section_828A9660B5014DCAA883A58A45E6B51A"></a>
- provides a SQL-like querying language that allows you to access data stored in  regions. Since  regions are key-value stores where values can range from simple byte arrays to complex nested objects,  uses a query syntax based on OQL (Object Query Language) to query region data. OQL and SQL have many syntactical similarities, however they have significant differences. For example, while OQL does not offer all of the capabilities of SQL like aggregates, OQL does allow you to execute queries on complex object graphs, query object attributes and invoke object methods.
+<a id="querying_with_oql__section_828A9660B5014DCAA883A58A45E6B51A"></a> Geode 
+ provides a SQL-like querying language that allows you to access data stored in  regions. Since  regions are key-value stores where values can range from simple byte arrays to complex nested objects, Geode uses a query syntax based on OQL (Object Query Language) to query region data. OQL and SQL have many syntactical similarities, however they have significant differences. For example, while OQL does not offer all of the capabilities of SQL like aggregates, OQL does allow you to execute queries on complex object graphs, query object attributes and invoke object methods.
 
-The syntax of a typical  OQL query is:
+The syntax of a typical Geode OQL query is:
 
 ``` pre
 [IMPORT package]
@@ -34,15 +34,15 @@ FROM collection1, [collection2, â€¦]
 [ORDER BY order_criteria [desc]]
 ```
 
-Therefore, a simple  OQL query resembles the following:
+Therefore, a simple Geode OQL query resembles the following:
 
 ``` pre
 SELECT DISTINCT * FROM /exampleRegion WHERE status = â€˜activeâ€™
 ```
 
-An important characteristic of  querying to note is that by default,  queries on the values of a region and not on keys. To obtain keys from a region, you must use the keySet path expression on the queried region. For example, `/exampleRegion.keySet`.
+An important characteristic of Geode querying to note is that by default, Geode queries on the values of a region and not on keys. To obtain keys from a region, you must use the keySet path expression on the queried region. For example, `/exampleRegion.keySet`.
 
-For those new to the  querying, see also the [ Querying FAQ and Examples](../../getting_started/querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E).
+For those new to the Geode querying, see also the [ Geode Querying FAQ and Examples](../../getting_started/querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E).
 
 ## Advantages of OQL
 

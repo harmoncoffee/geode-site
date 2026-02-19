@@ -87,7 +87,7 @@ Location: http://localhost:8080/geode/v1/queries
 </tr>
 <tr>
 <td>500 INTERNAL SERVER ERROR</td>
-<td>Error encountered at  server. Check the HTTP response body for a stack trace of the exception.</td>
+<td>Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception.</td>
 </tr>
 </tbody>
 </table>

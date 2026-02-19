@@ -23,7 +23,7 @@ Use eviction to control data region size. Eviction actions are triggered by spac
 
 -   **[How Eviction Works](how_eviction_works.html)**
 
-    Eviction settings cause  to work to keep a region's resource use under a specified level by removing least recently used (LRU) entries to make way for new entries.
+    Eviction settings cause Apache Geode to work to keep a region's resource use under a specified level by removing least recently used (LRU) entries to make way for new entries.
 
 -   **[Configure Data Eviction](configuring_data_eviction.html)**
 

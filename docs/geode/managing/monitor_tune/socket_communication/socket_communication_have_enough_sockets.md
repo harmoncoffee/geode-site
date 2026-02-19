@@ -23,7 +23,7 @@ limitations under the License.
 
 The number of sockets available to your applications is governed by operating system limits.
 
-Sockets use file descriptors and the operating systemâ€™s view of your applicationâ€™s socket use is expressed in terms of file descriptors. There are two limits, one on the maximum descriptors available to a single application and the other on the total number of descriptors available in the system. If you get error messages telling you that you have too many files open, you might be hitting the operating system limits with your use of sockets. Your system administrator might be able to increase the system limits so that you have more available. You can also tune your members to use fewer sockets for their outgoing connections. This section discusses socket use in  and ways to limit socket consumption in your  members.
+Sockets use file descriptors and the operating systemâ€™s view of your applicationâ€™s socket use is expressed in terms of file descriptors. There are two limits, one on the maximum descriptors available to a single application and the other on the total number of descriptors available in the system. If you get error messages telling you that you have too many files open, you might be hitting the operating system limits with your use of sockets. Your system administrator might be able to increase the system limits so that you have more available. You can also tune your members to use fewer sockets for their outgoing connections. This section discusses socket use in Geode and ways to limit socket consumption in your Geode members.
 
 ## <a id="socket_comm__section_31B4EFAD6F384AB1BEBCF148D3DEA514" class="no-quick-link"></a>Socket Sharing
 

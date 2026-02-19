@@ -17,7 +17,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
  supports the following literal types:
 
@@ -67,7 +67,7 @@ You can compare temporal literal values `DATE`, `TIME`, and `TIMESTAMP` with `ja
 
 ## <a id="literals__section_9EE6CFC410D2409188EDEAA43AC85851" class="no-quick-link"></a>Type Conversion
 
-The  query processor performs implicit type conversions and promotions under certain cases in order to evaluate expressions that contain different types. The query processor performs binary numeric promotion, method invocation conversion, and temporal type conversion.
+The Geode query processor performs implicit type conversions and promotions under certain cases in order to evaluate expressions that contain different types. The query processor performs binary numeric promotion, method invocation conversion, and temporal type conversion.
 
 ## <a id="literals__section_F5A3FC509FD04E09B5468BA94B814701" class="no-quick-link"></a>Binary Numeric Promotion
 

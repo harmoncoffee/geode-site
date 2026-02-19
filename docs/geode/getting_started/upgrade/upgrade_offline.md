@@ -29,8 +29,8 @@ For example, a rolling upgrade is not possible for a cluster that has partitione
 
 **Versions**
 
-For best reliability and performance, all server components of a  system should run the same version of the software.
-See [Version Compatibilities](upgrade_planning.html#version_compatibilities) for more details on how different versions of  can interoperate.
+For best reliability and performance, all server components of a Geode system should run the same version of the software.
+See [Version Compatibilities](upgrade_planning.html#version_compatibilities) for more details on how different versions of Geode can interoperate.
 
 **Data member interdependencies**
 
@@ -43,7 +43,7 @@ separate command shells so they can start simultaneously and communicate with on
 
 1.  On a machine hosting a locator, open a terminal console.
 
-1.  Start a `gfsh` prompt, using the version from your current  installation, and connect to a currently running locator.
+1.  Start a `gfsh` prompt, using the version from your current Geode installation, and connect to a currently running locator.
     For example:
 
     ``` pre
@@ -78,7 +78,7 @@ For example, use the `list members` command to view locators and data members:
     gfsh>quit
     ```
 
-    Since  is a Java process, to check before continuing that all  members successfully stopped,
+    Since Geode is a Java process, to check before continuing that all Geode members successfully stopped,
 it is useful to use the JDK-included `jps` command to check running java processes:
 
     ``` pre
@@ -91,7 +91,7 @@ it is useful to use the JDK-included `jps` command to check running java process
 1.  Redeploy your environment's configuration files to the new version installation. If you are using the cluster configuration service, one copy of the exported `.zip` configuration file is sufficient, as the first upgraded locator will propagate it to the other members.
 For XML configurations, you should have a copy of the saved configuration files for each data member.
 
-1. On each machine in the cluster, install any updated server code. Point all client applications to the new installation of .
+1. On each machine in the cluster, install any updated server code. Point all client applications to the new installation of Geode .
 
 1. Run the new version of `gfsh`.
 
@@ -108,5 +108,5 @@ were used when starting the system under the previous version of the software. (
 handy as a reference.) Interdependent data members may hang on startup waiting for each other. In this case, start servers in
 separate shells so they can communicate with one another to resolve dependencies.
 
-1. Upgrade  clients, following the guidelines described in [Upgrading Clients](upgrade_clients.html).
+1. Upgrade Geode clients, following the guidelines described in [Upgrading Clients](upgrade_clients.html).
 

@@ -80,7 +80,7 @@ When a struct is returned, the name of each field in the struct is determined fo
 
 ## <a id="concept_85AE7D6B1E2941ED8BD2A8310A81753E__section_972EE73A6F3E4427B6A99DB4EDF5860D" class="no-quick-link"></a>DISTINCT
 
-Use the DISTINCT keyword if you want to limit the results set to unique rows. Note that in the current version of  you are no longer required to use the DISTINCT keyword in your SELECT statement.
+Use the DISTINCT keyword if you want to limit the results set to unique rows. Note that in the current version of Geode you are no longer required to use the DISTINCT keyword in your SELECT statement.
 
 ``` pre
 SELECT DISTINCT * FROM /exampleRegion
@@ -122,7 +122,7 @@ SELECT DISTINCT * FROM /exampleRegion WHERE ID < 101 ORDER BY ID desc
 **Note:**
 If you are using ORDER BY queries, you must implement the equals and hashCode methods for the objects that you query.
 
-## <a id="concept_85AE7D6B1E2941ED8BD2A8310A81753E__section_69DCAD624E9640028BC86FD67649DEB2" class="no-quick-link"></a>Preset Query Functions
+## <a id="concept_85AE7D6B1E2941ED8BD2A8310A81753E__section_69DCAD624E9640028BC86FD67649DEB2" class="no-quick-link"></a>Preset Query Functions Geode 
 
  provides several built-in functions for evaluating or filtering data returned from a query. They include the following:
 

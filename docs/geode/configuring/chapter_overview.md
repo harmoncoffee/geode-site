@@ -19,36 +19,36 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Use the `gfsh` command-line utility to configure your  cluster. The cluster configuration service persists the cluster configurations and distributes the configurations to members of the cluster. There are also several additional ways to configure a cluster.
+Use the `gfsh` command-line utility to configure your Apache Geode cluster. The cluster configuration service persists the cluster configurations and distributes the configurations to members of the cluster. There are also several additional ways to configure a cluster.
 
-Use `gfsh` to configure regions, disk stores, members, and other  objects. 
-You can also use `gfsh` to start and stop locators, servers, and  monitoring tools. As you execute these commands, the cluster configuration service persists the configuration. When new members join the cluster, the service distributes the configuration to the new members.
+Use `gfsh` to configure regions, disk stores, members, and other Geode objects. 
+You can also use `gfsh` to start and stop locators, servers, and Geode monitoring tools. As you execute these commands, the cluster configuration service persists the configuration. When new members join the cluster, the service distributes the configuration to the new members.
 
-`gfsh` is the recommended means of configuring and managing your  cluster, however you can still configure many aspects of a cluster using the older methods of the cache.xml and gemfire.properties files. See [cache.xml](../reference/topics/chapter_overview_cache_xml.html#cache_xml) and the [Reference](../reference/book_intro.html#reference) for configuration parameters. You can also configure some aspects of a cluster using a Java API. See [Managing ](../managing/book_intro.html#managing_gemfire_intro).
+`gfsh` is the recommended means of configuring and managing your Apache Geode cluster, however you can still configure many aspects of a cluster using the older methods of the cache.xml and gemfire.properties files. See [cache.xml](../reference/topics/chapter_overview_cache_xml.html#cache_xml) and the [Reference](../reference/book_intro.html#reference) for configuration parameters. You can also configure some aspects of a cluster using a Java API. See [Managing Apache Geode ](../managing/book_intro.html#managing_gemfire_intro).
 
 -   **[Overview of the Cluster Configuration Service](cluster_config/gfsh_persist.html)**
 
-    The  cluster configuration service persists cluster configurations created by `gfsh` commands to the locators in a cluster and distributes the configurations to members of the cluster.
+    The Apache Geode cluster configuration service persists cluster configurations created by `gfsh` commands to the locators in a cluster and distributes the configurations to members of the cluster.
 
 -   **[Tutorialâ€”Creating and Using a Cluster Configuration](cluster_config/persisting_configurations.html)**
 
-    A short walk-through that uses a single computer to demonstrate how to use `gfsh` to create a cluster configuration for a  cluster.
+    A short walk-through that uses a single computer to demonstrate how to use `gfsh` to create a cluster configuration for a Geode cluster.
 
--   **[Deploying Application JARs to  Members](cluster_config/deploying_application_jars.html)**
+-   **[Deploying Application JARs to Apache Geode Members](cluster_config/deploying_application_jars.html)**
 
-    You can dynamically deploy your application JAR files to specific members or to all members in your cluster.  automatically keeps track of JAR file versions; autoloads the deployed JAR files to the CLASSPATH; and auto-registers any functions that the JAR contains.
+    You can dynamically deploy your application JAR files to specific members or to all members in your cluster. Geode automatically keeps track of JAR file versions; autoloads the deployed JAR files to the CLASSPATH; and auto-registers any functions that the JAR contains.
 
--   **[Using Member Groups](cluster_config/using_member_groups.html)**
+-   **[Using Member Groups](cluster_config/using_member_groups.html)** Apache Geode 
 
      allows you to organize your cluster members into logical member groups.
 
 -   **[Exporting and Importing Cluster Configurations](cluster_config/export-import.html)**
 
-    The cluster configuration service exports and imports configurations created using `gfsh` for an entire  cluster.
+    The cluster configuration service exports and imports configurations created using `gfsh` for an entire Apache Geode cluster.
 
 -   **[Cluster Configuration Files and Troubleshooting](cluster_config/gfsh_config_troubleshooting.html)**
 
-    When you use the cluster configuration service in , you can examine the generated configuration files in the `cluster_config` directory on the locator. `gfsh` saves configuration files at the cluster-level and at the individual group-level.
+    When you use the cluster configuration service in Geode , you can examine the generated configuration files in the `cluster_config` directory on the locator. `gfsh` saves configuration files at the cluster-level and at the individual group-level.
 
 -   **[Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](cluster_config/gfsh_remote.html)**
 
@@ -56,21 +56,21 @@ You can also use `gfsh` to start and stop locators, servers, and  monitoring too
 
 -   **[Deploying Configuration Files without the Cluster Configuration Service](running/deploying_config_files.html)**
 
-    You can deploy your  configuration files in your system directory structure or in jar files. You determine how you want to deploy your configuration files and set them up accordingly.
+    You can deploy your Apache Geode configuration files in your system directory structure or in jar files. You determine how you want to deploy your configuration files and set them up accordingly.
 
 -   **[Starting Up and Shutting Down Your System](running/starting_up_shutting_down.html)**
 
     Determine the proper startup and shutdown procedures, and write your startup and shutdown scripts.
 
--   **[Running  Locator Processes](running/running_the_locator.html)**
+-   **[Running Geode Locator Processes](running/running_the_locator.html)**
 
-    The locator is a  process that tells new, connecting members where running members are located and provides load balancing for server use.
+    The locator is a Geode process that tells new, connecting members where running members are located and provides load balancing for server use.
 
--   **[Running  Server Processes](running/running_the_cacheserver.html)**
+-   **[Running Geode Server Processes](running/running_the_cacheserver.html)**
 
-    A  server is a process that runs as a long-lived, configurable member of a client/server system.
+    A Geode server is a process that runs as a long-lived, configurable member of a client/server system.
 
--   **[Managing System Output Files](running/managing_output_files.html)**
+-   **[Managing System Output Files](running/managing_output_files.html)** Geode 
 
      output files are optional and can become quite large. Work with your system administrator to determine where to place them to avoid interfering with other system activities.
 

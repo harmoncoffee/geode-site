@@ -22,7 +22,7 @@ limitations under the License.
 
 ## Meter configuration
 
-Out of the box  is instrumented and can emit meters with a properly created Meter Registry. 
+Out of the box Geode is instrumented and can emit meters with a properly created Meter Registry. 
 
 However, any meters that are timers based on the system clock time, similar to the time statistics, they will obey the existing `enable-time-statistics` geode.properties setting, see **[Setting up Statistics](../../managing/statistics/setting_up_statistics.html)**.
 
@@ -31,7 +31,7 @@ However, any meters that are timers based on the system clock time, similar to t
 
 In order to emit metrics to an Application Performance Monitor (APM) or other such tool that can store or display metrics, a meter registry is required. Micrometer implements many different meter registries as project imports, a list can be found here: https://micrometer.io/docs.
 
-As a simple example, below describes how you might create a publishing service utilizing the `MetricsSession` and `MetricsPublishingService` interface in . 
+As a simple example, below describes how you might create a publishing service utilizing the `MetricsSession` and `MetricsPublishingService` interface in Geode . 
 
 Here is a example class that would enable Prometheus metrics to be emitted:
 

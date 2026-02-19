@@ -17,7 +17,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
  supports comparison, logical, unary, arithmetic, map, index, dot, and right arrow operators.
 
@@ -51,7 +51,7 @@ The logical operators AND and OR allow you to create more complex expressions by
 
 ## <a id="operators__section_A970AE75B0D24E0B9E1B61BE2D9842D8" class="no-quick-link"></a>Unary Operators
 
-Unary operators operate on a single value or expression, and have lower precedence than comparison operators in expressions.  supports the unary operator NOT. NOT is the negation operator, which changes the value of the operand to its opposite. For example, if an expression evaluates to TRUE, NOT changes it to FALSE. The operand must be a boolean.
+Unary operators operate on a single value or expression, and have lower precedence than comparison operators in expressions. Geode supports the unary operator NOT. NOT is the negation operator, which changes the value of the operand to its opposite. For example, if an expression evaluates to TRUE, NOT changes it to FALSE. The operand must be a boolean.
 
 ## <a id="operators_arithmetic_OQL" class="no-quick-link"></a>Arithmetic Operators
 

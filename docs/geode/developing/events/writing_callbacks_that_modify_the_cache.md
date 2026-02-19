@@ -23,20 +23,20 @@ Event handlers are synchronous. If you need to change the cache or perform any o
 
 ## <a id="writing_callbacks_that_modify_the_cache__section_98E49363C91945DEB0A3B2FD9A209969" class="no-quick-link"></a>Operations to Avoid in Event Handlers
 
-Do not perform distributed operations of any kind directly from your event handler.  is a highly distributed system and many operations that may seem local invoke distributed operations.
+Do not perform distributed operations of any kind directly from your event handler. Geode is a highly distributed system and many operations that may seem local invoke distributed operations.
 
 These are common distributed operations that can get you into trouble:
 
 -   Calling `Region` methods, on the event's region or any other region.
--   Using the  `DistributedLockService`.
+-   Using the Geode `DistributedLockService`.
 -   Modifying region attributes.
--   Executing a function through the  `FunctionService`.
+-   Executing a function through the Geode `FunctionService`.
 
-To be on the safe side, do not make any calls to the  API directly from your event handler. Make all  API calls from within a separate thread or executor.
+To be on the safe side, do not make any calls to the Geode API directly from your event handler. Make all Geode API calls from within a separate thread or executor.
 
 ## <a id="writing_callbacks_that_modify_the_cache__section_78648D4177E14EA695F0B059E336137C" class="no-quick-link"></a>How to Perform Distributed Operations Based on Events
 
-If you need to use the  API from your handlers, make your work asynchronous to the event handler. You can spawn a separate thread or use a solution like the `java.util.concurrent.Executor` interface.
+If you need to use the Geode API from your handlers, make your work asynchronous to the event handler. You can spawn a separate thread or use a solution like the `java.util.concurrent.Executor` interface.
 
 This example shows a serial executor where the callback creates a `Runnable` that can be pulled off a queue and run by another object. This preserves the ordering of events.
 

@@ -19,7 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Apache Geode 
 
  provides various options for member discovery within a cluster and between clients and servers.
 
@@ -29,7 +29,7 @@ limitations under the License.
 
 ## <a id="how_member_discovery_works__section_F2B8EBF2909440BD90B4CDEE0CAA0C2A" class="no-quick-link"></a>Peer Member Discovery
 
-Peer member discovery is what defines a cluster. All applications and cache servers that use the same settings for peer discovery are members of the same cluster. Each system member has a unique identity and knows the identities of the other members. A member can belong to only one cluster at a time. Once they have found each other, members communicate directly, independent of the discovery mechanism. In peer discovery,  uses a membership coordinator to manage member joins and departures.
+Peer member discovery is what defines a cluster. All applications and cache servers that use the same settings for peer discovery are members of the same cluster. Each system member has a unique identity and knows the identities of the other members. A member can belong to only one cluster at a time. Once they have found each other, members communicate directly, independent of the discovery mechanism. In peer discovery, Geode uses a membership coordinator to manage member joins and departures.
 
 Members discover each other using one or more locators. A locator provides both discovery and load balancing services. Peer locators manage a dynamic list of cluster members. New members connect to one of the locators to retrieve the member list, which it uses to join the system.
 
@@ -40,7 +40,7 @@ Multiple locators ensure the most stable start up and availability for your clus
 
 ## <a id="how_member_discovery_works__section_E26DFAFE9E994C0C9A489E325E345816" class="no-quick-link"></a>Standalone Member
 
-The standalone member has no peers, does no peer discovery, and so does not use locators. It creates a cluster connection only to access the  caching features. Running standalone has a faster startup and is appropriate for any member that is isolated from other applications. The primary use case is for client applications. Standalone members can be accessed and monitored if you enable the member to become a JMX Manager.
+The standalone member has no peers, does no peer discovery, and so does not use locators. It creates a cluster connection only to access the Geode caching features. Running standalone has a faster startup and is appropriate for any member that is isolated from other applications. The primary use case is for client applications. Standalone members can be accessed and monitored if you enable the member to become a JMX Manager.
 
 ## <a id="how_member_discovery_works__section_37DE53BDCDB541618C6DF4E47A1F2B73" class="no-quick-link"></a>Client Discovery of Servers
 
@@ -55,9 +55,9 @@ You do not need to run any special processes to use locators for server discover
 
 ## <a id="how_member_discovery_works__section_1CB9D1439346415FB630E9DCD373CAC9" class="no-quick-link"></a>Multi-site Discovery
 
-In a multi-site (WAN) configuration, a  cluster uses locators to discover remote  clusters as well as to discover local  members. Each locator in a WAN configuration uniquely identifies the local cluster to which it belongs, and it can also identify locators in remote  clusters to which it will connect for WAN distribution.
+In a multi-site (WAN) configuration, a Geode cluster uses locators to discover remote Geode clusters as well as to discover local Geode members. Each locator in a WAN configuration uniquely identifies the local cluster to which it belongs, and it can also identify locators in remote Geode clusters to which it will connect for WAN distribution.
 
-When a locator starts up, it contacts each remote locator to exchange information about the available locators and gateway receiver configurations in the remote cluster. In addition to sharing information about its own cluster, a locator shares information that it has obtained from all other connected clusters. Each time a new locator starts up or an existing locator shuts down, the changed information is broadcast to other connected  clusters across the WAN.
+When a locator starts up, it contacts each remote locator to exchange information about the available locators and gateway receiver configurations in the remote cluster. In addition to sharing information about its own cluster, a locator shares information that it has obtained from all other connected clusters. Each time a new locator starts up or an existing locator shuts down, the changed information is broadcast to other connected Geode clusters across the WAN.
 
 See [Discovery for Multi-Site Systems](multisite_overview.html#topic_1742957C8D4B4F7590847EB8DB6CD4F7) for more information.
 

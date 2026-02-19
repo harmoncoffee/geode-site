@@ -19,10 +19,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Host machines must meet a set of requirements for .
+Host machines must meet a set of requirements for Apache Geode .
 
 <a id="system_requirements__section_1E1F206FBC8B4A898A449E0699907A7A"></a>
-Each machine that will run  must meet the following requirements:
+Each machine that will run Apache Geode must meet the following requirements:
 
 -   Java SE Development Kit  with update  or a more recent version  update.  The same versions are supported with OpenJDK.
 -   A system clock set to the correct time and a time synchronization service such as Network Time Protocol (NTP). Correct time stamps permit the following activities:
@@ -32,8 +32,8 @@ Each machine that will run  must meet the following requirements:
 -   The host name and host files are properly configured for the machine. The host name and host file configuration can affect `gfsh` and Pulse functionality.
 -   Disable TCP SYN cookies. Most default Linux installations use SYN cookies to protect the 
 system against malicious attacks that flood TCP SYN packets, but this feature 
-is not compatible with stable and busy  clusters. 
-Security implementations should instead seek to prevent attacks by placing  
+is not compatible with stable and busy Geode clusters. 
+Security implementations should instead seek to prevent attacks by placing Geode 
 server clusters behind advanced firewall protection.
 
     To disable SYN cookies permanently:

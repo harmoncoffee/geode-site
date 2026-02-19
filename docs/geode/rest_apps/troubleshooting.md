@@ -21,7 +21,7 @@ limitations under the License.
 <a id="topic_r5z_lj5_m4"></a>
 
 
-This section provides troubleshooting guidance and frequently asked questions about  Developer REST APIs.
+This section provides troubleshooting guidance and frequently asked questions about Geode Developer REST APIs.
 
 ## Checking if the REST API Service is Up and Running
 
@@ -53,7 +53,7 @@ If  regions are not defined with scalar values as keys and value constraints, th
 Json doc specified in request body is malformed..!!'
 ```
 
-For example, the following JSON documents are not supported by :
+For example, the following JSON documents are not supported by Geode :
 
 ## Unsupported JSON Example 1
 

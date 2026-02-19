@@ -17,22 +17,22 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+--> Geode 
 
  provides a SQL-like querying language called OQL that allows you to access data stored in  regions.
 
 Since  regions are key-value stores where values can range from simple byte arrays to complex
-nested objects,  uses a query syntax based on OQL (Object Query Language) to query region
+nested objects, Geode uses a query syntax based on OQL (Object Query Language) to query region
 data. OQL is very similar to SQL, but OQL allows you to query complex objects, object attributes,
 and methods.
 
 -   **[Querying FAQ and Examples](../../getting_started/querying_quick_reference.html)**
 
-    This topic answers some frequently asked questions on querying functionality. It provides examples to help you get started with  querying.
+    This topic answers some frequently asked questions on querying functionality. It provides examples to help you get started with Geode querying.
 
 -   **[Querying with OQL](query_basics.html)**
 
-    This section provides a high-level introduction to  querying such as building a query string and describes query language features.
+    This section provides a high-level introduction to Geode querying such as building a query string and describes query language features.
 
 -   **[Writing and Executing a Query in OQL](running_a_query.html)**
 
@@ -44,6 +44,6 @@ and methods.
 
 -   **[Working with Indexes](../query_index/query_index.html)**
 
-    The  query engine supports indexing. An index can provide significant performance gains for query execution.
+    The Geode query engine supports indexing. An index can provide significant performance gains for query execution.
 
 

@@ -38,7 +38,7 @@ This topic describes how to install the HTTP session management module for Tomca
     ```
     This creates an admin/password credential you can use to view system information when following links from the Tomcat home page.
 
-4.  The HTTP Session Management Module for Tomcat is included in the  installation package. After you install , you will find the module in the `tools/Modules` directory of the installation with a name of the form `Apache_Geode_Modules-SERVER-VERSION-Tomcat.zip`, where SERVER-VERSION is the  version number.
+4.  The HTTP Session Management Module for Tomcat is included in the Geode installation package. After you install Apache Geode , you will find the module in the `tools/Modules` directory of the installation with a name of the form `Apache_Geode_Modules-SERVER-VERSION-Tomcat.zip`, where SERVER-VERSION is the Apache Geode version number.
 
 5.  Set your current working directory to the `$CATALINA_HOME` directory (or wherever you installed the application server) and unzip the HTTP Session Management Module.
 This adds jar files to the `lib` subdirectory and XML files to the `conf` subdirectory.
@@ -48,7 +48,7 @@ This adds jar files to the `lib` subdirectory and XML files to the `conf` subdir
     unzip $GEODE_HOME/tools/Modules/Apache_Geode_Modules-SERVER-VERSION-Tomcat.zip
     ```
 
-6.  **CRITICAL:** Copy all of the jar files from the  `lib` subdirectory to the `lib` subdirectory of your Tomcat server (`$CATALINA_HOME/lib`). 
+6.  **CRITICAL:** Copy all of the jar files from the Geode `lib` subdirectory to the `lib` subdirectory of your Tomcat server (`$CATALINA_HOME/lib`). 
     
     **The module zip file alone does not contain all required dependencies.** You must copy all Geode libraries including `geode-core`, `geode-common`, Jakarta Transaction API, and other runtime dependencies:
 

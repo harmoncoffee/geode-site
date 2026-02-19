@@ -25,7 +25,7 @@ You can configure SSL for authentication between members and to protect your dat
 distribution. You can use SSL alone or in conjunction with the other  security options.
 
  SSL connections use the Java Secure Sockets Extension (JSSE) package, so the properties
-described here apply to  servers and to Java-based clients. SSL configuration in non-Java
+described here apply to Geode servers and to Java-based clients. SSL configuration in non-Java
 clients may differ &mdash; see the client's documentation for details.
 
 ## <a id="ssl_configurable_components" class="no-quick-link"></a>SSL-Configurable Components
@@ -67,7 +67,7 @@ with a locator must also have SSL enabled.  If you provide "" as the value, SSL 
 
 ## <a id="ssl_configuration_properties" class="no-quick-link"></a>SSL Configuration Properties
 
-You can use  configuration properties to enable or disable SSL, to identify SSL ciphers and
+You can use Geode configuration properties to enable or disable SSL, to identify SSL ciphers and
 protocols, and to provide the location and credentials for key and trust stores.
 
 **ssl-enabled-components**
@@ -79,7 +79,7 @@ The default value is false.
 Enabling endpoint identification guards against DNS man-in-the-middle attacks when trusting certificates that are not self-signed.
 
 **ssl-use-default-context**
-:    A boolean value that, when set to true, allows  to use the default SSL context as returned by
+:    A boolean value that, when set to true, allows Geode to use the default SSL context as returned by
 SSLContext.getInstance('Default') or set by using SSLContext.setDefault().
 When enabled, also causes ssl-endpoint-identification-enabled to be set to true.
 
@@ -203,7 +203,7 @@ The following table lists the components you can configure to use SSL.
 | server    | Communication between clients and servers                             |
 | all       | All of the above                                                      |
 
-The following table lists the properties you can use to configure SSL on your  system.
+The following table lists the properties you can use to configure SSL on your Geode system.
 
 <span class="tablecap">Table 2. SSL Configuration Properties</span>
 
@@ -211,7 +211,7 @@ The following table lists the properties you can use to configure SSL on your  s
 |------------------------------------|------------------------------------------------------------------------------|-------|
 | ssl&#8209;enabled&#8209;components | list of components for which to enable SSL | "all", "", or comma-separated list of components: cluster, gateway, web, jmx, locator, server |
 | ssl&#8209;endpoint&#8209;identification&#8209;enabled | causes clients to validate server hostname using server certificate | boolean - if true, does validation; defaults to false |
-| ssl&#8209;use&#8209;default&#8209;context | allows  to use the default SSL context | boolean - if true, uses the default SSL context. Also sets ssl-endpoint-identification-enabled to true; defaults to false |
+| ssl&#8209;use&#8209;default&#8209;context | allows Geode to use the default SSL context | boolean - if true, uses the default SSL context. Also sets ssl-endpoint-identification-enabled to true; defaults to false |
 | ssl-require-authentication         | requires two-way authentication, applies to all components except web | boolean - if true (the default), two-way authentication is required |
 | ssl&#8209;web&#8209;require&#8209;authentication    | requires two-way authentication for web component | boolean - if true, two-way authentication is required. Default is false (one-way authentication only) |
 | ssl-default-alias                  | default certificate name                   | string - if empty, use first certificate in key store |

@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The  query engine supports indexing. An index can provide significant performance gains for query execution.
+The Geode query engine supports indexing. An index can provide significant performance gains for query execution.
 
 <a id="indexing__section_565C080FBDD0443C8504DF372E3C32C8"></a>
 A query run without the aid of an index iterates through every object in the collection. If an index is available that matches part or all of the query specification, the query iterates only over the indexed set, and query processing time can be reduced.
@@ -30,7 +30,7 @@ A query run without the aid of an index iterates through every object in the col
 
 -   **[Creating, Listing and Removing Indexes](creating_an_index.html)**
 
-    The  `QueryService` API provides methods to create, list and remove the index. You can also use `gfsh` command-line interface to create, list and remove indexes, and use cache.xml to create an index.
+    The Geode `QueryService` API provides methods to create, list and remove the index. You can also use `gfsh` command-line interface to create, list and remove indexes, and use cache.xml to create an index.
 
 -   **[Creating Key Indexes](creating_key_indexes.html)**
 
@@ -38,7 +38,7 @@ A query run without the aid of an index iterates through every object in the col
 
 -   **[Creating Hash Indexes](creating_hash_indexes.html)**
 
-    **Hash indexes are deprecated.**  supports the creation of hash indexes for the purposes of performing equality-based queries.
+    **Hash indexes are deprecated.** Geode supports the creation of hash indexes for the purposes of performing equality-based queries.
 
 -   **[Creating Indexes on Map Fields ("Map Indexes")](creating_map_indexes.html)**
 
@@ -54,7 +54,7 @@ A query run without the aid of an index iterates through every object in the col
 
 -   **[Using Query Index Hints](query_index_hints.html)**
 
-    You can use the hint keyword to allow 's query engine to prefer certain indexes.
+    You can use the hint keyword to allow Geode 's query engine to prefer certain indexes.
 
 -   **[Using Indexes on Single Region Queries](indexes_on_single_region_queries.html)**
 

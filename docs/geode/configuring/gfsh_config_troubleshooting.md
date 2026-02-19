@@ -20,7 +20,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-When you use the cluster configuration service in ,
+When you use the cluster configuration service in Geode ,
 you can examine the generated configuration.
 The gfsh [export cluster-configuration](../../tools_modules/gfsh/command-pages/export.html#topic_mdv_jgz_ck)
 command outputs configured properties,
@@ -58,7 +58,7 @@ the `--cluster-config-dir` option.
     -   If the command returns WAITING, run the `status locator` command. The output of this command returns the cause of the WAITING status.
 -  When using a `cache.xml` file for configuration,
 there is a specific order to the application of the configuration
-in these files.
+in these files. Geode 
  applies the cluster-wide configuration files first.
 Group-level configurations follow.
 Last will be the configuration in a member's own configuration files

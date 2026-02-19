@@ -33,7 +33,7 @@ Your custom PDX autoserializable classes cannot use the `org.apache.geode` packa
 
 **Prerequisites**
 
--   Understand generally how to configure the  cache.
+-   Understand generally how to configure the Geode cache.
 -   Understand how PDX serialization works and how to configure your application to use `PdxSerializer`.
 
 <a id="auto_serialization__section_43F6E45FF69E470897FD9D002FBE896D"><strong>Procedure</strong></a>

@@ -34,11 +34,11 @@ The previous `Region.loadSnapshot` and `Region.saveSnapshot` APIs have been depr
 
 -   **[Exporting Cache and Region Snapshots](exporting_a_snapshot.html)**
 
-    To save  cache or region data to a snapshot that you can later load into another cluster or region, use the `cache.getSnapshotService.save` API, `region.getSnapshotService.save` API, or the `gfsh` command-line interface (`export data`).
+    To save Geode cache or region data to a snapshot that you can later load into another cluster or region, use the `cache.getSnapshotService.save` API, `region.getSnapshotService.save` API, or the `gfsh` command-line interface (`export data`).
 
 -   **[Importing Cache and Region Snapshots](importing_a_snapshot.html)**
 
-    To import a  cache or region data snapshot that you previously exported into another cluster or region, use the `cache.getSnapshotService.load` API, `region.getSnapshotService.load` API, or the `gfsh` command-line interface (`import data`).
+    To import a Geode cache or region data snapshot that you previously exported into another cluster or region, use the `cache.getSnapshotService.load` API, `region.getSnapshotService.load` API, or the `gfsh` command-line interface (`import data`).
 
 -   **[Filtering Entries During Import or Export](filtering_snapshot_entries.html)**
 

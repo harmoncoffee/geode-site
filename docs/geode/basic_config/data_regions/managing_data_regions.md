@@ -41,7 +41,7 @@ If you change attributes that define a region, you must restart the member for t
 
 ###  Creating a Region with gfsh
 
-A simple and fast way to create a data region in the  cache is to use the `gfsh` command-line tool.
+A simple and fast way to create a data region in the Apache Geode cache is to use the `gfsh` command-line tool.
 
 Region creation is subject to attribute consistency checks, both internal to the cache and, if the region is not local, between all caches where the region is defined.
 
@@ -120,7 +120,7 @@ an event listener in which entries expire:
 </region>
 ```
 
-### <a id="data_regions__section_028F2602395646818680C906F205526B" class="no-quick-link"></a>Creating a Region Through the API
+### <a id="data_regions__section_028F2602395646818680C906F205526B" class="no-quick-link"></a>Creating a Region Through the API Geode 
 
 's regions APIs provide specialized behavior for different system member types.
 
@@ -315,7 +315,7 @@ Event notification occurs for a destroy region operation.
 
 A region can be destroyed by removing the region's specification from the `cache.xml` file.
 
-Destroying the region by an API invocation or by using the `gfsh                     destroy` command while all members are online is the best way to remove a region, as  handles all aspects of the removal, including removing the region's persistent disk stores across the online members hosting the region. Destroying the region by removing its specification from the `cache.xml` file does not remove the region's existing persistent disk stores.
+Destroying the region by an API invocation or by using the `gfsh                     destroy` command while all members are online is the best way to remove a region, as Geode handles all aspects of the removal, including removing the region's persistent disk stores across the online members hosting the region. Destroying the region by removing its specification from the `cache.xml` file does not remove the region's existing persistent disk stores.
 
 The destroy operation can be propagated only to online members. The system will encounter restart issues if a region is destroyed while some members are online and others are offline. As those members that were offline restart, they will block indefinitely, waiting for persistent region data that no longer exists. To fix this issue, shut down all members that are blocked waiting for the removed region. Once those members are in the offline state, use the `gfsh alter                     disk-store` command with the `--remove` option on each offline member to remove the region. Then, restart each member.
 
