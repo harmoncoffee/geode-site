@@ -63,9 +63,9 @@ export default function Home(): JSX.Element {
     return (
         <Layout title='Apache Geode™'>
             <header className={clsx('hero', styles.heroBanner)}>
-					<div className="container">
-							<HomepageLogo />
-					</div>
+							<div className="container">
+								<HomepageLogo />
+							</div>
             </header>
             <main>
               <HomepageFeatures/>

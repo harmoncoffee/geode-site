@@ -35,6 +35,10 @@
   }
 }
 
+[data-theme='dark'] .heroBanner {
+    background: var(--ifm-footer-background-color);
+}
+
 .buttons {
   display: flex;
   align-items: center;

@@ -74,7 +74,7 @@
 }
 
 [data-theme='dark'] .featuresSection {
-    background: #242526;
+    background: var(--ifm-footer-background-color);
 }
 
 .featuresTitle {
