@@ -124,7 +124,7 @@ const config: Config = {
               type: 'docSidebar',
               sidebarId: 'community',
               position: 'left',
-              label: 'Resources',
+              label: 'Community',
               docsPluginId: 'community',
           },
           {
