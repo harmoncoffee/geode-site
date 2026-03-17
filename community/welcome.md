@@ -7,8 +7,9 @@ slug: /
 # Welcome to the Apache Geode Project
 
 ## Getting started
+To get started with Apache Geode™, we recommend the following steps:
 
-1. [Follow the tutorial](https://cwiki.apache.org/confluence/display/GEODE/Index#Index-Geodein5minutesGeodein5minutes). It will show you how to get started with Geode in five minutes.
+1. [Follow the tutorial](https://cwiki.apache.org/confluence/display/GEODE/Index#Index-Geodein5minutesGeodein5minutes). You can begin using Geode in five minutes.
 2. [Read the documentation](https://geode.apache.org/docs/). Learn more about Geode's capabilities.
 3. [Join a mailing list](community/mailing-lists.md). Meet the Geode community and introduce yourself.
 4. [Contribute](community/contributing.md). Help us improve Apache Geode for everyone.
