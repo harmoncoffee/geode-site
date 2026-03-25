@@ -166,13 +166,22 @@ export default function HomepageFeatures(): JSX.Element {
                         ))}
 											</div>
 								<div className={styles.featuresCallout}>
+									<hr></hr>
 									<Heading as="h3" className={styles.featuresHeading}>Do more with Apache Geode™</Heading>
-                 		<p><strong>OQL and Indexes.</strong> Object Query Language allows distributed query execution on hot and cold data, with SQL-like capabilities, including joins. Define and consistently maintain multiple kinds of indexes across the cluster.</p>
-                   	<p><strong>Events.</strong> Clients can receive notices about server-side data events, and servers can react synchronously or asynchronously with guaranteed delivery of ordered events.</p>
-                    <p><strong>Functions.</strong> The same nodes storing relevant sharded data for fast parallel processing can deploy and execute distributed, location-aware user functions. Failed operations can be retried on replicant nodes.</p>
-                    <p><strong>Continuous Query.</strong> Clients can stay up-to-date by registering OQL queries with the Geode servers, making event-driven applications possible.</p>
-                    <p><strong>Clients.</strong> Clients for Java, C++, and C# .NET Framework are available. A REST API is available for all other languages.</p>
-                    <p><strong>Adapters.</strong> Use Geode as a drop-in replacement for Memcached, allowing use of Geode's server-side features like multi-cluster replication.</p>
+										<ul>
+											<li><strong>OQL and Indexes.</strong> Object Query Language allows distributed query execution on hot and cold data, with SQL-like capabilities, including joins. Define and consistently maintain multiple kinds of indexes across the cluster.</li>
+											<li><strong>Events.</strong> Clients can receive notices about server-side data events, and servers can react synchronously or asynchronously with guaranteed delivery of ordered events.</li>
+											<li><strong>Functions.</strong> The same nodes storing relevant sharded data for fast parallel processing can deploy and execute distributed, location-aware user functions. Failed operations can be retried on replicant nodes.</li>
+											<li><strong>Continuous Query.</strong> Clients can stay up-to-date by registering OQL queries with the Geode servers, making event-driven applications possible.</li>
+											<li><strong>Clients.</strong> Clients for Java, C++, and C# .NET Framework are available. A REST API is available for all other languages.</li>
+											<li><strong>Adapters.</strong> Use Geode as a drop-in replacement for Memcached, allowing use of Geode's server-side features like multi-cluster replication.</li>
+										</ul>
+                 		
+                   	
+                    
+                    
+                    
+                    
                 	</div>
                 </div>
             </div>
