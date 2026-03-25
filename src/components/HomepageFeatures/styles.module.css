@@ -89,6 +89,20 @@
     font-weight: 600;
 }
 
+.featuresCallout {
+    padding-top:2rem;
+	margin: 0 auto;
+    text-align: left;
+}
+
+[data-theme='dark'] .featuresCallout {
+    background: var(--ifm-footer-background-color);
+}
+
+.featuresCallout p {
+	padding-botton: 2rem;
+}
+
 /* Buttons */
 
 .primaryButton {

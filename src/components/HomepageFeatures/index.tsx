@@ -28,10 +28,10 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: '👥 Replication and Partitioning',
+    title: '👥 Replication & Partitioning',
     description: (
       <>
-          Data can easily be partitioned (sharded) or replicated between nodes allowing performance to scale as needed. Durability is ensured through redundant in-memory copies and disk-based persistence.
+	      Data are easily partitioned (sharding) and replicated between nodes, which allows performance to scale as needed. Geode ensures durability through redundant in-memory copies and disk-based persistence.
       </>
     ),
   },
@@ -39,7 +39,7 @@ const FeatureList: FeatureItem[] = [
     title: '🧊 Persistence',
     description: (
       <>
-          Super fast write-ahead-logging (WAL) persistence with a shared-nothing architecture that is optimized for fast parallel recovery of nodes or an entire cluster.
+	      Write-ahead-logging (WAL) persistence with a shared-nothing architecture is optimized for fast parallel recovery of nodes or recovery of an entire cluster.
       </>
     ),
   },
@@ -47,8 +47,7 @@ const FeatureList: FeatureItem[] = [
     title: '🚀 Performance',
     description: (
       <>
-          Linear-scaling low latency for transactions, reads,
-          writes and query processing of indexed or unindexed data.
+		    Linear-scaling provides low latency for transactions, reads, writes, and query processing of indexed or unindexed data.
       </>
     ),
   },
@@ -56,15 +55,7 @@ const FeatureList: FeatureItem[] = [
         title: '🧠 In-Memory Storage',
         description: (
             <>
-                Blazing fast in-memory storage optimized for large heaps, with the option of using off-heap storage, compression and features such as disk-overflow, eviction and expiration of data.
-            </>
-        ),
-    },
-    {
-        title: '⚙️ Functions',
-        description: (
-            <>
-                Distributed location-aware user functions can be deployed and executed by the same nodes storing relevant sharded data for fast parallel processing. Failed operations can be retried on replicant nodes.
+	            Blazing fast in-memory storage is optimized for large heaps. Use off-heap storage, compression, and features such as disk-overflow, eviction, and expiration of data.
             </>
         ),
     },
@@ -72,23 +63,7 @@ const FeatureList: FeatureItem[] = [
         title: '🔀 Transactions',
         description: (
             <>
-                ACID distributed transactions support efficient and safe coordinated operations on colocated data. Transactions can be initiated or suspended by either a client or a server.
-            </>
-        ),
-    },
-    {
-        title: '🗂️ OQL and Indexes',
-        description: (
-            <>
-                Object Query Language allows distributed query execution on hot and cold data, with SQL-like capabilities, including joins. Multiple kinds of indexes can be defined and consistently maintained across the cluster.
-            </>
-        ),
-    },
-    {
-        title: '💡 Events',
-        description: (
-            <>
-                Clients can be notified about server-side data events, and servers can react synchronously or asynchronously with guaranteed delivery of ordered events.
+            ACID distributed transactions support efficient and safe coordinated operations on co-located data. Initiate or suspend transactions with either a client or a server.
             </>
         ),
     },
@@ -96,7 +71,7 @@ const FeatureList: FeatureItem[] = [
         title: '🫧 Clustering',
         description: (
             <>
-                Highly scalable, robust advanced clustering technology with failure detection, dynamic scaling, and network-partition detection algorithms.
+	            Highly scalable, advanced clustering technology offers failure detection, dynamic scaling, and network-partition detection algorithms.
             </>
         ),
     },
@@ -104,33 +79,23 @@ const FeatureList: FeatureItem[] = [
         title: '🎡 Multi-Cluster',
         description: (
             <>
-                Geode clusters can be replicated over WAN in various topologies: active-active, active-passive, ring, hub-spoke, star, etc.
+	            Replicate Geode clusters over WAN in various topologies (active-active, active-passive, ring, hub-spoke, and star).
             </>
         ),
     },
     {
-        title: '🔎 Continuous Query',
+        title: '🔒 Security',
         description: (
             <>
-                Clients can stay up to date by registering OQL queries with the Geode servers,
-                making event-driven applications possible.
+	            Geode uses JEP 290 ObjectInputFilter to protect against deserialization vulnerabilities and provides application-level security for HTTP session management.
             </>
         ),
     },
     {
-        title: '⌨️ Clients',
+        title: '🖥️ Management',
         description: (
             <>
-                Clients are available for Java, C++, and C# .NET Framework. A REST API is available for all other languages.
-            </>
-        ),
-    },
-    {
-        title: '🔌 Adapters',
-        description: (
-            <>
-                Geode can be used as a drop-in replacement for memcached,
-                allowing use of Geode's server-side features like multi-cluster replication.
+	            Manage and monitor clusters with the Geode Shell (gfsh), a powerful command-line interface, and Pulse, a web-based dashboard for real-time visualization of cluster health and data distribution.
             </>
         ),
     },
@@ -152,7 +117,7 @@ function TopAboutSection() {
         <div className={styles.aboutSection}>
             <div className="container">
                 <div className={styles.aboutContent}>
-                    <p className={styles.aboutTagline}> Apache Geode™ is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.</p>
+                    <p className={styles.aboutTagline}>Apache Geode™ is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.</p>
 										<div className={styles.aboutButtons}>
 												<a className={clsx('button button--lg', styles.primaryButton)} href="https://github.com/apache/geode/releases">Download Geode</a>
 												<a className={clsx('button button--lg', styles.secondaryButton)} href="https://cwiki.apache.org/confluence/display/geode/">Learn more</a>
@@ -192,7 +157,6 @@ export default function HomepageFeatures(): JSX.Element {
     return (
         <section className={styles.homepageMain}>
             <TopAboutSection />
-
             <div className={styles.featuresSection}>
                 <div className="container">
 									<Heading as="h2" className={styles.featuresTitle}>Key features</Heading>		
@@ -200,10 +164,18 @@ export default function HomepageFeatures(): JSX.Element {
 		                        {FeatureList.map((props, idx) => (
                             <Feature key={idx} {...props} />
                         ))}
-                    </div>
+											</div>
+								<div className={styles.featuresCallout}>
+									<Heading as="h3" className={styles.featuresHeading}>Do more with Apache Geode™</Heading>
+                 		<p><strong>OQL and Indexes.</strong> Object Query Language allows distributed query execution on hot and cold data, with SQL-like capabilities, including joins. Define and consistently maintain multiple kinds of indexes across the cluster.</p>
+                   	<p><strong>Events.</strong> Clients can receive notices about server-side data events, and servers can react synchronously or asynchronously with guaranteed delivery of ordered events.</p>
+                    <p><strong>Functions.</strong> The same nodes storing relevant sharded data for fast parallel processing can deploy and execute distributed, location-aware user functions. Failed operations can be retried on replicant nodes.</p>
+                    <p><strong>Continuous Query.</strong> Clients can stay up-to-date by registering OQL queries with the Geode servers, making event-driven applications possible.</p>
+                    <p><strong>Clients.</strong> Clients for Java, C++, and C# .NET Framework are available. A REST API is available for all other languages.</p>
+                    <p><strong>Adapters.</strong> Use Geode as a drop-in replacement for Memcached, allowing use of Geode's server-side features like multi-cluster replication.</p>
+                	</div>
                 </div>
             </div>
-
             <BottomAboutSection />
         </section>
     );
