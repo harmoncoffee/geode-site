@@ -1,5 +1,7 @@
 ﻿---
 title:  Tune the Client's Subscription Message Tracking Timeout
+sidebar_label: Tune the Client's Subscription Message Tracking Timeout
+sidebar_position: 3
 ---
 
 <!--

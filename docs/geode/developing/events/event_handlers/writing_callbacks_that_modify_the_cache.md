@@ -1,5 +1,7 @@
 ﻿---
 title:  How to Safely Modify the Cache from an Event Handler Callback
+sidebar_label: How to Safely Modify the Cache from an Event Handler Callback
+sidebar_position: 3
 ---
 
 <!--

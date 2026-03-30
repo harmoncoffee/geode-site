@@ -1,5 +1,7 @@
 ﻿---
 title:  Limit the Server's Subscription Queue Memory Use
+sidebar_label: Limit the Server's Subscription Queue Memory Use
+sidebar_position: 2
 ---
 
 <!--

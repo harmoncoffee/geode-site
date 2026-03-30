@@ -1,5 +1,7 @@
 ﻿---
 title:  Conflating Events in a Queue
+sidebar_label: Conflating Events in a Queue
+sidebar_position: 3
 ---
 
 <!--

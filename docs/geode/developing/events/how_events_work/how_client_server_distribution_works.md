@@ -1,5 +1,7 @@
 ﻿---
 title:  Client-to-Server Event Distribution
+sidebar_label: Client-to-Server Event Distribution
+sidebar_position: 2
 ---
 
 <!--

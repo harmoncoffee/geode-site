@@ -1,5 +1,7 @@
 ﻿---
 title:  Conflate the Server Subscription Queue
+sidebar_label: Conflate the Server Subscription Queue
+sidebar_position: 1
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Multi-Site (WAN) Event Distribution
+sidebar_label: Multi-Site (WAN) Event Distribution
+sidebar_position: 3
 ---
 
 <!--

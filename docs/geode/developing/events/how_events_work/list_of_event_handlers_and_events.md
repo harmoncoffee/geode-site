@@ -1,5 +1,7 @@
 ﻿---
 title:  List of Event Handlers and Events
+sidebar_label: List of Event Handlers and Events
+sidebar_position: 4
 ---
 
 <!--

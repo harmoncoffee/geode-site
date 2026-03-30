@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring Highly Available Servers
+sidebar_label: Configuring Highly Available Servers
+sidebar_position: 1
 ---
 
 <!--

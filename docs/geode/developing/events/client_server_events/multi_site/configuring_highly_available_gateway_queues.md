@@ -1,5 +1,7 @@
 ﻿---
 title:  Persisting an Event Queue
+sidebar_label: Persisting an Event Queue
+sidebar_position: 1
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Implementing an AsyncEventListener for Write-Behind Cache Event Handling
+sidebar_label: Implementing an AsyncEventListener for Write-Behind Cache Event Handling
+sidebar_position: 2
 ---
 
 <!--

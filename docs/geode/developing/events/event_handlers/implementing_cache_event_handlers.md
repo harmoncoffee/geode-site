@@ -1,5 +1,7 @@
 ﻿---
 title:  Implementing Cache Event Handlers
+sidebar_label: Implementing Cache Event Handlers
+sidebar_position: 1
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Cache Event Handler Examples
+sidebar_label: Cache Event Handler Examples
+sidebar_position: 4
 ---
 
 <!--

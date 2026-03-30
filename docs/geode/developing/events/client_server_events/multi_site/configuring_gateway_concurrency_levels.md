@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring Dispatcher Threads and Order Policy for Event Distribution
+sidebar_label: Configuring Dispatcher Threads and Order Policy for Event Distribution
+sidebar_position: 2
 ---
 
 <!--

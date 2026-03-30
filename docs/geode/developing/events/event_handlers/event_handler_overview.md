@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Implementing Geode Event Handlers
+sidebar_label:  Implementing Geode Event Handlers
+sidebar_position: 1
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

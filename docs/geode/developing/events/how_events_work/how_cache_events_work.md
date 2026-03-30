@@ -1,5 +1,7 @@
 ﻿---
 title:  Peer-to-Peer Event Distribution
+sidebar_label: Peer-to-Peer Event Distribution
+sidebar_position: 1
 ---
 
 <!--
