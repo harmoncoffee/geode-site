@@ -25,14 +25,6 @@
     width: 100%;
 }
 
-li {
-	margin-bottom: 1rem;
-}
-
-ul {
-	margin-top: 1rem;
-}
-
 /* About Section */
 
 .aboutSection {
@@ -50,6 +42,14 @@ ul {
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
+}
+
+.aboutContent li {
+	margin-bottom: 1rem;
+}
+
+.aboutContent ul {
+	margin-top: 1rem;
 }
 
 .aboutHeading {
