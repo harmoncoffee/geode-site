@@ -1,5 +1,7 @@
 ﻿---
 title:  WHERE Clause
+sidebar_label: WHERE Clause
+sidebar_position: 3
 ---
 
 <!--

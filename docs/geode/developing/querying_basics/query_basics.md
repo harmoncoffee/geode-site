@@ -1,5 +1,7 @@
 ﻿---
 title:  Querying with OQL
+sidebar_label:  Querying with OQL
+sidebar_position: 2
 ---
 
 <!--

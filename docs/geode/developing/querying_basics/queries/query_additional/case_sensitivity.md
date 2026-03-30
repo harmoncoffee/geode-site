@@ -1,5 +1,7 @@
 ﻿---
-title:  Supported Character Sets
+title:  Case Sensitivity
+sidebar_label: Case Sensitivity
+sidebar_position: 3
 ---
 
 <!--
@@ -17,7 +19,21 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode query language supports the full ASCII and Unicode character sets.
+-->
+
+Query language keywords such as SELECT, NULL, DATE, and &lt;TRACE&gt; are case-insensitive. Identifiers such as attribute names, method names, and path expressions are case-sensitive.
+
+In terms of query string and region entry matching, if you want to perform a case-insensitive search on a particular field, you can use the Java String class `toUpperCase` and `toLowerCase` methods in your query. For example:
+
+``` pre
+SELECT entry.value FROM /exampleRegion.entries entry WHERE entry.value.toUpperCase LIKE '%BAR%'
+```
+
+or
+
+``` pre
+SELECT * FROM /exampleRegion WHERE foo.toLowerCase LIKE '%bar%'
+```
 
 
 

@@ -1,5 +1,7 @@
 ﻿---
-title:  Case Sensitivity
+title:  IMPORT Statement
+sidebar_label:  IMPORT Statement
+sidebar_position: 1
 ---
 
 <!--
@@ -19,18 +21,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Query language keywords such as SELECT, NULL, DATE, and &lt;TRACE&gt; are case-insensitive. Identifiers such as attribute names, method names, and path expressions are case-sensitive.
+It is sometimes necessary for an OQL query to refer to the class of an object. In cases where the same class name resides in two different namescopes (packages), you must be able to differentiate the classes having the same name.
 
-In terms of query string and region entry matching, if you want to perform a case-insensitive search on a particular field, you can use the Java String class `toUpperCase` and `toLowerCase` methods in your query. For example:
-
-``` pre
-SELECT entry.value FROM /exampleRegion.entries entry WHERE entry.value.toUpperCase LIKE '%BAR%'
-```
-
-or
+The **IMPORT** statement is used to establish a name for a class in a query.
 
 ``` pre
-SELECT * FROM /exampleRegion WHERE foo.toLowerCase LIKE '%bar%'
+IMPORT package.Position;
+SELECT DISTINCT * FROM /exampleRegion, positions.values positions TYPE Position WHERE positions.mktValue >= 25.00
 ```
 
 

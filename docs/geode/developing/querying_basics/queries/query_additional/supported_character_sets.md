@@ -1,5 +1,7 @@
 ﻿---
-title:  Comments in Query Strings
+title:  Supported Character Sets
+sidebar_label: Supported Character Sets
+sidebar_position: 1
 ---
 
 <!--
@@ -17,15 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
-
-Comment lines being with `--` (double dash). Comment blocks begin with `/*` and end with `*/`. For example:
-
-``` pre
-SELECT * --my comment 
-FROM /exampleRegion /* here is
-a comment */ WHERE status = â€˜activeâ€™
-```
+--> Geode query language supports the full ASCII and Unicode character sets.
 
 
 

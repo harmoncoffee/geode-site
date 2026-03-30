@@ -1,5 +1,7 @@
 ﻿---
 title:  Query Language Grammar
+sidebar_label: Query Language Grammar
+sidebar_position: 5
 ---
 
 <!--

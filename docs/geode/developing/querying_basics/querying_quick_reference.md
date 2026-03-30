@@ -1,5 +1,7 @@
 ﻿---
 title: Querying FAQ and Examples
+sidebar_label: Querying FAQ and Examples
+sidebar_position: 1
 ---
 
 <!--

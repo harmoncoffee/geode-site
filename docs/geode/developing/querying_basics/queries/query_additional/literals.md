@@ -1,5 +1,7 @@
 ﻿---
 title:  Supported Literals
+sidebar_label: Supported Literals
+sidebar_position: 8
 ---
 
 <!--

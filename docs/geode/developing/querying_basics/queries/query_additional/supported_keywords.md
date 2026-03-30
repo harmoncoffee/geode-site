@@ -1,5 +1,7 @@
 ﻿---
 title:  Supported Keywords
+sidebar_label: Supported Keywords
+sidebar_position: 2
 ---
 
 <!--

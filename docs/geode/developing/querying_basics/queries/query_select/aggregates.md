@@ -1,5 +1,7 @@
 ﻿---
 title:  OQL Aggregate Functions
+sidebar_label: OQL Aggregate Functions
+sidebar_position:  5
 ---
 
 <!--

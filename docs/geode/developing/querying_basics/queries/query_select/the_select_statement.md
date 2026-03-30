@@ -1,5 +1,7 @@
 ﻿---
 title:  SELECT Statement
+sidebar_label: SELECT Statement
+sidebar_position: 4
 ---
 
 <!--

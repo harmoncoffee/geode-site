@@ -1,5 +1,7 @@
 ﻿---
 title:  Reserved Words
+sidebar_label: Reserved Words
+sidebar_position: 7
 ---
 
 <!--

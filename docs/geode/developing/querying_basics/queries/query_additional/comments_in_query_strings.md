@@ -1,5 +1,7 @@
 ﻿---
-title:  IMPORT Statement
+title:  Comments in Query Strings
+sidebar_label: Comments in Query Strings
+sidebar_position: 4
 ---
 
 <!--
@@ -19,13 +21,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-It is sometimes necessary for an OQL query to refer to the class of an object. In cases where the same class name resides in two different namescopes (packages), you must be able to differentiate the classes having the same name.
-
-The **IMPORT** statement is used to establish a name for a class in a query.
+Comment lines being with `--` (double dash). Comment blocks begin with `/*` and end with `*/`. For example:
 
 ``` pre
-IMPORT package.Position;
-SELECT DISTINCT * FROM /exampleRegion, positions.values positions TYPE Position WHERE positions.mktValue >= 25.00
+SELECT * --my comment 
+FROM /exampleRegion /* here is
+a comment */ WHERE status = â€˜activeâ€™
 ```
 
 

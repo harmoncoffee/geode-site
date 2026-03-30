@@ -1,5 +1,7 @@
 ﻿---
 title:  Query Language Restrictions and Unsupported Features
+sidebar_label: Query Language Restrictions and Unsupported Features
+sidebar_position: 3
 ---
 
 <!--

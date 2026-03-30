@@ -1,5 +1,7 @@
 ﻿---
 title:  FROM Clause
+sidebar_label: FROM Clause
+sidebar_position: 2
 ---
 
 <!--
