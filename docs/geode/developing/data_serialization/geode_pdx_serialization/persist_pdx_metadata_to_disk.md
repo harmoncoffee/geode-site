@@ -1,5 +1,7 @@
 ﻿---
 title:  Persisting PDX Metadata to Disk
+sidebar_label:  Persisting PDX Metadata to Disk
+sidebar_position: 9
 ---
 
 <!--

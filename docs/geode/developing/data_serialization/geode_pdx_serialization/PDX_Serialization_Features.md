@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Geode PDX Serialization Features
+sidebar_label: Geode PDX Serialization Features
+sidebar_position: 1
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

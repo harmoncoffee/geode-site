@@ -19,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
-'s management and monitoring system consists of one JMX Manager node (there should only be one) and one or more managed nodes within a cluster. All members in the cluster are manageable through MBeans and Geode Management Service APIs.
+--> Geode  management and monitoring system consists of one JMX Manager node (there should only be one) and one or more managed nodes within a cluster. All members in the cluster are manageable through MBeans and Geode Management Service APIs.
 
 ## <a id="concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_ABE7007BE3C244FBA0418C4B5BE7E1F2" class="no-quick-link"></a>Architecture
 

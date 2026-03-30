@@ -1,5 +1,7 @@
 ﻿---
 title:  Overview of Data Serialization
+sidebar_label: Overview of Data Serialization
+sidebar_position: 1
 ---
 
 <!--

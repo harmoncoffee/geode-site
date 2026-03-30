@@ -1,5 +1,7 @@
 ﻿---
 title:  Extending the ReflectionBasedAutoSerializer
+sidebar_label: Extending the ReflectionBasedAutoSerializer
+sidebar_position: 2
 ---
 
 <!--

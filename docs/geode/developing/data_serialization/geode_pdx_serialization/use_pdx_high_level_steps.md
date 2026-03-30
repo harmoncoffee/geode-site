@@ -1,5 +1,7 @@
 ﻿---
 title:  High Level Steps for Using PDX Serialization
+sidebar_label: High Level Steps for Using PDX Serialization
+sidebar_position: 2
 ---
 
 <!--

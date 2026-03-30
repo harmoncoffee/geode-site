@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Geode PDX Serialization
+sidebar_label: Geode PDX Serialization
+sidebar_position: 1
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more
@@ -15,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
-'s Portable Data eXchange (PDX) is a cross-language data format that can reduce the cost of distributing and serializing your objects. PDX stores data in named fields that you can access individually, to avoid the cost of deserializing the entire data object. PDX also allows you to mix versions of objects where you have added or removed fields.
+--> Geode  Portable Data eXchange (PDX) is a cross-language data format that can reduce the cost of distributing and serializing your objects. PDX stores data in named fields that you can access individually, to avoid the cost of deserializing the entire data object. PDX also allows you to mix versions of objects where you have added or removed fields.
 
 -   **[ Geode PDX Serialization Features](PDX_Serialization_Features.html)** Geode     PDX serialization offers several advantages in terms of functionality.
 

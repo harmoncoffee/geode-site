@@ -1,5 +1,7 @@
 ﻿---
 title:  Implementing PdxSerializable in Your Domain Object
+sidebar_label:  Implementing PdxSerializable in Your Domain Object
+sidebar_position: 5
 ---
 
 <!--

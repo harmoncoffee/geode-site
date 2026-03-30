@@ -28,9 +28,7 @@ You organize your data in the cache into *data regions*, each with its own confi
 
 You generally configure caches using the `gfsh` command-line utility or a combination of XML declarations and API calls. Geode loads and processes your XML declarations when you first create the cache. Geode has one cache type for managing server and peer caches and one for managing client caches. The cache server process automatically creates its server cache at startup. In your application process, the cache creation returns an instance of the server/peer or client cache. From that point on, you manage the cache through API calls in your application.
 
-## <a id="concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_20973C59F1C94E35A02CE6582503205A" class="no-quick-link"></a>The Caching APIs Geode 
-
-'s caching APIs provide specialized behavior for different system member types and security settings.
+## <a id="concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_20973C59F1C94E35A02CE6582503205A" class="no-quick-link"></a>The Caching APIs Geode  caching APIs provide specialized behavior for different system member types and security settings.
 
 -   **`org.apache.geode.cache.RegionService`**. Generally, you use the `RegionService` functionality through instances of `Cache` and `ClientCache`. You only specifically use instances of `RegionService` for limited-access users in secure client applications that service many users. The `RegionService` API provides access to existing cache data regions and to the standard query service for the cache. For client caches, queries are sent to the server tier. For server and peer caches, queries are run in the current cache and any available peers. `RegionService` is implemented by `GemFireCache`.
 -   **`org.apache.geode.cache.GemFireCache`**. You do not specifically use instances of `GemFireCache`, but you use `GemFireCache` functionality in your instances of `Cache` and `ClientCache`. `GemFireCache` extends `RegionService` and adds general caching features like region attributes, disk stores for region persistence and overflow, and access to the underlying cluster. `GemFireCache` is implemented by `Cache` and `ClientCache`.

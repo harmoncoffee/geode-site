@@ -1,5 +1,7 @@
 ﻿---
 title:  Using PdxInstanceFactory to Create PdxInstances
+sidebar_label: Using PdxInstanceFactory to Create PdxInstances
+sidebar_position: 8
 ---
 
 <!--

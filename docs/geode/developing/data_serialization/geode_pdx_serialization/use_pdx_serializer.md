@@ -1,5 +1,7 @@
 ﻿---
 title:  Serializing Your Domain Object with a PdxSerializer
+sidebar_label: Serializing Your Domain Object with a PdxSerializer
+sidebar_position: 4
 ---
 
 <!--

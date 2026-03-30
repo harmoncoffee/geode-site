@@ -120,9 +120,7 @@ an event listener in which entries expire:
 </region>
 ```
 
-### <a id="data_regions__section_028F2602395646818680C906F205526B" class="no-quick-link"></a>Creating a Region Through the API Geode 
-
-'s regions APIs provide specialized behavior for different system member types.
+### <a id="data_regions__section_028F2602395646818680C906F205526B" class="no-quick-link"></a>Creating a Region Through the API Geode  regions APIs provide specialized behavior for different system member types.
 
 -   **Peer/Server Region APIs**.
 Use these methods, interfaces, and classes for peer/server region creation.

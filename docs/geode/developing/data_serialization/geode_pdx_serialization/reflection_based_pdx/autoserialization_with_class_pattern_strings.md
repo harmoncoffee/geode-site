@@ -1,5 +1,7 @@
 ﻿---
 title:  Customizing Serialization with Class Pattern Strings
+sidebar_label: Customizing Serialization with Class Pattern Strings
+sidebar_position: 1
 ---
 
 <!--

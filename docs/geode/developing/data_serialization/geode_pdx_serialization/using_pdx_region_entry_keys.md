@@ -1,5 +1,7 @@
 ﻿---
 title:  Using PDX Objects as Region Entry Keys
+sidebar_label: Using PDX Objects as Region Entry Keys
+sidebar_position: 10
 ---
 
 <!--

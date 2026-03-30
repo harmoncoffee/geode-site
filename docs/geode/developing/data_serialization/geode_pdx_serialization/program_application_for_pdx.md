@@ -1,5 +1,7 @@
 ﻿---
 title:  Programming Your Application to Use PdxInstances
+sidebar_label: Programming Your Application to Use PdxInstances
+sidebar_position: 6
 ---
 
 <!--

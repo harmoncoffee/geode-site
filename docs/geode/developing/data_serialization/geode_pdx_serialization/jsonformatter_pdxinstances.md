@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Adding JSON Documents to the Geode Cache
+sidebar_label: Adding JSON Documents to the Geode Cache
+sidebar_position: 7
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more
