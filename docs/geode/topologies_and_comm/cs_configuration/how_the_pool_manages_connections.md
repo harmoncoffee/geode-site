@@ -58,20 +58,20 @@ Each `Pool` instance in your client maintains its own connection pool. The pool 
 
 The pool adds a new pool connection when one of the following happens:
 
--   The number of open connections is less than the `Pool`â€™s `min-connections` setting.
--   A thread needs a connection, all open connections are in use, and adding another connection would not take the open connection count over the poolâ€™s `max-connections` setting. If the max-connections setting has been reached, the thread blocks until a connection becomes available.
+-   The number of open connections is less than the `Pool`'s `min-connections` setting.
+-   A thread needs a connection, all open connections are in use, and adding another connection would not take the open connection count over the pool's `max-connections` setting. If the max-connections setting has been reached, the thread blocks until a connection becomes available.
 
 The pool closes a pool connection when one of the following occurs:
 
 -   The client receives a connectivity exception from the server.
 -   The server doesnâ€™t respond to a direct request or ping within the client's configured `read-timeout` period. In this case, the pool removes all connections to that server.
--   The number of pool connections exceeds the poolâ€™s `min-connections` setting and the client doesnâ€™t send any requests over the connection for the `idle-timeout` period.
+-   The number of pool connections exceeds the pool's `min-connections` setting and the client doesnâ€™t send any requests over the connection for the `idle-timeout` period.
 
 When it closes a connection that a thread is using, the pool switches the thread to another server connection, opening a new one if needed.
 
 ## <a id="how_the_pool_manages_subscription_connections" class="no-quick-link"></a>How the Pool Manages Subscription Connections
 
-The poolâ€™s subscription connection is established in the same way as the pool connections, by
+The pool's subscription connection is established in the same way as the pool connections, by
 requesting server information from the locator and then sending a request to the server, or, if you
 are using a static server list, by connecting to the next server in the list.
 
@@ -92,5 +92,5 @@ elapsed. A value of one is not recommended.
 
 ## <a id="how_the_pool_manages_connections__section_6286FB8DC6564F0AA082004B447F1FC4" class="no-quick-link"></a>How the Pool Conditions Server Load
 
-When locators are used, the pool periodically conditions its pool connections. Each connection has an internal lifetime counter. When the counter reaches the configured `load-conditioning-interval`, the pool checks with the locator to see if the connection is using the least loaded server. If not, the pool establishes a new connection to the least loaded server, silently puts it in place of the old connection, and closes the old connection. In either case, when the operation completes, the counter starts at zero. Conditioning happens behind the scenes and does not affect your applicationâ€™s connection use. This automatic conditioning allows very efficient upscaling of your server pool. It is also useful following planned and unplanned server outages, during which time the entire client load will have been placed on a subset of the normal set of servers.
+When locators are used, the pool periodically conditions its pool connections. Each connection has an internal lifetime counter. When the counter reaches the configured `load-conditioning-interval`, the pool checks with the locator to see if the connection is using the least loaded server. If not, the pool establishes a new connection to the least loaded server, silently puts it in place of the old connection, and closes the old connection. In either case, when the operation completes, the counter starts at zero. Conditioning happens behind the scenes and does not affect your application's connection use. This automatic conditioning allows very efficient upscaling of your server pool. It is also useful following planned and unplanned server outages, during which time the entire client load will have been placed on a subset of the normal set of servers.
 

@@ -24,7 +24,7 @@ limitations under the License.
 You define disk stores in your cache, then you assign them to your regions and queues by setting the `disk-store-name` attribute in your region and queue configurations.
 
 **Note:**
-Besides the disk stores you specify, Apache Geode has a default disk store that it uses when disk use is configured with no disk store name specified. By default, this disk store is saved to the applicationâ€™s working directory. You can change its behavior, as indicated in [Create and Configure Your Disk Stores](using_disk_stores.html#defining_disk_stores__section_37BC5A4D84B34DB49E489DD4141A4884) and [Modifying the Default Disk Store](using_the_default_disk_store.html#using_the_default_disk_store).
+Besides the disk stores you specify, Apache Geode has a default disk store that it uses when disk use is configured with no disk store name specified. By default, this disk store is saved to the application's working directory. You can change its behavior, as indicated in [Create and Configure Your Disk Stores](using_disk_stores.html#defining_disk_stores__section_37BC5A4D84B34DB49E489DD4141A4884) and [Modifying the Default Disk Store](using_the_default_disk_store.html#using_the_default_disk_store).
 
 -   [Design Your Disk Stores](using_disk_stores.html#defining_disk_stores__section_0CD724A12EE4418587046AAD9EEC59C5)
 -   [Create and Configure Your Disk Stores](using_disk_stores.html#defining_disk_stores__section_37BC5A4D84B34DB49E489DD4141A4884)
@@ -70,7 +70,7 @@ Before you begin, you should understand Geode [Basic Configuration and Programmi
         ``` pre
         gfsh>create disk-store --name=serverOverflow --dir=c:\overflow_data#20480
         ```
-    -  Optionally, you can configure the storeâ€™s file compaction behavior. In conjunction with this, plan and program for any manual compaction.  Example:
+    -  Optionally, you can configure the store's file compaction behavior. In conjunction with this, plan and program for any manual compaction.  Example:
 
         ``` pre
         gfsh>create disk-store --name=serverOverflow --dir=c:\overflow_data#20480 \

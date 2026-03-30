@@ -24,7 +24,7 @@ You can use indexes when querying on overflow regions; however, there are caveat
 The following are caveats for querying overflow regions:
 
 -   You must use synchronous index maintenance for the region. This is the default maintenance setting.
--   The index FROM clause must specify only one iterator, and it must refer to the keys or entry values. The index cannot refer to the regionâ€™s entrySet.
+-   The index FROM clause must specify only one iterator, and it must refer to the keys or entry values. The index cannot refer to the region's entrySet.
 -   The index data itself is not stored on (overflowed to) disk .
 
 **Examples:**

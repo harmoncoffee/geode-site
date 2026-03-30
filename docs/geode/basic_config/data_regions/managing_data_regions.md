@@ -62,7 +62,7 @@ The cluster configuration service, which is enabled by default, automatically sa
 
 ###  Creating a Region Through the cache.xml File
 
-A common way to create a data region in the  cache is through `cache.xml` declarations.
+A common way to create a data region in the Apache Geode cache is through `cache.xml` declarations.
 When starting the member with the `cache.xml` file,
 the region will be created.
 
@@ -120,9 +120,7 @@ an event listener in which entries expire:
 </region>
 ```
 
-### <a id="data_regions__section_028F2602395646818680C906F205526B" class="no-quick-link"></a>Creating a Region Through the API Geode 
-
-'s regions APIs provide specialized behavior for different system member types.
+### <a id="data_regions__section_028F2602395646818680C906F205526B" class="no-quick-link"></a>Creating a Region Through the API Geode  regions APIs provide specialized behavior for different system member types.
 
 -   **Peer/Server Region APIs**.
 Use these methods, interfaces, and classes for peer/server region creation.

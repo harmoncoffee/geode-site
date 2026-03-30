@@ -19,17 +19,13 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- provides region shortcut settings, with preset region configurations for the most common region types. For the easiest configuration, start with a shortcut setting and customize as needed. You can also store your own custom configurations in the cache for use by multiple regions.
+--> Geode provides region shortcut settings, with preset region configurations for the most common region types. For the easiest configuration, start with a shortcut setting and customize as needed. You can also store your own custom configurations in the cache for use by multiple regions.
 
 <a id="region_shortcuts__section_D9E58754D2B0435FA2986DBBF3063D4C"></a>
 You configure automated management of data regions and their entries through region shortcuts and region attributes. These region configuration settings determine such things as where the data resides, how the region is managed in memory, reliability behavior, and the automatic loading, distribution, and expiration of data entries.
 
 **Note:**
-Whenever possible, use region shortcuts to configure your region, and further customize behavior using region attributes. The shortcut settings are preset with the most common region configurations. Geode 
-
- provides a number of predefined, shortcut region attributes settings for your use. You can also define your own custom region attributes and store them with an identifier for later retrieval. Both types of stored attributes are referred to as named region attributes. You can create and store your attribute settings in the `cache.xml` file and through the API.
+Whenever possible, use region shortcuts to configure your region, and further customize behavior using region attributes. The shortcut settings are preset with the most common region configurations. Geode provides a number of predefined, shortcut region attributes settings for your use. You can also define your own custom region attributes and store them with an identifier for later retrieval. Both types of stored attributes are referred to as named region attributes. You can create and store your attribute settings in the `cache.xml` file and through the API.
 
 Retrieve region shortcuts and custom named attributes by providing the ID to the region creation, in the `refid` attribute setting. This example uses the shortcut REPLICATE attributes to create a region:
 
@@ -59,7 +55,7 @@ You can create your own named attributes as needed, by providing an `id` in your
 
 ## <a id="region_shortcuts__section_20548383511141B19EBC053E36877B1A" class="no-quick-link"></a>Shortcut Attribute Options
 
-You can select the most common region attributes settings from â€™s predefined named region attributes in these classes:
+You can select the most common region attributes settings from Geode's predefined named region attributes in these classes:
 
 -   **`org.apache.geode.cache.RegionShortcut`**. For peers and servers.
 -   **`org.apache.geode.cache.client.ClientRegionShortcut`**. For clients.

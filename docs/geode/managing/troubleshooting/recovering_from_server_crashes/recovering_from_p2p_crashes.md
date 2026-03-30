@@ -153,11 +153,11 @@ Restart the process. The system member recreates its cache automatically. If rep
 
 ## <a id="rec_app_p2p_crash__section_745AB095D1FA48E392F2C1B95DC18090" class="no-quick-link"></a>Recovery for Regions of Local Scope
 
-Regions of local scope have no memory backup, but may have data persisted to disk. If the region is configured for persistence, the data remains in the regionâ€™s disk directories after a crash. The data on disk will be used to initialize the region when you restart.
+Regions of local scope have no memory backup, but may have data persisted to disk. If the region is configured for persistence, the data remains in the region's disk directories after a crash. The data on disk will be used to initialize the region when you restart.
 
 ## <a id="rec_app_p2p_crash__section_D9202624335D45BFA2FCC55D702125F7" class="no-quick-link"></a>Recovering Data from Disk
 
-When you persist a region, the entry data on disk outlives the region in memory. If the member exits or crashes, the data remains in the regionâ€™s disk directories. See [Disk Storage](../disk_storage/chapter_overview.html). If the same region is created again, this saved disk data can be used to initialize the region.
+When you persist a region, the entry data on disk outlives the region in memory. If the member exits or crashes, the data remains in the region's disk directories. See [Disk Storage](../disk_storage/chapter_overview.html). If the same region is created again, this saved disk data can be used to initialize the region.
 
 Some general considerations for disk data recovery:
 

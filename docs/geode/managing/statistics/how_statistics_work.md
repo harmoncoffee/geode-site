@@ -20,9 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-Each application or cache server that joins the cluster can collect and archive statistical data for analyzing system performance. Geode 
-
- statistics can be enabled for a cluster, for an application, for a server, or for a region. Statistics gathered for a cluster, an application, or a cache server are saved to a file and can be archived, whereas region statistics are transient and accessible only through the API.
+Each application or cache server that joins the cluster can collect and archive statistical data for analyzing system performance. Geode statistics can be enabled for a cluster, for an application, for a server, or for a region. Statistics gathered for a cluster, an application, or a cache server are saved to a file and can be archived, whereas region statistics are transient and accessible only through the API.
 
 <a id="how_statistics_work__section_C12B3CDFF04743688BA5F8FB374899D5"></a>
 Set the configuration attributes that control cluster, application, or cache statistics collection in `gfsh` or in the `gemfire.properties` configuration file. You can also collect your own application defined statistics.

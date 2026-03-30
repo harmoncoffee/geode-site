@@ -1,5 +1,7 @@
 ﻿---
 title:  Partitioned Regions
+sidebar_label: Partitioned Regions
+sidebar_position: 2
 ---
 
 <!--
@@ -43,7 +45,7 @@ In addition to basic region management, partitioned regions include options for 
 
 -   **[Configuring Single-Hop Client Access to Server-Partitioned Regions](overview_how_pr_single_hop_works.html)**
 
-    Single-hop data access enables the client pool to track where a partitioned regionâ€™s data is hosted in the servers. To access a single entry, the client directly contacts the server that hosts the key, in a single hop.
+    Single-hop data access enables the client pool to track where a partitioned region's data is hosted in the servers. To access a single entry, the client directly contacts the server that hosts the key, in a single hop.
 
 -   **[Rebalancing Partitioned Region Data](rebalancing_pr_data.html)**
 

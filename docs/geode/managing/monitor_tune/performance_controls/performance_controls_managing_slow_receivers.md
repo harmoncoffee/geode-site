@@ -36,7 +36,7 @@ The specifications for handling slow receipt primarily affect how your members m
 
 **Configuration Options**
 
-The slow receiver options are set in the producer memberâ€™s region attribute, enable-async-conflation, and in the consumer memberâ€™s async\* `gemfire.properties` settings.
+The slow receiver options are set in the producer member's region attribute, enable-async-conflation, and in the consumer member's async\* `gemfire.properties` settings.
 
 **Delivery Retries**
 
@@ -52,7 +52,7 @@ The warnings are followed by an info message when the delivery finally succeeds.
 
 Your consumer members can be configured so that their producers switch to asynchronous messaging if the consumers are slow to respond to cache message distribution.
 
-When a producer switches, it creates a queue to hold and manage that consumerâ€™s cache messages. When the queue empties, the producer switches back to synchronous messaging for the consumer. The settings that cause the producers to switch are specified on the consumer side in `gemfire.properties` file settings.
+When a producer switches, it creates a queue to hold and manage that consumer's cache messages. When the queue empties, the producer switches back to synchronous messaging for the consumer. The settings that cause the producers to switch are specified on the consumer side in `gemfire.properties` file settings.
 
 If you configure your consumers for slow receipt queuing, and your region scope is distributed-no-ack, you can also configure the producer to conflate entry update messages in its queues. This configuration option is set as the region attribute enable-async-conflation. By default distributed-no-ack entry update messages are not conflated.
 

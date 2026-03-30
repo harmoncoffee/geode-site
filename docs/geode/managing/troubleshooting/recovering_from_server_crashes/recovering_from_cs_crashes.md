@@ -32,7 +32,7 @@ Recovery from server failure has two parts: the server recovers as a member of a
 
 When servers fail, their own recovery is carried out as for any member of a cluster as described in [Recovering from Crashes with a Peer-to-Peer Configuration](recovering_from_p2p_crashes.html#rec_app_p2p_crash).
 
-From the clientâ€™s perspective, if the system is configured for high availability, server failure goes undetected unless enough servers fail that the server-to-client ratio drops below a workable level. In any case, your first course of action is to get the servers back up as quickly as possible.
+From the client's perspective, if the system is configured for high availability, server failure goes undetected unless enough servers fail that the server-to-client ratio drops below a workable level. In any case, your first course of action is to get the servers back up as quickly as possible.
 
 To recover from server failure:
 
@@ -53,5 +53,5 @@ When a client crashes, restart it as quickly as possible in the usual way. The c
 -   **Entries sent lazily to the client**â€”Entries are sent lazily to the client for entries that the client registers interest in that are not initially available in the server cache.
 -   **Events sent immediately to the client**â€”If the server has been saving events for the client, these are immediately replayed when the client reconnects. Cache modification events for entries in which the client has registered durable interest are saved.
 
-If you have a durable client configured to connect to multiple servers, keep in mind that Geode does not maintain server redundancy while the client is disconnected. If you lose all of its primary and secondary servers, you lose the clientâ€™s queued messages. Even if the servers fail one at a time, so that running clients have time to fail over and pick new secondary servers, an off-line durable client cannot do that and thus loses its queued messages.
+If you have a durable client configured to connect to multiple servers, keep in mind that Geode does not maintain server redundancy while the client is disconnected. If you lose all of its primary and secondary servers, you lose the client's queued messages. Even if the servers fail one at a time, so that running clients have time to fail over and pick new secondary servers, an off-line durable client cannot do that and thus loses its queued messages.
 

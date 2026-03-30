@@ -81,7 +81,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     gfsh>start server --name=server1 --groups=group1
     Starting a Geode Server in /Users/username/my_geode/server1...
     .....
-    Server in /Users/username/my_geode/server1 on 192.0.2.0[40404] as server1
+    Geode Server in /Users/username/my_geode/server1 on 192.0.2.0[40404] as server1
       is currently online.
     Process ID: 5627
     Uptime: 2 seconds
@@ -97,7 +97,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     gfsh>start server --name=server2 --groups=group1 --server-port=40405
     Starting a Geode Server in /Users/username/my_geode/server2...
     .....
-    Server in /Users/username/my_geode/server2 on 192.0.2.0[40405] as server2
+    Geode Server in /Users/username/my_geode/server2 on 192.0.2.0[40405] as server2
       is currently online.
     Process ID: 5634
     Uptime: 2 seconds
@@ -114,7 +114,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     gfsh>start server --name=server3 --server-port=40406
     Starting a Geode Server in /Users/username/my_geode/server3...
     .....
-    Server in /Users/username/my_geode/server3 on 192.0.2.0[40406] as server3
+    Geode Server in /Users/username/my_geode/server3 on 192.0.2.0[40406] as server3
       is currently online.
     Process ID: 5637
     Uptime: 2 seconds
@@ -193,9 +193,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
 
     ``` pre
     gfsh>export cluster-configuration --zip-file-name=/Users/username/myClConfig.zip
-    ``` Apache Geode 
-
-     writes the cluster configuration to the specified zip file.
+    ``` Apache Geode     writes the cluster configuration to the specified zip file.
 
     ``` pre
     File saved to /Users/username/myClConfig.zip
@@ -236,7 +234,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     gfsh>start locator --name=locator2 --port=10335
     Starting a Geode Locator in /Users/username/new_geode/locator2...
     .............................
-    Locator in /Users/username/new_geode/locator2 on 192.0.2.0[10335] as locator2
+    Geode Locator in /Users/username/new_geode/locator2 on 192.0.2.0[10335] as locator2
       is currently online.
     Process ID: 5749
     Uptime: 15 seconds
@@ -273,7 +271,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     gfsh>start server --name=server4 --server-port=40414
     Starting a Geode Server in /Users/username/new_geode/server4...
     ........
-    Server in /Users/username/new_geode/server4 on 192.0.2.0[40414] as server4
+    Geode Server in /Users/username/new_geode/server4 on 192.0.2.0[40414] as server4
     is currently online.
     Process ID: 5813
     Uptime: 4 seconds
@@ -294,7 +292,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     gfsh>start server --name=server5 --groups=group1 --server-port=40415
     Starting a Geode Server in /Users/username/new_geode/server5...
     .....
-    Server in /Users/username/new_geode/server2 on 192.0.2.0[40415] as server5
+    Geode Server in /Users/username/new_geode/server2 on 192.0.2.0[40415] as server5
     is currently online.
     Process ID: 5954
     Uptime: 2 seconds

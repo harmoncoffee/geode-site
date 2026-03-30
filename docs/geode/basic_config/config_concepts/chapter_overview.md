@@ -25,9 +25,7 @@ To work with your Apache Geode applications, you use a combination of configurat
 
     Cluster members are programs that connect to a Geode cluster. You configure members to belong to a single cluster, and you can optionally configure them to be clients or servers to members in other clusters, and to communicate with other clusters.
 
--   **[Setting Properties](../gemfire_properties/setting_distributed_properties.html)** Geode 
-
-     provides a default cluster configuration for out-of-the-box systems. To use non-default configurations and to fine-tune your member communication, you can use a mix of various options to customize your cluster configuration.
+-   **[Setting Properties](../gemfire_properties/setting_distributed_properties.html)** Geode     provides a default cluster configuration for out-of-the-box systems. To use non-default configurations and to fine-tune your member communication, you can use a mix of various options to customize your cluster configuration.
 
 -   **[Options for Configuring the Cache and Data Regions](../the_cache/setting_cache_properties.html)**
 

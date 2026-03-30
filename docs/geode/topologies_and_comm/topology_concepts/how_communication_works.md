@@ -19,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- uses a combination of TCP and UDP unicast and multicast for communication between members. You can change the default behavior to optimize communication for your system.
+--> Geode uses a combination of TCP and UDP unicast and multicast for communication between members. You can change the default behavior to optimize communication for your system.
 
 Client/server communication and gateway sender to gateway receiver communication uses TCP/IP sockets. The server listens for client communication at a published address and the client establishes the connection, sending its location. Similarly, the gateway receiver listens for gateway sender communication and the connection is established between sites.
 

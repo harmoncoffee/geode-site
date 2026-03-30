@@ -43,9 +43,7 @@ query runs for longer than the configured value.
 
     A query may return different results depending on the member on which it is executed.
 
--   **[Querying Partitioned Regions](../querying_basics/querying_partitioned_regions.html)** Geode 
-
-     allows you to manage and store large amounts of data across distributed nodes using partitioned regions. The basic unit of storage for a partitioned region is a bucket, which resides on a Geode node and contains all the entries that map to a single hashcode. In a typical partitioned region query, the system distributes the query to all buckets across all nodes, then merges the result sets and sends back the query results.
+-   **[Querying Partitioned Regions](../querying_basics/querying_partitioned_regions.html)** Geode     allows you to manage and store large amounts of data across distributed nodes using partitioned regions. The basic unit of storage for a partitioned region is a bucket, which resides on a Geode node and contains all the entries that map to a single hashcode. In a typical partitioned region query, the system distributes the query to all buckets across all nodes, then merges the result sets and sends back the query results.
 
 -   **[Query Debugging](../query_additional/query_debugging.html)**
 

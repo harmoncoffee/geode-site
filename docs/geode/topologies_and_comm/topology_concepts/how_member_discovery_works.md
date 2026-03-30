@@ -19,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Apache Geode 
-
- provides various options for member discovery within a cluster and between clients and servers.
+--> Apache Geode provides various options for member discovery within a cluster and between clients and servers.
 
 -   [Peer Member Discovery](how_member_discovery_works.html#how_member_discovery_works__section_F2B8EBF2909440BD90B4CDEE0CAA0C2A)
 -   [Standalone Member](how_member_discovery_works.html#how_member_discovery_works__section_E26DFAFE9E994C0C9A489E325E345816)

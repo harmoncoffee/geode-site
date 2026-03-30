@@ -49,7 +49,7 @@ When the network recovers, the members may be able to see each other again, but 
 
 ## <a id="rec_network_crash__section_7AD5624F3CD748C0BC163562B26B2DCE" class="no-quick-link"></a>Effect of Network Failure on Distributed Regions
 
-By default, both sides of the cluster continue to run as though the members on the other side were not running. For distributed regions, however, the regionsâ€™s reliability policy configuration can change this default behavior.
+By default, both sides of the cluster continue to run as though the members on the other side were not running. For distributed regions, however, the regions's reliability policy configuration can change this default behavior.
 
 When the network recovers, the members may be able to see each other again, but they are not able to merge back together into a single cluster.
 

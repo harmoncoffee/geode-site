@@ -39,7 +39,7 @@ UDP protocols typically have a flow-control protocol built into them to keep pro
 overrun by incoming no-ack messages. The Geode UDP flow-control protocol is a credit based system in
 which the sender has a maximum number of bytes it can send before getting its byte credit count
 replenished, or recharged, by its receivers. While its byte credits are too low, the sender
-waits. The receivers do their best to anticipate the senderâ€™s recharge requirements and provide
+waits. The receivers do their best to anticipate the sender's recharge requirements and provide
 recharges before they are needed. If the sender's credits run too low, it explicitly requests a
 recharge from its receivers.
 
@@ -47,14 +47,12 @@ This flow-control protocol, which is used for all multicast and unicast no-ack m
 configured using a three-part Geode property `mcast-flow-control`. This property is composed of:
 
 -   `byteAllowance`â€”Determines how many bytes (also referred to as credits) can be sent before receiving a recharge from the receiving processes.
--   `rechargeThreshold`â€”Sets a lower limit on the ratio of the senderâ€™s remaining credit to its `byteAllowance`. When the ratio goes below this limit, the receiver automatically sends a recharge. This reduces recharge request messaging from the sender and helps keep the sender from blocking while waiting for recharges.
+-   `rechargeThreshold`â€”Sets a lower limit on the ratio of the sender's remaining credit to its `byteAllowance`. When the ratio goes below this limit, the receiver automatically sends a recharge. This reduces recharge request messaging from the sender and helps keep the sender from blocking while waiting for recharges.
 -   `rechargeBlockMs`â€”Tells the sender how long to wait while needing a recharge before explicitly requesting one.
 
 In a well-tuned system, where consumers of cache events are keeping up with producers, the `byteAllowance` can be set high to limit flow-of-control messaging and pauses. JVM bloat or frequent message retransmissions are an indication that cache events from producers are overrunning consumers.
 
-## <a id="udp_comm__section_FB1F54A41D2643A29DB416D309ED4C56" class="no-quick-link"></a>UDP Retransmission Statistics Geode 
-
- stores retransmission statistics for its senders and receivers. You can use these statistics to help determine whether your flow control and fragment size settings are appropriate for your system.
+## <a id="udp_comm__section_FB1F54A41D2643A29DB416D309ED4C56" class="no-quick-link"></a>UDP Retransmission Statistics Geode stores retransmission statistics for its senders and receivers. You can use these statistics to help determine whether your flow control and fragment size settings are appropriate for your system.
 
 The retransmission rates are stored in the DistributionStats `ucastRetransmits` and
 `mcastRetransmits`. For multicast, there is also a receiver-side statistic `mcastRetransmitRequests`

@@ -1,5 +1,7 @@
 ﻿---
 title:  When to Avoid Delta Propagation
+sidebar_label: When to Avoid Delta Propagation
+sidebar_position: 2
 ---
 
 <!--

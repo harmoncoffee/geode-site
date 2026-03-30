@@ -48,7 +48,7 @@ These slow receiver options are disabled in systems using SSL. See [SSL](../../s
 
 Each consumer member determines how its own slow behavior is to be handled by its producers. The settings are specified as distributed system connection properties. This section describes the settings and lists the associated properties.
 
--   async-distribution-timeoutâ€”The distribution timeout specifies how long producers are to wait for the consumer to respond to synchronous messaging before switching to asynchronous messaging with that consumer. When a producer switches to asynchronous messaging, it creates a queue for that consumerâ€™s messages and a separate thread to handle the communication. When the queue empties, the producer automatically switches back to synchronous communication with the consumer. These settings affect how long your producerâ€™s cache operations might block. The sum of the timeouts for all consumers is the longest time your producer might block on a cache operation.
+-   async-distribution-timeoutâ€”The distribution timeout specifies how long producers are to wait for the consumer to respond to synchronous messaging before switching to asynchronous messaging with that consumer. When a producer switches to asynchronous messaging, it creates a queue for that consumer's messages and a separate thread to handle the communication. When the queue empties, the producer automatically switches back to synchronous communication with the consumer. These settings affect how long your producer's cache operations might block. The sum of the timeouts for all consumers is the longest time your producer might block on a cache operation.
 -   async-queue-timeoutâ€”The queue timeout sets a limit on the length of time the asynchronous messaging queue can exist without a successful distribution to the slow receiver. When the timeout is reached, the producer asks the consumer to leave the cluster.
 -   async-max-queue-sizeâ€”The maximum queue size limits the amount of memory the asynchronous messaging queue can consume. When the maximum is reached, the producer asks the consumer to leave the cluster.
 
@@ -71,7 +71,7 @@ When a process disconnects after receiving a request to do so by a producer, it 
 
 These messages only appear in your logs if logging is enabled and the log level is set to a level that includes warning (which it does by default). See [Logging](../logging/logging.html#concept_30DB86B12B454E168B80BB5A71268865).
 
-If your consumer is unable to receive even high priority messages, only the producerâ€™s warnings will appear in the logs. If you see only producer warnings, you can restart the consumer process. Otherwise, the Geode failure detection code will eventually cause the member to leave the cluster on its own.
+If your consumer is unable to receive even high priority messages, only the producer's warnings will appear in the logs. If you see only producer warnings, you can restart the consumer process. Otherwise, the Geode failure detection code will eventually cause the member to leave the cluster on its own.
 
 **Use Cases**
 

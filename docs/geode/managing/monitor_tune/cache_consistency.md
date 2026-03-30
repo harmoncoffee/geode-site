@@ -28,7 +28,7 @@ Maintaining data consistency between caches in a distributed Geode system is vit
 **Before Restarting a Region with a Disk Store, Consider the State of the Entire Region**
 
 **Note:**
-If you revoke a memberâ€™s disk store, do not restart that member with its disk storesâ€”in isolationâ€”at a later time.
+If you revoke a member's disk store, do not restart that member with its disk storesâ€”in isolationâ€”at a later time.
 
  stores information about your persisted data and prevents you from starting a member with a revoked disk store in the running system. But Geode cannot stop you from starting a revoked member in isolation, and running with its revoked data. This is an unlikely situation, but it is possible to do:
 
@@ -37,7 +37,7 @@ If you revoke a memberâ€™s disk store, do not restart that member with its 
 3.  Member B goes down.
 4.  At this point, Member B has the most recent disk data.
 5.  Member B is not usable. Perhaps its host machine is down or cut off temporarily.
-6.  To get the system up and running, you start Member A, and use the command line tool to revoke Member Bâ€™s status as member with the most recent data. The system loads Member Aâ€™s data and you run forward with that.
+6.  To get the system up and running, you start Member A, and use the command line tool to revoke Member B's status as member with the most recent data. The system loads Member A's data and you run forward with that.
 7.  Member A is stopped.
 8.  At this point, both Member A and Member B have information in their disk files indicating they are the gold copy members.
 9.  If you start Member B, it will load its data from disk.
@@ -53,15 +53,15 @@ Transactions provide consistency within one cache, but the distribution of resul
 
 Multiple transactions in a cache can create inconsistencies because of read committed isolation. Since multiple threads cannot participate in a transaction, most applications will be running multiple transactions.
 
-An in-place change to directly alter a keyâ€™s value without doing a put can result in cache inconsistencies. With transactions, it creates additional difficulties because it breaks read committed isolation. If at all possible, use copy-on-read instead.
+An in-place change to directly alter a key's value without doing a put can result in cache inconsistencies. With transactions, it creates additional difficulties because it breaks read committed isolation. If at all possible, use copy-on-read instead.
 
 In distributed-no-ack scope, two conflicting transactions in different members can commit simultaneously, overwriting each other as the changes are distributed.
 
-If a cache writer exists during a transaction, then each transaction write operation triggers a cache writerâ€™s related call. Regardless of the regionâ€™s scope, a transaction commit can invoke a cache writer only in the local cache and not in the remote caches.
+If a cache writer exists during a transaction, then each transaction write operation triggers a cache writer's related call. Regardless of the region's scope, a transaction commit can invoke a cache writer only in the local cache and not in the remote caches.
 
 A region in a cache with transactions may not stay in sync with a region of the same name in another cache without transactions.
 
-Two applications running the same sequence of operations in their transactions may get different results. This could occur because operations happening outside a transaction in one of the members can overwrite the transaction, even in the process of committing. This could also occur if the results of a large transaction exceed the machineâ€™s memory or the capacity of Geode . Those limits can vary by machine, so the two members may not be in sync.
+Two applications running the same sequence of operations in their transactions may get different results. This could occur because operations happening outside a transaction in one of the members can overwrite the transaction, even in the process of committing. This could also occur if the results of a large transaction exceed the machine's memory or the capacity of Geode . Those limits can vary by machine, so the two members may not be in sync.
 
 ## <a id="cache_const__section_qxx_kvn_nr" class="no-quick-link"></a>Guidelines for Multi-Site Deployments
 

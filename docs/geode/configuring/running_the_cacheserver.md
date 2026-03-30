@@ -34,7 +34,7 @@ The Geode server is used primarily for hosting long-lived data regions and for r
 The `gfsh` utility uses a working directory for its configuration files and log files. These are the defaults and configuration options:
 
 -   When you start a standalone server using `gfsh`, `gfsh` will automatically load the required JAR file `lib/geode-dependencies.jar` into the CLASSPATH of the JVM process. If you start a standalone server using the ServerLauncher API, you must specify this JAR file inside your command to launch the process. For more information on CLASSPATH settings in Geode , see [Setting Up the CLASSPATH](../../getting_started/setup_classpath.html).
--   Servers are configured like any other Geode process, with `gemfire.properties` and shared cluster configuration files. It is not programmable except through application plug-ins. Typically, you provide the `gemfire.properties` file and the `gfsecurity.properties` file. You can also specify a `cache.xml` file in the cache serverâ€™s working directory.
+-   Servers are configured like any other Geode process, with `gemfire.properties` and shared cluster configuration files. It is not programmable except through application plug-ins. Typically, you provide the `gemfire.properties` file and the `gfsecurity.properties` file. You can also specify a `cache.xml` file in the cache server's working directory.
 -   By default, a new server started with `gfsh` receives its initial cache configuration from the cluster configuration service, assuming the locator is running the cluster configuration service. If you specify a group when starting the server, the server also receives configurations that apply to a group. The shared configuration consists of `cache.xml` files, `gemfire.properties` files, and deployed jar files. You can disable use of the cluster configuration service by specifying `--use-cluster-configuration=false` when starting the server using `gfsh`. See [Overview of the Cluster Configuration Service](../cluster_config/gfsh_persist.html#concept_r22_hyw_bl).
 
 -   If you are using the Spring Framework, you can specify a Spring ApplicationContext XML file when starting up your server in `gfsh` by using the `--spring-xml-location` command-line option. This option allows you to bootstrap your Geode server process with your Spring application's configuration. See [Spring documentation](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/resources.html#resources-app-ctx) for more information on this file.
@@ -152,7 +152,7 @@ If successful, the output provides information as in this sample:
 Server in /home/username/server4 on 192.0.2.0[40404] as server4 is currently online.
 Process ID: 49008
 Uptime: 2 seconds
- Version: 
+Geode Version: 
 Java Version: .0.
 Log File: /Users/username/my_geode/server1/server1.log
 JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334]

@@ -178,12 +178,12 @@ BACKUPDEFAULT_1.crf BACKUPDEFAULT_1.drf BACKUPDEFAULT.if
 
 ## <a id="backup_restore_disk_store__section_6F998080AF7640D1A9E951D155A75E3A" class="no-quick-link"></a>Offline Membersâ€”Manual Catch-Up to an Online Backup
 
-If you must have a member offline during an online backup, you can manually back up its disk stores. Bring this memberâ€™s files into the online backup framework manually, and create a restore script by hand starting with a copy of another memberâ€™s script:
+If you must have a member offline during an online backup, you can manually back up its disk stores. Bring this member's files into the online backup framework manually, and create a restore script by hand starting with a copy of another member's script:
 
 1.  Duplicate the directory structure of a backed up member for this member.
-2.  Rename directories as needed to reflect this memberâ€™s particular backup, including disk store names.
+2.  Rename directories as needed to reflect this member's particular backup, including disk store names.
 3.  Clear out all files other than the restore script.
-4.  Copy in this memberâ€™s files.
+4.  Copy in this member's files.
 5.  Modify the restore script to work for this member.
 
 ## <a id="backup_restore_disk_store__section_D08DC489B9D947DE97B8F96261E4A977" class="no-quick-link"></a>Restore Using a Backup Made While the System Was Online

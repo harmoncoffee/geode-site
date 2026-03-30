@@ -45,9 +45,7 @@ A collection of tools and controls allow you to monitor and adjust Apache Geode 
 
     In systems with distributed-ack regions, a sudden large number of distributed-no-ack operations can cause distributed-ack operations to take a long time to complete.
 
--   **[Socket Communication](socket_communication.html)** Geode 
-
-     processes communicate using TCP/IP and UDP unicast and multicast protocols. In all cases, communication uses sockets that you can tune to optimize performance.
+-   **[Socket Communication](socket_communication.html)** Geode     processes communicate using TCP/IP and UDP unicast and multicast protocols. In all cases, communication uses sockets that you can tune to optimize performance.
 
 -   **[UDP Communication](udp_communication.html)**
 

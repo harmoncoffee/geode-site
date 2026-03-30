@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Geode Data Serialization (DataSerializable and DataSerializer)
+sidebar_label: Geode Data Serialization (DataSerializable and DataSerializer)
+sidebar_position: 3
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more
@@ -15,13 +19,10 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
+--> Geode  `DataSerializable` interface gives you quick serialization of your objects.
 
-'s `DataSerializable` interface gives you quick serialization of your objects.
-
-## <a id="gemfire_data_serialization__section_0C84D6BF5E9748CB865E6BB944A077DE" class="no-quick-link"></a>Data Serialization with the DataSerializable Interface Geode 
-
-'s `DataSerializable` interface gives you faster and more compact data serialization than the standard Java serialization or Geode PDX serialization. However, while Geode `DataSerializable` interface is generally more performant than Geode 's `PdxSerializable`, it requires full deserialization on the server and then reserialization to send the data back to the client.
+## <a id="gemfire_data_serialization__section_0C84D6BF5E9748CB865E6BB944A077DE" class="no-quick-link"></a>Data Serialization with the DataSerializable Interface
+Geode  `DataSerializable` interface gives you faster and more compact data serialization than the standard Java serialization or Geode PDX serialization. However, while Geode `DataSerializable` interface is generally more performant than Geode 's `PdxSerializable`, it requires full deserialization on the server and then reserialization to send the data back to the client.
 
 You can further speed serialization by registering the instantiator for your `DataSerializable` class through `Instantiator`, eliminating the need for reflection to find the right serializer. You can provide your own serialization through the API.
 

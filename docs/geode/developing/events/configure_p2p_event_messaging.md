@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring Peer-to-Peer Event Messaging
+sidebar_label: Configuring Peer-to-Peer Event Messaging
+sidebar_position: 3
 ---
 
 <!--

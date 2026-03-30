@@ -17,9 +17,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- supports the following literal types:
+--> Geode supports the following literal types:
 
 <dt>**boolean**</dt>
 <dd>A `boolean` value, either TRUE or FALSE</dd>

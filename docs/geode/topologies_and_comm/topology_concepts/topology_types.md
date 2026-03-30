@@ -21,9 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The Apache Geode topology options allow you to scale horizontally and vertically. Apache Geode 
-
- provides a variety of cache topologies:
+The Apache Geode topology options allow you to scale horizontally and vertically. Apache Geode provides a variety of cache topologies:
 
 -   At the core of all systems is the single, peer-to-peer cluster.
 -   For horizontal and vertical scaling, you can combine individual systems into client/server and multi-site (WAN) topologies:

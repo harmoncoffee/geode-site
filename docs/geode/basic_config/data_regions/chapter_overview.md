@@ -21,18 +21,14 @@ limitations under the License.
 
 The region is the core building block of the Apache Geode cluster. All cached data is organized into data regions and you do all of your data puts, gets, and querying activities against them.
 
--   **[Region Management](managing_data_regions.html)** Apache Geode 
-
-     provides `gfsh` commands, APIs, and XML configuration models to support the configuration and management of data regions.
+-   **[Region Management](managing_data_regions.html)** Apache Geode     provides `gfsh` commands, APIs, and XML configuration models to support the configuration and management of data regions.
 
 -   **[Region Naming](region_naming.html)**
 
     To be able to perform all available operations on your data regions, 
 follow these region naming guidelines.
 
--   **[Region Shortcuts and Custom Named Region Attributes](region_shortcuts.html)** Geode 
-
-     provides region shortcut settings, with preset region configurations for the most common region types. For the easiest configuration, start with a shortcut setting and customize as needed. You can also store your own custom configurations in the cache for use by multiple regions.
+-   **[Region Shortcuts and Custom Named Region Attributes](region_shortcuts.html)** Geode     provides region shortcut settings, with preset region configurations for the most common region types. For the easiest configuration, start with a shortcut setting and customize as needed. You can also store your own custom configurations in the cache for use by multiple regions.
 
 -   **[Storing and Retrieving Region Shortcuts and Custom Named Region Attributes](store_retrieve_region_shortcuts.html)**
 

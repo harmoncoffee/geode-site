@@ -27,9 +27,7 @@ becomes obsolete, and Apache Geode marks it as garbage. For example, when you cr
 an entry, the create operation is added to the store. If you update the entry later, the update
 operation is added and the create operation becomes garbage. Geode does not remove
 garbage records as it goes, but it tracks the percentage of non-garbage (live data) remaining in each operation log, and
-provides mechanisms for removing garbage to compact your log files. Geode 
-
- compacts an old operation log by copying all non-garbage records into the current log and discarding the old files. As with logging, oplogs are rolled as needed during compaction to stay within the max oplog setting.
+provides mechanisms for removing garbage to compact your log files. Geode compacts an old operation log by copying all non-garbage records into the current log and discarding the old files. As with logging, oplogs are rolled as needed during compaction to stay within the max oplog setting.
 
 The system is configured by default to automatically compact any closed operation log when its non-garbage
 content drops below a certain percentage. This automatic compaction is well suited to most Geode implementations.

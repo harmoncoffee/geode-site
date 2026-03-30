@@ -231,7 +231,7 @@ an issue. The word â€œstuckâ€ here may be misleading.  The messages are
 this thread has been doing the same thing for a while, so it may be stuck.  Some tasks, such as
 taking backups, doing exports, or running a rebalance, may appear to be â€œstuckâ€ when in reality they
 are simply doing the same thing over and over as it progresses, like moving a bucket.  While it may
-appear that we are still moving buckets, itâ€™s probably a different bucket each time.
+appear that we are still moving buckets, it's probably a different bucket each time.
 
 A key indicator that a thread is truly stuck is the number of iterations, as indicated in the â€œhas
 been stuckâ€ message above.  If you know that the operation is not one that should take so long, and
@@ -492,7 +492,7 @@ Processor20> tid=0x1d66] Configured redundancy of 2 copies has been restored to
 
 **Potential Resolutions:**
 
-Investigate the cause of the loss in redundancy if itâ€™s not already known.  It could simply have been a planned maintenance that drove the cluster below configured redundancy levels.   The settings that generally apply here are the number of copies configured, and then, the recovery-delay and startup-recovery-delay settings, which control whether and when we restore redundancy with the loss of a member of the distributed system and when it is added back in.   Our documentation discusses these settings in detail.
+Investigate the cause of the loss in redundancy if it's not already known.  It could simply have been a planned maintenance that drove the cluster below configured redundancy levels.   The settings that generally apply here are the number of copies configured, and then, the recovery-delay and startup-recovery-delay settings, which control whether and when we restore redundancy with the loss of a member of the distributed system and when it is added back in.   Our documentation discusses these settings in detail.
 
 
 ## <a id="rejectedconnection"></a>Rejected connection
@@ -639,11 +639,11 @@ java.net.SocketException: Too many open files (Socket creation failed/Accept fai
 
 **Meaning:**
 
- The number of sockets available to your applications is governed by operating system limits. Sockets use file descriptors and the operating systemâ€™s view of your applicationâ€™s socket use is expressed in terms of file descriptors.
+ The number of sockets available to your applications is governed by operating system limits. Sockets use file descriptors and the operating system's view of your application's socket use is expressed in terms of file descriptors.
 
 **Potential Resolution:**
 
-There are two limits on the maximum descriptors available to a single application, a soft limit, which can be increased using the ulimit command as a user, and a â€œhardâ€ limit which will require editing â€œ/etc/security/limits.confâ€ and relogging in. (There is also an OS level limit that will require a system administrator to tune kernel parameters, however, this limit is typically large and is rarely hit.)   It is also possible that the FDâ€™s being consumed are being driven by a major increase of connections/threads due to some burst of activity or connections timing out.  This can lead to retry activity driving the number of open files to increase.   If you increase the soft and hard limits, and continue to observe these messages, you may need to analyze whether you have connections timing out, sufficient TCP accept queue, etc.   This can require an increase of the p2p.backlog and net.core.somaxconn settings.
+There are two limits on the maximum descriptors available to a single application, a soft limit, which can be increased using the ulimit command as a user, and a â€œhardâ€ limit which will require editing â€œ/etc/security/limits.confâ€ and relogging in. (There is also an OS level limit that will require a system administrator to tune kernel parameters, however, this limit is typically large and is rarely hit.)   It is also possible that the FD's being consumed are being driven by a major increase of connections/threads due to some burst of activity or connections timing out.  This can lead to retry activity driving the number of open files to increase.   If you increase the soft and hard limits, and continue to observe these messages, you may need to analyze whether you have connections timing out, sufficient TCP accept queue, etc.   This can require an increase of the p2p.backlog and net.core.somaxconn settings.
 
 
 ## <a id="commitconflictexception"></a>CommitConflictException
@@ -919,7 +919,7 @@ Exception in thread "main" org.apache.geode.pdx.PdxInitializationException: Coul
 Stop locator(s), then clear the cluster configs/pdx disk stores and, finally, start the locator(s). KB exists: [https://community.pivotal.io/s/article/Fails-to-Start-a-Cache-Member-with-orgapachegeodepdxPdxInitializationException-Could-not-create-pdx-registry?language=en_US](https://community.pivotal.io/s/article/Fails-to-Start-a-Cache-Member-with-orgapachegeodepdxPdxInitializationException-Could-not-create-pdx-registry?language=en_US).
 
 
-## <a id="formatofthestringcachexmlfilecontent"></a>Format of the string &lt;&lt;cache xml fileâ€™s content&gt;&gt; used for parameterization is unresolvable
+## <a id="formatofthestringcachexmlfilecontent"></a>Format of the string &lt;&lt;cache xml file's content&gt;&gt; used for parameterization is unresolvable
 
 Note: the spelling â€œperameterizationâ€ is wrong in the codebase [https://github.com/apache/geode/blob/a5bd36f9fa787d3a71c6e6efafed5a7b0fe52d2b/geode-core/src/main/java/org/apache/geode/internal/cache/xmlcache/CacheXmlPropertyResolver.java#L125](https://github.com/apache/geode/blob/a5bd36f9fa787d3a71c6e6efafed5a7b0fe52d2b/geode-core/src/main/java/org/apache/geode/internal/cache/xmlcache/CacheXmlPropertyResolver.java#L125). Working to report & fix this. 
 
@@ -1020,7 +1020,7 @@ that are being waited on by other members.
 
 **Meaning:**
 
-   When you start a member with a persistent region, the data is retrieved from disk stores to recreate the memberâ€™s persistent region. If the member does not hold all of the most recent data for the region, then other members have the data, and region creation blocks, waiting for those other members. A partitioned region with colocated entries also blocks on start up, waiting for the entries of the colocated region to be available. So, this message shows that the disk store for server2 has the most recent data for the region, and server1 is waiting for server2.
+   When you start a member with a persistent region, the data is retrieved from disk stores to recreate the member's persistent region. If the member does not hold all of the most recent data for the region, then other members have the data, and region creation blocks, waiting for those other members. A partitioned region with colocated entries also blocks on start up, waiting for the entries of the colocated region to be available. So, this message shows that the disk store for server2 has the most recent data for the region, and server1 is waiting for server2.
 
 **Potential Resolutions:**
 
@@ -1307,7 +1307,7 @@ full health, and determine the root cause for why so many members crashed simult
 
 ```
 [fatal 2021/12/03 23:02:41.027 EST <Geode Membership View Creator> tid=0x347]
-Possible loss of quorum due to the loss of 6 cache processes: [<list of the ipâ€™s and
+Possible loss of quorum due to the loss of 6 cache processes: [<list of the ip's and
 processes>]
 ```
 
@@ -1433,7 +1433,7 @@ membership view
 
 **Potential Resolutions:**
 
-This specific message doesnâ€™t tell you much other than the change in ownership.  Search for other messages across the cluster which may indicate the reason, such as being unresponsive.   Perhaps itâ€™s due to not responding to â€œheartbeatâ€ messages.   WIth auto reconnect, it is possible that the membership has been restored to a full membership, but itâ€™s also important to check on the balance of data and load.   A rebalance may be prudent to restore the balance in the system.  This includes redistributing primary buckets for partitioned regions, which is generally a good idea after any changes in ownership, when time permits.
+This specific message doesnâ€™t tell you much other than the change in ownership.  Search for other messages across the cluster which may indicate the reason, such as being unresponsive.   Perhaps it's due to not responding to â€œheartbeatâ€ messages.   WIth auto reconnect, it is possible that the membership has been restored to a full membership, but it's also important to check on the balance of data and load.   A rebalance may be prudent to restore the balance in the system.  This includes redistributing primary buckets for partitioned regions, which is generally a good idea after any changes in ownership, when time permits.
 
 
 ## <a id="cache serverfailedacceptingclientconnection"></a>Cache server: failed accepting client connection
@@ -1465,11 +1465,11 @@ Caused by: java.io.EOFException: SSL peer shut down incorrectly
 
 **Category:** Membership
 
-**Meaning:**  While this looks to be very SSL/TLS specific, this message is often driven by the many of the same client connectivity issues as in the non-SSL/TLS case.  This is a client-server connection that is failing because the connection terminated.  Besides the general client-server connectivity issues, however, this could also be caused when the client canâ€™t validate the serverâ€™s Certificate, and so hangs up.  This message does not indicate any reasons for why that connectivity was lost, but does indicate client-server connectivity issues and the cause needs to be investigated and understood.  
+**Meaning:**  While this looks to be very SSL/TLS specific, this message is often driven by the many of the same client connectivity issues as in the non-SSL/TLS case.  This is a client-server connection that is failing because the connection terminated.  Besides the general client-server connectivity issues, however, this could also be caused when the client canâ€™t validate the server's Certificate, and so hangs up.  This message does not indicate any reasons for why that connectivity was lost, but does indicate client-server connectivity issues and the cause needs to be investigated and understood.  
 
 **Potential Resolutions:**
 
-Review client logs to see if thereâ€™s anything informative there, such as SSL/TLS validation issues, and then investigate logs and stats for possible connectivity or performance issues on the server.
+Review client logs to see if there's anything informative there, such as SSL/TLS validation issues, and then investigate logs and stats for possible connectivity or performance issues on the server.
 
 
 

@@ -33,7 +33,7 @@ Before doing so, you should understand [Basic Configuration and Programming](../
 
 -   **[Garbage Collection and System Performance](system_member_performance_garbage.html)**
 
-    If your application exhibits unacceptably high latencies, you might improve performance by modifying your JVMâ€™s garbage collection behavior.
+    If your application exhibits unacceptably high latencies, you might improve performance by modifying your JVM's garbage collection behavior.
 
 
 

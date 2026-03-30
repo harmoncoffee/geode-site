@@ -19,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- uses failure detection to remove unresponsive members from membership views.
+--> Geode uses failure detection to remove unresponsive members from membership views.
 
 ## <a id="concept_CFD13177F78C456095622151D6EE10EB__section_1AAE6C92FED249EFBA476D8A480B8E51" class="no-quick-link"></a>Failure Detection
 

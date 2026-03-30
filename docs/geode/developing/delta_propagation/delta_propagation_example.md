@@ -1,5 +1,7 @@
 ﻿---
 title:  Delta Propagation Example
+sidebar_label: Delta Propagation Example
+sidebar_position: 6
 ---
 
 <!--

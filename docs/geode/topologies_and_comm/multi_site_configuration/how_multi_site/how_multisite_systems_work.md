@@ -25,9 +25,7 @@ The Apache Geode multi-site implementation connects distinct clusters. The clust
 
     A multi-site installation consists of two or more clusters that are loosely coupled. Each site manages its own cluster, but region data is distributed to remote sites using one or more logical connections.
 
--   **[Consistency for WAN Updates](multisite_overview.html#topic_C74A0961937640B199396DC925D8D782)** Geode 
-
-     ensures that all copies of a region eventually reach a consistent state on all members and clients that host the region, including Geode members that distribute region events across a WAN.
+-   **[Consistency for WAN Updates](multisite_overview.html#topic_C74A0961937640B199396DC925D8D782)** Geode     ensures that all copies of a region eventually reach a consistent state on all members and clients that host the region, including Geode members that distribute region events across a WAN.
 
 -   **[Discovery for Multi-Site Systems](multisite_overview.html#topic_1742957C8D4B4F7590847EB8DB6CD4F7)**
 

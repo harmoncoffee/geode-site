@@ -1,5 +1,7 @@
 ﻿---
 title:  Implementing Delta Propagation
+sidebar_label: Implementing Delta Propagation
+sidebar_position: 4
 ---
 
 <!--

@@ -17,9 +17,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- supports comparison, logical, unary, arithmetic, map, index, dot, and right arrow operators.
+--> Geode supports comparison, logical, unary, arithmetic, map, index, dot, and right arrow operators.
 
 ## <a id="operators__section_A3FB372F85D840D7A49CB95BD7FCA7C6" class="no-quick-link"></a>Comparison Operators
 

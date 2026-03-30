@@ -59,7 +59,7 @@ If possible, your TCP/IP buffer size settings should match across your installat
 
 -   **Multisite (WAN)**. In a multi-site installation using gateways, if the link between sites is not tuned for optimum throughput, it could cause messages to back up in the cache queues. If a receiving queue overflows because of inadequate buffer sizes, it will become out of sync with the sender and the receiver will be unaware of the condition.
 
-    The gateway sender's socket-buffer-size attribute should match the gateway receiverâ€™s socket-buffer-size attribute for all gateway receivers that the sender connects to, as in these example `cache.xml` snippets:
+    The gateway sender's socket-buffer-size attribute should match the gateway receiver's socket-buffer-size attribute for all gateway receivers that the sender connects to, as in these example `cache.xml` snippets:
 
     ``` pre
     Gateway Sender Socket Buffer Size cache.xml Configuration: 

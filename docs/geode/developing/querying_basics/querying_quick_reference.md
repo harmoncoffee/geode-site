@@ -702,7 +702,7 @@ ELEMENT(SELECT DISTINCT * FROM /exampleRegion WHERE id = 'XYZ-1').status = 'acti
 
 ## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5383407F9D004D4EB4E695252EBA1EF0" class="no-quick-link"></a>Which APIs should I use to write my queries?
 
-If you are querying a Java applicationâ€™s local cache or querying other members, use [org.apache.geode.cache.Cache.getQueryService](/org/apache/geode/cache/query/QueryService.html).
+If you are querying a Java application's local cache or querying other members, use [org.apache.geode.cache.Cache.getQueryService](/org/apache/geode/cache/query/QueryService.html).
 
 If you are writing a Java client to server query, use [org.apache.geode.cache.client.Pool.getQueryService](/org/apache/geode/cache/client/Pool.html).
 
@@ -758,7 +758,7 @@ See [Using Query Bind Parameters](../developing/query_additional/using_query_bin
 
 ## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3A9528E8E43140BAA0D5A1457CCAB2D2" class="no-quick-link"></a>When should I create indexes to use in my queries?
 
-Determine whether your queryâ€™s performance will benefit from an index. For example, in the following query, an index on pkid can speed up the query.
+Determine whether your query's performance will benefit from an index. For example, in the following query, an index on pkid can speed up the query.
 
 ``` pre
 SELECT DISTINCT * FROM /exampleRegion portfolio WHERE portfolio.pkid = '123'

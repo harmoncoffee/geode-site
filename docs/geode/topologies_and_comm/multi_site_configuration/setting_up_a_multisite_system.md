@@ -390,9 +390,7 @@ mymac(ny-4:88724)<v5>:52993       | 5247 | 6            |["mymac(ln-1:88651)<v2>
 
 ## <a id="setting_up_a_multisite_system_one_ipaddr" class="no-quick-link"></a>Configuring One IP Address and Port to Access All Gateway Receivers in a Site
 
-You may have a WAN deployment in which you do not want to expose the IP address and port of every gateway receiver to other sites, but instead expose just one IP address and port for all gateway receivers. This way, the internal topology of the site is hidden to other sites. This case is quite common in cloud deployments, in which a reverse proxy/load balancer distributes incoming requests to the site (in this case, replication requests) among the available servers (in this case, gateway receivers). Geode 
-
- supports this configuration by means of a particular use of the `hostname-for-senders`, `start-port` and `end-port` parameters of the gateway receiver.
+You may have a WAN deployment in which you do not want to expose the IP address and port of every gateway receiver to other sites, but instead expose just one IP address and port for all gateway receivers. This way, the internal topology of the site is hidden to other sites. This case is quite common in cloud deployments, in which a reverse proxy/load balancer distributes incoming requests to the site (in this case, replication requests) among the available servers (in this case, gateway receivers). Geode supports this configuration by means of a particular use of the `hostname-for-senders`, `start-port` and `end-port` parameters of the gateway receiver.
 
 In order to configure a WAN deployment that hides the gateway receivers behind the same IP address and port,
 

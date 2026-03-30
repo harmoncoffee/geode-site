@@ -66,7 +66,7 @@ You might remove a region from your application if you decide to rename it or to
 
 This applies to the removal of regions while the disk store is offline. Regions you destroy through API calls or by `gfsh` are automatically removed from the disk store of online members.
 
-In your application development, when you discontinue use of a persistent region, remove the region from the memberâ€™s disk store as well.
+In your application development, when you discontinue use of a persistent region, remove the region from the member's disk store as well.
 
 **Note:**
 Perform the following operations with caution. You are permanently removing data.

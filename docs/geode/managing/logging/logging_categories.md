@@ -46,9 +46,7 @@ Cache initialized using "file:/Samples/quickstart/xml/PushConsumer.xml".
 
 ## <a id="how_logging_works__section_43A099C67FF04A1EB0A07B617D653A38" class="no-quick-link"></a>Log File Name
 
-Specify your Geode system member's main log in the gemfire property `log-file` setting. Geode 
-
- uses this name for the most recent log file, actively in use if the member is running, or used for the last run. Geode creates the main log file when the application starts.
+Specify your Geode system member's main log in the gemfire property `log-file` setting. Geode uses this name for the most recent log file, actively in use if the member is running, or used for the last run. Geode creates the main log file when the application starts.
 
 By default, the main log contains the entire log for the member session. If you specify a `log-file-size-limit`, Geode splits the logging into these files:
 
@@ -66,7 +64,7 @@ Your current, main log file always has the name you specified in `log-file`. The
 
 If child logs are not used, the child file sequence number is a constant 00 (two zeros).
 
-For locators, the log file name is fixed. For the standalone locator started in `gfsh`, it is always named `<locator_name>.log` where the locator\_name corresponds to the name specified at locator startup. For the locator that runs colocated inside another member, the log file is the memberâ€™s log file.
+For locators, the log file name is fixed. For the standalone locator started in `gfsh`, it is always named `<locator_name>.log` where the locator\_name corresponds to the name specified at locator startup. For the locator that runs colocated inside another member, the log file is the member's log file.
 
 For applications and the servers, your log file specification can be relative or absolute. If no file is specified, the defaults are standard output for applications and `<server_name>.log` for servers started with gfsh and `cacheserver.log` for servers started with the older cacheserver script.
 
@@ -144,7 +142,7 @@ These are the levels, in descending order, with sample output:
 
 -   **warning**. This level indicates a potential problem. In general, warning messages describe events that are of interest to end users or system managers, or that indicate potential problems in the program or system.
 
-    This message was obtained by starting a client with a Pool configured with queueing enabled when there was no server running to create the clientâ€™s queue:
+    This message was obtained by starting a client with a Pool configured with queueing enabled when there was no server running to create the client's queue:
 
     ``` pre
     [warning 2008/06/09 13:09:28.163 PDT <queueTimer-client> tid=0xe]

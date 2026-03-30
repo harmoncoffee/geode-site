@@ -104,7 +104,7 @@ This table lists the settings for the various member relationships and protocols
 If possible, your TCP/IP buffer size settings should match across your Geode installation. At a minimum, follow the guidelines listed here.
 
 -   **Peer-to-peer**. The socket-buffer-size setting in `gemfire.properties` should be the same throughout your cluster.
--   **Client/server**. The clientâ€™s pool socket-buffer size-should match the setting for the servers the pool uses, as in these example `cache.xml` snippets:
+-   **Client/server**. The client's pool socket-buffer size-should match the setting for the servers the pool uses, as in these example `cache.xml` snippets:
 
     ``` pre
     Client Socket Buffer Size cache.xml Configuration:

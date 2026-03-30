@@ -1,5 +1,7 @@
 ﻿---
 title:  Configure Distributed, Replicated, and Preloaded Regions
+sidebar_label: Configure Distributed, Replicated, and Preloaded Regions
+sidebar_position: 4
 ---
 
 <!--

@@ -21,9 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-For replicated, distributed, and local regions, Geode provides a standard set of statistics for the region and its entries. Geode 
-
- gathers these statistics when the `--enable-statistics` parameter of the `create region` command of `gfsh` is set to true or in cache.xml the region attribute `statistics-enabled` is set to true.
+For replicated, distributed, and local regions, Geode provides a standard set of statistics for the region and its entries. Geode gathers these statistics when the `--enable-statistics` parameter of the `create region` command of `gfsh` is set to true or in cache.xml the region attribute `statistics-enabled` is set to true.
 
 **Note:**
 Unlike other Geode statistics, these region and entry statistics are not archived and cannot be charted.
@@ -37,7 +35,7 @@ These are the transient statistics gathered for all but partitioned regions:
 -   **Last accessed time**. For the entry, this is the last time a valid value was retrieved from the locally cached entry. For the region, this is the most recent "last accessed time" for all entries contained in the region. This statistic is used for idle timeout expiration activities.
 -   **Last modified time**. For the entry, this is the last time the entry value was updated (directly or through distribution) due to a load, create, or put operation. For the region, this is the most recent "last modified time" for all entries contained in the region. This statistic is used for time to live and idle timeout expiration activities.
 
-The hit and miss counts collected in these statistics can be useful for fine-tuning your systemâ€™s caches. If you have a regionâ€™s entry expiration enabled, for example, and see a high ratio of misses to hits on the entries, you might choose to increase the expiration times.
+The hit and miss counts collected in these statistics can be useful for fine-tuning your system's caches. If you have a region's entry expiration enabled, for example, and see a high ratio of misses to hits on the entries, you might choose to increase the expiration times.
 
 Retrieve region and entry statistics through the `getStatistics` methods of the `Region` and `Region.Entry` objects.
 

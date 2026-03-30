@@ -23,8 +23,7 @@ limitations under the License.
 
 You start your peer or server cache using a combination of XML declarations and API calls. Close the cache when you are done.
 
-<a id="creating_and_closing_a_peer_cache__section_1633A80F0DB04794BB6C3A7F05EED97E"></a> Geode 
- peers are members of a Geode cluster that do not act as clients to another  cluster.  servers are peers that also listen for and process client requests.
+<a id="creating_and_closing_a_peer_cache__section_1633A80F0DB04794BB6C3A7F05EED97E"></a> Geode peers are members of a Geode cluster that do not act as clients to another Geode cluster. Geode servers are peers that also listen for and process client requests.
 
 1.  Create your cache:
     1.  Start up a cluster and the cluster configuration service:

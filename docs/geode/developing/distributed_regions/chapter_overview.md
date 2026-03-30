@@ -1,5 +1,7 @@
 ﻿---
 title:  Distributed and Replicated Regions
+sidebar_label: Distributed and Replicated Regions
+sidebar_position: 1
 ---
 
 <!--

@@ -38,9 +38,7 @@ You can also use `gfsh` to start and stop locators, servers, and Geode monitorin
 
     You can dynamically deploy your application JAR files to specific members or to all members in your cluster. Geode automatically keeps track of JAR file versions; autoloads the deployed JAR files to the CLASSPATH; and auto-registers any functions that the JAR contains.
 
--   **[Using Member Groups](cluster_config/using_member_groups.html)** Apache Geode 
-
-     allows you to organize your cluster members into logical member groups.
+-   **[Using Member Groups](cluster_config/using_member_groups.html)** Apache Geode     allows you to organize your cluster members into logical member groups.
 
 -   **[Exporting and Importing Cluster Configurations](cluster_config/export-import.html)**
 
@@ -70,9 +68,7 @@ You can also use `gfsh` to start and stop locators, servers, and Geode monitorin
 
     A Geode server is a process that runs as a long-lived, configurable member of a client/server system.
 
--   **[Managing System Output Files](running/managing_output_files.html)** Geode 
-
-     output files are optional and can become quite large. Work with your system administrator to determine where to place them to avoid interfering with other system activities.
+-   **[Managing System Output Files](running/managing_output_files.html)** Geode     output files are optional and can become quite large. Work with your system administrator to determine where to place them to avoid interfering with other system activities.
 
 -   **[Firewall Considerations](running/firewall_ports_config.html)**
 

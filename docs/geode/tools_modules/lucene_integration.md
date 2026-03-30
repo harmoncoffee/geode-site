@@ -67,9 +67,7 @@ Each field has a corresponding analyzer to extract terms from text. When no anal
 the `org.apache.lucene.analysis.standard.StandardAnalyzer` is used.
 
 The index has an associated serializer that renders the indexed object as a Lucene document comprised of searchable fields. 
-The default serializer is a simple one that handles top-level fields, but does not render collections or nested objects. Geode 
-
- supplies a built-in serializer, `FlatFormatSerializer()`, that handles
+The default serializer is a simple one that handles top-level fields, but does not render collections or nested objects. Geode supplies a built-in serializer, `FlatFormatSerializer()`, that handles
 collections and nested objects. See [Using FlatFormatSerializer to Index Fields within Nested Objects](#using-flatformatserializer) for more information
 regarding Lucene indexes for nested objects.
 

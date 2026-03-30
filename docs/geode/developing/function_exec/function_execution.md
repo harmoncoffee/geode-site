@@ -49,7 +49,7 @@ See [Authorization of Function Execution](../../security/implementing_authorizat
     1.  Make `execute` thread safe to accommodate simultaneous invocations.
     2.  For high availability, code `execute` to accommodate multiple identical calls to the function. Use the `RegionFunctionContext` `isPossibleDuplicate` to determine whether the call may be a high-availability re-execution. This boolean is set to true on execution failure and is false otherwise.
         **Note:**
-        The `isPossibleDuplicate` boolean can be set following a failure from another memberâ€™s execution of the function, so it only indicates that the execution might be a repeat run in the current member.
+        The `isPossibleDuplicate` boolean can be set following a failure from another member's execution of the function, so it only indicates that the execution might be a repeat run in the current member.
     3.  Use the function context to get information about the execution and the data:
         -   The context holds the function ID, the `ResultSender` object for passing results back to the originator, and function arguments provided by the member where the function originated.
         -   The context provided to the function is the `FunctionContext`, which is automatically extended to `RegionFunctionContext` if you get the `Execution` object through a `FunctionService` `onRegion` call.
@@ -227,7 +227,7 @@ ResultCollector rc = execution.execute(function);
 List result = (List)rc.getResult();
 ```
 
-â€™s default `ResultCollector` collects all results into an `ArrayList`. Its `getResult` methods block until all results are received. Then they return the full result set.
+Geode's default `ResultCollector` collects all results into an `ArrayList`. Its `getResult` methods block until all results are received. Then they return the full result set.
 
 To customize results collecting:
 

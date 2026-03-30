@@ -29,13 +29,9 @@ You can browse, query, update and delete data stored in your Geode deployment. Y
 
     The Geode REST APIs provide basic CRUD (create, read, update and delete) operations for data entries stored in your regions.
 
--   **[Working with Queries Geode ](#topic_fcn_g25_m4)** Geode 
+-   **[Working with Queries Geode ](#topic_fcn_g25_m4)** Geode     supports the use of queries to extract data from its regions. Using REST APIs, you can create and execute either prepared or ad-hoc queries on Geode Geode regions. You can also update and delete prepared queries.
 
-     supports the use of queries to extract data from its regions. Using REST APIs, you can create and execute either prepared or ad-hoc queries on Geode Geode regions. You can also update and delete prepared queries.
-
--   **[Working with Functions Geode ](#topic_rbc_h25_m4)** Geode 
-
-     REST APIs support the discovery and execution of predefined Geode Geode functions on your cluster deployments.
+-   **[Working with Functions Geode ](#topic_rbc_h25_m4)** Geode     REST APIs support the discovery and execution of predefined Geode Geode functions on your cluster deployments.
 
 ## <a id="topic_qhs_f25_m4" class="no-quick-link"></a>Working with Regions
 
@@ -305,9 +301,7 @@ Accept: application/json
 }
 ```
 
-**Modifying existing entries** Geode 
-
- provides three different options for this type of operation. To update a value for the key, you can use:
+**Modifying existing entries** Geode provides three different options for this type of operation. To update a value for the key, you can use:
 
 ``` pre
 PUT /gemfire/v1/{region}/{key}

@@ -81,7 +81,7 @@ This indicates a mismatch somewhere in the address, port pairs used for locator 
 Response:
 
 -   Check that your locators specification includes the address you are using to start your locator.
--   If you use a bind address, you must use numeric addresses for the locator specification. The bind address will not resolve to the machineâ€™s default address.
+-   If you use a bind address, you must use numeric addresses for the locator specification. The bind address will not resolve to the machine's default address.
 -   If you are using a 64-bit Linux system, check whether your system is experiencing the leap second bug. See [Java applications on 64-bit platforms hang or use 100% CPU](diagnosing_system_probs.html#diagnosing_system_probs__section_E70C332303A242BEAE9D2C0A2EE70E0A) for more information.
 
 ## <a id="diagnosing_system_probs__section_D51F5FA86ABA43C699B593D890BC3E28" class="no-quick-link"></a>Application or cache server process does not start
@@ -108,7 +108,7 @@ Response: Check these possible causes.
 -   Firewall problems. If members of your distributed Geode system are located outside the LAN, check whether the firewall is blocking communication. Geode is a network-centric distributed system, so if you have a firewall running on your machine, it could cause connection problems. For example, your connections may fail if your firewall places restrictions on inbound or outbound permissions for Java-based sockets. You may need to modify your firewall configuration to permit traffic to Java applications running on your machine. The specific configuration depends on the firewall you are using.
 -   Wrong multicast port when using multicast for membership. Check the `gemfire.properties` file of this application or cache server to see that the mcast-port is configured correctly. If you are running multiple clusters at your site, each cluster must use a unique multicast port.
 -   Can not connect to locator (when using TCP for discovery).
-    -   Check that the locators attribute in this processâ€™s `gemfire.properties` has the correct IP address for the locator.
+    -   Check that the locators attribute in this process's `gemfire.properties` has the correct IP address for the locator.
     -   Check that the locator process is running. If not, see instructions for related problem, [Data distribution has stopped, although member processes are running](diagnosing_system_probs.html#diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2).
     -   Bind address set incorrectly on a multi-homed host. When you specify the bind address, use the IP address rather than the host name. Sometimes multiple network adapters are configured with the same hostname. See [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview.html#concept_7628F498DB534A2D8A99748F5DA5DC94) for more information about using bind addresses.
 -   Wrong version of Geode . A version mismatch can cause the process to hang or crash. Check the software version with the gemfire version command.
@@ -128,7 +128,7 @@ Response:
 
 -   Check that the `gemfire.properties` file is in the right directory.
 -   Make sure the process is not picking up settings from another `gemfire.properties` file earlier in the search path. Geode looks for a `gemfire.properties` file in the current working directory, the home directory, and the CLASSPATH, in that order.
--   For an application, check the documentation to see whether it does programmatic configuration. If so, the properties that are set programmatically cannot be reset in a `gemfire.properties` file. See your applicationâ€™s customer support group for configuration changes.
+-   For an application, check the documentation to see whether it does programmatic configuration. If so, the properties that are set programmatically cannot be reset in a `gemfire.properties` file. See your application's customer support group for configuration changes.
 
 ## <a id="diagnosing_system_probs__section_B0698527A4DF4D84877B1AF66291ABFD" class="no-quick-link"></a>Cache creation fails - must match schema definition root
 
@@ -146,9 +146,7 @@ Exception in thread "main" org.apache.geode.cache.CacheXmlException:
 While reading Cache XML file:/C:/gemfire/cache.xml.
 Error while parsing XML, caused by org.xml.sax.SAXParseException:
 Document root element "cache", must match DOCTYPE root "client-cache".
-``` Geode 
-
- declarative cache creation uses one of two root element pairs: `cache` or `client-cache`. The name must be the same in both places.
+``` Geode declarative cache creation uses one of two root element pairs: `cache` or `client-cache`. The name must be the same in both places.
 
 Response:
 
@@ -304,7 +302,7 @@ Response: Control memory use by setting entry limits for the regions.
 
 ## <a id="diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D8" class="no-quick-link"></a>Timeout alert
 
-If a distributed message does not get a response within a specified time, it sends an alert to signal that something might be wrong with the system member that hasnâ€™t responded. The alert is logged in the senderâ€™s log as a warning.
+If a distributed message does not get a response within a specified time, it sends an alert to signal that something might be wrong with the system member that hasnâ€™t responded. The alert is logged in the sender's log as a warning.
 
 A timeout alert can be considered normal.
 
@@ -316,7 +314,7 @@ Response:
 
 ## <a id="diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D81" class="no-quick-link"></a>Thread stuck alert
 
-If a thread in a member has been stuck for longer than the configured time (max-thread-stuck-minutes System Property), it sends an alert to signal that something might be wrong with the member or with some other member. The alert is logged in the memberâ€™s log as fatal.
+If a thread in a member has been stuck for longer than the configured time (max-thread-stuck-minutes System Property), it sends an alert to signal that something might be wrong with the member or with some other member. The alert is logged in the member's log as fatal.
 
 A thread stuck timeout alert warns about a thread that is stuck in a member that would probably never progress. A possible cause would be a bug in the code.
 
@@ -334,7 +332,7 @@ Increase the default socket timeout setting for the member. This timeout is set 
 
 ## <a id="diagnosing_system_probs__section_8C7CB2EA0A274DAF90083FECE0BF3B1F" class="no-quick-link"></a>Member logs ForcedDisconnectException, Cache and DistributedSystem forcibly closed
 
-A cluster memberâ€™s Cache and DistributedSystem are forcibly closed by the system membership coordinator if it becomes sick or too slow to respond to heartbeat requests. When this happens, listeners receive RegionDestroyed notification with an opcode of FORCED\_DISCONNECT. The Geode log file for the member shows a ForcedDisconnectException with the message
+A cluster member's Cache and DistributedSystem are forcibly closed by the system membership coordinator if it becomes sick or too slow to respond to heartbeat requests. When this happens, listeners receive RegionDestroyed notification with an opcode of FORCED\_DISCONNECT. The Geode log file for the member shows a ForcedDisconnectException with the message
 
 ``` pre
 This member has been forced out of the cluster because it did not respond
@@ -389,7 +387,7 @@ Response:
     -   If a locator must be moved to another host or a different IP address, complete these steps:
         1.  Shut down all the members of the cluster in the usual order.
         2.  Restart the locator process in its new location.
-        3.  Edit all the gemfire.properties files to change this locatorâ€™s IP address in the locators attribute.
+        3.  Edit all the gemfire.properties files to change this locator's IP address in the locators attribute.
         4.  Restart the applications and cache servers in the usual order.
 -   Create a watchdog daemon or service on each locator host to restart the locator process when it stops
 

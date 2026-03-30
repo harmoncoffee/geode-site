@@ -19,13 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Apache Geode 
-
- uses Apache Log4j 2 as the basis for its logging system. Geode 
-
- uses [Apache Log4j 2](http://logging.apache.org/log4j/2.x/) API and Core libraries as the basis for its logging system. Log4j 2 API is a popular and powerful front-end logging API used by all the Geode classes to generate log statements. Log4j 2 Core is a backend implementation for logging; you can route any of the front-end logging API libraries to log to this backend. Geode uses the Core backend to run three custom Log4j 2 Appenders: **GeodeConsole**, **GeodeLogWriter**, and **GeodeAlert**. Geode 
-
- has been tested with Log4j 2.25.3. Geode 
+--> Apache Geode uses Apache Log4j 2 as the basis for its logging system. Geode uses [Apache Log4j 2](http://logging.apache.org/log4j/2.x/) API and Core libraries as the basis for its logging system. Log4j 2 API is a popular and powerful front-end logging API used by all the Geode classes to generate log statements. Log4j 2 Core is a backend implementation for logging; you can route any of the front-end logging API libraries to log to this backend. Geode uses the Core backend to run three custom Log4j 2 Appenders: **GeodeConsole**, **GeodeLogWriter**, and **GeodeAlert**. Geode has been tested with Log4j 2.25.3. Geode 
  requires the 
 `log4j-api-2.25.3.jar` and `log4j-core-2.25.3.jar`
 JAR files to be in the classpath.

@@ -60,7 +60,7 @@ When a failure (such as an execution error or member crash while executing) occu
 
 1.  Waiting for all calls to return
 2.  Setting a boolean indicating a re-execution
-3.  Calling the result collectorâ€™s `clearResults` method
+3.  Calling the result collector's `clearResults` method
 4.  Executing the function
 
 For client regions, the system retries the execution according to `org.apache.geode.cache.client.Pool` `retryAttempts`. If the function fails to run every time, the final exception is returned to the `getResult` method.
@@ -124,7 +124,7 @@ Servers that do not hold any keys are left out of the function execution.
 
 <img src="../../images/FuncExecOnRegionPeersWithFilter.png" alt="A data-dependent function where the caller is not an external client" id="how_function_execution_works__image_9B8E914BA80E4BBA99856E9603A9BDA0" class="image" />
 
-The caller is a member of the cluster, not an external client, so the function runs in the callerâ€™s cluster. Note the similarities between this diagram and the preceding figure ([Data-dependent Function on a Region with Keys](#how_function_execution_works__fig_data_dependent_function_region_keys)), which shows a client-server model where the client has up-to-date metadata regarding target locations within the cluster.
+The caller is a member of the cluster, not an external client, so the function runs in the caller's cluster. Note the similarities between this diagram and the preceding figure ([Data-dependent Function on a Region with Keys](#how_function_execution_works__fig_data_dependent_function_region_keys)), which shows a client-server model where the client has up-to-date metadata regarding target locations within the cluster.
 
 [Client-server system with Up-to-date Target Metadata](#how_function_execution_works__fig_client_server_system_target_metadata) demonstrates a sequence of steps in a call to a highly available function in a client-server system in which the client has up-to-date metadata regarding target locations.
 

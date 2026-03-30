@@ -372,7 +372,7 @@ Specifies a region attributes template that can be named (by `id`) and reference
 
 ## <a id="cc-key-constraint" class="no-quick-link"></a>&lt;key-constraint&gt;
 
-Defines the type of object to be allowed for the region entry keys. This must be a fully-qualified class name. The attribute ensures that the keys for the region entries are all of the same class. If key-constraint is not used, the regionâ€™s keys can be of any class. This attribute, along with value-constraint, is useful for querying and indexing because it provides object type information to the query engine.
+Defines the type of object to be allowed for the region entry keys. This must be a fully-qualified class name. The attribute ensures that the keys for the region entries are all of the same class. If key-constraint is not used, the region's keys can be of any class. This attribute, along with value-constraint, is useful for querying and indexing because it provides object type information to the query engine.
 
 **Note:**
 Set the constraint in every cache where you create or update the region entries. For client/server installations, match constraints between client and server and between clusters. The constraint is only checked in the cache that does the entry `put` or `create` operation. To avoid deserializing the object, the constraint is not checked when the entry is distributed to other caches.
@@ -393,7 +393,7 @@ Set the constraint in every cache where you create or update the region entries.
 
 ## <a id="cc-value-constraint" class="no-quick-link"></a>&lt;value-constraint&gt;
 
-Defines the type of object to be allowed for the region entry values. This must be a fully-qualified class name. If value constraint isnâ€™t used, the regionâ€™s value can be of any class. This attribute, along with `key-constraint`, is useful for querying and indexing because it provides object type information to the query engine.
+Defines the type of object to be allowed for the region entry values. This must be a fully-qualified class name. If value constraint isnâ€™t used, the region's value can be of any class. This attribute, along with `key-constraint`, is useful for querying and indexing because it provides object type information to the query engine.
 
 **Note:**
 Set the constraint in every cache where you create or update the region entries. For client/server installations, match constraints between client and server and between clusters. The constraint is only checked in the cache that does the entry `put` or `create` operation. To avoid deserializing the object, the constraint is not checked when the entry is distributed to other caches.
@@ -562,7 +562,7 @@ Specify the Java class and its initialization parameters with the `<class-name>`
 
 ## <a id="cc-entry-time-to-live" class="no-quick-link"></a>&lt;entry-time-to-live&gt;
 
-Expiration setting that specifies how long the regionâ€™s entries can remain in the cache without anyone accessing or updating them. See [&lt;expiration-attributes&gt;](cache_xml.html#expiration-attributes) for details.
+Expiration setting that specifies how long the region's entries can remain in the cache without anyone accessing or updating them. See [&lt;expiration-attributes&gt;](cache_xml.html#expiration-attributes) for details.
 
 **Default:** not set - no expiration of this type.
 
@@ -635,7 +635,7 @@ Specify the Java class and its initialization parameters with the `<class-name>`
 
 ## <a id="cc-entry-idle-time" class="no-quick-link"></a>&lt;entry-idle-time&gt;
 
-Expiration setting that specifies how long the regionâ€™s entries can remain in the cache without anyone accessing them. See [&lt;expiration-attributes&gt;](cache_xml.html#expiration-attributes) for details.
+Expiration setting that specifies how long the region's entries can remain in the cache without anyone accessing them. See [&lt;expiration-attributes&gt;](cache_xml.html#expiration-attributes) for details.
 
 **Note:**
 To ensure reliable read behavior across the partitioned region, use `entry-time-to-live` for entry expiration instead of this setting.

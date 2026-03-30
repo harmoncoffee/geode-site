@@ -17,9 +17,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- processes communicate using TCP/IP and UDP unicast and multicast protocols. In all cases, communication uses sockets that you can tune to optimize performance.
+--> Geode processes communicate using TCP/IP and UDP unicast and multicast protocols. In all cases, communication uses sockets that you can tune to optimize performance.
 
 The adjustments you make to tune your Geode communication may run up against operating system limits. If this happens, check with your system administrator about adjusting the operating system settings.
 
@@ -37,9 +35,7 @@ All of the settings discussed here are listed as `gemfire.properties` and `cache
 
     The number of sockets available to your applications is governed by operating system limits.
 
--   **[TCP/IP KeepAlive Configuration](socket_tcp_keepalive.html)** Geode 
-
-     supports TCP KeepAlive to prevent socket connections from being timed out.
+-   **[TCP/IP KeepAlive Configuration](socket_tcp_keepalive.html)** Geode     supports TCP KeepAlive to prevent socket connections from being timed out.
 
 -   **[TCP/IP Peer-to-Peer Handshake Timeouts](socket_communication_tcpip_p2p_handshake_timeouts.html)**
 

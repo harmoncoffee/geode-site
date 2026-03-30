@@ -29,9 +29,7 @@ Here are the default settings:
 **Note:**
 On the application server side, the default inactive interval for session expiration is set to 30 minutes. To change this value, refer to [Session Expiration](tc_additional_info.html#tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4).
 
-## <a id="tomcat_changing_gf_default_cfg__section_changing_sys_props" class="no-quick-link"></a>Changing Geode Distributed System Properties Geode 
-
- system properties must be set by adding properties to Tomcat's `server.xml` file. When setting properties, use the following syntax:
+## <a id="tomcat_changing_gf_default_cfg__section_changing_sys_props" class="no-quick-link"></a>Changing Geode Distributed System Properties Geode system properties must be set by adding properties to Tomcat's `server.xml` file. When setting properties, use the following syntax:
 
 ``` pre
 <Listener 

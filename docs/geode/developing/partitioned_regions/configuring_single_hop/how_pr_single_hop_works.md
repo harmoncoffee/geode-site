@@ -36,9 +36,9 @@ Even with single hop access enabled, you will occasionally see some multiple-hop
 
 Do not set the pool's `max-connections` setting with single hop enabled. Limiting the pool's connections with single hop can cause connection thrashing, throughput loss, and server log bloat.
 
-If you need to limit the poolâ€™s connections, either disable single hop or keep a close watch on your system for these negative effects.
+If you need to limit the pool's connections, either disable single hop or keep a close watch on your system for these negative effects.
 
-Setting no limit on connections, however, can result in too many connections to your servers, possibly causing you to run up against your systemâ€™s file handle limits. Review your anticipated connection use and make sure your servers are able to accommodate it.
+Setting no limit on connections, however, can result in too many connections to your servers, possibly causing you to run up against your system's file handle limits. Review your anticipated connection use and make sure your servers are able to accommodate it.
 
 ## <a id="how_pr_single_hop_works__section_99F27B724E5F4008BC8878D1CB4B9821" class="no-quick-link"></a>Balancing Single-Hop Server Connection Use
 

@@ -86,7 +86,7 @@ Performance statistics are collected for each Java application or cache server t
 
 Statistics for the Geode cache. These can be used to determine the type and number of cache operations being performed and how much time they consume.
 
-Regarding Geode cache transactions, transaction-related statistics are compiled and stored as properties in the CachePerfStats statistic resource. Because the transactionâ€™s data scope is the cache, these statistics are collected on a per-cache basis.
+Regarding Geode cache transactions, transaction-related statistics are compiled and stored as properties in the CachePerfStats statistic resource. Because the transaction's data scope is the cache, these statistics are collected on a per-cache basis.
 
 The primary statistics are:
 
@@ -247,7 +247,7 @@ Statistics used for cache servers and for gateway receivers are recorded in Cach
 
 ## <a id="section_B08C0783BBF9489E8BB48B4AEC597C62" class="no-quick-link"></a>Client-Side Notifications (CacheClientUpdaterStats)
 
-Statistics in a client that pertain to server-to-client data pushed from the server over a queue to the client (they are the client side of the serverâ€™s `CacheClientNotifierStatistics`) :
+Statistics in a client that pertain to server-to-client data pushed from the server over a queue to the client (they are the client side of the server's `CacheClientNotifierStatistics`) :
 
 | Statistic                   | Description                                                                                  |
 |-----------------------------|----------------------------------------------------------------------------------------------|
@@ -528,7 +528,7 @@ The primary statistics of ClientSendStats are:
 
 ## <a id="section_6C247F61DB834C079A16BE92789D4692" class="no-quick-link"></a>Client Connection Pool (PoolStats)
 
-These statistics are in a client and they describe one of the clientâ€™s connection pools. The primary statistics are:
+These statistics are in a client and they describe one of the client's connection pools. The primary statistics are:
 
 | Statistic                   | Description                                                                                                          |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -634,7 +634,7 @@ These statistics are for delta propagation between members. The primary statisti
 
 ## <a id="section_6C2BECC63A83456190B029DEDB8F4BE3" class="no-quick-link"></a>Disk Space Usage (DiskDirStatistics)
 
-These statistics pertain to the disk usage for a regionâ€™s disk directory. The primary statistics are:
+These statistics pertain to the disk usage for a region's disk directory. The primary statistics are:
 
 | Statistic               | Description                                                                                                                                                |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1077,7 +1077,7 @@ Statistics related to the Geode 's resource manager. Use these to help analyze a
 
 ## JVM Java Runtime (VMStats)
 
-Show the JVMâ€™s Java usage and can be used to detect possible problems with memory consumption. These statistics are recorded from java.lang.Runtime under VMStats. The primary statistics are:
+Show the JVM's Java usage and can be used to detect possible problems with memory consumption. These statistics are recorded from java.lang.Runtime under VMStats. The primary statistics are:
 
 | Statistic             | Description                                                                                                           |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -1209,7 +1209,7 @@ Operating system statistics are available only for Linux operating systems.
 
 ## Linux Process Performance (LinuxProcessStats)
 
-Operating system statistics on the memberâ€™s process. The primary statistics are:
+Operating system statistics on the member's process. The primary statistics are:
 
 | Statistic   | Description                                         |
 |-------------|-----------------------------------------------------|
@@ -1218,7 +1218,7 @@ Operating system statistics on the memberâ€™s process. The primary statisti
 
 ## Linux Operating System (LinuxSystemStats)
 
-Operating system statistics on the memberâ€™s machine. These can be used to determine total cpu,
+Operating system statistics on the member's machine. These can be used to determine total cpu,
 memory, and disk usage on the machine. The primary statistics are:
 
 | Statistic         | Description                                                                                                                                                                                                                                                                                                                               |

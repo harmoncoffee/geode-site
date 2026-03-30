@@ -21,9 +21,7 @@ limitations under the License.
 
 Comprehensive logging messages help you confirm system configuration and debug problems in configuration and code.
 
--   **[How Geode Logging Works](how_logging_works.html)** Apache Geode 
-
-     uses Apache Log4j 2 as the basis for its logging system.
+-   **[How Geode Logging Works](how_logging_works.html)** Apache Geode     uses Apache Log4j 2 as the basis for its logging system.
 
 -   **[Understanding Log Messages and Their Categories](logging_categories.html)**
 

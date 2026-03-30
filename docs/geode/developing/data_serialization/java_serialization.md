@@ -1,5 +1,7 @@
 ﻿---
 title:  Standard Java Serialization
+sidebar_label: Standard Java Serialization
+sidebar_position: 4
 ---
 
 <!--

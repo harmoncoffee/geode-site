@@ -29,13 +29,9 @@ Before you configure your Apache Geode members, make sure you understand the opt
 
     Create a topology plan and a detailed list of machines and communication ports that your members will use. Configure your Apache Geode systems and the communication between systems.
 
--   **[How Member Discovery Works](how_member_discovery_works.html)** Apache Geode 
+-   **[How Member Discovery Works](how_member_discovery_works.html)** Apache Geode     provides various options for member discovery within a cluster and between clients and servers.
 
-     provides various options for member discovery within a cluster and between clients and servers.
-
--   **[How Communication Works](how_communication_works.html)** Geode 
-
-     uses a combination of TCP and UDP unicast and multicast for communication between members. You can change the default behavior to optimize communication for your system.
+-   **[How Communication Works](how_communication_works.html)** Geode     uses a combination of TCP and UDP unicast and multicast for communication between members. You can change the default behavior to optimize communication for your system.
 
 -   **[Using Bind Addresses](using_bind_addresses.html)**
 

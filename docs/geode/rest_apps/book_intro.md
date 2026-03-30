@@ -34,9 +34,7 @@ This documentation covers the **v1** release of Geode REST APIs for developing a
 
     The Apache Geode developer REST interface runs as an embedded HTTP or HTTPS service (Jetty server) within a Geode data node.
 
--   **[Using the Swagger UI to Browse REST APIs](using_swagger.html)** Apache Geode 
-
-     Developer REST APIs are integrated with the Swaggerâ„¢ framework. This framework provides a browser-based test client that allows you to visualize and try out Geode REST APIs.
+-   **[Using the Swagger UI to Browse REST APIs](using_swagger.html)** Apache Geode     Developer REST APIs are integrated with the Swaggerâ„¢ framework. This framework provides a browser-based test client that allows you to visualize and try out Geode REST APIs.
 
 -   **[Developing REST Applications](develop_rest_apps.html)**
 
