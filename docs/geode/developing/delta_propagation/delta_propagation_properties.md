@@ -1,5 +1,7 @@
 ﻿---
 title:  Delta Propagation Properties
+sidebar_label: Delta Propagation Properties
+sidebar_position: 3
 ---
 
 <!--

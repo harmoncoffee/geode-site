@@ -1,5 +1,7 @@
 ﻿---
 title:  How Delta Propagation Works
+sidebar_label: How Delta Propagation Works
+sidebar_position: 1
 ---
 
 <!--

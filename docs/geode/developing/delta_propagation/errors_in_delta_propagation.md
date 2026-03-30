@@ -1,5 +1,7 @@
 ﻿---
 title:  Errors In Delta Propagation
+sidebar_label: Errors In Delta Propagation
+sidebar_position: 5
 ---
 
 <!--
