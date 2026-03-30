@@ -160,9 +160,7 @@ Same query as the previous example, with the additional constraint that matches 
 SELECT * FROM /exampleRegion portfolio1, portfolio1.positions.values positions1, /exampleRegion2 portfolio2, portfolio2.positions.values positions2 WHERE portfolio1.ID = 1 AND positions1.secId = positions2.secId
 ```
 
-## <a id="the_where_clause__section_D91E0B06FFF6431490CC0BFA369425AD" class="no-quick-link"></a>LIKE Geode 
-
- offers limited support for the LIKE predicate. LIKE can be used to mean 'equals to'. If you terminate the string with a wildcard ('%'), it behaves like 'starts with'. You can also place a wildcard (either '%' or '\_') at any other position in the comparison string. You can escape the wildcard characters to represent the characters themselves.
+## <a id="the_where_clause__section_D91E0B06FFF6431490CC0BFA369425AD" class="no-quick-link"></a>LIKE Geode offers limited support for the LIKE predicate. LIKE can be used to mean 'equals to'. If you terminate the string with a wildcard ('%'), it behaves like 'starts with'. You can also place a wildcard (either '%' or '\_') at any other position in the comparison string. You can escape the wildcard characters to represent the characters themselves.
 
 **Note:**
 The '\*' wildcard is not supported in OQL LIKE predicates.
@@ -299,7 +297,7 @@ SELECT name, address FROM /company
   WHERE id IN (SELECT id FROM /portfolios WHERE status = 'active')
 ```
 
-The interior SELECT statement returns a collection of ids for all /portfolios entries whose status is active. The exterior SELECT iterates over /company, comparing each entryâ€™s id with this collection. For each entry, if the IN expression returns TRUE, the associated name and address are added to the outer SELECTâ€™s collection.
+The interior SELECT statement returns a collection of ids for all /portfolios entries whose status is active. The exterior SELECT iterates over /company, comparing each entry's id with this collection. For each entry, if the IN expression returns TRUE, the associated name and address are added to the outer SELECT's collection.
 
 **Comparing Set Values**
 

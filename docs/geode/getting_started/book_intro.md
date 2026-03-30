@@ -23,9 +23,7 @@ limitations under the License.
 
 A tutorial demonstrates features, and a main features section describes key functionality.
 
--   **[About Apache Geode ](geode_overview.html)** Apache Geode 
-
-     is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.
+-   **[About Apache Geode ](geode_overview.html)** Apache Geode     is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.
 
 -   **[Main Features of Apache Geode ](product_intro.html)**
 

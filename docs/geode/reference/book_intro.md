@@ -35,9 +35,7 @@ limitations under the License.
 
     Your application needs to catch certain classes to handle all the exceptions and system failures thrown by Apache Geode .
 
--   **[Memory Requirements for Cached Data](/topics/memory_requirements_for_cache_data.html)** Geode 
-
-     solutions architects need to estimate resource requirements for meeting application performance, scalability and availability goals.
+-   **[Memory Requirements for Cached Data](/topics/memory_requirements_for_cache_data.html)** Geode     solutions architects need to estimate resource requirements for meeting application performance, scalability and availability goals.
 
 -   **[ Geode Statistics List](statistics_list.html)**
 

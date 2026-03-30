@@ -24,9 +24,7 @@ Delta propagation reduces the amount of data you send over the network. You do t
 <a id="how_delta_propagation_works__section_78D584B3FFD04D1D9BA83203FF2B55A9"></a>
 In most distributed data management systems, the data stored in the system tends to be created once and then updated frequently. These updates are sent to other members for event propagation, redundancy management, and cache consistency in general. Tracking only the changes in an updated object and sending only the deltas mean lower network transmission costs and lower object serialization/deserialization costs. Performance improvements can be significant, especially when changes to an object are small relative to its overall size.
 
-<a id="how_delta_propagation_works__section_ABE3589920D6477BBB2223A583AF169A"></a> Geode 
-
- propagates object deltas using methods that you program. The methods are in the `Delta` interface, which you implement in your cached objects' classes. If any of your classes are plain old Java objects, you need to wrap them for this implementation.
+<a id="how_delta_propagation_works__section_ABE3589920D6477BBB2223A583AF169A"></a> Geode propagates object deltas using methods that you program. The methods are in the `Delta` interface, which you implement in your cached objects' classes. If any of your classes are plain old Java objects, you need to wrap them for this implementation.
 
 This figure shows delta propagation for a change to an entry with key, k, and value object, v.
 
@@ -46,9 +44,7 @@ To use the delta propagation feature, all updates on a key in a region must have
 
 Sometimes `fromDelta` cannot be invoked because there is no object to apply the delta to in the receiving cache. When this happens, the system automatically does a full value distribution to the receiver. These are the possible scenarios:
 1.  If the system can determine beforehand that the receiver does not have a local copy, it sends the initial message with the full value. This is possible when regions are configured with no local data storage, such as with the region shortcut settings `PARTITION_PROXY` and `REPLICATE_PROXY`. These configurations are used to accomplish things like provide data update information to listeners and to pass updates forward to clients.
-2.  In less obvious cases, such as when an entry has been locally deleted, first the delta is sent, then the receiver requests a full value and that is sent. Whenever the full value is received, any further distributions to the receiver's peers or clients uses the full value. Geode 
-
- also does not propagate deltas for:
+2.  In less obvious cases, such as when an entry has been locally deleted, first the delta is sent, then the receiver requests a full value and that is sent. Whenever the full value is received, any further distributions to the receiver's peers or clients uses the full value. Geode also does not propagate deltas for:
 
 -   Transactional commit
 -   The `putAll` operation

@@ -19,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- provides several models for data storage and distribution, including partitioned or replicated regions as well as distributed or non-distributed regions (local cache storage).
+--> Geode provides several models for data storage and distribution, including partitioned or replicated regions as well as distributed or non-distributed regions (local cache storage).
 
 ## <a id="concept_B18B7754E7C7485BA6D66F2DDB7A11FB__section_787D674A64244871AE49CBB58475088E" class="no-quick-link"></a>Peer-to-Peer Region Storage and Distribution
 
@@ -35,7 +33,7 @@ At the architectural level, data distribution runs between peers in a single clu
 
 Data storage in any type of installation is based on the peer-to-peer configuration for each individual cluster. Data and event distribution is based on a combination of the peer-to-peer and system-to-system configurations.
 
-Storage and distribution models are configured through cache and region attributes. The main choices are partitioned, replicated, or just distributed. All server regions must be partitioned or replicated. Each regionâ€™s `data-policy` and `subscription-attributes`, and its `scope` if it is not a partitioned region, interact for finer control of data distribution.
+Storage and distribution models are configured through cache and region attributes. The main choices are partitioned, replicated, or just distributed. All server regions must be partitioned or replicated. Each region's `data-policy` and `subscription-attributes`, and its `scope` if it is not a partitioned region, interact for finer control of data distribution.
 
 ## <a id="concept_B18B7754E7C7485BA6D66F2DDB7A11FB__section_A364D16DFADA49D1A838A7EAF8E4251C" class="no-quick-link"></a>Storing Data in the Local Cache
 

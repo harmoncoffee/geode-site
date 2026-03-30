@@ -17,9 +17,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- distributes a subset of cache events between clusters, with a minimum impact on each system's performance. Events are distributed only for regions that you configure to use a gateway sender for distribution.
+--> Geode distributes a subset of cache events between clusters, with a minimum impact on each system's performance. Events are distributed only for regions that you configure to use a gateway sender for distribution.
 
 ## <a id="how_multisite_distribution_works__section_A16562611E094C88B12BC149D5EEEEBA" class="no-quick-link"></a>Queuing Events for Distribution
 

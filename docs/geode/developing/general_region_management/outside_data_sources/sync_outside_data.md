@@ -21,9 +21,7 @@ limitations under the License.
 
 Keep your distributed cache in sync with an outside data source by programming and installing application plug-ins for your region.
 
--   **[Overview of Outside Data Sources](chapter_overview.html)** Apache Geode 
-
-     has application plug-ins to read data into the cache and write it out.
+-   **[Overview of Outside Data Sources](chapter_overview.html)** Apache Geode     has application plug-ins to read data into the cache and write it out.
 
 -   **[Configuring Database Connections Using JNDI](configuring_db_connections_using_JNDI.html)**.
 

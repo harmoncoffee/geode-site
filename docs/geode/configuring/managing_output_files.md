@@ -19,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- output files are optional and can become quite large. Work with your system administrator to determine where to place them to avoid interfering with other system activities.
+--> Geode output files are optional and can become quite large. Work with your system administrator to determine where to place them to avoid interfering with other system activities.
 
 <a id="managing_output_files__section_F0CEA4299D274801B9AB700C074F178F"></a> Geode 
  includes several types of optional output files as described below.

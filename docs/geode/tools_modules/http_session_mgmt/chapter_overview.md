@@ -19,9 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The Apache Geode HTTP Session Management modules provide fast, scalable, and reliable session replication for HTTP servers without requiring application changes. Apache Geode 
-
- offers HTTP session management modules for Tomcat and AppServers.
+The Apache Geode HTTP Session Management modules provide fast, scalable, and reliable session replication for HTTP servers without requiring application changes. Apache Geode offers HTTP session management modules for Tomcat and AppServers.
 
 **Note:** As of version 2.x, Geode only supports Tomcat 10.1 and later versions (Jakarta EE namespace). Support for Tomcat 7, 8, 9, and Pivotal tc Server has been discontinued.
 

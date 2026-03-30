@@ -17,9 +17,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- provides many types of events and event handlers to help you manage your different data and application needs.
+--> Geode provides many types of events and event handlers to help you manage your different data and application needs.
 
 ## <a id="event_handlers_and_events__section_E7B7502F673B43E794884D0F6BF537CF" class="no-quick-link"></a>Event Handlers
 
@@ -83,7 +81,7 @@ The events in this table are cache events unless otherwise noted.
 <td><code class="ph codeph">EntryEvent</code></td>
 <td><code class="ph codeph">CacheListener</code>, <code class="ph codeph">CacheWriter</code>, <code class="ph codeph">TransactionListener</code> (inside the <code class="ph codeph">TransactionEvent</code>)</td>
 <td>Extends <code class="ph codeph">CacheEvent</code> for entry events. Contains information about an event affecting a data entry in the cache. The information includes the key, the value before this event, and the value after this event. <code class="ph codeph">EntryEvent.getNewValue</code> returns the current value of the data entry. <code class="ph codeph">EntryEvent.getOldValue</code> returns the value before this event if it is available. For a partitioned region, returns the old value if the local cache holds the primary copy of the entry. <code class="ph codeph">EntryEvent</code> provides the Geode transaction ID if available.
-<p>You can retrieve serialized values from <code class="ph codeph">EntryEvent</code> using the <code class="ph codeph">getSerialized</code>* methods. This is useful if you get values from one regionâ€™s events just to put them into a separate cache region. There is no counterpart <code class="ph codeph">put</code> function as the put recognizes that the value is serialized and bypasses the serialization step.</p></td>
+<p>You can retrieve serialized values from <code class="ph codeph">EntryEvent</code> using the <code class="ph codeph">getSerialized</code>* methods. This is useful if you get values from one region's events just to put them into a separate cache region. There is no counterpart <code class="ph codeph">put</code> function as the put recognizes that the value is serialized and bypasses the serialization step.</p></td>
 </tr>
 <tr>
 <td><code class="ph codeph">MembershipEvent</code> (membership event)</td>

@@ -1,5 +1,7 @@
 ﻿---
 title:  Options for Region Distribution
+sidebar_label: Options for Region Distribution
+sidebar_position: 2
 ---
 
 <!--

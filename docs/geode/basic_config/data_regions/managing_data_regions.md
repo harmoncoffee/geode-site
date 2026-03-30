@@ -62,7 +62,7 @@ The cluster configuration service, which is enabled by default, automatically sa
 
 ###  Creating a Region Through the cache.xml File
 
-A common way to create a data region in the  cache is through `cache.xml` declarations.
+A common way to create a data region in the Apache Geode cache is through `cache.xml` declarations.
 When starting the member with the `cache.xml` file,
 the region will be created.
 

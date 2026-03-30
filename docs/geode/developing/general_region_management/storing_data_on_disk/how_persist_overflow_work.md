@@ -1,5 +1,7 @@
 ﻿---
 title:  How Persistence and Overflow Work
+sidebar_label: How Persistence and Overflow Work
+sidebar_position: 1
 ---
 
 <!--

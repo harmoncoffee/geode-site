@@ -19,11 +19,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Before development, it is important to understand the prerequisites and limitations of the Geode REST implementation. Geode 
+Before development, it is important to understand the prerequisites and limitations of the Geode REST implementation. Geode and REST-enabled applications accessing Geode are subject to the following rules and limitations:
 
- and REST-enabled applications accessing Geode are subject to the following rules and limitations:
-
--   All domain objects, functions and function-arg classes must be properly configured and registered in the Geode deployment. Any functions that you wish to execute through the REST API must be available on the target memberâ€™s CLASSPATH.
+-   All domain objects, functions and function-arg classes must be properly configured and registered in the Geode deployment. Any functions that you wish to execute through the REST API must be available on the target member's CLASSPATH.
 -   The current implementation supports only the **application/json** MIME type. Other return types (XML, objects, and so on) are not supported. Plain text is supported as a return type for some error messages.
 -   Keys are strictly of type String. For example, the request `PUT http://localhost:8080/geode/v1/customers/123.456` will add an entry for key ("123.456") of type String.
 -   Some special formats of JSON documents are not supported in Geode REST. See [Key Types and JSON Support](troubleshooting.html#concept_gsv_zd5_m4) for examples.

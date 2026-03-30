@@ -19,9 +19,7 @@ limitations under the License.
 
 's Portable Data eXchange (PDX) is a cross-language data format that can reduce the cost of distributing and serializing your objects. PDX stores data in named fields that you can access individually, to avoid the cost of deserializing the entire data object. PDX also allows you to mix versions of objects where you have added or removed fields.
 
--   **[ Geode PDX Serialization Features](PDX_Serialization_Features.html)** Geode 
-
-     PDX serialization offers several advantages in terms of functionality.
+-   **[ Geode PDX Serialization Features](PDX_Serialization_Features.html)** Geode     PDX serialization offers several advantages in terms of functionality.
 
 -   **[High Level Steps for Using PDX Serialization](use_pdx_high_level_steps.html)**
 
@@ -51,9 +49,7 @@ limitations under the License.
 
     You can use the `PdxInstanceFactory` interface to create a `PdxInstance` from raw data when the domain class is not available on the server.
 
--   **[Persisting PDX Metadata to Disk](persist_pdx_metadata_to_disk.html)** Geode 
-
-     allows you to persist PDX metadata to disk and specify the disk store to use.
+-   **[Persisting PDX Metadata to Disk](persist_pdx_metadata_to_disk.html)** Geode     allows you to persist PDX metadata to disk and specify the disk store to use.
 
 -   **[Using PDX Objects as Region Entry Keys](using_pdx_region_entry_keys.html)**
 

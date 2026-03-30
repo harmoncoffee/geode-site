@@ -25,7 +25,7 @@ This section describes what happens during startup and shutdown and provides pro
 
 ## Start Up
 
-When you start a member with a persistent region, the data is retrieved from disk stores to recreate the memberâ€™s persistent region. If the member does not hold all of the most recent data for the region, then other members have the data, and region creation blocks, waiting for the those other members. A partitioned region with colocated entries also blocks on start up, waiting for the entries of the colocated region to be available. A persistent gateway sender is treated the same as a colocated region, so it can also block region creation.
+When you start a member with a persistent region, the data is retrieved from disk stores to recreate the member's persistent region. If the member does not hold all of the most recent data for the region, then other members have the data, and region creation blocks, waiting for the those other members. A partitioned region with colocated entries also blocks on start up, waiting for the entries of the colocated region to be available. A persistent gateway sender is treated the same as a colocated region, so it can also block region creation.
 
 With a log level of info or below, the system provides messaging about the wait. Here, the disk store for server2 has the most recent data for the region, and server1 is waiting for server2.
 
@@ -57,7 +57,7 @@ When the most recent data is available, the system updates the region, logs a me
 
 If the member's disk store has data for a region that is never created, the data remains in the disk store.
 
-Each memberâ€™s persistent regions load and go online as quickly as possible, not waiting unnecessarily for other members to complete. For performance reasons, these actions occur asynchronously:
+Each member's persistent regions load and go online as quickly as possible, not waiting unnecessarily for other members to complete. For performance reasons, these actions occur asynchronously:
 
 -   Once at least one copy of each and every bucket is recovered from disk, the region is available. Secondary buckets will load asynchronously.
 -   Entry keys are loaded from the key file in the disk store before considering entry values. Once all keys are loaded, Geode loads the entry values asynchronously. If a value is requested before it has loaded, the value will immediately be fetched from the disk store.

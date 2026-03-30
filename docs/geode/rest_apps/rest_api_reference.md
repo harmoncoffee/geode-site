@@ -26,13 +26,9 @@ This documentation covers the **v1** release of Geode REST APIs for developing a
 
     A  region is how  logically groups data within its cache. Regions stores data as entries, which are key-value pairs. Using the REST APIs you can read, add (or update), and delete region data.
 
--   **[Query Endpoints](rest_queries.html)** Geode 
+-   **[Query Endpoints](rest_queries.html)** Geode     uses a query syntax based on OQL (Object Query Language) to query region data. Since Geode regions are key-value stores, values can range from simple byte arrays to complex nested objects.
 
-     uses a query syntax based on OQL (Object Query Language) to query region data. Since Geode regions are key-value stores, values can range from simple byte arrays to complex nested objects.
-
--   **[Function Endpoints](rest_functions.html)** Geode 
-
-     functions allows you to write and execute server-side transactions and data operations. These may include anything ranging from initializing components or third-party services or aggregating data.
+-   **[Function Endpoints](rest_functions.html)** Geode     functions allows you to write and execute server-side transactions and data operations. These may include anything ranging from initializing components or third-party services or aggregating data.
 
 -   **[Administrative Endpoints](rest_admin.html)**
 

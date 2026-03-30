@@ -58,7 +58,7 @@ Before you begin, make sure you understand [Basic Configuration and Programming]
             working-directory/locator-name.log
             ```
 
-            By default, when starting a locator through `gfsh`, the *working -directory* corresponds to the directory (named after itself) created when the locator starts up. Alternatively, you can specify a different working directory path when you start a locator. The *locator-name* corresponds to the name of the locator provided upon startup. If you are using a colocated or embedded locator, the locator logs will be part of the memberâ€™s log file.
+            By default, when starting a locator through `gfsh`, the *working -directory* corresponds to the directory (named after itself) created when the locator starts up. Alternatively, you can specify a different working directory path when you start a locator. The *locator-name* corresponds to the name of the locator provided upon startup. If you are using a colocated or embedded locator, the locator logs will be part of the member's log file.
 
         For the easiest logs examination and troubleshooting, send your logs to files instead of standard out.
         **Note:**

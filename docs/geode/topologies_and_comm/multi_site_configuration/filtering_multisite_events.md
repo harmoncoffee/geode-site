@@ -25,11 +25,7 @@ You can optionally create gateway sender and/or gateway receiver filters to cont
 
 You can implement and deploy two different types of filter for multi-site events:
 
--   `GatewayEventFilter`. A `GatewayEventFilter` implementation determines whether a region event is placed in a gateway sender queue and/or whether an event in a gateway queue is distributed to a remote site. You can optionally add one or more `GatewayEventFilter` implementations to a gateway sender, etiher in the `cache.xml` configuration file or using the Java API. Geode 
-
-     makes a synchronous call to the filter's `beforeEnqueue` method before it places a region event in the gateway sender queue. The filter returns a boolean value that specifies whether the event should be added to the queue. Geode 
-
-     asynchronously calls the filter's `beforeTransmit` method to determine whether the gateway sender dispatcher thread should distribute the event to a remote gateway receiver.
+-   `GatewayEventFilter`. A `GatewayEventFilter` implementation determines whether a region event is placed in a gateway sender queue and/or whether an event in a gateway queue is distributed to a remote site. You can optionally add one or more `GatewayEventFilter` implementations to a gateway sender, etiher in the `cache.xml` configuration file or using the Java API. Geode     makes a synchronous call to the filter's `beforeEnqueue` method before it places a region event in the gateway sender queue. The filter returns a boolean value that specifies whether the event should be added to the queue. Geode     asynchronously calls the filter's `beforeTransmit` method to determine whether the gateway sender dispatcher thread should distribute the event to a remote gateway receiver.
 
     For events that are distributed to another site, Geode calls the listener's `afterAcknowledgement` method to indicate that is has received an ack from the remote site after the event was received.
 

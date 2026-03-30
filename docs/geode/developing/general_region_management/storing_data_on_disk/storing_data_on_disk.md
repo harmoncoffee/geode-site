@@ -1,5 +1,7 @@
 ﻿---
 title:  Configure Region Persistence and Overflow
+sidebar_label: Configure Region Persistence and Overflow
+sidebar_position: 2
 ---
 
 <!--

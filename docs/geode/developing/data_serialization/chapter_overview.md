@@ -21,13 +21,9 @@ limitations under the License.
 
 Data that you manage in Geode must be serialized and deserialized for storage and transmittal between processes. You can choose among several options for data serialization.
 
--   **[Overview of Data Serialization](data_serialization_options.html)** Geode 
+-   **[Overview of Data Serialization](data_serialization_options.html)** Geode     offers serialization options other than Java serialization that give you higher performance and greater flexibility for data storage, transfers, and language types.
 
-     offers serialization options other than Java serialization that give you higher performance and greater flexibility for data storage, transfers, and language types.
-
--   **[ Geode PDX Serialization](gemfire_pdx_serialization.html)** Geode 
-
-    's Portable Data eXchange (PDX) is a cross-language data format that can reduce the cost of distributing and serializing your objects. PDX stores data in named fields that you can access individually, to avoid the cost of deserializing the entire data object. PDX also allows you to mix versions of objects where you have added or removed fields.
+-   **[ Geode PDX Serialization](gemfire_pdx_serialization.html)** Geode    's Portable Data eXchange (PDX) is a cross-language data format that can reduce the cost of distributing and serializing your objects. PDX stores data in named fields that you can access individually, to avoid the cost of deserializing the entire data object. PDX also allows you to mix versions of objects where you have added or removed fields.
 
 -   **[ Geode Data Serialization (DataSerializable and DataSerializer)](gemfire_data_serialization.html)**
 

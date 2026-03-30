@@ -27,7 +27,7 @@ Overflow and persistence use disk stores individually or together to store data.
 Disk storage is available for these items:
 
 -   **Regions**. Persist and/or overflow data from regions.
--   **Serverâ€™s client subscription queues**. Overflow the messaging queues to control memory use.
+-   **Server's client subscription queues**. Overflow the messaging queues to control memory use.
 -   **Gateway sender queues**. Persist these for high availability. These queues always overflow.
 -   **PDX serialization metadata**. Persist metadata about objects you serialize using Geode PDX serialization.
 
@@ -37,18 +37,14 @@ This figure shows a member with disk stores D through R defined. The member has 
 
 <img src="../../images/diskStores-1.gif" id="how_disk_stores_work__image_CB7972998C4A40B2A02550B97A723536" class="image" />
 
-## <a id="how_disk_stores_work__section_433EEEA1560D40DD9842200181EB1D0A" class="no-quick-link"></a>What Geode Writes to the Disk Store Geode 
-
- writes the following to the disk store:
+## <a id="how_disk_stores_work__section_433EEEA1560D40DD9842200181EB1D0A" class="no-quick-link"></a>What Geode Writes to the Disk Store Geode writes the following to the disk store:
 
 -   Persisted and overflowed data as specified when the disk store was created and configured
 -   The members that host the store and information on their status, such as which members are online and which members are offline and time stamps
 -   A disk store identifier
 -   Which regions are in the disk store, specified by region name and including selected attributes
 -   Names of colocated regions on which the regions in the disk store depend
--   A record of all operations on the regions Geode 
-
- does not write indexes to disk.
+-   A record of all operations on the regions Geode does not write indexes to disk.
 
 ## <a id="how_disk_stores_work__section_C1A047CD5518499D94A0E9A0328F6DB8" class="no-quick-link"></a>Disk Store State
 
@@ -58,7 +54,7 @@ Disk store access and management differs according to whether the member is onli
 While a member is running, its disk stores are online. When the member exits and is not running, its disk stores are offline.
 
 -   Online, a disk store is owned and managed by its member process. To run operations on an online disk store, use API calls in the member process, or use the `gfsh` command-line interface.
--   Offline, the disk store is just a collection of files in the host file system. The files are accessible based on file system permissions. You can copy the files for backup or to move the memberâ€™s disk store location. You can also run some maintenance operations, such as file compaction and validation, by using the `gfsh` command-line interface. When offline, the disk store's information is unavailable to the cluster. 
+-   Offline, the disk store is just a collection of files in the host file system. The files are accessible based on file system permissions. You can copy the files for backup or to move the member's disk store location. You can also run some maintenance operations, such as file compaction and validation, by using the `gfsh` command-line interface. When offline, the disk store's information is unavailable to the cluster. 
 For partitioned regions, region data is split between multiple members, and therefore the start up of a member is dependent on all members, and must wait for all members to be online. An attempt to access an entry that is stored on disk by an offline member results in a `PartitionOfflineException`.
 
 

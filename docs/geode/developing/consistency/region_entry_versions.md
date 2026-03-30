@@ -24,13 +24,9 @@ limitations under the License.
 
  ensures that all copies of a region eventually reach a consistent state on all members and clients that host the region, including Geode members that distribute region events.
 
--   **[Consistency Checking by Region Type](how_region_versioning_works.html#topic_7A4B6C6169BD4B1ABD356294F744D236)** Geode 
+-   **[Consistency Checking by Region Type](how_region_versioning_works.html#topic_7A4B6C6169BD4B1ABD356294F744D236)** Geode     performs different consistency checks depending on the type of region you have configured.
 
-     performs different consistency checks depending on the type of region you have configured.
-
--   **[Configuring Consistency Checking](how_region_versioning_works.html#topic_B64891585E7F4358A633C792F10FA23E)** Geode 
-
-     enables consistency checking by default. You cannot disable consistency checking for persistent regions. For all other regions, you can explicitly enable or disable consistency checking by setting the `concurrency-checks-enabled` region attribute in `cache.xml` to "true" or "false."
+-   **[Configuring Consistency Checking](how_region_versioning_works.html#topic_B64891585E7F4358A633C792F10FA23E)** Geode     enables consistency checking by default. You cannot disable consistency checking for persistent regions. For all other regions, you can explicitly enable or disable consistency checking by setting the `concurrency-checks-enabled` region attribute in `cache.xml` to "true" or "false."
 
 -   **[Overhead for Consistency Checks](how_region_versioning_works.html#topic_0BDACA590B2C4974AC9C450397FE70B2)**
 

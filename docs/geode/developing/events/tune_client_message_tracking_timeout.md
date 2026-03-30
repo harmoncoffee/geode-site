@@ -30,7 +30,7 @@ To minimize duplicates and reduce the size of the message tracking list, set you
 
 -   The longest time your originating threads might wait between operations
 -   For redundant servers add:
-    -   The serverâ€™s `message-sync-interval`
+    -   The server's `message-sync-interval`
     -   Total time required for failover (usually 7-10 seconds, including the time to detect failure)
 
 You risk losing live thread tracking records if you set the value lower than this. This could result in your client processing duplicate event messages into its cache for the associated threads. It is worth working to set the `subscription-message-tracking-timeout` as low as you reasonably can.

@@ -25,7 +25,7 @@ Several problems may arise during the initial testing and tuning process for mul
 
 **Some or All Members Cannot Communicate**
 
-If your applications and cache servers cannot talk to each other, even though they are configured correctly, you may not have multicast connectivity on your network. Itâ€™s common to have unicast connectivity, but not multicast connectivity. See your network administrator.
+If your applications and cache servers cannot talk to each other, even though they are configured correctly, you may not have multicast connectivity on your network. It's common to have unicast connectivity, but not multicast connectivity. See your network administrator.
 
 **Multicast Is Slower Than Expected**
 

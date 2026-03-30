@@ -39,7 +39,7 @@ multicast enabled. As a result, there is a retransmission request for every cach
 
 **Controlling Memory Use on Geode Hosts with Multicast**
 
-Running out of memory can impede a memberâ€™s performance and eventually lead to severe errors.
+Running out of memory can impede a member's performance and eventually lead to severe errors.
 
 When data is distributed over multicast, Geode incurs a fixed overhead of memory reserved for transmission buffers. A specified amount of memory is reserved for each distributed region. These producer-side buffers are used only when a receiver is not getting enough CPU to read from its own receiving buffer as quickly as the producer is sending. In this case, the receiver complains of lost data. The producer then retrieves the data, if it still exists in its buffer, and resends to the receiver.
 

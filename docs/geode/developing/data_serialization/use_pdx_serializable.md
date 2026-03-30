@@ -83,9 +83,7 @@ For a domain object with source that you can modify, implement the `PdxSerializa
 
 4.  Program `PdxSerializable.fromData` to read your data fields from the serialized form into the object's fields using the `PdxReader` read methods.
 
-    Provide the same names that you did in `toData` and call the read operations in the same order as you called the write operations in your `toData` implementation. Geode 
-
-     automatically provides `PdxReader` to the `fromData` method for `PdxSerializable` objects.
+    Provide the same names that you did in `toData` and call the read operations in the same order as you called the write operations in your `toData` implementation. Geode     automatically provides `PdxReader` to the `fromData` method for `PdxSerializable` objects.
 
     Example `fromData` code:
 

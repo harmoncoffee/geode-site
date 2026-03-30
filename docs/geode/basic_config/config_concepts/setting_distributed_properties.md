@@ -19,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- provides a default configuration for out-of-the-box systems. To use non-default configurations and to fine-tune your member communication, you can use a mix of various options to customize your configuration.
+--> Geode provides a default configuration for out-of-the-box systems. To use non-default configurations and to fine-tune your member communication, you can use a mix of various options to customize your configuration.
 
 <a id="setting_distributed_properties__section_67EBCC53EB174B108DA7271E2CD2B76C"></a> Geode 
  properties are used to join a cluster and configure system member behavior. Configure your Geode properties through the `gemfire.properties` file, the Java API, or command-line input. Generally, you store all your properties in the `gemfire.properties` file, but you may need to provide properties through other means, for example, to pass in security properties for a username and password that you have received from keyboard input.

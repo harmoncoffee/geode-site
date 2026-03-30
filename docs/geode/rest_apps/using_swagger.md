@@ -17,9 +17,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Apache Geode 
-
- Developer REST APIs are integrated with the Swaggerâ„¢ framework. This framework provides a browser-based test client that allows you to visualize and try out Geode REST APIs.
+--> Apache Geode Developer REST APIs are integrated with the Swaggerâ„¢ framework. This framework provides a browser-based test client that allows you to visualize and try out Geode REST APIs.
 
 Swagger application JARs are included in the Geode REST application WAR; you do not need to install any additional libraries to use Swagger.
 

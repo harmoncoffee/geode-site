@@ -19,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- includes interfaces for defining and maintaining your own statistics.
+--> Geode includes interfaces for defining and maintaining your own statistics.
 
 <a id="application_defined_statistics__section_88C31FA62A194947BF71AD54B5F9BAB3"></a>
 The Geode package, `org.apache.geode`, includes the following interfaces for defining and maintaining your own statistics:
@@ -43,7 +41,7 @@ integer that increments and decrements. Another could be a `RequestCount` counte
 always increments. A list of these descriptors is used to instantiate a `SessionStateStats`
 `StatisticsType`. When a client connects, the application server uses the `StatisticsType` object to
 create a session-specific `Statistics` object. The server then uses the `Statistics` methods to
-modify and retrieve the clientâ€™s statistics. The figures below illustrate the relationships between the
+modify and retrieve the client's statistics. The figures below illustrate the relationships between the
 statistics interfaces and show the implementation of this use case.
 
 <img src="../../images/Statistics-interfaces.png" class="image" />

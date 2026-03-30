@@ -19,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- handles network outages by using a weighting system to determine whether the remaining available members have a sufficient quorum to continue as a cluster.
+--> Geode handles network outages by using a weighting system to determine whether the remaining available members have a sufficient quorum to continue as a cluster.
 
 <a id="how_network_partitioning_management_works__section_548146BB8C24412CB7B43E6640272882"></a>
 Individual members are each assigned a weight, and the quorum is determined by comparing the total weight of currently responsive members to the previous total weight of responsive members.

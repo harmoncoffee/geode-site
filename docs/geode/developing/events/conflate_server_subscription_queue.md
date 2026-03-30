@@ -30,7 +30,7 @@ Enable conflation at the server level in the server region configuration:
 </region>
 ```
 
-Override the server setting as needed, on a per-client basis, in the clientâ€™s `gemfire.properties`:
+Override the server setting as needed, on a per-client basis, in the client's `gemfire.properties`:
 
 ``` pre
 conflate-events=false

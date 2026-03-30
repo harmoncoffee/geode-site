@@ -23,9 +23,7 @@ limitations under the License.
 
 This section gathers discrete details in one convenient location to better help you assess and configure the security of your environment.
 
--   **[External Interfaces, Ports, and Services](security-audit.html)** Geode 
-
-     processes use either UDP or TCP/IP ports to communicate with other processes or clients.
+-   **[External Interfaces, Ports, and Services](security-audit.html)** Geode     processes use either UDP or TCP/IP ports to communicate with other processes or clients.
 
 -   **[Resources That Must Be Protected](security-audit.html#topic_263072624B8D4CDBAD18B82E07AA44B6)**
 

@@ -83,9 +83,7 @@ desired bucket.
 `getRoutingObject`.  Do not use the value associated with the key or any additional metadata in the implementation of `getRoutingObject`.
 Do not use `getOperation` or `getValue`.
 
-**Implementing the String Prefix Partition Resolver** Geode 
-
- provides an implementation of a
+**Implementing the String Prefix Partition Resolver** Geode provides an implementation of a
 string-based partition resolver in
 `org.apache.geode.cache.util.StringPrefixPartitionResolver`.
 This resolver does not require any further implementation.

@@ -69,7 +69,7 @@ You have several options for client cache configuration. Start your client cache
         ClientCache clientCache = new ClientCacheFactory().create();
         ```
 
-        This creates the server connections and initializes the clientâ€™s cache according to your `gemfire.properties` and `cache.xml` specifications.
+        This creates the server connections and initializes the client's cache according to your `gemfire.properties` and `cache.xml` specifications.
 
 2.  Close your cache when you are done using the `close` method of your `Cache` instance:
 

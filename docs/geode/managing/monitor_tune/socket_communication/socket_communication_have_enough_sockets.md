@@ -23,7 +23,7 @@ limitations under the License.
 
 The number of sockets available to your applications is governed by operating system limits.
 
-Sockets use file descriptors and the operating systemâ€™s view of your applicationâ€™s socket use is expressed in terms of file descriptors. There are two limits, one on the maximum descriptors available to a single application and the other on the total number of descriptors available in the system. If you get error messages telling you that you have too many files open, you might be hitting the operating system limits with your use of sockets. Your system administrator might be able to increase the system limits so that you have more available. You can also tune your members to use fewer sockets for their outgoing connections. This section discusses socket use in Geode and ways to limit socket consumption in your Geode members.
+Sockets use file descriptors and the operating system's view of your application's socket use is expressed in terms of file descriptors. There are two limits, one on the maximum descriptors available to a single application and the other on the total number of descriptors available in the system. If you get error messages telling you that you have too many files open, you might be hitting the operating system limits with your use of sockets. Your system administrator might be able to increase the system limits so that you have more available. You can also tune your members to use fewer sockets for their outgoing connections. This section discusses socket use in Geode and ways to limit socket consumption in your Geode members.
 
 ## <a id="socket_comm__section_31B4EFAD6F384AB1BEBCF148D3DEA514" class="no-quick-link"></a>Socket Sharing
 
@@ -46,9 +46,9 @@ You can force the release of an idle socket connection for peer-to-peer and clie
 
 ## <a id="socket_comm__section_936C6562C0034A2EAC9A63FFE9FDAC36" class="no-quick-link"></a>Calculating Connection Requirements
 
-Each type of member has its own connection requirements. Clients need connections to their servers, peers need connections to peers, and so on. Many members have compound roles. Use these guidelines to figure each memberâ€™s socket needs and to calculate the combined needs of members that run on a single host system.
+Each type of member has its own connection requirements. Clients need connections to their servers, peers need connections to peers, and so on. Many members have compound roles. Use these guidelines to figure each member's socket needs and to calculate the combined needs of members that run on a single host system.
 
-A memberâ€™s socket use is governed by a number of factors, including:
+A member's socket use is governed by a number of factors, including:
 
 -   How many peer members it connects to
 -   How many threads it has that update the cache and whether the threads share sockets
@@ -57,13 +57,13 @@ A memberâ€™s socket use is governed by a number of factors, including:
 
 The socket requirements described here are worst-case. Generally, it is not practical to calculate exact socket use for your applications. Socket use varies depending on a number of factors including how many members are running, what their threads are doing, and whether threads share sockets.
 
-To calculate any memberâ€™s socket requirements, add up the requirements for every category that applies to the member. For example, a cache server running in a cluster with clients connected to it has both peer-to-peer and server socket requirements.
+To calculate any member's socket requirements, add up the requirements for every category that applies to the member. For example, a cache server running in a cluster with clients connected to it has both peer-to-peer and server socket requirements.
 
 ## <a id="socket_comm__section_DF64BDE7B6AA47A9B08E0540CAD6DA3A" class="no-quick-link"></a>Peer-to-Peer Socket Requirements Per Member
 
 Every member of a cluster maintains two outgoing and two incoming connections to every peer. If threads share sockets, these fixed sockets are the sockets they share.
 
-For every thread that does not share sockets, additional sockets, one in and one out, are added for each peer. This affects not only the memberâ€™s socket count, but the socket count for every member the member thread connects to.
+For every thread that does not share sockets, additional sockets, one in and one out, are added for each peer. This affects not only the member's socket count, but the socket count for every member the member thread connects to.
 
 In this table:
 
@@ -96,11 +96,11 @@ In this table:
 <td><p>4 * (M-1)</p></td>
 </tr>
 <tr>
-<td>This memberâ€™s thread-owned sockets (1 in and 1 out for each thread, for each peer member).</td>
+<td>This member's thread-owned sockets (1 in and 1 out for each thread, for each peer member).</td>
 <td><p>(T * 2) * (M-1)</p></td>
 </tr>
 <tr>
-<td><p>Other memberâ€™s thread-owned sockets that connect to this member (1 in and 1 out for each). Note that this might include server threads if any of the other members are servers (see Server).</p></td>
+<td><p>Other member's thread-owned sockets that connect to this member (1 in and 1 out for each). Note that this might include server threads if any of the other members are servers (see Server).</p></td>
 <td><p>Summation over (M-1) other members of (T*2)</p></td>
 </tr>
 </tbody>
@@ -111,7 +111,7 @@ The threads servicing client requests add to the total count of thread-owned soc
 
 ## <a id="socket_comm__section_0497E07414CC4E0B968B4F3A7AFD3690" class="no-quick-link"></a>Server Socket Requirements Per Server
 
-Servers use one connection for each incoming client connection. By default, each connection is serviced by a server thread. These threads that service client requests communicate with the rest of the servers to satisfy the requests and distributed update operations. Each of these threads uses its own thread-owned sockets for peer-to-peer communication. So this adds to the serverâ€™s group of thread-owned sockets.
+Servers use one connection for each incoming client connection. By default, each connection is serviced by a server thread. These threads that service client requests communicate with the rest of the servers to satisfy the requests and distributed update operations. Each of these threads uses its own thread-owned sockets for peer-to-peer communication. So this adds to the server's group of thread-owned sockets.
 
 The thread and connection count in the server may be limited by server configuration settings. These
 are `max-connections` and `max-threads` settings in the &lt;cache-server&gt; element of the
@@ -120,7 +120,7 @@ number of threads that can service client requests. Both of these limit the serv
 connection requirements:
 
 -   When the connection limit is reached, the server refuses additional connections. This limits the number of connections the server uses for clients.
--   When the thread limit is reached, threads start servicing multiple connections. This does not limit the number of client connections, but does limit the number of peer connections required to service client requests. Each server thread used for clients uses its own sockets, so it requires 2 connections to each of the serverâ€™s peers. The `max-threads` setting puts a cap on the number of this type of peer connection that your server needs.
+-   When the thread limit is reached, threads start servicing multiple connections. This does not limit the number of client connections, but does limit the number of peer connections required to service client requests. Each server thread used for clients uses its own sockets, so it requires 2 connections to each of the server's peers. The `max-threads` setting puts a cap on the number of this type of peer connection that your server needs.
 
 The server uses one socket for each incoming client pool connection. If client subscriptions are used, the server creates an additional connection to each client that enables subscriptions.
 
@@ -147,7 +147,7 @@ In this table, M is the total number of members in the cluster.
 <td>Number of pool connections to this server</td>
 </tr>
 <tr>
-<td><p>Threads servicing client requests (the lesser of the client pool connection count and the serverâ€™s <code>max-threads</code> setting). These connections are to the serverâ€™s peers.</p></td>
+<td><p>Threads servicing client requests (the lesser of the client pool connection count and the server's <code>max-threads</code> setting). These connections are to the server's peers.</p></td>
 <td><p>(2 * number of threads in a server that service client pool connections)</p>
 <p>* (M-1)</p>
 <p>These threads do not share sockets.</p></td>
@@ -159,7 +159,7 @@ In this table, M is the total number of members in the cluster.
 </tbody>
 </table>
 
-With client/server installations, the number of client connections to any single server is undetermined, but â€™s server load balancing and conditioning keeps the connections fairly evenly distributed among servers.
+With client/server installations, the number of client connections to any single server is undetermined, but 's server load balancing and conditioning keeps the connections fairly evenly distributed among servers.
 
 Servers are peers in their own cluster and have the additional socket requirements as noted in the Peer-to-Peer section above.
 

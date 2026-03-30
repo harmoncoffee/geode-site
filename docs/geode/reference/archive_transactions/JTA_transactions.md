@@ -48,9 +48,7 @@ transaction, cache operations are done through Geode as usual.
 **Note:**
 See the Java documentation for more information on topics such as JTA, `javax.transaction`, committing and rolling back global transactions, and the related exceptions.
 
--   **[Coordinating with External JTA Transactions Managers](#concept_cp1_zx1_wk)** Geode 
-
-     can work with the JTA transaction managers of several containers like JBoss, WebLogic, GlassFish, and so on.
+-   **[Coordinating with External JTA Transactions Managers](#concept_cp1_zx1_wk)** Geode     can work with the JTA transaction managers of several containers like JBoss, WebLogic, GlassFish, and so on.
 
 -   **[Using Geode as the "Last Resource" in a Container-Managed JTA Transaction](#concept_csy_vfb_wk)**
 
@@ -66,9 +64,7 @@ See the Java documentation for more information on topics such as JTA, `javax.tr
 
 <a id="concept_cp1_zx1_wk"></a>
 
-# Coordinating with External JTA Transaction Managers Geode 
-
- can work with the JTA transaction managers of several containers such as JBoss, WebLogic, GlassFish, and so on.
+# Coordinating with External JTA Transaction Managers Geode can work with the JTA transaction managers of several containers such as JBoss, WebLogic, GlassFish, and so on.
 
 At startup Geode looks for a TransactionManager
 (`javax.transaction.TransactionManager`) that has been bound to its JNDI context. When Geode 

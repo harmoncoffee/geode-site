@@ -1,5 +1,7 @@
 ﻿---
 title:  How Data Loaders Work
+sidebar_label: How Data Loaders Work
+sidebar_position: 3
 ---
 
 <!--

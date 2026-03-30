@@ -17,9 +17,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- allows you to persist PDX metadata to disk and specify the disk store to use.
+--> Geode allows you to persist PDX metadata to disk and specify the disk store to use.
 
 <a id="persist_pdx_metadata_to_disk__section_7F357A8E56B54BFB9A5778C0F89E034E"></a>
 **Prerequisites**

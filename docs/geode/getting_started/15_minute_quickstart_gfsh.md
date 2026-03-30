@@ -156,9 +156,7 @@ In this step you create a region with the `gfsh` command line utility. Regions a
 
 **Note:** Keep this `gfsh` prompt open for the next steps.
 
-## Step 6: Manipulate data in the region and demonstrate persistence Apache Geode 
-
- manages data as key/value pairs. In most applications, a Java program adds, deletes and modifies stored data. You can also use gfsh commands to add and retrieve data. See [Data Commands](../tools_modules/gfsh/quick_ref_commands_by_area.html#topic_C7DB8A800D6244AE8FF3ADDCF139DCE4).
+## Step 6: Manipulate data in the region and demonstrate persistence Apache Geode manages data as key/value pairs. In most applications, a Java program adds, deletes and modifies stored data. You can also use gfsh commands to add and retrieve data. See [Data Commands](../tools_modules/gfsh/quick_ref_commands_by_area.html#topic_C7DB8A800D6244AE8FF3ADDCF139DCE4).
 
 1.  Run the following `put` commands to add some data to the region:
 

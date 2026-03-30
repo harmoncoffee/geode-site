@@ -1,5 +1,7 @@
 ﻿---
 title:  Overflow Configuration Examples
+sidebar_label: Overflow Configuration Examples
+sidebar_position: 3
 ---
 
 <!--

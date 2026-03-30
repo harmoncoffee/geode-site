@@ -1,5 +1,7 @@
 ﻿---
 title: Consistency Checking by Region Type
+sidebar_label: Consistency Checking by Region Type
+sidebar_position: 1
 ---
 
 <!--
@@ -19,9 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<a id="topic_7A4B6C6169BD4B1ABD356294F744D236"></a> Geode 
-
- performs different consistency checks depending on the type of region you have configured.
+<a id="topic_7A4B6C6169BD4B1ABD356294F744D236"></a> Geode performs different consistency checks depending on the type of region you have configured.
 
 ## <a id="topic_7A4B6C6169BD4B1ABD356294F744D236__section_B090F5FB87D84104A7BE4BCEA6BAE6B7" class="no-quick-link"></a>Partitioned Region Consistency
 

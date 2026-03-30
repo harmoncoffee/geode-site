@@ -23,7 +23,7 @@ Some examples of cache event handlers.
 
 ## <a id="cache_event_handler_examples__section_F2790678E9DE4A81B73A4B6346CB210B" class="no-quick-link"></a>Declaring and Loading an Event Handler with Parameters
 
-This declares an event handler for a region in the `cache.xml`. The handler is a cache listener designed to communicate changes to a DB2 database. The declaration includes the listenerâ€™s parameters, which are the database path, username, and password.
+This declares an event handler for a region in the `cache.xml`. The handler is a cache listener designed to communicate changes to a DB2 database. The declaration includes the listener's parameters, which are the database path, username, and password.
 
 ``` pre
 <region name="exampleRegion"> 
@@ -45,7 +45,7 @@ This declares an event handler for a region in the `cache.xml`. The handler is a
   </region>
 ```
 
-This code listing shows part of the implementation of the `JDBCListener` declared in the `cache.xml`. This listener implements the `Declarable` interface. When an entry is created in the cache, this listenerâ€™s `afterCreate` callback method is triggered to update the database. Here the listenerâ€™s properties, provided in the `cache.xml`, are passed into the `Declarable.init` method and used to create a database connection.
+This code listing shows part of the implementation of the `JDBCListener` declared in the `cache.xml`. This listener implements the `Declarable` interface. When an entry is created in the cache, this listener's `afterCreate` callback method is triggered to update the database. Here the listener's properties, provided in the `cache.xml`, are passed into the `Declarable.init` method and used to create a database connection.
 
 ``` pre
 . . .

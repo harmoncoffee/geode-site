@@ -66,7 +66,7 @@ To receive entry events in the client from the server:
         region1.registerInterestRegex("[a-zA-Z]+_[0-9]+"); 
         ```
 
-        You can call the register interest methods multiple times for a single region. Each interest registration adds to the serverâ€™s list of registered interest criteria for the client. So if a client registers interest in key â€˜Aâ€™, then registers interest in regular expression "B\*", the server will send updates for all entries with key â€˜Aâ€™ or key beginning with the letter â€˜Bâ€™.
+        You can call the register interest methods multiple times for a single region. Each interest registration adds to the server's list of registered interest criteria for the client. So if a client registers interest in key â€˜Aâ€™, then registers interest in regular expression "B\*", the server will send updates for all entries with key â€˜Aâ€™ or key beginning with the letter â€˜Bâ€™.
 
     3.  For highly available event messaging, configure server redundancy. See [Configuring Highly Available Servers](configuring_highly_available_servers.html).
     4.  To have events enqueued for your clients during client downtime, configure durable client/server messaging.

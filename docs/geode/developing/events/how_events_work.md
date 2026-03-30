@@ -58,7 +58,7 @@ The following steps describe the event cycle:
     -   An event object that describes the event, such as the member and region where the operation originated.
 
 3.  The event handlers that can handle the event are called and passed the event objects. Different event types require different handler types in different locations. If there is no matching event handler, that does not change the effect of the operation, which happens as usual.
-4.  When the handler receives the event, it triggers the handlerâ€™s callback method for this event. The callback method can hand off the event object as input to another method. Depending on the type of event handler, the callbacks can be triggered before or after the operation. The timing depends on the event handler, not on the event itself.
+4.  When the handler receives the event, it triggers the handler's callback method for this event. The callback method can hand off the event object as input to another method. Depending on the type of event handler, the callbacks can be triggered before or after the operation. The timing depends on the event handler, not on the event itself.
     **Note:**
     For transactions, after-operation listeners receive the events after the transaction has committed.
 

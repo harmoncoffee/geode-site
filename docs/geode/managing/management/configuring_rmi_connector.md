@@ -19,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
-
- programmatically emulates out-of-the-box JMX provided by Java and creates a JMXServiceURL with RMI Registry and RMI Connector ports on all manageable members.
+--> Geode programmatically emulates out-of-the-box JMX provided by Java and creates a JMXServiceURL with RMI Registry and RMI Connector ports on all manageable members.
 
 ## <a id="concept_BC793A7ACF9A4BD9A29C2DCC6894767D__section_143531EBBCF94033B8058FCF5F8A5A0D" class="no-quick-link"></a>Configuring JMX Manager Port and Bind Addresses
 

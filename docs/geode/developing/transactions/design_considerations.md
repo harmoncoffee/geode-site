@@ -129,7 +129,7 @@ exclusively for transactional puts, updates, and deletions, so transactional ent
 operations.
 
 If other, non-transactional sources update the keys the transaction is modifying, the changes may
-intermingle with the transactionâ€™s changes. The other sources can include distributions from remote
+intermingle with the transaction's changes. The other sources can include distributions from remote
 members, loading activities, and other direct cache modification calls from the same member. When
 this happens, after your commit finishes, the cache state may not be what you expected.
 

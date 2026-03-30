@@ -113,9 +113,7 @@ The `PdxSerializer` `toData` and `fromData` methods differ from those for `PdxSe
 
     1.  Program `PdxSerializer.fromData` to create an instance of your class, read your data fields from the serialized form into the object's fields using the `PdxReader` read methods, and return the created object.
 
-        Provide the same names that you did in `toData` and call the read operations in the same order as you called the write operations in your `toData` implementation. Geode 
-
-         provides the domain class type and `PdxReader` to the `fromData` method.
+        Provide the same names that you did in `toData` and call the read operations in the same order as you called the write operations in your `toData` implementation. Geode         provides the domain class type and `PdxReader` to the `fromData` method.
 
         Example `fromData` code:
 

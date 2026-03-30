@@ -23,7 +23,7 @@ limitations under the License.
 
 When a machine crashes because of a shutdown, power loss, hardware failure, or operating system failure, all of its applications and cache servers and their local caches are lost.
 
-System members on other machines are notified that this machineâ€™s members have left the cluster unexpectedly.
+System members on other machines are notified that this machine's members have left the cluster unexpectedly.
 
 ## <a id="rec_system_crash__section_2BC1911849B94CBB892649A4E71724F7" class="no-quick-link"></a>Recovery Procedure
 

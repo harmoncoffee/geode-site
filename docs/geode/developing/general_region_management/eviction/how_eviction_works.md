@@ -1,5 +1,7 @@
 ﻿---
 title:  How Eviction Works
+sidebar_label: How Eviction Works
+sidebar_position: 1
 ---
 
 <!--
@@ -34,9 +36,7 @@ When Geode determines that adding or updating an entry would take the region ove
 For efficiency, the selection of items for removal is not strictly LRU, but does choose eviction candidates from among the region's oldest entries.
 As a result, eviction may leave older entries for the region in the local data store.
 
-## Eviction Actions Apache Geode 
-
- provides the following eviction actions:
+## Eviction Actions Apache Geode provides the following eviction actions:
 
 - **local destroy** - Removes the entry from the local cache, but does not distribute the removal operation to remote
 members.  This action can be applied to an entry in a partitioned region, but is not recommended

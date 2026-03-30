@@ -144,7 +144,7 @@ gfsh>start server --name=server1 --start-rest-api=true \
 --classpath=/myapps/testfunctions.jar
 ```
 
-You can specify these properties either upon server startup or in the serverâ€™s gemfire.properties configuration file. For example:
+You can specify these properties either upon server startup or in the server's gemfire.properties configuration file. For example:
 
 ```
 gfsh>start server --name=serverX --server-port=40405 --cache-xml-file=cache-config.xml \

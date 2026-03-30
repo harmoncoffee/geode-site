@@ -1,5 +1,7 @@
 ﻿---
 title:  Configure Data Eviction
+sidebar_label: Configure Data Eviction
+sidebar_position: 2
 ---
 
 <!--

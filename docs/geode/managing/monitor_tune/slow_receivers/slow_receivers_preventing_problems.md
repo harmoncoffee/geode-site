@@ -37,12 +37,12 @@ The machines that host Geode Geode application and cache server processes should
 
 Eliminate congested areas on the network by rebalancing the traffic load. Work with your network administrator to identify and eliminate traffic bottlenecks, whether caused by the architecture of the distributed Geode system or by contention between the Geode traffic and other traffic on your network. Consider whether more subnets are needed to separate the Geode administrative traffic from Geode data transport and to separate all the Geode traffic from the rest of your network load.
 
-The network connections between hosts need to have equal bandwidth. If not, you can end up with a configuration like the multicast example in the following figure, which creates conflicts among the members. For example, if app1 sends out data at 7Mbps, app3 and app4 would be fine, but app2 would miss some data. In that case, app2 contacts app1 on the TCP channel and sends a log message that itâ€™s dropping data.
+The network connections between hosts need to have equal bandwidth. If not, you can end up with a configuration like the multicast example in the following figure, which creates conflicts among the members. For example, if app1 sends out data at 7Mbps, app3 and app4 would be fine, but app2 would miss some data. In that case, app2 contacts app1 on the TCP channel and sends a log message that it's dropping data.
 <img src="../../images_svg/unbalanced_network_capacity_probs.svg" id="slow_recv__image_F8C424AB97C444298993294000676150" class="image" />
 
 **Plan for Growth**
 
-Upgrade the infrastructure to the level required for acceptable performance. Analyze the expected Geode traffic in comparison to the networkâ€™s capacity. Build in extra capacity for growth and high-traffic spikes. Similarly, evaluate whether the machines that host  application and cache server processes can handle the expected load.
+Upgrade the infrastructure to the level required for acceptable performance. Analyze the expected Geode traffic in comparison to the network's capacity. Build in extra capacity for growth and high-traffic spikes. Similarly, evaluate whether the machines that host  application and cache server processes can handle the expected load.
 
 
 

@@ -1,5 +1,7 @@
 ﻿---
 title:  How Distribution Works
+sidebar_label: How Distribution Works
+sidebar_position: 1
 ---
 
 <!--

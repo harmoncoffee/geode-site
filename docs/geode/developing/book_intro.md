@@ -34,9 +34,7 @@ For information about Geode REST application development, see [Developing REST A
 
     In addition to basic region management, distributed and replicated regions include options for things like push and pull distribution models, global locking, and region entry versions to ensure consistency across Geode members.
 
--   **[Consistency for Region Updates](distributed_regions/region_entry_versions.html)** Geode 
-
-     ensures that all copies of a region eventually reach a consistent state on all members and clients that host the region, including Geode members that distribute region events.
+-   **[Consistency for Region Updates](distributed_regions/region_entry_versions.html)** Geode     ensures that all copies of a region eventually reach a consistent state on all members and clients that host the region, including Geode members that distribute region events.
 
 -   **[General Region Data Management](general_region_data_management.html)**
 

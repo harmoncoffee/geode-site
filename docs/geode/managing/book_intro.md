@@ -19,9 +19,7 @@ limitations under the License.
 
 *Managing Apache Geode * describes how to plan and implement tasks associated with managing, monitoring, and troubleshooting .
 
--   **[ Management and Monitoring](management/management_and_monitoring.html)** Apache Geode 
-
-     provides APIs and tools for managing your cluster and monitoring the health of your cluster members.
+-   **[ Management and Monitoring](management/management_and_monitoring.html)** Apache Geode     provides APIs and tools for managing your cluster and monitoring the health of your cluster members.
 
 -   **[Managing Heap and Off-heap Memory](heap_use/heap_management.html)**
 

@@ -74,9 +74,7 @@ When a Geode locator or server becomes a JMX Manager for the cluster, it enables
 
 For information on how to configure the RMI registry and RMI connector, see [Configuring RMI Registry Ports and RMI Connectors](configuring_rmi_connector.html#concept_BC793A7ACF9A4BD9A29C2DCC6894767D).
 
-## <a id="concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_A3F9E1594982480DA019CBA3E93CA895" class="no-quick-link"></a>Management APIs Geode 
-
- management APIs represent the Geode cluster to a JMX user. However, they do not provide functionality that is otherwise present in JMX. They only provide a gateway into various services exclusively offered by Geode monitoring and management.
+## <a id="concept_1BAE2CE1146B4347ABD61F50B9F9781F__section_A3F9E1594982480DA019CBA3E93CA895" class="no-quick-link"></a>Management APIs Geode management APIs represent the Geode cluster to a JMX user. However, they do not provide functionality that is otherwise present in JMX. They only provide a gateway into various services exclusively offered by Geode monitoring and management.
 
 The entry point to Geode management is through the ManagementService interface. For example, to create an instance of the Management Service:
 

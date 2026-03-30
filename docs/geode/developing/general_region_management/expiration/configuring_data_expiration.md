@@ -1,5 +1,7 @@
 ﻿---
 title:  Configure Data Expiration
+sidebar_label: Configure Data Expiration
+sidebar_position: 2
 ---
 
 <!--

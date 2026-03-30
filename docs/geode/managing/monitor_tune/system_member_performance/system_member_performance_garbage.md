@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-If your application exhibits unacceptably high latencies, you might improve performance by modifying your JVMâ€™s garbage collection behavior.
+If your application exhibits unacceptably high latencies, you might improve performance by modifying your JVM's garbage collection behavior.
 
 Garbage collection, while necessary, introduces latency into your system by consuming resources that would otherwise be available to your application. You can reduce the impact of garbage collection in two ways:
 
@@ -32,7 +32,7 @@ Garbage collection, while necessary, introduces latency into your system by cons
 Garbage collection tuning options depend on the JVM you are using. Suggestions given here apply to the Sun HotSpot JVM. If you use a different JVM, check with your vendor to see if these or comparable options are available to you.
 
 **Note:**
-Modifications to garbage collection sometimes produce unexpected results. Always test your system before and after making changes to verify that the systemâ€™s performance has improved.
+Modifications to garbage collection sometimes produce unexpected results. Always test your system before and after making changes to verify that the system's performance has improved.
 
 **Optimizing Garbage Collection**
 

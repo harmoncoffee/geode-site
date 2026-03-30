@@ -1,5 +1,7 @@
 ﻿---
 title:  How Replication and Preloading Work
+sidebar_label: How Replication and Preloading Work
+sidebar_position: 3
 ---
 
 <!--

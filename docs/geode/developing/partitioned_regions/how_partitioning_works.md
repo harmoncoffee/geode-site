@@ -32,13 +32,11 @@ For each member where you define the region, you can choose how much space to al
 
 A cluster can have multiple partitioned regions, and it can mix partitioned regions with distributed regions and local regions. The usual requirement for unique region names, except for regions with local scope, still applies. A single member can host multiple partitioned regions.
 
-## <a id="how_partitioning_works__section_260C2455FC8C40A094B39BF585D06B7D" class="no-quick-link"></a>Data Partitioning Geode 
-
- automatically determines the physical location of data in the members that host a partitioned region's data. Geode breaks partitioned region data into units of storage known as buckets and stores each bucket in a region host member. Buckets are distributed in accordance to the memberâ€™s region attribute settings.
+## <a id="how_partitioning_works__section_260C2455FC8C40A094B39BF585D06B7D" class="no-quick-link"></a>Data Partitioning Geode automatically determines the physical location of data in the members that host a partitioned region's data. Geode breaks partitioned region data into units of storage known as buckets and stores each bucket in a region host member. Buckets are distributed in accordance to the member's region attribute settings.
 
 When an entry is created, it is assigned to a bucket. Keys are grouped together in a bucket and always remain there. If the configuration allows, the buckets may be moved between members to balance the load.
 
-You must run the data stores needed to accommodate storage for the partitioned regionâ€™s buckets. You can start new data stores on the fly. When a new data store creates the region, it takes responsibility for as many buckets as allowed by the partitioned region and member configuration.
+You must run the data stores needed to accommodate storage for the partitioned region's buckets. You can start new data stores on the fly. When a new data store creates the region, it takes responsibility for as many buckets as allowed by the partitioned region and member configuration.
 
 You can customize how Geode groups your partitioned region data with custom partitioning and data colocation.
 

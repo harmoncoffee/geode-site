@@ -19,13 +19,9 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode 
+--> Geode provides a variety of management tools you can use to manage a  cluster.
 
- provides a variety of management tools you can use to manage a  cluster.
-
-The  management and monitoring tools allow you to configure all members and processes of a cluster, monitor operations in the system, and start and stop the members. Internally, Geode uses Java MBeans, specifically MXBeans, to expose management controls and monitoring features. You can monitor and control Geode by writing Java programs that use these MXBeans, or you can use one of several tools provided with Geode to monitor and manage your cluster. The primary tool for these tasks is the gfsh command-line tool, as described in this section. Geode 
-
- provides the following tools to manage a Geode installation:
+The  management and monitoring tools allow you to configure all members and processes of a cluster, monitor operations in the system, and start and stop the members. Internally, Geode uses Java MBeans, specifically MXBeans, to expose management controls and monitoring features. You can monitor and control Geode by writing Java programs that use these MXBeans, or you can use one of several tools provided with Geode to monitor and manage your cluster. The primary tool for these tasks is the gfsh command-line tool, as described in this section. Geode provides the following tools to manage a Geode installation:
 
 ## gfsh Command-line tool
 
@@ -69,9 +65,7 @@ When you issue gfsh commands and have the cluster configuration service enabled 
 
 You can also directly create configurations using `cache.xml` and `gemfire.properties` files and manage the members individually.
 
-## Java Management Extension (JMX) MBeans Geode 
-
- uses a federated Open MBean strategy to manage and monitor all members of the cluster. Your Java classes interact with a single MBeanServer that aggregates MBeans from other local and remote members. Using this strategy gives you a consolidated, single-agent view of the cluster. Geode 
+## Java Management Extension (JMX) MBeans Geode uses a federated Open MBean strategy to manage and monitor all members of the cluster. Your Java classes interact with a single MBeanServer that aggregates MBeans from other local and remote members. Using this strategy gives you a consolidated, single-agent view of the cluster. Geode 
 
 's implementation of JMX is industry-standard and friendly to generic JMX clients. You can monitor or manage the cluster by using any third-party tool that is compliant with JMX. For example, JConsole.
 

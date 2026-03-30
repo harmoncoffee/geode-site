@@ -19,9 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<a id="topic_long-running-queries"></a> Geode 
-
- can monitor and throw an exception when
+<a id="topic_long-running-queries"></a> Geode can monitor and throw an exception when
 a query runs longer than a configured amount of time.
 This feature is enabled by setting the `critical-heap-percentage` attribute 
 which detects that the JVM has too little heap memory.

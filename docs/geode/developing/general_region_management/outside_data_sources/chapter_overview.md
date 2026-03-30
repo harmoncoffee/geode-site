@@ -1,5 +1,7 @@
 ﻿---
 title:  Overview of Outside Data Sources
+sidebar_label: Overview of Outside Data Sources
+sidebar_position: 1
 ---
 
 <!--
@@ -17,9 +19,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Apache Geode 
-
- has application plug-ins to read data into the cache and write it out.
+--> Apache Geode has application plug-ins to read data into the cache and write it out.
 
 <a id="outside_data_sources__section_100B707BB812430E8D9CFDE3BE4698D1"></a>
 The application plug-ins:
