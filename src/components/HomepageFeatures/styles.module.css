@@ -44,6 +44,14 @@
     text-align: left;
 }
 
+.aboutContent li {
+	margin-bottom: 1rem;
+}
+
+.aboutContent ul {
+	margin-top: 1rem;
+}
+
 .aboutHeading {
     margin: 2rem 0 0.7rem 0;
     font-weight: 600;
@@ -87,17 +95,6 @@
 .featuresHeading {
 	padding: 2.1rem 0 0 0;
     font-weight: 600;
-}
-
-.featuresCallout {
-	max-width: 800px;
-	padding-top: 1.3rem;
-	margin: 0 auto;
-    text-align: left;
-}
-
-[data-theme='dark'] .featuresCallout {
-    background: var(--ifm-footer-background-color);
 }
 
 /* Buttons */

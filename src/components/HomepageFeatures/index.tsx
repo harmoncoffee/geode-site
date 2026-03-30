@@ -138,13 +138,21 @@ function BottomAboutSection() {
                     <p className={styles.aboutDescription}>
                   		Apache Geode™ is an in-memory distributed database designed to provide high performance, low latency, extreme scale-out concurrency and consistency for data storage. Unlike traditional relational databases with scaling limitations, Geode scales out horizontally across many nodes to provide low latency response for thousands of concurrent read and write operations on terabytes of data in memory. And unlike many in-memory data grids, Geode can maintain a high degree of data consistency across many concurrent transactions and can operate as a highly available, resilient service. This makes possible the deployment mission-critical applications at very high scale.
 										</p>
-										<Heading as="h3" className={styles.aboutHeading}>Why should I use Geode?</Heading>
-	                  <p className={styles.aboutDescription}>
-											Application developers and IT architects who need extremely fast processing and consistent data using open source software often run into trouble. When their applications are required to support thousands of concurrent transactions that access hundreds of gigabytes of operational data, they start having performance problems, or problems with the integrity of data. Geode helps solve these problems.
-										</p>
 										<Heading as="h3" className={styles.aboutHeading}>Who uses Geode?</Heading>
                     <p className={styles.aboutDescription}>
                       Apache Geode™ is a mature, robust technology originally developed by GemStone Systems. Commercially available as GemFire™, it was first deployed in the financial sector as the transactional, low-latency data engine used in Wall Street trading platforms. Today, hundreds of enterprise customers use Geode technology for high-scale business applications that must meet low latency and 24x7 availability requirements.
+										</p>
+										<Heading as="h3" className={styles.aboutHeading}>What else can I do with Geode?</Heading>
+										<p className={styles.aboutDescription}>
+											Apache Geode™ offers the following additional features.
+											<ul>
+												<li><strong>OQL and Indexes.</strong> Object Query Language allows distributed query execution on hot and cold data, with SQL-like capabilities, including joins. Define and consistently maintain multiple kinds of indexes across the cluster.</li>
+												<li><strong>Events.</strong> Clients can receive notices about server-side data events, and servers can react synchronously or asynchronously with guaranteed delivery of ordered events.</li>
+												<li><strong>Functions.</strong> The same nodes storing relevant sharded data for fast parallel processing can deploy and execute distributed, location-aware user functions. Failed operations can be retried on replicant nodes.</li>
+												<li><strong>Continuous Query.</strong> Clients can stay up-to-date by registering OQL queries with the Geode servers, making event-driven applications possible.</li>
+												<li><strong>Clients.</strong> Clients for Java, C++, and C# .NET Framework are available. A REST API is available for all other languages.</li>
+												<li><strong>Adapters.</strong> Use Geode as a drop-in replacement for Memcached, allowing use of Geode's server-side features like multi-cluster replication.</li>
+											</ul>
 										</p>
 										<a className={clsx('button button--md', styles.primaryButton)} href="https://cwiki.apache.org/confluence/display/GEODE/FAQ">Read more</a>
                 </div>
@@ -165,26 +173,8 @@ export default function HomepageFeatures(): JSX.Element {
                             <Feature key={idx} {...props} />
                         ))}
 											</div>
-								<div className={styles.featuresCallout}>
-									<hr></hr>
-									<Heading as="h3" className={styles.featuresHeading}>Do more with Apache Geode™</Heading>
-										<ul>
-											<li><strong>OQL and Indexes.</strong> Object Query Language allows distributed query execution on hot and cold data, with SQL-like capabilities, including joins. Define and consistently maintain multiple kinds of indexes across the cluster.</li>
-											<li><strong>Events.</strong> Clients can receive notices about server-side data events, and servers can react synchronously or asynchronously with guaranteed delivery of ordered events.</li>
-											<li><strong>Functions.</strong> The same nodes storing relevant sharded data for fast parallel processing can deploy and execute distributed, location-aware user functions. Failed operations can be retried on replicant nodes.</li>
-											<li><strong>Continuous Query.</strong> Clients can stay up-to-date by registering OQL queries with the Geode servers, making event-driven applications possible.</li>
-											<li><strong>Clients.</strong> Clients for Java, C++, and C# .NET Framework are available. A REST API is available for all other languages.</li>
-											<li><strong>Adapters.</strong> Use Geode as a drop-in replacement for Memcached, allowing use of Geode's server-side features like multi-cluster replication.</li>
-										</ul>
-                 		
-                   	
-                    
-                    
-                    
-                    
                 	</div>
-                </div>
-            </div>
+              </div>
             <BottomAboutSection />
         </section>
     );
