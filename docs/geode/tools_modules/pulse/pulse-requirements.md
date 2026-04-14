@@ -1,5 +1,7 @@
 ﻿---
 title:  Pulse System Requirements
+sidebar_label: Pulse System Requirements
+sidebar_position: 1
 ---
 
 <!--

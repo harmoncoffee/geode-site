@@ -1,5 +1,7 @@
 ﻿---
 title: Using Pulse Views
+sidebar_label: Using Pulse Views
+sidebar_position: 5
 ---
 
 <!--

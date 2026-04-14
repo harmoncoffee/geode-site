@@ -1,5 +1,7 @@
 ﻿---
 title:  HTTP Session Management Quick Start
+sidebar_label: HTTP Session Management Quick Start
+sidebar_position: 1
 ---
 
 <!--

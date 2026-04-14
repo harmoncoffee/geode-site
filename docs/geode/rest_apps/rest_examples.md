@@ -1,5 +1,7 @@
 ﻿---
 title: Sample REST Applications
+sidebar_label: Sample REST Applications
+sidebar_position: 6
 ---
 
 <!--

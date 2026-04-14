@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring the gfsh Environment
+sidebar_label: Configuring the gfsh Environment
+sidebar_position: 3
 ---
 
 <!--

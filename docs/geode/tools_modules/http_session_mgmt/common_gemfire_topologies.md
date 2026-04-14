@@ -1,5 +1,7 @@
 ﻿---
 title:  Common Topologies for HTTP Session Management
+sidebar_label: Common Topologies for HTTP Session Management
+sidebar_position: 3
 ---
 
 <!--

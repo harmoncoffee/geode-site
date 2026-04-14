@@ -1,5 +1,7 @@
 ﻿---
 title: Troubleshooting and FAQ
+sidebar_label: Troubleshooting and FAQ
+sidebar_position: 7
 ---
 
 <!--

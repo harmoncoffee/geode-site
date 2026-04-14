@@ -1,5 +1,7 @@
 ﻿---
 title: Developing REST Applications
+sidebar_label: Developing REST Applications
+sidebar_position: 5
 ---
 
 <!--

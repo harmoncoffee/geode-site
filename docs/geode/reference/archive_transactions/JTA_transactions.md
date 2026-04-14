@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: JTA Global Transactions with Geode
+sidebar_label: JTA Global Transactions with Geode
+sidebar_position: 1
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

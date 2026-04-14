@@ -1,5 +1,7 @@
 ﻿---
 title: Hosting Pulse on a Web Application Server
+sidebar_label: Hosting Pulse on a Web Application Server
+sidebar_position: 3
 ---
 
 <!--

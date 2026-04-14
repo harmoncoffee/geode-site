@@ -1,5 +1,7 @@
 ﻿---
 title:  General Information on HTTP Session Management
+sidebar_label: General Information on HTTP Session Management
+sidebar_position: 4
 ---
 
 <!--

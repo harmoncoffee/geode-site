@@ -1,5 +1,7 @@
 ﻿---
 title:  Running gfsh Commands on the OS Command Line
+sidebar_label: Running gfsh Commands on the OS Command Line
+sidebar_position: 11
 ---
 
 <!--

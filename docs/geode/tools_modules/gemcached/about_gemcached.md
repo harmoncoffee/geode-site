@@ -1,5 +1,7 @@
 ﻿---
 title:  How Gemcached Works
+sidebar_label: How Gemcached Works
+sidebar_position: 1
 ---
 
 <!--

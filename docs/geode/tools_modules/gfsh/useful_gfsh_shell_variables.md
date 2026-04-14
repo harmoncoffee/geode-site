@@ -1,5 +1,7 @@
 ﻿---
 title:  Useful gfsh Shell Variables
+sidebar_label: Useful gfsh Shell Variables
+sidebar_position: 4
 ---
 
 <!--

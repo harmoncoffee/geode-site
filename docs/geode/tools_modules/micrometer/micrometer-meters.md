@@ -1,5 +1,7 @@
 ﻿---
 title:  Micrometer Meters and Tags
+sidebar_label: Micrometer Meters and Tags
+sidebar_position: 2
 ---
 
 <!--

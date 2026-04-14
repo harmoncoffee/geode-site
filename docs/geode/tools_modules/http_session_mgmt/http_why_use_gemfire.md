@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Advantages of Using Geode for Session Management
+sidebar_label: Advantages of Using Geode for Session Management
+sidebar_position: 2
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

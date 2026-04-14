@@ -1,5 +1,7 @@
 ﻿---
 title:  Advantages of Gemcached over Memcached
+sidebar_label: Advantages of Gemcached over Memcached
+sidebar_position: 3
 ---
 
 <!--

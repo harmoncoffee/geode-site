@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Behavior of Geode Cache Writers and Loaders Under JTA
+sidebar_label: Behavior of Geode Cache Writers and Loaders Under JTA
+sidebar_position: 2
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

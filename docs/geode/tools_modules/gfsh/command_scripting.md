@@ -1,5 +1,7 @@
 ﻿---
 title:  Creating and Running gfsh Command Scripts
+sidebar_label: Creating and Running gfsh Command Scripts
+sidebar_position: 10
 ---
 
 <!--

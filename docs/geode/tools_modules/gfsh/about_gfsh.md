@@ -1,5 +1,7 @@
 ﻿---
 title:  What You Can Do with gfsh
+sidebar_label: What You Can Do with gfsh
+sidebar_position: 1
 ---
 
 <!--

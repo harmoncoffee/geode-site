@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Geode Statistics List
+sidebar_label:  Geode Statistics List
+sidebar_position: 6
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

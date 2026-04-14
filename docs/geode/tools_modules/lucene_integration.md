@@ -1,5 +1,7 @@
 ﻿---
-title: Apache Lucene&reg; Integration
+title: Apache Lucene Integration
+sidebar_label: Apache Lucene Integration
+sidebar_position: 5
 ---
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more
@@ -17,6 +19,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+# Apache Lucene&reg; Integration
 
 Apache Lucene&reg; is a widely used Java full-text search engine. This section describes how Apache Geode integrates with Apache Lucene.
 We assume that the reader is familiar with Apache Lucene's indexing and search functionalities.

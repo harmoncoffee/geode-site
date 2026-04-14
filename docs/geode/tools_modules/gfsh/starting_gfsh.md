@@ -1,5 +1,7 @@
 ﻿---
 title:  Starting gfsh
+sidebar_label: Starting gfsh
+sidebar_position: 2
 ---
 
 <!--

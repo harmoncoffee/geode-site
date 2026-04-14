@@ -1,5 +1,7 @@
 ﻿---
 title: Running Pulse in Embedded Mode (Quick Start)
+sidebar_label: Running Pulse in Embedded Mode (Quick Start)
+sidebar_position: 2
 ---
 
 <!--

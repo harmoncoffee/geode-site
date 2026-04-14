@@ -1,5 +1,7 @@
 ﻿---
 title: Configuring Pulse Authentication
+sidebar_label: Configuring Pulse Authentication
+sidebar_position: 4
 ---
 
 <!--

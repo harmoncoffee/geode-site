@@ -1,5 +1,7 @@
 ﻿---
 title:  Prerequisites and Limitations for Writing REST Applications
+sidebar_label: Prerequisites and Limitations for Writing REST Applications
+sidebar_position: 2
 ---
 
 <!--

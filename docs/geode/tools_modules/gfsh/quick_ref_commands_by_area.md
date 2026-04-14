@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Quick Reference of gfsh Commands by Functional Area
+sidebar_label:  Quick Reference of gfsh Commands by Functional Area
+sidebar_position: 8
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Geode REST API Overview
+sidebar_label: Geode REST API Overview
+sidebar_position: 1
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

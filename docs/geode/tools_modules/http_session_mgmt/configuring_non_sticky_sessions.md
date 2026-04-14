@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuring Non-Sticky Sessions
+sidebar_label: Configuring Non-Sticky Sessions
+sidebar_position: 6
 ---
 
 <!--

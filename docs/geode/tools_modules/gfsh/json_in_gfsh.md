@@ -1,5 +1,7 @@
 ﻿---
 title:  Specifying JSON within Command-Line Options
+sidebar_label: Specifying JSON within Command-Line Options
+sidebar_position: 6
 ---
 
 <!--

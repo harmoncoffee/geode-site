@@ -1,5 +1,7 @@
 ﻿---
 title:  Session State Log Files
+sidebar_label: Session State Log Files
+sidebar_position: 5
 ---
 
 <!--

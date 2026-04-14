@@ -1,5 +1,7 @@
 ﻿---
 title:  Mapping cache.xml Elements to gfsh Configuration Commands
+sidebar_label: Mapping cache.xml Elements to gfsh Configuration Commands
+sidebar_position: 12
 ---
 
 <!--

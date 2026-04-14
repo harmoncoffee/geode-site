@@ -1,5 +1,7 @@
 ﻿---
 title:  Using the Swagger UI to Browse REST APIs
+sidebar_label: Using the Swagger UI to Browse REST APIs
+sidebar_position: 4
 ---
 
 <!--

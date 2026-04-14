@@ -1,5 +1,7 @@
 ﻿---
-title:  Tutorialâ€”Performing Common Tasks with gfsh
+title:  Tutorial - Performing Common Tasks with gfsh
+sidebar_label: Tutorial - Performing Common Tasks with gfsh
+sidebar_position: 7
 ---
 
 <!--

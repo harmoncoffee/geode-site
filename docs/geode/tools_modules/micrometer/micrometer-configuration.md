@@ -1,5 +1,7 @@
 ﻿---
 title:  Configuration and Publishing
+sidebar_label:  Configuration and Publishing
+sidebar_position: 1
 ---
 
 <!--

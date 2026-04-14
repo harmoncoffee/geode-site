@@ -1,5 +1,7 @@
 ﻿---
 title:  Deploying and Configuring a Gemcached Server
+sidebar_label: Deploying and Configuring a Gemcached Server
+sidebar_position: 2
 ---
 
 <!--

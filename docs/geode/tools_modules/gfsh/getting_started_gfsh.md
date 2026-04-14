@@ -1,5 +1,7 @@
 ﻿---
 title:  Basic Shell Features and Command-Line Usage
+sidebar_label: Basic Shell Features and Command-Line Usage
+sidebar_position: 5
 ---
 
 <!--

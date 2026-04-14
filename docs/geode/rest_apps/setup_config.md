@@ -1,5 +1,7 @@
 ﻿---
 title:  Setup and Configuration
+sidebar_label: Setup and Configuration
+sidebar_position: 3
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Turning Off JTA Transactions
+sidebar_label: Turning Off JTA Transactions
+sidebar_position: 3
 ---
 
 <!--
