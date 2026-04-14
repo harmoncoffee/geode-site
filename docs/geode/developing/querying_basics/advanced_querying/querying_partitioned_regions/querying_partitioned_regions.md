@@ -1,5 +1,7 @@
 ﻿---
 title:  Querying Partitioned Regions
+sidebar_label: Querying Partitioned Regions
+sidebar_position: 1
 ---
 
 <!--

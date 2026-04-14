@@ -1,5 +1,7 @@
 ﻿---
 title:  Index Samples
+sidebar_label: Index Samples
+sidebar_position: 13
 ---
 
 <!--

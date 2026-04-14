@@ -1,5 +1,7 @@
 ﻿---
 title:  Performing an Equi-Join Query on Partitioned Regions
+sidebar_label: Performing an Equi-Join Query on Partitioned Regions
+sidebar_position: 4
 ---
 
 <!--

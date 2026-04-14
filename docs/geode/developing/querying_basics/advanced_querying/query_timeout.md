@@ -1,5 +1,7 @@
 ﻿---
 title: Timeouts for Long-Running Queries
+sidebar_label: Timeouts for Long-Running Queries
+sidebar_position: 3
 ---
 
 <!--

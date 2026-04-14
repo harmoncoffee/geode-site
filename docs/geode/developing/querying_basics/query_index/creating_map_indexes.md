@@ -1,5 +1,7 @@
 ﻿---
 title:  Creating Indexes on Map Fields ("Map Indexes")
+sidebar_label: Creating Indexes on Map Fields ("Map Indexes")
+sidebar_position: 5
 ---
 
 <!--

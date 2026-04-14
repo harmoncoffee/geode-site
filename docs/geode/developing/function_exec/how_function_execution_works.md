@@ -1,5 +1,7 @@
 ﻿---
 title:  How Function Execution Works
+sidebar_label: How Function Execution Works
+sidebar_position: 1
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Using Query Index Hints
+sidebar_label: Using Query Index Hints
+sidebar_position: 8
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title: Code Examples
+sidebar_label: Code Examples
+sidebar_position: 2
 ---
 
 <!--

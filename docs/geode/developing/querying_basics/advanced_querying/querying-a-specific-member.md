@@ -1,5 +1,7 @@
 ﻿---
 title: Querying a Specific Member
+sidebar_label: Querying a Specific Member
+sidebar_position: 5
 ---
 
 <!--

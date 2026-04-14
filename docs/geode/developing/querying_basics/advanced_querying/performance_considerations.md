@@ -1,5 +1,7 @@
 ﻿---
 title:  Performance Considerations
+sidebar_label:  Performance Considerations
+sidebar_position: 1
 ---
 
 <!--

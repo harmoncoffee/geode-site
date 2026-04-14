@@ -1,5 +1,7 @@
 ﻿---
 title:  Partitioned Region Query Restrictions
+sidebar_label: Partitioned Region Query Restrictions
+sidebar_position: 5
 ---
 
 <!--

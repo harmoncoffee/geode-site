@@ -1,5 +1,7 @@
 ﻿---
 title:  Querying a Partitioned Region on a Single Node
+sidebar_label: Querying a Partitioned Region on a Single Node
+sidebar_position: 2
 ---
 
 <!--

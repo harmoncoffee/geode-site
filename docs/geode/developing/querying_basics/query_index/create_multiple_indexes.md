@@ -1,5 +1,7 @@
 ﻿---
 title:  Creating Multiple Indexes at Once
+sidebar_label: Creating Multiple Indexes at Once
+sidebar_position: 6
 ---
 
 <!--

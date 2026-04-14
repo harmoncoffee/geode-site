@@ -1,5 +1,7 @@
 ﻿---
 title:  Creating Key Indexes
+sidebar_label: Creating Key Indexes
+sidebar_position: 3
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Managing Continuous Querying
+sidebar_label: Managing Continuous Querying
+sidebar_position: 3
 ---
 
 <!--

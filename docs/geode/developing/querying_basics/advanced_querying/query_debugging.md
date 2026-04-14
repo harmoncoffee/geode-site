@@ -1,5 +1,7 @@
 ﻿---
 title:  Query Debugging
+sidebar_label: Query Debugging
+sidebar_position: 7
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Using ORDER BY on Partitioned Regions
+sidebar_label:  Using ORDER BY on Partitioned Regions
+sidebar_position: 1
 ---
 
 <!--

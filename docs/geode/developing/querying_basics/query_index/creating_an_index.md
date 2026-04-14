@@ -1,5 +1,7 @@
 ﻿---
 title:  Creating, Listing and Removing Indexes
+sidebar_label: Creating, Listing and Removing Indexes
+sidebar_position: 2
 ---
 
 <!--

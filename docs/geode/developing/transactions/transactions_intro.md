@@ -1,5 +1,7 @@
 ﻿---
 title: Adherence to ACID Promises
+sidebar_label: Adherence to ACID Promises
+sidebar_position: 1
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Using Indexes on Equi-Join Queries using Multiple Regions
+sidebar_label: Using Indexes on Equi-Join Queries using Multiple Regions
+sidebar_position: 12
 ---
 
 <!--

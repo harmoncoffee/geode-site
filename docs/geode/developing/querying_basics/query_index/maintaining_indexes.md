@@ -1,5 +1,7 @@
 ﻿---
 title:  Maintaining Indexes (Synchronously or Asynchronously) and Index Storage
+sidebar_label:  Maintaining Indexes (Synchronously or Asynchronously) and Index Storage
+sidebar_position: 7
 ---
 
 <!--

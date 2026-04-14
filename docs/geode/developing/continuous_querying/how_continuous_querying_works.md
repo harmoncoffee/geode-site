@@ -1,5 +1,7 @@
 ﻿---
 title:  How Continuous Querying Works
+sidebar_label: How Continuous Querying Works
+sidebar_position: 1
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title:  Using Indexes on Single Region Queries
+sidebar_label: Using Indexes on Single Region Queries
+sidebar_position: 9
 ---
 
 <!--

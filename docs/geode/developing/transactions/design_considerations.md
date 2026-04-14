@@ -1,5 +1,7 @@
 ﻿---
 title: Design Considerations
+sidebar_label: Design Considerations
+sidebar_position: 3
 ---
 
 <!--

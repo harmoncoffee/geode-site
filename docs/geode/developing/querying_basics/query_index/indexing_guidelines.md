@@ -1,5 +1,7 @@
 ﻿---
 title:  Tips and Guidelines on Using Indexes
+sidebar_label: Tips and Guidelines on Using Indexes
+sidebar_position: 1
 ---
 
 <!--

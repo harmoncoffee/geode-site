@@ -1,5 +1,7 @@
 ﻿---
 title:  Using Query Bind Parameters
+sidebar_label: Using Query Bind Parameters
+sidebar_position: 4
 ---
 
 <!--

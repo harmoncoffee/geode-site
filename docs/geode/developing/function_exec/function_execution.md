@@ -1,4 +1,8 @@
-﻿
+﻿---
+title: Executing a Function in Apache Geode
+sidebar_label: Executing a Function in Apache Geode
+sidebar_position: 2
+---
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more

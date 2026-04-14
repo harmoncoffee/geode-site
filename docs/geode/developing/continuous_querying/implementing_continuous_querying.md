@@ -1,5 +1,7 @@
 ﻿---
 title:  Implementing Continuous Querying
+sidebar_label: Implementing Continuous Querying
+sidebar_position: 2
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
-title:  Creating Hash Indexes
+title: Creating Hash Indexes
+sidebar_label: Creating Hash Indexes
+sidebar_position: 4
 ---
 
 <!--

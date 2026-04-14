@@ -1,5 +1,7 @@
 ﻿---
 title:  Optimizing Queries on Data Partitioned by a Key or Field Value
+sidebar_label: Optimizing Queries on Data Partitioned by a Key or Field Value
+sidebar_position: 3
 ---
 
 <!--

@@ -1,5 +1,7 @@
 ﻿---
 title: Monitoring Low Memory When Querying
+sidebar_label: Monitoring Low Memory When Querying
+sidebar_position: 2
 ---
 
 <!--

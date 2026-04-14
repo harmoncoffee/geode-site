@@ -1,5 +1,7 @@
 ﻿---
 title:  Using Indexes with Equi-Join Queries
+sidebar_label: Using Indexes with Equi-Join Queries
+sidebar_position: 10
 ---
 
 <!--

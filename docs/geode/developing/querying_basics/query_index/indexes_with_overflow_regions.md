@@ -1,5 +1,7 @@
 ﻿---
 title:  Using Indexes with Overflow Regions
+sidebar_label: Using Indexes with Overflow Regions
+sidebar_position: 11
 ---
 
 <!--
