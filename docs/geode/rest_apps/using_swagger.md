@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Using the Swagger UI to Browse REST APIs
 sidebar_label: Using the Swagger UI to Browse REST APIs
 sidebar_position: 4
@@ -19,18 +19,20 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Apache Geode Developer REST APIs are integrated with the Swaggerâ„¢ framework. This framework provides a browser-based test client that allows you to visualize and try out Geode REST APIs.
+-->
 
-Swagger application JARs are included in the Geode REST application WAR; you do not need to install any additional libraries to use Swagger.
+@@product_name_long@@ Developer REST APIs are integrated with the Swagger™ framework. This framework provides a browser-based test client that allows you to visualize and try out @@product_name@@ REST APIs.
+
+Swagger application JARs are included in the @@product_name@@ REST application WAR; you do not need to install any additional libraries to use Swagger.
 
 The following example demonstrates how to access the Swagger UI to browse the APIs.
 
-1.  Start a Geode Locator and a Developer REST API-enabled server as described in [Setup and Configuration](setup_config.html#topic_e21_qc5_m4). 
+1.  Start a @@product_name@@ Locator and a Developer REST API-enabled server as described in [Setup and Configuration](setup_config.html#topic_e21_qc5_m4). 
 Specify an `http-service-port` for the developer REST service, as the default port, 7070, is already taken by the locator. For example:
 
     ``` pre
     gfsh>start locator --name=locator1
-    Starting a Geode Locator in /Users/admin/apache-geode-1.2.0/locator1...
+    Starting a @@product_name@@ Locator in /Users/admin/apache-geode-1.2.0/locator1...
     ....
     gfsh>start server --name=server1  --start-rest-api=true \
     --http-service-bind-address=localhost --J=-Dgemfire.http-service-port=8080
@@ -60,8 +62,6 @@ Specify an `http-service-port` for the developer REST service, as the default po
 7.  Add an entry to the region by expanding the **POST /v1/`{region}`** endpoint. <img src="../images/swagger_post_region.png" id="concept_rlr_y3c_54__image_sfk_c2m_x4" class="image" />
 8.  Click the **Try it out!** button to see the response body and response code. <img src="../images/swagger_post_region_response.png" id="concept_rlr_y3c_54__image_pmx_k2m_x4" class="image" />
 
-You can use the Swagger interface to try out additional Geode API endpoints and view sample responses.
+You can use the Swagger interface to try out additional @@product_name@@ API endpoints and view sample responses.
 
 For more information on Swagger, see the [Swagger website](http://swagger.io/) and the [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification).
-
-

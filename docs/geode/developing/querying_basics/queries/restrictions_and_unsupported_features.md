@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Query Language Restrictions and Unsupported Features
 sidebar_label: Query Language Restrictions and Unsupported Features
 sidebar_position: 3
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-At a high level, Geode does not support the following querying features:
+At a high level, @@product_name@@ does not support the following querying features:
 
 -   Indexes targeted for joins across more than one region are not supported
 -   Static method invocations. For example, the following query is invalid:
@@ -34,5 +34,3 @@ At a high level, Geode does not support the following querying features:
 -   ORDER BY is only supported with DISTINCT queries.
 -   In the Geode model, attributes and methods are resolved at runtime during query execution. This means that OQL queries are not pre-validated for references to nonexistent methods and attributes.
 In addition, there are some specific limitations on partitioned region querying. See [Partitioned Region Query Restrictions](../query_additional/partitioned_region_query_restrictions.html#concept_5353476380D44CC1A7F586E5AE1CE7E8).
-
-

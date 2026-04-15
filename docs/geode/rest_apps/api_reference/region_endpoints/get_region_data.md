@@ -1,4 +1,4 @@
-﻿---
+---
 title:  GET /geode/v1/{region}
 sidebar_label: GET /geode/v1/{region}
 sidebar_position: 2
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Read data for the region. The optional limit URL query parameter specifies the number of values from the Region that will be returned. The default limit is 50. If the user specifies a limit of â€œALLâ€, then all entry values for the region will be returned.
+Read data for the region. The optional limit URL query parameter specifies the number of values from the Region that will be returned. The default limit is 50. If the user specifies a limit of “ALL”, then all entry values for the region will be returned.
 
 ## Resource URL
 
@@ -131,5 +131,4 @@ Date: Sat, 18 Jan 2014 21:03:08 GMT
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | 400 BAD REQUEST    | Limit parameter **X** is not valid! The specified limit value must be ALL or an integer.                                            |
 | 404 NOT FOUND      | Returned if region does not exist.                                                                                               |
-| 500 INTERNAL ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
-
+| 500 INTERNAL ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |

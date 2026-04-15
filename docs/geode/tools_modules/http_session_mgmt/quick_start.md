@@ -1,4 +1,4 @@
-﻿---
+---
 title:  HTTP Session Management Quick Start
 sidebar_label: HTTP Session Management Quick Start
 sidebar_position: 1
@@ -94,13 +94,13 @@ These steps provide a basic starting point for using the AppServers module with 
 
 **Note:**
 
--   The `modify_war` script relies upon a GEODE environment variable. Set the GEODE environment variable to the Geode product directory; this is the parent directory of `bin`.
+-   The `modify_war` script relies upon a GEODE environment variable. Set the GEODE environment variable to the @@product_name@@ product directory; this is the parent directory of `bin`.
 -   The `modify_war` script, described below, relies on files within the distribution tree and should not be run outside of a complete distribution.
 -   The `modify_war` script is a `bash` script and does not run on Windows.
 
 To set up the AppServers module, perform the following steps:
 
-1.  Run the `modify_war` script against an existing `.war` or `.ear` file to integrate the necessary components. The example below will create a configuration suitable for a peer-to-peer Geode system, placing the necessary libraries into `WEB-INF/lib` for wars and `lib` for ears and modifying any `web.xml` files:
+1.  Run the `modify_war` script against an existing `.war` or `.ear` file to integrate the necessary components. The example below will create a configuration suitable for a peer-to-peer @@product_name@@ system, placing the necessary libraries into `WEB-INF/lib` for wars and `lib` for ears and modifying any `web.xml` files:
 
     ``` pre
     $ bin/modify_war -w my-app.war -p gemfire.property.locators=localhost[10334] \
@@ -108,5 +108,3 @@ To set up the AppServers module, perform the following steps:
     ```
 
 2.  A new war file will be created called `session-my-app.war`. This file can now be deployed to the server.
-
-

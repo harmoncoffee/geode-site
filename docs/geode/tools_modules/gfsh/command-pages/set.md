@@ -59,6 +59,3 @@ set variable --name=BAR --value="bar"
 gfsh>set variable --name=BAR --value="bar"
 Value for variable BAR is now: "bar".
 ```
-
-
-

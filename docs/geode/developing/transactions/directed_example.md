@@ -1,4 +1,4 @@
-﻿---
+---
 title: Code Examples
 sidebar_label: Code Examples
 sidebar_position: 2
@@ -29,8 +29,8 @@ This section illustrates these two use cases with code fragments
 that demonstrate the proper way to program a transaction.
 
 An expected use case operates on two regions within a transaction.
-For performance purposes the Geode 
- transaction implementation requires that region entries
+For performance purposes the
+@@product_name@@ transaction implementation requires that region entries
 of partitioned regions be colocated.
 See [Custom-Partitioning and Colocating Data](../partitioned_regions/overview_custom_partitioning_and_data_colocation.html) for details on how to colocate region entries.
 
@@ -254,5 +254,3 @@ within this server-side code.
 Read [Region Operations Return References](design_considerations.html#copy-on-read-transactions)
 for details and how to work around the
 implications of a reference as a return value when working with server code.
-
-

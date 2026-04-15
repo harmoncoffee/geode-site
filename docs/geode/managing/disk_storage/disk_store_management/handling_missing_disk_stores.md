@@ -43,7 +43,7 @@ gfsh>show missing-disk-stores
 You need to be connected to JMX Manager in `gfsh` to run this command.
 
 **Note:**
-The disk store directories listed for missing disk stores may not be the directories you have currently configured for the member. The list is retrieved from the other running membersâ€”the ones who are reporting the missing member. They have information from the last time the missing disk store was online. If you move your files and change the member's configuration, these directory locations will be stale.
+The disk store directories listed for missing disk stores may not be the directories you have currently configured for the member. The list is retrieved from the other running members—the ones who are reporting the missing member. They have information from the last time the missing disk store was online. If you move your files and change the member’s configuration, these directory locations will be stale.
 
 Disk stores usually go missing because their member fails to start. The member can fail to start for a number of reasons, including:
 
@@ -72,4 +72,3 @@ Example:
 gfsh>revoke missing-disk-store --id=60399215-532b-406f-b81f-9b5bd8d1b55a
 Missing disk store successfully revoked
 ```
-

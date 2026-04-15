@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Performance Considerations
 sidebar_label:  Performance Considerations
 sidebar_position: 1
@@ -31,6 +31,3 @@ Some general performance tips:
 -   When querying partitioned regions, execute the query using the FunctionService. This function allows you to target a particular node, which will improve performance greatly by avoiding query distribution. See [Querying a Partitioned Region on a Single Node](../query_additional/query_on_a_single_node.html#concept_30B18A6507534993BD55C2C9E0544A97) for more information.
 -   Use key indexes when querying data that has been partitioned by a key or field value. See [Optimizing Queries on Data Partitioned by a Key or Field Value](../query_additional/partitioned_region_key_or_field_value.html#concept_3010014DFBC9479783B2B45982014454).
 -   The size of a query result set depends on the restrictiveness of the query and the size of the total data set. A partitioned region can hold much more data than other types of regions, so there is more potential for larger result sets on partitioned region queries. This could cause the member receiving the results to run out of memory if the result set is very large.
-
-
-

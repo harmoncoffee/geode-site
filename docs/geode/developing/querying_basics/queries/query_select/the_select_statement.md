@@ -82,7 +82,7 @@ When a struct is returned, the name of each field in the struct is determined fo
 
 ## <a id="concept_85AE7D6B1E2941ED8BD2A8310A81753E__section_972EE73A6F3E4427B6A99DB4EDF5860D" class="no-quick-link"></a>DISTINCT
 
-Use the DISTINCT keyword if you want to limit the results set to unique rows. Note that in the current version of Geode you are no longer required to use the DISTINCT keyword in your SELECT statement.
+Use the DISTINCT keyword if you want to limit the results set to unique rows. Note that in the current version of @@product_name@@ you are no longer required to use the DISTINCT keyword in your SELECT statement.
 
 ``` pre
 SELECT DISTINCT * FROM /exampleRegion
@@ -124,7 +124,9 @@ SELECT DISTINCT * FROM /exampleRegion WHERE ID < 101 ORDER BY ID desc
 **Note:**
 If you are using ORDER BY queries, you must implement the equals and hashCode methods for the objects that you query.
 
-## <a id="concept_85AE7D6B1E2941ED8BD2A8310A81753E__section_69DCAD624E9640028BC86FD67649DEB2" class="no-quick-link"></a>Preset Query Functions Geode provides several built-in functions for evaluating or filtering data returned from a query. They include the following:
+## <a id="concept_85AE7D6B1E2941ED8BD2A8310A81753E__section_69DCAD624E9640028BC86FD67649DEB2" class="no-quick-link"></a>Preset Query Functions
+
+@@product_name@@ provides several built-in functions for evaluating or filtering data returned from a query. They include the following:
 
 <table>
 <colgroup>
@@ -164,13 +166,12 @@ WHERE IS_UNDEFINED(p.status)</code></pre></td>
 <tr>
 <td>NVL(expr1, expr2)</td>
 <td>Returns expr2 if expr1 is null. The expressions can be query parameters (bind arguments), path expressions, or literals.</td>
-<td>Â </td>
+<td> </td>
 </tr>
 <tr>
 <td>TO_DATE(date_str, format_str)</td>
 <td>Returns a Java Data class object. The arguments must be String S with date_str representing the date and format_str representing the format used by date_str. The format_str you provide is parsed using java.text.SimpleDateFormat.</td>
-<td>Â </td>
+<td> </td>
 </tr>
 </tbody>
 </table>
-

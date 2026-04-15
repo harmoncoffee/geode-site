@@ -34,7 +34,9 @@ The following list shows `DataSource` connection types used in JTA transactions:
 -   **PooledDataSource**. Pooled SQL connections.
 -   **SimpleDataSource**. Single SQL connection. No pooling of SQL connections is done. Connections are generated on the fly and cannot be reused.
 
-The `jndi-name` attribute of the `jndi-binding` element is the key binding parameter. If the value of `jndi-name` is a DataSource, it is bound as `java:/`*myDatabase*, where *myDatabase* is the name you assign to your data source. If the data source cannot be bound to JNDI at runtime, Geode logs a warning. For information on the `DataSource` interface, see: [http://docs.oracle.com/javase/8/docs/api/javax/sql/DataSource.html](http://docs.oracle.com/javase/8/docs/api/javax/sql/DataSource.html) Geode supports JDBC 2.0 and 3.0.
+The `jndi-name` attribute of the `jndi-binding` element is the key binding parameter. If the value of `jndi-name` is a DataSource, it is bound as `java:/`*myDatabase*, where *myDatabase* is the name you assign to your data source. If the data source cannot be bound to JNDI at runtime, @@product_name@@ logs a warning. For information on the `DataSource` interface, see: [http://docs.oracle.com/javase/8/docs/api/javax/sql/DataSource.html](http://docs.oracle.com/javase/8/docs/api/javax/sql/DataSource.html)
+
+@@product_name@@ supports JDBC 2.0 and 3.0.
 
 **Note:**
 Include any data source JAR files in your CLASSPATH.
@@ -327,6 +329,3 @@ load-factor="0.75" concurrency-level="16" statistics-enabled="true">
    </jndi-bindings>
 </cache>
 ```
-
-
-

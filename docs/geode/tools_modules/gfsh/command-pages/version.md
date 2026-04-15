@@ -58,4 +58,3 @@ Source revision: 48319
 Source repository: gemfire/branches/cedar_dev_Oct12
 Running on: /192.0.2.0, 1 cpu(s), amd64 Linux 2.6.32-38-generic
 ```
-

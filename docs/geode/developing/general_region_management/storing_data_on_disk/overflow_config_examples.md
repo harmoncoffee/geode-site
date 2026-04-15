@@ -51,6 +51,3 @@ Configuration of server's client subscription queue overflow:
   </cache-server> 
 </cache>
 ```
-
-
-

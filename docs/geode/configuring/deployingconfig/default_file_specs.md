@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Default File Specifications and Search Locations
 sidebar_label: Default File Specifications and Search Locations
 sidebar_position: 2
@@ -69,11 +69,8 @@ Examples of valid `gemfirePropertyFile` specifications:
 -   `myGF.properties`
 -   `test1/gfprops`
 
-For the `test1/gfprops` specification, if you launch your Geode system member from `/testDir` in a Unix file system, Geode looks for the file in this order until it finds the file or exhausts all locations:
+For the `test1/gfprops` specification, if you launch your @@product_name@@ system member from `/testDir` in a Unix file system, @@product_name@@ looks for the file in this order until it finds the file or exhausts all locations:
 
 1.  `/testDir/test1/gfprops`
 2.  `<yourHomeDir>/test1/gfprops`
 3.  under every location in your `CLASSPATH` for `test1/gfprops`
-
-
-

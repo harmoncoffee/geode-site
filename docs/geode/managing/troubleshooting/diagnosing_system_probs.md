@@ -47,7 +47,7 @@ This section provides possible causes and suggested responses for system problem
 -   [Data distribution has stopped, although member processes are running](diagnosing_system_probs.html#diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2)
 -   [Distributed-ack operations take a very long time to complete](diagnosing_system_probs.html#diagnosing_system_probs__section_7A6113ED20044B8C868483AABC45216E)
 -   [Slow system performance](diagnosing_system_probs.html#diagnosing_system_probs__section_E5DB25F2CC454510A9E58790C09C8CE3)
--   [Canâ€™t get Windows performance data](diagnosing_system_probs.html#diagnosing_system_probs__section_F93DD765FF2A43439D3FF7936F8883DE)
+-   [Can’t get Windows performance data](diagnosing_system_probs.html#diagnosing_system_probs__section_F93DD765FF2A43439D3FF7936F8883DE)
 -   [Java applications on 64-bit platforms hang or use 100% CPU](diagnosing_system_probs.html#diagnosing_system_probs__section_E70C332303A242BEAE9D2C0A2EE70E0A)
 
 ## <a id="diagnosing_system_probs__section_7BC1FF8CE0FC492CB49235FC4BC4060B" class="no-quick-link"></a>Locator does not start
@@ -81,7 +81,7 @@ This indicates a mismatch somewhere in the address, port pairs used for locator 
 Response:
 
 -   Check that your locators specification includes the address you are using to start your locator.
--   If you use a bind address, you must use numeric addresses for the locator specification. The bind address will not resolve to the machine's default address.
+-   If you use a bind address, you must use numeric addresses for the locator specification. The bind address will not resolve to the machine’s default address.
 -   If you are using a 64-bit Linux system, check whether your system is experiencing the leap second bug. See [Java applications on 64-bit platforms hang or use 100% CPU](diagnosing_system_probs.html#diagnosing_system_probs__section_E70C332303A242BEAE9D2C0A2EE70E0A) for more information.
 
 ## <a id="diagnosing_system_probs__section_D51F5FA86ABA43C699B593D890BC3E28" class="no-quick-link"></a>Application or cache server process does not start
@@ -98,37 +98,37 @@ Response:
 
     For details, see [JVM Memory Settings and System Performance](../monitor_tune/system_member_performance_jvm_mem_settings.html#sys_mem_perf).
 
--   If this doesnâ€™t work, try rebooting.
+-   If this doesn’t work, try rebooting.
 
 ## <a id="diagnosing_system_probs__section_53D97CED679443F28E20E8B08C699056" class="no-quick-link"></a>Application or cache server does not join the cluster
 
 Response: Check these possible causes.
 
--   Network problemâ€”the most common cause. First, try to ping the other hosts.
--   Firewall problems. If members of your distributed Geode system are located outside the LAN, check whether the firewall is blocking communication. Geode is a network-centric distributed system, so if you have a firewall running on your machine, it could cause connection problems. For example, your connections may fail if your firewall places restrictions on inbound or outbound permissions for Java-based sockets. You may need to modify your firewall configuration to permit traffic to Java applications running on your machine. The specific configuration depends on the firewall you are using.
+-   Network problem—the most common cause. First, try to ping the other hosts.
+-   Firewall problems. If members of your distributed @@product_name@@ system are located outside the LAN, check whether the firewall is blocking communication. @@product_name@@ is a network-centric distributed system, so if you have a firewall running on your machine, it could cause connection problems. For example, your connections may fail if your firewall places restrictions on inbound or outbound permissions for Java-based sockets. You may need to modify your firewall configuration to permit traffic to Java applications running on your machine. The specific configuration depends on the firewall you are using.
 -   Wrong multicast port when using multicast for membership. Check the `gemfire.properties` file of this application or cache server to see that the mcast-port is configured correctly. If you are running multiple clusters at your site, each cluster must use a unique multicast port.
 -   Can not connect to locator (when using TCP for discovery).
-    -   Check that the locators attribute in this process's `gemfire.properties` has the correct IP address for the locator.
+    -   Check that the locators attribute in this process’s `gemfire.properties` has the correct IP address for the locator.
     -   Check that the locator process is running. If not, see instructions for related problem, [Data distribution has stopped, although member processes are running](diagnosing_system_probs.html#diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2).
     -   Bind address set incorrectly on a multi-homed host. When you specify the bind address, use the IP address rather than the host name. Sometimes multiple network adapters are configured with the same hostname. See [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview.html#concept_7628F498DB534A2D8A99748F5DA5DC94) for more information about using bind addresses.
--   Wrong version of Geode . A version mismatch can cause the process to hang or crash. Check the software version with the gemfire version command.
+-   Wrong version of @@product_name@@ . A version mismatch can cause the process to hang or crash. Check the software version with the gemfire version command.
 
 ## <a id="diagnosing_system_probs__section_D607C96A6CBE42FD880F1463A20A8BEF" class="no-quick-link"></a>Member process seems to hang
 
 Response:
 
--   **During initialization**â€”For persistent regions, the member may be waiting for another member with more recent data to start and load from its disk stores. See [Disk Storage](../disk_storage/chapter_overview.html). Wait for the initialization to finish or time out. The process could be busyâ€”some caches have millions of entries, and they can take a long time to load. Look for this especially with cache servers, because their regions are typically replicas and therefore store all the entries in the region. Applications, on the other hand, typically store just a subset of the entries. For partitioned regions, if the initialization eventually times out and produces an exception, the system architect needs to repartition the data.
--   **For a running process**â€”Investigate whether another member is initializing. Under some optional cluster configurations, a process can be required to wait for a response from other processes before it proceeds.
+-   **During initialization**—For persistent regions, the member may be waiting for another member with more recent data to start and load from its disk stores. See [Disk Storage](../disk_storage/chapter_overview.html). Wait for the initialization to finish or time out. The process could be busy—some caches have millions of entries, and they can take a long time to load. Look for this especially with cache servers, because their regions are typically replicas and therefore store all the entries in the region. Applications, on the other hand, typically store just a subset of the entries. For partitioned regions, if the initialization eventually times out and produces an exception, the system architect needs to repartition the data.
+-   **For a running process**—Investigate whether another member is initializing. Under some optional cluster configurations, a process can be required to wait for a response from other processes before it proceeds.
 
 ## <a id="diagnosing_system_probs__section_E3B4A6DB81AB4C659C6093D2D61EFD71" class="no-quick-link"></a>Member process does not read settings from the gemfire.properties file
 
-Either the process canâ€™t find the configuration file or, if it is an application, it may be doing programmatic configuration.
+Either the process can’t find the configuration file or, if it is an application, it may be doing programmatic configuration.
 
 Response:
 
 -   Check that the `gemfire.properties` file is in the right directory.
--   Make sure the process is not picking up settings from another `gemfire.properties` file earlier in the search path. Geode looks for a `gemfire.properties` file in the current working directory, the home directory, and the CLASSPATH, in that order.
--   For an application, check the documentation to see whether it does programmatic configuration. If so, the properties that are set programmatically cannot be reset in a `gemfire.properties` file. See your application's customer support group for configuration changes.
+-   Make sure the process is not picking up settings from another `gemfire.properties` file earlier in the search path. @@product_name@@ looks for a `gemfire.properties` file in the current working directory, the home directory, and the CLASSPATH, in that order.
+-   For an application, check the documentation to see whether it does programmatic configuration. If so, the properties that are set programmatically cannot be reset in a `gemfire.properties` file. See your application’s customer support group for configuration changes.
 
 ## <a id="diagnosing_system_probs__section_B0698527A4DF4D84877B1AF66291ABFD" class="no-quick-link"></a>Cache creation fails - must match schema definition root
 
@@ -146,7 +146,9 @@ Exception in thread "main" org.apache.geode.cache.CacheXmlException:
 While reading Cache XML file:/C:/gemfire/cache.xml.
 Error while parsing XML, caused by org.xml.sax.SAXParseException:
 Document root element "cache", must match DOCTYPE root "client-cache".
-``` Geode declarative cache creation uses one of two root element pairs: `cache` or `client-cache`. The name must be the same in both places.
+```
+
+@@product_name@@ declarative cache creation uses one of two root element pairs: `cache` or `client-cache`. The name must be the same in both places.
 
 Response:
 
@@ -160,7 +162,7 @@ Response:
     xmlns="http://geode.apache.org/schema/cache"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://geode.apache.org/schema/cache http://geode.apache.org/schema/cache/cache-1.0.xsd"
-    version="1.0â€>
+    version="1.0”>
 ...
 </cache>
 ```
@@ -186,8 +188,8 @@ Response:
 
 If your application should start with a full cache but it comes up empty, check these possible causes:
 
--   **No regions**â€”If the cache has no regions, the process isnâ€™t reading the cache configuration file. Check that the name and location of the cache configuration file match those configured in the cache-xml-file attribute in `gemfire.properties`. If they match, the process may not be reading `gemfire.properties`. See [Member process does not read settings from the gemfire.properties file](diagnosing_system_probs.html#diagnosing_system_probs__section_E3B4A6DB81AB4C659C6093D2D61EFD71).
--   **Regions without data**â€”If the cache starts with regions, but no data, this process may not have joined the correct cluster. Check the log file for messages that indicate other members. If you donâ€™t see any, the process may be running alone in its own cluster. In a process that is clearly part of the correct cluster, regions without data may indicate an implementation design error.
+-   **No regions**—If the cache has no regions, the process isn’t reading the cache configuration file. Check that the name and location of the cache configuration file match those configured in the cache-xml-file attribute in `gemfire.properties`. If they match, the process may not be reading `gemfire.properties`. See [Member process does not read settings from the gemfire.properties file](diagnosing_system_probs.html#diagnosing_system_probs__section_E3B4A6DB81AB4C659C6093D2D61EFD71).
+-   **Regions without data**—If the cache starts with regions, but no data, this process may not have joined the correct cluster. Check the log file for messages that indicate other members. If you don’t see any, the process may be running alone in its own cluster. In a process that is clearly part of the correct cluster, regions without data may indicate an implementation design error.
 
 ## <a id="diagnosing_system_probs__section_6B4E2AD4ECBB4C08B8F1DB5E07AFE7F6" class="no-quick-link"></a>Unexpected results for keySetOnServer and containsKeyOnServer
 
@@ -230,8 +232,8 @@ Response: Bring the missing member online, if possible. This restores the bucket
 
 Check these possible causes.
 
--   Transactionsâ€”Entries that are due to be expired may remain in the cache if they are involved in a transaction. Further, transactions never time out, so if a transaction hangs, the entries involved in the transaction will remain stuck in the cache. If you have a process with a hung transaction, you may need to end the process to remove the transaction. In your application programming, do not leave transactions open ended. Program all transactions to end with a commit or a rollback.
--   Partitioned regionsâ€”For performance reasons, eviction and expiration behave differently in partitioned regions and can cause entries to be removed before you expect. See [Eviction](../../developing/eviction/chapter_overview.html) and [Expiration](../../developing/expiration/chapter_overview.html).
+-   Transactions—Entries that are due to be expired may remain in the cache if they are involved in a transaction. Further, transactions never time out, so if a transaction hangs, the entries involved in the transaction will remain stuck in the cache. If you have a process with a hung transaction, you may need to end the process to remove the transaction. In your application programming, do not leave transactions open ended. Program all transactions to end with a commit or a rollback.
+-   Partitioned regions—For performance reasons, eviction and expiration behave differently in partitioned regions and can cause entries to be removed before you expect. See [Eviction](../../developing/eviction/chapter_overview.html) and [Expiration](../../developing/expiration/chapter_overview.html).
 
 ## <a id="diagnosing_system_probs__section_346C62F16B19491E83B59B0A51D9E2B6" class="no-quick-link"></a>Cannot find the log file
 
@@ -265,17 +267,17 @@ The process may be hitting its virtual address space limits. The virtual address
 
 ## <a id="diagnosing_system_probs__section_B49BD03F4CA241C7BED4A2C4D5936A7A" class="no-quick-link"></a>PartitionedRegionDistributionException
 
-The org.apache.geode.cache.PartitionedRegionDistributionException appears when Geode fails after many attempts to complete a distributed operation. This exception indicates that no data store member can be found to perform a destroy, invalidate, or get operation.
+The org.apache.geode.cache.PartitionedRegionDistributionException appears when @@product_name@@ fails after many attempts to complete a distributed operation. This exception indicates that no data store member can be found to perform a destroy, invalidate, or get operation.
 
 Response:
 
 -   Check the network for traffic congestion or a broken connection to a member.
--   Look at the overall installation for problems, such as operations at the application level set to a higher priority than the Geode Geode processes.
+-   Look at the overall installation for problems, such as operations at the application level set to a higher priority than the @@product_name@@ processes.
 -   If you keep seeing PartitionedRegionDistributionException, you should evaluate whether you need to start more members.
 
 ## <a id="diagnosing_system_probs__section_7DE15A6C99974821B6CA418BC2AF98F1" class="no-quick-link"></a>PartitionedRegionStorageException
 
-The org.apache.geode.cache.PartitionedRegionStorageException appears when  canâ€™t create a new entry. This exception arises from a lack of storage space for put and create operations or for get operations with a loader. PartitionedRegionStorageException often indicates data loss or impending data loss.
+The org.apache.geode.cache.PartitionedRegionStorageException appears when @@product_name@@ can’t create a new entry. This exception arises from a lack of storage space for put and create operations or for get operations with a loader. PartitionedRegionStorageException often indicates data loss or impending data loss.
 
 The text string indicates the cause of the exception, as in these examples:
 
@@ -290,7 +292,7 @@ Ran out of retries attempting to allocate a bucket in the partitioned region....
 Response:
 
 -   Check the network for traffic congestion or a broken connection to a member.
--   Look at the overall installation for problems, such as operations at the application level set to a higher priority than the  processes.
+-   Look at the overall installation for problems, such as operations at the application level set to a higher priority than the @@product_name@@ processes.
 -   If you keep seeing PartitionedRegionStorageException, you should evaluate whether you need to start more members.
 
 ## <a id="diagnosing_system_probs__section_AFA1D06BC3AA44A4AB0593FD1EF0B0B7" class="no-quick-link"></a>Application crashes without producing an exception
@@ -302,19 +304,19 @@ Response: Control memory use by setting entry limits for the regions.
 
 ## <a id="diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D8" class="no-quick-link"></a>Timeout alert
 
-If a distributed message does not get a response within a specified time, it sends an alert to signal that something might be wrong with the system member that hasnâ€™t responded. The alert is logged in the sender's log as a warning.
+If a distributed message does not get a response within a specified time, it sends an alert to signal that something might be wrong with the system member that hasn’t responded. The alert is logged in the sender’s log as a warning.
 
 A timeout alert can be considered normal.
 
 Response:
 
--   If youâ€™re seeing a lot of timeouts and you havenâ€™t seen them before, check whether your network is flooded.
+-   If you’re seeing a lot of timeouts and you haven’t seen them before, check whether your network is flooded.
 -   If you see these alerts constantly during normal operation, consider raising the ack-wait-threshold above the default 15 seconds.
 
 
 ## <a id="diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D81" class="no-quick-link"></a>Thread stuck alert
 
-If a thread in a member has been stuck for longer than the configured time (max-thread-stuck-minutes System Property), it sends an alert to signal that something might be wrong with the member or with some other member. The alert is logged in the member's log as fatal.
+If a thread in a member has been stuck for longer than the configured time (max-thread-stuck-minutes System Property), it sends an alert to signal that something might be wrong with the member or with some other member. The alert is logged in the member’s log as fatal.
 
 A thread stuck timeout alert warns about a thread that is stuck in a member that would probably never progress. A possible cause would be a bug in the code.
 
@@ -332,7 +334,7 @@ Increase the default socket timeout setting for the member. This timeout is set 
 
 ## <a id="diagnosing_system_probs__section_8C7CB2EA0A274DAF90083FECE0BF3B1F" class="no-quick-link"></a>Member logs ForcedDisconnectException, Cache and DistributedSystem forcibly closed
 
-A cluster member's Cache and DistributedSystem are forcibly closed by the system membership coordinator if it becomes sick or too slow to respond to heartbeat requests. When this happens, listeners receive RegionDestroyed notification with an opcode of FORCED\_DISCONNECT. The Geode log file for the member shows a ForcedDisconnectException with the message
+A cluster member’s Cache and DistributedSystem are forcibly closed by the system membership coordinator if it becomes sick or too slow to respond to heartbeat requests. When this happens, listeners receive RegionDestroyed notification with an opcode of FORCED\_DISCONNECT. The @@product_name@@ log file for the member shows a ForcedDisconnectException with the message
 
 ``` pre
 This member has been forced out of the cluster because it did not respond
@@ -387,7 +389,7 @@ Response:
     -   If a locator must be moved to another host or a different IP address, complete these steps:
         1.  Shut down all the members of the cluster in the usual order.
         2.  Restart the locator process in its new location.
-        3.  Edit all the gemfire.properties files to change this locator's IP address in the locators attribute.
+        3.  Edit all the gemfire.properties files to change this locator’s IP address in the locators attribute.
         4.  Restart the applications and cache servers in the usual order.
 -   Create a watchdog daemon or service on each locator host to restart the locator process when it stops
 
@@ -407,9 +409,9 @@ Response:
 
 If you are experiencing slow performance and are sending large objects (multiple megabytes), try increasing the socket buffer size settings in your system. For more information, see [Socket Communication](../monitor_tune/socket_communication.html).
 
-## <a id="diagnosing_system_probs__section_F93DD765FF2A43439D3FF7936F8883DE" class="no-quick-link"></a>Canâ€™t get Windows performance data
+## <a id="diagnosing_system_probs__section_F93DD765FF2A43439D3FF7936F8883DE" class="no-quick-link"></a>Can’t get Windows performance data
 
-Attempting to run performance measurements for Geode on Windows can produce this error message:
+Attempting to run performance measurements for @@product_name@@ on Windows can produce this error message:
 
 ``` pre
 Can't get Windows performance data. RegQueryValueEx returned 5
@@ -419,7 +421,7 @@ This error can occur because incorrect information is returned when a Win32 appl
 
 Response:
 
-To successfully acquire Windows performance data, you need to verify that you have the proper registry key access permissions in the system registry. In particular, make sure that Perflib in the following registry path is readable (KEY\_READ access) by the Geode process:
+To successfully acquire Windows performance data, you need to verify that you have the proper registry key access permissions in the system registry. In particular, make sure that Perflib in the following registry path is readable (KEY\_READ access) by the @@product_name@@ process:
 
 ``` pre
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Perflib
@@ -427,7 +429,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Perflib
 
 An example of reasonable security on the performance data would be to grant administrators KEY\_ALL\_ACCESS access and interactive users KEY\_READ access. This particular configuration would prevent non-administrator remote users from querying performance data.
 
-See [http://support.microsoft.com/kb/310426](http://support.microsoft.com/kb/310426) and [http://support.microsoft.com/kb/146906](http://support.microsoft.com/kb/146906) for instructions about how to ensure that Geode processes have access to the registry keys associated with performance.
+See [http://support.microsoft.com/kb/310426](http://support.microsoft.com/kb/310426) and [http://support.microsoft.com/kb/146906](http://support.microsoft.com/kb/146906) for instructions about how to ensure that @@product_name@@ processes have access to the registry keys associated with performance.
 
 ## <a id="diagnosing_system_probs__section_E70C332303A242BEAE9D2C0A2EE70E0A" class="no-quick-link"></a>Java applications on 64-bit platforms hang or use 100% CPU
 
@@ -447,4 +449,3 @@ prompt> date -s "$(date)"
 See the following web site for more information:
 
 [http://blog.wpkg.org/2012/07/01/java-leap-second-bug-30-june-1-july-2012-fix/](http://blog.wpkg.org/2012/07/01/java-leap-second-bug-30-june-1-july-2012-fix/)
-

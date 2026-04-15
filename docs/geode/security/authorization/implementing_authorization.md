@@ -31,7 +31,7 @@ the principal will be granted permission to carry out the operation. It returns 
 a return value of `true` permits the operation, and a return value of `false` prevents the operation.
 The operation can also throw an `AuthenticationExpiredException`.
 
-In case of an `AuthenticationExpiredException` the Geode client code will make one automatic attempt
+In case of an `AuthenticationExpiredException` the @@product_name@@ client code will make one automatic attempt
 to re-connect to the member that sent the exception.
 
 A well-designed `authorize` method will have or will have a way of obtaining
@@ -304,4 +304,3 @@ required of the entity that invokes an execution of the function.
 
 Enabling the `SecurityManager` affects queries by restricting the methods that a running query may invoke.
 See [Method Invocations](../developing/query_select/the_where_clause.html#the_where_clause__section_D2F8D17B52B04895B672E2FCD675A676) and [Method Invocation Authorizers](../security/method_invocation_authorizers.html) for details.
-

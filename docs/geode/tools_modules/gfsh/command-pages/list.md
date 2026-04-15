@@ -21,7 +21,7 @@ limitations under the License.
 
 
 
-List existing Geode resources such as deployed applications, disk-stores, functions, members, servers, and regions.
+List existing @@product_name@@ resources such as deployed applications, disk-stores, functions, members, servers, and regions.
 
 -   **[list async-event-queues](#topic_j22_kzk_2l)**
 
@@ -37,7 +37,7 @@ List existing Geode resources such as deployed applications, disk-stores, functi
 
 -   **[list disk-stores](#topic_BC14AD57EA304FB3845766898D01BD04)**
 
-    List all available disk stores across the Geode cluster
+    List all available disk stores across the @@product_name@@ cluster
 
 -   **[list durable-cqs](#topic_66016A698C334F4EBA19B99F51B0204B)**
 
@@ -165,7 +165,7 @@ No JAR Files Found
 
 ## <a id="topic_BC14AD57EA304FB3845766898D01BD04" class="no-quick-link"></a>list disk-stores
 
-List all available disk stores across the  cluster.
+List all available disk stores across the @@product_name@@ cluster.
 
 The command also lists the configured disk directories and any Regions, Cache Servers, Gateways, PDX Serialization and Async Event Queues using Disk Stores to either overflow and/or persist information to disk. Use the `describe disk-store` command to see the details for a particular Disk Store.
 
@@ -582,4 +582,3 @@ List of regions
 region1
 region2
 ```
-

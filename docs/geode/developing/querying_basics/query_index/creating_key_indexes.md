@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Creating Key Indexes
 sidebar_label: Creating Key Indexes
 sidebar_position: 3
@@ -64,6 +64,3 @@ gfsh> create index --name=myKeyIndex --expression=id --region=/exampleRegion
 
 **Note:**
 If you do not specify the type of index when defining indexes using cache.xml, the type defaults to "range".
-
-
-

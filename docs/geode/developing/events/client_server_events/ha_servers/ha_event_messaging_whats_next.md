@@ -91,6 +91,3 @@ Set the time-to-live as follows:
     cacheServer.setMessageTimeToLive(200);
     cacheServer.start();                
     ```
-
-
-

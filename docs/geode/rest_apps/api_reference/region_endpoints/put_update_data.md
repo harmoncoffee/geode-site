@@ -1,4 +1,4 @@
-﻿---
+---
 title:  PUT /geode/v1/region/key
 sidebar_label: PUT /geode/v1/region/key
 sidebar_position: 8
@@ -77,9 +77,8 @@ Response Payload:  null
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | 400 BAD REQUEST           | Returned if supplied key is an invalid format.                                                                                   |
 | 404 NOT FOUND             | Returned if the region is not found.                                                                                             |
-| 500 INTERNAL SERVER ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
+| 500 INTERNAL SERVER ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |
 
 ## Implementation Notes
 
 This operation is idempotent, meaning multiple identical requests should have the same effect as the initial request.
-

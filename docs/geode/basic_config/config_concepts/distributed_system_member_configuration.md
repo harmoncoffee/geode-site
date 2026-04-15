@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Cluster Members
 sidebar_label: Cluster Members
 sidebar_position: 1
@@ -21,11 +21,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Cluster members are programs that connect to a Geode cluster. You configure members to belong to a single cluster, and you can optionally configure them to be clients or servers to members in other clusters, and to communicate with other clusters.
+Cluster members are programs that connect to a @@product_name@@ cluster. You configure members to belong to a single cluster, and you can optionally configure them to be clients or servers to members in other clusters, and to communicate with other clusters.
 
 ## <a id="distributed_system_member_configuration__section_326B2609B67E4FBE9BF2074C3B211E50" class="no-quick-link"></a>Member Overview
 
-Cluster members (or simply "members") connect to the Geode cluster when they create the Geode data cache. The members' cluster is configured through Geode properties. See [gemfire.properties and gfsecurity.properties ( Geode Properties)](../../reference/topics/gemfire_properties.html). Geode properties specify all necessary information for member startup, initialization, and communication.
+Cluster members (or simply "members") connect to the @@product_name@@ cluster when they create the @@product_name@@ data cache. The members' cluster is configured through @@product_name@@ properties. See [gemfire.properties and gfsecurity.properties (@@product_name@@ Properties)](../../reference/topics/gemfire_properties.html). @@product_name@@ properties specify all necessary information for member startup, initialization, and communication.
 
 **Note:**
 You cannot change a member's properties while the member is connected to the cluster.
@@ -39,10 +39,10 @@ Use the properties to define:
 
 ## <a id="distributed_system_member_configuration__section_E755E9E4A31149C980561D617A99A002" class="no-quick-link"></a>Membership and System Topologies
 
-Every Geode process is a member of a cluster, even if the cluster is defined as standalone, with just one member. You can run an individual cluster in isolation or you can combine clusters for vertical and horizontal scaling. See [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview.html).
+Every @@product_name@@ process is a member of a cluster, even if the cluster is defined as standalone, with just one member. You can run an individual cluster in isolation or you can combine clusters for vertical and horizontal scaling. See [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview.html).
 
 -   **Peer-to-Peer Clusters**. Members that define the same member discovery properties belong to the same cluster and are peers to one another.
--   **Client/Server Installations**. The client/server topology uses relationships that you configure between members of multiple clusters. You configure some or all of the peers in one cluster to act as cache servers to clients connecting from outside the cluster. Each server can host many client processes, managing cache access for all in an efficient, vertically hierarchical cache configuration. You configure the client applications to connect to the servers, using a client cache configuration. Clients run as members of standalone Geode clusters, with no peers, so all data updates and requests go to the servers.
+-   **Client/Server Installations**. The client/server topology uses relationships that you configure between members of multiple clusters. You configure some or all of the peers in one cluster to act as cache servers to clients connecting from outside the cluster. Each server can host many client processes, managing cache access for all in an efficient, vertically hierarchical cache configuration. You configure the client applications to connect to the servers, using a client cache configuration. Clients run as members of standalone @@product_name@@ clusters, with no peers, so all data updates and requests go to the servers.
 
 ## Multi-site Installations
 
@@ -55,6 +55,3 @@ clients that connect to them. Each client runs standalone, with connections only
 so all servers and their other clients are "remote" to the individual client. All gateway receivers
 are "remote" to the gateway senders that connect to them from other clusters, and to those
 gateway senders' peers.
-
-
-

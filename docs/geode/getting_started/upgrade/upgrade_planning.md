@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Planning an Upgrade
 sidebar_label: Planning an Upgrade
 sidebar_position: 1
@@ -62,22 +62,22 @@ cluster during a rolling upgrade.
 
 ## <a id="version_compatibilities" class="no-quick-link"></a>Version Compatibilities
 
-Your choice of upgrade procedure depends, in part, on the versions of Apache Geode involved.
+Your choice of upgrade procedure depends, in part, on the versions of @@product_name_long@@ involved.
 
 - **Version Compatibility Between Peers and Cache Servers**
 
-  For best reliability and performance, all server components of a Geode system should run the same version of the software.
-  For the purposes of a rolling upgrade, you can have peers or cache servers running different minor
-  versions of Apache Geode at the same time, as long as the major version is the same. For example,
-  some components can continue to run under version @@product_version_old_minor@@ while you are in the process of upgrading to
-  version @@product_version_geode@@.
+    For best reliability and performance, all server components of a @@product_name@@ system should run the same version of the software.
+    For the purposes of a rolling upgrade, you can have peers or cache servers running different minor
+    versions of @@product_name_long@@ at the same time, as long as the major version is the same. For example,
+    some components can continue to run under version @@product_version_old_minor@@ while you are in the process of upgrading to
+    version @@product_version@@.
 
 - **Version Compatibility Between Clients and Servers**
 
-  Client/server access is backward compatible. An Apache Geode cluster can be accessed by clients using any previous version. However, clients
-  cannot connect to servers running older versions of Apache Geode. For example, a client running Apache Geode @@product_version_old_minor@@ can access a cluster
-  running Apache Geode @@product_version_geode@@, but a client running Apache Geode @@product_version_geode@@ could not connect to a cluster running Apache Geode @@product_version_old_minor@@.
+    Client/server access is backward compatible. An @@product_name_long@@ cluster can be accessed by clients using any previous version. However, clients
+    cannot connect to servers running older versions of @@product_name_long@@. For example, a client running @@product_name_long@@ @@product_version_old_minor@@ can access a cluster
+    running @@product_name_long@@ @@product_version@@, but a client running @@product_name_long@@ @@product_version@@ could not connect to a cluster running @@product_name_long@@ @@product_version_old_minor@@.
 
 - **Version Compatibility Between Sites in Multi-Site (WAN) Deployments**
 
-  In multi-site (WAN) deployments, sites should still be able to communicate with one another, even if they use different versions.
+    In multi-site (WAN) deployments, sites should still be able to communicate with one another, even if they use different versions.

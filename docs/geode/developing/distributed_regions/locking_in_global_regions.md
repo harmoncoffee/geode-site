@@ -28,7 +28,7 @@ In regions with global scope, locking helps ensure cache consistency.
 
 Locking of regions and entries is done in two ways:
 
-1.  **Implicit**. Geode automatically locks global regions and their data entries during most operations. Region invalidation and destruction do not acquire locks.
+1.  **Implicit**. @@product_name@@ automatically locks global regions and their data entries during most operations. Region invalidation and destruction do not acquire locks.
 2.  **Explicit**. You can use the API to explicitly lock the region and its entries. Do this to guarantee atomicity in tasks with multi-step distributed operations. The `Region` methods `org.apache.geode.cache.Region.getDistributedLock` and `org.apache.geode.cache.Region.getRegionDistributedLock` return instances of `java.util.concurrent.locks.Lock` for a region and a specified key.
 
     **Note:**
@@ -67,7 +67,7 @@ Getting a lock on a region or entry is a two-step process of getting a lock inst
 
 For each global region, one of the members with the region defined will be assigned the job of lock grantor. The lock grantor runs the lock service that receives lock requests from system members, queues them as needed, and grants them in the order received.
 
-The lock grantor is at a slight advantage over other members as it is the only one that does not have to send a message to request a lock. The grantor's requests cost the least for the same reason. Thus, you can optimize locking in a region by assigning lock grantor status to the member that acquires the most locks. This may be the member that performs the most puts and thus requires the most implicit locks or this may be the member that performs many explicit locks.
+The lock grantor is at a slight advantage over other members as it is the only one that does not have to send a message to request a lock. The grantor’s requests cost the least for the same reason. Thus, you can optimize locking in a region by assigning lock grantor status to the member that acquires the most locks. This may be the member that performs the most puts and thus requires the most implicit locks or this may be the member that performs many explicit locks.
 
 The lock grantor is assigned as follows:
 
@@ -84,7 +84,7 @@ You can request lock grantor status:
 
 ## <a id="locking_in_global_regions__section_34661E38DFF9420B89C1A2B25F232D53" class="no-quick-link"></a>Examples
 
-These two examples show entry locking and unlocking. Note how the entry's `Lock` object is obtained and then its lock method invoked to actually set the lock. The example program stores the entry lock information in a hash table for future reference.
+These two examples show entry locking and unlocking. Note how the entry’s `Lock` object is obtained and then its lock method invoked to actually set the lock. The example program stores the entry lock information in a hash table for future reference.
 
 ``` pre
 /* Lock a data entry */ 
@@ -109,4 +109,3 @@ HashMap lockedItemsMap = new HashMap();
     lock.unlock();
   }
 ```
-

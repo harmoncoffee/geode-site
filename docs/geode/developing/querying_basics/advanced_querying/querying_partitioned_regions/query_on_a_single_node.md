@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Querying a Partitioned Region on a Single Node
 sidebar_label: Querying a Partitioned Region on a Single Node
 sidebar_position: 2
@@ -170,6 +170,3 @@ To direct a query to specific partitioned region node, you can execute the query
       }
     }
     ```
-
-
-

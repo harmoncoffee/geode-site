@@ -54,7 +54,7 @@ Use one of the following methods:
 
 The `durable-client-id` indicates that the client is durable and gives the server an identifier to correlate the client to its durable messages. For a non-durable client, this id is an empty string. The ID can be any number that is unique among the clients attached to servers in the same cluster.
 
-The `durable-client-timeout` tells the server how long to wait for client reconnect. When this timeout is reached, the server stops storing to the client's message queue and discards any stored messages. The default is 300 seconds. This is a tuning parameter. If you change it, take into account the normal activity of your application, the average size of your messages, and the level of risk you can handle, both in lost messages and in the servers' capacity to store enqueued messages. Assuming that no messages are being removed from the queue, how long can the server run before the queue reaches the maximum capacity? How many durable clients can the server handle? To assist with tuning, use the Geode message queue statistics for durable clients through the disconnect and reconnect cycles.
+The `durable-client-timeout` tells the server how long to wait for client reconnect. When this timeout is reached, the server stops storing to the client's message queue and discards any stored messages. The default is 300 seconds. This is a tuning parameter. If you change it, take into account the normal activity of your application, the average size of your messages, and the level of risk you can handle, both in lost messages and in the servers' capacity to store enqueued messages. Assuming that no messages are being removed from the queue, how long can the server run before the queue reaches the maximum capacity? How many durable clients can the server handle? To assist with tuning, use the @@product_name@@ message queue statistics for durable clients through the disconnect and reconnect cycles.
 
 ## <a id="implementing_durable_client_server_messaging__section_BB5DCCE0582E4FE8B62DE473512FC704" class="no-quick-link"></a>Configure Durable Subscriptions and Continuous Queries
 
@@ -96,13 +96,13 @@ Program your durable client to be durable-messaging aware when it disconnects, r
         ``` pre
         int pendingEvents = cache.getDefaultPool().getPendingEventCount();
 
-        if (pendingEvents == -2) { // client connected for the first time  â€¦ // continue
+        if (pendingEvents == -2) { // client connected for the first time  … // continue
         } 
         else if (pendingEvents == -1) { // client reconnected but after the timeout period  
-        â€¦ // handle possible data loss
+        … // handle possible data loss
         } 
         else { // pendingEvents >= 0  
-        â€¦ // decide to invoke readyForEvents() or ClientCache::close(false)/pool.destroy()
+        … // decide to invoke readyForEvents() or ClientCache::close(false)/pool.destroy()
         }
         ```
 
@@ -111,11 +111,11 @@ Program your durable client to be durable-messaging aware when it disconnects, r
         ``` pre
         int pendingEvents = 0;
 
-        int pendingEvents1 = PoolManager.find(â€œpool1â€).getPendingEventCount();
+        int pendingEvents1 = PoolManager.find(“pool1”).getPendingEventCount();
 
         pendingEvents += (pendingEvents1 > 0) ? pendingEvents1 : 0;
 
-        int pendingEvents2 = PoolManager.find(â€œpool2â€).getPendingEventCount();
+        int pendingEvents2 = PoolManager.find(“pool2”).getPendingEventCount();
 
         pendingEvents += (pendingEvents2 > 0) ? pendingEvents2 : 0;
 
@@ -145,7 +145,7 @@ Program your durable client to be durable-messaging aware when it disconnects, r
     ```
 
 3.  When you program your durable client `CacheListener`:
-    1.  Implement the callback methods to behave properly when stored events are replayed. The durable client's `CacheListener` must be able to handle having events played after the fact. Generally listeners receive events very close to when they happen, but the durable client may receive events that occurred minutes before and are not relevant to current cache state.
+    1.  Implement the callback methods to behave properly when stored events are replayed. The durable client’s `CacheListener` must be able to handle having events played after the fact. Generally listeners receive events very close to when they happen, but the durable client may receive events that occurred minutes before and are not relevant to current cache state.
     2.  Consider whether to use the `CacheListener` callback method, `afterRegionLive`, which is provided specifically for the end of durable event replay. You can use it to perform application-specific operations before resuming normal event handling. If you do not wish to use this callback, and your listener is an instance of `CacheListener` (instead of a `CacheListenerAdapter`) implement `afterRegionLive` as an empty method.
 
 ## Initial Operation
@@ -165,11 +165,13 @@ While the client and servers are disconnected, their operation varies depending 
 
 During initialization, the client cache is not blocked from doing operations, so you might be receiving old stored events from the server at the same time that your client cache is being updated by much more current events. These are the things that can act on the cache concurrently:
 
--   Results returned by the server in response to the client's interest registrations.
+-   Results returned by the server in response to the client’s interest registrations.
 -   Client cache operations by the application.
--   Callbacks triggered by replaying old events from the queue Geode handles the conflicts between the application and interest registrations so they do not create cache update conflicts. But you must program your event handlers so they don't conflict with current operations. This is true for all event handlers, but it is especially important for those used in durable clients. Your handlers may receive events well after the fact and you must ensure your programming takes that into account.
+-   Callbacks triggered by replaying old events from the queue
 
-This figure shows the three concurrent procedures during the initialization process. The application begins operations immediately on the client (step 1), while the client's cache ready message (also step 1) triggers a series of queue operations on the servers (starting with step 2 on the primary server). At the same time, the client registers interest (step 2 on the client) and receives a response from the server. Message B2 applies to an entry in Region A, so the cache listener handles B2's event. Because B2 comes before the marker, the client does not apply the update to the cache.
+@@product_name@@ handles the conflicts between the application and interest registrations so they do not create cache update conflicts. But you must program your event handlers so they don't conflict with current operations. This is true for all event handlers, but it is especially important for those used in durable clients. Your handlers may receive events well after the fact and you must ensure your programming takes that into account.
+
+This figure shows the three concurrent procedures during the initialization process. The application begins operations immediately on the client (step 1), while the client’s cache ready message (also step 1) triggers a series of queue operations on the servers (starting with step 2 on the primary server). At the same time, the client registers interest (step 2 on the client) and receives a response from the server. Message B2 applies to an entry in Region A, so the cache listener handles B2’s event. Because B2 comes before the marker, the client does not apply the update to the cache.
 
 <img src="../../images/ClientServerAdvancedTopics-6.png" alt="Durable client reconnection. " class="image" />
 
@@ -193,6 +195,4 @@ Application operations take precedence over interest registration responses. The
 -   If the entry already exists in the cache with a valid value, it is not updated.
 -   If the entry is invalid, and the register interest response is valid, the valid value is put into the cache.
 -   If an entry is marked destroyed, it is not updated. Destroyed entries are removed from the system after the register interest response is completed.
--   If the interest response does not contain any results, because all of those keys are absent from the server's cache, the client's cache can start out empty. If the queue contains old messages related to those keys, the events are still replayed in the client's cache.
-
-
+-   If the interest response does not contain any results, because all of those keys are absent from the server’s cache, the client’s cache can start out empty. If the queue contains old messages related to those keys, the events are still replayed in the client’s cache.

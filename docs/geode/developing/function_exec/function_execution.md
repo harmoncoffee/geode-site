@@ -1,4 +1,4 @@
-﻿---
+---
 title: Executing a Function in Apache Geode
 sidebar_label: Executing a Function in Apache Geode
 sidebar_position: 2
@@ -39,7 +39,7 @@ Code the methods you need for the function. These steps do not have to be done i
 
 - Implement `getId` to return a unique name for your function. You can use this name to access the function through the `FunctionService` API.
 - For high availability:
-    1.  Code `isHa` to return true to indicate to Geode that it can re-execute your function after one or more members fails
+    1.  Code `isHa` to return true to indicate to @@product_name@@ that it can re-execute your function after one or more members fails
     2.  Code your function to return a result
     3.  Code `hasResult` to return true
 
@@ -53,7 +53,7 @@ See [Authorization of Function Execution](../../security/implementing_authorizat
     1.  Make `execute` thread safe to accommodate simultaneous invocations.
     2.  For high availability, code `execute` to accommodate multiple identical calls to the function. Use the `RegionFunctionContext` `isPossibleDuplicate` to determine whether the call may be a high-availability re-execution. This boolean is set to true on execution failure and is false otherwise.
         **Note:**
-        The `isPossibleDuplicate` boolean can be set following a failure from another member's execution of the function, so it only indicates that the execution might be a repeat run in the current member.
+        The `isPossibleDuplicate` boolean can be set following a failure from another member’s execution of the function, so it only indicates that the execution might be a repeat run in the current member.
     3.  Use the function context to get information about the execution and the data:
         -   The context holds the function ID, the `ResultSender` object for passing results back to the originator, and function arguments provided by the member where the function originated.
         -   The context provided to the function is the `FunctionContext`, which is automatically extended to `RegionFunctionContext` if you get the `Execution` object through a `FunctionService` `onRegion` call.
@@ -61,7 +61,7 @@ See [Authorization of Function Execution](../../security/implementing_authorizat
         -   For partitioned regions, the `PartitionRegionHelper` provides access to additional information and data for the region. For single regions, use `getLocalDataForContext`. For colocated regions, use `getLocalColocatedRegions`.
             **Note:**
             When you use `PartitionRegionHelper.getLocalDataForContext`, `putIfAbsent` may not return expected results if you are working on local data set instead of the region.
-    4.  To propagate an error condition or exception back to the caller of the function, throw a FunctionException from the `execute` method. Geode transmits the exception back to the caller as if it had been thrown on the calling side. See the Java API documentation for [FunctionException](/org/apache/geode/cache/execute/FunctionException.html) for more information.
+    4.  To propagate an error condition or exception back to the caller of the function, throw a FunctionException from the `execute` method. @@product_name@@ transmits the exception back to the caller as if it had been thrown on the calling side. See the Java API documentation for [FunctionException](/org/apache/geode/cache/execute/FunctionException.html) for more information.
 
 Example function code:
 
@@ -128,7 +128,7 @@ To register a function by using `gfsh`:
 
 If another JAR file is deployed (either with the same JAR filename or another filename) with the same Function, the new implementation of the Function will be registered, overwriting the old one. If a JAR file is undeployed, any Functions that were auto-registered at the time of deployment will be unregistered. Since deploying a JAR file that has the same name multiple times results in the JAR being un-deployed and re-deployed, Functions in the JAR will be unregistered and re-registered each time this occurs. If a Function with the same ID is registered from multiple differently named JAR files, the Function will be unregistered if either of those JAR files is re-deployed or un-deployed.
 
-See [Deploying Application JARs to Apache Geode Members](../../configuring/cluster_config/deploying_application_jars.html#concept_4436C021FB934EC4A330D27BD026602C) for more details on deploying JAR files.
+See [Deploying Application JARs to @@product_name_long@@ Members](../../configuring/cluster_config/deploying_application_jars.html#concept_4436C021FB934EC4A330D27BD026602C) for more details on deploying JAR files.
 
 ## <a id="function_execution__section_1D1056F843044F368FB76F47061FCD50" class="no-quick-link"></a>Register the Function Programmatically
 
@@ -165,7 +165,7 @@ Register your function using one of these methods:
 
 ## <a id="function_execution__section_6A0F4C9FB77C477DA5D995705C8BDD5E" class="no-quick-link"></a>Run the Function
 
-This assumes youâ€™ve already followed the steps for writing and registering the function.
+This assumes you’ve already followed the steps for writing and registering the function.
 
 In every member where you want to explicitly execute the function and process the results, you can use the `gfsh` command line to run the function or you can write an application to run the function.
 
@@ -231,12 +231,12 @@ ResultCollector rc = execution.execute(function);
 List result = (List)rc.getResult();
 ```
 
-Geode's default `ResultCollector` collects all results into an `ArrayList`. Its `getResult` methods block until all results are received. Then they return the full result set.
+@@product_name@@’s default `ResultCollector` collects all results into an `ArrayList`. Its `getResult` methods block until all results are received. Then they return the full result set.
 
 To customize results collecting:
 
 1.  Write a class that extends `ResultCollector` and code the methods to store and retrieve the results as you need. Note that the methods are of two types:
-    1.  `addResult` and `endResults` are called by Geode when results arrive from the `Function` instance `SendResults` methods
+    1.  `addResult` and `endResults` are called by @@product_name@@ when results arrive from the `Function` instance `SendResults` methods
     2.  `getResult` is available to your executing application (the one that calls `Execution.execute`) to retrieve the results
 
 2.  Use high availability for `onRegion` functions that have been coded for it:
@@ -255,4 +255,3 @@ To customize results collecting:
 ## <a id="function_execution__section_638E1FB9B08F4CC4B62C07DDB3661C14" class="no-quick-link"></a>Targeting Single Members of a Member Group or Entire Member Groups
 
 To execute a data independent function on a group of members or one member in a group of members, you can write your own nested function. You will need to write one nested function if you are executing the function from client to server and another nested function if you are executing a function from server to all members.
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title:  DELETE /geode/v1/{region}/{key1},{key2},...{keyN}
 sidebar_label: DELETE /geode/v1/{region}/{key1},{key2},...{keyN}
 sidebar_position: 14
@@ -53,7 +53,4 @@ Response Payload: null
 | Status Code               | Description                                                                                                                      |
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | 404 NOT FOUND             | Returned if either the region or one or more of the specified keys is not found.                                                 |
-| 500 INTERNAL SERVER ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
-
-
-
+| 500 INTERNAL SERVER ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |

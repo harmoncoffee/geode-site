@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Introduction to Cache Management
 sidebar_label: Introduction to Cache Management
 sidebar_position: 1
@@ -26,14 +26,18 @@ The cache provides in-memory storage and management for your data.
 <a id="concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_B364B076EB5843DAAC28EE2805686453"></a>
 You organize your data in the cache into *data regions*, each with its own configurable behavior. You store your data into your regions in key/value pairs called *data entries*. The cache also provides features like transactions, data querying, disk storage management, and logging. See the Javadocs for `org.apache.geode.cache.Cache`.
 
-You generally configure caches using the `gfsh` command-line utility or a combination of XML declarations and API calls. Geode loads and processes your XML declarations when you first create the cache. Geode has one cache type for managing server and peer caches and one for managing client caches. The cache server process automatically creates its server cache at startup. In your application process, the cache creation returns an instance of the server/peer or client cache. From that point on, you manage the cache through API calls in your application.
+You generally configure caches using the `gfsh` command-line utility or a combination of XML declarations and API calls. @@product_name@@ loads and processes your XML declarations when you first create the cache.
 
-## <a id="concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_20973C59F1C94E35A02CE6582503205A" class="no-quick-link"></a>The Caching APIs Geode  caching APIs provide specialized behavior for different system member types and security settings.
+@@product_name@@ has one cache type for managing server and peer caches and one for managing client caches. The cache server process automatically creates its server cache at startup. In your application process, the cache creation returns an instance of the server/peer or client cache. From that point on, you manage the cache through API calls in your application.
+
+## <a id="concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_20973C59F1C94E35A02CE6582503205A" class="no-quick-link"></a>The Caching APIs
+
+@@product_name@@'s caching APIs provide specialized behavior for different system member types and security settings.
 
 -   **`org.apache.geode.cache.RegionService`**. Generally, you use the `RegionService` functionality through instances of `Cache` and `ClientCache`. You only specifically use instances of `RegionService` for limited-access users in secure client applications that service many users. The `RegionService` API provides access to existing cache data regions and to the standard query service for the cache. For client caches, queries are sent to the server tier. For server and peer caches, queries are run in the current cache and any available peers. `RegionService` is implemented by `GemFireCache`.
 -   **`org.apache.geode.cache.GemFireCache`**. You do not specifically use instances of `GemFireCache`, but you use `GemFireCache` functionality in your instances of `Cache` and `ClientCache`. `GemFireCache` extends `RegionService` and adds general caching features like region attributes, disk stores for region persistence and overflow, and access to the underlying cluster. `GemFireCache` is implemented by `Cache` and `ClientCache`.
 -   **`org.apache.geode.cache.Cache`**. Use the `Cache` interface to manage server and peer caches. You have one `Cache` per server or peer process. The `Cache` extends `GemFireCache` and adds server/peer caching features like communication within the cluster, region creation, transactions and querying, and cache server functionality.
--   **`org.apache.geodeâ‰ˆsetting_cache_initializer.cache.ClientCache`**. Use the `ClientCache` interface to manage the cache in your clients. You have one `ClientCache` per client process. The `ClientCache` extends `GemFireCache` and adds client-specific caching features like client region creation, subscription keep-alive management for durable clients, querying on server and client tiers, and RegionService creation for secure access by multiple users within the client.
+-   **`org.apache.geode≈setting_cache_initializer.cache.ClientCache`**. Use the `ClientCache` interface to manage the cache in your clients. You have one `ClientCache` per client process. The `ClientCache` extends `GemFireCache` and adds client-specific caching features like client region creation, subscription keep-alive management for durable clients, querying on server and client tiers, and RegionService creation for secure access by multiple users within the client.
 
 ## <a id="concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_6486BDAF06EC4B91A548872066F3EC8C" class="no-quick-link"></a>The Cache XML
 
@@ -49,7 +53,7 @@ You use one format for peer and server caches and another for client caches.
 <cache xmlns="http://geode.apache.org/schema/cache"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://geode.apache.org/schema/cache http://geode.apache.org/schema/cache/cache-1.0.xsd"
-    version="1.0â€>
+    version="1.0”>
 ...
 </cache>
 ```
@@ -62,7 +66,7 @@ You use one format for peer and server caches and another for client caches.
     xmlns="http://geode.apache.org/schema/cache"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://geode.apache.org/schema/cache http://geode.apache.org/schema/cache/cache-1.0.xsd"
-    version="1.0â€>
+    version="1.0”>
 ...
 </client-cache>
 ```
@@ -71,16 +75,16 @@ For more information on the `cache.xml` file, see [cache.xml](../../reference/to
 
 ## <a id="concept_F8BA7F2D3B5A40D78461E78BC5FB31FA__section_B113BC6921DA434C947D4326DDB4526E" class="no-quick-link"></a>Create and Close a Cache
 
-Your system configuration and cache configuration are initialized when you start your member processes and create each member's Geode cache. If you are using the cluster configuration service, member processes can pick up its cache configuration from the cluster or group's current configuration. See [Overview of the Cluster Configuration Service](../../configuring/cluster_config/gfsh_persist.html).
+Your system configuration and cache configuration are initialized when you start your member processes and create each member’s @@product_name@@ cache. If you are using the cluster configuration service, member processes can pick up its cache configuration from the cluster or group's current configuration. See [Overview of the Cluster Configuration Service](../../configuring/cluster_config/gfsh_persist.html).
 
 The steps in this section use `gemfire.properties` and `cache.xml` file examples, except where API is required. You can configure your cluster properties and cache through the API as well, and you can use a combination of file configuration and API configuration.
 
 The XML examples may not include the full `cache.xml` file listing. All of your declarative cache configuration must conform to the cache XSD at
 [http://geode.apache.org/schema/cache/cache-1.0.xsd](http://geode.apache.org/schema/cache/cache-1.0.xsd).
 
-For all of your Geode applications:
+For all of your @@product_name@@ applications:
 
-1.  Create your `Cache`, for peer/server applications, or `ClientCache`, for client applications. This connects to the Geode system you have configured and initializes any configured data regions. Use your cache instance to access your regions and perform your application work.
+1.  Create your `Cache`, for peer/server applications, or `ClientCache`, for client applications. This connects to the @@product_name@@ system you have configured and initializes any configured data regions. Use your cache instance to access your regions and perform your application work.
 2.  Close your cache when you are done. This frees up resources and disconnects your application from the cluster in an orderly manner.
 
 Follow the instructions in the subtopics under [Cache Management](chapter_overview.html#the_cache) to customize your cache creation and closure for your application needs. You may need to combine more than one of the sets of instructions. For example, to create a client cache in a system with security, you would follow the instructions for creating and closing a client cache and for creating and closing a cache in a secure system.
@@ -94,4 +98,3 @@ For more details on exporting and importing snapshots of a cache, see [Cache and
 ## Cache Management with gfsh and the Cluster Configuration Service
 
 You can use gfsh commands to mange a server cache. There are gfsh commands to create regions, start servers, and to create queues and other objects. As you issue these commands, the Cluster Configuration Service saves cache.xml and gemfire.properties files on the locators and distributes those configurations to any new members that join the cluster. See [Overview of the Cluster Configuration Service](../../configuring/cluster_config/gfsh_persist.html).
-

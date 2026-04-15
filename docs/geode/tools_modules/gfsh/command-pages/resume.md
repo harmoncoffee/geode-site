@@ -22,7 +22,7 @@ limitations under the License.
 <a id="topic_resume_command"></a>
 
 
-Modify an existing Geode resource.
+Modify an existing @@product_name@@ resource.
 
 -   **[resume async-event-queue-dispatcher](#topic_resume_async_event_queue_dispatcher)**
 
@@ -85,6 +85,3 @@ resume gateway-sender --id=value [--groups=value(,value)*]
 ``` pre
 resume gateway-sender --id=sender1-LN --groups=LN-Group1
 ```
-
-
-

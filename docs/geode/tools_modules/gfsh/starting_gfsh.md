@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Starting gfsh
 sidebar_label: Starting gfsh
 sidebar_position: 2
@@ -26,7 +26,7 @@ Before you start gfsh, confirm that you have set JAVA\_HOME and that your PATH v
 **Note:**
 On Windows, you must have the JAVA\_HOME environment variable set properly to use start, stop and status commands for both locators and servers.
 
-To launch the gfsh command-line interface, execute the following command at the prompt on any machine that is currently installed with Apache Geode :
+To launch the gfsh command-line interface, execute the following command at the prompt on any machine that is currently installed with @@product_name_long@@:
 
 **Start gfsh on Windows:**
 
@@ -34,7 +34,7 @@ To launch the gfsh command-line interface, execute the following command at the 
 <product_directory>\bin\gfsh.bat 
 ```
 
-where &lt;*product\_directory*&gt; corresponds to the location where you installed Apache Geode Apache Geode .
+where &lt;*product\_directory*&gt; corresponds to the location where you installed @@product_name_long@@.
 
 **Start gfsh on Unix:**
 
@@ -42,19 +42,19 @@ where &lt;*product\_directory*&gt; corresponds to the location where you install
 <product_directory>/bin/gfsh
 ```
 
-where &lt;*product\_directory*&gt; corresponds to the location where you installed . Upon execution, the `gfsh` script appends the required Apache Geode and JDK Jar libraries to your existing CLASSPATH.
+where &lt;*product\_directory*&gt; corresponds to the location where you installed @@product_name_long@@. Upon execution, the `gfsh` script appends the required @@product_name_long@@ and JDK Jar libraries to your existing CLASSPATH.
 
 If you have successfully started `gfsh`, the `gfsh` splash screen and prompt appears.
 
 ``` pre
-c:\ Geode \Latest>gfsh.bat
+c:\@@product_name@@\Latest>gfsh.bat
     _________________________     __
    / _____/ ______/ ______/ /____/ /
   / /  __/ /___  /_____  / _____  /
  / /__/ / ____/  _____/ / /    / /
 /______/_/      /______/_/    /_/
 
-Monitor and Manage Geode 
+Monitor and Manage @@product_name@@
 gfsh>
 ```
 
@@ -71,6 +71,3 @@ prompt> gfsh start server --name=server1
 ```
 
 See [Creating and Running gfsh Command Scripts](command_scripting.html#concept_9B2F7550F16C4717831AD40A56922259) for more information.
-
-
-

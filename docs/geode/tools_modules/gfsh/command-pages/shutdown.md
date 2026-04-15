@@ -58,6 +58,3 @@ Y
 Shutdown is triggered
  
 ```
-
-
-

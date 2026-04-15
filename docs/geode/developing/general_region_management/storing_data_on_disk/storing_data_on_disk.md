@@ -77,6 +77,3 @@ You can also configure Regions and Disk Stores using the gfsh command-line inter
 | `org.apache.geode.cache.RegionAttributes` for data region persistence information |
 | `org.apache.geode.cache.EvictionAttributes` for data region overflow information  |
 | `org.apache.geode.cache.server.ClientSubscriptionConfig`                          |
-
-
-

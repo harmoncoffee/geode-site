@@ -36,6 +36,3 @@ exit
 ``` pre
 exit
 ```
-
-
-

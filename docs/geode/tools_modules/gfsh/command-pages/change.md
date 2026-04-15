@@ -20,7 +20,7 @@ limitations under the License.
 -->
 <a id="topic_E74ED23CB60342538B2175C326E7D758"></a>
 
-Changes the logging level on specified members. This command takes effect if the default Geode logging configuration is used.
+Changes the logging level on specified members. This command takes effect if the default @@product_name@@ logging configuration is used.
 
 When using a custom `Log4J` configuration, this command takes effect only if the member whose logging level you want to change was started using the `--J=-Dgeode.LOG_LEVEL_UPDATE_OCCURS=ALWAYS` system property.
 
@@ -64,4 +64,3 @@ Summary
 --------------------------------- | -----------------
 192.0.2.0(server1:3060)<v1>:24653 | true
 ```
-

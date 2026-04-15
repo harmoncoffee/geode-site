@@ -38,6 +38,3 @@ You can specify event handlers for region and region entry operations and for ad
 -   **[Cache Event Handler Examples](cache_event_handler_examples.html)**
 
     Some examples of cache event handlers.
-
-
-

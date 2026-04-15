@@ -32,9 +32,9 @@ Multicast is very dependent on the environment in which it runs. Its operation i
 
 Group rate control is required for Geode systems to maintain cache coherence. If your application delivers the same data to a group of members, your system tuning effort needs to focus on the slow receivers.
 
-If some of your members have trouble keeping up with the incoming data, the other members in the group may be impacted. At best, slow receivers cause the producer to use buffering, adding latency for the slow receiver and perhaps for all of them. In the worst case, throughput for the group can stop entirely while the producer's CPU, memory and network bandwidth are dedicated to serving the slow receivers.
+If some of your members have trouble keeping up with the incoming data, the other members in the group may be impacted. At best, slow receivers cause the producer to use buffering, adding latency for the slow receiver and perhaps for all of them. In the worst case, throughput for the group can stop entirely while the producer’s CPU, memory and network bandwidth are dedicated to serving the slow receivers.
 
-To address this issue, you can implement a bounded operation policy, which sets boundaries for the producer's operation. The appropriate rate limits are determined through tuning and testing to allow the fastest operation possible while minimizing data loss and latency in the group of consumers. This policy is suited to applications such as financial market data, where high throughput, reliable delivery and network stability are required. With the boundaries set correctly, your producer's traffic cannot cause a network outage.
+To address this issue, you can implement a bounded operation policy, which sets boundaries for the producer’s operation. The appropriate rate limits are determined through tuning and testing to allow the fastest operation possible while minimizing data loss and latency in the group of consumers. This policy is suited to applications such as financial market data, where high throughput, reliable delivery and network stability are required. With the boundaries set correctly, your producer’s traffic cannot cause a network outage.
 
 Multicast protocols typically have a flow control protocol built into them to keep processes from being overrun. The Geode flow control protocol uses the mcast-flow-control property to set producer and consumer boundaries for multicast flow operations. The property provides these three configuration settings:
 
@@ -58,6 +58,3 @@ Multicast protocols typically have a flow control protocol built into them to ke
 </tr>
 </tbody>
 </table>
-
-
-

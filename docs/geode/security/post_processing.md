@@ -74,4 +74,3 @@ Complete these items to implement post processing.
 See [Enable Security with Property Definitions](enable_security.html)
 for details about this property.
 - Implement the  `processRegionValue` method of the `PostProcessor` interface.
-

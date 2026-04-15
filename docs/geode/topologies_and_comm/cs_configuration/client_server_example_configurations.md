@@ -46,7 +46,7 @@ prompt# gfsh start locator --name=locator_name --port=41111
 
 Specify a name for the locator that you wish to start on the localhost. If you do not specify the member name, gfsh will automatically pick a random name. This is useful for automation.
 
-The serverâ€™s `cache.xml` declares a `cache-server` element, which identifies the JVM as a server in the cluster.
+The server’s `cache.xml` declares a `cache-server` element, which identifies the JVM as a server in the cluster.
 
 ``` pre
 <cache> 
@@ -64,7 +64,7 @@ gfsh>start server --name=server1 --server-port=40404
 
 See `start server`.
 
-The clientâ€™s `cache.xml` `<client-cache>` declaration automatically configures it as a standalone Geode application.
+The client’s `cache.xml` `<client-cache>` declaration automatically configures it as a standalone @@product_name@@ application.
 
 The client's `cache.xml`:
 
@@ -85,7 +85,7 @@ There is only one pool defined for the client, so the pool is automatically assi
 
 With this, the client is configured to go to the locator for the server connection location. Then any cache miss or put in the client region is automatically forwarded to the server.
 
-## **Exampleâ€”Standalone Publisher Client, Client Pool, and Region**
+## **Example—Standalone Publisher Client, Client Pool, and Region**
 
 The following API example walks through the creation of a standalone publisher client and the client pool and region.
 
@@ -112,7 +112,7 @@ private static void runPublisher() {
 } 
 ```
 
-## **Exampleâ€”Standalone Subscriber Client**
+## **Example—Standalone Subscriber Client**
 
 This API example creates a standalone subscriber client using the same `connectStandalone` method as the previous example.
 
@@ -141,7 +141,7 @@ private static void runSubscriber() throws InterruptedException {
 
 ## <a id="client_server_example_configurations__section_A7759DCB9BFE47448B8E8D72DDCDE058" class="no-quick-link"></a>Example of a Static Server List in Client/Server Configuration
 
-You can specify a static server list instead of a locator list in the client configuration. With this configuration, the clientâ€™s server information does not change for the life of the client member. You do not get dynamic server discovery, server load conditioning, or the option of logical server grouping. This model is useful for very small deployments, such as test systems, where your server pool is stable. It avoids the administrative overhead of running locators.
+You can specify a static server list instead of a locator list in the client configuration. With this configuration, the client’s server information does not change for the life of the client member. You do not get dynamic server discovery, server load conditioning, or the option of logical server grouping. This model is useful for very small deployments, such as test systems, where your server pool is stable. It avoids the administrative overhead of running locators.
 
 This model is also suitable if you must use hardware load balancers. You can put the addresses of the load balancers in your server list and allow the balancers to redirect your client connections.
 
@@ -164,4 +164,3 @@ The client's `cache.xml` file declares a connection pool with the server explici
     </region>
 </client-cache>
 ```
-

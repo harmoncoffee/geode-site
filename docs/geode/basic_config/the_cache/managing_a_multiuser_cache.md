@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Managing RegionServices for Multiple Secure Users
 sidebar_label:  Managing RegionServices for Multiple Secure Users
 sidebar_position: 5
@@ -21,15 +21,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-In a secure system, you can create clients with multiple, secure connections to the servers from each client. The most common use case is a Geode client embedded in an application server that supports data requests from many users. Each user may be authorized to access a subset of data on the servers. For example, customer users may be allowed to see and update only their own orders and shipments.
+In a secure system, you can create clients with multiple, secure connections to the servers from each client. The most common use case is a @@product_name@@ client embedded in an application server that supports data requests from many users. Each user may be authorized to access a subset of data on the servers. For example, customer users may be allowed to see and update only their own orders and shipments.
 
 <a id="managing_a_multiuser_cache__section_A2A0F835DF35450E8E4B5304F4BC07E2"></a>
 
-In a single client, multiple authenticated users can all access the same `ClientCache` through instances of the `RegionService` interface. Because there are multiple users with varying authorization levels, access to cached data is done entirely through the servers, where each userâ€™s authorization can be managed.
+In a single client, multiple authenticated users can all access the same `ClientCache` through instances of the `RegionService` interface. Because there are multiple users with varying authorization levels, access to cached data is done entirely through the servers, where each user’s authorization can be managed.
 Follow these steps in addition to the steps in [Managing a Cache in a Secure System](managing_a_secure_cache.html#managing_a_secure_cache).
 
 1.  Create your cache and `RegionService` instances:
-    1.  Configure your clientâ€™s server pool for multiple secure user authentication. Example:
+    1.  Configure your client’s server pool for multiple secure user authentication. Example:
 
         ``` pre
         <pool name="serverPool" multiuser-authentication="true">
@@ -39,7 +39,7 @@ Follow these steps in addition to the steps in [Managing a Cache in a Secure Sys
 
         This enables access through the pool for the `RegionService` instances and disables it for the `ClientCache` instance.
 
-    2.  After you create your `ClientCache`, from your `ClientCache` instance, for each user call the `createAuthenticatedView` method, providing the userâ€™s particular credentials. These are create method calls for two users:
+    2.  After you create your `ClientCache`, from your `ClientCache` instance, for each user call the `createAuthenticatedView` method, providing the user’s particular credentials. These are create method calls for two users:
 
         ``` pre
         Properties properties = new Properties();
@@ -55,7 +55,7 @@ Follow these steps in addition to the steps in [Managing a Cache in a Secure Sys
             clientCache.createAuthenticatedView(properties);
         ```
 
-    For each user, do all of your caching and region work through the assigned `RegionService` instance. Access to the server cache will be governed by the serverâ€™s configured authorization rules for each individual user.
+    For each user, do all of your caching and region work through the assigned `RegionService` instance. Access to the server cache will be governed by the server’s configured authorization rules for each individual user.
 2.  Close your cache by closing the `ClientCache` instance only. Do not close the `RegionService` instances first. This is especially important for durable clients.
 
 ## <a id="managing_a_multiuser_cache__section_692D9961E8224739903E483BF8AB4F84" class="no-quick-link"></a>Requirements and Caveats for RegionService
@@ -66,4 +66,3 @@ Once each region is created, you can perform operations on it through the `Clien
 You can use the `ClientCache` to create a region that uses a pool configured for multi-user authentication, then access and do work on the region using your `RegionService` instances.
 
 To use `RegionService`, regions must be configured as `EMPTY`. Depending on your data access requirements, this configuration might affect performance, because the client goes to the server for every get.
-

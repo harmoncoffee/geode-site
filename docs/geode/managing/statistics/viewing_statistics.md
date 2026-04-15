@@ -22,6 +22,3 @@ limitations under the License.
 -->
 
 When sampling and archiving are enabled, you can examine archived historical data to help diagnose performance problems. Study statistics in archive files by using the gfsh `show metrics` command. You may also wish to use a separate statistics display utility.
-
-
-

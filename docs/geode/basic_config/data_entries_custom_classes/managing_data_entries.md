@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Managing Data Entries
 sidebar_label: Managing Data Entries
 sidebar_position: 1
@@ -27,7 +27,9 @@ Program your applications to create, modify, and manage your cached data entries
 **Note:**
 If you do not have the cache's `copy-on-read` attribute set to true, do not change the objects returned from the Java entry access methods. See [Copy on Read Behavior](copy_on_read.html).
 
-## <a id="managing_data_entry_keys" class="no-quick-link"></a>Keys Geode calls `hashCode()` on the key
+## <a id="managing_data_entry_keys" class="no-quick-link"></a>Keys
+
+@@product_name@@ calls `hashCode()` on the key
 to map an entry within the region.
 The `hashCode()` return value must be the same for
 a given key on every server that hosts the region.
@@ -167,6 +169,3 @@ put --key=('133abg124') --value=('Hello World!!') --region=/region2
 put --key=('100F') --value=('2146547689879658564')  --region=/region1/region12 
 --key-class=java.lang.Float --value-class=java.lang.Long
 ```
-
-
-

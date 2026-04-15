@@ -1,4 +1,4 @@
-﻿---
+---
 title:  PUT /geode/v1/queries/{queryId}
 sidebar_label: PUT /geode/v1/queries/{queryId}
 sidebar_position: 4
@@ -100,7 +100,7 @@ Response Payload:  null
 </tr>
 <tr class="odd">
 <td>500 INTERNAL SERVER ERROR</td>
-<td>Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception.</td>
+<td>Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception.</td>
 </tr>
 </tbody>
 </table>
@@ -108,6 +108,3 @@ Response Payload:  null
 ## Implementation Notes
 
 This operation is idempotent, meaning multiple identical requests should have the same effect as the initial request.
-
-
-

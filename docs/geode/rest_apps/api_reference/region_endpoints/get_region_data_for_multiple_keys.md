@@ -1,4 +1,4 @@
-﻿---
+---
 title:  GET /geode/v1/{region}/{key1},{key2},...,{keyN}
 sidebar_label: GET /geode/v1/{region}/{key1},{key2},...,{keyN}
 sidebar_position: 5
@@ -238,4 +238,3 @@ Connection: close
 ## Implementation Notes
 
 The response body sets the region name as key to the array of values. For example "orders" : &lt;VALUE\_ARRAY&gt;.
-

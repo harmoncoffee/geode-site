@@ -46,6 +46,3 @@ gfsh> clear defined indexes
 gfsh>clear defined indexes
 Index definitions successfully cleared
 ```
-
-
-

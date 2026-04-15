@@ -32,7 +32,7 @@ Enable conflation at the server level in the server region configuration:
 </region>
 ```
 
-Override the server setting as needed, on a per-client basis, in the client's `gemfire.properties`:
+Override the server setting as needed, on a per-client basis, in the client’s `gemfire.properties`:
 
 ``` pre
 conflate-events=false
@@ -45,12 +45,9 @@ Valid `conflate-events` settings are:
 
 Conflation can both improve performance and reduce the amount of memory required on the server for queuing. The client receives only the latest available update in the queue for a particular entry key. Conflation is disabled by default.
 
-Conflation is particularly useful when a single entry is updated often and the intermediate updates donâ€™t require processing by the client. With conflation, if an entry is updated and there is already an update in the queue for its key, the existing update is removed and the new update is placed at the end of the queue. Conflation is only done on messages that are not in the process of being sent to the client.
+Conflation is particularly useful when a single entry is updated often and the intermediate updates don’t require processing by the client. With conflation, if an entry is updated and there is already an update in the queue for its key, the existing update is removed and the new update is placed at the end of the queue. Conflation is only done on messages that are not in the process of being sent to the client.
 
 <img src="../../images/ClientServerAdvancedTopics-7.gif" id="conflate_the_server_subscription_queue__image_FA77FD2857464D17BF2ED5B3CC62687A" class="image" />
 
 **Note:**
 This method of conflation is different from the one used for multi-site gateway sender queue conflation. It is the same as the method used for the conflation of peer-to-peer distribution messages within a single cluster.
-
-
-

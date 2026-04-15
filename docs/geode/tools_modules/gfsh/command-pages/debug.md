@@ -50,6 +50,3 @@ debug --state=on
 gfsh>debug --state=on
 Debug is on
 ```
-
-
-

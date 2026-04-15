@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Index Samples
 sidebar_label: Index Samples
 sidebar_position: 13
@@ -78,6 +78,3 @@ SELECT * FROM /exampleRegion p WHERE p.position3[1].portfolioId = 2
 SELECT DISTINCT positions.values.toArray[0], positions.values.toArray[0], status 
 FROM /exampleRegion
 ```
-
-
-

@@ -44,6 +44,3 @@ SnapshotOptions<Integer, MyObject> options = snapsrv.createOptions().setFilter(e
 // only save cache entries with an even key
 snapsrv.save(mySnapshot, SnapshotFormat.GEMFIRE, options);
 ```
-
-
-

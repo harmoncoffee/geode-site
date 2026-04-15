@@ -31,5 +31,3 @@ period (`.`), underscore (`_`), square brackets (`[ ]`), hyphen (`-`), caret (`^
 -   Do not use the slash character (`/`).
 -   Do not begin region names with two underscore characters (`__`),
 as this is reserved for internal use.
-
-

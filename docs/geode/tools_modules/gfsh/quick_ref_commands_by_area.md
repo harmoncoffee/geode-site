@@ -1,4 +1,4 @@
-﻿---
+---
 title: Quick Reference of gfsh Commands by Functional Area
 sidebar_label:  Quick Reference of gfsh Commands by Functional Area
 sidebar_position: 8
@@ -66,7 +66,7 @@ limitations under the License.
 | [import data](command-pages/import.html#topic_jw2_2ld_2l)                       | Import user data from a file to a region.                        | online       |
 | [locate entry](command-pages/locate.html#concept_73B980C1138743DDBBFACE68009BD1E3__section_04BD7EC0032147DFA9CCD1331EE3B694)      | Locate a region entry on a member.                              | online       |
 | [put](command-pages/put.html)                                                               | Add or update a region entry.                                   | online       |
-| [query](command-pages/query.html)                                                      | Run queries against Geode regions. | online       |
+| [query](command-pages/query.html)                                                      | Run queries against @@product_name@@ regions. | online       |
 | [remove](command-pages/remove.html)                                                        | Remove an entry from a region.                                  | online       |
 | [wan-copy region ](command-pages/wan_copy_region.html) | Copy the entries of a region in a WAN site onto the same region in another WAN site, using a gateway sender.  | online       |
 
@@ -86,7 +86,7 @@ limitations under the License.
 
 | Command                                                                                                                                                                                                                                                 | Description                                                                                                                              | Availability    |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-| [alter disk-store](command-pages/alter.html#topic_99BCAD98BDB5470189662D2F308B68EB)                                                                               | Modify an existing Geode resource.                                                                          | online          |
+| [alter disk-store](command-pages/alter.html#topic_99BCAD98BDB5470189662D2F308B68EB)                                                                               | Modify an existing @@product_name@@ resource.                                                                          | online          |
 | [backup disk-store](command-pages/backup.html#topic_E74ED23CB60342538B2175C326E7D758)                                                              | Back up persistent data from all members to the specified directory.                                                                     | online          |
 | [compact disk-store](command-pages/compact.html#topic_F113C95C076F424E9AA8AC4F1F6324CC)                                                                       | Compact online disk-stores.                                                                                                              | online          |
 | [compact offline-disk-store](command-pages/compact.html#topic_9CCFCB2FA2154E16BD775439C8ABC8FB)                                                                                          | Compact an offline disk store.                                                                                                           | online, offline |
@@ -94,7 +94,7 @@ limitations under the License.
 | [describe disk-store](command-pages/describe.html#topic_C635B500BE6A4F1D9572D0BC98A224F2)                                                                          | Display information about a member's disk store.                                                                                         | online          |
 | [describe offline-disk-store](command-pages/describe.html#topic_kys_yvk_2l)                                                                               | Display information about an offline member's disk store                                                                                 | online, offline |
 | [destroy disk-store](command-pages/destroy.html#topic_yfr_l2z_ck)              | Deletes a disk store and all files on disk used by the disk store. Data for closed regions that previously used this disk store is lost. | online          |
-| [list disk-stores](command-pages/list.html#topic_BC14AD57EA304FB3845766898D01BD04)                                                                              | List all available disk stores in a Geode cluster.                                                          | online          |
+| [list disk-stores](command-pages/list.html#topic_BC14AD57EA304FB3845766898D01BD04)                                                                              | List all available disk stores in a @@product_name@@ cluster.                                                          | online          |
 | [revoke missing-disk-store](command-pages/revoke.html)                                                                 | Instruct the cluster member(s) to stop waiting for a disk store to be available.                                         | online          |
 | [show missing-disk-stores](command-pages/show.html#topic_7B3D624D5B4F41D1A0F8A9C3C8B2E780)                                   | Display a summary of the disk stores that are currently missing from the cluster.                                               | online          |
 | [validate offline-disk-store](command-pages/validate.html)                                                                                                                                | Validate offline disk stores.                                                                                                            | online, offline |
@@ -145,7 +145,7 @@ limitations under the License.
 | [stop gateway-receiver](command-pages/stop.html#topic_CD1D526FD6F84A7B80B25C741129ED30)                                                                                                                 | Stop the gateway receiver on a member or members.                                                                                          | online       |
 | [stop gateway-sender](command-pages/stop.html#topic_0BBDD4B3B8A44A65A610F766C9E85519)                                                                 | top a gateway sender with a given id on a specified member or members of a specified member group.                                         | online       |
 
-## <a id="topic_F0AE5CE40D6D49BF92247F5EF4F871D3" class="no-quick-link"></a> AsyncEventQueue Commands
+## <a id="topic_F0AE5CE40D6D49BF92247F5EF4F871D3" class="no-quick-link"></a>@@product_name@@ AsyncEventQueue Commands
 
 <a id="topic_F0AE5CE40D6D49BF92247F5EF4F871D3__table_vp5_mz1_3l"></a>
 
@@ -156,7 +156,7 @@ limitations under the License.
 | [destroy async-event-queue](command-pages/destroy.html#topic_destroy-async-event-queue)                                                                                                              | Destroys an asynchronous event queue on one or more members.                                                                                           | online       |
 | [list async-event-queues](command-pages/list.html#topic_j22_kzk_2l)                                                     | Display a list of async event queues for all members. | online       |
 | [resume async-event-queue-dispatcher](command-pages/resume.html#topic_resume_async_event_queue_dispatcher)                                                                                                              | Resumes dispatching of events on a specified asynchronous event queue which is currently in a paused state.                                                                                           | online       |
-## <a id="topic_B742E9E862BA457082E2346581C97D03" class="no-quick-link"></a> Monitoring Commands
+## <a id="topic_B742E9E862BA457082E2346581C97D03" class="no-quick-link"></a>@@product_name@@ Monitoring Commands
 
 <a id="topic_B742E9E862BA457082E2346581C97D03__table_pkf_nz1_3l"></a>
 
@@ -176,7 +176,7 @@ limitations under the License.
 | [shutdown](command-pages/shutdown.html)                                                                                                                                                                         | Shut down all members that have a cache.                                                                                                               | online          |
 | [start jconsole](command-pages/start.html#topic_D00507416F3944DFAB48D2FA2B9E4A31)                                                                            | Start the JDK JConsole monitoring application in a separate process. JConsole automatically connects to a running JMX Manager node if one is available | online, offline |
 | [start jvisualvm](command-pages/start.html#topic_5B5BF8BEE905463D8B7762B89E2D65E7)                                                                | Start the JDK's Java VisualVM monitoring application in a separate process.                                                                            | online, offline |
-| [start pulse](command-pages/start.html#topic_E906BA7D9E7F4C5890FEFA7ECD40DD77) | Launch the Geode Pulse monitoring dashboard tool in the user's default system browser.                                    | online, offline |
+| [start pulse](command-pages/start.html#topic_E906BA7D9E7F4C5890FEFA7ECD40DD77) | Launch the @@product_name@@ Pulse monitoring dashboard tool in the user's default system browser.                                    | online, offline |
 
 ## <a id="topic_688C66526B4649AFA51C0F72F34FA45E" class="no-quick-link"></a>Index Commands
 
@@ -262,10 +262,6 @@ limitations under the License.
 
 | Command                                                                                                                                                                   | Description                                                                          | Availability    |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|-----------------|
-| [start server](command-pages/start.html#topic_3764EE2DB18B4AE4A625E0354471738A)                       | Start a  cache server process.                     | online, offline |
-| [status server](command-pages/status.html#topic_E5DB49044978404D9D6B1971BF5D400D) | Display the status of the specified  cache server. | online, offline |
-| [stop server](command-pages/stop.html#topic_723EE395A63A40D6819618AFC2902115)                                  | Stop a  cache server.                              | online, offline |
-
-
-
-
+| [start server](command-pages/start.html#topic_3764EE2DB18B4AE4A625E0354471738A)                       | Start a @@product_name@@ cache server process.                     | online, offline |
+| [status server](command-pages/status.html#topic_E5DB49044978404D9D6B1971BF5D400D) | Display the status of the specified @@product_name@@ cache server. | online, offline |
+| [stop server](command-pages/stop.html#topic_723EE395A63A40D6819618AFC2902115)                                  | Stop a @@product_name@@ cache server.                              | online, offline |

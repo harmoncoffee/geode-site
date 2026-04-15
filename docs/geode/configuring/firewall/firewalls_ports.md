@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Firewalls and Ports
 sidebar_label: Firewalls and Ports
 sidebar_position: 2
@@ -28,18 +28,18 @@ There are several different port settings that need to be considered when using 
 
 -   Port that the cache server listens on. This is configurable using the `cache-server` element in cache.xml, on the CacheServer class in Java APIs, and as a command line option to the `gfsh start server` command.
 
-    By default, if not otherwise specified, Geode clients and servers discover each other on a pre-defined port (**40404**) on the localhost.
+    By default, if not otherwise specified, @@product_name@@ clients and servers discover each other on a pre-defined port (**40404**) on the localhost.
 
--   Locator port. Geode clients can use the locator to automatically discover cache servers. The locator port is configurable as a command-line option to the `gfsh start locator` command. Locators are used in the peer-to-peer cache deployments to discover other processes. They can be used by clients to locate servers as an alternative to configuring clients with a collection of server addresses and ports.
+-   Locator port. @@product_name@@ clients can use the locator to automatically discover cache servers. The locator port is configurable as a command-line option to the `gfsh start locator` command. Locators are used in the peer-to-peer cache deployments to discover other processes. They can be used by clients to locate servers as an alternative to configuring clients with a collection of server addresses and ports.
 
-    By default, if not otherwise specified, Geode locators use the default port **10334**.
+    By default, if not otherwise specified, @@product_name@@ locators use the default port **10334**.
 
 -   Since locators start up the cluster, locators must also have their ephemeral port range and TCP port accessible to other members through the firewall.
 -   For clients, you configure the client to connect to servers using the client's pool configuration. The client's pool configuration has two options: you can create a pool with either a list of server elements or a list of locator elements. For each element, you specify the host and port. The ports specified must be made accessible through your firewall.
 
 ## **Limiting Ephemeral Ports for Peer-to-Peer Membership**
 
-By default, Geode assigns *ephemeral* ports, that is, temporary ports assigned from a designated range, which can encompass a large number of possible ports. When a firewall is present, the ephemeral port range usually must be limited to a much smaller number, for example six. If you are configuring P2P communications through a firewall, you must also set the TCP port for each process and ensure that UDP traffic is allowed through the firewall.
+By default, @@product_name@@ assigns *ephemeral* ports, that is, temporary ports assigned from a designated range, which can encompass a large number of possible ports. When a firewall is present, the ephemeral port range usually must be limited to a much smaller number, for example six. If you are configuring P2P communications through a firewall, you must also set the TCP port for each process and ensure that UDP traffic is allowed through the firewall.
 
 ## **Properties for Firewall and Port Configuration**
 
@@ -187,7 +187,7 @@ This table contains properties potentially involved in firewall behavior, with a
 
 Each gateway receiver uses a single port to accept connections from gateway senders in other
 systems. The configuration of a gateway receiver specifies a range of possible port values
-to use. Geode selects an available port from the specified range when the gateway
+to use. @@product_name@@ selects an available port from the specified range when the gateway
 receiver starts. Configure your firewall so that the full range of possible port values is
 accessible by gateway senders from across the WAN.
 
@@ -196,8 +196,3 @@ accessible by gateway senders from across the WAN.
 | multi-site (WAN) config for gateway sender | [hostname-for-senders](../../reference/topics/cache_xml.html#gateway-receiver) | Hostname or IP address of the gateway receiver used by gateway senders to connect. |
 | multi-site (WAN) config for locator | [remote-locators](../../reference/topics/gemfire_properties.html#gemfire_properties) | List of locators (and their ports) that are available on the remote WAN site. |
 | multi-site (WAN) config for gateway receiver | [start-port](../../reference/topics/cache_xml.html#gateway-receiver) and [end-port](../../reference/topics/cache_xml.html#gateway-receiver) (cache.xml) or <code class="ph codeph">--start-port</code> and <code class="ph codeph">--end-port</code> parameters to the <code class=" ph codeph">gfsh start gateway receiver</code> command | Port range that the gateway receiver can use to listen for gateway sender communication. |
-
-
-
-
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Region Shortcuts Reference
 sidebar_label: Region Shortcuts Reference
 sidebar_position: 2
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This topic describes the various region shortcuts you can use to configure Geode regions.
+This topic describes the various region shortcuts you can use to configure @@product_name@@ regions.
 
 ## <a id="reference_w2h_3cd_lk" class="no-quick-link"></a>LOCAL
 
@@ -1346,4 +1346,3 @@ Region | size | 0
         data-policy="empty"/>
 </region>
 ```
-

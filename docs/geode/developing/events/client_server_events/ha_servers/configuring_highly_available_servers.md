@@ -51,5 +51,3 @@ The following table describes the different values for the subscription-redundan
 | 0                       | No secondary servers are configured, so high availability is disabled.         |
 | &gt; 0                  | Sets the precise number of secondary servers to use for backup to the primary. |
 | -1                      | Every server that is not the primary is to be used as a secondary.             |
-
-

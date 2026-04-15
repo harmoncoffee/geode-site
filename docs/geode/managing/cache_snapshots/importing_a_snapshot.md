@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-To import a Geode cache or region data snapshot that you previously exported into another cluster or region, use the `cache.getSnapshotService.load` API, `region.getSnapshotService.load` API, or the `gfsh` command-line interface (`import data`).
+To import a @@product_name@@ cache or region data snapshot that you previously exported into another cluster or region, use the `cache.getSnapshotService.load` API, `region.getSnapshotService.load` API, or the `gfsh` command-line interface (`import data`).
 
 ## <a id="concept_62B1E24DA7F342E9BB16C0818F7A7B70__section_4B2C73CA1A734D9D96693A52BF99D75A" class="no-quick-link"></a>Import Requirements
 
@@ -64,7 +64,7 @@ region.getSnapshotService().load(mySnapshot, SnapshotFormat.GEMFIRE);
 
 **gfsh:**
 
-Open a gfsh prompt. After connecting to a Geode cluster, at the prompt type:
+Open a gfsh prompt. After connecting to a @@product_name@@ cluster, at the prompt type:
 
 ``` pre
 gfsh>import data --region=Region --file=FileName.gfd --member=MemberName
@@ -80,4 +80,3 @@ The snapshot file must already reside on the specified member at the location sp
 
 For more information on this command, see [import data](../../tools_modules/gfsh/command-pages/import.html#topic_jw2_2ld_2l).
 For an example of how to invoke this command with additional options, see [Export Example with Options](exporting_a_snapshot.html#export_example_with_options).
-

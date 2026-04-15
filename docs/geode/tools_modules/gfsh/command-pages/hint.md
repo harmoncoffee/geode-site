@@ -74,6 +74,3 @@ start server    : Start a GemFire Cache Server.
 status server   : Display the status of a GemFire Cache Server.
 stop server     : Stop a GemFire Cache Server..
 ```
-
-
-

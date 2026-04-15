@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Managing Continuous Querying
 sidebar_label: Managing Continuous Querying
 sidebar_position: 3
@@ -88,4 +88,3 @@ for (Object o : cqResults.asList()) {
 If you are managing a data set from the CQ results, you can initialize the set by iterating over the result set and then updating it from your listeners as events arrive. For example, you might populate a new screen with initial results and then update the screen from a CQ listener.
 
 If a CQ is executed using the `ExecuteWithInitialResults` method, the returned result may already include the changes with respect to the event. This can arise when updates are happening on the region while CQ registration is in progress. The CQ does not block any region operation as it could affect the performance of the region operation. Design your application to synchronize between the region operation and CQ registration to avoid duplicate events from being delivered.
-

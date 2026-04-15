@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Programming Your Application to Use PdxInstances
 sidebar_label: Programming Your Application to Use PdxInstances
 sidebar_position: 6
@@ -46,7 +46,7 @@ When fetching data in a cache with PDX serialized reads enabled, the safest appr
 
 **Prerequisites**
 
--   Understand generally how to configure the Geode cache. See [Basic Configuration and Programming](../../basic_config/book_intro.html#basic_config_management).
+-   Understand generally how to configure the @@product_name@@ cache. See [Basic Configuration and Programming](../../basic_config/book_intro.html#basic_config_management).
 
 <a id="program_application_for_pdx__section_B3C7C7629DFD4483B32B27F84D64DFCF"></a>
 
@@ -105,6 +105,3 @@ In your application where you fetch data from the cache, provide the following c
 
     **Note:**
     Due to a limitation with PDX, if your PDX-enabled cache contains TreeSet domain objects, you should implement a Comparator that can handle both your domain objects and PdxInstance objects. You will also need to make the domain classes available on the server.
-
-
-

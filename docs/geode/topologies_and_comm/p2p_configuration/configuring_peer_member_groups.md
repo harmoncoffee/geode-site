@@ -1,4 +1,4 @@
-﻿---
+---
 title: Organizing Peers into Logical Member Groups
 sidebar_label: Organizing Peers into Logical Member Groups
 sidebar_position: 3
@@ -58,6 +58,3 @@ To add a peer to a member group, you can configure the following:
     ``` pre
     gfsh>deploy --jar=group1_functions.jar --group=ManagementGroup1
     ```
-
-
-

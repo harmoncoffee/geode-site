@@ -1,4 +1,4 @@
-﻿---
+---
 title: Configuring Pulse Authentication
 sidebar_label: Configuring Pulse Authentication
 sidebar_position: 4
@@ -25,7 +25,7 @@ Pulse requires all users to authenticate themselves before they can use the Puls
 
 If you run Pulse in embedded mode, the Pulse application runs on the JMX Manager node and no JMX authentication is required. You do not need to specify valid JMX credentials to start an embedded Pulse application.
 
-If you host Pulse on a web application server (non-embedded mode) and you configure JMX authentication on the Geode manager node, then the Pulse Web application must authenticate itself with the manager node when it starts. Specify the credentials of a valid JMX user account in the `pulse.properties` file, as described in [Hosting Pulse on a Web Application Server](pulse-hosted.html).
+If you host Pulse on a web application server (non-embedded mode) and you configure JMX authentication on the @@product_name@@ manager node, then the Pulse Web application must authenticate itself with the manager node when it starts. Specify the credentials of a valid JMX user account in the `pulse.properties` file, as described in [Hosting Pulse on a Web Application Server](pulse-hosted.html).
 
 **Note:**
 The credentials that you specify must have both read and write privileges in the JMX Manager node. See [Configuring a JMX Manager](../../managing/management/jmx_manager_operations.html#topic_263072624B8D4CDBAD18B82E07AA44B6).
@@ -36,7 +36,7 @@ You can configure Pulse to use HTTPS in either embedded or non-embedded mode.
 
 **Embedded Mode**
 
-In embedded mode, Geode uses an embedded Jetty server to host the
+In embedded mode, @@product_name@@ uses an embedded Jetty server to host the
 Pulse Web application. To make the embedded server use HTTPS, you must
 enable the `http` SSL component in
 `gemfire.properties` or `gfsecurity.properties`.
@@ -59,15 +59,15 @@ In non-embedded mode where you are running Pulse on a standalone web application
 
 ## <a id="pulse-auth-geode-security-manager"></a>Configuring Pulse to use Security Manager
 
-You can configure Pulse to use the Geode Security Manager in either embedded or non-embedded mode.
+You can configure Pulse to use the @@product_name@@ Security Manager in either embedded or non-embedded mode.
 
 **Embedded Mode**
 
-To use Security Manager with Pulse running in embedded mode, you do not need to specify additional credentials. Pulse will automatically be configured by Geode to send the credentials entered in the Pulse login page to the Security Manager for authentication and authorization.
+To use Security Manager with Pulse running in embedded mode, you do not need to specify additional credentials. Pulse will automatically be configured by @@product_name@@ to send the credentials entered in the Pulse login page to the Security Manager for authentication and authorization.
 
 **Non-Embedded (Standalone Web Server) Mode**
 
-When running Pulse on a standalone web application server, such as Tomcat, you need to configure the Pulse Web app to use a Geode -specific security profile.  Activate the Geode profile at startup with the system property:
+When running Pulse on a standalone web application server, such as Tomcat, you need to configure the Pulse Web app to use a @@product_name@@-specific security profile.  Activate the @@product_name@@ profile at startup with the system property:
 
 ``` pre
 -Dspring.profiles.active=pulse.authentication.gemfire
@@ -94,7 +94,7 @@ You can use a custom security profile only if you are NOT using a Security Manag
 
 **Embedded Mode**
 
-Put `pulse-authentication-custom.xml` in the locator's working directory. When you start Geode members, specify the custom authentication profile using the `-Dspring.profiles.active=pulse.authentication.custom` system property. For example:
+Put `pulse-authentication-custom.xml` in the locator's working directory. When you start @@product_name@@  members, specify the custom authentication profile using the `-Dspring.profiles.active=pulse.authentication.custom` system property. For example:
 
 ``` pre
 gfsh> start locator --name=locator --J=-Dspring.profiles.active=pulse.authentication.custom
@@ -182,7 +182,7 @@ pulse.oauth.userNameAttributeName=user_name
 **Embedded Mode**
 
 1.  Create the above `pulse.properties` file and put it in the member's working directory.
-2.  Start up the member with a Geode property (either specify it in `gemfire.properties` file or pass it in at startup) `security-auth-token-enabled-components=pulse` or  `security-auth-token-enabled-components=all`.
+2.  Start up the member with a @@product_name@@ property (either specify it in `gemfire.properties` file or pass it in at startup) `security-auth-token-enabled-components=pulse` or  `security-auth-token-enabled-components=all`.
 
 ``` pre
 gfsh> start locator --name=locator --J=-Dgemfire.security-auth-token-enabled-components=pulse
@@ -198,4 +198,3 @@ Start pulse and you will see login page being redirected to the configured authe
 -Dspring.profiles.active=pulse.authentication.oauth
 ```
 Start Pulse and you will see login page being redirected to the configured authentication provider.
-

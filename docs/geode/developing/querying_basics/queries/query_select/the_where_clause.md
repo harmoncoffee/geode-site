@@ -162,7 +162,9 @@ Same query as the previous example, with the additional constraint that matches 
 SELECT * FROM /exampleRegion portfolio1, portfolio1.positions.values positions1, /exampleRegion2 portfolio2, portfolio2.positions.values positions2 WHERE portfolio1.ID = 1 AND positions1.secId = positions2.secId
 ```
 
-## <a id="the_where_clause__section_D91E0B06FFF6431490CC0BFA369425AD" class="no-quick-link"></a>LIKE Geode offers limited support for the LIKE predicate. LIKE can be used to mean 'equals to'. If you terminate the string with a wildcard ('%'), it behaves like 'starts with'. You can also place a wildcard (either '%' or '\_') at any other position in the comparison string. You can escape the wildcard characters to represent the characters themselves.
+## <a id="the_where_clause__section_D91E0B06FFF6431490CC0BFA369425AD" class="no-quick-link"></a>LIKE
+
+@@product_name@@ offers limited support for the LIKE predicate. LIKE can be used to mean 'equals to'. If you terminate the string with a wildcard ('%'), it behaves like 'starts with'. You can also place a wildcard (either '%' or '\_') at any other position in the comparison string. You can escape the wildcard characters to represent the characters themselves.
 
 **Note:**
 The '\*' wildcard is not supported in OQL LIKE predicates.
@@ -200,7 +202,7 @@ SELECT * FROM /exampleRegion WHERE foo.toLowerCase LIKE '%bar%'
 ## <a id="the_where_clause__section_D2F8D17B52B04895B672E2FCD675A676" class="no-quick-link"></a>Method Invocations
 
 To use a method in a query, use the attribute name that maps to the public method you want to invoke, or directly use the public method name instead.
-It is important to note that when you use the attribute name instead of the method name,  will search for public methods named as the attribute itself or public methods with the `get` prefix. 
+It is important to note that when you use the attribute name instead of the method name, @@product_name_long@@ will search for public methods named as the attribute itself or public methods with the `get` prefix. 
 
 ``` pre
 SELECT r.id FROM /exampleRegion r                                       - maps to object.id() or object.getId()
@@ -241,7 +243,7 @@ When a `null` argument is used, if the query processor cannot determine the prop
 
 **Methods calls with the `SecurityManager` enabled**
 
-When the `SecurityManager` is enabled, by default Geode throws a `NotAuthorizedException` when any method that does not belong to the to the list of default allowed methods, given in [RestrictedMethodAuthorizer](../../security/method_invocation_authorizers.html#restrictedMethodAuthorizer), is invoked.
+When the `SecurityManager` is enabled, by default @@product_name@@ throws a `NotAuthorizedException` when any method that does not belong to the to the list of default allowed methods, given in [RestrictedMethodAuthorizer](../../security/method_invocation_authorizers.html#restrictedMethodAuthorizer), is invoked.
 
 In order to further customize this authorization check, see [Changing the Method Authorizer](../../security/method_invocation_authorizers.html#changing_method_authorizer).
 
@@ -299,7 +301,7 @@ SELECT name, address FROM /company
   WHERE id IN (SELECT id FROM /portfolios WHERE status = 'active')
 ```
 
-The interior SELECT statement returns a collection of ids for all /portfolios entries whose status is active. The exterior SELECT iterates over /company, comparing each entry's id with this collection. For each entry, if the IN expression returns TRUE, the associated name and address are added to the outer SELECT's collection.
+The interior SELECT statement returns a collection of ids for all /portfolios entries whose status is active. The exterior SELECT iterates over /company, comparing each entry’s id with this collection. For each entry, if the IN expression returns TRUE, the associated name and address are added to the outer SELECT’s collection.
 
 **Comparing Set Values**
 
@@ -331,7 +333,7 @@ One problem is that you cannot create indexes on Set or List types (collection t
 
 ## <a id="the_where_clause__section_E7206D045BEC4F67A8D2B793922BF213" class="no-quick-link"></a>Double.NaN and Float.NaN Comparisons
 
-The comparison behavior of Double.NaN and Float.NaN within Geode queries follow the semantics of the JDK methods Float.compareTo and Double.compareTo.
+The comparison behavior of Double.NaN and Float.NaN within @@product_name@@ queries follow the semantics of the JDK methods Float.compareTo and Double.compareTo.
 
 In summary, the comparisons differ in the following ways from those performed by the Java language numerical comparison operators `(<, <=, ==, >= >)` when applied to primitive double [float] values:
 
@@ -373,6 +375,3 @@ For example, this query selects all people with a body mass index less than 25:
 ``` pre
 String query = "SELECT * FROM /people p WHERE p.height * p.height/p.weight < 25";
 ```
-        
-
-

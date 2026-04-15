@@ -19,19 +19,22 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Apache Geode uses Apache Log4j 2 as the basis for its logging system. Geode uses [Apache Log4j 2](http://logging.apache.org/log4j/2.x/) API and Core libraries as the basis for its logging system. Log4j 2 API is a popular and powerful front-end logging API used by all the Geode classes to generate log statements. Log4j 2 Core is a backend implementation for logging; you can route any of the front-end logging API libraries to log to this backend. Geode uses the Core backend to run three custom Log4j 2 Appenders: **GeodeConsole**, **GeodeLogWriter**, and **GeodeAlert**. Geode has been tested with Log4j 2.25.3. Geode 
- requires the 
+-->
+
+@@product_name_long@@ uses Apache Log4j 2 as the basis for its logging system.
+
+@@product_name@@ uses [Apache Log4j 2](http://logging.apache.org/log4j/2.x/) API and Core libraries as the basis for its logging system. Log4j 2 API is a popular and powerful front-end logging API used by all the @@product_name@@ classes to generate log statements. Log4j 2 Core is a backend implementation for logging; you can route any of the front-end logging API libraries to log to this backend. @@product_name@@ uses the Core backend to run three custom Log4j 2 Appenders: **GeodeConsole**, **GeodeLogWriter**, and **GeodeAlert**.
+
+@@product_name@@ has been tested with Log4j 2.25.3.
+@@product_name@@ requires the 
 `log4j-api-2.25.3.jar` and `log4j-core-2.25.3.jar`
 JAR files to be in the classpath.
 Both of these JARs are distributed in the `<path-to-product>/lib` directory and included in the appropriate `*-dependencies.jar` convenience libraries.
 
-**AlertAppender** is the component that generates Geode alerts that are then managed by the JMX Management and Monitoring system. See [Notification Federation](../management/notification_federation_and_alerts.html#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A) for more details.
+**AlertAppender** is the component that generates @@product_name@@ alerts that are then managed by the JMX Management and Monitoring system. See [Notification Federation](../management/notification_federation_and_alerts.html#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A) for more details.
 
-**LogWriterAppender** is the component that is configured by all the `log-*` Geode properties such as `log-file`, `log-file-size-limit` and `log-disk-space-limit`.
+**LogWriterAppender** is the component that is configured by all the `log-*` @@product_name@@ properties such as `log-file`, `log-file-size-limit` and `log-disk-space-limit`.
 
-Both of these appenders are created and controlled programmatically. You configure their behavior with the `log-*` Geode properties and the alert level that is configured within the JMX Management & Monitoring system. These appenders do not currently support configuration within a `log4j2.xml` config file.
+Both of these appenders are created and controlled programmatically. You configure their behavior with the `log-*` @@product_name@@ properties and the alert level that is configured within the JMX Management & Monitoring system. These appenders do not currently support configuration within a `log4j2.xml` config file.
 
-Advanced users may wish to define their own `log4j2.xml`. See [Advanced Usersâ€”Configuring Log4j 2 for Geode ](configuring_log4j2.html) for more details.
-
-
-
+Advanced users may wish to define their own `log4j2.xml`. See [Advanced Users—Configuring Log4j 2 for @@product_name@@](configuring_log4j2.html) for more details.

@@ -19,7 +19,9 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode distributes a subset of cache events between clusters, with a minimum impact on each system's performance. Events are distributed only for regions that you configure to use a gateway sender for distribution.
+-->
+
+@@product_name@@ distributes a subset of cache events between clusters, with a minimum impact on each system's performance. Events are distributed only for regions that you configure to use a gateway sender for distribution.
 
 ## <a id="how_multisite_distribution_works__section_A16562611E094C88B12BC149D5EEEEBA" class="no-quick-link"></a>Queuing Events for Distribution
 
@@ -65,5 +67,3 @@ Exceptions can occur at different points during batch processing:
 -   The gateway receiver could fail with acknowledgment. If processing fails while the gateway receiver is processing a batch, the receiver replies with a failure acknowledgment that contains the exception, including the identity of the message that failed, and the ID of the last message that it successfully processed. The gateway sender then removes the successfully processed messages and the failed message from the queue and logs an exception with the failed message information. The sender then continues processing the messages remaining in the queue.
 -   The gateway receiver can fail without acknowledgment. If the gateway receiver does not acknowledge a sent batch, the gateway sender does not know which messages were successfully processed. In this case the gateway sender re-sends the entire batch.
 -   No gateway receivers may be available for processing. If a batch processing exception occurs because there are no remote gateway receivers available, then the batch remains in the queue. The gateway sender waits for a time, and then attempts to re-send the batch. The time period between attempts is five seconds. The existing server monitor continuously attempts to connect to the gateway receiver, so that a connection can be made and queue processing can continue. Messages build up in the queue and possibly overflow to disk while waiting for the connection.
-
-

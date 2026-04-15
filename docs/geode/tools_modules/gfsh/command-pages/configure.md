@@ -28,7 +28,7 @@ Configure Portable Data eXchange (PDX) for all the cache(s) in the cluster.
 
 <a id="topic_jdkdiqbgphqh__section_C27BE964CE554180A65968DBEBF50B23"></a>
 
-Configures Geode 's Portable Data eXchange for all the cache(s) in the cluster
+Configures @@product_name@@'s Portable Data eXchange for all the cache(s) in the cluster
 and persists the pdx configuration in the locator with the cluster configuration service.
 
 For consistent results, PDX should be configured before any servers have started.
@@ -85,5 +85,3 @@ Configure pdx failed because cluster configuration is disabled.
 "Failed to persist the configuration changes due to this command, Revert the command to maintain consistency.
 Please use "status cluster-config-service" to determing whether Cluster configuration service is RUNNING."
 ```
-
-

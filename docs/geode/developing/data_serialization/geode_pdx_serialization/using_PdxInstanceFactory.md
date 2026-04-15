@@ -49,6 +49,3 @@ You can now work with enum objects as PdxInstances. When you fetch an enum objec
 An enum `PdxInstance` is not writable; if you call `createWriter` it will throw an exception.
 
 The `RegionService` has a method that allows you to create a `PdxInstance` that represents an enum. See `RegionService.createPdxEnum` in the Java API documentation.
-
-
-

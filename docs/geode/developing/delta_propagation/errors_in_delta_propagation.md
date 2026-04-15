@@ -33,6 +33,3 @@ Errors in delta propagation fall into two categories based on how they are handl
 -   Problems creating or distributing the delta that cannot be fixed by distributing the full value. In these cases, your `put` operation fails with an exception. This type of error includes:
     -   Error or exception in `hasDelta` or `toDelta`.
     -   Error or exception in a server or peer receiver that fall outside of the situations described above in the first category.
-
-
-

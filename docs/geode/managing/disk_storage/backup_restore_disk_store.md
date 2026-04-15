@@ -27,7 +27,7 @@ A backup is a copy of persisted data from a disk store. A backup is used to rest
 -   [What a Full Online Backup Saves](backup_restore_disk_store.html#backup_restore_disk_store__section_C08E52E65DAD4CD5AE076BBDCF1DB340)
 -   [What an Incremental Online Backup Saves](backup_restore_disk_store.html#backup_restore_disk_store__section_59E23EEA4AB24374A45B99A8B44FD49B)
 -   [Disk Store Backup Directory Structure and Contents](backup_restore_disk_store.html#backup_restore_disk_store__section_22809A237A344015B40C962B704D8F34)
--   [Offline Membersâ€”Manual Catch-Up to an Online Backup](backup_restore_disk_store.html#backup_restore_disk_store__section_6F998080AF7640D1A9E951D155A75E3A)
+-   [Offline Members—Manual Catch-Up to an Online Backup](backup_restore_disk_store.html#backup_restore_disk_store__section_6F998080AF7640D1A9E951D155A75E3A)
 -   [Restore Using a Backup Made While the System Was Online](backup_restore_disk_store.html#backup_restore_disk_store__section_D08DC489B9D947DE97B8F96261E4A977)
 
 ## <a id="backup_restore_disk_store__section_63AB5917BF24432898A79DBE8E4071FF" class="no-quick-link"></a>Making a Backup While the System Is Online
@@ -176,14 +176,14 @@ BACKUPDEFAULT_1.crf BACKUPDEFAULT_1.drf BACKUPDEFAULT.if
 ./2012-10-18-13-44-53/dasmith_e6410_server1_8623_v1_33892/user:
 ```
 
-## <a id="backup_restore_disk_store__section_6F998080AF7640D1A9E951D155A75E3A" class="no-quick-link"></a>Offline Membersâ€”Manual Catch-Up to an Online Backup
+## <a id="backup_restore_disk_store__section_6F998080AF7640D1A9E951D155A75E3A" class="no-quick-link"></a>Offline Members—Manual Catch-Up to an Online Backup
 
-If you must have a member offline during an online backup, you can manually back up its disk stores. Bring this member's files into the online backup framework manually, and create a restore script by hand starting with a copy of another member's script:
+If you must have a member offline during an online backup, you can manually back up its disk stores. Bring this member’s files into the online backup framework manually, and create a restore script by hand starting with a copy of another member’s script:
 
 1.  Duplicate the directory structure of a backed up member for this member.
-2.  Rename directories as needed to reflect this member's particular backup, including disk store names.
+2.  Rename directories as needed to reflect this member’s particular backup, including disk store names.
 3.  Clear out all files other than the restore script.
-4.  Copy in this member's files.
+4.  Copy in this member’s files.
 5.  Modify the restore script to work for this member.
 
 ## <a id="backup_restore_disk_store__section_D08DC489B9D947DE97B8F96261E4A977" class="no-quick-link"></a>Restore Using a Backup Made While the System Was Online
@@ -198,5 +198,3 @@ The restore copies these files back to their original location:
 
 -   Disk store files for all stores containing persistent region data.
 -   Any files or directories you have configured to be backed up in the `cache.xml` `<backup>` elements.
-
-

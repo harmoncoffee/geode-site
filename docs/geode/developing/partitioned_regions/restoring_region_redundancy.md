@@ -57,6 +57,3 @@ Initiate a restore redundancy operation using one of the following:
 If you have `startup-recovery-delay=-1` configured for your partitioned region, you will need to perform a restore redundancy operation on your region after you restart any members in your cluster in order to recover any lost redundancy.
 
 If you have `startup-recovery-delay` set to a low number, you may need to wait extra time until the region has recovered redundancy.
-
-
-

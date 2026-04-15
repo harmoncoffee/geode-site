@@ -98,5 +98,3 @@ You can also configure regions using the gfsh command-line interface. See [Regio
 ## Configuring the Number of Threads for Expiration
 
 You can use the `gemfire.EXPIRY_THREADS` system property to increase the number of threads that handle expiration. By default, one thread handles expiration, and it is possible for the thread to become overloaded when entries expire faster than the thread can expire them. If a single thread is handling too many expirations, it can result in an OOME. Set the gemfire.EXPIRY\_THREADS system property to the desired number when starting the cache server.
-
-

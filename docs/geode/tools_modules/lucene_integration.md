@@ -1,4 +1,4 @@
-﻿---
+---
 title: Apache Lucene Integration
 sidebar_label: Apache Lucene Integration
 sidebar_position: 5
@@ -21,13 +21,13 @@ limitations under the License.
 -->
 # Apache Lucene&reg; Integration
 
-Apache Lucene&reg; is a widely used Java full-text search engine. This section describes how Apache Geode integrates with Apache Lucene.
+Apache Lucene&reg; is a widely used Java full-text search engine. This section describes how @@product_name_long@@ integrates with Apache Lucene.
 We assume that the reader is familiar with Apache Lucene's indexing and search functionalities.
 
 The Apache Lucene integration:
 
-- Enables users to create Lucene indexes on data stored in Geode 
-- Provides high availability of indexes using Geode 's HA capabilities to store the indexes in memory
+- Enables users to create Lucene indexes on data stored in @@product_name@@
+- Provides high availability of indexes using @@product_name@@'s HA capabilities to store the indexes in memory
 - Colocates indexes with data
 - For persistent regions, persists Lucene indexes to disk
 - Updates the indexes asynchronously to minimize impacting write latency
@@ -70,7 +70,9 @@ Each field has a corresponding analyzer to extract terms from text. When no anal
 the `org.apache.lucene.analysis.standard.StandardAnalyzer` is used.
 
 The index has an associated serializer that renders the indexed object as a Lucene document comprised of searchable fields. 
-The default serializer is a simple one that handles top-level fields, but does not render collections or nested objects. Geode supplies a built-in serializer, `FlatFormatSerializer()`, that handles
+The default serializer is a simple one that handles top-level fields, but does not render collections or nested objects.
+
+@@product_name@@ supplies a built-in serializer, `FlatFormatSerializer()`, that handles
 collections and nested objects. See [Using FlatFormatSerializer to Index Fields within Nested Objects](#using-flatformatserializer) for more information
 regarding Lucene indexes for nested objects.
 
@@ -146,7 +148,7 @@ This XML configuration file specifies a Lucene index with three fields and three
 
 ## <a id="using-flatformatserializer" class="no-quick-link"></a>Using FlatFormatSerializer to Index Fields within Nested Objects
 
- supplies a built-in serializer, `org.apache.geode.cache.lucene.FlatFormatSerializer`
+@@product_name@@ supplies a built-in serializer, `org.apache.geode.cache.lucene.FlatFormatSerializer`
 that renders collections and nested objects as searchable fields, which you can access using the syntax
 `fieldnameAtLevel1.fieldnameAtLevel2` for both indexing and querying.
 
@@ -417,4 +419,3 @@ Therefore, if a backup were taken between
 the persisted write to a region
 and the resulting persisted write to the Lucene index,
 then the backup represents inconsistent data in the region and Lucene index.
-

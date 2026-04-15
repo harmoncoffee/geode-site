@@ -1,4 +1,4 @@
-﻿---
+---
 title:  GET /geode/v1/servers
 sidebar_label: GET /geode/v1/servers
 sidebar_position: 2
@@ -61,7 +61,4 @@ Content-Type: application/json; charset=utf-8
 
 | Status Code               | Description                                                                                 |
 |---------------------------|---------------------------------------------------------------------------------------------|
-| 500 INTERNAL SERVER ERROR | Returned if Geode throws an error while executing the request. |
-
-
-
+| 500 INTERNAL SERVER ERROR | Returned if @@product_name@@ throws an error while executing the request. |

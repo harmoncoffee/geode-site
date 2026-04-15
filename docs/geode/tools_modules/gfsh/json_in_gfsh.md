@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Specifying JSON within Command-Line Options
 sidebar_label: Specifying JSON within Command-Line Options
 sidebar_position: 6
@@ -80,4 +80,3 @@ gfsh>create region --name=region3 --type=PARTITION \
 ```
 
 The value of the pair is `property's value`.
-

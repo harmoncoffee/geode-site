@@ -1,4 +1,4 @@
-﻿---
+---
 title: Timeouts for Long-Running Queries
 sidebar_label: Timeouts for Long-Running Queries
 sidebar_position: 3
@@ -21,7 +21,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<a id="topic_long-running-queries"></a> Geode can monitor and throw an exception when
+<a id="topic_long-running-queries"></a>
+
+@@product_name@@ can monitor and throw an exception when
 a query runs longer than a configured amount of time.
 This feature is enabled by setting the `critical-heap-percentage` attribute 
 which detects that the JVM has too little heap memory.
@@ -33,5 +35,4 @@ A value of -1 explicitly disables the timeout.
 
 When enabled, a query that runs longer than the configured timeout
 will be cancelled such that it does not finish,
-and Geode throws a `QueryExecutionTimeoutException`.
-
+and @@product_name@@ throws a `QueryExecutionTimeoutException`.

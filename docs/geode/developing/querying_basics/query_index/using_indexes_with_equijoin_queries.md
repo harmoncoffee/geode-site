@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Using Indexes with Equi-Join Queries
 sidebar_label: Using Indexes with Equi-Join Queries
 sidebar_position: 10
@@ -67,6 +67,3 @@ To use an index with an equi-join query:
     | /securities sc                             | sc.secName         |
 
     Then, if you create any more indexes, create one on `sc.status` and one on `inv.age` or `inv.name` or both.
-
-
-

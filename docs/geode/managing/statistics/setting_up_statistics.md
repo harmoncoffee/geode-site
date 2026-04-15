@@ -31,7 +31,7 @@ Execute the following commands to modify the cluster's configuration and enable 
 
 ``` pre
 gfsh>start locator --name=l1 --enable-cluster-configuration=true
-gfsh>alter runtime --enable-statistics=true -â€“statistic-archive-file=myStatisticsArchiveFile.gfs
+gfsh>alter runtime --enable-statistics=true -–statistic-archive-file=myStatisticsArchiveFile.gfs
 ```
 
 Note that setting `statistic-archive-file` to `/dev/null` still calculates statistics, but they are not archived to a file.
@@ -165,4 +165,3 @@ You can specify limits on the archive files for statistics using the gfsh `alter
 
 **Note:**
     If you modify the value of `--archive-disk-space-limit` while the cluster is running, the new value does not take effect until the current archive becomes inactive.
-

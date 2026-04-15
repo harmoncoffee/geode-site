@@ -73,6 +73,3 @@ datanode2 | group1_dependencies.jar | /usr/local/gemfire/deploy/GF#group1_depend
 ``` pre
 No JAR Files Found
 ```
-
-
-

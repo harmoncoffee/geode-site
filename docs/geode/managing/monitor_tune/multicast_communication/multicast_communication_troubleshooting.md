@@ -25,7 +25,7 @@ Several problems may arise during the initial testing and tuning process for mul
 
 **Some or All Members Cannot Communicate**
 
-If your applications and cache servers cannot talk to each other, even though they are configured correctly, you may not have multicast connectivity on your network. It's common to have unicast connectivity, but not multicast connectivity. See your network administrator.
+If your applications and cache servers cannot talk to each other, even though they are configured correctly, you may not have multicast connectivity on your network. It’s common to have unicast connectivity, but not multicast connectivity. See your network administrator.
 
 **Multicast Is Slower Than Expected**
 
@@ -36,6 +36,3 @@ Make sure your network hardware can deal with multicast traffic and route it eff
 **Multicast Fails Unexpectedly**
 
 If you find through testing that multicast fails above a round number, for example, it works up to 100 Mbps and fails at all rates over that, suspect that it is failing because it exceeds the network rate. This problem often arises at sites where one of the secondary LANs is slower than the main network
-
-
-

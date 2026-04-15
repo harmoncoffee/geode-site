@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Options for Configuring the Cache and Data Regions
 sidebar_label: Options for Configuring the Cache and Data Regions
 sidebar_position: 3
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-To populate your Apache Geode cache and fine-tune its storage and distribution behavior, you need to define cached data regions and provide custom configuration for the cache and regions.
+To populate your @@product_name_long@@ cache and fine-tune its storage and distribution behavior, you need to define cached data regions and provide custom configuration for the cache and regions.
 
 <a id="setting_cache_properties__section_FB536C90C219432D93E872CBD49D66B1"></a>
 Cache configuration properties define:
@@ -31,12 +31,9 @@ Cache configuration properties define:
 
 Configure the cache and its data regions through one or more of these methods:
 
--   Through a persistent configuration that you define when issuing commands that use the gfsh command line utility. The gfsh utility supports the administration, debugging, and deployment of Apache Geode processes and applications. You can use gfsh to configure regions, locators, servers, disk stores, event queues, and other objects.
+-   Through a persistent configuration that you define when issuing commands that use the gfsh command line utility. The gfsh utility supports the administration, debugging, and deployment of @@product_name_long@@ processes and applications. You can use gfsh to configure regions, locators, servers, disk stores, event queues, and other objects.
 
     As you issue commands, gfsh saves a set of configurations that apply to the entire cluster and also saves configurations that only apply to defined groups of members within the cluster. You can re-use these configurations to create a cluster. See [Overview of the Cluster Configuration Service](../../configuring/cluster_config/gfsh_persist.html).
 
 -   Through declarations in the XML file named in the `cache-xml-file` `gemfire.properties` setting. This file is generally referred to as the `cache.xml` file, but it can have any name. See [cache.xml](../../reference/topics/chapter_overview_cache_xml.html#cache_xml).
 -   Through application calls to the `org.apache.geode.cache.CacheFactory`, `org.apache.geode.cache.Cache` and `org.apache.geode.cache.Region` APIs.
-
-
-

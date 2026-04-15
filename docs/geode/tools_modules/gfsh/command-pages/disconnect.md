@@ -52,6 +52,3 @@ Error occurred while disconnecting: {0}
 ``` pre
 Not connected!
 ```
-
-
-

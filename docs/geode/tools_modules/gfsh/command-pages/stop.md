@@ -37,7 +37,7 @@ Stop gateway receivers, gateway senders, locators and servers.
 
 -   **[stop server](#topic_723EE395A63A40D6819618AFC2902115)**
 
-    Stop a Geode cache server.
+    Stop a @@product_name@@ cache server.
 
 ## <a id="topic_CD1D526FD6F84A7B80B25C741129ED30" class="no-quick-link"></a>stop gateway-receiver
 
@@ -162,7 +162,7 @@ stop locator --name=value | --dir=value
 
 | Name                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                     | Default Value     |
 |----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| <span class="keyword parmname">&#8209;&#8209;name</span> | The Geode member name of the locator to stop. You must be connected to the JMX Manager to use this option. Can be used to stop remote locators. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/cluster_config/gfsh_remote.html). | |
+| <span class="keyword parmname">&#8209;&#8209;name</span> | The @@product_name@@ member name of the locator to stop. You must be connected to the JMX Manager to use this option. Can be used to stop remote locators. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/cluster_config/gfsh_remote.html). | |
 | <span class="keyword parmname">&#8209;&#8209;dir</span>  | Directory in which the locator was started. | current directory |
 
 <span class="tablecap">Table 3. Stop Locator Parameters</span>
@@ -195,7 +195,7 @@ No longer connected to 192.0.2.0[1099].
 
 ## <a id="topic_723EE395A63A40D6819618AFC2902115" class="no-quick-link"></a>stop server
 
-Stop a Geode cache server.
+Stop a @@product_name@@ cache server.
 
 **Availability:** Online or offline. If you want to stop a cache server while you are offline, use the `--dir` option.
 
@@ -209,8 +209,8 @@ stop server [--name=value] [--dir=value]
 
 | Name                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                           | Default Value     |
 |-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| <span class="keyword parmname">&#8209;&#8209;name </span> | Name/Id of the  Cache Server to stop. You must be connected to the JMX Manager to use this option. Can be used to stop remote servers. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/cluster_config/gfsh_remote.html). | Â                  |
-| <span class="keyword parmname">&#8209;&#8209;dir </span>  | Directory in which the  Cache Server was started.                                                                                                                                                                                                                                                                                                                                                   | current directory |
+| <span class="keyword parmname">&#8209;&#8209;name </span> | Name/Id of the @@product_name@@ Cache Server to stop. You must be connected to the JMX Manager to use this option. Can be used to stop remote servers. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/cluster_config/gfsh_remote.html). |                   |
+| <span class="keyword parmname">&#8209;&#8209;dir </span>  | Directory in which the @@product_name@@ Cache Server was started.                                                                                                                                                                                                                                                                                                                                                   | current directory |
 
 <span class="tablecap">Table 4. Stop Server Parameters</span>
 
@@ -220,4 +220,3 @@ stop server [--name=value] [--dir=value]
 stop server --name=server1
 stop server --dir=server1
 ```
-

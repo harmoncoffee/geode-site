@@ -43,11 +43,11 @@ Start servers, locators, gateway senders and gateway receivers, and monitoring t
 
 -   **[start pulse](#topic_E906BA7D9E7F4C5890FEFA7ECD40DD77)**
 
-    Launch the Geode Pulse monitoring dashboard tool in the user's default system browser and navigates the user to the landing page (login page).
+    Launch the @@product_name@@ Pulse monitoring dashboard tool in the user's default system browser and navigates the user to the landing page (login page).
 
 -   **[start server](#topic_3764EE2DB18B4AE4A625E0354471738A)**
 
-    Start a Geode cache server process.
+    Start a @@product_name@@ cache server process.
 
 ## <a id="topic_67738A5B68E84DEE95D1C92DAB2E26E5" class="no-quick-link"></a>start gateway-receiver
 
@@ -161,7 +161,7 @@ JConsole automatically connects to a running JMX Manager node if one is availabl
 
 Note that you must have a JDK installed (not just a JRE) and the correct PATH and JAVA\_HOME environment variables set.
 
-See [Browsing Geode MBeans through JConsole](../../../managing/management/mbeans_jconsole.html) for an example of using JConsole with the Geode management and monitoring system.
+See [Browsing @@product_name@@ MBeans through JConsole](../../../managing/management/mbeans_jconsole.html) for an example of using JConsole with the @@product_name@@ management and monitoring system.
 
 **Availability:** Online or offline.
 
@@ -210,7 +210,7 @@ The JConsole application appears and auto-connects to a JMX Manager node if one 
 ``` pre
 An error occurred while launching JConsole = %1$s
 
-Connecting by the Geode member's name or ID is not currently supported.
+Connecting by the @@product_name@@ member's name or ID is not currently supported.
 Please specify the member as '<hostname|IP>[PORT].
 
 An IO error occurred while launching JConsole.
@@ -257,7 +257,7 @@ The command creates a subdirectory and log file named after the locator. If the 
 
 In addition, if gfsh is not already connected to a JMX Manager, the gfsh console will automatically connect to the new embedded JMX Manager started by the new locator.
 
-**Note:** When both `--max-heap` and `--initial-heap` are specified during locator startup, additional GC parameters are specified internally by Geode 's Resource Manager. If you do not want the additional default GC properties set by the Resource Manager, then use the`-Xms` and `-Xmx` JVM options. See [Controlling Heap Use with the Resource Manager](../../../managing/heap_use/heap_management.html#configuring_resource_manager) for more information.
+**Note:** When both `--max-heap` and `--initial-heap` are specified during locator startup, additional GC parameters are specified internally by @@product_name@@'s Resource Manager. If you do not want the additional default GC properties set by the Resource Manager, then use the`-Xms` and `-Xmx` JVM options. See [Controlling Heap Use with the Resource Manager](../../../managing/heap_use/heap_management.html#configuring_resource_manager) for more information.
 
 **Note:** The additional GC parameters introduced by the `--max-heap` option are not compatible with the usage of G1 garbage collector.
 
@@ -280,22 +280,22 @@ start locator --name=value [--bind-address=value] [--force(=value)]
 
 | Name         | Description    | Default Value |
 |--------------|----------------|---------------|
-| &#8209;&#8209;name                                | Name to be used for this Geode locator service. If not specified, gfsh generates a random name. | |
+| &#8209;&#8209;name                                | Name to be used for this @@product_name@@ locator service. If not specified, gfsh generates a random name. | |
 | &#8209;&#8209;bind-address                        | IP address on which the locator will be bound. | bind to all addresses |
 | &#8209;&#8209;force                               | Whether to allow the PID file from a previous locator run to be overwritten. | false |
 | &#8209;&#8209;groups                              | Group(s) the locator will be a part of. | |
 | &#8209;&#8209;hostname-for-clients                | Host name or IP address that will be sent to clients so they can connect to this locator. | uses `bind-address` |
 | &#8209;&#8209;classpath                           | Application classes to be added to the locator's CLASSPATH after the core jar file. See <a href="../../../getting_started/setup_classpath.html">Setting Up the CLASSPATH</a> for details. | |
-| &#8209;&#8209;locators                            | List of locators used by this locator to join the appropriate Geode Geode cluster. | |
+| &#8209;&#8209;locators                            | List of locators used by this locator to join the appropriate @@product_name@@ cluster. | |
 | &#8209;&#8209;log-level                           | Level of output logged to the locator log file. Possible values for log-level include: <code>ALL</code>, <code>TRACE</code>, <code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>, <code>FATAL</code>, <code>OFF</code>. | |
-| &#8209;&#8209;mcast-address                       | IP address or hostname used to bind the UPD socket for multi-cast networking so the locator can locate other members in the Geode Geode cluster. If mcast-port is zero, then mcast-address is ignored. | |
-| &#8209;&#8209;mcast-port                          | Port used for multi-cast networking so the locator can locate other members of the Geode Geode cluster. A zero value disables mcast. | |
+| &#8209;&#8209;mcast-address                       | IP address or hostname used to bind the UPD socket for multi-cast networking so the locator can locate other members in the @@product_name@@ cluster. If mcast-port is zero, then mcast-address is ignored. | |
+| &#8209;&#8209;mcast-port                          | Port used for multi-cast networking so the locator can locate other members of the @@product_name@@ cluster. A zero value disables mcast. | |
 | &#8209;&#8209;port                                | Port the locator will listen on. | 10334 |
 | &#8209;&#8209;dir                                 | Directory in which the Locator will be started and run. | `./<locator-member-name>` |
 | &#8209;&#8209;properties-file                     | Specify the `gemfire.properties` file for configuring the locator's cluster. The file's path should be absolute or relative to gfsh's working directory. | |
 | &#8209;&#8209;security-properties-file            | The `gfsecurity.properties` file for configuring the Locator's security configuration in the cluster. The file's path can be absolute or relative to gfsh's working directory. | |
-| &#8209;&#8209;initial-heap                        | Size has the same format as the `-Xmx`/`-Xms` JVM options. <p><b>Note:</b> If you use the `-J-Xms` and `-J-Xmx` JVM properties instead of `-initial-heap` and `-max-heap`, then Geode Geode does not use default JVM resource management properties. If you use the JVM properties, you must then specify all properties manually for eviction, garbage collection, heap percentage, and so forth.</p> | |
-| &#8209;&#8209;max-heap                            | Size has the same format as the `-Xmx`/`-Xms` JVM options. <p><b>Note:</b> If you use the `-J-Xms` and `-J-Xmx` JVM properties instead of `-initial-heap` and `-max-heap`, then  does not use default JVM resource management properties. If you use the JVM properties, you must then specify all properties manually for eviction, garbage collection, heap percentage, and so forth.</p><p><b>Note:</b> The additional GC parameters introduced by the `-max-heap` option are not compatible with the usage of G1 garbage collector.</p> | |
+| &#8209;&#8209;initial-heap                        | Size has the same format as the `-Xmx`/`-Xms` JVM options. <p><b>Note:</b> If you use the `-J-Xms` and `-J-Xmx` JVM properties instead of `-initial-heap` and `-max-heap`, then @@product_name@@ does not use default JVM resource management properties. If you use the JVM properties, you must then specify all properties manually for eviction, garbage collection, heap percentage, and so forth.</p> | |
+| &#8209;&#8209;max-heap                            | Size has the same format as the `-Xmx`/`-Xms` JVM options. <p><b>Note:</b> If you use the `-J-Xms` and `-J-Xmx` JVM properties instead of `-initial-heap` and `-max-heap`, then @@product_name@@ does not use default JVM resource management properties. If you use the JVM properties, you must then specify all properties manually for eviction, garbage collection, heap percentage, and so forth.</p><p><b>Note:</b> The additional GC parameters introduced by the `-max-heap` option are not compatible with the usage of G1 garbage collector.</p> | |
 | &#8209;&#8209;connect                             | When connect is set to false, gfsh does not automatically connect to the locator which is started using this command. | true |
 | &#8209;&#8209;enable-cluster-configuration        | Enables cluster configuration behavior where locators maintain configurations for all members of the cluster.<br/>See <a href="../../../configuring/cluster_config/gfsh_persist.html">Overview of the Cluster Configuration Service</a>. | true |
 | &#8209;&#8209;load-cluster-configuration-from-dir | <b>Deprecated. Use `gfsh import cluster-configuration` for this functionality.</b><br/> Loads the cluster configuration from the `shared-config` directory. (When set to false, the configuration is loaded from the disk store of the internal, persistent region used by the locator to persist the configuration.) | false |
@@ -314,9 +314,9 @@ start locator --name=locator1
 
 ## <a id="topic_E906BA7D9E7F4C5890FEFA7ECD40DD77" class="no-quick-link"></a>start pulse
 
-Launch the Geode Pulse monitoring dashboard tool in the user's default system browser and navigates the user to the landing page (login page).
+Launch the @@product_name@@ Pulse monitoring dashboard tool in the user's default system browser and navigates the user to the landing page (login page).
 
-For more information on  Pulse, see [ Pulse](../../pulse/pulse-overview.html).
+For more information on @@product_name@@ Pulse, see [@@product_name@@ Pulse](../../pulse/pulse-overview.html).
 
 **Availability:** Online or offline.
 
@@ -348,7 +348,7 @@ Launched Geode Pulse
 
 ## <a id="topic_3764EE2DB18B4AE4A625E0354471738A" class="no-quick-link"></a>start server
 
-Start a Geode cache server process.
+Start a @@product_name@@ cache server process.
 
 **Note:** When both `--max-heap` and `--initial-heap` are specified during server startup, additional GC parameters are specified on your behalf. If you do not want the additional default GC properties set, then use the `-Xms` and `-Xmx` JVM options to set just these parameters. See [Controlling Heap Use with the Resource Manager](../../../managing/heap_use/heap_management.html#configuring_resource_manager) for more information.
 
@@ -440,4 +440,3 @@ start server --name=value [--assign-buckets(=value)] [--bind-address=value]
 gfsh>start server --name=server1
 gfsh>start server --name=server2 --server-port=40405
 ```
-

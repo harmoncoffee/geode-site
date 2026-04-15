@@ -1,4 +1,4 @@
-﻿---
+---
 title: Sample REST Applications
 sidebar_label: Sample REST Applications
 sidebar_position: 6
@@ -24,7 +24,7 @@ limitations under the License.
 <a id="topic_lvp_cd5_m4"></a>
 
 
-This section provides examples that illustrate how multiple clients, both REST and native, can access the same Geode region data.
+This section provides examples that illustrate how multiple clients, both REST and native, can access the same @@product_name@@ region data.
 
 **Note:**
 You must set PDX read-serialized to true when starting the cache server to achieve interoperability between different clients. See [Setup and Configuration](setup_config.html#topic_e21_qc5_m4) for instructions on starting up REST-enabled cache servers.
@@ -32,7 +32,7 @@ You must set PDX read-serialized to true when starting the cache server to achie
 The following examples demonstrate the following:
 
 1.  A Java REST client creates a Person object on key 1. This client references the following supporting examples (also provided):
-    1. Geode cache client
+    1.  @@product_name@@ cache client
     2.  REST client utility
     3.  Date Time utility
     4.  Person class
@@ -111,7 +111,7 @@ package org.apache.geode.restclient;
 }
 ```
 
-## \#1a. Geode Cache Java Client (MyJavaClient.java)
+## \#1a. @@product_name@@ Cache Java Client (MyJavaClient.java)
 
 ``` pre
 package org.apache.geode.javaclient;
@@ -705,4 +705,3 @@ print("  GET - %s" % resource_uri(res=keys[0]))
 r = requests.get(resource_uri(res=keys[0]))
 print(r.text)
 ```
-

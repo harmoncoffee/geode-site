@@ -1,4 +1,4 @@
-﻿---
+---
 title:  GET /geode/v1/{region}/{key}
 sidebar_label: GET /geode/v1/{region}/{key}
 sidebar_position: 4
@@ -86,5 +86,4 @@ Date: Sat, 18 Jan 2014 21:27:59 GMT
 |---------------------------|-----------------------------------------------------------------------------------------------------|
 | 400 BAD REQUEST           | Returned if the supplied key is not found in the region.                                            |
 | 404 NOT FOUND             | Returned if the region or specified key is not found.                                               |
-| 500 INTERNAL SERVER ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
-
+| 500 INTERNAL SERVER ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |

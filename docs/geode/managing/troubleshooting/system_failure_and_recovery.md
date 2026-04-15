@@ -29,12 +29,12 @@ If a system member withdraws from the cluster involuntarily because the member, 
 
 In planning a strategy for data recovery, consider these factors:
 
--   Whether the region is configured for data redundancyâ€”partitioned regions only.
--   The region's role-loss policy configuration, which controls how the region behaves after a crash or system failureâ€”distributed regions only.
+-   Whether the region is configured for data redundancy—partitioned regions only.
+-   The region’s role-loss policy configuration, which controls how the region behaves after a crash or system failure—distributed regions only.
 -   Whether the region is configured for persistence to disk.
 -   Whether the region is configured for LRU-based eviction.
 -   The extent of the failure, whether multiple members or a network outage is involved.
--   Your application's specific needs, such as the difficulty of replacing the data and the risk of running with inconsistent data for your application.
+-   Your application’s specific needs, such as the difficulty of replacing the data and the risk of running with inconsistent data for your application.
 -   When an alert is generated due to network partition or slow response, indicating that certain processes may, or will, fail.
 
 The rest of this section provides recovery instructions for various kinds system failures.
@@ -373,5 +373,3 @@ properties allow the developer to modify the recovery behavior for persistent re
   before all values have been read from disk into cache memory. Some key retrievals will require disk access, and some will not.
   When `true`, prolongs restart time, but ensures that when available for use, the cache is fully
   populated and data retrieval times will be optimal.
-
-

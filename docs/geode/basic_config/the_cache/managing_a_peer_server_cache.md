@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Managing a Peer or Server Cache
 sidebar_label: Managing a Peer or Server Cache
 sidebar_position: 2
@@ -23,7 +23,8 @@ limitations under the License.
 
 You start your peer or server cache using a combination of XML declarations and API calls. Close the cache when you are done.
 
-<a id="creating_and_closing_a_peer_cache__section_1633A80F0DB04794BB6C3A7F05EED97E"></a> Geode peers are members of a Geode cluster that do not act as clients to another Geode cluster. Geode servers are peers that also listen for and process client requests.
+<a id="creating_and_closing_a_peer_cache__section_1633A80F0DB04794BB6C3A7F05EED97E"></a>
+@@product_name@@ peers are members of a @@product_name@@ cluster that do not act as clients to another @@product_name@@ cluster. @@product_name@@ servers are peers that also listen for and process client requests.
 
 1.  Create your cache:
     1.  Start up a cluster and the cluster configuration service:
@@ -55,7 +56,7 @@ You start your peer or server cache using a combination of XML declarations and 
             xmlns="http://geode.apache.org/schema/cache"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:schemaLocation="http://geode.apache.org/schema/cache http://geode.apache.org/schema/cache/cache-1.0.xsd"
-            version="1.0â€>
+            version="1.0”>
             // NOTE: Use this <cache-server> element only for server processes 
             <cache-server port="40404"/>
             <region name="customerRegion" refid="REPLICATE" />
@@ -69,7 +70,7 @@ You start your peer or server cache using a combination of XML declarations and 
             ``` pre
             Cache cache = new CacheFactory().create();
             ```
-        -   If you are running a server using the Geode `cacheserver` process, it automatically creates the cache and connection at startup and closes both when it exits.
+        -   If you are running a server using the @@product_name@@ `cacheserver` process, it automatically creates the cache and connection at startup and closes both when it exits.
 
         The system creates the connection and initializes the cache according to your `gemfire.properties` and `cache.xml` specifications.
 
@@ -78,6 +79,3 @@ You start your peer or server cache using a combination of XML declarations and 
     ``` pre
     cache.close();
     ```
-
-
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Query Debugging
 sidebar_label: Query Debugging
 sidebar_position: 7
@@ -35,7 +35,7 @@ You can also write:
 <TRACE> select * from /exampleRegion
 ```
 
-Before the query is executed and once it completes, Geode will log messages in `$GEMFIRE_DIR/system.log` with the following information:
+Before the query is executed and once it completes, @@product_name@@ will log messages in `$GEMFIRE_DIR/system.log` with the following information:
 
 ``` pre
 [info 2011/08/29 11:24:35.462 PDT CqServer <main> tid=0x1] Starting query: select * from /exampleRegion
@@ -46,7 +46,7 @@ Before the query is executed and once it completes, Geode will log messages in `
 If you want to enable debugging for all queries, you can enable query execution logging by setting a System property on the command line during start-up:
 
 ``` pre
-gfsh>start server --name=server_name -â€“J=-Dgemfire.Query.VERBOSE=true
+gfsh>start server --name=server_name -–J=-Dgemfire.Query.VERBOSE=true
 ```
 
 Or you can set the property programmatically:
@@ -104,6 +104,3 @@ In above log messages, the following information is provided:
 -   "indexesUsed(\\n) " shows n indexes were used for finding the results of the query.
 -   Each index name and its corresponding results are reported respectively.
 -   The log can be identified with the original query string itself appended in the end.
-
-
-

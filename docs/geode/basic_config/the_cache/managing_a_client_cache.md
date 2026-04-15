@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Managing a Client Cache
 sidebar_label: Managing a Client Cache
 sidebar_position: 3
@@ -23,11 +23,11 @@ limitations under the License.
 
 You have several options for client cache configuration. Start your client cache using a combination of XML declarations and API calls. Close the client cache when you are done.
 
-<a id="managing_a_client_cache__section_566044C44C434926A7A9FBAB2BF463BF"></a> Geode 
- clients are processes that send most or all of their data requests and updates to a Geode server system. Clients run as standalone processes, without peers of their own.
+<a id="managing_a_client_cache__section_566044C44C434926A7A9FBAB2BF463BF"></a>
+@@product_name@@ clients are processes that send most or all of their data requests and updates to a @@product_name@@ server system. Clients run as standalone processes, without peers of their own.
 
-**Note:** Geode 
- automatically configures the cluster for your `ClientCache` as standalone, which means the client has no peers. Do not try to set the `gemfire.properties` `mcast-port` or `locators` for a client application or the system will throw an exception.
+**Note:**
+@@product_name@@ automatically configures the cluster for your `ClientCache` as standalone, which means the client has no peers. Do not try to set the `gemfire.properties` `mcast-port` or `locators` for a client application or the system will throw an exception.
 
 1.  Create your client cache:
     1.  In your `cache.xml`, use the `client-cache` DOCTYPE and configure your cache inside a `<client-cache>` element. Configure your server connection pool and your regions as needed. Example:
@@ -47,7 +47,7 @@ You have several options for client cache configuration. Start your client cache
         ```
 
         **Note:**
-        Applications that use a `client-cache` may want to set `concurrency-checks-enabled` to false for a region in order to see all events for that region. Geode server members can continue using concurrency checks, but they will pass all events to the client cache. This configuration ensures that the client sees all region events, but it does not prevent the client cache region from becoming out-of-sync with the server cache. See [Consistency for Region Updates](../../developing/distributed_regions/region_entry_versions.html#topic_CF2798D3E12647F182C2CEC4A46E2045).
+        Applications that use a `client-cache` may want to set `concurrency-checks-enabled` to false for a region in order to see all events for that region. @@product_name@@ server members can continue using concurrency checks, but they will pass all events to the client cache. This configuration ensures that the client sees all region events, but it does not prevent the client cache region from becoming out-of-sync with the server cache. See [Consistency for Region Updates](../../developing/distributed_regions/region_entry_versions.html#topic_CF2798D3E12647F182C2CEC4A46E2045).
 
     2.  If you use multiple server pools, configure the pool name explicitly for each client region. Example:
 
@@ -69,7 +69,7 @@ You have several options for client cache configuration. Start your client cache
         ClientCache clientCache = new ClientCacheFactory().create();
         ```
 
-        This creates the server connections and initializes the client's cache according to your `gemfire.properties` and `cache.xml` specifications.
+        This creates the server connections and initializes the client’s cache according to your `gemfire.properties` and `cache.xml` specifications.
 
 2.  Close your cache when you are done using the `close` method of your `Cache` instance:
 
@@ -82,6 +82,3 @@ You have several options for client cache configuration. Start your client cache
     ``` pre
     clientCache.close(true);
     ```
-
-
-

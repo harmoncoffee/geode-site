@@ -26,8 +26,5 @@ Comment lines being with `--` (double dash). Comment blocks begin with `/*` and 
 ``` pre
 SELECT * --my comment 
 FROM /exampleRegion /* here is
-a comment */ WHERE status = â€˜activeâ€™
+a comment */ WHERE status = ‘active’
 ```
-
-
-

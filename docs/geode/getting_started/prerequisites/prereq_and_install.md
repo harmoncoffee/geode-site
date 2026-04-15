@@ -19,23 +19,20 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Each host of Apache Geode that meets a small set of prerequisites may follow the provided installation instructions.
+Each host of @@product_name_long@@ that meets a small set of prerequisites may follow the provided installation instructions.
 
--   **[Host Machine Requirements](host_machine)**
+-   **[Host Machine Requirements](getting_started/system_requirements/host_machine.html)**
 
-    Host machines must meet a set of requirements for Apache Geode Apache Geode.
+    Host machines must meet a set of requirements for @@product_name_long@@.
 
--   **[How to Install](install_standalone)**
+-   **[How to Install](getting_started/installation/install_standalone.html)**
 
-    Build from source or use the ZIP or TAR distribution to install Apache Geode on every physical and virtual machine that will run Apache Geode .
+    Build from source or use the ZIP or TAR distribution to install @@product_name_long@@ on every physical and virtual machine that will run @@product_name_long@@.
 
 -   **[Setting Up the CLASSPATH](getting_started/setup_classpath.html)**
 
-    This topic describes how Apache Geode processes set their CLASSPATH.
+    This topic describes how @@product_name_long@@ processes set their CLASSPATH.
 
 -   **[How to Uninstall](getting_started/uninstall_geode.html)**
 
-    This section describes how to remove Apache Geode .
-
-
-
+    This section describes how to remove @@product_name_long@@.

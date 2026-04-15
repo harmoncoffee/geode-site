@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-To save Geode cache or region data to a snapshot that you can later load into another cluster or region, use the `cache.getSnapshotService.save` API, `region.getSnapshotService.save` API, or the `gfsh` command-line interface (`export data`).
+To save @@product_name@@ cache or region data to a snapshot that you can later load into another cluster or region, use the `cache.getSnapshotService.save` API, `region.getSnapshotService.save` API, or the `gfsh` command-line interface (`export data`).
 
 If an error occurs during export, the export halts and the snapshot operation is canceled. Typical errors that halt an export include scenarios such as full disk, problems with file permissions, and network partitioning.
 
@@ -62,7 +62,7 @@ region.getSnapshotService().save(mySnapshot, SnapshotFormat.GEMFIRE);
 
 **gfsh:**
 
-Open a gfsh prompt. After connecting to a Geode cluster, at the prompt type:
+Open a gfsh prompt. After connecting to a @@product_name@@ cluster, at the prompt type:
 
 ``` pre
 gfsh>export data --region=Region --file=FileName.gfd --member=MemberName
@@ -99,5 +99,3 @@ The Java API example, above, accomplishes the same purpose as the following gfsh
 ``` pre
 gfsh>export data --parallel --region=region1 --dir=region1_2012_10_10 --member=server1
 ```
-
-

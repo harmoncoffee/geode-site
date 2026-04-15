@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-By default, Apache Geode stores only a single copy of your partitioned region data among the region's data stores. You can configure Geode to maintain redundant copies of your partitioned region data for high availability.
+By default, @@product_name_long@@ stores only a single copy of your partitioned region data among the region's data stores. You can configure @@product_name@@ to maintain redundant copies of your partitioned region data for high availability.
 
 -   **[Understanding High Availability for Partitioned Regions](how_pr_ha_works.html)**
 
@@ -28,6 +28,3 @@ By default, Apache Geode stores only a single copy of your partitioned region da
 -   **[Configure High Availability for a Partitioned Region](configuring_ha_for_pr.html)**
 
     Configure in-memory high availability for your partitioned region. Set other high-availability options, like redundancy zones and redundancy recovery strategies.
-
-
-

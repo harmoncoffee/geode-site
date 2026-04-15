@@ -103,4 +103,3 @@ Specifying object type in the FROM clause helps the query engine to process the 
 ``` pre
 SELECT DISTINCT * FROM /exampleRegion, positions.values positions TYPE Position WHERE positions.mktValue >= 25.00
 ```
-

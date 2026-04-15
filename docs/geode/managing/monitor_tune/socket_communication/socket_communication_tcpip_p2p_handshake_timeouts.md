@@ -36,6 +36,3 @@ The properties are passed to the cache server on the `gfsh` command line:
 ``` pre
 gfsh>start server --name=server_name --J=-Dp2p.handshakeTimeoutMs=75000
 ```
-
-
-

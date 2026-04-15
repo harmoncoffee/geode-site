@@ -21,7 +21,7 @@ limitations under the License.
 <a id="topic_7BCB054803CF48FE8688394C5C39000A"></a>
 
 
-Check the status of the cluster configuration service and Geode member processes, including locators, gateway receivers, gateway senders, and servers.
+Check the status of the cluster configuration service and @@product_name@@ member processes, including locators, gateway receivers, gateway senders, and servers.
 
 -   **[status cluster-config-service](#topic_ts1_qb1_dk2)**
 
@@ -45,7 +45,7 @@ Check the status of the cluster configuration service and Geode member processes
 
 -   **[status server](#topic_E5DB49044978404D9D6B1971BF5D400D)**
 
-    Display the status of the specified  cache server.
+    Display the status of the specified @@product_name@@ cache server.
 
 ## <a id="topic_ts1_qb1_dk2" class="no-quick-link"></a>status cluster-config-service
 
@@ -223,8 +223,8 @@ status locator [--name=value] [--host=value] [--port=value] [--dir=value] [--sec
 
 | Name                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                    | Default Value     |
 |----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| <span class="keyword parmname">&#8209;&#8209;name</span> | Name/ID of the locator for which to display status. You must be connected to the JMX Manager to use this option. Can be used to obtain status of remote locators. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/cluster_config/gfsh_remote.html). | Â                  |
-| <span class="keyword parmname">&#8209;&#8209;host</span> | Hostname or IP address on which the Locator is running.                                                                                                                                                                                                                                                                                                                                                                        | Â                  |
+| <span class="keyword parmname">&#8209;&#8209;name</span> | Name/ID of the locator for which to display status. You must be connected to the JMX Manager to use this option. Can be used to obtain status of remote locators. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/cluster_config/gfsh_remote.html). |                   |
+| <span class="keyword parmname">&#8209;&#8209;host</span> | Hostname or IP address on which the Locator is running.                                                                                                                                                                                                                                                                                                                                                                        |                   |
 | <span class="keyword parmname">&#8209;&#8209;port</span> | Port on which the locator is listening.                                                                                                                                                                                                                                                                                                                                                                                        | 10334             |
 | <span class="keyword parmname">&#8209;&#8209;dir</span>  | Directory in which the locator was started.                                                                                                                                                                                                                                                                                                                                                                                    | current directory |
 | <span class="keyword parmname">&#8209;&#8209;security&#8209;properties&#8209;file</span>  | The properties file for configuring SSL to connect to the SSL-enabled Locator. The file's path can be absolute or relative to the gfsh directory.                                                                                                                                                                                                                                                                                                                                                                                    | current directory |
@@ -282,7 +282,7 @@ Redundancy is fully satisfied for regions:
 
 ## <a id="topic_E5DB49044978404D9D6B1971BF5D400D" class="no-quick-link"></a>status server
 
-Display the status of the specified  cache server.
+Display the status of the specified @@product_name@@ cache server.
 
 **Availability:** Online or offline. If you want to obtain the status of a server while you are offline, use the `--dir` option.
 
@@ -296,8 +296,8 @@ status server [--name=value] [--dir=value]
 
 | Name                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                           | Default Value     |
 |----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| <span class="keyword parmname">&#8209;&#8209;name</span> | Name or ID of the Cache Server for which to display status. You must be connected to the JMX Manager to use this option. Can be used to obtain status of remote servers. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/cluster_config/gfsh_remote.html). | Â                  |
-| <span class="keyword parmname">&#8209;&#8209;dir </span> | Directory in which the  Cache Server was started.                                                                                                                                                                                                                                                                                                                                                   | current directory |
+| <span class="keyword parmname">&#8209;&#8209;name</span> | Name or ID of the Cache Server for which to display status. You must be connected to the JMX Manager to use this option. Can be used to obtain status of remote servers. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/cluster_config/gfsh_remote.html). |                   |
+| <span class="keyword parmname">&#8209;&#8209;dir </span> | Directory in which the @@product_name@@ Cache Server was started.                                                                                                                                                                                                                                                                                                                                                   | current directory |
 
 <span class="tablecap">Table 4. Status Server Parameters</span>
 
@@ -307,4 +307,3 @@ status server [--name=value] [--dir=value]
 status server
 status server --name=server1
 ```
-

@@ -65,12 +65,12 @@ When an application or cache server crashes, any data in local memory is lost, i
 
 If the partitioned region is configured for redundancy and a member crashes, the system continues to operate with the remaining copies of the data. You may need to perform recovery actions depending on how many members you have lost and how you have configured redundancy in your system.
 
-By default, Geode does not make new copies of the data until a new member is brought online to replace the member that crashed. You can control this behavior using the recovery delay attributes. For more information, see [Configure High Availability for a Partitioned Region](../../developing/partitioned_regions/configuring_ha_for_pr.html).
+By default, @@product_name@@ does not make new copies of the data until a new member is brought online to replace the member that crashed. You can control this behavior using the recovery delay attributes. For more information, see [Configure High Availability for a Partitioned Region](../../developing/partitioned_regions/configuring_ha_for_pr.html).
 
 To recover, start a replacement member. The new member regenerates the lost copies and returns them to the configured redundancy level.
 
 **Note:**
-Make sure the replacement member has at least as much local memory as the old oneâ€” the `local-max-memory` configuration setting must be the same or larger. Otherwise, you can get into a situation where some entries have all their redundant copies but others donâ€™t. In addition, until you have restarted a replacement member, any code that attempts to create or update data mapped to partition region bucket copies (primary and secondary) that have been lost can result in an exception. (New transactions unrelated to the lost data can fail as well simply because they happen to map to-- or "resolve" to-- a common bucketId).
+Make sure the replacement member has at least as much local memory as the old one— the `local-max-memory` configuration setting must be the same or larger. Otherwise, you can get into a situation where some entries have all their redundant copies but others don’t. In addition, until you have restarted a replacement member, any code that attempts to create or update data mapped to partition region bucket copies (primary and secondary) that have been lost can result in an exception. (New transactions unrelated to the lost data can fail as well simply because they happen to map to-- or "resolve" to-- a common bucketId).
 
 Even with high availability, you can lose data if too many applications and cache servers fail at the same time. Any lost data is replaced with new data created by the application as it returns to active work.
 
@@ -80,7 +80,7 @@ You can also lose access to all copies of your data through network failure. See
 
 **Recovery Without Data Redundancy**
 
-If a member crashes and there are no redundant copies, any logic that tries to interact with the bucket data is *blocked* until the primary buckets are restored from disk. (If you do not have persistence enabled, Geode will reallocate the buckets on any available remaining nodes, however you will need to recover any lost data using external mechanisms.)
+If a member crashes and there are no redundant copies, any logic that tries to interact with the bucket data is *blocked* until the primary buckets are restored from disk. (If you do not have persistence enabled, @@product_name@@ will reallocate the buckets on any available remaining nodes, however you will need to recover any lost data using external mechanisms.)
 
 To recover, restart the member. The application returns to active work and automatically begins to create new data.
 
@@ -153,11 +153,11 @@ Restart the process. The system member recreates its cache automatically. If rep
 
 ## <a id="rec_app_p2p_crash__section_745AB095D1FA48E392F2C1B95DC18090" class="no-quick-link"></a>Recovery for Regions of Local Scope
 
-Regions of local scope have no memory backup, but may have data persisted to disk. If the region is configured for persistence, the data remains in the region's disk directories after a crash. The data on disk will be used to initialize the region when you restart.
+Regions of local scope have no memory backup, but may have data persisted to disk. If the region is configured for persistence, the data remains in the region’s disk directories after a crash. The data on disk will be used to initialize the region when you restart.
 
 ## <a id="rec_app_p2p_crash__section_D9202624335D45BFA2FCC55D702125F7" class="no-quick-link"></a>Recovering Data from Disk
 
-When you persist a region, the entry data on disk outlives the region in memory. If the member exits or crashes, the data remains in the region's disk directories. See [Disk Storage](../disk_storage/chapter_overview.html). If the same region is created again, this saved disk data can be used to initialize the region.
+When you persist a region, the entry data on disk outlives the region in memory. If the member exits or crashes, the data remains in the region’s disk directories. See [Disk Storage](../disk_storage/chapter_overview.html). If the same region is created again, this saved disk data can be used to initialize the region.
 
 Some general considerations for disk data recovery:
 
@@ -165,7 +165,7 @@ Some general considerations for disk data recovery:
 -   If the application was writing to the disk asynchronously, the chances of data loss are greater. The choice is made at the region level, with the disk-synchronous attribute.
 -   When a region is initialized from disk, last modified time is persisted from before the member exit or crash. For information on how this might affect the region data, see [Expiration](../../developing/expiration/chapter_overview.html).
 
-**Disk Recovery for Disk Writingâ€”Synchronous Mode and Asynchronous Mode**
+**Disk Recovery for Disk Writing—Synchronous Mode and Asynchronous Mode**
 
 **Synchronous Mode of Disk Writing**
 
@@ -231,4 +231,3 @@ This is an error log-level alert that is generated only if servers were supposed
 Response:
 
 The region may no longer exist on the member. The cache servers may also have been stopped. Recreate the region and restart the cache servers.
-

@@ -73,6 +73,3 @@ s not available when simulating.
                 Default if no value for the parameter is given:true
                 Default if the parameter is not specified:false
 ```
-
-
-

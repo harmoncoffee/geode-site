@@ -44,6 +44,3 @@ validate offline-disk-store --name=value --disk-dirs=value(,value)*
 ``` pre
 validate offline-disk-store --name=DiskStore2 --disk-dirs=data/dir3,data/dir4
 ```
-
-
-

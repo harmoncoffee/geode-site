@@ -79,6 +79,3 @@ Set join redundancy recovery using one of the following:
     ``` pre
     gfsh>create region --name="PR1" --type=PARTITION --startup-recovery-delay=5000
     ```
-
-
-

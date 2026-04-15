@@ -23,7 +23,7 @@ limitations under the License.
 
 You configure JVM memory settings for the Java application by adding parameters to the java invocation. For the cache server, you add them to the command-line parameters for the gfsh `start server` command.
 
--   JVM heap sizeâ€”Your JVM may require more memory than is allocated by default. For example, you may need to increase heap size for an application that stores a lot of data. You can set a maximum size and an initial size, so if you know you will be using the maximum (or close to it) for the life of the member, you can speed memory allocation time by setting the initial size to the maximum. This sets both the maximum and initial memory sizes to 1024 megabytes for a Java application:
+-   JVM heap size—Your JVM may require more memory than is allocated by default. For example, you may need to increase heap size for an application that stores a lot of data. You can set a maximum size and an initial size, so if you know you will be using the maximum (or close to it) for the life of the member, you can speed memory allocation time by setting the initial size to the maximum. This sets both the maximum and initial memory sizes to 1024 megabytes for a Java application:
 
     ``` pre
     -Xmx1024m -Xms1024m
@@ -35,7 +35,7 @@ You configure JVM memory settings for the Java application by adding parameters 
     gfsh>start server --name=server-name --J=-Xmx1024m --J=-Xms1024m
     ```
 
--   MaxDirectMemorySizeâ€”The JVM has a kind of memory called direct memory, which is distinct from normal JVM heap memory, that can run out. You can increase the direct buffer memory either by increasing the maximum heap size (see previous JVM Heap Size), which increases both the maximum heap and the maximum direct memory, or by only increasing the maximum direct memory using -XX:MaxDirectMemorySize. The following parameter added to the Java application startup increases the maximum direct memory size to 256 megabytes:
+-   MaxDirectMemorySize—The JVM has a kind of memory called direct memory, which is distinct from normal JVM heap memory, that can run out. You can increase the direct buffer memory either by increasing the maximum heap size (see previous JVM Heap Size), which increases both the maximum heap and the maximum direct memory, or by only increasing the maximum direct memory using -XX:MaxDirectMemorySize. The following parameter added to the Java application startup increases the maximum direct memory size to 256 megabytes:
 
     ``` pre
     -XX:MaxDirectMemorySize=256M
@@ -47,7 +47,7 @@ You configure JVM memory settings for the Java application by adding parameters 
     gfsh>start server --name=server-name --J=-XX:MaxDirectMemorySize=256M
     ```
 
--   JVM stack sizeâ€”Each thread in a Java application has its own stack. The stack is used to hold return addresses, arguments to functions and method calls, and so on. Since Geode is a highly multi-threaded system, at any given point in time there are multiple thread pools and threads that are in use. The default stack size setting for a thread in Java is 1MB. Stack size has to be allocated in contiguous blocks and if the machine is being used actively and there are many threads running in the system (Task Manager shows the number of active threads), you may encounter an `OutOfMemory error: unable to create new native thread`, even though your process has enough available heap. If this happens, consider reducing the stack size requirement for threads on the cache server. The following parameter added to the Java application startup limits the maximum size of the stack.
+-   JVM stack size—Each thread in a Java application has its own stack. The stack is used to hold return addresses, arguments to functions and method calls, and so on. Since @@product_name@@ is a highly multi-threaded system, at any given point in time there are multiple thread pools and threads that are in use. The default stack size setting for a thread in Java is 1MB. Stack size has to be allocated in contiguous blocks and if the machine is being used actively and there are many threads running in the system (Task Manager shows the number of active threads), you may encounter an `OutOfMemory error: unable to create new native thread`, even though your process has enough available heap. If this happens, consider reducing the stack size requirement for threads on the cache server. The following parameter added to the Java application startup limits the maximum size of the stack.
 
     ``` pre
     -Xss384k
@@ -61,7 +61,7 @@ You configure JVM memory settings for the Java application by adding parameters 
     gfsh>start server --name=server-name --J=-Xss512k
     ```
 
--   Off-heap memory sizeâ€”For applications that use off-heap memory, specifies how much off-heap memory to allocate. Setting `off-heap-memory-size` is prerequisite to enabling the off-heap capability for individual regions. For example:
+-   Off-heap memory size—For applications that use off-heap memory, specifies how much off-heap memory to allocate. Setting `off-heap-memory-size` is prerequisite to enabling the off-heap capability for individual regions. For example:
 
     ``` pre
     gfsh>start server --name=server-name --off-heap-memory-size=200G
@@ -69,13 +69,10 @@ You configure JVM memory settings for the Java application by adding parameters 
 
     See [Using Off-heap Memory](../heap_use/off_heap_management.html#managing-off-heap-memory) for additional considerations regarding this parameter.
 
--   Lock memoryâ€”On Linux systems, you can prevent heap and off-heap memory from being paged out by setting the `lock-memory` parameter to `true`. For example:
+-   Lock memory—On Linux systems, you can prevent heap and off-heap memory from being paged out by setting the `lock-memory` parameter to `true`. For example:
 
     ``` pre
     gfsh>start server --name=server-name --off-heap-memory-size=200G --lock-memory=true
     ```
 
     See [Locking Memory](../heap_use/lock_memory.html) for additional considerations regarding this parameter.
-
-
-

@@ -20,7 +20,7 @@ limitations under the License.
 -->
 
 <a id="running_a_querying__section_C285160AF91C4486A39444C3A22D6475"></a>
-The Geode QueryService provides methods to create the Query object. You can then use the Query object to perform query-related operations.
+The @@product_name@@ QueryService provides methods to create the Query object. You can then use the Query object to perform query-related operations.
 
 The QueryService instance you should use depends on whether you are querying the local cache of an application or if you want your application to query the server cache.
 
@@ -97,4 +97,3 @@ This section covers the following querying language features.
 - **[Query Language Restrictions and Unsupported Features](restrictions_and_unsupported_features.html)**
 
 This section describes some limitations of which developers should be aware when composing queries in OQL.
-

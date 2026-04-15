@@ -36,7 +36,7 @@ The specifications for handling slow receipt primarily affect how your members m
 
 **Configuration Options**
 
-The slow receiver options are set in the producer member's region attribute, enable-async-conflation, and in the consumer member's async\* `gemfire.properties` settings.
+The slow receiver options are set in the producer member’s region attribute, enable-async-conflation, and in the consumer member’s async\* `gemfire.properties` settings.
 
 **Delivery Retries**
 
@@ -52,7 +52,7 @@ The warnings are followed by an info message when the delivery finally succeeds.
 
 Your consumer members can be configured so that their producers switch to asynchronous messaging if the consumers are slow to respond to cache message distribution.
 
-When a producer switches, it creates a queue to hold and manage that consumer's cache messages. When the queue empties, the producer switches back to synchronous messaging for the consumer. The settings that cause the producers to switch are specified on the consumer side in `gemfire.properties` file settings.
+When a producer switches, it creates a queue to hold and manage that consumer’s cache messages. When the queue empties, the producer switches back to synchronous messaging for the consumer. The settings that cause the producers to switch are specified on the consumer side in `gemfire.properties` file settings.
 
 If you configure your consumers for slow receipt queuing, and your region scope is distributed-no-ack, you can also configure the producer to conflate entry update messages in its queues. This configuration option is set as the region attribute enable-async-conflation. By default distributed-no-ack entry update messages are not conflated.
 
@@ -71,6 +71,3 @@ These are reasons why conflation might not work for your application:
 
 -   With conflation, earlier entry updates are removed from the queue and replaced by updates sent later in the queue. This is problematic for applications that depend on a specific ordering of entry modifications. For example, if your receiver has a CacheListener that needs to know about every state change, you should disable conflation.
 -   If your queue remains in use for a significant period and you have entries that are updated frequently, you could have a series of update message replacements resulting in a notable delay in the arrival of any update for some entries. Imagine that update 1, before it is sent, is removed in favor of a later update 2. Then, before update 2 can be sent, it is removed in favor of update 3, and so on. This could result in unacceptably stale data on the receiver.
-
-
-

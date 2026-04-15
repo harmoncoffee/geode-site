@@ -21,7 +21,9 @@ limitations under the License.
 
 Comprehensive logging messages help you confirm system configuration and debug problems in configuration and code.
 
--   **[How Geode Logging Works](how_logging_works.html)** Apache Geode     uses Apache Log4j 2 as the basis for its logging system.
+-   **[How @@product_name@@ Logging Works](how_logging_works.html)**
+
+    @@product_name_long@@ uses Apache Log4j 2 as the basis for its logging system.
 
 -   **[Understanding Log Messages and Their Categories](logging_categories.html)**
 
@@ -35,9 +37,6 @@ Comprehensive logging messages help you confirm system configuration and debug p
 
     You configure logging in a member's `gemfire.properties` or at startup with `gfsh`.
 
--   **[Advanced Usersâ€”Configuring Log4j 2 for Geode ](configuring_log4j2.html)**
+-   **[Advanced Users—Configuring Log4j 2 for @@product_name@@](configuring_log4j2.html)**
 
-    Basic Geode logging configuration is configured via the gemfire.properties file. This topic is intended for advanced users who need increased control over logging due to integration with third-party libraries.
-
-
-
+    Basic @@product_name@@ logging configuration is configured via the gemfire.properties file. This topic is intended for advanced users who need increased control over logging due to integration with third-party libraries.

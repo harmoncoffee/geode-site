@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Using Query Index Hints
 sidebar_label: Using Query Index Hints
 sidebar_position: 8
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-You can use the hint keyword to allow Geode 's query engine to prefer certain indexes.
+You can use the hint keyword to allow @@product_name@@'s query engine to prefer certain indexes.
 
 In cases where one index is hinted in a query, the query engine filters off the hinted index (if possible) and then iterates and filters from the resulting values.
 
@@ -38,6 +38,3 @@ If multiple indexes are added as hints, then the query engine will try to use as
 ``` pre
 <HINT 'IDIndex', 'OwnerIndex'> SELECT * FROM /Portfolios p WHERE p.ID > 10 AND p.owner = 'XYZ' AND p.value < 100
 ```
-
-
-

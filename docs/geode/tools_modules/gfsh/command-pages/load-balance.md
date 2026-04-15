@@ -60,6 +60,3 @@ boglesbymac(ln-4:88681)<v5>:42784 | OK     | GatewaySender ny is rebalanced on m
 boglesbymac(ln-3:88672)<v4>:43675 | OK     | GatewaySender ny is rebalanced on member boglesbymac(ln-3:88672)<v4>:43675
 boglesbymac(ln-2:88662)<v3>:12796 | OK     | GatewaySender ny is rebalanced on member boglesbymac(ln-2:88662)<v3>:12796
 ```
-
-
-

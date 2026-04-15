@@ -32,9 +32,9 @@ put --key=value --value=value --region=value [--key-class=value]
 
 | Name                                              | Description                                                                                                | Default Value      |
 |---------------------------------------------------|------------------------------------------------------------------------------------------------------------|--------------------|
-| <span class="ph">&#8209;&#8209;key</span>                          | *Required.* String or JSON text from which to create the key. For example: "`James`", "`100L`" and "`('id': 'l34s')`".   | Â                   |
-| <span class="keyword parmname">&#8209;&#8209;value</span>          | *Required.* String or JSON text from which to create the value. For example: "`James`", "`100L`" and "`('id': 'l34s')`". | Â                   |
-| <span class="keyword parmname">&#8209;&#8209;region</span> | *Required.* Region into which the entry will be put.                                                                     | Â                   |
+| <span class="ph">&#8209;&#8209;key</span>                          | *Required.* String or JSON text from which to create the key. For example: "`James`", "`100L`" and "`('id': 'l34s')`".   |                    |
+| <span class="keyword parmname">&#8209;&#8209;value</span>          | *Required.* String or JSON text from which to create the value. For example: "`James`", "`100L`" and "`('id': 'l34s')`". |                    |
+| <span class="keyword parmname">&#8209;&#8209;region</span> | *Required.* Region into which the entry will be put.                                                                     |                    |
 | <span class="keyword parmname">&#8209;&#8209;key-class</span>  | Fully qualified class name of the key's type.                                                                        | `java.lang.String` |
 | <span class="keyword parmname">&#8209;&#8209;value-class</span>    | Fully qualified class name of the value's type. The type may not be an internal PDX class.                               | `java.lang.String` |
 | <span class="keyword parmname">&#8209;&#8209;value-class</span>    | Fully qualified class name of the value's type. The type may not be an internal PDX class.                               | `java.lang.String` |
@@ -73,6 +73,3 @@ Old Value   : <NULL>
 "Region <{0}> Not Found";
 "Key is not present in the region";
 ```
-
-
-

@@ -1,6 +1,4 @@
-﻿
-
-<!--
+﻿<!--
 Licensed to the Apache Software Foundation (ASF) under one or more
 contributor license agreements.  See the NOTICE file distributed with
 this work for additional information regarding copyright ownership.
@@ -17,22 +15,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section summarizes all available Apache Geode REST API resources and endpoints.
+This section summarizes all available @@product_name_long@@ REST API resources and endpoints.
 
 **Note:**
-This documentation covers the **v1** release of Geode REST APIs for developing applications.
+This documentation covers the **v1** release of @@product_name@@ REST APIs for developing applications.
 
 -   **[Region Endpoints](rest_regions.html)**
 
-    A  region is how  logically groups data within its cache. Regions stores data as entries, which are key-value pairs. Using the REST APIs you can read, add (or update), and delete region data.
+    A @@product_name@@ region is how @@product_name@@ logically groups data within its cache. Regions stores data as entries, which are key-value pairs. Using the REST APIs you can read, add (or update), and delete region data.
 
--   **[Query Endpoints](rest_queries.html)** Geode     uses a query syntax based on OQL (Object Query Language) to query region data. Since Geode regions are key-value stores, values can range from simple byte arrays to complex nested objects.
+-   **[Query Endpoints](rest_queries.html)**
 
--   **[Function Endpoints](rest_functions.html)** Geode     functions allows you to write and execute server-side transactions and data operations. These may include anything ranging from initializing components or third-party services or aggregating data.
+    @@product_name@@ uses a query syntax based on OQL (Object Query Language) to query region data. Since @@product_name@@ regions are key-value stores, values can range from simple byte arrays to complex nested objects.
+
+-   **[Function Endpoints](rest_functions.html)**
+
+    @@product_name@@ functions allows you to write and execute server-side transactions and data operations. These may include anything ranging from initializing components or third-party services or aggregating data.
 
 -   **[Administrative Endpoints](rest_admin.html)**
 
     Administrative endpoints provide management and monitoring functionality for the REST API interface.
-
-
-

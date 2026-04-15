@@ -1,4 +1,4 @@
-﻿---
+---
 title: "<cache> Element Hierarchy"
 sidebar_label: "<cache> Element Hierarchy"
 sidebar_position: 2
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section shows the hierarchy of `<cache>` element sub-elements that you use to configure Geode caches and servers.
+This section shows the hierarchy of `<cache>` element sub-elements that you use to configure @@product_name@@ caches and servers.
 
 For details, see [&lt;cache&gt; Element Reference](cache_xml.html#cache_xml_cache).
 
@@ -185,6 +185,3 @@ For details, see [&lt;cache&gt; Element Reference](cache_xml.html#cache_xml_cach
 </cache>
    
 ```
-
-
-

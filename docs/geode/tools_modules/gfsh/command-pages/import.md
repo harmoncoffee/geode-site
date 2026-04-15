@@ -53,9 +53,9 @@ import cluster-configuration [--action=value] [--group(=value)?]
 
 | Name                                                  | Description                                                                                     |
 |-------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| <span class="keyword parmname">&#8209;&#8209;action</span> | When the value is `APPLY` (the default), the configuration is applied to the running servers that have no configuration. If any servers already have configuration, the command fails. When the value is `STAGE`, the configuration is overwritten and will be used during future server creation; the configuration of currently running servers is not changed. | Â                  |
-| <span class="keyword parmname">&#8209;&#8209;group</span> | Do the import for the specified server group. When no group is specified, the `cluster` is implied. |Â                  |
-| <span class="keyword parmname">&#8209;&#8209;xml-file</span> | Filename from which to import the cluster configuration. May also include an absolute or relative path. Only specify one of `--xml-file` or `--zip-file-name`. | Â                  |
+| <span class="keyword parmname">&#8209;&#8209;action</span> | When the value is `APPLY` (the default), the configuration is applied to the running servers that have no configuration. If any servers already have configuration, the command fails. When the value is `STAGE`, the configuration is overwritten and will be used during future server creation; the configuration of currently running servers is not changed. |                   |
+| <span class="keyword parmname">&#8209;&#8209;group</span> | Do the import for the specified server group. When no group is specified, the `cluster` is implied. |                  |
+| <span class="keyword parmname">&#8209;&#8209;xml-file</span> | Filename from which to import the cluster configuration. May also include an absolute or relative path. Only specify one of `--xml-file` or `--zip-file-name`. |                   |
 | <span class="keyword parmname">&#8209;&#8209;zip-file-name</span> | Name of the ZIP file containing the cluster configuration artifacts to be imported.  Only specify one of `--xml-file` or `--zip-file-name`. |      |
 
 **Example Commands:**
@@ -119,5 +119,3 @@ In this scenario, partitioned region data is imported simultaneously on all host
 ``` pre
 import data --region=region2 --file=/mnt5/region2_20121001.gfd --member=server1
 ```
-
-

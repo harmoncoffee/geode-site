@@ -28,7 +28,7 @@ Without the proper configuration, multicast delivers its traffic as fast as poss
 
 **Using Iperf**
 
-Iperf is an open-source TCP/UDP performance tool that you can use to find your site's maximum rate for data distribution over multicast. Iperf can be downloaded from web sites such as the National Laboratory for Applied Network Research (NLANR).
+Iperf is an open-source TCP/UDP performance tool that you can use to find your site’s maximum rate for data distribution over multicast. Iperf can be downloaded from web sites such as the National Laboratory for Applied Network Research (NLANR).
 
 Iperf measures maximum bandwidth, allowing you to tune parameters and UDP characteristics. Iperf reports statistics on bandwidth, delay jitter, and datagram loss. On Linux, you can redirect this output to a file; on Windows, use the -o filename parameter.
 
@@ -121,7 +121,7 @@ where:
 </table>
 
 **Note:**
-If your Geode cluster runs across several subnets, start a receiver on each subnet.
+If your @@product_name@@ cluster runs across several subnets, start a receiver on each subnet.
 
 In the receiver's output, look at the Lost/Total Datagrams columns for the number and percentage of lost packets out of the total sent.
 
@@ -145,4 +145,3 @@ Rerun the test at different bandwidths until you find the maximum useful multica
 5.  -b 960000000 (no loss)
 
 Enter iperf -h to see all of the command-line options. For more information, see the Iperf user manual.
-

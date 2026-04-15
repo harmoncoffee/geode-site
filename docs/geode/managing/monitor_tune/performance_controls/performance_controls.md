@@ -21,11 +21,11 @@ limitations under the License.
 
 This topic provides tuning suggestions of particular interest to developers, primarily programming techniques and cache configuration.
 
-Before you begin, you should understand Apache Geode [Basic Configuration and Programming](../../basic_config/book_intro.html).
+Before you begin, you should understand @@product_name_long@@ [Basic Configuration and Programming](../../basic_config/book_intro.html).
 
 -   **[Data Serialization](performance_controls_data_serialization.html)**
 
-    In addition to standard Java serialization, Geode offers serialization options that give you higher performance and greater flexibility for data storage, transfers, and language types.
+    In addition to standard Java serialization, @@product_name@@ offers serialization options that give you higher performance and greater flexibility for data storage, transfers, and language types.
 
 -   **[Setting Cache Timeouts](performance_controls_setting_cache_timeouts.html)**
 
@@ -42,6 +42,3 @@ Before you begin, you should understand Apache Geode [Basic Configuration and Pr
 -   **[Increasing the Ratio of Cache Hits](performance_controls_increasing_cache_hits.html)**
 
     The more frequently a get fails to find a valid value in the first cache and has to try a second cache, the more the overall performance is affected.
-
-
-

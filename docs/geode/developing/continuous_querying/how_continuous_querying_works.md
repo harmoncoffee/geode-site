@@ -1,4 +1,4 @@
-﻿---
+---
 title:  How Continuous Querying Works
 sidebar_label: How Continuous Querying Works
 sidebar_position: 1
@@ -97,4 +97,3 @@ CQ is not supported for replicated region: <region name> with eviction action: L
 ```
 
 See also [Configure Distributed, Replicated, and Preloaded Regions](../distributed_regions/managing_distributed_regions.html) for potential issues with setting local-destroy eviction on replicated regions.
-

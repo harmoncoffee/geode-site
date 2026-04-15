@@ -107,4 +107,3 @@ http://myLocatorHost.example.com:8080/geode-mgmt/v1
 "--token cannot be combined with --user or --password";
 "Could not connect to Geode Locator service at {0}."
 ```
-

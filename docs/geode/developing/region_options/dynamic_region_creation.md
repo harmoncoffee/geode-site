@@ -25,7 +25,7 @@ You can dynamically create regions in your application code and automatically in
 
 Due to the number of options involved, most developers use functions to create regions dynamically in their applications, as described in this topic. Dynamic regions can also be created from the `gfsh` command line.
 
-For a complete discussion of using Geode functions, see [Function Execution](../function_exec/chapter_overview.html). Functions use the `org.apache.geode.cache.execute.FunctionService` class.
+For a complete discussion of using @@product_name@@ functions, see [Function Execution](../function_exec/chapter_overview.html). Functions use the `org.apache.geode.cache.execute.FunctionService` class.
 
 If your application does not require partitioned regions, you can use the `org.apache.geode.cache.DynamicRegionFactory` class to dynamically create regions, or
 you can create them using the `<dynamic-region-factory>` element in the cache.xml file that defines the region.
@@ -165,6 +165,3 @@ public class CreateRegionCacheListener extends CacheListenerAdapter<String,Regio
   }
 }
 ```
-
-
-

@@ -39,7 +39,7 @@ These are options for limiting the amount of server memory the subscription queu
     The client periodically sends an acknowledgment (`ack`) message to the server. Each message acknowledges the receipt of many events by the client. Since the server must retain every outbound event in the queue until its receipt is acknowledged, shortening the acknowledgment delay can reduce the average queue size, reducing the amount of server memory used for queueing.
 
 -   Optional: Limit Queue Size. Cap the server queue size using overflow or blocking. These options help avoid out of memory errors on the server in the case of slow clients. A slow client slows the rate that the server can send messages, causing messages to back up in the queue, possibly leading to out of memory on the server. You can use one or the other of these options, but not both:
-    -   Optional: Overflow to Disk. Configure subscription queue overflow by setting the server's `client-subscription` properties. With overflow, the most recently used (MRU) events are written out to disk, keeping the oldest events, the ones that are next in line to be sent to the client, available in memory. Example:
+    -   Optional: Overflow to Disk. Configure subscription queue overflow by setting the server’s `client-subscription` properties. With overflow, the most recently used (MRU) events are written out to disk, keeping the oldest events, the ones that are next in line to be sent to the client, available in memory. Example:
 
         ``` pre
         <!-- Set overflow after 10K messages are enqueued -->
@@ -51,7 +51,7 @@ These are options for limiting the amount of server memory the subscription queu
         </cache-server>
         ```
 
-    -   Optional: Block While Queue Full. Set the server's `maximum-message-count` to the maximum number of event messages allowed in any single subscription queue before incoming messages are blocked. You can only limit the message count, not the size allocated for messages. Examples:
+    -   Optional: Block While Queue Full. Set the server’s `maximum-message-count` to the maximum number of event messages allowed in any single subscription queue before incoming messages are blocked. You can only limit the message count, not the size allocated for messages. Examples:
 
         XML:
 
@@ -72,6 +72,3 @@ These are options for limiting the amount of server memory the subscription queu
 
         **Note:**
         With this setting, one slow client can slow the server and all of its other clients because this blocks the threads that write to the queues. All operations that add messages to the queue block until the queue size drops to an acceptable level. If the regions feeding these queues are partitioned or have `distributed-ack` or `global` scope, operations on them remain blocked until their event messages can be added to the queue. If you are using this option and see stalling on your server region operations, your queue capacity might be too low for your application behavior.
-
-
-

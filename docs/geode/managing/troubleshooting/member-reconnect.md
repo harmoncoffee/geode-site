@@ -21,12 +21,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-A Geode member may be forcibly disconnected from a Geode cluster if the member is unresponsive for a period of time, or if a network partition separates one or more members into a group that is too small to act as the cluster.
+A @@product_name@@ member may be forcibly disconnected from a @@product_name@@ cluster if the member is unresponsive for a period of time, or if a network partition separates one or more members into a group that is too small to act as the cluster.
 
 ## How the Autoreconnection Process Works
 
 After being disconnected from a cluster,
-a Geode member shuts down and, by default, automatically restarts into 
+a @@product_name@@ member shuts down and, by default, automatically restarts into 
 a "reconnecting" state,
 while periodically attempting to rejoin the cluster
 by contacting a list of known locators.
@@ -59,11 +59,11 @@ enable-cluster-configuration = false
 
 After the cache has reconnected, applications must fetch a reference to the new Cache, Regions, DistributedSystem and other artifacts. Old references will continue to throw cancellation exceptions like `CacheClosedException(cause=ForcedDisconnectException)`.
 
-See the Geode `DistributedSystem` and `Cache` Java API documentation for more information.
+See the @@product_name@@ `DistributedSystem` and `Cache` Java API documentation for more information.
 
 ## Managing the Autoreconnection Process
 
-By default a Geode member will try to reconnect until it is told to stop by using the `DistributedSystem.stopReconnecting()` or `Cache.stopReconnecting()` method. You can disable automatic reconnection entirely by setting `disable-auto-reconnect` Geode property to "true."
+By default a @@product_name@@ member will try to reconnect until it is told to stop by using the `DistributedSystem.stopReconnecting()` or `Cache.stopReconnecting()` method. You can disable automatic reconnection entirely by setting `disable-auto-reconnect` @@product_name@@ property to "true."
 
 You can use `DistributedSystem` and `Cache` callback methods to perform actions during the reconnect process, or to cancel the reconnect process if necessary.
 
@@ -81,6 +81,3 @@ The `DistributedSystem` and `Cache` API provide several methods you can use to t
 ## Operator Intervention
 
 You may need to intervene in the autoreconnection process if processes or hardware have crashed or are otherwise shut down before the network connection is healed. In this case the members in a "reconnecting" state will not be able to find the lost processes through UDP probes and will not rejoin the system until they are able to contact a locator.
-
-
-

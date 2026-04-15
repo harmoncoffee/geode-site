@@ -1,4 +1,4 @@
-﻿---
+---
 title: Starting, Configuring, Stopping a JMX Manager
 ---
 
@@ -22,14 +22,14 @@ limitations under the License.
 <a id="topic_686158E9AFBD47518BE1B4BEB232C190"></a>
 
 
-JMX Manager nodes are members that manage other Geode members (as well as themselves). A JMX Manager node can manage all other members in the cluster. Typically a locator will function as the JMX Manager, but you can also turn any other member such as a server into a JMX Manager node as well.
+JMX Manager nodes are members that manage other @@product_name@@ members (as well as themselves). A JMX Manager node can manage all other members in the cluster. Typically a locator will function as the JMX Manager, but you can also turn any other member such as a server into a JMX Manager node as well.
 
-To allow a server to become a JMX Manager you configure Geode property `jmx-manager=true`, in the server's`gemfire.properties` file. This property configures the node to become a JMX Manager node passively; if gfsh cannot locate a JMX Manager when connecting to the cluster, the server node will be started as a JMX Manager node.
+To allow a server to become a JMX Manager you configure @@product_name@@ property `jmx-manager=true`, in the server's`gemfire.properties` file. This property configures the node to become a JMX Manager node passively; if gfsh cannot locate a JMX Manager when connecting to the cluster, the server node will be started as a JMX Manager node.
 
 **Note:**
 The default property setting for all locators is `gemfire.jmx-manager=true`. For other members, the default property setting is `gemfire.jmx-manager=false`.
 
-To force a server to become a JMX Manager node whenever it is started, set the Geode properties `jmx-manager-start=true` and `jmx-manager=true` in the server's gemfire.properties file. Note that both of these properties must be set to true for the node.
+To force a server to become a JMX Manager node whenever it is started, set the @@product_name@@ properties `jmx-manager-start=true` and `jmx-manager=true` in the server's gemfire.properties file. Note that both of these properties must be set to true for the node.
 
 To start the member as a JMX Manager node on the command line, provide`                     --J=-Dgemfire.jmx-manager-start=true and --J=-Dgemfire.jmx-manager=true` as arguments to either the `start server` or `start                     locator` command.
 
@@ -50,14 +50,14 @@ The following is an example of starting a new locator that also starts an embedd
 
 ``` pre
 gfsh>start locator --name=locator1
-Starting a Geode Locator in /Users/username/apache-geode/locator1...
+Starting a @@product_name@@ Locator in /Users/username/apache-geode/locator1...
 ....
 Locator in /Users/username/apache-geode/locator1 on 192.0.2.0[10334] as locator1
 is currently online.
 Process ID: 27144
 Uptime: 5 seconds
- Version: 
-Java Version: @@min_java_update@@.0.@@product_version@@
+@@product_name@@ Version: @@product_version@@
+Java Version: @@min_java_version@@.0.@@min_java_update@@
 Log File: /Users/username/apache-geode/locator1/locator1.log
 JVM Arguments: -Dgemfire.enable-cluster-configuration=true 
 -Dgemfire.load-cluster-configuration-from-dir=false 
@@ -134,6 +134,3 @@ Notice that `gfsh` has automatically disconnected you from the stopped JMX Manag
 To stop a JMX manager using the management API, use the ManagementService stopManager() method to stop a member from being a JMX Manager.
 
 When a Manager stops, it removes all federated MBeans from other members from its Platform MBeanServer. It also emits a notification to inform other members that it is no longer considered a JMX Manager.
-
-
-

@@ -41,5 +41,3 @@ When using the data snapshot feature, be aware of the following performance cons
 
 -   Importing and exporting cache or region snapshots causes additional CPU and network load. You may need to increase CPU capacity or network bandwidth depending on your applications and infrastructure. In addition, if you export regions that have been configured to overflow to disk, you may require additional disk I/O to perform the export.
 -   When exporting partitioned region data, allocate additional heap memory so the member performing the export can buffer data gathered from other cache members. Allocate at least 10MB per member to your heap in addition to whatever configuration is necessary to support your application or cache.
-
-

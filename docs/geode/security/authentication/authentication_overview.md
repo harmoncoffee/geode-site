@@ -35,6 +35,3 @@ cluster such as peers, clients, and those connecting to a JMX manager.
 -   **[Implementing Authentication Expiry](implementing_authentication_expiry.html)**
 
     Client credentials can be given a limited life time to enhance the security of the cluster.
-
-
-

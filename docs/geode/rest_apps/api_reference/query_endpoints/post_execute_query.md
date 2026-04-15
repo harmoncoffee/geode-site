@@ -1,4 +1,4 @@
-﻿---
+---
 title:  POST /geode/v1/queries/{queryId}
 sidebar_label: POST /geode/v1/queries/{queryId}
 sidebar_position: 3

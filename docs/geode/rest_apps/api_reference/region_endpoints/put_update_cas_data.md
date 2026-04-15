@@ -1,4 +1,4 @@
-﻿---
+---
 title:  PUT /geode/v1/{region}/{key}?op=CAS
 sidebar_label: PUT /geode/v1/{region}/{key}?op=CAS
 sidebar_position: 11
@@ -109,7 +109,7 @@ Response Payload: null
 | 400 BAD REQUEST           | Returned if the supplied key is not present in the region.                                                                       |
 | 404 NOT FOUND             | Returned if the region is not found.                                                                                             |
 | 409 CONFLICT              | Returned if the provided @old value of the key does not match the current value of the key.                                      |
-| 500 INTERNAL SERVER ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
+| 500 INTERNAL SERVER ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |
 
 ## Example Error Response
 
@@ -145,4 +145,3 @@ Content-Type: application/json
 If the "@old" value sent by the client in the HTTP request, along with the "@new" value, does not match the existing value having key in region, then a 409 - CONFLICT error is returned indicating the mismatch in expected state. The "@old" and current value must match in order for the key to be assigned the "@new" value.
 
 If a "CONFLICT" occurs, it is a simple matter for the client to issue a HTTP GET request for the Key (GET /geode/v1/orders/222) to get a updated copy of the value. CAS is similar to optimistic locking (as opposed to optimistic locking assuming the value will change between the time a client requests a value and subsequently updates the value) in that it assumes the client's state is up-to-date when the client tries to update, but if not then fail, hence the 409 - CONFLICT.
-

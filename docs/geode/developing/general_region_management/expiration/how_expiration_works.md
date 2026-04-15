@@ -35,12 +35,16 @@ the server.
 
 <img src="../../images/expiration.png" />
 
-## <a id="how_expiration_works__section_B6C55A610F4243ED8F1986E8A98858CF" class="no-quick-link"></a>Expiration Types Apache Geode provides two types of expiration, each triggered by a time-based threshold. These can co-exist; they are not mutually exclusive.
+## <a id="how_expiration_works__section_B6C55A610F4243ED8F1986E8A98858CF" class="no-quick-link"></a>Expiration Types
+
+@@product_name_long@@ provides two types of expiration, each triggered by a time-based threshold. These can co-exist; they are not mutually exclusive.
 
 -   **Time to live (TTL)**. The amount of time, in seconds, the object may remain in the cache after the last creation or update. For entries, the counter is set to zero for create and put operations. Region counters are reset when the region is created and when an entry has its counter reset. The TTL expiration attributes are `region-time-to-live` and `entry-time-to-live`.
--   **Idle timeout**. The amount of time, in seconds, the object may remain in the cache after the last access. The idle timeout counter for an object is reset any time its TTL counter is reset. In addition, an entry's idle timeout counter is reset any time the entry is accessed through a get operation or a netSearch . The idle timeout counter for a region is reset whenever the idle timeout is reset for one of its entries. Idle timeout expiration attributes are: `region-idle-time` and `entry-idle-time`.
+-   **Idle timeout**. The amount of time, in seconds, the object may remain in the cache after the last access. The idle timeout counter for an object is reset any time its TTL counter is reset. In addition, an entry’s idle timeout counter is reset any time the entry is accessed through a get operation or a netSearch . The idle timeout counter for a region is reset whenever the idle timeout is reset for one of its entries. Idle timeout expiration attributes are: `region-idle-time` and `entry-idle-time`.
 
-## <a id="how_expiration_works__section_BA995343EF584104B9853CFE4CAD88AD" class="no-quick-link"></a>Expiration Actions Apache Geode provides the following expiration actions:
+## <a id="how_expiration_works__section_BA995343EF584104B9853CFE4CAD88AD" class="no-quick-link"></a>Expiration Actions
+
+@@product_name_long@@ provides the following expiration actions:
 
 -   **invalidate (default)** - The data item's value is deleted, but the key remains in the cache. Applies to all distributed members in which the data item is replicated.
 -   **destroy** - The data item's key and value are both deleted. Applies to all distributed members in which the data item is replicated.
@@ -52,19 +56,16 @@ You cannot use `local-destroy` or `local-invalidate` expiration actions in repli
 ## <a id="how_expiration_works__section_AB4AB9E57D434159AA6E9B402E5E599D" class="no-quick-link"></a>Entry Expiration in Replicated Regions and Partitioned Regions
 
 In replicated regions, entry updates are performed in the most convenient available copy of the data, then replicated to the other members, resetting their last-updated statistics to the same time.
-In partitioned regions, entry updates are always done in the primary copy, resetting the primary copy's last-updated and last-accessed statistics, then the secondary copies are updated to match.
+In partitioned regions, entry updates are always done in the primary copy, resetting the primary copy’s last-updated and last-accessed statistics, then the secondary copies are updated to match.
 
 In both replicated and partitioned regions, entry retrieval uses the most convenient available copy of the data, which may be any of the distributed copies. Retrievals are not propagated to other members. Differences in last-access times are reconciled when the data item is considered for expiration.
 
-Expiration can be triggered in any copy of a replicated region, if the time elapsed since the last update or read access exceeds the established threshold. Expiration in partitioned regions is executed in the primary copy, based on the primary's last-accessed and last-updated statistics. 
+Expiration can be triggered in any copy of a replicated region, if the time elapsed since the last update or read access exceeds the established threshold. Expiration in partitioned regions is executed in the primary copy, based on the primary’s last-accessed and last-updated statistics. 
 In both cases, the expiration mechanism checks the last-accessed dates of all copies of the data item and updates the last-access date of all copies to the most recent last-accessed date. Then, if the elapsed time still puts the data item over the expiration threshold, the item is deleted in accordance with the expiration action specified for the region.
 
 
 ## <a id="how_expiration_works__section_expiration_settings_and_netSearch" class="no-quick-link"></a>Interaction Between Expiration Settings and netSearch
 
-Before `netSearch` retrieves an entry value from a remote cache, it validates the *remote* entry's statistics against the *local* region's expiration settings. Entries that would have already expired in the local cache are passed over. Once validated, the entry is brought into the local cache and the local access and update statistics are updated for the local copy. The last-accessed time is reset and the last-modified time is updated to the time in the remote cache, with corrections made for system clock differences. Thus the local entry is assigned the true last time the entry was modified in the cluster. The `netSearch` operation has no effect on the expiration counters in remote caches.
+Before `netSearch` retrieves an entry value from a remote cache, it validates the *remote* entry’s statistics against the *local* region’s expiration settings. Entries that would have already expired in the local cache are passed over. Once validated, the entry is brought into the local cache and the local access and update statistics are updated for the local copy. The last-accessed time is reset and the last-modified time is updated to the time in the remote cache, with corrections made for system clock differences. Thus the local entry is assigned the true last time the entry was modified in the cluster. The `netSearch` operation has no effect on the expiration counters in remote caches.
 
 The `netSearch` method operates only on distributed regions with a data-policy of empty, normal and preloaded.
-
-
-

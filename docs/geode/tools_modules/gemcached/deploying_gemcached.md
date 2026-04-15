@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Deploying and Configuring a Gemcached Server
 sidebar_label: Deploying and Configuring a Gemcached Server
 sidebar_position: 2
@@ -25,9 +25,9 @@ You can configure and deploy Gemcached servers in a Java class or by using the g
 
 The following sections describe how to configure and deploy an embedded Gemcached server. You can configure and start a GemCached server either by invoking a Java class that calls the cache server's `start()` method, or by starting the cache server using the gfsh command line.
 
-## <a id="topic_7B158074B27A4FEF9D38E7C369905C72__section_17E7E4058D914334B9C5AC2E3DC1F7F2" class="no-quick-link"></a>Embedding a Gemcached server in a Geode Geode Java Application
+## <a id="topic_7B158074B27A4FEF9D38E7C369905C72__section_17E7E4058D914334B9C5AC2E3DC1F7F2" class="no-quick-link"></a>Embedding a Gemcached server in a @@product_name@@ Java Application
 
-The `org.apache.geode.memcached` package contains a single class, `GemFireMemcachedServer` (see the Geode Javadocs.) Use this class to configure and embed a Gemcached server in a  cache server. For example, the following statement creates and starts an embedded Gemcached server on port number 5555 using the binary protocol:
+The `org.apache.geode.memcached` package contains a single class, `GemFireMemcachedServer` (see the @@product_name@@ Javadocs.) Use this class to configure and embed a Gemcached server in a @@product_name@@ cache server. For example, the following statement creates and starts an embedded Gemcached server on port number 5555 using the binary protocol:
 
 ``` pre
 GemFireMemcachedServer server = 
@@ -62,7 +62,6 @@ If the `memcached-port` property is not specified, the embedded Gemcached server
 You can set the following properties in the `gemfire.properties` file that are used when starting Gemcached servers:
 
 <a id="topic_7B158074B27A4FEF9D38E7C369905C72__table_3F586259E06E42C4BD82AD661B3AFEA4"></a>
-**Table 1. Gemcached Properties**
 
 | Property | Description |
 |---|---|
@@ -71,6 +70,3 @@ You can set the following properties in the `gemfire.properties` file that are u
 
 
 <span class="tablecap">Table 1. Gemcached Properties</span>
-
-
-

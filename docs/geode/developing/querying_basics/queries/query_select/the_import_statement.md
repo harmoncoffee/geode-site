@@ -29,6 +29,3 @@ The **IMPORT** statement is used to establish a name for a class in a query.
 IMPORT package.Position;
 SELECT DISTINCT * FROM /exampleRegion, positions.values positions TYPE Position WHERE positions.mktValue >= 25.00
 ```
-
-
-

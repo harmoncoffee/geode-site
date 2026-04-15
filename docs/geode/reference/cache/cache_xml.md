@@ -1,4 +1,4 @@
-﻿---
+---
 title: "<cache> Element Reference"
 sidebar_label: "<cache> Element Reference"
 sidebar_position: 3
@@ -21,9 +21,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section documents the `cache.xml` sub-elements used for Geode server configuration. All elements are sub-elements of the `<cache>` element.
+This section documents the `cache.xml` sub-elements used for @@product_name@@ server configuration. All elements are sub-elements of the `<cache>` element.
 
-For Geode client configuration, see [&lt;client-cache&gt; Element Reference](client-cache.html).
+For @@product_name@@ client configuration, see [&lt;client-cache&gt; Element Reference](client-cache.html).
 
 **API**:`org.apache.geode.cache.CacheFactory`
 
@@ -192,7 +192,7 @@ Specifies a region or disk store's disk directory.
 
 ## <a id="gateway-sender" class="no-quick-link"></a>&lt;gateway-sender&gt;
 
-Configures a gateway sender to distribute region events to another Geode site. See [Configuring a Multi-site (WAN) System](../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system.html#setting_up_a_multisite_system).
+Configures a gateway sender to distribute region events to another @@product_name@@ site. See [Configuring a Multi-site (WAN) System](../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system.html#setting_up_a_multisite_system).
 
 **API:** `GatewaySender`
 
@@ -283,7 +283,7 @@ Specify the Java class and its initialization parameters with the `<class-name>`
 
 ## <a id="gateway-transport-filter" class="no-quick-link"></a>&lt;gateway-transport-filter&gt;
 
-Use a GatewayTransportFilter implementation to process the TCP stream that sends a batch of events that is distributed from one Geode Geode cluster to another over a WAN. A GatewayTransportFilter is typically used to perform encryption or compression on the data that distributed. You install the same GatewayTransportFilter implementation on both a gateway sender and gateway receiver.
+Use a GatewayTransportFilter implementation to process the TCP stream that sends a batch of events that is distributed from one @@product_name@@ cluster to another over a WAN. A GatewayTransportFilter is typically used to perform encryption or compression on the data that distributed. You install the same GatewayTransportFilter implementation on both a gateway sender and gateway receiver.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements. See [&lt;class-name&gt; and &lt;parameter&gt;](#class-name_parameter).
 
@@ -301,7 +301,7 @@ Specify the Java class and its initialization parameters with the `<class-name>`
 
 ## <a id="gateway-receiver" class="no-quick-link"></a>&lt;gateway-receiver&gt;
 
-Configures a gateway receiver to receive and apply region events that were distributed from another Geode site. You can only specify one gateway receiver on a member. See [Configuring a Multi-site (WAN) System](../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system.html#setting_up_a_multisite_system).
+Configures a gateway receiver to receive and apply region events that were distributed from another @@product_name@@ site. You can only specify one gateway receiver on a member. See [Configuring a Multi-site (WAN) System](../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system.html#setting_up_a_multisite_system).
 
 **API:** `GatewayReceiverFactory`, `GatewayTransportFilter`
 
@@ -323,14 +323,14 @@ Configures a gateway receiver to receive and apply region events that were distr
 <tbody>
 <tr>
 <td>start-port</td>
-<td><p>Starting port number to use when specifying the range of possible port numbers this gateway receiver will use to connects to gateway senders in other sites. Geode Geode chooses an unused port number in the specified port number range to start the receiver. If no port numbers in the range are available, an exception is thrown.</p>
-<p>The <code class="ph codeph">STARTPORT</code> value is inclusive while the <code class="ph codeph">ENDPORT</code> value is exclusive. For example, if you specify <code class="ph codeph">STARTPORT=&quot;50510&quot;</code> and <code class="ph codeph">ENDPOINT=&quot;50520&quot;</code>, Geode Geode chooses a port value from 50510 to 50519.</p></td>
+<td><p>Starting port number to use when specifying the range of possible port numbers this gateway receiver will use to connects to gateway senders in other sites. @@product_name@@ chooses an unused port number in the specified port number range to start the receiver. If no port numbers in the range are available, an exception is thrown.</p>
+<p>The <code class="ph codeph">STARTPORT</code> value is inclusive while the <code class="ph codeph">ENDPORT</code> value is exclusive. For example, if you specify <code class="ph codeph">STARTPORT=&quot;50510&quot;</code> and <code class="ph codeph">ENDPOINT=&quot;50520&quot;</code>, @@product_name@@ chooses a port value from 50510 to 50519.</p></td>
 <td>5000</td>
 </tr>
 <tr>
 <td>end-port</td>
-<td><p>Defines the upper bound port number to use when specifying the range of possible port numbers this gateway receiver will use to for connections from gateway senders in other sites.  chooses an unused port number in the specified port number range to start the receiver. If no port numbers in the range are available, an exception is thrown.</p>
-<p>The <code class="ph codeph">ENDPORT</code> value is exclusive while the <code class="ph codeph">STARTPORT</code> value is inclusive. For example, if you specify <code class="ph codeph">STARTPORT=&quot;50510&quot;</code> and <code class="ph codeph">ENDPOINT=&quot;50520&quot;</code>,  chooses a port value from 50510 to 50519.</p></td>
+<td><p>Defines the upper bound port number to use when specifying the range of possible port numbers this gateway receiver will use to for connections from gateway senders in other sites. @@product_name@@ chooses an unused port number in the specified port number range to start the receiver. If no port numbers in the range are available, an exception is thrown.</p>
+<p>The <code class="ph codeph">ENDPORT</code> value is exclusive while the <code class="ph codeph">STARTPORT</code> value is inclusive. For example, if you specify <code class="ph codeph">STARTPORT=&quot;50510&quot;</code> and <code class="ph codeph">ENDPOINT=&quot;50520&quot;</code>, @@product_name@@ chooses a port value from 50510 to 50519.</p></td>
 <td>5500</td>
 </tr>
 <tr>
@@ -379,7 +379,7 @@ Configures a gateway receiver to receive and apply region events that were distr
 
 ## <a id="gateway-receiver_gateway-transport-filter" class="no-quick-link"></a>&lt;gateway-transport-filter&gt;
 
-Use a GatewayTransportFilter implementation to process the TCP stream that sends a batch of events that is distributed from one  cluster to another over a WAN. A GatewayTransportFilter is typically used to perform encryption or compression on the data that distributed. You install the same GatewayTransportFilter implementation on both a gateway sender and gateway receiver.
+Use a GatewayTransportFilter implementation to process the TCP stream that sends a batch of events that is distributed from one @@product_name@@ cluster to another over a WAN. A GatewayTransportFilter is typically used to perform encryption or compression on the data that distributed. You install the same GatewayTransportFilter implementation on both a gateway sender and gateway receiver.
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements. See [&lt;class-name&gt; and &lt;parameter&gt;](#class-name_parameter).
 
@@ -560,7 +560,7 @@ Application plug-in used to provide current and predicted server load informatio
 
 Specify the Java class and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements. See [&lt;class-name&gt; and &lt;parameter&gt;](#class-name_parameter).
 
-**Default:** If this is not defined, the default Geode load probe is used.
+**Default:** If this is not defined, the default @@product_name@@ load probe is used.
 
 **API:** `org.apache.geode.cache.server.setLoadProbe`
 
@@ -901,7 +901,7 @@ Specifies a region attributes template that can be named (by `id`) and reference
 
 ## <a id="key-constraint" class="no-quick-link"></a>&lt;key-constraint&gt;
 
-Defines the type of object to be allowed for the region entry keys. This must be a fully-qualified class name. The attribute ensures that the keys for the region entries are all of the same class. If key-constraint is not used, the regionâ€™s keys can be of any class. This attribute, along with value-constraint, is useful for querying and indexing because it provides object type information to the query engine.
+Defines the type of object to be allowed for the region entry keys. This must be a fully-qualified class name. The attribute ensures that the keys for the region entries are all of the same class. If key-constraint is not used, the region’s keys can be of any class. This attribute, along with value-constraint, is useful for querying and indexing because it provides object type information to the query engine.
 
 **Note:**
 Set the constraint in every cache where you create or update the region entries. For client/server installations, match constraints between client and server and between clusters. The constraint is only checked in the cache that does the entry `put` or `create` operation. To avoid deserializing the object, the constraint is not checked when the entry is distributed to other caches.
@@ -922,7 +922,7 @@ Set the constraint in every cache where you create or update the region entries.
 
 ## <a id="value-constraint" class="no-quick-link"></a>&lt;value-constraint&gt;
 
-Defines the type of object to be allowed for the region entry values. This must be a fully-qualified class name. If value constraint isnâ€™t used, the regionâ€™s value can be of any class. This attribute, along with `key-constraint`, is useful for querying and indexing because it provides object type information to the query engine.
+Defines the type of object to be allowed for the region entry values. This must be a fully-qualified class name. If value constraint isn’t used, the region’s value can be of any class. This attribute, along with `key-constraint`, is useful for querying and indexing because it provides object type information to the query engine.
 
 **Note:**
 Set the constraint in every cache where you create or update the region entries. For client/server installations, match constraints between client and server and between clusters. The constraint is only checked in the cache that does the entry `put` or `create` operation. To avoid deserializing the object, the constraint is not checked when the entry is distributed to other caches.
@@ -1091,7 +1091,7 @@ Specify the Java class and its initialization parameters with the `<class-name>`
 
 ## <a id="entry-time-to-live" class="no-quick-link"></a>&lt;entry-time-to-live&gt;
 
-Expiration setting that specifies how long the regionâ€™s entries can remain in the cache without anyone accessing or updating them. See [&lt;expiration-attributes&gt;](#expiration-attributes) for details.
+Expiration setting that specifies how long the region’s entries can remain in the cache without anyone accessing or updating them. See [&lt;expiration-attributes&gt;](#expiration-attributes) for details.
 
 **Default:** not set - no expiration of this type.
 
@@ -1171,7 +1171,7 @@ Specify the Java class and its initialization parameters with the `<class-name>`
 
 ## <a id="entry-idle-time" class="no-quick-link"></a>&lt;entry-idle-time&gt;
 
-Expiration setting that specifies how long the regionâ€™s entries can remain in the cache without anyone accessing them. See [&lt;expiration-attributes&gt;](#expiration-attributes) for details.
+Expiration setting that specifies how long the region’s entries can remain in the cache without anyone accessing them. See [&lt;expiration-attributes&gt;](#expiration-attributes) for details.
 
 **Note:**
 To ensure reliable read behavior across the partitioned region, use `entry-time-to-live` for entry expiration instead of this setting.
@@ -1265,11 +1265,11 @@ With the exception of `local-max-memory`, all members defining a partitioned reg
 | Attribute              | Description        | Default              |
 |------------------------|--------------------|----------------------|
 | colocated-with         | The full name of a region to colocate with this region. The named region must exist before this region is created.                                     | null                 |
-| local-max-memory       | Maximum megabytes of memory set aside for this region in the local member. This is all memory used for this partitioned region - for primary buckets and any redundant copies. This value must be smaller than the Java settings for the initial or maximum JVM heap. When the memory use goes above this value, Geode issues a warning, but operation continues. Besides setting the maximum memory to use for the member, this setting also tells Geode how to balance the load between members where the region is defined. For example, if one member sets this value to twice the value of another memberâ€™s setting,  works to keep the ratio between the first and the second at two-to-one, regardless of how little memory the region consumes. This is a local parameter that applies only to the local member. A value of 0 disables local data caching. | 90% (of local heap)  |
+| local-max-memory       | Maximum megabytes of memory set aside for this region in the local member. This is all memory used for this partitioned region - for primary buckets and any redundant copies. This value must be smaller than the Java settings for the initial or maximum JVM heap. When the memory use goes above this value, @@product_name@@ issues a warning, but operation continues. Besides setting the maximum memory to use for the member, this setting also tells @@product_name@@ how to balance the load between members where the region is defined. For example, if one member sets this value to twice the value of another member’s setting, @@product_name@@ works to keep the ratio between the first and the second at two-to-one, regardless of how little memory the region consumes. This is a local parameter that applies only to the local member. A value of 0 disables local data caching. | 90% (of local heap)  |
 | recovery-delay         | Applies when `redundant-copies` is greater than zero. The number of milliseconds to wait after a member crashes before reestablishing redundancy for the region. A setting of -1 disables automatic recovery of redundancy after member failure.             | -1                   |
 | redundant-copies       | Number of extra copies that the partitioned region must maintain for each entry. Range: 0-3. If you specify 1, this partitioned region maintains the original and one backup, for a total of two copies. A value of 0 disables redundancy. | 0                    |
 | startup-recovery-delay | Applies when `redundant-copies` is greater than zero. The number of milliseconds a newly started member should wait before trying to satisfy redundancy of region data stored on other members. A setting of -1 disables automatic recovery of redundancy after new members join. | 0                    |
-| total-max-memory       | Maximum combined megabytes of memory to be used by all processes hosting this region for all copies, primary and redundant. | `Â Integer.MAX_VALUE` |
+| total-max-memory       | Maximum combined megabytes of memory to be used by all processes hosting this region for all copies, primary and redundant. | ` Integer.MAX_VALUE` |
 | total-num-buckets      | Total number of buckets or data storage areas allotted for the entire partitioned region in the distributed cache. As data moves from one member to another, the entries in a bucket move as one unit. This value should be a prime number at least four times the number of data stores. More buckets increases overhead, however, especially when redundant-copies = 2 or 3 .| 113                  |
 
 **Example:**
@@ -1294,7 +1294,7 @@ Specify the Java class and its initialization parameters with the `<class-name>`
 
 | Attribute | Description                                | Default |
 |-----------|--------------------------------------------|---------|
-| name      | The name of this custom PartitionResolver. | Â        |
+| name      | The name of this custom PartitionResolver. |         |
 
 **Example:**
 
@@ -1342,9 +1342,9 @@ Describes a partition in a Fixed Partitioned Region.
 
 | Attribute      | Description                                             | Default |
 |----------------|---------------------------------------------------------|---------|
-| partition-name | The name of this fixed partition.                       | Â        |
+| partition-name | The name of this fixed partition.                       |         |
 | is-primary     | Set to true if this partition is the primary partition. | false   |
-| num-buckets    | The number of buckets assigned to this partition.       | Â        |
+| num-buckets    | The number of buckets assigned to this partition.       |         |
 
 
 **Example:**
@@ -1430,7 +1430,7 @@ Specifies a role that is required for reliable access to the region.
 
 | Attribute | Description                    | Default |
 |-----------|--------------------------------|---------|
-| name      | The name of the required role. | Â        |
+| name      | The name of the required role. |         |
 
 **Example:**
 
@@ -1479,7 +1479,7 @@ The interest policy determines which events are delivered, but the `data-policy`
 
 ## <a id="topic_qsb_pnw_bm" class="no-quick-link"></a>&lt;cache-loader&gt;
 
-An event-handler plug-in that allows you to program for cache misses. At most, one cache loader can be defined in each member for the region. For distributed regions, a cache loader may be invoked remotely from other members that have the region defined. When an entry get results in a cache miss in a region with a cache loader defined, the loaderâ€™s <span class="keyword apiname">load</span> method is called. This method is usually programmed to retrieve data from an outside data source, but it can do anything required by your application.
+An event-handler plug-in that allows you to program for cache misses. At most, one cache loader can be defined in each member for the region. For distributed regions, a cache loader may be invoked remotely from other members that have the region defined. When an entry get results in a cache miss in a region with a cache loader defined, the loader’s <span class="keyword apiname">load</span> method is called. This method is usually programmed to retrieve data from an outside data source, but it can do anything required by your application.
 
 For partitioned regions, if you want to have a cache loader, install an instance of the cache loader in every data store. Partitioned regions support partitioned loading, where each cache loader loads only the data entries in the local member. If data redundancy is configured, data is loaded only if the local member holds the primary copy.
 
@@ -1513,7 +1513,7 @@ An event-handler plug-in that allows you to receive before-event notification fo
 
 ## <a id="cache-listener" class="no-quick-link"></a>&lt;cache-listener&gt;
 
-An event-handler plug-in that receives after-event notification of changes to the region and its entries. Any number of cache listeners can be defined for a region in any member. Geode offers several listener types with callbacks to handle data and process events. Depending on the `data-policy` and the `interest-policy` subscription attributes, a cache listener may receive only events that originate in the local cache, or it may receive those events along with events that originate remotely.
+An event-handler plug-in that receives after-event notification of changes to the region and its entries. Any number of cache listeners can be defined for a region in any member. @@product_name@@ offers several listener types with callbacks to handle data and process events. Depending on the `data-policy` and the `interest-policy` subscription attributes, a cache listener may receive only events that originate in the local cache, or it may receive those events along with events that originate remotely.
 
 Specify the Java class for the cache listener and its initialization parameters with the `<class-name>` and `<parameter>` sub-elements. See [&lt;class-name&gt; and &lt;parameter&gt;](#class-name_parameter).
 
@@ -1550,7 +1550,7 @@ A compressor registers a custom class that extends `Compressor` to support compr
 
 ## <a id="eviction-attributes" class="no-quick-link"></a>&lt;eviction-attributes&gt;
 
-Specifies whether and how to control a regionâ€™s size. Size is controlled by removing least recently used (LRU) entries to make space for new ones. This may be done through destroy or overflow actions. You can configure your region for lru-heap-percentage with an eviction action of local-destroy using stored region attributes.
+Specifies whether and how to control a region’s size. Size is controlled by removing least recently used (LRU) entries to make space for new ones. This may be done through destroy or overflow actions. You can configure your region for lru-heap-percentage with an eviction action of local-destroy using stored region attributes.
 
 **Default:** Uses the lru-entry-count algorithm.
 
@@ -1593,7 +1593,7 @@ Using the maximum attribute, specifies maximum region capacity based on entry co
 
 ## <a id="lru-heap-percentage" class="no-quick-link"></a>&lt;lru-heap-percentage&gt;
 
-Runs evictions when the Geode resource manager says to. The manager orders
+Runs evictions when the @@product_name@@ resource manager says to. The manager orders
 evictions when the total cache size is over the heap or off-heap percentage limit specified in the resource manager
 configuration. You can declare a Java class that implements the ObjectSizer interface to measure the
 size of objects in the Region.
@@ -1682,7 +1682,7 @@ Specifies the binding for a data-source used in transaction management. See [Con
 
 ## <a id="jndi-binding" class="no-quick-link"></a>&lt;jndi-binding&gt;
 
-For every datasource that is bound to the JNDI tree, there should be one `<jndi-binding>` element. This element describes the property and the configuration of the datasource. Geode uses the attributes of the `<jndi-binding>` element for configuration. Use the `<config-property>` element to configure properties for the datasource.
+For every datasource that is bound to the JNDI tree, there should be one `<jndi-binding>` element. This element describes the property and the configuration of the datasource. @@product_name@@ uses the attributes of the `<jndi-binding>` element for configuration. Use the `<config-property>` element to configure properties for the datasource.
 
 We recommend that you set the username and password with the `user-name` and `password` jndi-binding attributes rather than using the `<config-property>` element.
 
@@ -1847,7 +1847,7 @@ Describes an index to be created on a region. The index node, if any, should all
 ## <a id="luceneindex" class="no-quick-link"></a>&lt;lucene:index&gt;
 
 Describes a Lucene index to be created on a region. The `lucene` namespace
-and the scoping operator (`:`) must be specified, as the Geode `cache`
+and the scoping operator (`:`) must be specified, as the @@product_name@@ `cache`
 namespace also defines an `index` element (for OQL indexes).
 
 **API:** `org.apache.geode.cache.lucene` package
@@ -2093,15 +2093,15 @@ Set of serializer or instantiator tags to register customer DataSerializer exten
 
 ``` pre
 <serialization-registration>
-  Â  <instantiator id="30">     Â Â Â 
+    <instantiator id="30">        
        <class-name>com.package.MyClass</class-name>
-  Â  </instantiator>
+    </instantiator>
 </serialization-registration> 
 ```
 
 ## <a id="serializer" class="no-quick-link"></a>&lt;serializer&gt;
 
-Allows you to configure the DataSerializer for this Geode member. It registers a custom class which extends DataSerializer to support custom serialization of non-modifiable object types inside Geode .
+Allows you to configure the DataSerializer for this @@product_name@@ member. It registers a custom class which extends DataSerializer to support custom serialization of non-modifiable object types inside @@product_name@@.
 
 Specify the Java class for the `DataSerializer` and its initialization parameters with the `<class-name>` sub-element.
 
@@ -2109,7 +2109,7 @@ Specify the Java class for the `DataSerializer` and its initialization parameter
 
 ## <a id="instantiator" class="no-quick-link"></a>&lt;instantiator&gt;
 
-An Instantiator registers a custom class which implements the `DataSerializable` interface to support custom object serialization inside Geode .
+An Instantiator registers a custom class which implements the `DataSerializable` interface to support custom object serialization inside @@product_name@@.
 
 Specify the Java class and its initialization parameters with the `<class-name>` sub-element.
 
@@ -2234,6 +2234,3 @@ Specifies a String to be placed in a Region entry.
  </entry>
 </region>
 ```
-
-
-

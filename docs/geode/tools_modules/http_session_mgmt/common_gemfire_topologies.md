@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Common Topologies for HTTP Session Management
 sidebar_label: Common Topologies for HTTP Session Management
 sidebar_position: 3
@@ -35,5 +35,4 @@ In a peer-to-peer configuration, each instance within an application server cont
 
 <img src="../../images_svg/http_module_cs_with_locator.svg" id="common_gemfire_topologies__image_oss_zyw_rv" class="image" />
 
-In a client/server configuration, the Tomcat instance operates as a Geode client, which must communicate with one or more Geode servers to acquire session data. The client maintains its own local cache and will communicate with the server to satisfy cache misses. A client/server configuration is useful when you want to separate the application server instance from the cached session data. In this configuration, you can reduce the memory consumption of the application server since session data is stored in separate Geode server processes.
-
+In a client/server configuration, the Tomcat instance operates as a @@product_name@@ client, which must communicate with one or more @@product_name@@ servers to acquire session data. The client maintains its own local cache and will communicate with the server to satisfy cache misses. A client/server configuration is useful when you want to separate the application server instance from the cached session data. In this configuration, you can reduce the memory consumption of the application server since session data is stored in separate @@product_name@@ server processes.

@@ -47,8 +47,8 @@ The system uses a combination of member coordinators and system members, designa
     ```
 
 -   Configure regions you want to protect from network partitioning with a scope setting of `DISTRIBUTED_ACK` or `GLOBAL`. Do not use `DISTRIBUTED_NO_ACK` scope. This prevents operations from being performed throughout the cluster before a network partition is detected.
-    **Note:** Geode 
-     issues an alert if it detects `DISTRIBUTED_NO_ACK` regions when network partition detection is enabled:
+    **Note:**
+    @@product_name@@ issues an alert if it detects `DISTRIBUTED_NO_ACK` regions when network partition detection is enabled:
 
     ``` pre
     Region {0} is being created with scope {1} but enable-network-partition-detection is enabled in the distributed system. 
@@ -63,6 +63,3 @@ The system uses a combination of member coordinators and system members, designa
     -   You can adjust the default weights of members by specifying the system property `gemfire.member-weight` upon startup. For example, if you have some VMs that host a needed service, you could assign them a higher weight upon startup.
 
 -   By default, members that are forced out of the cluster by a network partition event will automatically restart and attempt to reconnect. Data members will attempt to reinitialize the cache. See [Handling Forced Cache Disconnection Using Autoreconnect](../member-reconnect.html).
-
-
-

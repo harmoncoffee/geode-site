@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The data entry is the key/value pair where you store your data. You can manage your entries individually and in batches. To use domain objects for your entry values and keys, you need to follow Apache Geode requirements for data storage and distribution.
+The data entry is the key/value pair where you store your data. You can manage your entries individually and in batches. To use domain objects for your entry values and keys, you need to follow @@product_name_long@@ requirements for data storage and distribution.
 
 -   **[Managing Data Entries](managing_data_entries.html)**
 
@@ -32,6 +32,5 @@ The data entry is the key/value pair where you store your data. You can manage y
 -   **[Requirements for Using Custom Classes in Data Caching](using_custom_classes.html)**
 
     Follow these guidelines to use custom domain classes for your cached entry keys and values.
-
 
 

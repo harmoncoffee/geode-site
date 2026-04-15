@@ -1,4 +1,4 @@
-﻿---
+---
 title: Design Considerations
 sidebar_label: Design Considerations
 sidebar_position: 3
@@ -25,8 +25,8 @@ limitations under the License.
 
 Designs that incorporate more complex features introduce further
 considerations.
-This section discusses how transactions interact with other Geode 
- features.
+This section discusses how transactions interact with other 
+@@product_name@@ features.
 
 -  **[Colocate Partitioned Regions](#colocate-PRs)**
 -  **[Region Operations Return References](#copy-on-read-transactions)**
@@ -76,7 +76,7 @@ region, even if the operation will be spurious.
 
 ## <a id="transactions-persistence" class="no-quick-link"></a> Allowing Transactions to Work on Persistent Regions
 
-'s implementation of atomic transactions prohibits
+@@product_name@@'s implementation of atomic transactions prohibits
 regions with persistence from participating in transactions.
 The invocation of a persistent region operation within a transaction
 throws an `UnsupportedOperationException` with an associated message of
@@ -131,7 +131,7 @@ exclusively for transactional puts, updates, and deletions, so transactional ent
 operations.
 
 If other, non-transactional sources update the keys the transaction is modifying, the changes may
-intermingle with the transaction's changes. The other sources can include distributions from remote
+intermingle with the transaction’s changes. The other sources can include distributions from remote
 members, loading activities, and other direct cache modification calls from the same member. When
 this happens, after your commit finishes, the cache state may not be what you expected.
 
@@ -149,8 +149,5 @@ Configure this strict isolation model with the property:
 
 This property causes read operations to succeed only when they
 read a consistent pre- or post-transactional state.
-If not consistent, Geode 
- throws a `CommitConflictException`.
-
-
-
+If not consistent,
+@@product_name@@ throws a `CommitConflictException`.

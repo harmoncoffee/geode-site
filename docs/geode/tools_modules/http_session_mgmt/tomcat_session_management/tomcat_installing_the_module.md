@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Installing the HTTP Module for Tomcat
 sidebar_label: Installing the HTTP Module for Tomcat
 sidebar_position: 1
@@ -40,7 +40,7 @@ This topic describes how to install the HTTP session management module for Tomca
     ```
     This creates an admin/password credential you can use to view system information when following links from the Tomcat home page.
 
-4.  The HTTP Session Management Module for Tomcat is included in the Geode installation package. After you install Apache Geode , you will find the module in the `tools/Modules` directory of the installation with a name of the form `Apache_Geode_Modules-SERVER-VERSION-Tomcat.zip`, where SERVER-VERSION is the Apache Geode version number.
+4.  The HTTP Session Management Module for Tomcat is included in the @@product_name@@ installation package. After you install @@product_name_long@@, you will find the module in the `tools/Modules` directory of the installation with a name of the form `Apache_Geode_Modules-SERVER-VERSION-Tomcat.zip`, where SERVER-VERSION is the @@product_name_long@@ version number.
 
 5.  Set your current working directory to the `$CATALINA_HOME` directory (or wherever you installed the application server) and unzip the HTTP Session Management Module.
 This adds jar files to the `lib` subdirectory and XML files to the `conf` subdirectory.
@@ -50,7 +50,7 @@ This adds jar files to the `lib` subdirectory and XML files to the `conf` subdir
     unzip $GEODE_HOME/tools/Modules/Apache_Geode_Modules-SERVER-VERSION-Tomcat.zip
     ```
 
-6.  **CRITICAL:** Copy all of the jar files from the Geode `lib` subdirectory to the `lib` subdirectory of your Tomcat server (`$CATALINA_HOME/lib`). 
+6.  **CRITICAL:** Copy all of the jar files from the @@product_name@@ `lib` subdirectory to the `lib` subdirectory of your Tomcat server (`$CATALINA_HOME/lib`). 
     
     **The module zip file alone does not contain all required dependencies.** You must copy all Geode libraries including `geode-core`, `geode-common`, Jakarta Transaction API, and other runtime dependencies:
 
@@ -62,4 +62,3 @@ This adds jar files to the `lib` subdirectory and XML files to the `conf` subdir
     **Note:** Without these libraries, Tomcat will fail to start with `ClassNotFoundException` errors for Geode classes. The Geode session management module requires the complete Geode runtime, not just the module JARs included in the zip file.
 
 Proceed to [Setting Up the HTTP Module for Tomcat](./tomcat_setting_up_the_module.html) to complete your Tomcat configuration.
-

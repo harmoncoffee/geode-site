@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-It is important to monitor the disk usage of Geode members. If a member lacks sufficient disk space for a disk store, the member attempts to shut down the disk store and its associated cache, and logs an error message. A shutdown due to a member running out of disk space can cause loss of data, data file corruption, log file corruption and other error conditions that can negatively impact your applications.
+It is important to monitor the disk usage of @@product_name@@ members. If a member lacks sufficient disk space for a disk store, the member attempts to shut down the disk store and its associated cache, and logs an error message. A shutdown due to a member running out of disk space can cause loss of data, data file corruption, log file corruption and other error conditions that can negatively impact your applications.
 
 After you make sufficient disk space available to the member, you can restart the member.
 
@@ -43,6 +43,3 @@ If a member of your cluster fails due to a disk full error condition, add or mak
 4.  Restart the member.
 
 See [Handling Missing Disk Stores](../disk_storage/handling_missing_disk_stores.html#handling_missing_disk_stores) for more information.
-
-
-

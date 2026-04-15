@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-You can customize how Apache Geode groups your partitioned region data with custom partitioning and data colocation.
+You can customize how @@product_name_long@@ groups your partitioned region data with custom partitioning and data colocation.
 
 -   **[Understanding Custom Partitioning and Data Colocation](custom_partitioning_and_data_colocation.html)**
 
@@ -29,17 +29,15 @@ You can customize how Apache Geode groups your partitioned region data with cust
 
 -   **[Standard Custom Partitioning](standard_custom_partitioning.html)**
 
-    By default, Geode Geode partitions each data entry into a bucket using a hashing policy on the key. Additionally, the physical location of the key-value pair is abstracted away from the application. You can change these policies for a partitioned region by providing a standard partition resolver that maps entries to a set of buckets called a partition.
+    By default, @@product_name@@ partitions each data entry into a bucket using a hashing policy on the key. Additionally, the physical location of the key-value pair is abstracted away from the application. You can change these policies for a partitioned region by providing a standard partition resolver that maps entries to a set of buckets called a partition.
 
 -   **[Fixed Custom Partitioning](fixed_custom_partitioning.html)**
 
-    By default,  partitions each data entry into a bucket using a hashing policy on the key. Additionally, the physical location of the key-value pair is abstracted away from the application. You can change these policies for a partitioned region by providing a fixed partition resolver that not only maps entries to a set of buckets called a partition, but also specifies which members host which data buckets.
+    By default, @@product_name@@ partitions each data entry into a bucket using a hashing policy on the key. Additionally, the physical location of the key-value pair is abstracted away from the application. You can change these policies for a partitioned region by providing a fixed partition resolver that not only maps entries to a set of buckets called a partition, but also specifies which members host which data buckets.
 
 -   **[Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data.html)**
 
-    By default,  allocates the data locations for a partitioned region independent of the data locations for any other partitioned region. You can change this policy for any group of partitioned regions, so that cross-region, related data is all hosted by the same member.
+    By default, @@product_name@@ allocates the data locations for a partitioned region independent of the data locations for any other partitioned region. You can change this policy for any group of partitioned regions, so that cross-region, related data is all hosted by the same member.
 Colocation is required for some operations,
 and it increases performance for others by reducing the number of data
 accesses to entries that are hosted on other cluster members.
-
-

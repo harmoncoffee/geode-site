@@ -53,4 +53,3 @@ Peers still actively performing operations on the cache may see `ShutdownExcepti
 ## <a id="concept_357ABE91AAA042D2A20328BD01FEB882__section_E6E914107FE64C0F9D8F7DA142D00AD7" class="no-quick-link"></a>What Isolated Members Do
 
 When a member is isolated from all locators, it is unable to receive membership view changes. It can't know if the current coordinator is present or, if it has left, whether there are other members available to take over that role. In this condition, a member will eventually detect the loss of all other members and will use the loss threshold to determine whether it should shut itself down. In the case of a cluster with 2 locators and 2 cache servers, the loss of communication with the non-lead cache server plus both locators would result in this situation and the remaining cache server would eventually shut itself down.
-

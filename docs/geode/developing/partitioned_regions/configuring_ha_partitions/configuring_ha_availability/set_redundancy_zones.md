@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Group members into redundancy zones so Geode will separate redundant data copies into different zones.
+Group members into redundancy zones so @@product_name@@ will separate redundant data copies into different zones.
 
 Understand how to set a member's `gemfire.properties` settings. See [Reference](../../reference/book_intro.html#reference).
 
@@ -40,4 +40,3 @@ redundancy-zone=rack2
 ```
 
 Each secondary copy would be hosted on the rack opposite the rack where its primary copy is hosted.
-

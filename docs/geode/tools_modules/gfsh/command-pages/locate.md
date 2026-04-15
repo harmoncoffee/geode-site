@@ -68,6 +68,3 @@ MemberName | MemberId
 server1    | GemFireStymon(server1:3692)<v1>:13487
 server2    | GemFireStymon(server2:2340)<v2>:11613
 ```
-
-
-

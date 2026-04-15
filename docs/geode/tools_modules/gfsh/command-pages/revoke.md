@@ -61,6 +61,3 @@ gfsh> revoke missing-disk-store --id=60399215-532b-406f-b81f
 
 Unable to find missing disk store to revoke
 ```
-
-
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Configuring Non-Sticky Sessions
 sidebar_label: Configuring Non-Sticky Sessions
 sidebar_position: 6
@@ -57,4 +57,3 @@ No additional configuration is required.
 
 -   The local client cache must be empty. Ensure that the `gemfire.cache.enable_local_cache` property is set to false. This effectively sets the local client cache to be a **PROXY** cache.
 -   If the local client cache is a **PROXY** cache, then expiration must be configured to notify the client via callback, which can be done by setting `gemfire.EXPIRE_SENDS_ENTRY_AS_CALLBACK` to true. This allows the client cache to retrieve and expire the actual session object, resulting in more consistent behavior.
-

@@ -22,11 +22,9 @@ limitations under the License.
 This topic describes how to install the HTTP session management module with tc Server templates.
 
 1.  If you do not already have tc Server, download and install the product from the [Pivotal tc Server download page](https://network.pivotal.io/products/pivotal-tcserver). These instructions require **tc Server 2.9** or later.
-2.  The HTTP Session Management Module for tc Server is included in the Apache Geode installation package. After you install Apache Geode , you will find the module in the `tools/Modules` directory of the installation with a name of the form `Apache_Geode_Modules-SERVER-VERSION-tcServer30.zip` or `Apache_Geode_Modules-SERVER-VERSION-tcServer.zip`. In these names,
-  - SERVER-VERSION is the Apache Geode version number.
+2.  The HTTP Session Management Module for tc Server is included in the @@product_name_long@@ installation package. After you install @@product_name_long@@, you will find the module in the `tools/Modules` directory of the installation with a name of the form `Apache_Geode_Modules-SERVER-VERSION-tcServer30.zip` or `Apache_Geode_Modules-SERVER-VERSION-tcServer.zip`. In these names,
+  - SERVER-VERSION is the @@product_name_long@@ version number.
   - `tcServer30` supports tcServer version 3.x.
   - `tcserver` supports tcServer version 2.9.
   
 3.  Unzip the appropriate module into the Pivotal tc Server `$CATALINA_HOME/templates` directory so that it creates `geode-p2p` and `geode-cs` subdirectories within the tc Server `templates` directory.
-
-

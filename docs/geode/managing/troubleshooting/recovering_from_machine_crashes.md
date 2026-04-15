@@ -23,7 +23,7 @@ limitations under the License.
 
 When a machine crashes because of a shutdown, power loss, hardware failure, or operating system failure, all of its applications and cache servers and their local caches are lost.
 
-System members on other machines are notified that this machine's members have left the cluster unexpectedly.
+System members on other machines are notified that this machine’s members have left the cluster unexpectedly.
 
 ## <a id="rec_system_crash__section_2BC1911849B94CBB892649A4E71724F7" class="no-quick-link"></a>Recovery Procedure
 
@@ -31,21 +31,21 @@ To recover from a machine crash:
 
 1.  Determine which processes run on this machine.
 2.  Reboot the machine.
-3.  If a Geode locator runs here, start it first.
+3.  If a @@product_name@@ locator runs here, start it first.
     **Note:**
     At least one locator must be running before you start any applications or cache servers.
 
 4.  Start the applications and cache servers in the usual order.
 
-If you have to move a locator process to a different machine, the locator isnâ€™t useful until you update the locators list in the `gemfire.properties` file and restart all the applications and cache servers in the cluster. If other locators are running, however, you donâ€™t have to restart the system immediately. For a list of the locators in use, check the locators property in one of the application `gemfire.properties` files.
+If you have to move a locator process to a different machine, the locator isn’t useful until you update the locators list in the `gemfire.properties` file and restart all the applications and cache servers in the cluster. If other locators are running, however, you don’t have to restart the system immediately. For a list of the locators in use, check the locators property in one of the application `gemfire.properties` files.
 
 ## <a id="rec_system_crash__section_3D2B55C456024BBBBF2898EA4DDAFF5C" class="no-quick-link"></a>Data Recovery for Partitioned Regions
 
 The partitioned region initializes itself correctly regardless of the order in which the data stores rejoin. The applications and cache servers recreate their data automatically as they return to active work.
 
-If the partitioned region is configured for data redundancy, Geode may be able to handle a machine crash automatically with no data loss, depending on how many redundant copies there are and how many members have to be restarted. See also [Recovery for Partitioned Regions](recovering_from_p2p_crashes.html#rec_app_p2p_crash__section_0E7D482DD8E84250A10070431B29AAC5).
+If the partitioned region is configured for data redundancy, @@product_name@@ may be able to handle a machine crash automatically with no data loss, depending on how many redundant copies there are and how many members have to be restarted. See also [Recovery for Partitioned Regions](recovering_from_p2p_crashes.html#rec_app_p2p_crash__section_0E7D482DD8E84250A10070431B29AAC5).
 
-If the partitioned region does not have redundant copies, the system members recreate the data through normal operation. If the member that crashed was an application, check whether it was designed to write its data to an external data source. If so, decide whether data recovery is possible and preferable to starting with new data generated through the Geode cluster.
+If the partitioned region does not have redundant copies, the system members recreate the data through normal operation. If the member that crashed was an application, check whether it was designed to write its data to an external data source. If so, decide whether data recovery is possible and preferable to starting with new data generated through the @@product_name@@ cluster.
 
 ## <a id="rec_system_crash__section_D3E3002D6C864853B1517A310BD05BDF" class="no-quick-link"></a>Data Recovery for Distributed Regions
 
@@ -62,4 +62,3 @@ If the machine that crashed hosted a server, how the server recovers its data de
 The impact of a server crash on its clients depends on whether the installation is configured for highly available servers. For information, see [Recovering from Crashes with a Client/Server Configuration](recovering_from_cs_crashes.html#rec_app_cs_crash).
 
 If the machine that crashed hosted a client, restart the client as quickly as possible and let it recover its data automatically from the server. For details, see [Recovering from Client Failure](recovering_from_cs_crashes.html#rec_app_cs_crash__section_24B1898202E64C1E808C59E39417891B).
-

@@ -56,6 +56,3 @@ execute function --id=InterestCalculations --region=/InterestRegion
 execute function --id=InterestCalculations --members=server1
 execute function --id=InterestCalculations --groups=Group1
 ```
-
-
-

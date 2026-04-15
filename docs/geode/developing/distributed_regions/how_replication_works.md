@@ -50,5 +50,3 @@ Once initialized, the preloaded region operates like the region with a `normal` 
 If the region is configured as a replicated region, it receives all new creations in the distributed region from the other members. This is the push distribution model. Unlike the preloaded region, the replicated region has a contract that states it will hold all entries that are present anywhere in the distributed region.
 
 <img src="../../images_svg/distributed_replica.svg" id="how_replication_works__image_2E7F3EB6213A47FEA3ABE32FD2CB1503" class="image" />
-
-

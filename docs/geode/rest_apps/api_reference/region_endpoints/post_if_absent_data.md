@@ -1,4 +1,4 @@
-﻿---
+---
 title:  "POST /geode/v1/{region}?key=<key>"
 sidebar_label: "POST /geode/v1/{region}?key=<key>"
 sidebar_position: 7
@@ -107,7 +107,7 @@ Location: http://localhost:8080/geode/v1/orders/2
 | 400 BAD REQUEST           | Returned if JSON content is malformed.                                                                                           |
 | 404 NOT FOUND             | Returned if the specified region does not exist.                                                                                 |
 | 409 CONFLICT              | Returned if the provided key already exists in the region.                                                                       |
-| 500 INTERNAL SERVER ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
+| 500 INTERNAL SERVER ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |
 
 ## Example Error Response
 
@@ -144,4 +144,3 @@ Content-Type: application/json
     ]
 }
 ```
-

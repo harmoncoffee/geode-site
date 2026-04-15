@@ -26,7 +26,7 @@ The `validate offline-disk-store` command verifies the health of your offline di
 
 Use this command at these times:
 
--   Before compacting an offline disk store to help decide whether it's worth doing.
+-   Before compacting an offline disk store to help decide whether it’s worth doing.
 -   Before restoring or modifying a disk store.
 -   Any time you want to be sure the disk store is in good shape.
 
@@ -35,6 +35,3 @@ Example:
 ``` pre
 gfsh>validate offline-disk-store --name=ds1 --disk-dirs=hostB/bupDirectory
 ```
-
-
-

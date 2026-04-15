@@ -21,7 +21,7 @@ limitations under the License.
 <a id="mbean_notifications_list"></a>
 
 
-This topic lists all available JMX notifications emitted by Geode MBeans.
+This topic lists all available JMX notifications emitted by @@product_name@@ MBeans.
 
 Notifications are emitted by the following MBeans:
 
@@ -78,6 +78,3 @@ Notifications are emitted by the following MBeans:
 | gemfire.distributedsystem.cache.member.departed | Name or ID of member who departed                 | Member Departed &lt;Member Name or ID&gt; has crashed = &lt;true/false&gt; |
 | gemfire.distributedsystem.cache.member.suspect  | Name or ID of member who is suspected             | Member Suspected &lt;Member Name or ID&gt; By &lt;Who Suspected&gt;        |
 | system.alert.\*                                 | DistributedSystem("&lt;DistributedSystem ID"&gt;) | Alert Message                                                              |
-
-
-

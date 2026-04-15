@@ -1,4 +1,4 @@
-﻿---
+---
 title: Adherence to ACID Promises
 sidebar_label: Adherence to ACID Promises
 sidebar_position: 1
@@ -23,10 +23,10 @@ limitations under the License.
 
 <a id="ACID"></a>
 
-This section introduces  transactions.
- offers an API for client applications
-that do transactional work. Geode 
- implements optimistic transactions,
+This section introduces @@product_name@@ transactions.
+@@product_name@@ offers an API for client applications
+that do transactional work.
+@@product_name@@ implements optimistic transactions,
 choosing the much higher transaction performance they offer over the slow,
 locking methods of a traditional relational database.
 
@@ -36,7 +36,7 @@ of a traditional relational database.
 
 ### <a id="transaction_semantics__section_8362ACD06C784B5BBB0B7E986F760169" class="no-quick-link"></a>Atomicity
 
-Atomicity is â€œall or nothingâ€ behavior: a transaction completes successfully only when all of the operations it contains complete successfully. If problems occur during a transaction, perhaps due to other transactions with overlapping changes, the transaction cannot successfully complete until the problems are resolved.
+Atomicity is “all or nothing” behavior: a transaction completes successfully only when all of the operations it contains complete successfully. If problems occur during a transaction, perhaps due to other transactions with overlapping changes, the transaction cannot successfully complete until the problems are resolved.
 
 Optimistic transactions provide atomicity and realize speed by using a reservation system, instead of using the traditional relational database technique of a two-phase locking of rows. The reservation prevents other, intersecting transactions from completing, allowing the commit to check for conflicts and to reserve resources in an all-or-nothing fashion prior to making changes to the data. After all changes have been made, locally and remotely, the reservation is released. With the reservation system, an intersecting transaction is simply discarded. The serialization of obtaining locks is avoided.
 
@@ -47,8 +47,8 @@ Consistency requires that data written within a transaction must observe the key
 ### <a id="transaction_semantics__section_126A24EC499D4CF39AE766A0B526A9A5" class="no-quick-link"></a>Isolation
 
 Isolation is the level at which transactional state is
-visible to system components. Geode 
- transactions have repeatable read isolation.
+visible to system components.
+@@product_name@@ transactions have repeatable read isolation.
 Once the committed value is read for a given key,
 it always returns that same value.
 If a write within a transaction
@@ -68,11 +68,10 @@ See [Changing the Handling of Dirty Reads](design_considerations.html#transactio
 ### <a id="transaction_semantics__section_F092E368724945BCBF8E5DCB36B97EB4" class="no-quick-link"></a>Durability
 
 Relational databases provide durability by using disk storage for
-recovery and transaction logging. Geode 
- is optimized for performance
+recovery and transaction logging.
+@@product_name@@ is optimized for performance
 and does not support on-disk durability for transactions.
 
 See [Allowing Transactions to Work on Persistent Regions](design_considerations.html#transactions-persistence)
 for how to allow a transaction that operates on a persistent region
 in a non-durable way.
-

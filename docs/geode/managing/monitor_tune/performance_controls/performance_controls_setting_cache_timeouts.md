@@ -39,6 +39,3 @@ gfsh>alter runtime --lock-timeout=30 --lock-lease=60
 
 -   `--lock-timeout`. Timeout for object lock requests, specified in seconds. The setting affects automatic locking only, and does not apply to manual locking. The default is 1 minute. If a lock request does not return before the specified timeout period, it is cancelled and returns with a failure.
 -   `--lock-lease`. Timeout for object lock leases, specified in seconds. The setting affects both automatic locking and manual locking. The default is 2 minutes. Once a lock is obtained, it may remain in force for the lock lease time period before being automatically cleared by the system.
-
-
-

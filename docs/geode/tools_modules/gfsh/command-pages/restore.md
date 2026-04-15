@@ -60,6 +60,3 @@ Redundancy is fully satisfied for regions:
 Total primary transfers completed = 224
 Total primary transfer time (ms) = 4134
 ```
-
-
-

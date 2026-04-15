@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Pulse System Requirements
 sidebar_label: Pulse System Requirements
 sidebar_position: 1
@@ -32,6 +32,3 @@ The Pulse Web application has been tested for compatibility with the following W
 
 Pulse has been tested for standalone deployment on Tomcat and Jetty.
 Pulse may work with other operating systems and browsers upon which it has not been tested.
-
-
-

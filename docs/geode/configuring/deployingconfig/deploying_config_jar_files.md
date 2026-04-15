@@ -1,4 +1,4 @@
-﻿---
+---
 title: Deploying Configuration Files in JAR Files
 sidebar_label: Deploying Configuration Files in JAR Files
 sidebar_position: 4
@@ -26,9 +26,9 @@ This section provides a procedure and an example for deploying configuration fil
 **Procedure**
 
 1.  Jar the files.
-2.  Set the Apache Geode system properties to point to the files as they reside in the jar file.
+2.  Set the @@product_name_long@@ system properties to point to the files as they reside in the jar file.
 3.  Include the jar file in your `CLASSPATH.`
-4.  Verify the jar file copies are the only ones visible to the application at runtime. Geode searches the `CLASSPATH` after searching other locations, so the files cannot be available in the other search areas.
+4.  Verify the jar file copies are the only ones visible to the application at runtime. @@product_name@@ searches the `CLASSPATH` after searching other locations, so the files cannot be available in the other search areas.
 5.  Start your application. The configuration file is loaded from the jar file.
 
 **Example of Deploying a Configuration JAR**
@@ -47,7 +47,6 @@ In this example, you would perform the following steps to deploy the configurati
 
 1.  Set the system property `gemfire.cache-xml-file` to `myConfig/myCache.xml`.
 2.  Set your `CLASSPATH` to include `my.jar`.
-3.  Verify there is no file already  in the filesystem named `./myConfig/myCache.xml`, so Geode will be forced to search the jar file to find it.
+3.  Verify there is no file already  in the filesystem named `./myConfig/myCache.xml`, so @@product_name@@ will be forced to search the jar file to find it.
 
 When you start your application, the configuration file is loaded from the jar file.
-

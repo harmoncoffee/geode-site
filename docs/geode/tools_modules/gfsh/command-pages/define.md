@@ -45,7 +45,7 @@ define index --name=value --expression=value --region=value [--type=value]
 ``` pre
 gfsh> define index --name=myIndex1 --expression=exp1 --region=/exampleRegion 
 
-gfsh> define index --name=myIndex2 --expression=â€c.exp2â€ --region="/exampleRegion e, e.collection1 c" 
+gfsh> define index --name=myIndex2 --expression=”c.exp2” --region="/exampleRegion e, e.collection1 c" 
 
 gfsh> define index --name=myIndex3 --expression=exp3 --region=/exampleRegion --type=hash 
 
@@ -64,6 +64,3 @@ Name       : myIndex1
 Expression : exp1
 RegionPath : /exampleRegion
 ```
-
-
-

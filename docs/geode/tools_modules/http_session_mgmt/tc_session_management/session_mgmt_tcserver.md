@@ -23,17 +23,14 @@ This section describes how to set up and use the HTTP session management module 
 
 If you would prefer to manually change the `server.xml` and `context.xml` files rather than use tc Server templates, refer to [HTTP Session Management Module for Tomcat](session_mgmt_tomcat.html).
 
--   **[Installing the HTTP Module for tc Server](../http_session_mgmt/tc_installing_the_module.html)**
+-   **[Installing the HTTP Module for tc Server](../../tools_modules/http_session_mgmt/tc_installing_the_module.html)**
 
     This topic describes how to install the HTTP session management module with tc Server templates.
 
--   **[Setting Up the HTTP Module for tc Server](../http_session_mgmt/tc_setting_up_the_module.html)**
+-   **[Setting Up the HTTP Module for tc Server](../../tools_modules/http_session_mgmt/tc_setting_up_the_module.html)**
 
     To set up the HTTP Module for tc Server, start a tc Server instance with the appropriate tc Server template based on your preferred topology.
 
--   **[Changing the Default Geode Configuration in the tc Server Module](../http_session_mgmt/tc_changing_gf_default_cfg.html)**
+-   **[Changing the Default @@product_name@@ Configuration in the tc Server Module](../../tools_modules/http_session_mgmt/tc_changing_gf_default_cfg.html)**
 
-    By default, the tc Server HTTP module will run Geode automatically with pre-configured settings. You can change these Geode settings.
-
-
-
+    By default, the tc Server HTTP module will run @@product_name@@ automatically with pre-configured settings. You can change these @@product_name@@ settings.

@@ -6,6 +6,9 @@ const geodeVars = {
         product_version_old_minor: '1.14',
         product_version_geode: '1.15',
         product_version_nodot: '115',
+        product_name_long: 'Apache Geode',
+        product_name: 'Geode',
+        product_name_lowercase: 'geode',
     },
     '1.15': {
         min_java_version: '8',
@@ -14,6 +17,9 @@ const geodeVars = {
         product_version_old_minor: '1.14',
         product_version_geode: '1.15',
         product_version_nodot: '115',
+        product_name_long: 'Apache Geode',
+        product_name: 'Geode',
+        product_name_lowercase: 'geode',
     },
 };
 

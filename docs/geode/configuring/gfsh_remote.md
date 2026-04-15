@@ -1,4 +1,4 @@
-﻿---
+---
 title: Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS
 sidebar_label: Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS
 sidebar_position: 7
@@ -26,7 +26,7 @@ You can connect `gfsh` via HTTP or HTTPS to a remote cluster and manage the clus
 To connect `gfsh` using the HTTP protocol to a remote cluster:
 
 1.  Launch `gfsh`. See [Starting gfsh](../../tools_modules/gfsh/starting_gfsh.html#concept_DB959734350B488BBFF91A120890FE61).
-2.  When starting the remote cluster on the remote host, you can optionally specify `--http-bind-address` and `--http-service-port` as Geode properties when starting up your JMX manager (server or locator). These properties can be then used in the URL used when connecting from your local system to the HTTP service in the remote cluster. For example:
+2.  When starting the remote cluster on the remote host, you can optionally specify `--http-bind-address` and `--http-service-port` as @@product_name@@ properties when starting up your JMX manager (server or locator). These properties can be then used in the URL used when connecting from your local system to the HTTP service in the remote cluster. For example:
 
     ``` pre
     gfsh>start server --name=server1 --J=-Dgemfire.jmx-manager=true \
@@ -41,7 +41,7 @@ To connect `gfsh` using the HTTP protocol to a remote cluster:
     ``` pre
     gfsh>connect --use-http=true --url="http://myremotecluster.example.com:8080/geode/v1"
 
-    Successfully connected to: Geode Manager's HTTP service @ http://myremotecluster.example.com:8080/geode/v1
+    Successfully connected to: @@product_name@@ Manager's HTTP service @ http://myremotecluster.example.com:8080/geode/v1
     ```
 
     See [connect](../../tools_modules/gfsh/command-pages/connect.html).
@@ -78,4 +78,3 @@ include the following:
 
 -   Developer REST API service
 -   Pulse monitoring tool
-

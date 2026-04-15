@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Delta Propagation Properties
 sidebar_label: Delta Propagation Properties
 sidebar_position: 3
@@ -56,12 +56,12 @@ Exceptions to this behavior:
 
 Cloning can be expensive, but it ensures that the new object is fully initialized with the delta before any application code sees it.
 
-When cloning is enabled, by default Geode does a deep copy of the object, using serialization. You may be able to improve performance by implementing `java.lang.Cloneable` and then implementing the `clone` method, making a deep copy of anything to which a delta may be applied. The goal is to reduce significantly the overhead of copying the object while still retaining the isolation needed for your deltas.
+When cloning is enabled, by default @@product_name@@ does a deep copy of the object, using serialization. You may be able to improve performance by implementing `java.lang.Cloneable` and then implementing the `clone` method, making a deep copy of anything to which a delta may be applied. The goal is to reduce significantly the overhead of copying the object while still retaining the isolation needed for your deltas.
 
 Without cloning:
 
 -   It is possible for application code to read the entry value as it is being modified, possibly seeing the value in an intermediate, inconsistent state, with just part of the delta applied. You may choose to resolve this issue by having your application code synchronize on reads and writes.
-- Geode loses any reference to the old value because the old value is transformed in place into the new value. Because of this, your `CacheListener` sees the same new value returned for `EntryEvent.getOldValue` and `EntryEvent.getNewValue` .
+-   @@product_name@@ loses any reference to the old value because the old value is transformed in place into the new value. Because of this, your `CacheListener` sees the same new value returned for `EntryEvent.getOldValue` and `EntryEvent.getNewValue` .
 -   Exceptions thrown from `fromDelta` may leave your cache in an inconsistent state. Without cloning, any interruption of the delta application could leave you with some of the fields in your cached object changed and others unchanged. If you do not use cloning, keep this in mind when you program your error handling in your `fromDelta` implementation.
 
 With cloning:
@@ -94,6 +94,3 @@ Enable cloning as follows:
     gfsh>create region --name="region_with_cloning" --type=REPLICATE
     --enable-cloning=true
     ```
-
-
-

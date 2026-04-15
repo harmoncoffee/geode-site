@@ -1,4 +1,4 @@
-﻿---
+---
 title:  cache.xml Quick Reference
 sidebar_label: cache.xml Quick Reference
 sidebar_position: 1
@@ -117,6 +117,3 @@ To configure cache servers, clients, and WAN topologies, see the following secti
     -   [&lt;async-event-queue&gt;](cache_xml.html#id_zrr_scq_rr)
 
     The gateway sender and receiver APIs in <span class="keyword apiname">`org.apache.geode.cache.util`</span> provide corresponding getter and setter methods for these attributes.
-
-
-

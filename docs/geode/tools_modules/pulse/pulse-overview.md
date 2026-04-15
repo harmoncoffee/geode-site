@@ -15,11 +15,13 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode Pulse is a Web Application that provides a graphical dashboard for monitoring vital, real-time health and performance of Geode clusters, members, and regions.
+-->
 
-Use Pulse to examine total memory, CPU, and disk space used by members, uptime statistics, client connections, WAN connections, and critical notifications. Pulse communicates with a Geode JMX manager to provide a complete view of your Geode deployment. You can drill down from a high-level cluster view to examine individual members and even regions within a member, to filter the type of information and level of detail.
+@@product_name@@ Pulse is a Web Application that provides a graphical dashboard for monitoring vital, real-time health and performance of @@product_name@@ clusters, members, and regions.
 
-By default, Geode Pulse runs in an embedded container within a Geode JMX manager node. You can optionally deploy Pulse to a Web application server of your choice, so that the tool runs independently of your Geode clusters. Hosting Pulse on an application server also enables you to use SSL for accessing the application.
+Use Pulse to examine total memory, CPU, and disk space used by members, uptime statistics, client connections, WAN connections, and critical notifications. Pulse communicates with a @@product_name@@ JMX manager to provide a complete view of your @@product_name@@ deployment. You can drill down from a high-level cluster view to examine individual members and even regions within a member, to filter the type of information and level of detail.
+
+By default, @@product_name@@ Pulse runs in an embedded container within a @@product_name@@ JMX manager node. You can optionally deploy Pulse to a Web application server of your choice, so that the tool runs independently of your @@product_name@@ clusters. Hosting Pulse on an application server also enables you to use SSL for accessing the application.
 
 -   **[Pulse System Requirements](pulse-requirements.html)**
 
@@ -28,7 +30,7 @@ By default, Geode Pulse runs in an embedded container within a Geode JMX manager
 
 -   **[Running Pulse in Embedded Mode (Quick Start)](pulse-embedded.html)**
 
-    Use Pulse in embedded mode to monitor a Geode deployment directly from a Geode JMX Manager. By default, the embedded Pulse application connects to the local JMX Manager that hosts the Pulse application. Optionally, configure Pulse to connect to a Geode system of your choice.
+    Use Pulse in embedded mode to monitor a @@product_name@@ deployment directly from a @@product_name@@ JMX Manager. By default, the embedded Pulse application connects to the local JMX Manager that hosts the Pulse application. Optionally, configure Pulse to connect to a @@product_name@@ system of your choice.
 
 -   **[Hosting Pulse on a Web Application Server](pulse-hosted.html)**
 
@@ -36,11 +38,8 @@ By default, Geode Pulse runs in an embedded container within a Geode JMX manager
 
 -   **[Configuring Pulse Authentication](pulse-auth.html)**
 
-    Pulse requires all users to authenticate themselves before they can use the Pulse Web application. If you have configured JMX authentication on the Geode JMX Manager node, the Pulse Web application itself may also need to authenticate itself to the Geode JMX Manager node on startup.
+    Pulse requires all users to authenticate themselves before they can use the Pulse Web application. If you have configured JMX authentication on the @@product_name@@ JMX Manager node, the Pulse Web application itself may also need to authenticate itself to the @@product_name@@ JMX Manager node on startup.
 
 -   **[Using Pulse Views](pulse-views.html)**
 
-    Pulse provides a variety of different views to help you monitor Geode clusters, members, and regions.
-
-
-
+    Pulse provides a variety of different views to help you monitor @@product_name@@ clusters, members, and regions.

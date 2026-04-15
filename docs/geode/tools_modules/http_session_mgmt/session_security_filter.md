@@ -66,7 +66,7 @@ Add a context parameter to your application's `web.xml`:
 
 ### Step 2: Deploy WAR File
 
-Deploy or redeploy your WAR file to the application server. The filter takes effect immediatelyâ€”no cluster restart required.
+Deploy or redeploy your WAR file to the application server. The filter takes effect immediately—no cluster restart required.
 
 ## <a id="pattern-syntax" class="no-quick-link"></a>Pattern Syntax
 
@@ -323,4 +323,3 @@ The filter implementation uses Java's [JEP 290: Filter Incoming Serialization Da
 - [Setting Up the HTTP Module for Tomcat](tomcat_setting_up_the_module.html)
 - [Setting Up the HTTP Module for tc Server](tc_setting_up_the_module.html)
 - [HTTP Session Management Quick Start](quick_start.html)
-

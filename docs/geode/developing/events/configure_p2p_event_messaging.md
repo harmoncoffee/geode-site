@@ -48,6 +48,3 @@ Peer distribution is done according to the region's configuration.
 
 **Note:**
 You can also configure Regions using the gfsh command-line interface. See [Region Commands](../../tools_modules/gfsh/quick_ref_commands_by_area.html#topic_EF03119A40EE492984F3B6248596E1DD).
-
-
-

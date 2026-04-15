@@ -53,6 +53,3 @@ gfsh>sleep --time=60
 
 gfsh>
 ```
-
-
-

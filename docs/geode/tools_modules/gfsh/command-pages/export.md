@@ -300,4 +300,3 @@ gfsh>export stack-traces
 stack-trace(s) exported to file: /data/stacktrace_1612316330340
 On host : cluster-locator-0.cluster-locator.system.svc.cluster.local
 ```
-

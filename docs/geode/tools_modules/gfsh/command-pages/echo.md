@@ -62,6 +62,3 @@ gfsh>echo --string=${SYS_JAVA_VERSION}
 Post substitution: echo --string=1.8.0_60
 1.8.0_60
 ```
-
-
-

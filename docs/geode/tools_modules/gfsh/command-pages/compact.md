@@ -23,11 +23,11 @@ limitations under the License.
 
 Compact online and offline disk-stores.
 
--   **[compact disk-store](../../gfsh/command-pages/compact.html#topic_F113C95C076F424E9AA8AC4F1F6324CC)**
+-   **[compact disk-store](../../../tools_modules/gfsh/command-pages/compact.html#topic_F113C95C076F424E9AA8AC4F1F6324CC)**
 
     Compact a disk store on all members with that disk store.
 
--   **[compact offline-disk-store](../../gfsh/command-pages/compact.html#topic_9CCFCB2FA2154E16BD775439C8ABC8FB)**
+-   **[compact offline-disk-store](../../../tools_modules/gfsh/command-pages/compact.html#topic_9CCFCB2FA2154E16BD775439C8ABC8FB)**
 
     Compact an offline disk store.
 
@@ -95,10 +95,10 @@ compact offline-disk-store --name=value --disk-dirs=value(,value)*
 
 | Name                                                   | Description                                                                                                                   | Default Value |
 |--------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|---------------|
-| <span class="keyword parmname">&#8209;&#8209;name</span>           | *Required.* Name of the offline disk store to be compacted.                                                                   | Â              |
-| <span class="keyword parmname">&#8209;&#8209;disk-dirs</span>      | *Required.* One or more directories where data for the disk store was previously written. Separate directories with commas.   | Â              |
+| <span class="keyword parmname">&#8209;&#8209;name</span>           | *Required.* Name of the offline disk store to be compacted.                                                                   |               |
+| <span class="keyword parmname">&#8209;&#8209;disk-dirs</span>      | *Required.* One or more directories where data for the disk store was previously written. Separate directories with commas.   |               |
 | <span class="keyword parmname">&#8209;&#8209;max-oplog-size</span> | Maximum size (in megabytes) of the oplogs created by compaction.                                                              | -1            |
-| <span class="keyword parmname">&#8209;&#8209;J</span>              | Arguments passed to the Java Virtual Machine performing the compact operation on the disk store. For example: `--J=-Xmx1024m`. | Â              |
+| <span class="keyword parmname">&#8209;&#8209;J</span>              | Arguments passed to the Java Virtual Machine performing the compact operation on the disk store. For example: `--J=-Xmx1024m`. |               |
 
 **Example Commands:**
 
@@ -106,6 +106,3 @@ compact offline-disk-store --name=value --disk-dirs=value(,value)*
 compact offline-disk-store --name=Disk2 --disk-dirs=/Disks/Disk2
 compact offline-disk-store --name=Disk2 --disk-dirs=/Disks/Disk2 --max-oplog-size=512 --J=-Xmx1024m
 ```
-
-
-

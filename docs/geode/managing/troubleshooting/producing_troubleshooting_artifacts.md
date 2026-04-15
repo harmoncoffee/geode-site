@@ -43,7 +43,7 @@ You must run a time synchronization service on all hosts for troubleshooting. Sy
 
 For each process, complete these steps:
 
-1.  Make sure the host's clock is synchronized with the other hosts. Use a time synchronization tool such as Network Time Protocol (NTP).
+1.  Make sure the host’s clock is synchronized with the other hosts. Use a time synchronization tool such as Network Time Protocol (NTP).
 2.  Enable logging to a file instead of standard output by editing `gemfire.properties` to include this line:
 
     ``` pre
@@ -90,6 +90,3 @@ For each process, complete these steps:
     ``` pre
     gfsh> export stack-traces --file=ApplicationStackTrace.txt --member=member1
     ```
-
-
-

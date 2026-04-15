@@ -25,7 +25,7 @@ When you determine buffer size settings, you must strike a balance between commu
 
 Larger socket buffers allow your members to distribute data and events more quickly, but they also take memory away from other things. If you store very large data objects in your cache, finding the right sizing for your buffers while leaving enough memory for the cached data can become critical to system performance.
 
-Ideally, you should have buffers large enough for the distribution of any single data object so you donâ€™t get message fragmentation, which lowers performance. Your buffers should be at least as large as your largest stored objects and their keys plus some overhead for message headers. The overhead varies depending on who is sending and receiving, but 100 bytes should be sufficient. You can also look at the statistics for the communication between your processes to see how many bytes are being sent and received.
+Ideally, you should have buffers large enough for the distribution of any single data object so you don’t get message fragmentation, which lowers performance. Your buffers should be at least as large as your largest stored objects and their keys plus some overhead for message headers. The overhead varies depending on who is sending and receiving, but 100 bytes should be sufficient. You can also look at the statistics for the communication between your processes to see how many bytes are being sent and received.
 
 If you see performance problems and logging messages indicating blocked writers, increasing your buffer sizes may help.
 
@@ -101,10 +101,10 @@ This table lists the settings for the various member relationships and protocols
 
 **TCP/IP Buffer Sizes**
 
-If possible, your TCP/IP buffer size settings should match across your Geode installation. At a minimum, follow the guidelines listed here.
+If possible, your TCP/IP buffer size settings should match across your @@product_name@@ installation. At a minimum, follow the guidelines listed here.
 
 -   **Peer-to-peer**. The socket-buffer-size setting in `gemfire.properties` should be the same throughout your cluster.
--   **Client/server**. The client's pool socket-buffer size-should match the setting for the servers the pool uses, as in these example `cache.xml` snippets:
+-   **Client/server**. The client’s pool socket-buffer size-should match the setting for the servers the pool uses, as in these example `cache.xml` snippets:
 
     ``` pre
     Client Socket Buffer Size cache.xml Configuration:
@@ -142,6 +142,3 @@ greater than "20000000".
 ```
 
 If you think you are requesting more space for your buffer sizes than your system allows, check with your system administrator about adjusting the operating system limits.
-
-
-

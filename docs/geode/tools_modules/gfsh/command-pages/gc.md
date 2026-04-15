@@ -58,6 +58,3 @@ gc
 gfsh>gc
 Sucessfully executed GC
 ```
-
-
-

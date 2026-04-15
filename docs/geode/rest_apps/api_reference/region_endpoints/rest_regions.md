@@ -19,17 +19,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-A  region is how  logically groups data within its cache. Regions stores data as entries, which are key-value pairs. Using the REST APIs you can read, add (or update), and delete region data.
+A @@product_name@@ region is how @@product_name@@ logically groups data within its cache. Regions stores data as entries, which are key-value pairs. Using the REST APIs you can read, add (or update), and delete region data.
 
 See also [Data Regions](../basic_config/data_regions/chapter_overview.html#data_regions) for more information on working with regions.
 
 -   **[GET /geode/v1](get_regions.html)**
 
-    List all available resources (regions) in the Geode cluster.
+    List all available resources (regions) in the @@product_name@@ cluster.
 
 -   **[GET /geode/v1/\{region\}](get_region_data.html)**
 
-    Read data for the region. The optional limit URL query parameter specifies the number of values from the Region that will be returned. The default limit is 50. If the user specifies a limit of â€œALLâ€, then all entry values for the region will be returned.
+    Read data for the region. The optional limit URL query parameter specifies the number of values from the Region that will be returned. The default limit is 50. If the user specifies a limit of “ALL”, then all entry values for the region will be returned.
 
 -   **[GET /geode/v1/\{region\}/keys](get_region_keys.html)**
 
@@ -78,6 +78,3 @@ See also [Data Regions](../basic_config/data_regions/chapter_overview.html#data_
 -   **[DELETE /geode/v1/\{region\}/\{key1\},\{key2\},...\{keyN\}](delete_data_for_multiple_keys.html)**
 
     Delete entries for multiple keys in the region.
-
-
-

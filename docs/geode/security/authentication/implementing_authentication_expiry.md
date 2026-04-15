@@ -70,4 +70,3 @@ a given user so it is recommended that implementers of the `AuthInitialize` and 
 interfaces take imminent timeout and token refresh in consideration to avoid receiving multiple
 unintended `AuthenticationExpiredException`s in a row and having to deal with the propagation of these
 exceptions.
-

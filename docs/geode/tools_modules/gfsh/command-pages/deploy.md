@@ -74,6 +74,3 @@ datanode3 | group2_dependencies.jar | /usr/local/gemfire/deploy/GF#group2_depend
 datanode4 | group2_functions.jar    | /usr/local/gemfire/deploy/GF#group2_functions.jar#1
 datanode4 | group2_dependencies.jar | /usr/local/gemfire/deploy/GF#group2_dependencies.jar#1
 ```
-
-
-

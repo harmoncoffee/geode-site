@@ -21,12 +21,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This topic answers some frequently asked questions on querying functionality. It provides examples to help you get started with Geode querying.
+This topic answers some frequently asked questions on querying functionality. It provides examples to help you get started with @@product_name@@ querying.
 
 <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_AFAD97A4BA2D45CF91ED1525A54DDFD6"></a>
-For additional information on Geode querying, see [Querying](../developing/querying_basics/chapter_overview.html).
+For additional information on @@product_name@@ querying, see [Querying](../developing/querying_basics/chapter_overview.html).
 
--   [How do I write and execute a query against a Geode region?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_7A4D2C6A4E2C4F4384C158FFCA9CA1C0)
+-   [How do I write and execute a query against a @@product_name@@ region?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_7A4D2C6A4E2C4F4384C158FFCA9CA1C0)
 -   [Can I see query string examples, listed by query type?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_641D97CD874D4182961C85429ACA1B05)
 -   [Which APIs should I use to write my queries?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5383407F9D004D4EB4E695252EBA1EF0)
 -   [How do I invoke an object's method in a query?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3E6E4B33D57846008EF4404D2B687597)
@@ -36,20 +36,20 @@ For additional information on Geode querying, see [Querying](../developing/query
 -   [How do I create an index?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_76CDCCFBDB134A339DBE556C28D48F11)
 -   [Can I query a partitioned region? Can I perform a join query on a partitioned region?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_EDD17817450C4FC0B510CD87DB2FCD16)
 -   [How can I improve the performance of a partitioned region query?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5FF905E0D10D4CDF9E6F49A70848AF69)
--   [Which query language elements are supported in Geode ?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_FBC59A5420FD40D6907A302A1D50DF7E)
+-   [Which query language elements are supported in @@product_name@@?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_FBC59A5420FD40D6907A302A1D50DF7E)
 -   [How do I debug queries?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_314B88A55B514B88A12DC36227A2D4EF)
 -   [Can I use implicit attributes or methods in my query?](#reference_D5CE64F5FD6F4A808AEFB748C867189E__implicit_attributes)
 -   [How do I perform a case-insensitive search on a field in OQL?](#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_ayq_hqw_1r)
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_7A4D2C6A4E2C4F4384C158FFCA9CA1C0" class="no-quick-link"></a>How do I write and execute a query against a  region?
+## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_7A4D2C6A4E2C4F4384C158FFCA9CA1C0" class="no-quick-link"></a>How do I write and execute a query against a @@product_name@@ region?
 
-To write and execute a query in Geode , you can use any of the following mechanisms. Sample query code follows.
+To write and execute a query in @@product_name@@, you can use any of the following mechanisms. Sample query code follows.
 
-- Geode querying APIs
+-   @@product_name@@ querying APIs
 -   [gfsh](../tools_modules/gfsh/chapter_overview.html) command-line interface; in particular the [query](../tools_modules/gfsh/command-pages/query.html) command
 -   REST API [query endpoints](../rest_apps/rest_queries.html#concept_mmg_d35_m4)
 
-**Sample Geode Query Code (Java)**
+**Sample @@product_name@@ Query Code (Java)**
 
 ``` pre
 // Identify your query string.
@@ -91,7 +91,7 @@ class Position implements DataSerializable {
 
 **Basic WHERE Clause Examples**
 
-In the following examples, the status field is type String and the ID field is type int. See [Supported Literals](../developing/query_additional/literals.html#literals) for a complete list of literals supported in Geode querying.
+In the following examples, the status field is type String and the ID field is type int. See [Supported Literals](../developing/query_additional/literals.html#literals) for a complete list of literals supported in @@product_name@@ querying.
 
 1.  Select all active portfolios.
 
@@ -760,7 +760,7 @@ See [Using Query Bind Parameters](../developing/query_additional/using_query_bin
 
 ## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3A9528E8E43140BAA0D5A1457CCAB2D2" class="no-quick-link"></a>When should I create indexes to use in my queries?
 
-Determine whether your query's performance will benefit from an index. For example, in the following query, an index on pkid can speed up the query.
+Determine whether your query’s performance will benefit from an index. For example, in the following query, an index on pkid can speed up the query.
 
 ``` pre
 SELECT DISTINCT * FROM /exampleRegion portfolio WHERE portfolio.pkid = '123'
@@ -812,7 +812,7 @@ For a full list of restrictions, see [Partitioned Region Query Restrictions](../
 
 If you know the data you need to query, you can target particular nodes in your queries (thus reducing the number of servers the query needs to access) by executing the query with the FunctionService. See [Querying a Partitioned Region on a Single Node](../developing/query_additional/query_on_a_single_node.html#concept_30B18A6507534993BD55C2C9E0544A97) for details. If you are querying data that has been partitioned by a key or specific field, you should first create a key index and then execute the query using the FunctionService with the key or field as a filter. See [Optimizing Queries on Data Partitioned by a Key or Field Value](../developing/query_additional/partitioned_region_key_or_field_value.html#concept_3010014DFBC9479783B2B45982014454).
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_FBC59A5420FD40D6907A302A1D50DF7E" class="no-quick-link"></a>Which query language elements are supported in ?
+## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_FBC59A5420FD40D6907A302A1D50DF7E" class="no-quick-link"></a>Which query language elements are supported in @@product_name@@?
 
 | Supported elements ||          |
 |----------|----------|----------|
@@ -844,7 +844,7 @@ You can also write:
 <TRACE> SELECT * FROM /exampleRegion
 ```
 
-When the query is executed, Geode will log a message in `$GEMFIRE_DIR/system.log` with the following information:
+When the query is executed, @@product_name@@ will log a message in `$GEMFIRE_DIR/system.log` with the following information:
 
 ``` pre
 [info 2011/08/29 11:24:35.472 PDT CqServer <main> tid=0x1] Query Executed in 9.619656 ms; rowCount = 99; 
@@ -854,7 +854,7 @@ indexesUsed(0) "select *  from /exampleRegion"
 If you want to enable debugging for all queries, you can enable query execution logging by setting a System property on the command line during start-up:
 
 ``` pre
-gfsh>start server --name=server_name -â€“J=-Dgemfire.Query.VERBOSE=true
+gfsh>start server --name=server_name -–J=-Dgemfire.Query.VERBOSE=true
 ```
 
 Or you can set the property programmatically:
@@ -865,7 +865,7 @@ System.setProperty("gemfire.Query.VERBOSE","true");
 
 ## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__implicit_attributes" class="no-quick-link"></a>Can I use implicit attributes or methods in my query?
 
-If an implicit attribute or method name can only be associated with one untyped iterator, the Geode query processor will assume that it is associated with that iterator. However, if more than one untyped iterator is in scope, then the query will fail with a `TypeMismatchException`. The following query fails because the query processor does not fully type expressions:
+If an implicit attribute or method name can only be associated with one untyped iterator, the @@product_name@@ query processor will assume that it is associated with that iterator. However, if more than one untyped iterator is in scope, then the query will fail with a `TypeMismatchException`. The following query fails because the query processor does not fully type expressions:
 
 ``` pre
 select distinct value.secId from /pos , getPositions(23)
@@ -904,4 +904,3 @@ or
 ``` pre
 SELECT * FROM /exampleRegion WHERE foo.toLowerCase LIKE '%bar%'
 ```
-

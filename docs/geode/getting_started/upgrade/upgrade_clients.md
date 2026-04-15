@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-When you upgrade your Geode server software, you will likely need to update your client applications in order to maintain
+When you upgrade your @@product_name@@ server software, you will likely need to update your client applications in order to maintain
 compatibility with the upgraded servers. To support real-world implementations, servers can usually interoperate with a few
 different versions of the client software. In general, you will have best performance and reliability if:
 
@@ -37,5 +37,3 @@ Changes you may need to make when you update, recompile, and link your client co
 
 Review the Release Notes for a list of classes, methods, and other identifiers that are no longer present in the current release.
 Update client code so it no longer uses any of these removed identifiers.
-
-

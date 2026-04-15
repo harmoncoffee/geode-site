@@ -33,8 +33,8 @@ get --key=value --region=value [--key-class=value] [--value-class=value]
 
 | Name                                                       | Description                                                                                                                                                  | Default Value                                                         |
 |------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
-| <span class="keyword parmname">&#8209;&#8209;key </span>               | *Required.* String or JSON text from which to create the key. For example: "`James`", "`100L`" and "`('id': 'l34s')`".                                       | Â                                                                      |
-| <span class="keyword parmname">&#8209;&#8209;region</span>             | *Required.* Region from which to get the entry.                                                                                                              | Â                                                                      |
+| <span class="keyword parmname">&#8209;&#8209;key </span>               | *Required.* String or JSON text from which to create the key. For example: "`James`", "`100L`" and "`('id': 'l34s')`".                                       |                                                                       |
+| <span class="keyword parmname">&#8209;&#8209;region</span>             | *Required.* Region from which to get the entry.                                                                                                              |                                                                       |
 | <span class="keyword parmname">&#8209;&#8209;key-class</span>          | Fully qualified class name of the key's type.                                                                                                                | The default is the key constraint for the current region or String.   |
 | <span class="keyword parmname">&#8209;&#8209;value-class</span>        | Fully qualified class name of the value's type.                                                                                                              | The default is the value constraint for the current region or String. |
 | <span class="keyword parmname">&#8209;&#8209;load-on-cache-miss</span> | Explicitly enables or disables the use of any registered CacheLoaders on the specified Region when retrieving a value for the specified Key on Cache misses. | true (enabled)                                                        |
@@ -63,6 +63,3 @@ Key         : ('123')
 Value Class : java.lang.String
 Value       : ABC
 ```
-
-
-

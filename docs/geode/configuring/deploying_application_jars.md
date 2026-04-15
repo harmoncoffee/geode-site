@@ -1,4 +1,4 @@
-﻿---
+---
 title: Deploying Application JARs to Apache Geode Members
 sidebar_label: Deploying Application JARs to Apache Geode Members
 sidebar_position: 3
@@ -21,9 +21,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-You can dynamically deploy your application JAR files to specific members or to all members in your cluster. Geode automatically keeps track of JAR file versions; autoloads the deployed JAR files to the CLASSPATH; and auto-registers any functions that the JAR contains.
+You can dynamically deploy your application JAR files to specific members or to all members in your cluster. @@product_name@@ automatically keeps track of JAR file versions; autoloads the deployed JAR files to the CLASSPATH; and auto-registers any functions that the JAR contains.
 
-To deploy and undeploy application JAR files in Apache Geode , use the `gfsh` `deploy` or `undeploy` command. You can deploy a single JAR or multiple JARs (by either specifying the JAR filenames or by specifying a directory that contains the JAR files), and you can also target the deployment to a member group or multiple member group. For example, after connecting to the cluster where you want to deploy the JAR files, you could type at the `gfsh` prompt:
+To deploy and undeploy application JAR files in @@product_name_long@@, use the `gfsh` `deploy` or `undeploy` command. You can deploy a single JAR or multiple JARs (by either specifying the JAR filenames or by specifying a directory that contains the JAR files), and you can also target the deployment to a member group or multiple member group. For example, after connecting to the cluster where you want to deploy the JAR files, you could type at the `gfsh` prompt:
 
 ``` pre
 gfsh> deploy --jars=group1_functions.jar
@@ -93,7 +93,7 @@ For more information on `gfsh` usage, see [gfsh](../../tools_modules/gfsh/chapte
 
 ## <a id="concept_4436C021FB934EC4A330D27BD026602C__section_D36E345C6E254D27B0F4B0C8711F5E6A" class="no-quick-link"></a>Deployment Location for JAR Files
 
-The system location where JAR files are written on each member is determined by the `deploy-working-dir` Geode property configured for that member. For example, you could have the following configured in the `gemfire.properties` file for your member:
+The system location where JAR files are written on each member is determined by the `deploy-working-dir` @@product_name@@ property configured for that member. For example, you could have the following configured in the `gemfire.properties` file for your member:
 
 ``` pre
 #gemfire.properties
@@ -131,4 +131,3 @@ If you are using a shared deployment working directory, all members sharing the 
 When you deploy a JAR file that contains a function (in other words, contains a class that implements the Function interface), the function is automatically registered through the `FunctionService.registerFunction` method. If another JAR file is deployed (either with the same JAR filename or another filename) with the same function, the new implementation of the function is registered, overwriting the old one. If a JAR file is undeployed, any functions that were auto-registered at the time of deployment are unregistered. Because deploying a JAR file that has the same name multiple times results in the JAR being un-deployed and re-deployed, functions in the JAR are unregistered and re-registered each time this occurs. If a function with the same ID is registered from multiple differently named JAR files, the function is unregistered if any of those JAR files are re-deployed or un-deployed.
 
 During `cache.xml` load, the parameters for any declarables are saved. If functions found in a JAR file are also declarable, and have the same class name as the declarables whose parameters were saved after loading cache.xml, then function instances are created using those Parameters and are also registered. Therefore, if the same function is declared multiple times in the `cache.xml` with different sets of parameters, when the JAR is deployed a function is instantiated for each set of parameters. If any functions are registered using parameters from a `cache.xml` load, the default, no-argument function is not registered.
-

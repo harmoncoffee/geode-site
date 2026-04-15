@@ -135,6 +135,3 @@ Active Connections
   UDP    GemFireTest:42838    *:*
   UDP    GemFireTest:47727    *:*
 ```
-
-
-

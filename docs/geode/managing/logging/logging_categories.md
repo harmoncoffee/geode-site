@@ -23,7 +23,7 @@ limitations under the License.
 
 System logging messages typically pertain to startup; logging management; connection and system membership; distribution; or cache, region, and entry management.
 
--   **Startup information**. Describe the Java version, the Geode native version, the host system, current working directory, and environment settings. These messages contain all information about the system and configuration the process is running with.
+-   **Startup information**. Describe the Java version, the @@product_name@@ native version, the host system, current working directory, and environment settings. These messages contain all information about the system and configuration the process is running with.
 -   **Logging management**. Pertain to the maintenance of the log files themselves. This information is always in the main log file (see the discussion at Log File Name).
 -   **Connections and system membership**. Report on the arrival and departure of cluster members (including the current member) and any information related to connection activities or failures. This includes information on communication between tiers in a hierarchical cache.
 -   **Distribution**. Report on the distribution of data between system members. These messages include information about region configuration, entry creation and modification, and region and entry invalidation and destruction.
@@ -46,9 +46,11 @@ Cache initialized using "file:/Samples/quickstart/xml/PushConsumer.xml".
 
 ## <a id="how_logging_works__section_43A099C67FF04A1EB0A07B617D653A38" class="no-quick-link"></a>Log File Name
 
-Specify your Geode system member's main log in the gemfire property `log-file` setting. Geode uses this name for the most recent log file, actively in use if the member is running, or used for the last run. Geode creates the main log file when the application starts.
+Specify your @@product_name@@ system member's main log in the gemfire property `log-file` setting.
 
-By default, the main log contains the entire log for the member session. If you specify a `log-file-size-limit`, Geode splits the logging into these files:
+@@product_name@@ uses this name for the most recent log file, actively in use if the member is running, or used for the last run. @@product_name@@ creates the main log file when the application starts.
+
+By default, the main log contains the entire log for the member session. If you specify a `log-file-size-limit`, @@product_name@@ splits the logging into these files:
 
 -   **The main, current log**. Holding current logging entries. Named with the string you specified in `log-file`.
 -   **Child logs**. Holding older logging entries. These are created by renaming the main, current log when it reaches the size limit.
@@ -64,7 +66,7 @@ Your current, main log file always has the name you specified in `log-file`. The
 
 If child logs are not used, the child file sequence number is a constant 00 (two zeros).
 
-For locators, the log file name is fixed. For the standalone locator started in `gfsh`, it is always named `<locator_name>.log` where the locator\_name corresponds to the name specified at locator startup. For the locator that runs colocated inside another member, the log file is the member's log file.
+For locators, the log file name is fixed. For the standalone locator started in `gfsh`, it is always named `<locator_name>.log` where the locator\_name corresponds to the name specified at locator startup. For the locator that runs colocated inside another member, the log file is the member’s log file.
 
 For applications and the servers, your log file specification can be relative or absolute. If no file is specified, the defaults are standard output for applications and `<server_name>.log` for servers started with gfsh and `cacheserver.log` for servers started with the older cacheserver script.
 
@@ -132,7 +134,7 @@ These are the levels, in descending order, with sample output:
 
 -   **error**. This level indicates that something is wrong in your system. You should be able to continue running, but the operation noted in the error message failed.
 
-    This error was produced by throwing a `Throwable` from a `CacheListener`. While dispatching events to a customer-implemented cache listener, Geode catches any `Throwable` thrown by the listener and logs it as an error. The text shown here is followed by the output from the `Throwable` itself.
+    This error was produced by throwing a `Throwable` from a `CacheListener`. While dispatching events to a customer-implemented cache listener, @@product_name@@ catches any `Throwable` thrown by the listener and logs it as an error. The text shown here is followed by the output from the `Throwable` itself.
 
     ``` pre
     [error 2007/09/05 11:45:30.542 PDT gemfire1_newton_18222
@@ -142,7 +144,7 @@ These are the levels, in descending order, with sample output:
 
 -   **warning**. This level indicates a potential problem. In general, warning messages describe events that are of interest to end users or system managers, or that indicate potential problems in the program or system.
 
-    This message was obtained by starting a client with a Pool configured with queueing enabled when there was no server running to create the client's queue:
+    This message was obtained by starting a client with a Pool configured with queueing enabled when there was no server running to create the client’s queue:
 
     ``` pre
     [warning 2008/06/09 13:09:28.163 PDT <queueTimer-client> tid=0xe]
@@ -243,6 +245,5 @@ These are the levels, in descending order, with sample output:
     **Note:**
     Do not use these settings unless asked to do so by technical support.
 
-**Note:** Geode 
- no longer supports setting system properties for VERBOSE logging. To enable VERBOSE logging, see [Advanced Usersâ€”Configuring Log4j 2 for Geode ](configuring_log4j2.html)
-
+**Note:**
+@@product_name@@ no longer supports setting system properties for VERBOSE logging. To enable VERBOSE logging, see [Advanced Users—Configuring Log4j 2 for @@product_name@@](configuring_log4j2.html)

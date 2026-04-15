@@ -19,9 +19,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-You can make configuration adjustments to improve the UDP multicast performance of peer-to-peer communication in your Geode system.
+You can make configuration adjustments to improve the UDP multicast performance of peer-to-peer communication in your @@product_name@@ system.
 
-Before you begin, you should understand Geode [Basic Configuration and Programming](../../basic_config/book_intro.html). See also the general communication tuning and UDP tuning covered in [Socket Communication](socket_communication.html) and [UDP Communication](udp_communication.html#udp_comm).
+Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../basic_config/book_intro.html). See also the general communication tuning and UDP tuning covered in [Socket Communication](socket_communication.html) and [UDP Communication](udp_communication.html#udp_comm).
 
 -   **[Provisioning Bandwidth for Multicast](multicast_communication_provisioning_bandwidth.html)**
 
@@ -42,6 +42,3 @@ Before you begin, you should understand Geode [Basic Configuration and Programmi
 -   **[Troubleshooting the Multicast Tuning Process](multicast_communication_troubleshooting.html)**
 
     Several problems may arise during the initial testing and tuning process for multicasting.
-
-
-

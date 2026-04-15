@@ -66,7 +66,7 @@ You might remove a region from your application if you decide to rename it or to
 
 This applies to the removal of regions while the disk store is offline. Regions you destroy through API calls or by `gfsh` are automatically removed from the disk store of online members.
 
-In your application development, when you discontinue use of a persistent region, remove the region from the member's disk store as well.
+In your application development, when you discontinue use of a persistent region, remove the region from the member’s disk store as well.
 
 **Note:**
 Perform the following operations with caution. You are permanently removing data.
@@ -81,5 +81,4 @@ You can remove the region from the disk store in one of two ways:
     --disk-dirs=/firstDiskStoreDir,/secondDiskStoreDir,/thirdDiskStoreDir --remove
     ```
 
-To guard against unintended data loss, Geode maintains the region in the disk store until you manually remove it. Regions in the disk stores that are not associated with any region in your application are still loaded into temporary regions in memory and kept there for the life of the member. The system has no way of detecting whether the cache region will be created by your API at some point, so it keeps the temporary region loaded and available.
-
+To guard against unintended data loss, @@product_name@@ maintains the region in the disk store until you manually remove it. Regions in the disk stores that are not associated with any region in your application are still loaded into temporary regions in memory and kept there for the life of the member. The system has no way of detecting whether the cache region will be created by your API at some point, so it keeps the temporary region loaded and available.

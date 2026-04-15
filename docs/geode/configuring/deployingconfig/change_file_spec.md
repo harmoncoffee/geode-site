@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Changing the File Specifications
 sidebar_label: Changing the File Specifications
 sidebar_position: 3
@@ -23,8 +23,8 @@ limitations under the License.
 
 You can change all file specifications in the `gemfire.properties` file and at the command line.
 
-**Note:** Geode 
- applications can use the API to pass `java.lang.System` properties to the cluster connection. This changes file specifications made at the command line and in the `gemfire.properties` file. You can verify an application's property settings in the configuration information logged at application startup. The configuration is listed when the `gemfire.properties` `log-level` is set to `config` or lower.
+**Note:**
+@@product_name@@ applications can use the API to pass `java.lang.System` properties to the cluster connection. This changes file specifications made at the command line and in the `gemfire.properties` file. You can verify an application’s property settings in the configuration information logged at application startup. The configuration is listed when the `gemfire.properties` `log-level` is set to `config` or lower.
 
 This invocation of the application, `testApplication.TestApp1`, provides non-default specifications for both the `cache.xml` and `gemfire.properties` files:
 
@@ -56,4 +56,3 @@ mcast-address=192.0.2.0
 mcast-port=10333
 locators=cache-xml-file=/gemfireSamples/examples/dist/cacheRunner/queryPortfolios.xml
 ```
-

@@ -33,9 +33,9 @@ remove --region=value [--key=value] [--all(=value)?] [--key-class=value]
 
 | Name                                               | Description                                                                 | Default Value                                   |
 |----------------------------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------|
-| <span class="keyword parmname">&#8209;&#8209;key</span>        | String or JSON text that will be used to create a key to retrieve a value . | Â                                                |
+| <span class="keyword parmname">&#8209;&#8209;key</span>        | String or JSON text that will be used to create a key to retrieve a value . |                                                 |
 | <span class="keyword parmname">&#8209;&#8209;key&#8209;class </span> | Fully qualified class name of the key's type.                               | key constraint for the current region or String |
-| <span class="keyword parmname">&#8209;&#8209;region</span>     | *Required.* Region from which to remove the entry.                          | Â                                                |
+| <span class="keyword parmname">&#8209;&#8209;region</span>     | *Required.* Region from which to remove the entry.                          |                                                 |
 | <span class="keyword parmname">&#8209;&#8209;all</span>        | A boolean value that, when true, clears the region by removing all entries. This option is not available for partitioned regions.  | false                                           |
 
 **Example Commands:**
@@ -63,6 +63,3 @@ gfsh>remove --region=/region1 --all=true
 
 "Option --all is not supported on partitioned region"
 ```
-
-
-

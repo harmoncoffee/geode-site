@@ -19,7 +19,9 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode supports the following literal types:
+-->
+
+@@product_name@@ supports the following literal types:
 
 <dt>**boolean**</dt>
 <dd>A `boolean` value, either TRUE or FALSE</dd>
@@ -67,7 +69,7 @@ You can compare temporal literal values `DATE`, `TIME`, and `TIMESTAMP` with `ja
 
 ## <a id="literals__section_9EE6CFC410D2409188EDEAA43AC85851" class="no-quick-link"></a>Type Conversion
 
-The Geode query processor performs implicit type conversions and promotions under certain cases in order to evaluate expressions that contain different types. The query processor performs binary numeric promotion, method invocation conversion, and temporal type conversion.
+The @@product_name@@ query processor performs implicit type conversions and promotions under certain cases in order to evaluate expressions that contain different types. The query processor performs binary numeric promotion, method invocation conversion, and temporal type conversion.
 
 ## <a id="literals__section_F5A3FC509FD04E09B5468BA94B814701" class="no-quick-link"></a>Binary Numeric Promotion
 
@@ -96,4 +98,3 @@ Enums are not automatically converted. To use Enum values in query, you must use
 ## <a id="literals__section_CB624C143A2743C5ADC6F95C962F176B" class="no-quick-link"></a>Query Evaulation of Float.NaN and Double.NaN
 
 Float.NaN and Double.NaN are not evaluated as primitives; instead, they are compared in the same manner used as the JDK methods Float.compareTo and Double.compareTo. See [Double.NaN and Float.NaN Comparisons](../query_select/the_where_clause.html#the_where_clause__section_E7206D045BEC4F67A8D2B793922BF213) for more information.
-

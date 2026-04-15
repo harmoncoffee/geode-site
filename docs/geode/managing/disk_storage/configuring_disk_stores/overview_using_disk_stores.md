@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-In addition to the disk stores you specify, Apache Geode has a default disk store that it uses when disk use is configured with no disk store name specified. You can modify default disk store behavior.
+In addition to the disk stores you specify, @@product_name_long@@ has a default disk store that it uses when disk use is configured with no disk store name specified. You can modify default disk store behavior.
 
 -   **[Designing and Configuring Disk Stores](using_disk_stores.html)**
 
@@ -32,6 +32,3 @@ In addition to the disk stores you specify, Apache Geode has a default disk stor
 -   **[Modifying the Default Disk Store](using_the_default_disk_store.html)**
 
     You can modify the behavior of the default disk store by specifying the attributes you want for the disk store named "DEFAULT".
-
-
-

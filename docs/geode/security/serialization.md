@@ -54,4 +54,3 @@ over how objects are serialized and deserialized.
   
  In conclusion, Apache Geode provides serialization filtering capabilities through a global filter for security hardening in Java 8 environments and
    through the flexible configurations of PDX serialization for fine-grained control over data handling and type inclusion/exclusion.
-

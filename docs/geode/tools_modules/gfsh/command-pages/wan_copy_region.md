@@ -34,7 +34,7 @@ The main uses of this command are:
 -   Recovery of a WAN site after a disaster in which the failed site needs to be put into service again with
     the data from another WAN site.
 
--   Adding a new WAN site to a Geode system in which the data in the new WAN site needs to be initially loaded from
+-   Adding a new WAN site to a @@product_name@@ system in which the data in the new WAN site needs to be initially loaded from
     an existing WAN site.
 
 The execution of a currently running instance of this command may be stopped by using
@@ -178,5 +178,3 @@ gfsh> wan-copy region --region=* --sender-id=* --cancel
     server-sender  | OK     | Executions canceled: [(myRegion,mySender1), (myRegion,mySender)]
     server-sender3 | OK     | Executions canceled: [(myRegion,mySender1), (myRegion,mySender)]
 ```
-
-

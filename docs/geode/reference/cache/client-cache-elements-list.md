@@ -1,4 +1,4 @@
-﻿---
+---
 title:  "<client-cache> Element Hierarchy"
 sidebar_label: "<client-cache> Element Hierarchy"
 sidebar_position: 4
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section shows the hierarchy of `<client-cache>` element sub-elements that you use to configure Geode caches and clients.
+This section shows the hierarchy of `<client-cache>` element sub-elements that you use to configure @@product_name@@ caches and clients.
 
 For details, see [&lt;client-cache&gt; Element Reference.](client-cache.html)
 
@@ -138,4 +138,3 @@ For details, see [&lt;client-cache&gt; Element Reference.](client-cache.html)
 </client-cache>
 
 ```
-

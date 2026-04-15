@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Using Indexes on Single Region Queries
 sidebar_label: Using Indexes on Single Region Queries
 sidebar_position: 9
@@ -48,6 +48,3 @@ This query drills down one level:
 ``` pre
 SELECT DISTINCT * FROM /exampleRegion portfolio, portfolio.positions.values positions where positions.secId = 'AOL' and positions.MktValue > 1
 ```
-
-
-

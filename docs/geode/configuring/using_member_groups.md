@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Using Member Groups
 sidebar_label: Using Member Groups
 sidebar_position: 4
@@ -19,9 +19,11 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Apache Geode allows you to organize your cluster members into logical member groups.
+-->
 
-The use of member groups in Apache Geode is optional. The benefit of using member groups is the ability to coordinate certain operations on members based on logical group membership. For example, by defining and using member groups you can:
+@@product_name_long@@ allows you to organize your cluster members into logical member groups.
+
+The use of member groups in @@product_name_long@@ is optional. The benefit of using member groups is the ability to coordinate certain operations on members based on logical group membership. For example, by defining and using member groups you can:
 
 -   Alter a subset of configuration properties for a specific member or members. See [alter runtime](../../tools_modules/gfsh/command-pages/alter.html#topic_7E6B7E1B972D4F418CB45354D1089C2B) in `gfsh`.
 -   Perform certain disk operations like disk-store compaction across a member group. See [Disk Store Commands](../../tools_modules/gfsh/quick_ref_commands_by_area.html#topic_1ACC91B493EE446E89EC7DBFBBAE00EA) for a list of commands.
@@ -40,6 +42,3 @@ To add a member to a group, add the name of a member group to the `gemfire.prope
 A single member can belong to more than one group.
 
 Member groups can also be used to organize members from either a client's perspective or from a peer member's perspective. See [Organizing Peers into Logical Member Groups](../../topologies_and_comm/p2p_configuration/configuring_peer_member_groups.html) and [Organizing Servers Into Logical Member Groups](../../topologies_and_comm/cs_configuration/configure_servers_into_logical_groups.html) for more information. On the client side, you can supply the member group name when configuring a client's connection pool. Use the &lt;pool server-group&gt; element in the client's cache.xml.
-
-
-

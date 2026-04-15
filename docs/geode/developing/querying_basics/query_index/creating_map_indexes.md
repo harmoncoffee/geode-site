@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Creating Indexes on Map Fields ("Map Indexes")
 sidebar_label: Creating Indexes on Map Fields ("Map Indexes")
 sidebar_position: 5
@@ -55,7 +55,7 @@ gfsh>create index --name="IndexName" --expression="p.positions['PVTL', 'VMW']" -
 gfsh>create index --name="IndexName" --expression="p.positions[*]" --region="/portfolio p"
 ```
 
-In order to create or query a map index, you must use the bracket notation to list the map field keys you wish to index or query. For example: `[*]`, `['keyX1','keyX2â€™]`. Note that using `p.pos.get('keyX1')` will not create or query the map index.
+In order to create or query a map index, you must use the bracket notation to list the map field keys you wish to index or query. For example: `[*]`, `['keyX1','keyX2’]`. Note that using `p.pos.get('keyX1')` will not create or query the map index.
 
 **Note:**
 You can still query against Map or HashMap fields without querying against a map index. For example, you can always create a regular range query on a single key in any Map or HashMap field. However, note that subsequent query lookups will be limited to a single key.
@@ -63,5 +63,3 @@ You can still query against Map or HashMap fields without querying against a map
 **Note:**
 Map indexes on all keys (when `*` is specified) are not used in queries where the map field is compared with `null` or when it is compared using `!=`, e.g. `p.positions['company1'] = null` or `p.positions['company1'] != '3'`.
 These types of queries will be executed without making use of the index, which could make them slower.
-
-

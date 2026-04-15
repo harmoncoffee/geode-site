@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Partitioned Region Query Restrictions
 sidebar_label: Partitioned Region Query Restrictions
 sidebar_position: 5
@@ -48,6 +48,3 @@ Partitioned region queries function the same as non-partitioned region queries, 
 -   The first FROM clause iterator cannot contain a subquery, but subqueries are allowed in additional FROM clause iterators.
 -   You can use ORDER BY on partitioned region queries, but the fields that are specified in the ORDER BY clause must be part of the projection list.
 -   If a partition region (or a bucket) being queried has been destroyed, the query is reattempted on the new primary for the destroyed bucket (if it exists). After certain number of attempts, a QueryException is thrown if all buckets (calculated at the startup of the query) cannot be queried.
-
-
-

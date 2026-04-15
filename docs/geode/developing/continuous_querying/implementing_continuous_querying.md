@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Implementing Continuous Querying
 sidebar_label: Implementing Continuous Querying
 sidebar_position: 2
@@ -203,4 +203,3 @@ With continuous queries, you can optionally implement:
 
 -   Highly available CQs by configuring your servers for high availability.
 -   Durable CQs by configuring your clients for durable messaging and indicating which CQs are durable at creation.
-

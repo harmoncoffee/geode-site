@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Useful gfsh Shell Variables
 sidebar_label: Useful gfsh Shell Variables
 sidebar_position: 4
@@ -48,7 +48,7 @@ gfsh>echo --string=${SYS_CLASSPATH}
 |                          |                                                                                                    |
 |--------------------------|----------------------------------------------------------------------------------------------------|
 | SYS\_CLASSPATH           | CLASSPATH of the gfsh JVM (read only).                                                             |
-| SYS\_GEMFIRE\_DIR        | Product directory where Geode has been installed (read only). |
+| SYS\_GEMFIRE\_DIR        | Product directory where @@product_name@@ has been installed (read only). |
 | SYS\_HOST\_NAME          | Host from which gfsh is started (read only).                                                       |
 | SYS\_JAVA\_VERSION       | Java version used (read only).                                                                     |
 | SYS\_OS                  | OS name (read only).                                                                               |
@@ -69,6 +69,3 @@ gfsh>echo --string=${SYS_CLASSPATH}
 | APP\_QUERY\_RESULTS\_DISPLAY\_MODE | Toggle the display mode for returning query results. Values: table or catalog. Default value is table.                                                               |
 | APP\_QUIET\_EXECUTION              | Whether the execution should be in quiet mode. Values (case insensitive): true, false. Default value is false.                                                       |
 | APP\_RESULT\_VIEWER                | Unix only. Set this variable to `external` to enable viewing of the output using the UNIX `less` command. Default value is basic (gfsh).                             |
-
-
-

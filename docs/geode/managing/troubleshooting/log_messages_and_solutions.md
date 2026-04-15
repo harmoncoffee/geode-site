@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This section provides explanations of Geode Log  messages with potential resolutions.
+This section provides explanations of @@product_name@@ Log  messages with potential resolutions.
 
 Depending on how your system is configured, log files can be found in a number of locations.
 See [Log File Locations](../../security/security-audit.html#topic_5B6DF783A14241399DC25C6EE8D0048A) and
@@ -48,7 +48,7 @@ destroying data or overflowing it to disk, which can overwhelm the disk.
 
 **Potential Resolutions:**
 
-NOTE: Geode eviction is not truly compatible with G1GC given how G1GC behaves and how eviction assumes that garbage will be collected.
+NOTE:  @@product_name@@ eviction is not truly compatible with G1GC given how G1GC behaves and how eviction assumes that garbage will be collected.
 
 You should consider increasing the total heap.   This will increase tenured space, and potentially eliminate these messages.   You can also increase your eviction-threshold percentage, but this can risk growing heap to the point where you encounter heap fragmentation issues.   
 
@@ -95,11 +95,11 @@ evictionThresholdClearBytes:22280142848]
 
 **Meaning:**
 
-This message requires **URGENT** action.   You are in danger of Geode distributed system issues where a member, or members, may be kicked out with potential major business impact.  The live objects are driving heap consumption above your critical threshold, so either garbage collection is proving ineffective or your usage has increased unexpectedly, taking you to much higher levels of heap consumption.  Take action **immediately** if you ever see this, even if you were not negatively impacted at the time.  
+This message requires **URGENT** action.   You are in danger of @@product_name@@ distributed system issues where a member, or members, may be kicked out with potential major business impact.  The live objects are driving heap consumption above your critical threshold, so either garbage collection is proving ineffective or your usage has increased unexpectedly, taking you to much higher levels of heap consumption.  Take action **immediately** if you ever see this, even if you were not negatively impacted at the time.  
 
 **Potential Resolutions:**
 
-If you do not already have Geode eviction in place, acting as a level of protection
+If you do not already have @@product_name@@ eviction in place, acting as a level of protection
 to keep heap consumption lower, consider incorporating some flavor of eviction.  G1GC and other
 newer collectors are not really compatible with HEAP_LRU eviction, so you would need to incorporate
 entry count or memory-based eviction.
@@ -114,7 +114,7 @@ have a maximum of 1g of overhead.  This means that setting the critical-threshol
 completely fine for a 100g heap.  If you are seeing tenured heap growth with no entry count growth
 over time, this is likely indicative of a leak. You will need to take heap dumps and analyze them to
 determine why the heap is growing.  It could be only temporary, if queries are running and driving
-heap consumption, but this should resolve itself, since Geode will terminate
+heap consumption, but this should resolve itself, since @@product_name@@ will terminate
 queries and eliminate that garbage.
 
 If you are using G1GC, it is possible that you are not setting your InitiatingHeapOccupancyPercent
@@ -143,8 +143,8 @@ canceled after exceeding max execution time 600000ms. Query String = SELECT * FR
 **Potential Resolutions:**
 
 If this persists over time, then the query is likely taking too long independent of the current system
-state, so you may need to increase the configured time by setting the  system
-property, â€œgemfire.MAX_QUERY_EXECUTION_TIMEâ€, to something higher in order to allow the query to
+state, so you may need to increase the configured time by setting the @@product_name@@ system
+property, “gemfire.MAX_QUERY_EXECUTION_TIME”, to something higher in order to allow the query to
 complete.  If this property is not set, the query will never timeout unless you are using the
 resource manager, in which case it will timeout in 5 hours.  This property does provide some
 protection against a really problematic query or set of queries, but requires you to understand what
@@ -152,7 +152,7 @@ is driving the query times to know how high to set it.
 
 Perhaps the query did not incorporate the use of a configured index, or indexes, for some reason. In
 order to obtain this deeper understanding, you can incorporate verbose logging for your queries by
-setting the  system property, â€œgemfire.Query.VERBOSEâ€.
+setting the @@product_name@@ system property, “gemfire.Query.VERBOSE”.
 
 ## <a id="Queryexecutioncanceledduetomemorythresholdcrossedinsystem"></a>Query execution canceled due to memory threshold crossed in system
 
@@ -177,7 +177,7 @@ Very self explanatory here.  A query was canceled because some member or members
 critical-threshold configured in the system.  To protect the member(s) from running out of memory,
 the query is terminated. The message indicates the number of `<n>` bytes used at the time, which is
 certainly more than the number of bytes equating to the critical-threshold percentage, in bytes.
-You should also see the â€œabove heap critical thresholdâ€ message in some logs as well if seeing this
+You should also see the “above heap critical threshold” message in some logs as well if seeing this
 message, to understand the problem members.
 
 **Potential Resolutions:**
@@ -227,14 +227,14 @@ These messages requires **URGENT** action, to determine whether any issues exist
 **Potential Resolutions:**
 
 First, if you only see this issue rarely, or only for a single iteration, it is almost certainly not
-an issue. The word â€œstuckâ€ here may be misleading.  The messages are saying that it appears that
+an issue. The word “stuck” here may be misleading.  The messages are saying that it appears that
 this thread has been doing the same thing for a while, so it may be stuck.  Some tasks, such as
-taking backups, doing exports, or running a rebalance, may appear to be â€œstuckâ€ when in reality they
+taking backups, doing exports, or running a rebalance, may appear to be “stuck” when in reality they
 are simply doing the same thing over and over as it progresses, like moving a bucket.  While it may
-appear that we are still moving buckets, it's probably a different bucket each time.
+appear that we are still moving buckets, it’s probably a different bucket each time.
 
-A key indicator that a thread is truly stuck is the number of iterations, as indicated in the â€œhas
-been stuckâ€ message above.  If you know that the operation is not one that should take so long, and
+A key indicator that a thread is truly stuck is the number of iterations, as indicated in the “has
+been stuck” message above.  If you know that the operation is not one that should take so long, and
 you see an iteration of `<10>` or higher, you should certainly open a ticket and we can dig deeper.
 Such tickets will always require thread dumps, multiples, across all cache servers.  If you see that
 `<13>` stuck threads in this node message, the issue is likely snowballing and starting to impact this
@@ -242,7 +242,7 @@ node, and the cluster could be next.
 
 Gather artifacts, and take action.  Perhaps a bounce of members, one at a time, for members showing
 stuck threads, would be prudent.  Identifying which member to bounce can be difficult.  That said,
-it is often possible, by analyzing the â€œ15 seconds have elapsedâ€ messages in your logs.  This is
+it is often possible, by analyzing the “15 seconds have elapsed” messages in your logs.  This is
 described more in the [Seconds have elapsed](#secondshaveelapsed) message in this document.
 
 
@@ -267,7 +267,7 @@ DistributedSystem to prepare for a reconnect attempt
 
 **Potential Resolutions:**
 
- Examine the logs of the member that is being forced out of the system.  Perhaps the member became unresponsive. Look for other logging with keywords such as â€œelapsedâ€, â€œwakeupâ€, or â€œheartbeatâ€, all relatively unique words which can be searched for to proactively find potential issues.    If any of these are discovered, GC tuning is likely needed.
+ Examine the logs of the member that is being forced out of the system.  Perhaps the member became unresponsive. Look for other logging with keywords such as “elapsed”, “wakeup”, or “heartbeat”, all relatively unique words which can be searched for to proactively find potential issues.    If any of these are discovered, GC tuning is likely needed.
 
 
 ## <a id="unabletoformatcpipconnection"></a>Unable to form a TCP/IP connection in a reasonable amount of time
@@ -290,7 +290,7 @@ This message usually coincides with the availability check logging associated wi
 members. It should be investigated further by searching for other messages that may give more
 indication. 
 
-This specific message, if not accompanied by other â€œwakeupâ€ or â€œheartbeatâ€ messages,
+This specific message, if not accompanied by other “wakeup” or “heartbeat” messages,
 generally indicates that a member may have crashed unexpectedly, without warning. If, however, no
 member has crashed, the suspect member was able to respond during suspect processing and may no
 longer be at risk. Still, this definitely requires action to determine if you remain vulnerable to
@@ -298,7 +298,7 @@ repeated occurrences.
 
 **Potential Resolutions:**
 
-   This message alone doesnâ€™t generally reveal how to proceed to eliminate issues.  That said, a deep analysis of the logs for other significant related messages may be helpful, and following the potential resolutions for those could help to reduce or eliminate these messages.
+   This message alone doesn’t generally reveal how to proceed to eliminate issues.  That said, a deep analysis of the logs for other significant related messages may be helpful, and following the potential resolutions for those could help to reduce or eliminate these messages.
 
 
 ## <a id="receivedsuspectmessage"></a>Received Suspect Message
@@ -320,22 +320,22 @@ REASON GENERALLY PROVIDED HERE
 
 **Meaning:**
 
-This message requires action.  You are in danger of having a member kicked out of the distributed system, as it was already being â€œsuspectedâ€ of being a problem for some unknown reasons that require investigation.   Continuing to see these indicates that you are definitely not seeing optimal behavior or performance, and the system is thrashing with many messages thinking some member or members are unhealthy.
+This message requires action.  You are in danger of having a member kicked out of the distributed system, as it was already being “suspected” of being a problem for some unknown reasons that require investigation.   Continuing to see these indicates that you are definitely not seeing optimal behavior or performance, and the system is thrashing with many messages thinking some member or members are unhealthy.
 
 **Potential Resolutions:**
 
-The â€œno longer suspectingâ€ message is really an indication that the member is now considered
+The “no longer suspecting” message is really an indication that the member is now considered
 healthy.  However, it also means that the member was considered unhealthy and some member initiated
-â€œsuspectâ€ processing to determine if we should kick out the member to preserve the integrity and
+“suspect” processing to determine if we should kick out the member to preserve the integrity and
 stability of the cluster.  You will generally see suspect messages, shown above, for all members, as
 we send these out across the cluster to gather opinions.  Ultimately, if the coordinator finds the
 member to be unresponsive within member-timeout seconds, the coordinator will kick out the member.
 
-To take action, check the â€œReasonâ€ seen in some of the logs, and take action accordingly.  If this
+To take action, check the “Reason” seen in some of the logs, and take action accordingly.  If this
 is rare, it is likely not an issue.  If frequent, however, you definitely want to research and tune
-the system to eliminate these messages.  If you are seeing the â€œno longer suspectingâ€ message, that
-means that you should also see the â€œSuspecting memberâ€ message shown above.  However, depending on
-your version of Geode , It may require debug level logging to see that message.
+the system to eliminate these messages.  If you are seeing the “no longer suspecting” message, that
+means that you should also see the “Suspecting member” message shown above.  However, depending on
+your version of @@product_name@@, It may require debug level logging to see that message.
 
 
 ## <a id="secondshaveelapsed"></a>&lt;n&gt; Seconds Have Elapsed
@@ -379,7 +379,7 @@ gather some information, you could try bouncing that member to see if this resto
 members to a healthier state.
 
 
-## <a id="memberisnotrespondingtohearbeatrequests"></a>Member isnâ€™t responding to heartbeat requests
+## <a id="memberisnotrespondingtohearbeatrequests"></a>Member isn’t responding to heartbeat requests
 
 **Log Message:**
 
@@ -414,7 +414,7 @@ increase the member-timeout property, however this is only suggested when you ha
 understanding of what is driving the member to be unresponsive to the heartbeat requests from the
 member monitoring it.
 
-This message often corresponds with â€œsuspectâ€ messages, and members getting kicked out of the
+This message often corresponds with “suspect” messages, and members getting kicked out of the
 cluster.  Logs, stats, and GC logs will be required in order to understand what is going
 on in this situation.
 
@@ -437,7 +437,7 @@ split.
 
 **Meaning:**
 
-  This is a warning that you have chosen a configuration that makes you more susceptible to data consistency issues if you experience a network partition, or â€œsplit brainâ€.   If you do choose this configuration and experience network issues that create a â€œsplit brainâ€ scenario, where your distributed system splits into two separate distributed systems (DS), then it is possible that your data will diverge.   Specifically, you could do puts into a region in DS A that do not make it into DS B, while also doing puts into DS B that do not make it into DS A. Geode will be unable to resolve this situation for you as you try to recover the system back into a single, healthy DS.
+  This is a warning that you have chosen a configuration that makes you more susceptible to data consistency issues if you experience a network partition, or “split brain”.   If you do choose this configuration and experience network issues that create a “split brain” scenario, where your distributed system splits into two separate distributed systems (DS), then it is possible that your data will diverge.   Specifically, you could do puts into a region in DS A that do not make it into DS B, while also doing puts into DS B that do not make it into DS A. @@product_name@@ will be unable to resolve this situation for you as you try to recover the system back into a single, healthy DS.
 
 **Potential Resolutions:**
 
@@ -460,13 +460,13 @@ issue. Check the GC, memory, and CPU statistics.
 
 **Meaning:**
 
-  **URGENT** action is needed. You are experiencing JVM Pauses, where the JVM is preventing Geode from running at all for the given amount of time.  This is only logged when the delay is at least 3 seconds more than your configured statistic-sample-rate.   You are vulnerable to having members kicked out of the distributed system.  
+  **URGENT** action is needed. You are experiencing JVM Pauses, where the JVM is preventing @@product_name@@ from running at all for the given amount of time.  This is only logged when the delay is at least 3 seconds more than your configured statistic-sample-rate.   You are vulnerable to having members kicked out of the distributed system.  
 
 **Potential Resolutions:**
 
-  This is almost always caused by GC related behavior.   To diagnose such issues, make sure to enable GC logging in your environment.   If you have GC logs, search for â€œFull GCâ€, â€œconcurrent mode failureâ€, â€œexhaustedâ€, and other similar issues that drive long pauses.    If you do open a ticket for assistance, please have Geode logs, stats, and GC logs ready to provide them prior to opening the ticket.     
+  This is almost always caused by GC related behavior.   To diagnose such issues, make sure to enable GC logging in your environment.   If you have GC logs, search for “Full GC”, “concurrent mode failure”, “exhausted”, and other similar issues that drive long pauses.    If you do open a ticket for assistance, please have @@product_name@@ logs, stats, and GC logs ready to provide them prior to opening the ticket.     
 
-If this is urgent and you need immediate resolution without having time to fine tune GC, one possible temporary patch is to increase the member-timeout in the gemfire.properties file.  This would make Geode more tolerant of processes being somewhat unresponsive for longer durations.
+If this is urgent and you need immediate resolution without having time to fine tune GC, one possible temporary patch is to increase the member-timeout in the gemfire.properties file.  This would make @@product_name@@ more tolerant of processes being somewhat unresponsive for longer durations.
 
 
 ## <a id="redundancyhasdroppedbelownconfigurecopies"></a>Redundancy has dropped below &lt;n&gt; configured copies
@@ -488,11 +488,11 @@ Processor20> tid=0x1d66] Configured redundancy of 2 copies has been restored to
 
 **Meaning:**
 
-   This message requires **immediate** action to determine if you are now vulnerable to data loss.  This message indicates that you have lost access to 1 of the 2 configured copies of your data for that RegionXYZ on member XXX-server01.   It is not necessarily urgent if you have redundancy configured and capacity for the remaining members to handle the increased load.   The corresponding â€œhas been restoredâ€ message, an info level message also shown above, indicates that you now are back to your healthy environment with redundancy in place for that RegionXYZ from the perspective of this member.
+   This message requires **immediate** action to determine if you are now vulnerable to data loss.  This message indicates that you have lost access to 1 of the 2 configured copies of your data for that RegionXYZ on member XXX-server01.   It is not necessarily urgent if you have redundancy configured and capacity for the remaining members to handle the increased load.   The corresponding “has been restored” message, an info level message also shown above, indicates that you now are back to your healthy environment with redundancy in place for that RegionXYZ from the perspective of this member.
 
 **Potential Resolutions:**
 
-Investigate the cause of the loss in redundancy if it's not already known.  It could simply have been a planned maintenance that drove the cluster below configured redundancy levels.   The settings that generally apply here are the number of copies configured, and then, the recovery-delay and startup-recovery-delay settings, which control whether and when we restore redundancy with the loss of a member of the distributed system and when it is added back in.   Our documentation discusses these settings in detail.
+Investigate the cause of the loss in redundancy if it’s not already known.  It could simply have been a planned maintenance that drove the cluster below configured redundancy levels.   The settings that generally apply here are the number of copies configured, and then, the recovery-delay and startup-recovery-delay settings, which control whether and when we restore redundancy with the loss of a member of the distributed system and when it is added back in.   Our documentation discusses these settings in detail.
 
 
 ## <a id="rejectedconnection"></a>Rejected connection
@@ -520,11 +520,11 @@ This message requires **URGENT** action.  These messages indicate that you have 
 
 **Potential Resolutions:**
 
-If you have increased load recently, or are using an old, legacy default value of 800 for max-connections, you may want to consider increasing this setting, regardless.  Many customers use 2000, or even 5000 for those that do not want Geode to be throttling their performance/activity trying to conserve resources. 
+If you have increased load recently, or are using an old, legacy default value of 800 for max-connections, you may want to consider increasing this setting, regardless.  Many customers use 2000, or even 5000 for those that do not want @@product_name@@ to be throttling their performance/activity trying to conserve resources. 
 
 That said, if this number of connections is unexpected, you are potentially experiencing issues with
 connection timeouts, driving retry activity and a thrashing of resources that can cause the number
-of outstanding client connections and threads to be exhausted. You can observe this by examining Geode statistics using a tool like VSD, or, if
+of outstanding client connections and threads to be exhausted. You can observe this by examining @@product_name@@ statistics using a tool like VSD, or, if
 using JMX, you can monitor usage with the CacheServeMXBean getClientConnectionCount() method.  If
 you ever see unexpected spikes in this value, but are not seeing other symptoms, such as timeouts,
 perhaps you simply need to increase the max-connections appropriately.
@@ -534,7 +534,7 @@ to an insufficient read-timeout in the client side pool configuration, or an ins
 queue on the server side. Another setting that warrants investigation is the
 BridgeServer.HANDSHAKE_POOL_SIZE.  If you have not altered this setting in your system properties,
 you are likely using the default value of 4, which has been seen to be insufficient for many
-environments.  Recommend increasing this Geode system property to at least 20.
+environments.  Recommend increasing this @@product_name@@ system property to at least 20.
 
 
 ## <a id="pccservicemetricscomponentfailingtoconnect"></a>PCC service metrics component failing to connect to locator/server
@@ -568,7 +568,7 @@ io.pivotal.cloudcache.metrics.cli.JMXPropertiesEmitter.main(JMXPropertiesEmitter
 
 **Meaning:**
 
- Every VM in PCC for locators or servers has its own service-metrics component. The job of this component is to periodically check the health of the Geode server/locator processes running. The way it does that job is by making an RMI call to the JMX manager. When it cannot connect to the locator/server process, it starts logging these errors in its own log.
+ Every VM in PCC for locators or servers has its own service-metrics component. The job of this component is to periodically check the health of the @@product_name@@ server/locator processes running. The way it does that job is by making an RMI call to the JMX manager. When it cannot connect to the locator/server process, it starts logging these errors in its own log.
 
 
 ## <a id="sslhandshakeexception"></a>SSLHandshakeException:  &lt;version&gt; is disabled
@@ -599,7 +599,7 @@ javax.net.ssl.SSLHandshakeException: <<ssl_version>> is disabled
 
 **Meaning:**
 
- This means the specified SSL/TLS protocol is not compatible with, or configured correctly, on one or more members. The simplest workaround is to use â€œany'' as the protocol, however, some customers have strict security requirements that mandate specific versions and ciphers, which will require that all members are configured with compatible (matching) protocols and ciphers and that those protocols/ciphers are supported by the underlying JRE.
+ This means the specified SSL/TLS protocol is not compatible with, or configured correctly, on one or more members. The simplest workaround is to use “any'' as the protocol, however, some customers have strict security requirements that mandate specific versions and ciphers, which will require that all members are configured with compatible (matching) protocols and ciphers and that those protocols/ciphers are supported by the underlying JRE.
 
 
 ## <a id="unabletocreatenewnativethread"></a>Unable To Create New Native Thread
@@ -616,13 +616,13 @@ java.lang.OutOfMemoryError: unable to create new native thread
 
 **Meaning:**
 
- The JVM needs various resources to create a new â€˜nativeâ€™ thread, which may not map one-to-one with application threads. These resources are external to the JVM heap and include â€œnativeâ€ memory for the stack and, potentially, user processes.
+ The JVM needs various resources to create a new ‘native’ thread, which may not map one-to-one with application threads. These resources are external to the JVM heap and include “native” memory for the stack and, potentially, user processes.
 
 **Potential Resolution:**
 
-Depending on the resource limit encountered, you may need to increase the maximum number of user processes as configured with ulimit and/or â€œ/etc/security/limits.confâ€, or you may not have sufficient system memory. In the latter case, you will need to make more system memory available and/or decrease the amount of stack memory used per thread. If you have excess, unused heap under even heavy load, you may be able to reduce the heap size and leave more memory for â€œnativeâ€ usage. 
+Depending on the resource limit encountered, you may need to increase the maximum number of user processes as configured with ulimit and/or “/etc/security/limits.conf”, or you may not have sufficient system memory. In the latter case, you will need to make more system memory available and/or decrease the amount of stack memory used per thread. If you have excess, unused heap under even heavy load, you may be able to reduce the heap size and leave more memory for “native” usage. 
 
-Alternatively, you might be able to decrease the stack size of each thread, by setting the JVM parameter â€œ-xssâ€ to something smaller (the defaults are 320 KB for 32-bit JVMs and 1024 KB for 64-bit JVMs), but this must be done with care as it can cause threads to not have enough stack to properly operate. The last and safest option is to add free memory to the system by either adding memory or reducing other consumers of system memory (e.g. other applications).
+Alternatively, you might be able to decrease the stack size of each thread, by setting the JVM parameter “-xss” to something smaller (the defaults are 320 KB for 32-bit JVMs and 1024 KB for 64-bit JVMs), but this must be done with care as it can cause threads to not have enough stack to properly operate. The last and safest option is to add free memory to the system by either adding memory or reducing other consumers of system memory (e.g. other applications).
 
 
 ## <a id="toomanyopenfiles"></a>Too Many Open Files
@@ -639,11 +639,11 @@ java.net.SocketException: Too many open files (Socket creation failed/Accept fai
 
 **Meaning:**
 
- The number of sockets available to your applications is governed by operating system limits. Sockets use file descriptors and the operating system's view of your application's socket use is expressed in terms of file descriptors.
+ The number of sockets available to your applications is governed by operating system limits. Sockets use file descriptors and the operating system’s view of your application’s socket use is expressed in terms of file descriptors.
 
 **Potential Resolution:**
 
-There are two limits on the maximum descriptors available to a single application, a soft limit, which can be increased using the ulimit command as a user, and a â€œhardâ€ limit which will require editing â€œ/etc/security/limits.confâ€ and relogging in. (There is also an OS level limit that will require a system administrator to tune kernel parameters, however, this limit is typically large and is rarely hit.)   It is also possible that the FD's being consumed are being driven by a major increase of connections/threads due to some burst of activity or connections timing out.  This can lead to retry activity driving the number of open files to increase.   If you increase the soft and hard limits, and continue to observe these messages, you may need to analyze whether you have connections timing out, sufficient TCP accept queue, etc.   This can require an increase of the p2p.backlog and net.core.somaxconn settings.
+There are two limits on the maximum descriptors available to a single application, a soft limit, which can be increased using the ulimit command as a user, and a “hard” limit which will require editing “/etc/security/limits.conf” and relogging in. (There is also an OS level limit that will require a system administrator to tune kernel parameters, however, this limit is typically large and is rarely hit.)   It is also possible that the FD’s being consumed are being driven by a major increase of connections/threads due to some burst of activity or connections timing out.  This can lead to retry activity driving the number of open files to increase.   If you increase the soft and hard limits, and continue to observe these messages, you may need to analyze whether you have connections timing out, sufficient TCP accept queue, etc.   This can require an increase of the p2p.backlog and net.core.somaxconn settings.
 
 
 ## <a id="commitconflictexception"></a>CommitConflictException
@@ -710,11 +710,11 @@ tid=0x164] Initialization of region _B__RegionName_32 completed
 
 **Meaning:**
 
- This set of messages are related to the initialization of Partitioned regions.   They indicate where the Geode system is retrieving each bucket from to perform this initialization.  In the above example, bucket 32 for region â€œRegionNameâ€ is being retrieved from member gemfire-server-1 as Geode believes this to be the most recent data for that bucket.   This is the â€œrequesting initial imageâ€ message above.   The â€œInitialization of region `<>` completed message can be useful to determine where each specific bucket, for each specific region, is located across the membership.
+ This set of messages are related to the initialization of Partitioned regions.   They indicate where the @@product_name@@ system is retrieving each bucket from to perform this initialization.  In the above example, bucket 32 for region “RegionName” is being retrieved from member gemfire-server-1 as @@product_name@@ believes this to be the most recent data for that bucket.   This is the “requesting initial image” message above.   The “Initialization of region `<>` completed message can be useful to determine where each specific bucket, for each specific region, is located across the membership.
 
 **Potential Resolution:**
 
-There is no â€œresolutionâ€ here, but customers have asked how to determine where each bucket exists across the cluster.    Using the above message can be very useful to filter the logs to see exactly where each bucket exists in the cluster, for each region.   One could use a command such as one like this:  `egrep -R --include=\*.log 'Initialization of region _B__RegionName_â€™ ~/PathToLogFiles//gflogs/*`.
+There is no “resolution” here, but customers have asked how to determine where each bucket exists across the cluster.    Using the above message can be very useful to filter the logs to see exactly where each bucket exists in the cluster, for each region.   One could use a command such as one like this:  `egrep -R --include=\*.log 'Initialization of region _B__RegionName_’ ~/PathToLogFiles//gflogs/*`.
 The above command could tell you exactly where each bucket exists for region RegionName.   If you use only `Initialization of region _B__` instead, this would then output the buckets across all partitioned regions.    This output could then be used to know where each specific bucket exists across the cluster, to serve whatever purpose you deem helpful in monitoring your cluster.   There does exist some great documentation and project for how to identify where buckets are located in this article:  [https://community.pivotal.io/s/article/GemFire-Monitoring-PR-Entry-and-Bucket-Details](https://community.pivotal.io/s/article/GemFire-Monitoring-PR-Entry-and-Bucket-Details).
 
 
@@ -885,7 +885,7 @@ Apache.Geode.Client.Region`2[[System.__Canon, mscorlib],[System.__Canon, mscorli
 
 **Meaning:**
 
- This is evidence of the connection pool getting overwhelmed on the client side and not a problem on the Geode server side. 
+ This is evidence of the connection pool getting overwhelmed on the client side and not a problem on the @@product_name@@ server side. 
 Resolution: Increase the max-connections property to higher value as appropriate on pool settings on native client.
 
 
@@ -919,9 +919,9 @@ Exception in thread "main" org.apache.geode.pdx.PdxInitializationException: Coul
 Stop locator(s), then clear the cluster configs/pdx disk stores and, finally, start the locator(s). KB exists: [https://community.pivotal.io/s/article/Fails-to-Start-a-Cache-Member-with-orgapachegeodepdxPdxInitializationException-Could-not-create-pdx-registry?language=en_US](https://community.pivotal.io/s/article/Fails-to-Start-a-Cache-Member-with-orgapachegeodepdxPdxInitializationException-Could-not-create-pdx-registry?language=en_US).
 
 
-## <a id="formatofthestringcachexmlfilecontent"></a>Format of the string &lt;&lt;cache xml file's content&gt;&gt; used for parameterization is unresolvable
+## <a id="formatofthestringcachexmlfilecontent"></a>Format of the string &lt;&lt;cache xml file’s content&gt;&gt; used for parameterization is unresolvable
 
-Note: the spelling â€œperameterizationâ€ is wrong in the codebase [https://github.com/apache/geode/blob/a5bd36f9fa787d3a71c6e6efafed5a7b0fe52d2b/geode-core/src/main/java/org/apache/geode/internal/cache/xmlcache/CacheXmlPropertyResolver.java#L125](https://github.com/apache/geode/blob/a5bd36f9fa787d3a71c6e6efafed5a7b0fe52d2b/geode-core/src/main/java/org/apache/geode/internal/cache/xmlcache/CacheXmlPropertyResolver.java#L125). Working to report & fix this. 
+Note: the spelling “perameterization” is wrong in the codebase [https://github.com/apache/geode/blob/a5bd36f9fa787d3a71c6e6efafed5a7b0fe52d2b/geode-core/src/main/java/org/apache/geode/internal/cache/xmlcache/CacheXmlPropertyResolver.java#L125](https://github.com/apache/geode/blob/a5bd36f9fa787d3a71c6e6efafed5a7b0fe52d2b/geode-core/src/main/java/org/apache/geode/internal/cache/xmlcache/CacheXmlPropertyResolver.java#L125). Working to report & fix this. 
 
 **Log Message:**
 
@@ -981,12 +981,12 @@ This message indicates that the locator already has region (RegionX) in the clus
 
 Remove duplicate region definition from the configurations.
 
-- If â€œenable-cluster-configuration=trueâ€ in locator properties, then do the following:
+- If “enable-cluster-configuration=true” in locator properties, then do the following:
   - Export the cluster configuration (`export cluster-configuration --xml-file=value`)
   - Remove the duplicate Region definition
   - Re-import the cluster configuration  (`import cluster-configuration --action=STAGE`) and restart.
 
-- If â€œenable-cluster-configuration=falseâ€ in locator properties, then remove the duplicate region definition from cache.xml.
+- If “enable-cluster-configuration=false” in locator properties, then remove the duplicate region definition from cache.xml.
 
 
 ## <a id="missingdiskstoreexception"></a>Missing Diskstore Exception
@@ -1020,7 +1020,7 @@ that are being waited on by other members.
 
 **Meaning:**
 
-   When you start a member with a persistent region, the data is retrieved from disk stores to recreate the member's persistent region. If the member does not hold all of the most recent data for the region, then other members have the data, and region creation blocks, waiting for those other members. A partitioned region with colocated entries also blocks on start up, waiting for the entries of the colocated region to be available. So, this message shows that the disk store for server2 has the most recent data for the region, and server1 is waiting for server2.
+   When you start a member with a persistent region, the data is retrieved from disk stores to recreate the member’s persistent region. If the member does not hold all of the most recent data for the region, then other members have the data, and region creation blocks, waiting for those other members. A partitioned region with colocated entries also blocks on start up, waiting for the entries of the colocated region to be available. So, this message shows that the disk store for server2 has the most recent data for the region, and server1 is waiting for server2.
 
 **Potential Resolutions:**
 
@@ -1096,7 +1096,7 @@ null.
 
 **Meaning:**
 
- When a client with subscription-enabled="true" is started, messages like below will be logged in the Geode client log. If subscription-redundancy is not set, there will be one of these; if it is set to 1, there will be two, etc. The Cache Client Updater Thread is the thread waiting for events from the server. If no other server is available to which the Cache Client Updater Thread is connected, then above error message will be logged:
+ When a client with subscription-enabled="true" is started, messages like below will be logged in the @@product_name@@ client log. If subscription-redundancy is not set, there will be one of these; if it is set to 1, there will be two, etc. The Cache Client Updater Thread is the thread waiting for events from the server. If no other server is available to which the Cache Client Updater Thread is connected, then above error message will be logged:
 
 **Potential Resolutions:**
 
@@ -1213,11 +1213,11 @@ tenured heap garbage collection has occurred.  New tenured heap consumption:
 
  This message occurs when a tenured space garbage collection has occurred.  The goal is to provide the customer with a very accurate read for how much heap is actually consumed.   External monitors do not know when a collection has occurred.   The value specified is how much live data exists in tenured heap.   
 
-If you see this value constantly increasing over time, without a similar rate of increase of Geode entries, then this warrants some investigation into potential leaks.    Short term increases due to queries, for example, are not worthy of concern, other than providing an indication that finer tuning may be warranted.   The short term data resulting from a query would hopefully be fulfilled using the young generation heap, most of the time.
+If you see this value constantly increasing over time, without a similar rate of increase of @@product_name@@ entries, then this warrants some investigation into potential leaks.    Short term increases due to queries, for example, are not worthy of concern, other than providing an indication that finer tuning may be warranted.   The short term data resulting from a query would hopefully be fulfilled using the young generation heap, most of the time.
 
 **Potential Resolutions:**
 
-No resolution necessary.  This is informative only.  If you see this message frequently, however, it is a sign that you may need more heap, or finer tuning.  You may be imbalanced unknowingly, etc.    If seeing this message more frequently than every 1 hour, consistently, it is a sign that you may need tuning.   Note:  G1GC â€œmixedâ€ collections may not drive this message, unless you are using more current versions of the JDK.   
+No resolution necessary.  This is informative only.  If you see this message frequently, however, it is a sign that you may need more heap, or finer tuning.  You may be imbalanced unknowingly, etc.    If seeing this message more frequently than every 1 hour, consistently, it is a sign that you may need tuning.   Note:  G1GC “mixed” collections may not drive this message, unless you are using more current versions of the JDK.   
 
 
 ## <a id="allocatinglargernetworkreadbuffer"></a>Allocating larger network read buffer
@@ -1261,11 +1261,11 @@ Socket send buffer size is 6710884 instead of the requested 16777215.
 
 **Meaning:**
 
- This may require configuration change, to give more optimal behavior.   This message tells you that your Geode configuration is specifying a larger socket-buffer-size that the lower OS is going to permit.   Hence, you see this message, and perhaps less than optimal behavior.   
+ This may require configuration change, to give more optimal behavior.   This message tells you that your @@product_name@@ configuration is specifying a larger socket-buffer-size that the lower OS is going to permit.   Hence, you see this message, and perhaps less than optimal behavior.   
 
 **Potential Resolutions:**
 
-Make sure to set all members OS configurations to be the same, similar enough to avoid having this less than optimal potential chunking of messages when sending messages between members of the Geode distributed system.
+Make sure to set all members OS configurations to be the same, similar enough to avoid having this less than optimal potential chunking of messages when sending messages between members of the @@product_name@@ distributed system.
 
 
 ## <a id="quorumhasbeenlost"></a>quorum has been lost
@@ -1283,7 +1283,7 @@ weight lost in this view change is 65 of 111.  Quorum has been lost!
 
 **Meaning:** This message requires **URGENT** attention.  It is closely associated with other messages,
 but indicates that the membership is very unhealthy, and you have potentially lost your entire
-cluster, or are having some â€œsplit brainâ€ behavior, etc.
+cluster, or are having some “split brain” behavior, etc.
 
 The above example message shows that a total weight of 65 has been lost, out of 111.  This is
 greater than 50% of the weight, in one view change, hence driving the loss of quorum.  When this
@@ -1296,7 +1296,7 @@ It depends mostly on how many members have been removed, and it is possible that
 has gone down as a result of this loss of quorum.  If you have
 `enable-network-partition-detection=true`, as we recommend, it is possible to lose the entire cluster
 if you see the above message.  If most of the membership weight has crashed, for example, the losing
-side doesnâ€™t know that, but the losing side (i.e. the side with less weight) will shut itself down,
+side doesn’t know that, but the losing side (i.e. the side with less weight) will shut itself down,
 even though it includes the only still running members. Restart members to restore your cluster to
 full health, and determine the root cause for why so many members crashed simultaneously.
 
@@ -1307,7 +1307,7 @@ full health, and determine the root cause for why so many members crashed simult
 
 ```
 [fatal 2021/12/03 23:02:41.027 EST <Geode Membership View Creator> tid=0x347]
-Possible loss of quorum due to the loss of 6 cache processes: [<list of the ip's and
+Possible loss of quorum due to the loss of 6 cache processes: [<list of the ip’s and
 processes>]
 ```
 
@@ -1315,11 +1315,11 @@ processes>]
 
 **Category:** Membership
 
-**Meaning:**  This is very closely tied to the â€œquorum has been lostâ€ message.   They will often go hand in hand, and potentially even out of order, where you will see the â€œpossible lossâ€ after the â€œhas been lostâ€ message.   
+**Meaning:**  This is very closely tied to the “quorum has been lost” message.   They will often go hand in hand, and potentially even out of order, where you will see the “possible loss” after the “has been lost” message.   
 
 **Potential Resolutions:**
 
-Follow the guidance provided in the, â€œquorum has been lost,â€ message. We definitely recommend having enable-network-partition-detection=true set to protect you from split brain driving the data in your split (now 2) distributed systems from diverging and becoming unrecoverable without manual intervention.
+Follow the guidance provided in the, “quorum has been lost,” message. We definitely recommend having enable-network-partition-detection=true set to protect you from split brain driving the data in your split (now 2) distributed systems from diverging and becoming unrecoverable without manual intervention.
 
 
 ## Membership service failure: Exiting due to possible network partition event due to loss of `<n>` cache processes
@@ -1338,11 +1338,11 @@ Note: This message generally comes with a full stack trace showing the forceDisc
 
 **Category:** Membership
 
-**Meaning:**   This message requires **URGENT** attention.   It is closely associated with other loss of quorum messages, but indicates that the membership is very unhealthy, and you have potentially lost your entire cluster, or are having some â€œsplit brainâ€ behavior, etc.   
+**Meaning:**   This message requires **URGENT** attention.   It is closely associated with other loss of quorum messages, but indicates that the membership is very unhealthy, and you have potentially lost your entire cluster, or are having some “split brain” behavior, etc.   
 
 **Potential Resolutions:**
 
-Follow the guidance provided in the, â€œquorum has been lost,â€ message.    We definitely recommend having enable-network-partition-detection=true set to protect you from split brain driving the data in your split (now 2) distributed systems diverging and becoming unrecoverable without manual intervention.    Do some research to determine whether some network event drove the Geode cluster into this state due to an inability to communicate across the distributed system.
+Follow the guidance provided in the, “quorum has been lost,” message.    We definitely recommend having enable-network-partition-detection=true set to protect you from split brain driving the data in your split (now 2) distributed systems diverging and becoming unrecoverable without manual intervention.    Do some research to determine whether some network event drove the @@product_name@@ cluster into this state due to an inability to communicate across the distributed system.
 
 ## <a id="memberhadaweightofn"></a>&lt;member&gt; had a weight of &lt;n&gt;
 **Log Message:**
@@ -1378,7 +1378,7 @@ all <n> thread pool threads are in use for greater than <t> ms
 
 **Category:** Operations
 
-**Meaning:**  This requires some action to achieve optimal behavior.   If you see this message, it means that your normal behavior requires more than the configured number of function execution threads, set using DistributionManager.MAX_FE_THREADS.   The default has increased recently, but if you see this message, regardless of the current setting `<n>` shown in the example message, it indicates that your function executions will potentially take longer, due to Geode behavior.    
+**Meaning:**  This requires some action to achieve optimal behavior.   If you see this message, it means that your normal behavior requires more than the configured number of function execution threads, set using DistributionManager.MAX_FE_THREADS.   The default has increased recently, but if you see this message, regardless of the current setting `<n>` shown in the example message, it indicates that your function executions will potentially take longer, due to @@product_name@@ behavior.    
 
 **Potential Resolutions:**
 
@@ -1409,11 +1409,11 @@ there are 6 non-admin member(s).
 
 **Category:** Membership
 
-**Meaning:**  These messages can be very helpful to understand who the coordinator of the Distributed System is, the lead cache server member, and the change in state of the membership, whether members are leaving or joining the distributed system.  This will include the cause of leaving, whether a â€œgracefulâ€ shutdown, or a â€œcrashâ€.    You will only ever see the â€œSending new viewâ€ message in the current coordinator of the system at that time.   All members receive this view, and admit the member to the membership list. You only have a full membership when you see the expected number of non-admin members, six in the above, â€œNow there are 6 non-admin member(s),â€ example.
+**Meaning:**  These messages can be very helpful to understand who the coordinator of the Distributed System is, the lead cache server member, and the change in state of the membership, whether members are leaving or joining the distributed system.  This will include the cause of leaving, whether a “graceful” shutdown, or a “crash”.    You will only ever see the “Sending new view” message in the current coordinator of the system at that time.   All members receive this view, and admit the member to the membership list. You only have a full membership when you see the expected number of non-admin members, six in the above, “Now there are 6 non-admin member(s),” example.
 
 **Potential Resolutions:**
 
-These are informational only, but if you do see unexpected membership changes, which drive these â€œnew viewâ€ messages, you can search the logs for these messages to see whether it was considered graceful, a crash, etc., and look for other logging messages which likely provide additional insight.
+These are informational only, but if you do see unexpected membership changes, which drive these “new view” messages, you can search the logs for these messages to see whether it was considered graceful, a crash, etc., and look for other logging messages which likely provide additional insight.
 
 ## <a id="memberatmemberipunexpectedlyleftthedistributedcache"></a>Member at &lt;memberIP&gt; unexpectedly left the distributed cache
 
@@ -1429,11 +1429,11 @@ membership view
 
 **Category:** Membership
 
-**Meaning:**  This message is an indication that a member has experienced a non-graceful removal from the distributed system.  This will then correspond with â€œnew viewâ€ messages being sent to all members of the DS, showing the member in the list of â€œcrashedâ€ members.
+**Meaning:**  This message is an indication that a member has experienced a non-graceful removal from the distributed system.  This will then correspond with “new view” messages being sent to all members of the DS, showing the member in the list of “crashed” members.
 
 **Potential Resolutions:**
 
-This specific message doesnâ€™t tell you much other than the change in ownership.  Search for other messages across the cluster which may indicate the reason, such as being unresponsive.   Perhaps it's due to not responding to â€œheartbeatâ€ messages.   WIth auto reconnect, it is possible that the membership has been restored to a full membership, but it's also important to check on the balance of data and load.   A rebalance may be prudent to restore the balance in the system.  This includes redistributing primary buckets for partitioned regions, which is generally a good idea after any changes in ownership, when time permits.
+This specific message doesn’t tell you much other than the change in ownership.  Search for other messages across the cluster which may indicate the reason, such as being unresponsive.   Perhaps it’s due to not responding to “heartbeat” messages.   WIth auto reconnect, it is possible that the membership has been restored to a full membership, but it’s also important to check on the balance of data and load.   A rebalance may be prudent to restore the balance in the system.  This includes redistributing primary buckets for partitioned regions, which is generally a good idea after any changes in ownership, when time permits.
 
 
 ## <a id="cache serverfailedacceptingclientconnection"></a>Cache server: failed accepting client connection
@@ -1465,11 +1465,11 @@ Caused by: java.io.EOFException: SSL peer shut down incorrectly
 
 **Category:** Membership
 
-**Meaning:**  While this looks to be very SSL/TLS specific, this message is often driven by the many of the same client connectivity issues as in the non-SSL/TLS case.  This is a client-server connection that is failing because the connection terminated.  Besides the general client-server connectivity issues, however, this could also be caused when the client canâ€™t validate the server's Certificate, and so hangs up.  This message does not indicate any reasons for why that connectivity was lost, but does indicate client-server connectivity issues and the cause needs to be investigated and understood.  
+**Meaning:**  While this looks to be very SSL/TLS specific, this message is often driven by the many of the same client connectivity issues as in the non-SSL/TLS case.  This is a client-server connection that is failing because the connection terminated.  Besides the general client-server connectivity issues, however, this could also be caused when the client can’t validate the server’s Certificate, and so hangs up.  This message does not indicate any reasons for why that connectivity was lost, but does indicate client-server connectivity issues and the cause needs to be investigated and understood.  
 
 **Potential Resolutions:**
 
-Review client logs to see if there's anything informative there, such as SSL/TLS validation issues, and then investigate logs and stats for possible connectivity or performance issues on the server.
+Review client logs to see if there’s anything informative there, such as SSL/TLS validation issues, and then investigate logs and stats for possible connectivity or performance issues on the server.
 
 
 
@@ -1487,11 +1487,11 @@ members [<list of members>)<v3>:10104] are running low on memory
 
 **Category:** Operations, Storage
 
-**Meaning:**  This is very similar to the â€œcanceledâ€ query message, but applies to function executions. Essentially, before execution the system recognizes the heap has surpassed the critical-threshold in some subset of members, and therefore the system chooses not to begin the function execution.  You should also see the â€œabove heap critical thresholdâ€ message in some logs if seeing this message.
+**Meaning:**  This is very similar to the “canceled” query message, but applies to function executions. Essentially, before execution the system recognizes the heap has surpassed the critical-threshold in some subset of members, and therefore the system chooses not to begin the function execution.  You should also see the “above heap critical threshold” message in some logs if seeing this message.
 
 **Potential Resolutions:**
 
-Please follow the same guidelines as the â€œQuery execution canceled due to memory thresholdâ€ message.
+Please follow the same guidelines as the “Query execution canceled due to memory threshold” message.
 
 
 ## <a id="regionbuckethaspersistentdatathatisnolongeronline"></a>Region &lt;regionName&gt; bucket &lt;n&gt; has persistent data that is no longer online stored at these locations
@@ -1509,12 +1509,12 @@ including timestamp information>l]
 
 **Category:** Membership
 
-**Meaning:**  This message tells us that we have lost access to some persistent copy of the given bucket (â€œ51â€ in the above example).   So we know we have a partitioned persistent region where some of the hosting members are not available.
+**Meaning:**  This message tells us that we have lost access to some persistent copy of the given bucket (“51” in the above example).   So we know we have a partitioned persistent region where some of the hosting members are not available.
 
 **Potential Resolutions:**
 
 Determine the cause of the loss of the given member or members hosting that bucket, provided in the
-message. We do not recommend executing any gfsh â€œrevokeâ€ command without expert interaction and
+message. We do not recommend executing any gfsh “revoke” command without expert interaction and
 assistance. It is possible you could cause a loss of data.
 
 
@@ -1557,11 +1557,10 @@ into a ConflictingDatePersistenceException state that will then require revoking
 This is a completely avoidable scenario.  It is better to start all of the members that have been up
 and part of the healthy cluster first, and then add back that member later, to be able to get that
 member up to date, with the latest copies of the buckets loaded from other members.  If you see this
-message, you may want to check current status with the gfsh â€œshow metricsâ€ command to determine
+message, you may want to check current status with the gfsh “show metrics” command to determine
 whether your number of buckets without redundancy is changing for the specified region over time.
 If not, you should definitely take a thread dump across all members to determine whether you are
 having some form of distributed deadlock issue during startup.  It is possible that you are simply
 having major contention/congestion due to some insufficient configuration, such as
 DistributionManager.MAX_PR_THREAD or DistributionManager.MAX_THREADS.  This can be evaluated by
 analyzing the statistics of the system using a tool like VSD.
-

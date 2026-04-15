@@ -1,4 +1,4 @@
-﻿---
+---
 title:  GET /geode/v1
 sidebar_label: GET /geode/v1
 sidebar_position: 1
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-List all available resources (regions) in the Geode cluster.
+List all available resources (regions) in the @@product_name@@ cluster.
 
 ## Resource URL
 
@@ -93,6 +93,3 @@ Date: Sat, 18 Jan 2014 20:05:47 GMT
 |---------------------------|-------------------------------------------------|
 | 404 NOT FOUND             | No regions were found at the provided endpoint. |
 | 500 INTERNAL SERVER ERROR | Encountered error at server.                    |
-
-
-

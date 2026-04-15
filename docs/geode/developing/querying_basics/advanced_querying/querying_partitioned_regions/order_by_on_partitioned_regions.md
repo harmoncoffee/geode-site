@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Using ORDER BY on Partitioned Regions
 sidebar_label:  Using ORDER BY on Partitioned Regions
 sidebar_position: 1
@@ -23,7 +23,7 @@ limitations under the License.
 
 To execute a query with an ORDER BY clause on a partitioned region, the fields specified in the ORDER BY clause must be part of the projection list.
 
-When an ORDER BY clause is used with a partition region query, the query is executed separately on each region host, the local query coordinator, and all remote members. The results are all gathered by the query coordinator. The cumulative result set is built by applying ORDER BY on the gathered results. If the LIMIT clause is also used in the query, ORDER BY and LIMIT are applied on each node before each node's results are returned to the coordinator. Then the clauses are applied to the cumulative result set to get the final result set, which is returned to the calling application.
+When an ORDER BY clause is used with a partition region query, the query is executed separately on each region host, the local query coordinator, and all remote members. The results are all gathered by the query coordinator. The cumulative result set is built by applying ORDER BY on the gathered results. If the LIMIT clause is also used in the query, ORDER BY and LIMIT are applied on each node before each node’s results are returned to the coordinator. Then the clauses are applied to the cumulative result set to get the final result set, which is returned to the calling application.
 
 **Example:**
 
@@ -33,6 +33,3 @@ select distinct p.ID, p.status from /region p where p.ID > 5 order by p.status
 // This query works providing status is part of the value indicated by *
 select distinct * from /region where ID > 5 order by status 
 ```
-
-
-

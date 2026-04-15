@@ -108,12 +108,12 @@ create async-event-queue --id=value --listener=value [--groups=value(,value)*]
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;id</span></td>
 <td><em>Required</em>. ID of the asynchronous event queue</td>
-<td>Â </td>
+<td> </td>
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;groups</span></td>
 <td>The queue is created on all members of the group(s). If you do not specify a group, the queue is created on all members.</td>
-<td>Â </td>
+<td> </td>
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;parallel</span></td>
@@ -137,14 +137,14 @@ create async-event-queue --id=value --listener=value [--groups=value(,value)*]
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;persistent</span></td>
-<td>Boolean value that determines whether Geode persists this queue.</td>
+<td>Boolean value that determines whether @@product_name@@ persists this queue.</td>
 <td>false
 <p>If specified with out a value, default is true.</p></td>
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;disk-store</span></td>
-<td>Named disk store to use for storing queue overflow, or for persisting the queue. If you specify a value, the named disk store must exist. If you specify a null value, Geode Geode uses the default disk store for overflow and queue persistence.</td>
-<td>Â </td>
+<td>Named disk store to use for storing queue overflow, or for persisting the queue. If you specify a value, the named disk store must exist. If you specify a null value, @@product_name@@ uses the default disk store for overflow and queue persistence.</td>
+<td> </td>
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;disk-synchronous</span></td>
@@ -169,27 +169,27 @@ create async-event-queue --id=value --listener=value [--groups=value(,value)*]
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;gateway-event-filter</span></td>
 <td>List of fully qualified class names of GatewayEventFilters for this queue. These classes filter events before dispatching to remote servers.</td>
-<td>Â </td>
+<td> </td>
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;gateway-event-substitution-filter</span></td>
 <td>Fully-qualified class name of the <code class="ph codeph">GatewayEventSubstitutionFilter</code> for this queue.</td>
-<td>Â </td>
+<td> </td>
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;listener</span></td>
 <td><em>Required.</em> Fully-qualified class name of Async Event Listener for this queue</td>
-<td>Â </td>
+<td> </td>
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;listener-param</span></td>
 <td>Parameter name and value to be passed to the Async Event Listener class. Optionally, you can specify a value by following the parameter name with the <code>#</code> character and the value. For example:
 <pre class="pre codeblock"><code>--listener-param=myParam#24</code></pre></td>
-<td>Â </td>
+<td> </td>
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;forward-expiration-destroy</span></td>
-<td>Enables forwarding of expiration destroy operations to AsyncEventListener instances. If specified without a value, this parameter is set to â€œfalseâ€.</td>
+<td>Enables forwarding of expiration destroy operations to AsyncEventListener instances. If specified without a value, this parameter is set to “false”.</td>
 <td>false</td>
 </tr>
 <tr>
@@ -224,8 +224,8 @@ create defined indexes [--members=value(,value)*] [--groups=value(,value)*]
 
 | Name                                           | Description                                                        | Default |
 |------------------------------------------------|--------------------------------------------------------------------|---------|
-| <span class="keyword parmname">&#8209;&#8209;members</span> | Name/Id of the member(s) on which index will be created.              | Â        |
-| <span class="keyword parmname">&#8209;&#8209;groups</span>  | The index will be created on all the members in the member group(s). | Â        |
+| <span class="keyword parmname">&#8209;&#8209;members</span> | Name/Id of the member(s) on which index will be created.              |         |
+| <span class="keyword parmname">&#8209;&#8209;groups</span>  | The index will be created on all the members in the member group(s). |         |
 
 
 **Example Commands:**
@@ -289,7 +289,7 @@ create disk-store --name=value --dir=value(,value)* [--allow-force-compaction(=v
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;name</span></td>
 <td><em>Required.</em> The name of this disk store.</td>
-<td>Â </td>
+<td> </td>
 </tr>
 <tr>
 <td><span class="keyword parmname">&#8209;&#8209;dir</span></td>
@@ -435,7 +435,7 @@ Creates a gateway sender on one or more members of a cluster.
 See [Gateway Senders](../../../topologies_and_comm/topology_concepts/multisite_overview.html).
 
 **Note:**
-The gateway sender configuration for a specific sender `id` must be identical on each Geode member that hosts the gateway sender.
+The gateway sender configuration for a specific sender `id` must be identical on each @@product_name@@ member that hosts the gateway sender.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -570,23 +570,23 @@ create jndi-binding --name=value --url=value
 
 | Name                                               | Description                                                                            | Default |
 |----------------------------------------------------|----------------------------------------------------------------------------------------|---------|
-| <span class="keyword parmname">&#8209;&#8209;name</span>       | *Required.* Name of the binding to create.                                               | Â        |
-| <span class="keyword parmname">&#8209;&#8209;url or &#8209;&#8209;connection-url</span>       | *Required.* the JDBC driver connection URL string. For example, `jdbc:hsqldb:hsql://localhost:1701`.              | Â        |
-| <span class="keyword parmname">&#8209;&#8209;jdbc-driver-class</span>       | The fully qualified name of the JDBC driver class.              | Â        |
+| <span class="keyword parmname">&#8209;&#8209;name</span>       | *Required.* Name of the binding to create.                                               |         |
+| <span class="keyword parmname">&#8209;&#8209;url or &#8209;&#8209;connection-url</span>       | *Required.* the JDBC driver connection URL string. For example, `jdbc:hsqldb:hsql://localhost:1701`.              |         |
+| <span class="keyword parmname">&#8209;&#8209;jdbc-driver-class</span>       | The fully qualified name of the JDBC driver class.              |         |
 | <span class="keyword parmname">&#8209;&#8209;type</span>       | Type of the XA datasource. One of: `MANAGED`, `SIMPLE`, `POOLED`, or `XAPOOLED`. If `--type=POOLED` and a `--conn-pooled-datasource-class` option is not specified, a pool will be created using Hikari. For more information on Hikari, see [https://brettwooldridge.github.io/HikariCP](https://brettwooldridge.github.io/HikariCP).    | `SIMPLE` |
-| <span class="keyword parmname">&#8209;&#8209;blocking-timeout-seconds</span>       | Specifies the maximum time, in seconds, to block while waiting for a connection before throwing an exception.                                        | Â        |
-| <span class="keyword parmname">&#8209;&#8209;conn-pooled-datasource-class</span>   | The fully qualified name of the connection pool implementation that holds XA datasource connections. If `--type=POOLED`, then this class must implement `org.apache.geode.datasource.PooledDataSourceFactory`.                                                 | Â        |
-| <span class="keyword parmname">&#8209;&#8209;idle-timeout-seconds</span>   | Specifies the time, in seconds, that a connection may be idle before being closed. | Â        |
-| <span class="keyword parmname">&#8209;&#8209;init-pool-size</span>   | Specifies the initial number of connections the pool should hold.                  | Â        |
-| <span class="keyword parmname">&#8209;&#8209;login-timeout-seconds</span>   | The quantity of seconds after which the client thread will be disconnected due to inactivity. | Â        |
-| <span class="keyword parmname">&#8209;&#8209;managed-conn-factory-class</span>   | The fully qualified name of the connection factory implementation.     | Â        |
-| <span class="keyword parmname">&#8209;&#8209;max-pool-size</span>   | The maximum number of connections that may be created in a pool.                    | Â        |
-| <span class="keyword parmname">&#8209;&#8209;password</span>   | The default password used when creating a new connection.                                | Â        |
-| <span class="keyword parmname">&#8209;&#8209;transaction-type</span>   | Type of the transaction. One of `XATransaction`, `NoTransaction`, or `LocalTransaction`. | Â        |
-| <span class="keyword parmname">&#8209;&#8209;username</span>   | Specifies the user name to be used when creating a new connection. When specified, if the `--password` option is not also specified, gfsh will prompt for the password. | Â        |
-| <span class="keyword parmname">&#8209;&#8209;xa-datasource-class</span>   | The fully qualified name of the `javax.sql.XADataSource` implementation class. | Â        |
+| <span class="keyword parmname">&#8209;&#8209;blocking-timeout-seconds</span>       | Specifies the maximum time, in seconds, to block while waiting for a connection before throwing an exception.                                        |         |
+| <span class="keyword parmname">&#8209;&#8209;conn-pooled-datasource-class</span>   | The fully qualified name of the connection pool implementation that holds XA datasource connections. If `--type=POOLED`, then this class must implement `org.apache.geode.datasource.PooledDataSourceFactory`.                                                 |         |
+| <span class="keyword parmname">&#8209;&#8209;idle-timeout-seconds</span>   | Specifies the time, in seconds, that a connection may be idle before being closed. |         |
+| <span class="keyword parmname">&#8209;&#8209;init-pool-size</span>   | Specifies the initial number of connections the pool should hold.                  |         |
+| <span class="keyword parmname">&#8209;&#8209;login-timeout-seconds</span>   | The quantity of seconds after which the client thread will be disconnected due to inactivity. |         |
+| <span class="keyword parmname">&#8209;&#8209;managed-conn-factory-class</span>   | The fully qualified name of the connection factory implementation.     |         |
+| <span class="keyword parmname">&#8209;&#8209;max-pool-size</span>   | The maximum number of connections that may be created in a pool.                    |         |
+| <span class="keyword parmname">&#8209;&#8209;password</span>   | The default password used when creating a new connection.                                |         |
+| <span class="keyword parmname">&#8209;&#8209;transaction-type</span>   | Type of the transaction. One of `XATransaction`, `NoTransaction`, or `LocalTransaction`. |         |
+| <span class="keyword parmname">&#8209;&#8209;username</span>   | Specifies the user name to be used when creating a new connection. When specified, if the `--password` option is not also specified, gfsh will prompt for the password. |         |
+| <span class="keyword parmname">&#8209;&#8209;xa-datasource-class</span>   | The fully qualified name of the `javax.sql.XADataSource` implementation class. |         |
 | <span class="keyword parmname">&#8209;&#8209;if-not-exists</span>   | When true, a duplicate jndi binding will not be created if one with the same name already exists.  When false, an attempt to create a duplicate jndi binding results in an error. The option is set to true if the option is specified without a value. | false   |
-| <span class="keyword parmname">&#8209;&#8209;datasource-config-properties</span>   | Properties for the custom `XADataSource` driver. Append a JSON string containing a (name, type, value) tuple to set any property. If `--type=POOLED`, the properties will configure the database data source. If `--type=POOLED` and the value of a name within the tuple begins with the string "pool.", then the properties will configure the pool data source. For example: `--datasource-config-properties={'name':'name1','type':'type1','value':'value1'},{'name':'pool.name2','type':'type2','value':'value2'}`         | Â        |
+| <span class="keyword parmname">&#8209;&#8209;datasource-config-properties</span>   | Properties for the custom `XADataSource` driver. Append a JSON string containing a (name, type, value) tuple to set any property. If `--type=POOLED`, the properties will configure the database data source. If `--type=POOLED` and the value of a name within the tuple begins with the string "pool.", then the properties will configure the pool data source. For example: `--datasource-config-properties={'name':'name1','type':'type1','value':'value1'},{'name':'pool.name2','type':'type2','value':'value2'}`         |         |
 
 **Example Commands:**
 
@@ -598,7 +598,7 @@ gfsh>create jndi-binding --name=jndi1 --type=SIMPLE \
 
 ## <a id="create_lucene_index" class="no-quick-link"></a>create lucene index
 
-Create a Lucene index. For details on Lucene index creation, see [Apache Lucene Integration](../../lucene_integration.html).
+Create a Lucene index. For details on Lucene index creation, see [Apache Lucene Integration](../../../tools_modules/lucene_integration.html).
 
 For additional Lucene-related gfsh commands, see [describe lucene index](describe.html#describe_lucene_index), [destroy lucene index](destroy.html#destroy_lucene_index), [list lucene indexes](list.html#list_lucene_indexes) and [search lucene](search.html#search_lucene).
 
@@ -615,12 +615,12 @@ create lucene index --name=value --region=value --field=value(,value)*
 
 | Name                                               | Description                                                                            | Default |
 |----------------------------------------------------|----------------------------------------------------------------------------------------|---------|
-| <span class="keyword parmname">&#8209;&#8209;name</span>       | *Required.* Name of the index to create.                                               | Â        |
-| <span class="keyword parmname">&#8209;&#8209;region</span>     | *Required.* Name/Path of the region on which to define the index. | Â        |
-| <span class="keyword parmname">&#8209;&#8209;field</span>      | *Required.* Field(s) of the region values that are referenced by the index, specified as a comma-separated list. To treat the entire value as a single field, specify `__REGION_VALUE_FIELD`. | Â        |
-| <span class="keyword parmname">&#8209;&#8209;analyzer</span>   | Analyzer(s) to extract terms from text, specified as a comma-separated list. If not specified, the default analyzer is used for all fields. If specified, the number of analyzers must exactly match the number of fields specified. When listing analyzers, use the keyword `DEFAULT` for any field that will use the default analyzer.                                  | Lucene `StandardAnalyzer`Â        |
-| <span class="keyword parmname">&#8209;&#8209;serializer</span>   | Fully qualified class name of the serializer to be used with this index. The serializer must implement the `LuceneSerializer` interface. You can use the built-in `org.apache.geode.cache.lucene.FlatFormatSerializer` to index and search collections and nested fields. If not specified, the simple default serializer is used, which indexes and searches only the top level fields of the region objects.   | simple serializerÂ        |
-| <span class="keyword parmname">&#8209;&#8209;group</span>      | The index will be created on all the members in the specified member groups.                     | Â        |
+| <span class="keyword parmname">&#8209;&#8209;name</span>       | *Required.* Name of the index to create.                                               |         |
+| <span class="keyword parmname">&#8209;&#8209;region</span>     | *Required.* Name/Path of the region on which to define the index. |         |
+| <span class="keyword parmname">&#8209;&#8209;field</span>      | *Required.* Field(s) of the region values that are referenced by the index, specified as a comma-separated list. To treat the entire value as a single field, specify `__REGION_VALUE_FIELD`. |         |
+| <span class="keyword parmname">&#8209;&#8209;analyzer</span>   | Analyzer(s) to extract terms from text, specified as a comma-separated list. If not specified, the default analyzer is used for all fields. If specified, the number of analyzers must exactly match the number of fields specified. When listing analyzers, use the keyword `DEFAULT` for any field that will use the default analyzer.                                  | Lucene `StandardAnalyzer`        |
+| <span class="keyword parmname">&#8209;&#8209;serializer</span>   | Fully qualified class name of the serializer to be used with this index. The serializer must implement the `LuceneSerializer` interface. You can use the built-in `org.apache.geode.cache.lucene.FlatFormatSerializer` to index and search collections and nested fields. If not specified, the simple default serializer is used, which indexes and searches only the top level fields of the region objects.   | simple serializer        |
+| <span class="keyword parmname">&#8209;&#8209;group</span>      | The index will be created on all the members in the specified member groups.                     |         |
 
 
 **Example Commands:**
@@ -777,6 +777,3 @@ Member  | Status
 ------- | ---------------------------------------
 server1 | Region "/myRegion" created on "server1"
 ```
-
-
-

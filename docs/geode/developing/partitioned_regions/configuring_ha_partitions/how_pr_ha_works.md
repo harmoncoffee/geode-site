@@ -27,7 +27,7 @@ With high availability, each member that hosts data for the partitioned region g
 
 With redundancy, if one member fails, operations continue on the partitioned region with no interruption of service:
 
--   If the member hosting the primary copy is lost, Geode makes a secondary copy the primary. This might cause a temporary loss of redundancy, but not a loss of data.
+-   If the member hosting the primary copy is lost, @@product_name@@ makes a secondary copy the primary. This might cause a temporary loss of redundancy, but not a loss of data.
 -   Whenever there are not enough secondary copies to satisfy redundancy, the system works to recover redundancy by assigning another member as secondary and copying the data to it.
 
 **Note:**
@@ -39,20 +39,20 @@ Without redundancy, the loss of any of the region's data stores causes the loss 
 
 ## <a id="how_pr_ha_works__section_7045530D601F4C65A062B5FDD0DD9206" class="no-quick-link"></a>Controlling Where Your Primaries and Secondaries Reside
 
-By default, Geode places your primary and secondary data copies for you, avoiding placement of two copies on the same physical machine. If there are not enough machines to keep different copies separate, Geode places copies on the same physical machine. You can change this behavior, so Geode only places copies on separate machines.
+By default, @@product_name@@ places your primary and secondary data copies for you, avoiding placement of two copies on the same physical machine. If there are not enough machines to keep different copies separate, @@product_name@@ places copies on the same physical machine. You can change this behavior, so @@product_name@@ only places copies on separate machines.
 
-You can also control which members store your primary and secondary data copies. Geode provides two options:
+You can also control which members store your primary and secondary data copies. @@product_name@@ provides two options:
 
--   **Fixed custom partitioning**. This option is set for the region. Fixed partitioning gives you absolute control over where your region data is hosted. With fixed partitioning, you provide Geode with the code that specifies the bucket and data store for each data entry in the region. When you use this option with redundancy, you specify the primary and secondary data stores. Fixed partitioning does not participate in rebalancing because all bucket locations are fixed by you.
--   **Redundancy zones**. This option is set at the member level. Redundancy zones let you separate primary and secondary copies by member groups, or zones. You assign each data host to a zone. Then Geode places redundant copies in different redundancy zones, the same as it places redundant copies on different physical machines. You can use this to split data copies across different machine racks or networks, This option allows you to add members on the fly and use rebalancing to redistribute the data load, with redundant data maintained in separate zones. When you use redundancy zones, Geode will not place two copies of the data in the same zone, so make sure you have enough zones.
+-   **Fixed custom partitioning**. This option is set for the region. Fixed partitioning gives you absolute control over where your region data is hosted. With fixed partitioning, you provide @@product_name@@ with the code that specifies the bucket and data store for each data entry in the region. When you use this option with redundancy, you specify the primary and secondary data stores. Fixed partitioning does not participate in rebalancing because all bucket locations are fixed by you.
+-   **Redundancy zones**. This option is set at the member level. Redundancy zones let you separate primary and secondary copies by member groups, or zones. You assign each data host to a zone. Then @@product_name@@ places redundant copies in different redundancy zones, the same as it places redundant copies on different physical machines. You can use this to split data copies across different machine racks or networks, This option allows you to add members on the fly and use rebalancing to redistribute the data load, with redundant data maintained in separate zones. When you use redundancy zones, @@product_name@@ will not place two copies of the data in the same zone, so make sure you have enough zones.
 
 ## <a id="how_pr_ha_works__section_87A2429B6277497184926E08E64B81C6" class="no-quick-link"></a>Running Processes in Virtual Machines
 
-By default, Geode stores redundant copies on different machines. When you run your processes in virtual machines, the normal view of the machine becomes the VM and not the physical machine. If you run multiple VMs on the same physical machine, you could end up storing partitioned region primary buckets in separate VMs, but on the same physical machine as your secondaries. If the physical machine fails, you can lose data. When you run in VMs, you can configure Geode to identify the physical machine and store redundant copies on different physical machines.
+By default, @@product_name@@ stores redundant copies on different machines. When you run your processes in virtual machines, the normal view of the machine becomes the VM and not the physical machine. If you run multiple VMs on the same physical machine, you could end up storing partitioned region primary buckets in separate VMs, but on the same physical machine as your secondaries. If the physical machine fails, you can lose data. When you run in VMs, you can configure @@product_name@@ to identify the physical machine and store redundant copies on different physical machines.
 
 ## <a id="how_pr_ha_works__section_CAB9440BABD6484D99525766E937CB55" class="no-quick-link"></a>Reads and Writes in Highly-Available Partitioned Regions
 
- treats reads and writes differently in highly-available partitioned regions than in other regions because the data is available in multiple members:
+@@product_name@@ treats reads and writes differently in highly-available partitioned regions than in other regions because the data is available in multiple members:
 
 -   Write operations (like `put` and `create`) go to the primary for the data keys and then are distributed synchronously to the redundant copies. Events are sent to the members configured with `subscription-attributes` `interest-policy` set to `all`.
 -   Read operations go to any member holding a copy of the data, with the local cache favored, so a read intensive system can scale much better and handle higher loads.
@@ -60,5 +60,3 @@ By default, Geode stores redundant copies on different machines. When you run yo
 In this figure, M1 is reading W, Y, and Z. It gets W directly from its local copy. Since it doesn't have a local copy of Y or Z, it goes to a cache that does, picking the source cache at random.
 
 <img src="../../images_svg/partitioned_data_HA.svg" id="how_pr_ha_works__image_574D1A1E641944D2A2DE68C4618D84B4" class="image" />
-
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Customizing Serialization with Class Pattern Strings
 sidebar_label: Customizing Serialization with Class Pattern Strings
 sidebar_position: 1
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Use class pattern strings to name the classes that you want to serialize using Geode 's reflection-based autoserializer and to specify object identity fields and to specify fields to exclude from serialization.
+Use class pattern strings to name the classes that you want to serialize using @@product_name@@'s reflection-based autoserializer and to specify object identity fields and to specify fields to exclude from serialization.
 
 The class pattern strings used to configured the `ReflectionBasedAutoSerializer` are standard regular expressions. For example, this expression would select all classes defined in the `com.company.domain` package and its subpackages:
 
@@ -83,6 +83,3 @@ Examples:
              "com.company.DomainObject.*#exclude=creationDate","com.company.special.Patient#identity=ssn"))
          .create();
     ```
-
-
-

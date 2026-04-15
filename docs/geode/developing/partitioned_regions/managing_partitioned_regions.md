@@ -40,6 +40,3 @@ Before you begin, understand [Basic Configuration and Programming](../../basic_c
 
 **Note:**
 To configure a partitioned region using gfsh, see [gfsh Command Help](../../tools_modules/gfsh/gfsh_command_index.html#concept_C291647179C5407A876CC7FCF91CF756).
-
-
-

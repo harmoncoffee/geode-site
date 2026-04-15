@@ -1,4 +1,4 @@
-﻿---
+---
 title: Geode Statistics List
 sidebar_label:  Geode Statistics List
 sidebar_position: 6
@@ -24,7 +24,7 @@ limitations under the License.
 <a id="statistics_list"></a>
 
 
-This section describes the primary statistics gathered by Geode when statistics are enabled.
+This section describes the primary statistics gathered by @@product_name@@ when statistics are enabled.
 
 All statistics gathering requires the `gemfire.properties` `statistic-sampling-enabled` in `gemfire.properties` file to be true. Statistics that use time require the `gemfire.properties` `enable-time-statistics` to be true.
 
@@ -72,11 +72,11 @@ Performance statistics are collected for each Java application or cache server t
 
 -   **[Partitioned Regions (PartitionedRegion&lt;partitioned\_region\_name&gt;Statistics)](#section_35AC170770C944C3A336D9AEC2D2F7C5)**
 
--   **[Region Entry Eviction â€“ Count-Based (LRUStatistics)](#section_374FBD92A3B74F6FA08AA23047929B4F)**
+-   **[Region Entry Eviction – Count-Based (LRUStatistics)](#section_374FBD92A3B74F6FA08AA23047929B4F)**
 
 -   **[Region Entry Eviction - Heap-based eviction (HeapLRUStatistics)](#section_3B74F6FA08A374FBD92AA23047929B4F)**
 
--   **[Region Entry Eviction â€“ Size-based (MemLRUStatistics)](#section_3D2AA2BCE5B6485699A7B6ADD1C49FF7)**
+-   **[Region Entry Eviction – Size-based (MemLRUStatistics)](#section_3D2AA2BCE5B6485699A7B6ADD1C49FF7)**
 
 -   **[Server Notifications for All Clients (CacheClientNotifierStatistics)](#section_5362EF9AECBC48D69475697109ABEDFA)**
 
@@ -88,9 +88,9 @@ Performance statistics are collected for each Java application or cache server t
 
 ## <a id="section_DEF8D3644D3246AB8F06FE09A37DC5C8" class="no-quick-link"></a>Cache Performance (CachePerfStats)
 
-Statistics for the Geode cache. These can be used to determine the type and number of cache operations being performed and how much time they consume.
+Statistics for the @@product_name@@ cache. These can be used to determine the type and number of cache operations being performed and how much time they consume.
 
-Regarding Geode cache transactions, transaction-related statistics are compiled and stored as properties in the CachePerfStats statistic resource. Because the transaction's data scope is the cache, these statistics are collected on a per-cache basis.
+Regarding @@product_name@@ cache transactions, transaction-related statistics are compiled and stored as properties in the CachePerfStats statistic resource. Because the transaction’s data scope is the cache, these statistics are collected on a per-cache basis.
 
 The primary statistics are:
 
@@ -104,7 +104,7 @@ The primary statistics are:
 | `cacheWriterCallTime`            | Total time spent doing cache writer calls.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `compressions`                   | Total number of compression operations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `compressTime`                   | Total time, in nanoseconds, spent compressing data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `conflatedEvents`                | The number of events that were conflated, and not delivered to event listeners or gateway senders on this member. Events are typically conflated because a later event was already applied to the cache, or because a concurrent event was ignored to ensure cache consistency. Note that some members may discard an update while other members apply the update, depending on the order in which each member receives the update. For this reason, the `conflatedEvents` statistic will differ for each Geode member. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions.html#topic_CF2798D3E12647F182C2CEC4A46E2045). |
+| `conflatedEvents`                | The number of events that were conflated, and not delivered to event listeners or gateway senders on this member. Events are typically conflated because a later event was already applied to the cache, or because a concurrent event was ignored to ensure cache consistency. Note that some members may discard an update while other members apply the update, depending on the order in which each member receives the update. For this reason, the `conflatedEvents` statistic will differ for each @@product_name@@ member. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions.html#topic_CF2798D3E12647F182C2CEC4A46E2045). |
 | `creates`                        | The total number of times an entry is added to this cache.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `decompressions`                 | Total number of decompression operations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `decompressTime`                 | Total time, in nanoseconds, spent decompressing data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -251,7 +251,7 @@ Statistics used for cache servers and for gateway receivers are recorded in Cach
 
 ## <a id="section_B08C0783BBF9489E8BB48B4AEC597C62" class="no-quick-link"></a>Client-Side Notifications (CacheClientUpdaterStats)
 
-Statistics in a client that pertain to server-to-client data pushed from the server over a queue to the client (they are the client side of the server's `CacheClientNotifierStatistics`) :
+Statistics in a client that pertain to server-to-client data pushed from the server over a queue to the client (they are the client side of the server’s `CacheClientNotifierStatistics`) :
 
 | Statistic                   | Description                                                                                  |
 |-----------------------------|----------------------------------------------------------------------------------------------|
@@ -532,7 +532,7 @@ The primary statistics of ClientSendStats are:
 
 ## <a id="section_6C247F61DB834C079A16BE92789D4692" class="no-quick-link"></a>Client Connection Pool (PoolStats)
 
-These statistics are in a client and they describe one of the client's connection pools. The primary statistics are:
+These statistics are in a client and they describe one of the client’s connection pools. The primary statistics are:
 
 | Statistic                   | Description                                                                                                          |
 |-----------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -617,8 +617,8 @@ These statistics are for delta propagation between members. The primary statisti
 | `deltaPutsTime`                                | Total amount of time, in nanoseconds, spent constructing delta part of puts.                                                                                                |
 | `fullDeltaMessages`                            | Current number of full value delta messages received off network and processed after reception.                                                                             |
 | `fullDeltaRequests`                            | Number of full value requests made by this server to the sender client after failing to apply delta.                                                                        |
-| `fullValueDeltaMessagesRequested`              | The number of distribution messages containing full value requested by this Geode system after failing to apply received delta.                |
-| `fullValueDeltaMessagesSent`                   | The number of distribution messages sent in response to full value requests by a remote Geode System as a result of failure in applying delta. |
+| `fullValueDeltaMessagesRequested`              | The number of distribution messages containing full value requested by this @@product_name@@ system after failing to apply received delta.                |
+| `fullValueDeltaMessagesSent`                   | The number of distribution messages sent in response to full value requests by a remote @@product_name@@ System as a result of failure in applying delta. |
 | `partitionMessagesWithDeltaFailures`           | Number of failures while processing PartitionMessages containing delta.                                                                                                     |
 | `partitionMessagesWithDeltaProcessed`          | Number of PartitionMessages containing delta processed.                                                                                                                     |
 | `partitionMessagesWithDeltaProcessedTime`      | Total time spent applying deltas.                                                                                                                                           |
@@ -626,10 +626,10 @@ These statistics are for delta propagation between members. The primary statisti
 | `partitionMessagesWithDeltaSentTime`           | Total time spent extractng deltas.                                                                                                                                          |
 | `partitionMessagesWithFullValueDeltaRequested` | Number of requests for PartitionMessages containing full delta value as a result of failure in applying delta.                                                              |
 | `partitionMessagesWithFullValueDeltaSent`      | Number of PartitionMessages containing full delta value sent.                                                                                                               |
-| `preparedDeltaMessages`                        | The number of distribution messages containing delta that this Geode system has prepared for distribution.                                     |
+| `preparedDeltaMessages`                        | The number of distribution messages containing delta that this @@product_name@@ system has prepared for distribution.                                     |
 | `preparedDeltaMessages`                        | Number of client messages being prepared for dispatch, which have delta part in them.                                                                                       |
 | `preparedDeltaMessagesTime`                    | The total amount of time this distribution manager has spent preparing delta parts of messages.                                                                             |
-| `processedDeltaMessages`                       | The number of distribution messages containing delta that this  system has processed.                                                     |
+| `processedDeltaMessages`                       | The number of distribution messages containing delta that this @@product_name@@ system has processed.                                                     |
 | `processedDeltaMessages`                       | Current number of delta messages received off network and processed after reception.                                                                                        |
 | `processedDeltaMessagesTime`                   | The amount of time this distribution manager has spent in applying delta on its existing value.                                                                             |
 | `processedDeltaMessagesTime`                   | Total time spent applying received delta parts on existing messages at clients.                                                                                             |
@@ -638,7 +638,7 @@ These statistics are for delta propagation between members. The primary statisti
 
 ## <a id="section_6C2BECC63A83456190B029DEDB8F4BE3" class="no-quick-link"></a>Disk Space Usage (DiskDirStatistics)
 
-These statistics pertain to the disk usage for a region's disk directory. The primary statistics are:
+These statistics pertain to the disk usage for a region’s disk directory. The primary statistics are:
 
 | Statistic               | Description                                                                                                                                                |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -726,7 +726,7 @@ Statistics regarding operations performed on a disk region for persistence/overf
 
 ## <a id="section_ACB4161F10D64BC0B15871D003FF6FDF" class="no-quick-link"></a>Distributed System Messaging (DistributionStats)
 
-Statistics on the Geode distribution layer. These statistics can be used to tell how much message traffic exists between this member and other cluster members.
+Statistics on the @@product_name@@ distribution layer. These statistics can be used to tell how much message traffic exists between this member and other cluster members.
 
 The primary statistics are:
 
@@ -756,7 +756,7 @@ The primary statistics are:
 | `asyncThreadTimeDesc`                  | Total time spent by asynchronous message queue threads performing iterations.                                                                                                                                                                   |
 | `batchSendTime`                        | Total amount of time, in nanoseconds, spent queueing and flushing message batches.                                                                                                                                                              |
 | `batchWaitTime`                        | Reserved for future use                                                                                                                                                                                                                         |
-| `broadcastMessagesDesc`                | The number of distribution messages that the Geode system has broadcast. A broadcast message is one sent to every other manager in the group.                                                                      |
+| `broadcastMessagesDesc`                | The number of distribution messages that the @@product_name@@ system has broadcast. A broadcast message is one sent to every other manager in the group.                                                                      |
 | `broadcastMessagesTimeDesc`            | The total amount of time this distribution manager has spent broadcasting messages. A broadcast message is one sent to every other manager in the group.                                                                                        |
 | `bufferAcquires`                       | Total number of times a buffer has been acquired.                                                                                                                                                                                               |
 | `bufferAcquiresInProgress`             | Current number of threads waiting to acquire a buffer.                                                                                                                                                                                          |
@@ -837,13 +837,13 @@ The primary statistics are:
 | `pdxInstanceDeserializationTime`       | Total amount of time, in nanoseconds, spent deserializing PdxInstances by calling getObject.                                                                                                                                                    |
 | `pdxSerializations`                    | Total number of PDX serializations.                                                                                                                                                                                                             |
 | `pdxSerializedBytes`                   | Total number of bytes produced by PDX serialization.                                                                                                                                                                                            |
-| `processedMessagesDesc`                | The number of distribution messages that the  system has processed.                                                                                                                                           |
+| `processedMessagesDesc`                | The number of distribution messages that the @@product_name@@ system has processed.                                                                                                                                           |
 | `processedMessagesTimeDesc`            | The amount of time this distribution manager has spent in message.process().                                                                                                                                                                    |
 | `processingThreadJobsDesc`             | The number of messages currently being processed by pooled message processor threads.                                                                                                                                                           |
 | `processingThreadsDesc`                | The number of threads currently processing normal messages.                                                                                                                                                                                     |
 | `processingThreadStarts`               | Total number of times a thread has been created for the pool processing normal messages.                                                                                                                                                        |
-| `receivedBytesDesc`                    | The number of distribution message bytes that the Geode system has received.                                                                                                                                       |
-| `receivedMessagesDesc`                 | The number of distribution messages that the  system has received.                                                                                                                                            |
+| `receivedBytesDesc`                    | The number of distribution message bytes that the @@product_name@@ system has received.                                                                                                                                       |
+| `receivedMessagesDesc`                 | The number of distribution messages that the @@product_name@@ system has received.                                                                                                                                            |
 | `receiverConnectionsDesc`              | Current number of sockets dedicated to receiving messages.                                                                                                                                                                                      |
 | `receiverDirectBufferSizeDesc`         | Current number of bytes allocated from direct memory as buffers for incoming messages.                                                                                                                                                          |
 | `receiverHeapBufferSizeDesc`           | Current number of bytes allocated from Java heap memory as buffers for incoming messages.S                                                                                                                                                      |
@@ -857,9 +857,9 @@ The primary statistics are:
 | `replyWaitTimeDesc`                    | Total time spent waiting for a reply to a message.                                                                                                                                                                                              |
 | `senderDirectBufferSizeDesc`           | Current number of bytes allocated from direct memory as buffers for outgoing messages.                                                                                                                                                          |
 | `senderHeapBufferSizeDesc`             | Current number of bytes allocated from Java heap memory as buffers for outgoing messages.                                                                                                                                                       |
-| `sentBytesDesc`                        | The number of distribution message bytes that the  system has sent.                                                                                                                                           |
-| `sentCommitMessagesDesc`               | The number of transaction commit messages that the Geode system has created to be sent. Note, it is possible for a commit to only create one message even though it will end up being sent to multiple recipients. |
-| `sentMessagesDesc`                     | The number of distribution messages that the  system has sent, which includes broadcastMessages.                                                                                                              |
+| `sentBytesDesc`                        | The number of distribution message bytes that the @@product_name@@ system has sent.                                                                                                                                           |
+| `sentCommitMessagesDesc`               | The number of transaction commit messages that the @@product_name@@ system has created to be sent. Note, it is possible for a commit to only create one message even though it will end up being sent to multiple recipients. |
+| `sentMessagesDesc`                     | The number of distribution messages that the @@product_name@@ system has sent, which includes broadcastMessages.                                                                                                              |
 | `sentMessagesMaxTimeDesc`              | The highest amount of time this distribution manager has spent distributing a single message to the network.                                                                                                                                    |
 | `sentMessagesTimeDesc`                 | The total amount of time this distribution manager has spent sending messages, which includes broadcastMessagesTime.                                                                                                                            |
 | `serializations`                       | Total number of object serialization calls.                                                                                                                                                                                                     |
@@ -1046,7 +1046,7 @@ These statistics are for outgoing gateway queue and its connection. The primary 
 | Statistic           | Description                                                                                                                                             |
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `numKeys`           | Number of keys currently stored in the Index.                                                                                                           |
-| `numUpdates`        | Number of updates applied and completed on the Index while inserting, modifying , or deleting corresponding data in Geode . |
+| `numUpdates`        | Number of updates applied and completed on the Index while inserting, modifying , or deleting corresponding data in @@product_name@@. |
 | `numValues`         | Number of values currently stored in the Index.                                                                                                         |
 | `updatesInProgress` | Current number of updates in progress on the Index. Concurrent updates on an index are allowed.                                                         |
 | `updateTime`        | Total time taken in applying and completing updates on the Index.                                                                                       |
@@ -1061,9 +1061,9 @@ These statistics are for outgoing gateway queue and its connection. The primary 
 
 ## <a id="section_607C3867602E410CAE5FAB26A7FF1CB9" class="no-quick-link"></a>JVM Performance
 
-## Geode JVM Resource Manager (ResourceManagerStats)
+## @@product_name@@ JVM Resource Manager (ResourceManagerStats)
 
-Statistics related to the Geode 's resource manager. Use these to help analyze and tune your JVM memory settings and the Geode resource manager settings. The primary statistics are:
+Statistics related to the @@product_name@@'s resource manager. Use these to help analyze and tune your JVM memory settings and the @@product_name@@ resource manager settings. The primary statistics are:
 
 | Statistic                       | Description                                                                                                  |
 |---------------------------------|--------------------------------------------------------------------------------------------------------------|
@@ -1081,7 +1081,7 @@ Statistics related to the Geode 's resource manager. Use these to help analyze a
 
 ## JVM Java Runtime (VMStats)
 
-Show the JVM's Java usage and can be used to detect possible problems with memory consumption. These statistics are recorded from java.lang.Runtime under VMStats. The primary statistics are:
+Show the JVM’s Java usage and can be used to detect possible problems with memory consumption. These statistics are recorded from java.lang.Runtime under VMStats. The primary statistics are:
 
 | Statistic             | Description                                                                                                           |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -1154,7 +1154,7 @@ Show details about the JVM thread. The primary statistics are:
 
 ## <a id="section_C48B654F973E4B44AD825D459C23A6CD" class="no-quick-link"></a>Locator (LocatorStats)
 
-These statistics are on the Geode locator. The primary statistics are:
+These statistics are on the @@product_name@@ locator. The primary statistics are:
 
 | Statistic                | Description                                                                   |
 |--------------------------|-------------------------------------------------------------------------------|
@@ -1213,7 +1213,7 @@ Operating system statistics are available only for Linux operating systems.
 
 ## Linux Process Performance (LinuxProcessStats)
 
-Operating system statistics on the member's process. The primary statistics are:
+Operating system statistics on the member’s process. The primary statistics are:
 
 | Statistic   | Description                                         |
 |-------------|-----------------------------------------------------|
@@ -1222,7 +1222,7 @@ Operating system statistics on the member's process. The primary statistics are:
 
 ## Linux Operating System (LinuxSystemStats)
 
-Operating system statistics on the member's machine. These can be used to determine total cpu,
+Operating system statistics on the member’s machine. These can be used to determine total cpu,
 memory, and disk usage on the machine. The primary statistics are:
 
 | Statistic         | Description                                                                                                                                                                                                                                                                                                                               |
@@ -1310,7 +1310,7 @@ The primary statistics are:
 ## Partitioned Region Statistics on Partition Messages
 
 **Note:**
-Unsuccessful operations and local operationsâ€”those that originated in this memberâ€”are not counted in these statistics.
+Unsuccessful operations and local operations—those that originated in this member—are not counted in these statistics.
 
 The primary statistics are:
 
@@ -1350,8 +1350,7 @@ These statistics track status on partitioned region data copies. The primary sta
 | `configuredRedundantCopies` | Equivalent to the `PartitionAttributes.getRedundantCopies` configuration used to create this partitioned region. This value remains unchanged for a given partitioned region. |
 | `lowRedundancyBucketCount` | The number of buckets in this partitioned region that currently have fewer copies than `configuredRedundantCopies`. This value may rise above zero when a data store is lost and return to zero when one or more data stores are added. It may also rise temporarily during partitioned region creation or destruction and then return to zero.<br/><br/>:::note<br/>If this value remains above zero, partitioned region data is at risk and may be lost if another data store is lost.<br/>:::<br/><br/>This value is above zero whenever `actualRedundantCopies` is less than `configuredRedundantCopies`. A healthy partitioned region maintains a value of zero. Add one or more data stores if the value remains above zero. High availability may cause brief fluctuations, but it should return to zero if sufficient data stores are present (for example, terminating one data store causes its data to fail over to another). |
 
-
-## <a id="section_374FBD92A3B74F6FA08AA23047929B4F" class="no-quick-link"></a>Region Entry Eviction â€“ Count-Based (LRUStatistics)
+## <a id="section_374FBD92A3B74F6FA08AA23047929B4F" class="no-quick-link"></a>Region Entry Eviction – Count-Based (LRUStatistics)
 
 The entry-count least recently used (LRU) eviction mechanism records these LRUStatistics. The primary statistics are:
 
@@ -1365,7 +1364,7 @@ The entry-count least recently used (LRU) eviction mechanism records these LRUSt
 | `lruEvictions`     | Number of total entry evictions triggered by an LRU.                       |
 | `lruGreedyReturns` | Number of non-LRU entries evicted during LRU operations.                   |
 
-## <a id="section_3B74F6FA08A374FBD92AA23047929B4F" class="no-quick-link"></a>Region Entry Eviction â€“ Heap-based eviction (HeapLRUStatistics)
+## <a id="section_3B74F6FA08A374FBD92AA23047929B4F" class="no-quick-link"></a>Region Entry Eviction – Heap-based eviction (HeapLRUStatistics)
 
 The least recently used (LRU) mechanism that keeps the JVM heap size under a given set point records these LRUStatistics. The primary statistics are:
 
@@ -1377,7 +1376,7 @@ The least recently used (LRU) mechanism that keeps the JVM heap size under a giv
 | `lruEvictions`     | Total number of entry evictions triggered by an LRU.                       |
 | `lruGreedyReturns` | Number of non-LRU entries evicted during LRU operations.                   |
 
-## <a id="section_3D2AA2BCE5B6485699A7B6ADD1C49FF7" class="no-quick-link"></a>Region Entry Eviction â€“ Size-based (MemLRUStatistics)
+## <a id="section_3D2AA2BCE5B6485699A7B6ADD1C49FF7" class="no-quick-link"></a>Region Entry Eviction – Size-based (MemLRUStatistics)
 
 The least recently used (LRU) mechanism that keeps the size of a region under a given set point records these MemLRUStatistics. The primary statistics are:
 
@@ -1447,4 +1446,3 @@ These statistics show how much time is spent collecting statistics. The primary 
 |---------------|------------------------------------------------|
 | `sampleCount` | Total number of samples taken by this sampler. |
 | `sampleTime`  | Total amount of time spent taking samples.     |
-

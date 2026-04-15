@@ -58,6 +58,3 @@ Set crash redundancy recovery using one of the following:
     ``` pre
     gfsh>create region --name="PR1" type=PARTITION --recovery-delay=10000
     ```
-
-
-

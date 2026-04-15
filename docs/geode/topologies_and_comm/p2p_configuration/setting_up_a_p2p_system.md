@@ -40,6 +40,3 @@ mcast-port=0
 
 **Note:**
 Locator settings must be consistent throughout the cluster.
-
-
-

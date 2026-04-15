@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Using Indexes on Equi-Join Queries using Multiple Regions
 sidebar_label: Using Indexes on Equi-Join Queries using Multiple Regions
 sidebar_position: 12
@@ -77,6 +77,3 @@ You would still only want to use four indexes in all, as that's all you need to 
 | /securities sc, sc.investors sc\_invs    | sc\_invs.investorID |
 
 The most performant set is that which narrows the data to the smallest result set possible. Examine your data and experiment with the three index pairs to see which provides the best performance.
-
-
-

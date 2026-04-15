@@ -1,4 +1,4 @@
-﻿---
+---
 title: POST /geode/v1/functions/functionId
 sidebar_label: POST /geode/v1/functions/functionId
 sidebar_position: 2
@@ -6,13 +6,13 @@ sidebar_position: 2
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements. See the NOTICE file distributed with
+contributor license agreements.  See the NOTICE file distributed with
 this work for additional information regarding copyright ownership.
 The ASF licenses this file to You under the Apache License, Version 2.0
 (the "License"); you may not use this file except in compliance with
-the License. You may obtain a copy of the License at
+the License.  You may obtain a copy of the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
+     http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -21,11 +21,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Execute Geode function on an entire cluster or on a specified region, members, and member groups.
+Execute @@product_name@@ function on an entire cluster or on a specified region, members, and member groups.
 
 ## Resource URL
 
-```pre
+``` pre
 /geode/v1/functions/{functionId}?[&onRegion=regionname|&onMembers=member1,member2,...,memberN|&onGroups=group1,group2,...,groupN]
 ```
 

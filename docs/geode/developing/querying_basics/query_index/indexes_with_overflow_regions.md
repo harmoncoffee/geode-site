@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Using Indexes with Overflow Regions
 sidebar_label: Using Indexes with Overflow Regions
 sidebar_position: 11
@@ -26,7 +26,7 @@ You can use indexes when querying on overflow regions; however, there are caveat
 The following are caveats for querying overflow regions:
 
 -   You must use synchronous index maintenance for the region. This is the default maintenance setting.
--   The index FROM clause must specify only one iterator, and it must refer to the keys or entry values. The index cannot refer to the region's entrySet.
+-   The index FROM clause must specify only one iterator, and it must refer to the keys or entry values. The index cannot refer to the region’s entrySet.
 -   The index data itself is not stored on (overflowed to) disk .
 
 **Examples:**
@@ -56,6 +56,3 @@ gfsh> create index -name="pkidIndex" --expression="p.pkid" --region="/Portfolios
 
 gfsh> create index -name="indx1" --expression="ks.toString" --region="/portfolio.keySet() ks"
 ```
-
-
-

@@ -26,7 +26,7 @@ By default, a region has no data loader defined. Plug an application-defined loa
 <a id="how_data_loaders_work__section_1E600469D223498DB49446434CE9B0B4"></a>
 The loader is called on cache misses during get operations, and it populates the cache with the new entry value in addition to returning the value to the calling thread.
 
-A loader can be configured to load data into the Geode cache from an outside data store. To do the reverse operation, writing data from the Geode cache to an outside data store, use a cache writer event handler. See [Implementing Cache Event Handlers](../events/implementing_cache_event_handlers.html).
+A loader can be configured to load data into the @@product_name@@ cache from an outside data store. To do the reverse operation, writing data from the @@product_name@@ cache to an outside data store, use a cache writer event handler. See [Implementing Cache Event Handlers](../events/implementing_cache_event_handlers.html).
 
 How to install your cache loader depends on the type of region.
 
@@ -52,4 +52,3 @@ In the following figure, these members of one cluster can be running on differen
 ## <a id="how_data_loaders_work__section_BE33D9AB27104D1BB8AC8BFCE11A063E" class="no-quick-link"></a>Data Loading in Local Regions
 
 For local regions, the cache loader is available only in the member where it is defined. If a loader is defined, it is called whenever a value is not found in the local cache.
-

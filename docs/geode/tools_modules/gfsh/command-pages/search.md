@@ -77,6 +77,3 @@ gfsh>search lucene --region=/Person --name=analyzerIndex
 ------ | ------------------------------------------------------------------ | --------
 key763 | Person{name='Kris Cat', addr='7 Ash St, Portland_OR_97763', emai.. | 1.669657
 ```
-
-
-

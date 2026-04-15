@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Running gfsh Commands on the OS Command Line
 sidebar_label: Running gfsh Commands on the OS Command Line
 sidebar_position: 11
@@ -48,6 +48,3 @@ prompt>gfsh -e "start jconsole"
 prompt>gfsh -e "connect --locator=remotehost[10334]" -e "rebalance" -e "gc"
     
 ```
-
-
-

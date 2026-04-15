@@ -24,10 +24,10 @@ limitations under the License.
 Most default Linux installations use SYN cookies to protect the 
 system against malicious attacks (such as DDOS) that flood TCP SYN packets.
 
-This feature is not compatible with stable and busy Geode clusters. SYN Cookies protection gets
-incorrectly activated by normal Geode traffic, severely limiting bandwidth and new connection
+This feature is not compatible with stable and busy @@product_name@@ clusters. SYN Cookies protection gets
+incorrectly activated by normal @@product_name@@ traffic, severely limiting bandwidth and new connection
 rates, and destroying SLAs. Security implementations should instead seek to prevent DDOS types of
-attacks by placing Geode server clusters behind advanced firewall protection.
+attacks by placing @@product_name@@ server clusters behind advanced firewall protection.
 
 To disable SYN cookies permanently:
 
@@ -42,4 +42,3 @@ To disable SYN cookies permanently:
     ``` pre
     sysctl -p
     ```
-

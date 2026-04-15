@@ -78,6 +78,3 @@ A `GatewayConflictResolver` implementation is called only for update events that
     // Create and add a conflict resolver
     cache.setGatewayConflictResolver(new MyConflictResolver);
     ```
-
-
-

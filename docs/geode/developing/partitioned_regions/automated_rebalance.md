@@ -18,7 +18,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-**Note:** This feature is experimental and is subject to change in future releases of Apache Geode .
+**Note:** This feature is experimental and is subject to change in future releases of @@product_name_long@@.
 
 Automated rebalance triggers a rebalance
 (see [Rebalancing Partitioned Region Data](rebalancing_pr_data.html))
@@ -81,5 +81,3 @@ This example specificies 15 percent:
 ``` pre
 <parameter name="size-threshold-percent"> 15 </parameter>
 ```
-
-

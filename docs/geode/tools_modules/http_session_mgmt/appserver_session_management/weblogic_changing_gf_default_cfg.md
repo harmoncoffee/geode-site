@@ -1,4 +1,4 @@
-﻿---
+---
 title: Changing the Default Geode Configuration in the AppServers Module
 sidebar_label: Changing the Default Geode Configuration in the AppServers Module
 sidebar_position: 2
@@ -21,14 +21,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-By default, the AppServers module will run Geode automatically with preconfigured settings. You can change these Geode settings.
+By default, the AppServers module will run @@product_name@@ automatically with preconfigured settings. You can change these @@product_name@@ settings.
 
 Here are the default settings:
 
-- Geode peer-to-peer members are discovered using locators.
+-   @@product_name@@ peer-to-peer members are discovered using locators.
 -   The region name is set to `gemfire_modules_sessions`.
 -   The cache region is replicated for peer-to-peer configurations and partitioned (with redundancy turned on) for client/server configurations.
-- Geode clients have local caching turned on and when the local cache needs to evict data, it will evict least-recently-used (LRU) data first.
+-   @@product_name@@ clients have local caching turned on and when the local cache needs to evict data, it will evict least-recently-used (LRU) data first.
 
 **Note:**
 On the application server side, the default inactive interval for session expiration is set to 30 minutes. To change this value, refer to [Session Expiration](tc_additional_info.html#tc_additional_info__section_C7C4365EA2D84636AE1586F187007EC4).
@@ -38,9 +38,9 @@ However, you may want to change this default configuration. For example, you mig
 **Note:**
 You cannot override region attributes on the cache server when using the HTTP Session Management Module. You must place all region attribute definitions in the region attributes template that you customize in your application server. See [Overriding Region Attributes](weblogic_common_configuration_changes.html#weblogic_common_cfg_changes__section_38D803A7E8474188898963F456188543) for more information.
 
-## <a id="weblogic_changing_gf_default_cfg__section_changing_sys_props" class="no-quick-link"></a>Changing Geode Distributed System Properties
+## <a id="weblogic_changing_gf_default_cfg__section_changing_sys_props" class="no-quick-link"></a>Changing @@product_name@@ Distributed System Properties
 
-To edit Geode system properties, you must add properties to Geode Session Filter definition in the application's web.xml file. As mentioned previously, this can be done by using the **-p** option to the `modify_war` script. All Geode system properties should be prefixed with the string **gemfire.property**. For example:
+To edit @@product_name@@ system properties, you must add properties to @@product_name@@ Session Filter definition in the application's web.xml file. As mentioned previously, this can be done by using the **-p** option to the `modify_war` script. All @@product_name@@ system properties should be prefixed with the string **gemfire.property**. For example:
 
 -   **-p gemfire.property.locators=hostname\[10334\]**
 -   **-p gemfire.property.cache-xml-file=/u01/weblogic/conf/cache.xml**.
@@ -66,19 +66,19 @@ To edit Geode system properties, you must add properties to Geode Session Filter
 </filter>
 ```
 
-This example specifies that the file name for Geode 's cache XML configuration is `cache-peer.xml`.
+This example specifies that the file name for @@product_name@@'s cache XML configuration is `cache-peer.xml`.
 
-The list of configurable `server.xml` system properties include any of the properties that can be specified in Geode 's `gemfire.properties` file. The following list contains some of the more common parameters that can be configured.
+The list of configurable `server.xml` system properties include any of the properties that can be specified in @@product_name@@'s `gemfire.properties` file. The following list contains some of the more common parameters that can be configured.
 
 | Parameter                               | Description                                                                                                                                                                                 | Default                                                                 |
 |-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
 | cache-xml-file                          | Name of the cache configuration file.                                                                                                                                                       | `cache-peer.xml` for peer-to-peer, `cache-client.xml` for client/server |
-| locators (only for peer-to-peer config) | (required) list of locators (host\[port\]) used by Geode members; if a single locator listens on its default port, then set this value to `"localhost[10334]"` | Empty string                                                            |
-| log-file                                | Name of the  log file.                                                                                                                                    | `gemfire_modules.log`                                                   |
-| statistic-archive-file                  | Name of the  statistics file.                                                                                                                             | `gemfire_modules.gfs`                                                   |
-| statistic-sampling-enabled              | Whether Geode statistics sampling is enabled.                                                                                                                  | false                                                                   |
+| locators (only for peer-to-peer config) | (required) list of locators (host\[port\]) used by @@product_name@@ members; if a single locator listens on its default port, then set this value to `"localhost[10334]"` | Empty string                                                            |
+| log-file                                | Name of the @@product_name@@ log file.                                                                                                                                    | `gemfire_modules.log`                                                   |
+| statistic-archive-file                  | Name of the @@product_name@@ statistics file.                                                                                                                             | `gemfire_modules.gfs`                                                   |
+| statistic-sampling-enabled              | Whether @@product_name@@ statistics sampling is enabled.                                                                                                                  | false                                                                   |
 
-In addition to the standard Geode system properties, the following cache-specific properties can also be configured.
+In addition to the standard @@product_name@@ system properties, the following cache-specific properties can also be configured.
 
 | Parameter              | Description                                                                                      | Default      |
 |------------------------|--------------------------------------------------------------------------------------------------|--------------|
@@ -86,14 +86,14 @@ In addition to the standard Geode system properties, the following cache-specifi
 | evictionHeapPercentage | Percentage of heap at which session eviction begins.                                             | 80.0         |
 | rebalance              | Whether a rebalance of the cache should be done when the application server instance is started. | false        |
 
-Although these properties are not part of the standard Geode system properties, they apply to the entire JVM instance. For more information about managing the heap, refer to [Managing Heap and Off-heap Memory](../../managing/heap_use/heap_management.html#resource_manager).
+Although these properties are not part of the standard @@product_name@@ system properties, they apply to the entire JVM instance. For more information about managing the heap, refer to [Managing Heap and Off-heap Memory](../../managing/heap_use/heap_management.html#resource_manager).
 
 **Note:**
-It is important to note that the Geode cluster is a singleton within the entire application server JVM. As such it is important to ensure that different web applications, within the same container, set (or expect) the same cache configuration. When the application server starts, the first web application to start that uses Geode Session Caching will determine the overall configuration of the cluster, since it will trigger the creation of the cluster.
+It is important to note that the @@product_name@@ cluster is a singleton within the entire application server JVM. As such it is important to ensure that different web applications, within the same container, set (or expect) the same cache configuration. When the application server starts, the first web application to start that uses @@product_name@@ Session Caching will determine the overall configuration of the cluster, since it will trigger the creation of the cluster.
 
 ## <a id="weblogic_changing_gf_default_cfg__section_changing_cache_config_props" class="no-quick-link"></a>Changing Cache Configuration Properties
 
-To edit  cache properties (such as the name and the characteristics of the cache region), you must configure these using a filter initialization parameter prefix of **gemfire.cache** with the `modify_war` script. For example:
+To edit @@product_name@@ cache properties (such as the name and the characteristics of the cache region), you must configure these using a filter initialization parameter prefix of **gemfire.cache** with the `modify_war` script. For example:
 
 **-p gemfire.cache.region\_name=custom\_sessions**
 
@@ -117,11 +117,11 @@ To edit  cache properties (such as the name and the characteristics of the cache
 The following parameters are the cache configuration parameters that can be added to the filter definition as initialization parameters.
 
 <dt>**enable\_debug\_listener**</dt>
-<dd>Whether to enable a debug listener in the session region; if this parameter is set to true, info-level messages are logged to the Geode log when sessions are created, updated, invalidated or expired.</dd>
+<dd>Whether to enable a debug listener in the session region; if this parameter is set to true, info-level messages are logged to the @@product_name@@ log when sessions are created, updated, invalidated or expired.</dd>
 
 Default: `false`
 
-The Geode API equivalent to setting this parameter:
+The @@product_name@@ API equivalent to setting this parameter:
 
 ``` pre
 // Create factory
@@ -136,7 +136,7 @@ factory.addCacheListener(new DebugCacheListener());
 
 Default: `false` for peer-to-peer, `true` for client/server
 
-The Geode Geode API equivalent to setting this parameter:
+The @@product_name@@ API equivalent to setting this parameter:
 
 ``` pre
 // For peer-to-peer members: 
@@ -150,7 +150,7 @@ ClientCache.createClientRegionFactory(CACHING_PROXY_HEAP_LRU)
 
 Default: REPLICATE for peer-to-peer, PARTITION\_REDUNDANT for client/server
 
-The  API equivalent to setting this parameter:
+The @@product_name@@ API equivalent to setting this parameter:
 
 ``` pre
 // Creates a region factory for the specified region shortcut 
@@ -162,7 +162,7 @@ Cache.createRegionFactory(regionAttributesId);
 
 Default: gemfire\_modules\_sessions
 
-The Geode API equivalent to setting this parameter:
+The @@product_name@@ API equivalent to setting this parameter:
 
 ``` pre
 // Creates a region with the specified name 
@@ -174,9 +174,6 @@ RegionFactory.create(regionName);
 
 Default: delta\_queued
 
-Delta replication can be configured to occur immediately when HttpSession.setAttribute() is called (delta\_immediate) or when the HTTP request has completed processing (delta\_queued). If the latter mode is configured, all attribute updates for a particular request are 'batched' and multiple updates to the same attribute are collapsed. Depending on the number of attributes updates within a given request, delta\_queued may provide a significant performance gain. For complete session attribute integrity across the cache, delta\_immediate is recommended. Note that this option is specific to this module and there is no equivalent Geode API to enable it.
+Delta replication can be configured to occur immediately when HttpSession.setAttribute() is called (delta\_immediate) or when the HTTP request has completed processing (delta\_queued). If the latter mode is configured, all attribute updates for a particular request are 'batched' and multiple updates to the same attribute are collapsed. Depending on the number of attributes updates within a given request, delta\_queued may provide a significant performance gain. For complete session attribute integrity across the cache, delta\_immediate is recommended. Note that this option is specific to this module and there is no equivalent @@product_name@@ API to enable it.
 
--   **[Common Geode Configuration Changes for AppServers](weblogic_common_configuration_changes.html)**
-
-
-
+-   **[Common @@product_name@@ Configuration Changes for AppServers](weblogic_common_configuration_changes.html)**

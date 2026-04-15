@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-By default, Windowsâ€™ ephemeral ports are within the range 1024-4999, inclusive. You can increase the range.
+By default, Windows’ ephemeral ports are within the range 1024-4999, inclusive. You can increase the range.
 
 <a id="socket_comm__section_F535D5D99206498DBBD5A6CC3230F25B"></a>
 If you are repeatedly receiving the following exception:
@@ -59,6 +59,3 @@ Unix systems have a default maximum socket buffer size for receiving UDP multica
 transmissions that is lower than the default settings for `mcast-recv-buffer-size` and
 `udp-recv-buffer-size`. To achieve high-volume multicast messaging, you should increase the maximum
 Unix buffer size to at least one megabyte.
-
-
-

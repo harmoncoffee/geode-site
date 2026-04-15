@@ -24,14 +24,10 @@ limitations under the License.
 
 Any security-related (properties that begin with `security-*`) configuration properties that are normally configured in `gemfire.properties` can be moved to a separate `gfsecurity.properties` file. Placing these configuration settings in a separate file allows you to restrict access to security configuration data. This way, you can still allow read or write access for your `gemfire.properties` file.
 
-Upon startup, Geode processes will look for the `gfsecurity.properties` file in the following locations in order:
+Upon startup, @@product_name@@ processes will look for the `gfsecurity.properties` file in the following locations in order:
 
 -   current working directory
 -   user's home directory
 -   classpath
 
 If any password-related security properties are listed in the file but have a blank value, the process will prompt the user to enter a password upon startup.
-
-
-
-

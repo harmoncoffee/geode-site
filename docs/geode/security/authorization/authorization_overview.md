@@ -34,4 +34,3 @@ the various cluster components.
 -   **[Authorization Examples](authorization_example.html)**
 
     This topic discusses the authorization examples provided in the product under `geode-core/src/main/java/org/apache/geode/examples/security`.
-

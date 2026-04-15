@@ -349,6 +349,3 @@ destroy region --name=/region1/subregion1
 gfsh>destroy region --name=region1
 "region1"  destroyed successfully.
 ```
-
-
-

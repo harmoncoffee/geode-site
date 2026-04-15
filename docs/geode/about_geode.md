@@ -26,14 +26,4 @@ This documentation describes product concepts and provides complete setup instru
 Source files are available from the [Apache Geode Github repository](https://github.com/apache/geode/tree/develop/geode-docs) 
 and instructions on how to build this documentation are available in the [Geode project README file](https://github.com/apache/geode/blob/develop/geode-book/README.md).
 
-You can also find additional documentation about Geode on the [Apache Geode Wiki](https://cwiki.apache.org/confluence/display/GEODE/Index).
-
-Test: @@min_java_version@@
-
-Test: @@min_java_update@@
-
-Test: @@product_version@@
-
-Test: @@product_version_old_minor@@
-
-Test: @@product_version_geode@@
+You can also find additional documentation about Geode on the [Apache Geode Wiki](https://cwiki.apache.org/confluence/display/GEODE/Index).~~~~

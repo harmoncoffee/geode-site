@@ -49,6 +49,3 @@ For example:
     ``` pre
     gfsh>create region --name="PR1" --type=PARTITION --redundant-copies=1
     ```
-
-
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Tutorial - Performing Common Tasks with gfsh
 sidebar_label: Tutorial - Performing Common Tasks with gfsh
 sidebar_position: 7
@@ -41,7 +41,7 @@ $ gfsh
  / /__/ / ____/  _____/ / /    / /
 /______/_/      /______/_/    /_/
 
-Monitor and Manage Geode 
+Monitor and Manage @@product_name@@
 gfsh>
 ```
 
@@ -62,8 +62,8 @@ Locator in /home/username/gfsh_tutorial/locator1 on 192.0.2.0[10334]
 as locator1 is currently online.
 Process ID: 67666
 Uptime: 6 seconds
- Version: 
-Java Version: @@min_java_update@@.0.@@product_version@@
+@@product_name@@ Version: @@product_version@@
+Java Version: @@min_java_version@@.0.@@min_java_update@@
 Log File: /home/username/gfsh_tutorial/locator1.log
 JVM Arguments: -Dgemfire.enable-cluster-configuration=true
  -Dgemfire.load-cluster-configuration-from-dir=false
@@ -178,14 +178,14 @@ If the server starts successfully, the following output appears:
 
 ``` pre
 gfsh>start server --name=server1 --locators=localhost[10334]
-Starting a Geode Server in /home/username/gfsh_tutorial/server1/server1.log...
+Starting a @@product_name@@ Server in /home/username/gfsh_tutorial/server1/server1.log...
 ...
 Server in /home/username/gfsh_tutorial/server1 on 192.0.2.0[40404] as server1
 is currently online.
 Process ID: 49601
 Uptime: 2 seconds
- Version: 
-Java Version: @@min_java_update@@.0.@@product_version@@
+@@product_name@@ Version: @@product_version@@
+Java Version: @@min_java_version@@.0.@@min_java_update@@
 Log File: /home/username/gfsh_tutorial/server1/server1.log
 JVM Arguments: -Dgemfire.enable-cluster-configuration=true
 Class-Path: /home/username/geode/geode-assembly/build/install/apache-geode/lib
@@ -290,14 +290,14 @@ Because only one server is in the cluster at the moment, the command creates the
 
 ``` pre
 gfsh>start server --name=server2 --server-port=40405
-Starting a Geode Server in /home/username/gfsh_tutorial/server2...
+Starting a @@product_name@@ Server in /home/username/gfsh_tutorial/server2...
 ...
 Server in /home/username/gfsh_tutorial/server2 on 192.0.2.0[40405] as
 server2 is currently online.
 Process ID: 68423
 Uptime: 4 seconds
- Version: 
-Java Version: @@min_java_update@@.0.@@product_version@@
+@@product_name@@ Version: @@product_version@@
+Java Version: @@min_java_version@@.0.@@min_java_update@@
 Log File: /home/username/gfsh_tutorial/server2/server2.log
 JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334]
  -Dgemfire.use-cluster-configuration=true -Dgemfire.start-dev-rest-api=false
@@ -489,4 +489,3 @@ You can later use the `import data` command to import that data into the same re
 ``` pre
 gfsh>shutdown --include-locators=true
 ```
-

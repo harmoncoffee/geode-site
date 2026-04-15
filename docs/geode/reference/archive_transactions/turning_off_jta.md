@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Turning Off JTA Transactions
 sidebar_label: Turning Off JTA Transactions
 sidebar_position: 3
@@ -38,6 +38,3 @@ cache.xml:
 API:
 
 Using the API, you can turn off JTA transactions using `RegionFactory` and its method `setIgnoreJTA(boolean)`. The current setting for a region can be fetched from a region's `RegionAttributes` by using the `getIgnoreJTA` method.
-
-
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title:  PUT /geode/v1/{region}/{key}?op=REPLACE
 sidebar_label: PUT /geode/v1/{region}/{key}?op=REPLACE
 sidebar_position: 10
@@ -82,5 +82,4 @@ Response Payload: null
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | 400 BAD REQUEST           | Returned if the supplied key is not present in the region.                                                                       |
 | 404 NOT FOUND             | Returned if the region is not found.                                                                                             |
-| 500 INTERNAL SERVER ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
-
+| 500 INTERNAL SERVER ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |

@@ -30,4 +30,3 @@ See the section on  [Security](../../security/chapter_overview.html)
 for details.
 For authentication, see 
 [Implementing Authentication](../../security/implementing_authentication.html).
-

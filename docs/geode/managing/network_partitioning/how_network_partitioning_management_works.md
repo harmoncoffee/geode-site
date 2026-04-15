@@ -19,14 +19,16 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode handles network outages by using a weighting system to determine whether the remaining available members have a sufficient quorum to continue as a cluster.
+-->
+
+@@product_name@@ handles network outages by using a weighting system to determine whether the remaining available members have a sufficient quorum to continue as a cluster.
 
 <a id="how_network_partitioning_management_works__section_548146BB8C24412CB7B43E6640272882"></a>
 Individual members are each assigned a weight, and the quorum is determined by comparing the total weight of currently responsive members to the previous total weight of responsive members.
 
 Your cluster can split into separate running systems when members lose the ability to see each other. The typical cause of this problem is a failure in the network. When a partitioned system is detected, only one side of the system keeps running and the other side automatically shuts down.
 
-The network partitioning detection feature is enabled by default with a true value for the `enable-network-partition-detection` property. See [Configure Apache Geode to Handle Network Partitioning](handling_network_partitioning.html#handling_network_partitioning) for details. Quorum weight calculations are always performed and logged regardless of this configuration setting.
+The network partitioning detection feature is enabled by default with a true value for the `enable-network-partition-detection` property. See [Configure @@product_name_long@@ to Handle Network Partitioning](handling_network_partitioning.html#handling_network_partitioning) for details. Quorum weight calculations are always performed and logged regardless of this configuration setting.
 
 The overall process for detecting a network partition is as follows:
 
@@ -63,6 +65,3 @@ The overall process for detecting a network partition is as follows:
 6.  With a default value of `enable-network-partition-detection`, any member that detects a loss of quorum declares a network partition event. A loss of quorum happens when half or more of the member weight is lost in a single view change. In that case, the coordinator sends a network-partitioned-detected UDP message to all members (even to the non-responsive ones) and then closes the cluster with a `ForcedDisconnectException`. If a member fails to receive the message before the coordinator closes the system, the member is responsible for detecting the event on its own.
 
 The presumption is that when a network partition is declared, the members that comprise a quorum will continue operations. The surviving members elect a new coordinator, designate a lead member, and so on.
-
-
-

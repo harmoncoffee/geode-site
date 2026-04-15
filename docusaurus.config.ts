@@ -62,7 +62,7 @@ const config: Config = {
               routeBasePath: 'docs',
               sidebarPath: require.resolve('./sidebars.geode.ts'),
               editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
-              remarkPlugins: [
+              beforeDefaultRemarkPlugins: [
                   [replaceDocVars, {pluginId: 'default', valuesByVersion: geodeVars}],
               ]
           },
@@ -99,9 +99,9 @@ const config: Config = {
                 editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
                 showLastUpdateTime: true,
                 showLastUpdateAuthor: true,
-                remarkPlugins: [
-                    [replaceDocVars, {pluginId: 'geode_native_cpp', valuesByVersion: cppVars}],
-                ],
+                beforeDefaultRemarkPlugins: [
+                    [replaceDocVars, {pluginId: 'default', valuesByVersion: geodeVars}],
+                ]
             },
         ],
         [
@@ -114,9 +114,9 @@ const config: Config = {
                 editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
                 showLastUpdateTime: true,
                 showLastUpdateAuthor: true,
-                remarkPlugins: [
-                    [replaceDocVars, {pluginId: 'geode_native_dotnet', valuesByVersion: dotnetVars}],
-                ],
+                beforeDefaultRemarkPlugins: [
+                    [replaceDocVars, {pluginId: 'default', valuesByVersion: geodeVars}],
+                ]
             },
         ],
     ],

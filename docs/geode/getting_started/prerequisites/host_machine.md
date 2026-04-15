@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Host Machine Requirements
 ---
 
@@ -19,21 +19,21 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Host machines must meet a set of requirements for Apache Geode.
+Host machines must meet a set of requirements for @@product_name_long@@.
 
 <a id="system_requirements__section_1E1F206FBC8B4A898A449E0699907A7A"></a>
-Each machine that will run Apache Geode must meet the following requirements:
+Each machine that will run @@product_name_long@@ must meet the following requirements:
 
 -   Java SE Development Kit @@min_java_version@@ with update @@min_java_update@@ or a more recent version @@min_java_version@@ update.  The same versions are supported with OpenJDK.
 -   A system clock set to the correct time and a time synchronization service such as Network Time Protocol (NTP). Correct time stamps permit the following activities:
     -   Logs that are useful for troubleshooting. Synchronized time stamps ensure that log messages from different hosts can be merged to reproduce an accurate chronological history of a distributed run.
-    -   Aggregate product-level and application-level time statistics.Â 
+    -   Aggregate product-level and application-level time statistics. 
     -   Accurate monitoring of the Geode system with scripts and other tools that read the system statistics and log files.
 -   The host name and host files are properly configured for the machine. The host name and host file configuration can affect `gfsh` and Pulse functionality.
 -   Disable TCP SYN cookies. Most default Linux installations use SYN cookies to protect the 
 system against malicious attacks that flood TCP SYN packets, but this feature 
-is not compatible with stable and busy Geode clusters. 
-Security implementations should instead seek to prevent attacks by placing Geode 
+is not compatible with stable and busy @@product_name@@ clusters. 
+Security implementations should instead seek to prevent attacks by placing @@product_name@@ 
 server clusters behind advanced firewall protection.
 
     To disable SYN cookies permanently:
@@ -50,4 +50,3 @@ server clusters behind advanced firewall protection.
         ```
 
     See [Disabling TCP SYN Cookies](../../managing/monitor_tune/disabling_tcp_syn_cookies.html) for details.
-

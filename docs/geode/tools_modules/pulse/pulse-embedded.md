@@ -1,4 +1,4 @@
-﻿---
+---
 title: Running Pulse in Embedded Mode (Quick Start)
 sidebar_label: Running Pulse in Embedded Mode (Quick Start)
 sidebar_position: 2
@@ -21,15 +21,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Use Pulse in embedded mode to monitor a Geode deployment directly from a Geode JMX Manager. By
+Use Pulse in embedded mode to monitor a @@product_name@@ deployment directly from a @@product_name@@ JMX Manager. By
 default, the embedded Pulse application connects to the local JMX Manager that hosts the Pulse
-application. Optionally, configure Pulse to connect to a Geode system of your choice.
+application. Optionally, configure Pulse to connect to a @@product_name@@ system of your choice.
 
 To run Pulse in embedded mode:
 
-1.  Configure a Geode member to run as a JMX Manager node, specifying the HTTP port on which you
+1.  Configure a @@product_name@@ member to run as a JMX Manager node, specifying the HTTP port on which you
 will access the Pulse Web application (port 7070 by default). For example, the following command
-starts a Geode locator as a JMX Manager node, using the default HTTP port 7070 for the Pulse
+starts a @@product_name@@ locator as a JMX Manager node, using the default HTTP port 7070 for the Pulse
 application:
 
     ``` pre
@@ -37,8 +37,8 @@ application:
     gfsh> start locator --name=loc1
     ```
 
-    **Note:** Geode 
-     locators become JMX Manager nodes by default. To start a non-locator member as a JMX
+    **Note:**
+    @@product_name@@ locators become JMX Manager nodes by default. To start a non-locator member as a JMX
     Manager node, include the `--J=-Dgemfire.jmx-manager=true` option. To specify a non-default port
     number for the HTTP service that hosts the Pulse application, include the
     `--J=-Dgemfire.http-service-port=port_number` option when starting the JMX Manager node.
@@ -50,7 +50,7 @@ application:
     started a manager process earlier, use the `connect` command in `gfsh` to connect to that
     process.
 
-2.  Access the embedded Pulse application from a Web browser. If you are connected to the Geode 
+2.  Access the embedded Pulse application from a Web browser. If you are connected to the @@product_name@@
 cluster using gfsh, use the `start pulse` command to load the correct URL in your browser:
 
     ``` pre
@@ -75,5 +75,3 @@ When running in embedded mode, the Pulse application connects only to the JMX Ma
 locator or member that hosts Pulse. This enables you to monitor all members of that
 cluster. You can also view (but not monitor) connected WAN clusters, and can view gateway senders and
 receivers that are configured in the local cluster.
-
-

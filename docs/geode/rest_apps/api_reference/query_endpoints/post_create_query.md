@@ -1,4 +1,4 @@
-﻿---
+---
 title:  POST /geode/v1/queries?id=<queryId>&q=<OQL-statement>
 sidebar_label: POST /geode/v1/queries?id=<queryId>&q=<OQL-statement>
 sidebar_position: 2

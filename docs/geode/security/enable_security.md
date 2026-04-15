@@ -111,4 +111,3 @@ For example,
 ``` pre
 security-post-processor = com.example.security.MySecurityPostProcessing
 ```
-

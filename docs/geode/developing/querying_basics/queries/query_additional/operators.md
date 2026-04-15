@@ -18,7 +18,9 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode supports comparison, logical, unary, arithmetic, map, index, dot, and right arrow operators.
+-->
+
+@@product_name@@ supports comparison, logical, unary, arithmetic, map, index, dot, and right arrow operators.
 
 ## <a id="operators__section_A3FB372F85D840D7A49CB95BD7FCA7C6" class="no-quick-link"></a>Comparison Operators
 
@@ -28,7 +30,7 @@ The following are supported comparison operators:
 
 | Operator | Meaning                  |
 |----------|--------------------------|
-| &lt;     | less than  Â              |
+| &lt;     | less than                |
 | &lt;=    | less than or equal to    |
 | &gt;     | greater than             |
 | &gt;=    | greater than or equal to |
@@ -50,7 +52,7 @@ The logical operators AND and OR allow you to create more complex expressions by
 
 ## <a id="operators__section_A970AE75B0D24E0B9E1B61BE2D9842D8" class="no-quick-link"></a>Unary Operators
 
-Unary operators operate on a single value or expression, and have lower precedence than comparison operators in expressions. Geode supports the unary operator NOT. NOT is the negation operator, which changes the value of the operand to its opposite. For example, if an expression evaluates to TRUE, NOT changes it to FALSE. The operand must be a boolean.
+Unary operators operate on a single value or expression, and have lower precedence than comparison operators in expressions. @@product_name@@ supports the unary operator NOT. NOT is the negation operator, which changes the value of the operand to its opposite. For example, if an expression evaluates to TRUE, NOT changes it to FALSE. The operand must be a boolean.
 
 ## <a id="operators_arithmetic_OQL" class="no-quick-link"></a>Arithmetic Operators
 
@@ -82,4 +84,3 @@ Map and region values are accessed by key using the same syntax. The key can be 
 ## <a id="operators__section_6C0BB787B2324B85AA02AA19D4822A83" class="no-quick-link"></a>Dot, Right Arrow, and Forward Slash Operators
 
 The dot operator (`.`) separates attribute names in a path expression, and specifies the navigation through object attributes. An alternate equivalent to the dot is the right arrow, (`->`). The forward slash is used to separate region names when navigating into subregions.
-

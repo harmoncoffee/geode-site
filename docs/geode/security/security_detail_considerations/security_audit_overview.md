@@ -23,16 +23,16 @@ limitations under the License.
 
 This section gathers discrete details in one convenient location to better help you assess and configure the security of your environment.
 
--   **[External Interfaces, Ports, and Services](security-audit.html)** Geode     processes use either UDP or TCP/IP ports to communicate with other processes or clients.
+-   **[External Interfaces, Ports, and Services](security-audit.html)**
+
+    @@product_name@@ processes use either UDP or TCP/IP ports to communicate with other processes or clients.
 
 -   **[Resources That Must Be Protected](security-audit.html#topic_263072624B8D4CDBAD18B82E07AA44B6)**
 
-    Certain Geode configuration files should be readable and writeable *only* by the dedicated user who runs servers.
+    Certain @@product_name@@ configuration files should be readable and writeable *only* by the dedicated user who runs servers.
 
 -   **[Log File Locations](security-audit.html#topic_5B6DF783A14241399DC25C6EE8D0048A)**
 
     By default, the log files are located in the working directory used when you started the corresponding processes.
 
 -   **[Where to Place Security Configuration Settings](properties_file.html)**
-
-

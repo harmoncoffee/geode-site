@@ -46,13 +46,13 @@ Change all packages that start with "com.gemstone" to "com.pivotal":
 gfsh>pdx rename --old=com.gemstone --new=com.pivotal --disk-store=ds1 --disk-dirs=/diskDir1
 ```
 
-Change a class named â€œMyClassNameâ€ to â€œYourClassNameâ€:
+Change a class named “MyClassName” to “YourClassName”:
 
 ``` pre
 gfsh>pdx rename --old=MyClassName --new=YourClassName --disk-store=ds1 --disk-dirs=/diskDir1
 ```
 
-Change the FQCN â€œcom.target.app1.OldClassâ€ to â€œcom.target.app2.NewClassâ€:
+Change the FQCN “com.target.app1.OldClass” to “com.target.app2.NewClass”:
 
 ``` pre
 gfsh>pdx rename --old=com.target.app1.OldClass --new=com.target.app2.NewClass --disk-store=ds1 --disk-dirs=/diskDir1
@@ -86,6 +86,3 @@ closingGatewayHubsByShutdownAll = false; created = Wed Jan 07 10:29:45 PST 2015;
 server = false; copyOnRead = false; lockLease = 120; lockTimeout = 60]: An open cache
 already exists.
 ```
-
-
-

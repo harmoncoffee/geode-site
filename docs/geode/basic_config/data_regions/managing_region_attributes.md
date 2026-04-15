@@ -79,7 +79,7 @@ Create region attributes using any of these methods:
 
 ## <a id="managing_region_attributes__section_F69A7664F72D47BBA463D81B72C03B4D" class="no-quick-link"></a>Modify Region Attributes
 
-You can modify a regionâ€™s event handlers and expiration and eviction attributes after the region is created.
+You can modify a region’s event handlers and expiration and eviction attributes after the region is created.
 
 **Note:**
 Do not modify attributes for existing regions unless absolutely necessary. Creating the attributes you need at region creation is more efficient.
@@ -112,5 +112,3 @@ Modify attributes in one of these ways:
     ```
 
 -   By issuing the gfsh `alter region` command. See [alter region](../../tools_modules/gfsh/command-pages/alter.html#topic_E74ED23CB60342538B2175C326E7D758).
-
-

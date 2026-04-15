@@ -1,4 +1,4 @@
-﻿---
+---
 title:  DELETE /geode/v1/queries/queryId
 sidebar_label: DELETE /geode/v1/queries/queryId
 sidebar_position: 5
@@ -60,6 +60,3 @@ Response Payload: application/json
 | 403 FORBIDDEN             | Insufficient privileges for operation                                                         |
 | 404 NOT FOUND             | Query with specified ID could not be found                                                    |
 | 500 INTERNAL SERVER ERROR | Encountered error at server. Check the HTTP response body for a stack trace of the exception. |
-
-
-

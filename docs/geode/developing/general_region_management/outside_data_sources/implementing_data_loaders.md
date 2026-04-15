@@ -189,5 +189,3 @@ RegionFactory<String,Object> rf = cache.createRegionFactory(REPLICATE);
 rf.setCacheLoader(new QuoteLoader());
 quotes = rf.create("NASDAQ-Quotes");
 ```
-
-

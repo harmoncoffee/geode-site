@@ -23,7 +23,7 @@ limitations under the License.
 
 The safest response to a network outage is to restart all the processes and bring up a fresh data set.
 
-However, if you know the architecture of your system well, and you are sure you wonâ€™t be resurrecting old data, you can do a selective restart. At the very least, you must restart all the members on one side of the network failure, because a network outage causes separate clusters that canâ€™t rejoin automatically.
+However, if you know the architecture of your system well, and you are sure you won’t be resurrecting old data, you can do a selective restart. At the very least, you must restart all the members on one side of the network failure, because a network outage causes separate clusters that can’t rejoin automatically.
 
 ## <a id="rec_network_crash__section_900657018DC048EE9BE6A8064FAE48FD" class="no-quick-link"></a>What Happens During a Network Outage
 
@@ -45,11 +45,11 @@ The members recreate the data as they return to active work. For details, see [R
 
 Both sides of the cluster continue to run as though the members on the other side were not running. If the members that participate in a partitioned region are on both sides of the network failure, both sides of the partitioned region also continue to run as though the data stores on the other side did not exist. In effect, you now have two partitioned regions.
 
-When the network recovers, the members may be able to see each other again, but they are not able to merge back together into a single cluster and combine their buckets back into a single partitioned region. You can be sure that the data is in an inconsistent state. Whether you are configured for data redundancy or not, you donâ€™t really know what data was lost and what wasnâ€™t. Even if you have redundant copies and they survived, different copies of an entry may have different values reflecting the interrupted workflow and inaccessible data.
+When the network recovers, the members may be able to see each other again, but they are not able to merge back together into a single cluster and combine their buckets back into a single partitioned region. You can be sure that the data is in an inconsistent state. Whether you are configured for data redundancy or not, you don’t really know what data was lost and what wasn’t. Even if you have redundant copies and they survived, different copies of an entry may have different values reflecting the interrupted workflow and inaccessible data.
 
 ## <a id="rec_network_crash__section_7AD5624F3CD748C0BC163562B26B2DCE" class="no-quick-link"></a>Effect of Network Failure on Distributed Regions
 
-By default, both sides of the cluster continue to run as though the members on the other side were not running. For distributed regions, however, the regions's reliability policy configuration can change this default behavior.
+By default, both sides of the cluster continue to run as though the members on the other side were not running. For distributed regions, however, the regions’s reliability policy configuration can change this default behavior.
 
 When the network recovers, the members may be able to see each other again, but they are not able to merge back together into a single cluster.
 
@@ -66,4 +66,3 @@ For information on how to recover from `ConflictingPersistentDataException` erro
 If a client loses contact with all of its servers, the effect is the same as if it had crashed. You need to restart the client. See [Recovering from Client Failure](recovering_from_cs_crashes.html#rec_app_cs_crash__section_24B1898202E64C1E808C59E39417891B). If a client loses contact with some servers, but not all of them, the effect on the client is the same as if the unreachable servers had crashed. See [Recovering from Server Failure](recovering_from_cs_crashes.html#rec_app_cs_crash__section_2A598C85FAD44CDEA605646BF7BEE388).
 
 Servers, like applications, are members of a cluster, so the effect of network failure on a server is the same as for an application. Exactly what happens depends on the configuration of your site.
-

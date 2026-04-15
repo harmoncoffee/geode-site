@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Maintaining Indexes (Synchronously or Asynchronously) and Index Storage
 sidebar_label:  Maintaining Indexes (Synchronously or Asynchronously) and Index Storage
 sidebar_position: 7
@@ -54,7 +54,7 @@ Flight {
 }
 ```
 
-An index on the Passenger name field will have different memory space requirements in the cache than the Flight origin field even though they are both String field types. The internal data structure selected by Geode for index storage will depend on the field's level in the object. In this example, name is a top-level field and an index on name can be stored as a compact index. Since origin is a second-level field, any index that uses origin as the indexed expression will be stored as a non-compact index.
+An index on the Passenger name field will have different memory space requirements in the cache than the Flight origin field even though they are both String field types. The internal data structure selected by @@product_name@@ for index storage will depend on the field's level in the object. In this example, name is a top-level field and an index on name can be stored as a compact index. Since origin is a second-level field, any index that uses origin as the indexed expression will be stored as a non-compact index.
 
 **Compact Index**
 
@@ -69,4 +69,3 @@ Currently compact indexes are only selected only supports the creation of an ind
 **Non-Compact Index**
 
 Used whenever a compact index cannot be used.
-

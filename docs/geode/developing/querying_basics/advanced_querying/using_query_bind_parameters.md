@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Using Query Bind Parameters
 sidebar_label: Using Query Bind Parameters
 sidebar_position: 4
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Using query bind parameters in Geode queries is similar to using prepared statements in SQL where parameters can be set during query execution. This allows user to build a query once and execute it multiple times by passing the query conditions during run time.
+Using query bind parameters in @@product_name@@ queries is similar to using prepared statements in SQL where parameters can be set during query execution. This allows user to build a query once and execute it multiple times by passing the query conditions during run time.
 
 Query objects are thread-safe.
 
@@ -73,4 +73,3 @@ Get all the keys from the region passed as a Region object for $1 for those entr
 ``` pre
 SELECT e.key FROM ($1).entrySet e WHERE e.value.name=$2"
 ```
-

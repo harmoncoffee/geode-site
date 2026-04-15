@@ -59,6 +59,3 @@ drwx------.  6 username username  4096 Sep  3 15:09 SampleCode
 drwx------.  4 username username  4096 Sep  3 15:09 templates
 drwx------.  5 username username  4096 Sep  3 15:09 tools
 ```
-
-
-

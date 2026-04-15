@@ -21,9 +21,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-You can browse all the Geode MBeans in your cluster by using JConsole.
+You can browse all the @@product_name@@ MBeans in your cluster by using JConsole.
 
-To view Geode MBeans through JConsole, perform the following steps:
+To view @@product_name@@ MBeans through JConsole, perform the following steps:
 
 1.  Start a `gfsh` prompt.
 2.  Connect to a running cluster by either connecting to a locator with an embedded JMX Manager or connect directly to a JMX Manager. For example:
@@ -48,9 +48,6 @@ To view Geode MBeans through JConsole, perform the following steps:
 
 4.  On the JConsole screen, click on the MBeans tab. Expand **GemFire**. Then expand each MBean to browse individual MBean attributes, operations and notifications.
 
-    The following is an example screenshot of the MBean hierarchy in a Geode cluster:
+    The following is an example screenshot of the MBean hierarchy in a @@product_name@@ cluster:
 
     <img src="../../images/jconsole_mbeans.png" id="concept_492532E145834248997BD23BCAC7AD45__image_7A45BE69B67A44A7A8AD40343A2B0AEB" class="image" />
-
-
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Monitoring Low Memory When Querying
 sidebar_label: Monitoring Low Memory When Querying
 sidebar_position: 2
@@ -50,6 +50,3 @@ an `InvalidIndexException` with the message indicating the reason.
 Partitioned region queries are likely causes for out-of-memory exceptions. If query monitoring is enabled, partitioned region queries drop or ignore results that are being gathered by other servers if the executing server is low in memory.
 
 Query-monitoring does not address a scenario in which a low-level collection is expanded while the partitioned region query is gathering results. For example, if a row is added and then causes a Java level collection or array to expand, it is possible to then encounter an out-of-memory exception. This scenario is rare and is only possible if the collection size itself expands before a low memory condition is met and then expands beyond the remaining available memory. As a workaround, in the event that you encounter this situation, you may be able to tune the system by additionally lowering the `critical-heap-percentage`.
-
-
-

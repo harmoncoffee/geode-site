@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Tutorial Creating and Using a Cluster Configuration
 sidebar_label: Tutorial Creating and Using a Cluster Configuration
 sidebar_position: 2
@@ -21,11 +21,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-A short walk-through that uses a single computer to demonstrate how to use `gfsh` to create a cluster configuration for a Geode cluster.
+A short walk-through that uses a single computer to demonstrate how to use `gfsh` to create a cluster configuration for a @@product_name@@ cluster.
 
-The `gfsh` command-line tool allows you to configure and start a Geode cluster. The cluster configuration service uses Apache Geode locators to store the configuration at the group and cluster levels and serves these configurations to new members as they are started. The locators store the configurations in a hidden region that is available to all locators and also write the configuration data to disk as XML files. Configuration data is updated as `gfsh` commands are executed.
+The `gfsh` command-line tool allows you to configure and start a @@product_name@@ cluster. The cluster configuration service uses @@product_name_long@@ locators to store the configuration at the group and cluster levels and serves these configurations to new members as they are started. The locators store the configurations in a hidden region that is available to all locators and also write the configuration data to disk as XML files. Configuration data is updated as `gfsh` commands are executed.
 
-This section provides a walk-through example of configuring a simple Apache Geode cluster and then re-using that configuration in a new context.
+This section provides a walk-through example of configuring a simple @@product_name_long@@ cluster and then re-using that configuration in a new context.
 
 1.  Create a working directory (For example:`/home/username/my_geode`) and switch to the new directory. This directory will contain the configurations for your cluster.
 
@@ -42,9 +42,9 @@ This section provides a walk-through example of configuring a simple Apache Geod
        / _____/ ______/ ______/ /____/ /
       / /  __/ /___  /_____  / _____  /
      / /__/ / ____/  _____/ / /    / /
-    /______/_/      /______/_/    /_/    
+    /______/_/      /______/_/    /_/    @@product_version@@
 
-    Monitor and Manage Apache Geode 
+    Monitor and Manage @@product_name_long@@
     gfsh>
 
     ```
@@ -53,14 +53,14 @@ This section provides a walk-through example of configuring a simple Apache Geod
 
     ``` pre
     gfsh>start locator --name=locator1
-    Starting a Geode Locator in /Users/username/my_geode/locator1...
+    Starting a @@product_name@@ Locator in /Users/username/my_geode/locator1...
     .............................
     Locator in /Users/username/my_geode/locator1 on 192.0.2.0[10334] as locator1
       is currently online.
     Process ID: 70919
     Uptime: 12 seconds
-     Version: 
-    Java Version: @@min_java_update@@.0.@@product_version@@
+    @@product_name@@ Version: @@product_version@@
+    Java Version: @@min_java_version@@.0.@@min_java_update@@
     Log File: /Users/username/my_geode/locator1/locator1.log
     JVM Arguments: -Dgemfire.enable-cluster-configuration=true
     -Dgemfire.load-cluster-configuration-from-dir=false
@@ -75,18 +75,18 @@ This section provides a walk-through example of configuring a simple Apache Geod
 
     Note that `gfsh` responds with a message indicating that the cluster configuration service is up and running. If you see a message indicating a problem, review the locator log file for possible errors. The path to the log file is displayed in the output from `gfsh`.
 
-4.  Start Apache Geode servers using the commands in the following example:
+4.  Start @@product_name_long@@ servers using the commands in the following example:
 
     ``` pre
     gfsh>start server --name=server1 --groups=group1
-    Starting a Geode Server in /Users/username/my_geode/server1...
+    Starting a @@product_name@@ Server in /Users/username/my_geode/server1...
     .....
-    Geode Server in /Users/username/my_geode/server1 on 192.0.2.0[40404] as server1
+    Server in /Users/username/my_geode/server1 on 192.0.2.0[40404] as server1
       is currently online.
     Process ID: 5627
     Uptime: 2 seconds
-     Version: 
-    Java Version: @@min_java_update@@.0.@@product_version@@
+    @@product_name@@ Version: @@product_version@@
+    Java Version: @@min_java_version@@.0.@@min_java_update@@
     Log File: /Users/username/my_geode/server1/server1.log
 
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334] -Dgemfire.groups=group1
@@ -95,14 +95,14 @@ This section provides a walk-through example of configuring a simple Apache Geod
     Class-Path: /Users/username/geode@@product_version_nodot@@/lib/geode-dependencies.jar
 
     gfsh>start server --name=server2 --groups=group1 --server-port=40405
-    Starting a Geode Server in /Users/username/my_geode/server2...
+    Starting a @@product_name@@ Server in /Users/username/my_geode/server2...
     .....
-    Geode Server in /Users/username/my_geode/server2 on 192.0.2.0[40405] as server2
+    Server in /Users/username/my_geode/server2 on 192.0.2.0[40405] as server2
       is currently online.
     Process ID: 5634
     Uptime: 2 seconds
-     Version: 
-    Java Version: @@min_java_update@@.0.@@product_version@@
+    @@product_name@@ Version: @@product_version@@
+    Java Version: @@min_java_version@@.0.@@min_java_update@@
     Log File: /Users/username/my_geode/server2/server2.log
 
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334] -Dgemfire.groups=group1
@@ -112,14 +112,14 @@ This section provides a walk-through example of configuring a simple Apache Geod
     Class-Path: /Users/username/geode@@product_version_nodot@@/lib/geode-dependencies.jar
 
     gfsh>start server --name=server3 --server-port=40406
-    Starting a Geode Server in /Users/username/my_geode/server3...
+    Starting a @@product_name@@ Server in /Users/username/my_geode/server3...
     .....
-    Geode Server in /Users/username/my_geode/server3 on 192.0.2.0[40406] as server3
+    Server in /Users/username/my_geode/server3 on 192.0.2.0[40406] as server3
       is currently online.
     Process ID: 5637
     Uptime: 2 seconds
-     Version: 
-    Java Version: @@min_java_update@@.0.@@product_version@@
+    @@product_name@@ Version: @@product_version@@
+    Java Version: @@min_java_version@@.0.@@min_java_update@@
     Log File: /Users/username/my_geode/server3/server3.log
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334]
     -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true
@@ -193,7 +193,9 @@ This section provides a walk-through example of configuring a simple Apache Geod
 
     ``` pre
     gfsh>export cluster-configuration --zip-file-name=/Users/username/myClConfig.zip
-    ``` Apache Geode     writes the cluster configuration to the specified zip file.
+    ```
+
+    @@product_name_long@@ writes the cluster configuration to the specified zip file.
 
     ``` pre
     File saved to /Users/username/myClConfig.zip
@@ -232,14 +234,14 @@ This section provides a walk-through example of configuring a simple Apache Geod
 
     ``` pre
     gfsh>start locator --name=locator2 --port=10335
-    Starting a Geode Locator in /Users/username/new_geode/locator2...
+    Starting a @@product_name@@ Locator in /Users/username/new_geode/locator2...
     .............................
-    Geode Locator in /Users/username/new_geode/locator2 on 192.0.2.0[10335] as locator2
+    Locator in /Users/username/new_geode/locator2 on 192.0.2.0[10335] as locator2
       is currently online.
     Process ID: 5749
     Uptime: 15 seconds
-     Version: 
-    Java Version: @@min_java_update@@.0.@@product_version@@
+    @@product_name@@ Version: @@product_version@@
+    Java Version: @@min_java_version@@.0.@@min_java_update@@
     Log File: /Users/username/new_geode/locator2/locator2.log
 
     JVM Arguments: -Dgemfire.enable-cluster-configuration=true
@@ -269,14 +271,14 @@ This section provides a walk-through example of configuring a simple Apache Geod
 
     ``` pre
     gfsh>start server --name=server4 --server-port=40414
-    Starting a Geode Server in /Users/username/new_geode/server4...
+    Starting a @@product_name@@ Server in /Users/username/new_geode/server4...
     ........
-    Geode Server in /Users/username/new_geode/server4 on 192.0.2.0[40414] as server4
+    Server in /Users/username/new_geode/server4 on 192.0.2.0[40414] as server4
     is currently online.
     Process ID: 5813
     Uptime: 4 seconds
-     Version: 
-    Java Version: @@min_java_update@@.0.@@product_version@@
+    @@product_name@@ Version: @@product_version@@
+    Java Version: @@min_java_version@@.0.@@min_java_update@@
     Log File: /Users/username/new_geode/server4/server4.log
 
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10335]
@@ -290,14 +292,14 @@ This section provides a walk-through example of configuring a simple Apache Geod
 
     ``` pre
     gfsh>start server --name=server5 --groups=group1 --server-port=40415
-    Starting a Geode Server in /Users/username/new_geode/server5...
+    Starting a @@product_name@@ Server in /Users/username/new_geode/server5...
     .....
-    Geode Server in /Users/username/new_geode/server2 on 192.0.2.0[40415] as server5
+    Server in /Users/username/new_geode/server2 on 192.0.2.0[40415] as server5
     is currently online.
     Process ID: 5954
     Uptime: 2 seconds
-     Version: 
-    Java Version: @@min_java_update@@.0.@@product_version@@
+    @@product_name@@ Version: @@product_version@@
+    Java Version: @@min_java_version@@.0.@@min_java_update@@
     Log File: /Users/username/new_geode/server5/server5.log
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10335] -Dgemfire.groups=group1
     -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true
@@ -365,4 +367,3 @@ This section provides a walk-through example of configuring a simple Apache Geod
     gfsh>
     No longer connected to 192.0.2.0[1099].
     ```
-

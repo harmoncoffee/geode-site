@@ -34,6 +34,3 @@ or
 ``` pre
 SELECT * FROM /exampleRegion WHERE foo.toLowerCase LIKE '%bar%'
 ```
-
-
-

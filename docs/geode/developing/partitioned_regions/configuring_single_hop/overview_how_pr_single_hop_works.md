@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Single-hop data access enables the client pool to track where a partitioned region's data is hosted in the servers. To access a single entry, the client directly contacts the server that hosts the key, in a single hop.
+Single-hop data access enables the client pool to track where a partitioned region’s data is hosted in the servers. To access a single entry, the client directly contacts the server that hosts the key, in a single hop.
 
 -   **[Understanding Client Single-Hop Access to Server-Partitioned Regions](how_pr_single_hop_works.html)**
 
@@ -28,6 +28,3 @@ Single-hop data access enables the client pool to track where a partitioned regi
 -   **[Configure Client Single-Hop Access to Server-Partitioned Regions](configure_pr_single_hop.html)**
 
     Configure your client/server system for direct, single-hop access to partitioned region data in the servers.
-
-
-

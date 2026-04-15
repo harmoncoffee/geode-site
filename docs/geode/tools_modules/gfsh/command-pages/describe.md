@@ -121,7 +121,7 @@ describe config --member=value [--hide-defaults(=value)?]
 
 | Name                                                  | Description                                                                      | Default Value |
 |-------------------------------------------------------|----------------------------------------------------------------------------------|---------------|
-| <span class="keyword parmname">&#8209;&#8209;member </span>       | Name or ID of a member whose configuration is to be shown.                       | Â              |
+| <span class="keyword parmname">&#8209;&#8209;member </span>       | Name or ID of a member whose configuration is to be shown.                       |               |
 | <span class="keyword parmname">&#8209;&#8209;hide-defaults</span> | Whether to hide configuration information for properties with the default value. | true          |
 
 
@@ -533,4 +533,3 @@ Region | data-policy | EMPTY
        | size        | 0
        | scope       | distributed-ack
 ```
-

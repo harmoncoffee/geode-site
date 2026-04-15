@@ -28,6 +28,3 @@ You can configure and limit port usage for situations that involve firewalls, fo
 -   **[Firewalls and Ports](firewalls_ports.html)**
 
     Make sure your port settings are configured correctly for firewalls.
-
-
-

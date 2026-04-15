@@ -1,4 +1,4 @@
-﻿---
+---
 title:  HEAD /geode/v1/{region}
 sidebar_label: HEAD /geode/v1/{region}
 sidebar_position: 6
@@ -57,9 +57,6 @@ Resource-Count: 8192
 
 | Status Code               | Description                                                                                 |
 |---------------------------|---------------------------------------------------------------------------------------------|
-| 400 Bad Request           | Returned if Geode throws an error while executing the request. |
+| 400 Bad Request           | Returned if @@product_name@@ throws an error while executing the request. |
 | 404 Resource Not Found    | Region does not exist.                                                                      |
-| 500 Internal Server Error | Geode has thown an error or exception.                         |
-
-
-
+| 500 Internal Server Error | @@product_name@@ has thown an error or exception.                         |

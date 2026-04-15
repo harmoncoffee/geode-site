@@ -80,5 +80,3 @@ An implementation of the authorization callback will require
 that an authenticate identity accompanies all requests to the system,
 and that the system maintains a representation of which identities
 are permitted to complete which actions or cache commands.
-
-

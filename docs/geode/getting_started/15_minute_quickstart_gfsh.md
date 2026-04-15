@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Apache Geode in 15 Minutes or Less
 ---
 
@@ -20,17 +20,17 @@ limitations under the License.
 -->
 <a id="topic_FE3F28ED18E145F787431EC87B676A76"></a>
 
-Need a quick introduction to Apache Geode ? Take this brief tour to try out basic features and functionality.
+Need a quick introduction to @@product_name_long@@? Take this brief tour to try out basic features and functionality.
 
-## <a id="topic_FE3F28ED18E145F787431EC87B676A76__section_ECE5170BAD9B454E875F13BEB5762DDD" class="no-quick-link"></a>Step 1: Install Apache Geode 
+## <a id="topic_FE3F28ED18E145F787431EC87B676A76__section_ECE5170BAD9B454E875F13BEB5762DDD" class="no-quick-link"></a>Step 1: Install @@product_name_long@@
 
 See [How to Install](installation/install_standalone.html#concept_0129F6A1D0EB42C4A3D24861AF2C5425) for instructions.
 
 ## <a id="topic_FE3F28ED18E145F787431EC87B676A76__section_582F8CBBD99D42F1A55C07591E2E9E9E" class="no-quick-link"></a>Step 2: Use gfsh to start a locator
 
-In a terminal window, use the `gfsh` command line interface to start up a locator. Apache Geode *gfsh* (pronounced "jee-fish") provides a single, intuitive command-line interface from which you can launch, manage, and monitor Apache Geode processes, data, and applications. See [gfsh](../tools_modules/gfsh/chapter_overview.html).
+In a terminal window, use the `gfsh` command line interface to start up a locator. @@product_name_long@@ *gfsh* (pronounced "jee-fish") provides a single, intuitive command-line interface from which you can launch, manage, and monitor @@product_name_long@@ processes, data, and applications. See [gfsh](../tools_modules/gfsh/chapter_overview.html).
 
-The *locator* is a Geode process that tells new, connecting members where running members are located and provides load balancing for server use. A locator, by default, starts up a JMX Manager, which is used for monitoring and managing a Geode cluster. The cluster configuration service uses locators to persist and distribute cluster configurations to cluster members. See [Running Geode Locator Processes](../configuring/running/running_the_locator.html) and [Overview of the Cluster Configuration Service](../configuring/cluster_config/gfsh_persist.html).
+The *locator* is a @@product_name@@ process that tells new, connecting members where running members are located and provides load balancing for server use. A locator, by default, starts up a JMX Manager, which is used for monitoring and managing a @@product_name@@ cluster. The cluster configuration service uses locators to persist and distribute cluster configurations to cluster members. See [Running @@product_name@@ Locator Processes](../configuring/running/running_the_locator.html) and [Overview of the Cluster Configuration Service](../configuring/cluster_config/gfsh_persist.html).
 
 1.  Create a scratch working directory (for example, `my_geode`) and change directories into it. `gfsh` saves locator and server working directories and log files in this location.
 2.  Start gfsh by typing `gfsh` at the command line (or `gfsh.bat` if you are using Windows).
@@ -40,9 +40,9 @@ The *locator* is a Geode process that tells new, connecting members where runnin
        / _____/ ______/ ______/ /____/ /
       / /  __/ /___  /_____  / _____  /
      / /__/ / ____/  _____/ / /    / /
-    /______/_/      /______/_/    /_/    
+    /______/_/      /______/_/    /_/    @@product_version@@
 
-    Monitor and Manage Geode 
+    Monitor and Manage @@product_name@@
     gfsh>
     ```
 
@@ -50,13 +50,13 @@ The *locator* is a Geode process that tells new, connecting members where runnin
 
     ``` pre
     gfsh>start locator --name=locator1
-    Starting a Geode Locator in /home/username/my_geode/locator1...
+    Starting a @@product_name@@ Locator in /home/username/my_geode/locator1...
     .................................
     Locator in /home/username/my_geode/locator1 on ubuntu.local[10334] as locator1 is currently online.
     Process ID: 3529
     Uptime: 18 seconds
-     Version: 
-    Java Version: @@min_java_update@@.0.@@product_version@@
+    @@product_name@@ Version: @@product_version@@
+    Java Version: @@min_java_version@@.0.@@min_java_update@@
     Log File: /home/username/my_geode/locator1/locator1.log
     JVM Arguments: -Dgemfire.enable-cluster-configuration=true -Dgemfire.load-cluster-configuration-from-dir=false
     -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
@@ -73,7 +73,7 @@ If you run `start locator` from gfsh without specifying the member name, gfsh wi
 
 ## <a id="topic_FE3F28ED18E145F787431EC87B676A76__section_02C79BFFB5334E78A5856AE1EB1F1F84" class="no-quick-link"></a>Step 3: Start Pulse
 
-Start up the browser-based Pulse monitoring tool. Pulse is a Web Application that provides a graphical dashboard for monitoring vital, real-time health and performance of Geode clusters, members, and regions. See [ Geode Pulse](../tools_modules/pulse/pulse-overview.html).
+Start up the browser-based Pulse monitoring tool. Pulse is a Web Application that provides a graphical dashboard for monitoring vital, real-time health and performance of @@product_name@@ clusters, members, and regions. See [@@product_name@@ Pulse](../tools_modules/pulse/pulse-overview.html).
 
 ``` pre
 gfsh>start pulse
@@ -87,7 +87,7 @@ The Pulse application now displays the locator you just started (locator1):
 
 ## <a id="topic_FE3F28ED18E145F787431EC87B676A76__section_C617BC1C70EB41B8BCA3691D6E3C891A" class="no-quick-link"></a>Step 4: Start a server
 
-A Geode server is a process that runs as a long-lived, configurable member of a cluster. The Geode server is used primarily for hosting long-lived data regions and for running standard Geode processes such as the server in a client/server configuration. See [Running Geode Server Processes](../configuring/running/running_the_cacheserver.html).
+A @@product_name@@ server is a process that runs as a long-lived, configurable member of a cluster. The @@product_name@@ server is used primarily for hosting long-lived data regions and for running standard @@product_name@@ processes such as the server in a client/server configuration. See [Running @@product_name@@ Server Processes](../configuring/running/running_the_cacheserver.html).
 
 Start the cache server:
 
@@ -103,7 +103,7 @@ Observe the changes (new member and server) in Pulse. Try expanding the distribu
 
 ## <a id="topic_FE3F28ED18E145F787431EC87B676A76__section_3EA12E44B8394C6A9302DF4D14888AF4" class="no-quick-link"></a>Step 5: Create a replicated, persistent region
 
-In this step you create a region with the `gfsh` command line utility. Regions are the core building blocks of the Geode cluster and provide the means for organizing your data. The region you create for this exercise employs replication to replicate data across members of the cluster and utilizes persistence to save the data to disk. See [Data Regions](../basic_config/data_regions/chapter_overview.html#data_regions).
+In this step you create a region with the `gfsh` command line utility. Regions are the core building blocks of the @@product_name@@ cluster and provide the means for organizing your data. The region you create for this exercise employs replication to replicate data across members of the cluster and utilizes persistence to save the data to disk. See [Data Regions](../basic_config/data_regions/chapter_overview.html#data_regions).
 
 1.  Create a replicated, persistent region:
 
@@ -156,7 +156,9 @@ In this step you create a region with the `gfsh` command line utility. Regions a
 
 **Note:** Keep this `gfsh` prompt open for the next steps.
 
-## Step 6: Manipulate data in the region and demonstrate persistence Apache Geode manages data as key/value pairs. In most applications, a Java program adds, deletes and modifies stored data. You can also use gfsh commands to add and retrieve data. See [Data Commands](../tools_modules/gfsh/quick_ref_commands_by_area.html#topic_C7DB8A800D6244AE8FF3ADDCF139DCE4).
+## Step 6: Manipulate data in the region and demonstrate persistence
+
+@@product_name_long@@ manages data as key/value pairs. In most applications, a Java program adds, deletes and modifies stored data. You can also use gfsh commands to add and retrieve data. See [Data Commands](../tools_modules/gfsh/quick_ref_commands_by_area.html#topic_C7DB8A800D6244AE8FF3ADDCF139DCE4).
 
 1.  Run the following `put` commands to add some data to the region:
 
@@ -352,7 +354,7 @@ In this step you restart the cache servers in parallel. Because the data is pers
 
     ``` pre
     gfsh>start server --name=server1 --server-port=40411
-    Starting a Geode Server in /home/username/my_geode/server1...
+    Starting a @@product_name@@ Server in /home/username/my_geode/server1...
     ............................................................................
     ............................................................................
     ```
@@ -386,9 +388,9 @@ In this step you restart the cache servers in parallel. Because the data is pers
        / _____/ ______/ ______/ /____/ /
       / /  __/ /___  /_____  / _____  /
      / /__/ / ____/  _____/ / /    / /
-    /______/_/      /______/_/    /_/    
+    /______/_/      /______/_/    /_/    @@product_version@@
 
-    Monitor and Manage 
+    Monitor and Manage @@product_name@@
     ```
 
 3.  Run the following command to connect to the cluster:
@@ -412,8 +414,8 @@ In this step you restart the cache servers in parallel. Because the data is pers
     Server in /home/username/my_geode/server1 on ubuntu.local[40411] as server1 is currently online.
     Process ID: 3402
     Uptime: 1 minute 46 seconds
-     Version: 
-    Java Version: @@min_java_update@@.0.@@product_version@@
+    @@product_name@@ Version: @@product_version@@
+    Java Version: @@min_java_version@@.0.@@min_java_update@@
     Log File: /home/username/my_geode/server1/server1.log
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334] -Dgemfire.use-cluster-configuration=true
     -XX:OnOutOfMemoryError=kill -KILL %p -Dgemfire.launcher.registerSignalHandlers=true
@@ -512,11 +514,9 @@ To shut down your cluster, do the following:
 
 ## <a id="topic_FE3F28ED18E145F787431EC87B676A76__section_C8694C6BB07E4430A73DDD72ABB473F1" class="no-quick-link"></a>Step 10: What to do next...
 
-Here are some suggestions on what to explore next with Apache Geode :
+Here are some suggestions on what to explore next with @@product_name_long@@:
 
 - To ensure that your Geode instances are secure, see: [Security](../security/chapter_overview.html).
-- To get more practice using `gfsh`, see [Tutorialâ€”Performing Common Tasks with gfsh](../tools_modules/gfsh/tour_of_gfsh.html#concept_0B7DE9DEC1524ED0897C144EE1B83A34).
-- To learn about the cluster configuration service, see [Tutorialâ€”Creating and Using a Cluster Configuration](../configuring/cluster_config/persisting_configurations.html#task_bt3_z1v_dl).
+- To get more practice using `gfsh`, see [Tutorial—Performing Common Tasks with gfsh](../tools_modules/gfsh/tour_of_gfsh.html#concept_0B7DE9DEC1524ED0897C144EE1B83A34).
+- To learn about the cluster configuration service, see [Tutorial—Creating and Using a Cluster Configuration](../configuring/cluster_config/persisting_configurations.html#task_bt3_z1v_dl).
 - Continue reading the next section to learn more about the components and concepts that were just introduced.
-
-

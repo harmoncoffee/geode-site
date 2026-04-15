@@ -142,6 +142,3 @@ By default, the gateway receiver starts automatically (`manual-start` is set to 
 After you create and start a new gateway receiver at one WAN site, you can execute the [load-balance gateway-sender](../../tools_modules/gfsh/command-pages/load-balance.html#concept_fn2_qls_5q) command in `gfsh` for existing remote gateway senders so that the new receiver can pick up connections to gateway senders at different sites. You invoke this command on the gateway senders to redistribute connections more evenly among all the gateway receivers. Another option is to use the `GatewaySender.rebalance` Java API.
 
 See [Configure Gateway Receivers](../multi_site_configuration/setting_up_a_multisite_system.html#setting_up_a_multisite_system__section_E3A44F85359046C7ADD12861D261637B).
-
-
-

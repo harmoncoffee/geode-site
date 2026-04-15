@@ -39,7 +39,7 @@ history [--file=<history text file>]
 
 | Name    | Description                                              | Default Value |
 |---------|----------------------------------------------------------|---------------|
-| &#8209;&#8209;file  | File to which the history is to be saved.                | Â              |
+| &#8209;&#8209;file  | File to which the history is to be saved.                |               |
 | &#8209;&#8209;clear | When set to `true`, clears the history of gfsh commands. | false         |
 
 <span class="tablecap">Table 1. History Parameters</span>
@@ -57,6 +57,3 @@ history --file=./mycommands.gfsh;
 gfsh>history --file=./mycommands.gfsh
 Wrote successfully to file ./mycommands.gfsh
 ```
-
-
-

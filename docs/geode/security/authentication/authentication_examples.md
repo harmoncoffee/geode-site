@@ -23,7 +23,7 @@ limitations under the License.
 
 This example demonstrates the basics of an implementation of the
 `SecurityManager.authenticate` method.
-The remainder of the example may be found in the Apache Geode 
+The remainder of the example may be found in the @@product_name_long@@
 source code in the
 `geode-core/src/main/java/org/apache/geode/examples/security` directory.
 
@@ -91,4 +91,3 @@ public Object authenticate(final Properties credentials)
     return user;
 }
 ```
-

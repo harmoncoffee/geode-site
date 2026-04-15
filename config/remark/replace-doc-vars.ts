@@ -79,7 +79,7 @@ export default function replaceDocVars(options: Options) {
             valuesByVersion[version] ?? valuesByVersion.current ?? {};
 
         visit(tree, (node: any) => {
-            if (node.type === 'text' || node.type === 'code') {
+            if (typeof node.value === 'string') {
                 node.value = applyReplacements(node.value, replacements);
             }
         });

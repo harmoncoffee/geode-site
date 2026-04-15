@@ -21,13 +21,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-By default, Apache Geode uses Internet Protocol version 4 for Geode address specifications. You can switch to Internet Protocol version 6 if all your machines support it. You may lose performance, so you need to understand the costs of making the switch.
+By default, @@product_name_long@@ uses Internet Protocol version 4 for @@product_name@@ address specifications. You can switch to Internet Protocol version 6 if all your machines support it. You may lose performance, so you need to understand the costs of making the switch.
 
 -   IPv4 uses a 32-bit address. IPv4 was the first protocol and is still the main one in use, but its address space is expected to be exhausted within a few years.
 
 -   IPv6 uses a 128-bit address. IPv6 succeeds IPv4, and will provide a much greater number of addresses.
 
-Based on current testing with Geode , IPv4 is generally recommended. IPv6 connections tend to take longer to form and the communication tends to be slower. Not all machines support IPv6 addressing. To use IPv6, all machines in your distributed system must support it or you will have connectivity problems.
+Based on current testing with @@product_name@@ , IPv4 is generally recommended. IPv6 connections tend to take longer to form and the communication tends to be slower. Not all machines support IPv6 addressing. To use IPv6, all machines in your distributed system must support it or you will have connectivity problems.
 
 **Note:**
 Do not mix IPv4 and IPv6 addresses. Use one or the other, across the board.
@@ -36,7 +36,7 @@ IPv4 is the default version.
 
 To use IPv6, set the Java property, `java.net.preferIPv6Addresses`, to `true`.
 
-These examples show the formats to use to specify addresses in Geode .
+These examples show the formats to use to specify addresses in @@product_name@@ .
 
 -   IPv4:
 
@@ -49,4 +49,3 @@ These examples show the formats to use to specify addresses in Geode .
     ``` pre
     2001:db8:85a3:0:0:8a2e:370:7334
     ```
-

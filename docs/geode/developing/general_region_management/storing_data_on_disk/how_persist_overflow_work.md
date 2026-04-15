@@ -21,14 +21,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-To use Geode persistence and overflow, you should understand how they work with your data.
+To use @@product_name@@ persistence and overflow, you should understand how they work with your data.
 
-<a id="how_persist_overflow_work__section_jzl_wwb_pr"></a> Geode 
- persists and overflows several types of data. You can persist or overflow the application data in your regions. In addition, Geode persists and overflows messaging queues, to manage memory consumption and provide high availability.
+<a id="how_persist_overflow_work__section_jzl_wwb_pr"></a>
+@@product_name@@ persists and overflows several types of data. You can persist or overflow the application data in your regions. In addition, @@product_name@@ persists and overflows messaging queues, to manage memory consumption and provide high availability.
 
 Persistent data outlives the member where the region resides and can be used to initialize the region at creation. Overflow acts only as an extension of the region in memory.
 
-The data is written to disk according to the configuration of Geode disk stores. For any disk option, you can specify the name of the disk store to use or use the Geode default disk store. See [Disk Storage](../../managing/disk_storage/chapter_overview.html).
+The data is written to disk according to the configuration of @@product_name@@ disk stores. For any disk option, you can specify the name of the disk store to use or use the @@product_name@@ default disk store. See [Disk Storage](../../managing/disk_storage/chapter_overview.html).
 
 ## <a id="how_persist_overflow_work__section_78F2D1820B6C48859A0E5411CE360105" class="no-quick-link"></a>How Data Is Persisted and Overflowed
 
@@ -62,6 +62,3 @@ Used together, persistence and overflow keep all entry keys and values on disk a
 ## Persistence and Multi-Site Configurations
 
 Multi-site gateway sender queues overflow most recently used (MRU) entries. These are the messages that are at the end of the queue and so are last in line to be sent to the remote site. You can also configure gateway sender queues to persist for high availability.
-
-
-

@@ -74,6 +74,3 @@ PartitionRegionHelper.moveData(r, source, destination, 20);
 See the Java API documentation for `org.apache.geode.cache.partition.PartitionRegionHelper.moveData` for more details.
 
 For more information on partitioned regions and rebalancing, see [Partitioned Regions](chapter_overview.html).
-
-
-

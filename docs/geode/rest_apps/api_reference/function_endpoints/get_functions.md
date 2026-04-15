@@ -1,4 +1,4 @@
-﻿---
+---
 title:  GET /geode/v1/functions
 sidebar_label: GET /geode/v1/functions
 sidebar_position: 1
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-List all registered Geode functions in the cluster.
+List all registered @@product_name@@ functions in the cluster.
 
 ## Resource URL
 
@@ -64,7 +64,4 @@ Location: https://localhost:8080/geode/v1/functions
 | Status Code               | Description                                                                                                                      |
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | 404 NOT FOUND             | Returned if no functions are found in the cluster.                                                                               |
-| 500 INTERNAL SERVER ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
-
-
-
+| 500 INTERNAL SERVER ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |

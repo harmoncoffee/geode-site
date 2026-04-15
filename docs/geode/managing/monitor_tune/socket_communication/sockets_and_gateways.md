@@ -59,7 +59,7 @@ If possible, your TCP/IP buffer size settings should match across your installat
 
 -   **Multisite (WAN)**. In a multi-site installation using gateways, if the link between sites is not tuned for optimum throughput, it could cause messages to back up in the cache queues. If a receiving queue overflows because of inadequate buffer sizes, it will become out of sync with the sender and the receiver will be unaware of the condition.
 
-    The gateway sender's socket-buffer-size attribute should match the gateway receiver's socket-buffer-size attribute for all gateway receivers that the sender connects to, as in these example `cache.xml` snippets:
+    The gateway sender's socket-buffer-size attribute should match the gateway receiver’s socket-buffer-size attribute for all gateway receivers that the sender connects to, as in these example `cache.xml` snippets:
 
     ``` pre
     Gateway Sender Socket Buffer Size cache.xml Configuration: 
@@ -75,7 +75,7 @@ If possible, your TCP/IP buffer size settings should match across your installat
     ```
 
 **Note:**
-WAN deployments increase the messaging demands on a Geode system. To avoid hangs related to WAN messaging, always use the default setting of <code class="ph codeph">conserve-sockets=false</code> for Geode members that participate in a WAN deployment.
+WAN deployments increase the messaging demands on a @@product_name@@ system. To avoid hangs related to WAN messaging, always use the default setting of <code class="ph codeph">conserve-sockets=false</code> for @@product_name@@ members that participate in a WAN deployment.
 
 ## <a id="socket_comm__section_4A7C60D4471A4339884AA5AAC97B4DAA" class="no-quick-link"></a>Multi-site (WAN) Socket Requirements
 
@@ -117,4 +117,3 @@ A client, server, gateway sender, or gateway receiver produces a `SocketTimeoutE
 Response:
 
 Increase the default socket timeout setting for the member. This timeout is set separately for the client Pool and for the gateway sender and gateway receiver, either in the `cache.xml` file or through the API. For a client/server configuration, adjust the "read-timeout" value as described in [&lt;pool&gt;](../../reference/topics/client-cache.html#cc-pool) or use the `org.apache.geode.cache.client.PoolFactory.setReadTimeout` method. For a gateway sender or gateway receiver, see [WAN Configuration](../../reference/topics/elements_ref.html#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3).
-

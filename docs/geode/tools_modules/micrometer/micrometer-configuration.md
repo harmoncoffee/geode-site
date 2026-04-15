@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Configuration and Publishing
 sidebar_label:  Configuration and Publishing
 sidebar_position: 1
@@ -24,7 +24,7 @@ limitations under the License.
 
 ## Meter configuration
 
-Out of the box Geode is instrumented and can emit meters with a properly created Meter Registry. 
+Out of the box @@product_name@@ is instrumented and can emit meters with a properly created Meter Registry. 
 
 However, any meters that are timers based on the system clock time, similar to the time statistics, they will obey the existing `enable-time-statistics` geode.properties setting, see **[Setting up Statistics](../../managing/statistics/setting_up_statistics.html)**.
 
@@ -33,7 +33,7 @@ However, any meters that are timers based on the system clock time, similar to t
 
 In order to emit metrics to an Application Performance Monitor (APM) or other such tool that can store or display metrics, a meter registry is required. Micrometer implements many different meter registries as project imports, a list can be found here: https://micrometer.io/docs.
 
-As a simple example, below describes how you might create a publishing service utilizing the `MetricsSession` and `MetricsPublishingService` interface in Geode . 
+As a simple example, below describes how you might create a publishing service utilizing the `MetricsSession` and `MetricsPublishingService` interface in @@product_name@@. 
 
 Here is a example class that would enable Prometheus metrics to be emitted:
 
@@ -116,6 +116,3 @@ gfsh>create locator --name my-locator --classpath=<path-to-my-jar-file>/my.jar -
 gfsh>create server --name my-server --classpath=<path-to-my-jar-file>/my.jar --J=-Dprometheus.metrics.port=9915
 ```
 Alternatively, you can add your jar file to the extensions directory in your Geode installation and only specify the `prometheus.metrics.port`. Then `GFSH` will add your jar file to the classpath whenever it creates a server or locator.
-
-
-

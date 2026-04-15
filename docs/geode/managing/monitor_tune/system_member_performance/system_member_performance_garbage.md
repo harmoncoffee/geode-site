@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-If your application exhibits unacceptably high latencies, you might improve performance by modifying your JVM's garbage collection behavior.
+If your application exhibits unacceptably high latencies, you might improve performance by modifying your JVM’s garbage collection behavior.
 
 Garbage collection, while necessary, introduces latency into your system by consuming resources that would otherwise be available to your application. You can reduce the impact of garbage collection in two ways:
 
@@ -32,11 +32,11 @@ Garbage collection, while necessary, introduces latency into your system by cons
 Garbage collection tuning options depend on the JVM you are using. Suggestions given here apply to the Sun HotSpot JVM. If you use a different JVM, check with your vendor to see if these or comparable options are available to you.
 
 **Note:**
-Modifications to garbage collection sometimes produce unexpected results. Always test your system before and after making changes to verify that the system's performance has improved.
+Modifications to garbage collection sometimes produce unexpected results. Always test your system before and after making changes to verify that the system’s performance has improved.
 
 **Optimizing Garbage Collection**
 
-The two options suggested here are likely to expedite garbage collecting activities by introducing parallelism and by focusing on the data that is most likely to be ready for cleanup. The first parameter causes the garbage collector to run concurrent to your application processes. The second parameter causes it to run multiple, parallel threads for the "young generation" garbage collection (that is, garbage collection performed on the most recent objects in memoryâ€”where the greatest benefits are expected):
+The two options suggested here are likely to expedite garbage collecting activities by introducing parallelism and by focusing on the data that is most likely to be ready for cleanup. The first parameter causes the garbage collector to run concurrent to your application processes. The second parameter causes it to run multiple, parallel threads for the "young generation" garbage collection (that is, garbage collection performed on the most recent objects in memory—where the greatest benefits are expected):
 
 ``` pre
 -XX:+UseConcMarkSweepGC -XX:+UseParNewGC
@@ -51,6 +51,3 @@ For applications, if you are using remote method invocation (RMI) Java APIs, you
 **Using Off-heap Memory**
 
 You can improve the performance of some applications by storing data values in off-heap memory. Certain objects, such as keys, must remain in the JVM heap. See [Managing Off-Heap Memory](../heap_use/off_heap_management.html) for more information.
-
-
-

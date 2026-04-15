@@ -37,6 +37,3 @@ This section covers the following querying language features:
 -   **[Reserved Words](../querying_basics/reserved_words.html)**
 
 -   **[Supported Literals](literals.html)**
-
-
-

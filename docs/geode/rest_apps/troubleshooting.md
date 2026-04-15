@@ -1,4 +1,4 @@
-﻿---
+---
 title: Troubleshooting and FAQ
 sidebar_label: Troubleshooting and FAQ
 sidebar_position: 7
@@ -23,7 +23,7 @@ limitations under the License.
 <a id="topic_r5z_lj5_m4"></a>
 
 
-This section provides troubleshooting guidance and frequently asked questions about Geode Developer REST APIs.
+This section provides troubleshooting guidance and frequently asked questions about @@product_name@@ Developer REST APIs.
 
 ## Checking if the REST API Service is Up and Running
 
@@ -47,15 +47,15 @@ If the server is not available, your client will receive an HTTP error code and 
 
 ## Key Types and JSON Support
 
-When defining regions (your REST resources), you must only use scalar values for keys and also set value constraints in order to avoid producing JSON that cannot be parsed by .
+When defining regions (your REST resources), you must only use scalar values for keys and also set value constraints in order to avoid producing JSON that cannot be parsed by @@product_name@@.
 
-If  regions are not defined with scalar values as keys and value constraints, then you may receive the following error message (even though the JSON is technically valid) in your REST client applications:
+If @@product_name@@ regions are not defined with scalar values as keys and value constraints, then you may receive the following error message (even though the JSON is technically valid) in your REST client applications:
 
 ``` pre
 Json doc specified in request body is malformed..!!'
 ```
 
-For example, the following JSON documents are not supported by Geode :
+For example, the following JSON documents are not supported by @@product_name@@:
 
 ## Unsupported JSON Example 1
 
@@ -164,6 +164,3 @@ For example, the following JSON documents are not supported by Geode :
     "rosebud"
 ]
 ```
-
-
-

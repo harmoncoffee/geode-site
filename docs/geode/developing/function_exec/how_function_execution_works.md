@@ -1,4 +1,4 @@
-﻿---
+---
 title:  How Function Execution Works
 sidebar_label: How Function Execution Works
 sidebar_position: 1
@@ -23,7 +23,7 @@ limitations under the License.
 
 ## <a id="how_function_execution_works__section_881D2FF6761B4D689DDB46C650E2A2E1" class="no-quick-link"></a>Where Functions Are Executed
 
-You can execute data-independent functions or data-dependent functions in Geode in the following places:
+You can execute data-independent functions or data-dependent functions in @@product_name@@ in the following places:
 
 **For Data-independent Functions**
 
@@ -47,8 +47,8 @@ the function.
 The required permissions for authorization are provided by
 the function's `Function.getRequiredPermissions()` method.
 See [Authorization of Function Execution](../../security/implementing_authorization.html#AuthorizeFcnExecution) for a discussion of this method.
-2.  Given successful authorization, Geode 
- invokes the function on all members where it
+2.  Given successful authorization,
+@@product_name@@ invokes the function on all members where it
 needs to run. The locations are determined by the `FunctionService` `on*`
 method calls, region configuration, and any filters.
 3.  If the function has results, they are returned to the `addResult` method call in a `ResultCollector` object.
@@ -56,13 +56,13 @@ method calls, region configuration, and any filters.
 
 ## <a id="how_function_execution_works__section_14FF9932C7134C5584A14246BB4D4FF6" class="no-quick-link"></a>Highly Available Functions
 
-Generally, function execution errors are returned to the calling application. You can code for high availability for `onRegion` functions that return a result, so Geode automatically retries a function if it does not execute successfully. You must code and configure the function to be highly available, and the calling application must invoke the function using the results collector `getResult` method.
+Generally, function execution errors are returned to the calling application. You can code for high availability for `onRegion` functions that return a result, so @@product_name@@ automatically retries a function if it does not execute successfully. You must code and configure the function to be highly available, and the calling application must invoke the function using the results collector `getResult` method.
 
 When a failure (such as an execution error or member crash while executing) occurs, the system responds by:
 
 1.  Waiting for all calls to return
 2.  Setting a boolean indicating a re-execution
-3.  Calling the result collector's `clearResults` method
+3.  Calling the result collector’s `clearResults` method
 4.  Executing the function
 
 For client regions, the system retries the execution according to `org.apache.geode.cache.client.Pool` `retryAttempts`. If the function fails to run every time, the final exception is returned to the `getResult` method.
@@ -126,7 +126,7 @@ Servers that do not hold any keys are left out of the function execution.
 
 <img src="../../images/FuncExecOnRegionPeersWithFilter.png" alt="A data-dependent function where the caller is not an external client" id="how_function_execution_works__image_9B8E914BA80E4BBA99856E9603A9BDA0" class="image" />
 
-The caller is a member of the cluster, not an external client, so the function runs in the caller's cluster. Note the similarities between this diagram and the preceding figure ([Data-dependent Function on a Region with Keys](#how_function_execution_works__fig_data_dependent_function_region_keys)), which shows a client-server model where the client has up-to-date metadata regarding target locations within the cluster.
+The caller is a member of the cluster, not an external client, so the function runs in the caller’s cluster. Note the similarities between this diagram and the preceding figure ([Data-dependent Function on a Region with Keys](#how_function_execution_works__fig_data_dependent_function_region_keys)), which shows a client-server model where the client has up-to-date metadata regarding target locations within the cluster.
 
 [Client-server system with Up-to-date Target Metadata](#how_function_execution_works__fig_client_server_system_target_metadata) demonstrates a sequence of steps in a call to a highly available function in a client-server system in which the client has up-to-date metadata regarding target locations.
 
@@ -137,4 +137,3 @@ The caller is a member of the cluster, not an external client, so the function r
 <img src="../../images/FuncExecOnRegionHAWithFilter.png" alt="A sequence of steps in a call to a highly available function in a client-server system in which the client has up-to-date metadata regarding target locations" id="how_function_execution_works__image_05E94BB0EBF349FF8822158F2001F313" class="image" />
 
 In this example, three primary keys (X, Y, Z) and their secondary copies (X', Y', Z') are distributed among three servers. Because `optimizeForWrite` is `true`, the system first attempts to invoke the function where the primary keys reside: Server 1 and Server 2. Suppose, however, that Server 2 is off-line for some reason, so the call targeted for key Y fails. Because `isHA` is set to `true`, the call is retried on Server 1 (which succeeded the first time, so likely will do so again) and Server 3, where key Y' resides. This time, the function call returns successfully. Calls to highly available functions retry until they obtain a successful result or they reach a retry limit.
-

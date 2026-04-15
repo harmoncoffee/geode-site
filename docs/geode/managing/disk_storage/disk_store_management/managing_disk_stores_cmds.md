@@ -62,4 +62,3 @@ gfsh>compact offline-disk-store --name=DEFAULT --disk-dirs=s1
 This disk store is in use by another process. "compact disk-store" can 
 be used to compact a disk store that is currently in use.
 ```
-

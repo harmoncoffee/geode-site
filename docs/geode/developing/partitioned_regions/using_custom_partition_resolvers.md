@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-By default, Geode partitions each data entry into a bucket using a hashing policy on the key. 
+By default, @@product_name@@ partitions each data entry into a bucket using a hashing policy on the key. 
 Additionally, the physical location of the key-value pair 
 is abstracted away from the application.
 You can change these policies for a partitioned region by providing
@@ -44,7 +44,7 @@ These steps differ based on which partition resolver is used.
 
 -   Implement the `org.apache.geode.cache.PartitionResolver` interface
 within one of the following locations,
-listed here in the search order used by Geode :
+listed here in the search order used by @@product_name@@:
     -   **Within a custom class**. Specify this class as the partition
 resolver during region creation.
     -   **Within the key's class**. For keys implemented as objects,
@@ -111,7 +111,7 @@ It does not require any further implementation.
 
 -   Implement the `org.apache.geode.cache.FixedPartitionResolver`
 interface within one of the following locations,
-listed here in the search order used by :
+listed here in the search order used by @@product_name@@:
     -   **Custom class**. Specify this class as the partition resolver during region creation.
     -   **Entry key**. For keys implemented as objects, define the interface for the key's class.
     -   **Within the cache callback class**. Implement the interface
@@ -208,7 +208,7 @@ All entries within a partition will be on a single server.
 
 **Configuring Standard Partitioning**
 
--   Configure the region so Geode finds your resolver
+-   Configure the region so @@product_name@@ finds your resolver
 for all region operations.
 How you do this depends on where you chose to implement
 your custom partitioning.
@@ -358,5 +358,3 @@ For Java single-hop access to work,
 the resolver class needs to have a zero-argument constructor,
 and the resolver class must not have any state;
 the `init` method is included in this restriction.
-
-

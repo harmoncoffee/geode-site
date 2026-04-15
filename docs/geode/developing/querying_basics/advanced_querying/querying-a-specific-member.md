@@ -1,4 +1,4 @@
-﻿---
+---
 title: Querying a Specific Member
 sidebar_label: Querying a Specific Member
 sidebar_position: 5
@@ -73,9 +73,7 @@ Limit  : 100
 Rows   : 2
 
 ID | status
-â€“- | --------
+–- | --------
 0  | active
 1  | inactive (edited)
 ```
-
-

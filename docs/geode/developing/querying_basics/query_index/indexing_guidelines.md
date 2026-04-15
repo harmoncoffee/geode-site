@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Tips and Guidelines on Using Indexes
 sidebar_label: Tips and Guidelines on Using Indexes
 sidebar_position: 1
@@ -33,12 +33,10 @@ When creating indexes, keep in mind the following:
 
 ## <a id="indexing_guidelines__section_A8AFAA243B5C43DD9BB9F9235A48AF53" class="no-quick-link"></a>Tips for Writing Queries that Use Indexes
 
-As with query processors that run against relational databases, the way a query is written can greatly affect execution performance. Among other things, whether indexes are used depends on how each query is stated. These are some of the things to consider when optimizing your Geode queries for performance:
+As with query processors that run against relational databases, the way a query is written can greatly affect execution performance. Among other things, whether indexes are used depends on how each query is stated. These are some of the things to consider when optimizing your @@product_name@@ queries for performance:
 
 -   In general an index will improve query performance if the FROM clauses of the query and index match exactly.
 -   The query evaluation engine does not have a sophisticated cost-based optimizer. It has a simple optimizer which selects best index (one) or multiple indexes based on the index size and the operator that is being evaluated.
 -   For AND operators, you may get better results if the conditions that use indexes and conditions that are more selective come before other conditions in the query.
 -   Indexes are not used in expressions that contain NOT, so in a WHERE clause of a query, `qty >= 10` could have an index on `qty` applied for efficiency. However, `NOT(qty < 10)` could not have the same index applied.
 -   Whenever possible, provide a hint to allow the query engine to prefer a specific index. See [Using Query Index Hints](query_index_hints.html)
-
-

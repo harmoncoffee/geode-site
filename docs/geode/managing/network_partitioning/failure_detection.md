@@ -19,7 +19,9 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Geode uses failure detection to remove unresponsive members from membership views.
+-->
+
+@@product_name@@ uses failure detection to remove unresponsive members from membership views.
 
 ## <a id="concept_CFD13177F78C456095622151D6EE10EB__section_1AAE6C92FED249EFBA476D8A480B8E51" class="no-quick-link"></a>Failure Detection
 
@@ -59,5 +61,3 @@ The components of the membership view are as follows:
 -   The overall format of each listed member is:`Address(processId)<vXX>:membership-port/distribution                             port`. The membership coordinator is almost always the first member in the view and the rest are ordered by age.
 -   The membership-port is the JGroups TCP UDP port that it uses to send datagrams. The distribution-port is the TCP/IP port that is used for cache messaging.
 -   Each member watches the member to its right for failure detection purposes.
-
-

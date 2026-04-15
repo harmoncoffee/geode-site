@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Region Shortcuts Quick Reference
 sidebar_label: Region Shortcuts Quick Reference
 sidebar_position: 1
@@ -55,7 +55,3 @@ Table 1. Region Shortcuts Default Configurations
 | [REPLICATE_PERSISTENT](region_shortcuts_reference.html#reference_emp_jpy_lk)                    | data-policy: PERSISTENT_REPLICATE<br/>scope: distributed-ack |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | [REPLICATE_PERSISTENT_OVERFLOW](region_shortcuts_reference.html#reference_tsp_jpy_lk)           | data-policy: PERSISTENT_REPLICATE<br/>scope: distributed-ack | **Eviction Attributes**<p>eviction-algorithm: lru-heap-percentage</p><p>eviction-action: overflow-to-disk</p>                                                                                                                                                                                                                                                                                                                                                                      |
 | [REPLICATE_PROXY](region_shortcuts_reference.html#reference_n1q_jpy_lk)                         | data-policy: EMPTY<br/>scope: distributed-ack |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-
-
-
-

@@ -23,7 +23,7 @@ limitations under the License.
 
 For peer-to-peer communication, you can manage socket use at the system member level and at the thread level.
 
-The conserve-sockets setting indicates whether application threads share sockets with other threads or use their own sockets for member communication. This setting has no effect on communication between a server and its clients, but it does control the server's communication with its peers or a gateway sender's communication with a gateway receiver. In client/server settings in particular, where there can be a large number of clients for each server, controlling peer-to-peer socket use is an important part of tuning server performance.
+The conserve-sockets setting indicates whether application threads share sockets with other threads or use their own sockets for member communication. This setting has no effect on communication between a server and its clients, but it does control the server’s communication with its peers or a gateway sender's communication with a gateway receiver. In client/server settings in particular, where there can be a large number of clients for each server, controlling peer-to-peer socket use is an important part of tuning server performance.
 
 You configure conserve-sockets for the member as a whole in `gemfire.properties`. Additionally, you can change the sockets conservation policy for the individual thread through the API.
 
@@ -49,7 +49,7 @@ When you have transactions operating on EMPTY, NORMAL or PARTITION regions, make
 
 You can override the `conserve-sockets` setting for individual threads. These methods are in `org.apache.geode.distributed.DistributedSystem`:
 
--   `setThreadsSocketPolicy`. Sets the calling thread's individual socket policy, overriding the policy set for the application as a whole. If false, the calling thread has its own sockets. If true, the calling thread shares socket connections with other threads.
+-   `setThreadsSocketPolicy`. Sets the calling thread’s individual socket policy, overriding the policy set for the application as a whole. If false, the calling thread has its own sockets. If true, the calling thread shares socket connections with other threads.
 -   `releaseThreadsSockets`. Frees any sockets held by the calling thread. Threads hold their own sockets only when conserve-sockets is false. Threads holding their own sockets can call this method to avoid holding the sockets until the socket-lease-time has expired.
 
 The example below shows an implementation of the two API calls in a thread that performs benchmark tests. The example assumes the class implements Runnable. Note that the invocation `setThreadsSocketPolicy(false)` is meaningful only if conserve-sockets is set to true at the application level.
@@ -64,6 +64,3 @@ public void run() {
     }
 }
 ```
-
-
-

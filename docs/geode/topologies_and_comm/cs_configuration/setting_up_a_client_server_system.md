@@ -102,6 +102,3 @@ When you start the server and client systems, the client regions will use the se
 **What to do next**
 
 Configure your clients to use the cache and to subscribe to events from the servers as needed by your application. See [Configuring Client/Server Event Messaging](../../developing/events/configure_client_server_event_messaging.html#receiving_events_from_servers).
-
-
-

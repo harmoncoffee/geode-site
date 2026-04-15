@@ -23,7 +23,7 @@ limitations under the License.
 
 If the receiver fails to receive a message, the sender continues to attempt to deliver the message as long as the receiving member is still in the cluster.
 
-During the retry cycle, Geode throws warnings that include this string:
+During the retry cycle, @@product_name@@ throws warnings that include this string:
 
 ``` pre
 will reattempt
@@ -48,9 +48,9 @@ These slow receiver options are disabled in systems using SSL. See [SSL](../../s
 
 Each consumer member determines how its own slow behavior is to be handled by its producers. The settings are specified as distributed system connection properties. This section describes the settings and lists the associated properties.
 
--   async-distribution-timeoutâ€”The distribution timeout specifies how long producers are to wait for the consumer to respond to synchronous messaging before switching to asynchronous messaging with that consumer. When a producer switches to asynchronous messaging, it creates a queue for that consumer's messages and a separate thread to handle the communication. When the queue empties, the producer automatically switches back to synchronous communication with the consumer. These settings affect how long your producer's cache operations might block. The sum of the timeouts for all consumers is the longest time your producer might block on a cache operation.
--   async-queue-timeoutâ€”The queue timeout sets a limit on the length of time the asynchronous messaging queue can exist without a successful distribution to the slow receiver. When the timeout is reached, the producer asks the consumer to leave the cluster.
--   async-max-queue-sizeâ€”The maximum queue size limits the amount of memory the asynchronous messaging queue can consume. When the maximum is reached, the producer asks the consumer to leave the cluster.
+-   async-distribution-timeout—The distribution timeout specifies how long producers are to wait for the consumer to respond to synchronous messaging before switching to asynchronous messaging with that consumer. When a producer switches to asynchronous messaging, it creates a queue for that consumer’s messages and a separate thread to handle the communication. When the queue empties, the producer automatically switches back to synchronous communication with the consumer. These settings affect how long your producer’s cache operations might block. The sum of the timeouts for all consumers is the longest time your producer might block on a cache operation.
+-   async-queue-timeout—The queue timeout sets a limit on the length of time the asynchronous messaging queue can exist without a successful distribution to the slow receiver. When the timeout is reached, the producer asks the consumer to leave the cluster.
+-   async-max-queue-size—The maximum queue size limits the amount of memory the asynchronous messaging queue can consume. When the maximum is reached, the producer asks the consumer to leave the cluster.
 
 **Configuring Async Queue Conflation**
 
@@ -71,21 +71,21 @@ When a process disconnects after receiving a request to do so by a producer, it 
 
 These messages only appear in your logs if logging is enabled and the log level is set to a level that includes warning (which it does by default). See [Logging](../logging/logging.html#concept_30DB86B12B454E168B80BB5A71268865).
 
-If your consumer is unable to receive even high priority messages, only the producer's warnings will appear in the logs. If you see only producer warnings, you can restart the consumer process. Otherwise, the Geode failure detection code will eventually cause the member to leave the cluster on its own.
+If your consumer is unable to receive even high priority messages, only the producer’s warnings will appear in the logs. If you see only producer warnings, you can restart the consumer process. Otherwise, the @@product_name@@ failure detection code will eventually cause the member to leave the cluster on its own.
 
 **Use Cases**
 
 These are the main use cases for the slow receiver specifications:
 
--   Message burstsâ€”With message bursts, the socket buffer can overflow and cause the producer to block. To keep from blocking, first make sure your socket buffer is large enough to handle a normal number of messages (using the socket-buffer-size property), then set the async distribution timeout to 1. With this very low distribution timeout, when your socket buffer does fill up, the producer quickly switches to async queueing. Use the distribution statistics, asyncQueueTimeoutExceeded and asyncQueueSizeExceeded, to make sure your queue settings are high enough to avoid forcing unwanted disconnects during message bursts.
--   Unhealthy or dead membersâ€”When members are dead or very unhealthy, they may not be able to communicate with other members. The slow receiver specifications allow you to force crippled members to disconnect, freeing up resources and possibly allowing the members to restart fresh. To configure for this, set the distribution timeout high (one minute), and set the queue timeout low. This is the best way to avoid queueing for momentary slowness, while still quickly telling very unhealthy members to leave the cluster.
--   Combination message bursts and unhealthy membersâ€”To configure for both of the above situations, set the distribution timeout low and the queue timeout high, as for the message bursts scenario.
+-   Message bursts—With message bursts, the socket buffer can overflow and cause the producer to block. To keep from blocking, first make sure your socket buffer is large enough to handle a normal number of messages (using the socket-buffer-size property), then set the async distribution timeout to 1. With this very low distribution timeout, when your socket buffer does fill up, the producer quickly switches to async queueing. Use the distribution statistics, asyncQueueTimeoutExceeded and asyncQueueSizeExceeded, to make sure your queue settings are high enough to avoid forcing unwanted disconnects during message bursts.
+-   Unhealthy or dead members—When members are dead or very unhealthy, they may not be able to communicate with other members. The slow receiver specifications allow you to force crippled members to disconnect, freeing up resources and possibly allowing the members to restart fresh. To configure for this, set the distribution timeout high (one minute), and set the queue timeout low. This is the best way to avoid queueing for momentary slowness, while still quickly telling very unhealthy members to leave the cluster.
+-   Combination message bursts and unhealthy members—To configure for both of the above situations, set the distribution timeout low and the queue timeout high, as for the message bursts scenario.
 
 **Managing Slow distributed-ack Receivers**
 
-When using a distribution scope other than distributed-no-ack, alerts are issued for slow receivers. A member that isnâ€™t responding to messages may be sick, slow, or missing. Sick or slow members are detected in message transmission and reply-wait processing code, triggering a warning alert first. If a member still isnâ€™t responding, a severe warning alert is issued, indicating that the member may be disconnected from the cluster. This alert sequence is enabled by setting the ack-wait-threshold and the ack-severe-alert-threshold to some number of seconds.
+When using a distribution scope other than distributed-no-ack, alerts are issued for slow receivers. A member that isn’t responding to messages may be sick, slow, or missing. Sick or slow members are detected in message transmission and reply-wait processing code, triggering a warning alert first. If a member still isn’t responding, a severe warning alert is issued, indicating that the member may be disconnected from the cluster. This alert sequence is enabled by setting the ack-wait-threshold and the ack-severe-alert-threshold to some number of seconds.
 
-When ack-severe-alert-threshold is set, regions are configured to use ether distributed-ack or global scope, or use the partition data policy. Geode will wait for a total of ack-wait-threshold seconds for a response to a cache operation, then it logs a warning alert ("Membership: requesting removal of entry(\#). Disconnected as a slow-receiver"). After waiting an additional ack-severe-alert-threshold seconds after the first threshold is reached, the system also informs the failure detection mechanism that the receiver is suspect and may be disconnected, as shown in the following figure.
+When ack-severe-alert-threshold is set, regions are configured to use ether distributed-ack or global scope, or use the partition data policy. @@product_name@@ will wait for a total of ack-wait-threshold seconds for a response to a cache operation, then it logs a warning alert ("Membership: requesting removal of entry(\#). Disconnected as a slow-receiver"). After waiting an additional ack-severe-alert-threshold seconds after the first threshold is reached, the system also informs the failure detection mechanism that the receiver is suspect and may be disconnected, as shown in the following figure.
 
 <img src="../../images_svg/member_severe_alert.svg" id="slow_recv__image_BA474143B16744F28DE0AB1CAD00FB48" class="image" />
 The events occur in this order:
@@ -114,6 +114,3 @@ A cache closes due to being expelled from the cluster by other members. Typicall
 This is marked as a region operation.
 
 Other members see the normal membership notifications for the departing member. For instance, RegionMembershipListeners receive the afterRemoteRegionCrashed notification, and SystemMembershipListeners receive the memberCrashed notification.
-
-
-

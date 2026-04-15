@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Using Automatic Reflection-Based PDX Serialization
 ---
 
@@ -33,7 +33,7 @@ Your custom PDX autoserializable classes cannot use the `org.apache.geode` packa
 
 **Prerequisites**
 
--   Understand generally how to configure the Geode cache.
+-   Understand generally how to configure the @@product_name@@ cache.
 -   Understand how PDX serialization works and how to configure your application to use `PdxSerializer`.
 
 <a id="auto_serialization__section_43F6E45FF69E470897FD9D002FBE896D"><strong>Procedure</strong></a>
@@ -129,5 +129,3 @@ For each domain class you provide, all fields are considered for serialization e
 
 **Note:**
 The `ReflectionBasedAutoSerializer` traverses the given domain object's class hierarchy to retrieve all fields to be considered for serialization. So if `DomainObjectB` inherits from `DomainObjectA`, you only need to register `DomainObjectB` to have all of `DomainObjectB` serialized.
-
-

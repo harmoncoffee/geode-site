@@ -1,4 +1,4 @@
-﻿---
+---
 title: Cluster Management Service
 sidebar_label: Cluster Management Service
 sidebar_position: 14
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-**Note:** This feature is experimental and is subject to change in future releases of Apache Geode .
+**Note:** This feature is experimental and is subject to change in future releases of @@product_name_long@@.
 
 The cluster management service enables you to change the configuration of
 the cluster using a REST interface,
@@ -42,7 +42,7 @@ Having a locator running is sufficient.
 
 - Not all gfsh commands and options are available with this REST interface.
 
-Currently, Geode provides a Java client to interact with
+Currently, @@product_name@@ provides a Java client to interact with
 the REST interface.
 There is also a Golang client that interacts with the REST interface.
 
@@ -51,7 +51,7 @@ so users can use POST, PATCH, DELETE, and GET to create,
 update, delete, and read, respectively.
 
 See the versioned documentation at [Cluster Management Service REST API](https://cwiki.apache.org/confluence/display/GEODE/Cluster+Management+Service+Rest+API) for more details.
-This version of Geode uses the @@product_version_geode@@ Management REST API.
+This version of @@product_name@@ uses the @@product_version_geode@@ Management REST API.
 
 ## Cluster Management Configuration
 
@@ -132,4 +132,3 @@ For example:
 ```
 $ ./gemfire http://localhost:7070 list regions
 ```
-

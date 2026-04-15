@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Creating, Listing and Removing Indexes
 sidebar_label: Creating, Listing and Removing Indexes
 sidebar_position: 2
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-The Geode `QueryService` API provides methods to create, list and remove the index. You can also use `gfsh` command-line interface to create, list and remove indexes, and use cache.xml to create an index.
+The @@product_name@@ `QueryService` API provides methods to create, list and remove the index. You can also use `gfsh` command-line interface to create, list and remove indexes, and use cache.xml to create an index.
 
 ## <a id="indexing__section_565C080FBDD0443C8504DF372E3C32C8" class="no-quick-link"></a>Creating Indexes
 
@@ -108,4 +108,3 @@ QueryService qs = cache.getQueryService();
  qs.removeIndexes(myKeyIndex); //removes the index named myKeyIndex
  qs.removeIndexes(exampleRegion); //removes all indexes from the exampleRegion
 ```
-

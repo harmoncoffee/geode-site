@@ -1,4 +1,4 @@
-﻿---
+---
 title: Creating Hash Indexes
 sidebar_label: Creating Hash Indexes
 sidebar_position: 4
@@ -21,8 +21,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-**Hash indexes are deprecated.** Geode 
- supports the creation of hash indexes for the purpose of performing equality-based queries.
+**Hash indexes are deprecated.**
+@@product_name@@ supports the creation of hash indexes for the purpose of performing equality-based queries.
 
 
 ## <a id="concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_8A927DFB29364DA7856E7FE122FC1654" class="no-quick-link"></a>Hash Index Performance
@@ -88,4 +88,3 @@ gfsh> create index --name=myHashIndex --expression=mktValue --region=/exampleReg
  ...
 </region>
 ```
-

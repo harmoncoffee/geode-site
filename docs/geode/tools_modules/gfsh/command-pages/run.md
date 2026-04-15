@@ -70,6 +70,3 @@ server1 | Region "/region4" created on "server1"
 
 Parent region for "region1/subregion1" doesn't exist. 
 ```
-
-
-

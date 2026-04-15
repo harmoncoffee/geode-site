@@ -41,6 +41,3 @@ try {
   iter.close();
 }
 ```
-
-
-

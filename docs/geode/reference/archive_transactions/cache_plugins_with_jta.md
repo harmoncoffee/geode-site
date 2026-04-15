@@ -1,4 +1,4 @@
-﻿---
+---
 title: Behavior of Geode Cache Writers and Loaders Under JTA
 sidebar_label: Behavior of Geode Cache Writers and Loaders Under JTA
 sidebar_position: 2
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-When Geode participates in a global transactions, you can still have Geode cache writers and cache loaders operating in the usual way.
+When @@product_name@@ participates in a global transactions, you can still have @@product_name@@ cache writers and cache loaders operating in the usual way.
 
 For example, in addition to the transactional connection to the database, the region could also have
 a cache writer and cache loader configured to exchange data with that same database. As long as the
@@ -31,7 +31,4 @@ changes made by the cache loader and the cache writer are rolled back. For more 
 data sources, see the discussion of XAPooledDataSource and ManagedDataSource in 
 [Configuring Database Connections Using JNDI](../../developing/outside_data_sources/configuring_db_connections_using_JNDI.html).
 
-If you are using a Geode cache or transaction listener with global transactions, be aware that the EntryEvent returned by a transaction has the Geode transaction ID, not the JTA transaction ID.
-
-
-
+If you are using a @@product_name@@ cache or transaction listener with global transactions, be aware that the EntryEvent returned by a transaction has the @@product_name@@ transaction ID, not the JTA transaction ID.

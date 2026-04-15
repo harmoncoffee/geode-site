@@ -137,7 +137,7 @@ left_paren ::= (
 right_paren ::= )
 left_bracket ::= [
 right_bracket ::= ]
-single_quote ::= â€™
+single_quote ::= ’
 underscore ::= _
 forward_slash ::= /
 comma ::= ,
@@ -164,5 +164,3 @@ plus ::= +
 
 -   Character literals begin with the CHAR keyword followed by the character in single quotation marks. The single-quotation mark character itself is represented as `CHAR ''''` (with four single quotation marks).
 -   In the TIMESTAMP literal, there is a maximum of nine digits after the decimal point.
-
-

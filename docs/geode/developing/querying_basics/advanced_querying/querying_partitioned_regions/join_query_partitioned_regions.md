@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Performing an Equi-Join Query on Partitioned Regions
 sidebar_label: Performing an Equi-Join Query on Partitioned Regions
 sidebar_position: 4
@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-In order to perform equi-join operations on partitioned regions or partitioned regions and replicated regions, you need to use the `query.execute` method and supply it with a function execution context. You need to use Geode 's FunctionService executor because join operations are not yet directly supported for partitioned regions without providing a function execution context.
+In order to perform equi-join operations on partitioned regions or partitioned regions and replicated regions, you need to use the `query.execute` method and supply it with a function execution context. You need to use @@product_name@@'s FunctionService executor because join operations are not yet directly supported for partitioned regions without providing a function execution context.
 
 See [Partitioned Region Query Restrictions](../query_additional/partitioned_region_query_restrictions.html#concept_5353476380D44CC1A7F586E5AE1CE7E8) for more information on partitioned region query limitations.
 
@@ -95,6 +95,3 @@ On the client side, note that you can specify a bucket filter while invoking Fun
 **Additional Notes on Using the Query.execute and RegionFunctionContext APIs**
 
 You can also pass multiple parameters (besides the query itself) to the query function by specifying the parameters in the client-side code (`FunctionService.onRegion(..).setArguments()`). Then you can handle the parameters inside the function on the server side using `context.getArguments`. Note that it does not matter which order you specify the parameters as long as you match the parameter handling order on the server with the order specified in the client.
-
-
-

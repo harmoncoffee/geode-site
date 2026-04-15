@@ -74,6 +74,3 @@ The following are some additional real-world usage scenarios:
     ```
 
 Any singleton or timer task or thread can be instantiated and started using the initializer element.
-
-
-

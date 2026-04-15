@@ -47,6 +47,3 @@ pause gateway-sender --id=value [--groups=value(,value)*]
 ``` pre
 pause gateway-sender --id=sender1
 ```
-
-
-

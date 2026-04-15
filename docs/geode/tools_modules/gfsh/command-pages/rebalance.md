@@ -67,6 +67,3 @@ Total number of members in system on which rebalance is executed                
 
  
 ```
-
-
-

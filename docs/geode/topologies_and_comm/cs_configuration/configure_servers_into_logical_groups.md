@@ -52,6 +52,3 @@ To add servers to a member group, you can configure the following:
     <region name="clientRegion" ... 
       <region-attributes pool-name="PortfolioPool" ...
     ```
-
-
-

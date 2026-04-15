@@ -1,4 +1,4 @@
-﻿---
+---
 title:  GET /geode/v1/{region}/keys
 sidebar_label: GET /geode/v1/{region}/keys
 sidebar_position: 3
@@ -64,7 +64,4 @@ Date: Sat, 18 Jan 2014 21:20:05 GMT
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | 404 NOT FOUND             | Specified region does not exist.                                                                                                 |
 | 405 METHOD NOT ALLOWED    | Returned if any HTTP request method other than GET (for example, POST, PUT, DELETE, etc.) is used.                               |
-| 500 INTERNAL SERVER ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
-
-
-
+| 500 INTERNAL SERVER ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |

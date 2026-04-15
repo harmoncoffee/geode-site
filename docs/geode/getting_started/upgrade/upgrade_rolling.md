@@ -22,7 +22,7 @@ limitations under the License.
 -->
 
 A rolling upgrade eliminates system downtime by keeping your existing cluster running while you upgrade one member at a time.
-Each upgraded member can communicate with other members that are still running the earlier version of Geode , so servers can respond to
+Each upgraded member can communicate with other members that are still running the earlier version of @@product_name@@, so servers can respond to
 client requests even as the upgrade is underway. Interdependent data members can be stopped and started without mutually blocking, a problem
 that can occur when multiple data members are stopped at the same time.
 
@@ -30,11 +30,11 @@ that can occur when multiple data members are stopped at the same time.
 
 **Versions**
 
-Rolling upgrade requires that the older and newer versions of Geode are mutually compatible, which usually means that they
+Rolling upgrade requires that the older and newer versions of @@product_name@@ are mutually compatible, which usually means that they
 share the same major version number.
 
 See [Version Compatibilities](upgrade_planning.html#version_compatibilities)
-for more details on how different versions of Geode can interoperate.
+for more details on how different versions of @@product_name@@ can interoperate.
 
 **Components**
 
@@ -53,7 +53,7 @@ If a rolling update is not possible for your system, follow the [Off-Line Upgrad
 
 **Do not create or destroy regions**
 
-When you perform a rolling upgrade, your online cluster will have a mix of members running different versions of .
+When you perform a rolling upgrade, your online cluster will have a mix of members running different versions of @@product_name@@.
 During this time period, do not execute region operations such as region creation or region destruction.
 
 **Region rebalancing affects the restart process**
@@ -66,9 +66,9 @@ The partitioned region attribute `startup-recovery-delay` is described in [Confi
 
 **Checking component versions while upgrading**
 
-During a rolling upgrade, you can check the current Geode version of all members in the cluster by looking at the server or locator logs.
+During a rolling upgrade, you can check the current @@product_name@@ version of all members in the cluster by looking at the server or locator logs.
 
-  When an upgraded member reconnects to the cluster, it logs all the members it can see as well as the Geode version of those members. For example, an upgraded locator will now detect Geode members running the older version of Geode (in this case, the version being upgraded, GEODE 1.2.0):
+  When an upgraded member reconnects to the cluster, it logs all the members it can see as well as the @@product_name@@ version of those members. For example, an upgraded locator will now detect @@product_name@@ members running the older version of @@product_name@@ (in this case, the version being upgraded, GEODE 1.2.0):
 
 ``` pre
 [info 2013/06/03 10:03:29.206 PDT frodo <vm_1_thr_1_frodo> tid=0x1a]  DistributionManager frodo(locator1:21869:locator)<v16>:28242 started on frodo[15001]. There
@@ -103,7 +103,7 @@ Upgrade locators first, then data members, then clients.
 
 1.  On the machine hosting the first locator you wish to upgrade, open a terminal console.
 
-2.  Start a `gfsh` prompt, using the version from your current Geode installation, and connect to the currently running locator.
+2.  Start a `gfsh` prompt, using the version from your current @@product_name@@ installation, and connect to the currently running locator.
     For example:
 
     ``` pre
@@ -136,7 +136,7 @@ For example, use the `list members` command to view locators and data members:
     ....
     No longer connected to 172.16.71.1[1099].
     ```
-6. Start `gfsh` from the new Geode installation.
+6. Start `gfsh` from the new @@product_name@@ installation.
     Verify that you are running the newer version with
 
     ``` pre
@@ -175,7 +175,7 @@ For example, use the `list members` command to view locators and data members:
     server2  | 172.16.71.1(server2:26518)<v3>:1027(version:GEODE 1.2)
     ```
 
-    The server entries show that the servers are running an older version of Geode , in this case `(version:GEODE 1.2)`.
+    The server entries show that the servers are running an older version of @@product_name@@, in this case `(version:GEODE 1.2)`.
 
 ### <a id="upgrade-servers" class="no-quick-link"></a>Upgrade Servers
 
@@ -191,7 +191,7 @@ After you have upgraded all of the system's locators, upgrade the servers.
     Starting a Geode Server in /Users/share/server1...
     ```
 
-    Use the `list members` command to verify that the server is now running the new version of :
+    Use the `list members` command to verify that the server is now running the new version of @@product_name@@:
 
     ```
     gfsh>list members
@@ -213,9 +213,8 @@ After you have upgraded all of the system's locators, upgrade the servers.
     `show metrics` command with the `--member` option or the `--region` option to verify that the data member is hosting data and that
     the amount of data it is hosting has stabilized.
 
-3. Shut down,restart, and rebalance servers until all data members are running the new version of .
+3. Shut down,restart, and rebalance servers until all data members are running the new version of @@product_name@@.
 
 ### <a id="upgrade-clients" class="no-quick-link"></a>Upgrade Clients
 
-Upgrade Geode clients, following the guidelines described in [Upgrading Clients](upgrade_clients.html).
-
+Upgrade @@product_name@@ clients, following the guidelines described in [Upgrading Clients](upgrade_clients.html).

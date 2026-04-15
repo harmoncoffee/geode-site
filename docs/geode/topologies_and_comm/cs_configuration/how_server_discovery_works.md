@@ -19,10 +19,12 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
---> Apache Geode locators provide reliable and flexible server discovery services for your clients. You can use all servers for all client requests, or group servers according to function, with the locators directing each client request to the right group of servers.
+-->
+
+@@product_name_long@@ locators provide reliable and flexible server discovery services for your clients. You can use all servers for all client requests, or group servers according to function, with the locators directing each client request to the right group of servers.
 
 <a id="how_server_discovery_works__section_91AC081D4C48408B9ABA40430F161E73"></a>
-By default, Geode clients and servers discover each other on a predefined port (40404) on the localhost. This works, but is not typically the way you would deploy a client/server configuration. The recommended solution is to use one or more dedicated locators. A locator provides both discovery and load balancing services. With server locators, clients are configured with a locator list and locators maintain a dynamic server list. The locator listens at an address and port for connecting clients and gives the clients server information. The clients are configured with locator information and have no configuration specific to the servers.
+By default, @@product_name@@ clients and servers discover each other on a predefined port (40404) on the localhost. This works, but is not typically the way you would deploy a client/server configuration. The recommended solution is to use one or more dedicated locators. A locator provides both discovery and load balancing services. With server locators, clients are configured with a locator list and locators maintain a dynamic server list. The locator listens at an address and port for connecting clients and gives the clients server information. The clients are configured with locator information and have no configuration specific to the servers.
 
 ## <a id="how_server_discovery_works__section_95B62F09EF954A99ABBDEBC2756812E3" class="no-quick-link"></a>Basic Configuration
 
@@ -42,7 +44,7 @@ The servers, run on their respective hosts, have this `cache-server` configurati
 <cache-server port="40404" ...
 ```
 
-The clientâ€™s `cache.xml` `pool` configuration and `region-attributes`:
+The client’s `cache.xml` `pool` configuration and `region-attributes`:
 
 ``` pre
 <pool name="PoolA" ...
@@ -75,4 +77,3 @@ And the `pool` declaration for Client 1:
 <pool name="PortfolioPool" server-group="Portfolios"...
   <locator host="lucy" port="41111">
 ```
-

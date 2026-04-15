@@ -1,4 +1,4 @@
-﻿---
+---
 title: Common Geode Configuration Changes for AppServers
 sidebar_label: Common Geode Configuration Changes for AppServers
 sidebar_position: 3
@@ -50,6 +50,3 @@ Next, you must specify the region attributes ID as a value for the `region_attri
   ...
 </filter>
 ```
-
-
-

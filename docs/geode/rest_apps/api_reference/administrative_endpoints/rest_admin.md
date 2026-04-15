@@ -28,6 +28,3 @@ Administrative endpoints provide management and monitoring functionality for the
 -   **[GET /geode/v1/servers](get_servers.html)**
 
     Mechanism to obtain a list of all members in the cluster that are running the REST API service.
-
-
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title:  PUT /geode/v1/region/key1,key2,...keyN
 sidebar_label: PUT /geode/v1/region/key1,key2,...keyN
 sidebar_position: 9
@@ -103,5 +103,4 @@ Response-payload: null
 | 400 BAD REQUEST           | Returned if one or more of the supplied keys is an invalid format.                                                               |
 | 404 NOT FOUND             | Returned if the region is not found.                                                                                             |
 | 414 REQUEST URI TOO LONG  | Returned if the URI is longer than the system component can handle. Limiting the size to 2000 bytes will work for most components.   |
-| 500 INTERNAL SERVER ERROR | Error encountered at Geode server. Check the HTTP response body for a stack trace of the exception. |
-
+| 500 INTERNAL SERVER ERROR | Error encountered at @@product_name@@ server. Check the HTTP response body for a stack trace of the exception. |

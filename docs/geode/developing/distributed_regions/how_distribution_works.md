@@ -46,6 +46,3 @@ In a distributed region, new and updated entry values are automatically distribu
 **Step 3:** The entry's value is the same throughout the cluster.
 
 <img src="../../images_svg/distributed_how_3.svg" id="how_distribution_works__image_5B1F06B54C9047E28A8C8673D1D5BD27" class="image" />
-
-
-
