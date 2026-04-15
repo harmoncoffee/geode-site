@@ -66,7 +66,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     -Dgemfire.load-cluster-configuration-from-dir=false
     -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
     -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
-    Class-Path: /Users/username/geode/lib/geode-dependencies.jar
+    Class-Path: /Users/username/geode@@product_version_nodot@@/lib/geode-dependencies.jar
 
     Successfully connected to: JMX Manager [host=192.0.2.0, port=1099]
 
@@ -92,7 +92,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334] -Dgemfire.groups=group1
     -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true
     -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
-    Class-Path: /Users/username/geode/lib/geode-dependencies.jar
+    Class-Path: /Users/username/geode@@product_version_nodot@@/lib/geode-dependencies.jar
 
     gfsh>start server --name=server2 --groups=group1 --server-port=40405
     Starting a Geode Server in /Users/username/my_geode/server2...
@@ -109,7 +109,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true
     -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
     -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
-    Class-Path: /Users/username/geode/lib/geode-dependencies.jar
+    Class-Path: /Users/username/geode@@product_version_nodot@@/lib/geode-dependencies.jar
 
     gfsh>start server --name=server3 --server-port=40406
     Starting a Geode Server in /Users/username/my_geode/server3...
@@ -125,7 +125,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true
     -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
     -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
-    Class-Path: /Users/username/geode/lib/geode-dependencies.jar
+    Class-Path: /Users/username/geode@@product_version_nodot@@/lib/geode-dependencies.jar
     ```
 
     Note that the `gfsh` commands you used to start `server1` and `server2` specify a group named `group1` while the command for `server3` did not specify a group name.
@@ -246,7 +246,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     -Dgemfire.load-cluster-configuration-from-dir=false
     -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
     -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
-    Class-Path: /Users/username/geode/lib/geode-dependencies.jar
+    Class-Path: /Users/username/geode@@product_version_nodot@@/lib/geode-dependencies.jar
 
     Successfully connected to: JMX Manager [host=192.0.2.0, port=1099]
 
@@ -283,7 +283,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true
     -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
     -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
-    Class-Path: /Users/username/geode/lib/geode-dependencies.jar
+    Class-Path: /Users/username/geode@@product_version_nodot@@/lib/geode-dependencies.jar
     ```
 
 15. Start another server that references `group1`:
@@ -303,7 +303,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true
     -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
     -Dsun.rmi.dgc.server.gcInterval=9223372036854775806
-    Class-Path: /Users/username/geode/lib/geode-dependencies.jar
+    Class-Path: /Users/username/geode@@product_version_nodot@@/lib/geode-dependencies.jar
     ```
 
 16. Use the `list regions` command to display the configured regions. Note that region1 and region2, which were configured in the original cluster level are available.

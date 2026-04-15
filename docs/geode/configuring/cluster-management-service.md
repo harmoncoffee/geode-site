@@ -51,7 +51,7 @@ so users can use POST, PATCH, DELETE, and GET to create,
 update, delete, and read, respectively.
 
 See the versioned documentation at [Cluster Management Service REST API](https://cwiki.apache.org/confluence/display/GEODE/Cluster+Management+Service+Rest+API) for more details.
-This version of Geode uses the 1.15 Management REST API.
+This version of Geode uses the @@product_version_geode@@ Management REST API.
 
 ## Cluster Management Configuration
 
