@@ -21,6 +21,14 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+
+import replaceDocVars from './config/remark/replace-doc-vars';
+
+import geodeVars from './config/doc-vars/geode';
+import cppVars from './config/doc-vars/cpp';
+import dotnetVars from './config/doc-vars/dotnet';
+
+
 const projectName = "geode";
 const mainRepoName = "geode";
 const siteRepoName = "geode-site";
@@ -54,6 +62,9 @@ const config: Config = {
               routeBasePath: 'docs',
               sidebarPath: require.resolve('./sidebars.geode.ts'),
               editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+              remarkPlugins: [
+                  [replaceDocVars, {pluginId: 'default', valuesByVersion: geodeVars}],
+              ]
           },
         blog: {
           blogSidebarCount: 'ALL',
@@ -78,9 +89,6 @@ const config: Config = {
                 editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
             },
         ],
-        /**
-         * Geode Native C++ docs
-         */
         [
             '@docusaurus/plugin-content-docs',
             {
@@ -91,12 +99,11 @@ const config: Config = {
                 editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
                 showLastUpdateTime: true,
                 showLastUpdateAuthor: true,
+                remarkPlugins: [
+                    [replaceDocVars, {pluginId: 'geode_native_cpp', valuesByVersion: cppVars}],
+                ],
             },
         ],
-
-        /**
-         * Geode Native .NET docs
-         */
         [
             '@docusaurus/plugin-content-docs',
             {
@@ -107,6 +114,9 @@ const config: Config = {
                 editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
                 showLastUpdateTime: true,
                 showLastUpdateAuthor: true,
+                remarkPlugins: [
+                    [replaceDocVars, {pluginId: 'geode_native_dotnet', valuesByVersion: dotnetVars}],
+                ],
             },
         ],
     ],

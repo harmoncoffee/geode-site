@@ -47,7 +47,7 @@ To acquire Geode module version information, look in the web server's log file f
 ``` pre
 INFO: Initializing Geode Modules
 Java version:   1.0.0 user1 041216 2016-11-12 11:18:37 -0700
-          javac .0.
+          javac @@min_java_version@@.0.@@min_java_update@@
 Native version: native code unavailable
 Source revision: 857bb75916640a066eb832b43b3c805f0dd7ed0b
 Source repository: develop

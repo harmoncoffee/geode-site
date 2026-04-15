@@ -60,7 +60,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     Process ID: 70919
     Uptime: 12 seconds
      Version: 
-    Java Version: .0.
+    Java Version: @@min_java_update@@.0.@@product_version@@
     Log File: /Users/username/my_geode/locator1/locator1.log
     JVM Arguments: -Dgemfire.enable-cluster-configuration=true
     -Dgemfire.load-cluster-configuration-from-dir=false
@@ -86,7 +86,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     Process ID: 5627
     Uptime: 2 seconds
      Version: 
-    Java Version: .0.
+    Java Version: @@min_java_update@@.0.@@product_version@@
     Log File: /Users/username/my_geode/server1/server1.log
 
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334] -Dgemfire.groups=group1
@@ -102,7 +102,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     Process ID: 5634
     Uptime: 2 seconds
      Version: 
-    Java Version: .0.
+    Java Version: @@min_java_update@@.0.@@product_version@@
     Log File: /Users/username/my_geode/server2/server2.log
 
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334] -Dgemfire.groups=group1
@@ -119,7 +119,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     Process ID: 5637
     Uptime: 2 seconds
      Version: 
-    Java Version: .0.
+    Java Version: @@min_java_update@@.0.@@product_version@@
     Log File: /Users/username/my_geode/server3/server3.log
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334]
     -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true
@@ -239,7 +239,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     Process ID: 5749
     Uptime: 15 seconds
      Version: 
-    Java Version: .0.
+    Java Version: @@min_java_update@@.0.@@product_version@@
     Log File: /Users/username/new_geode/locator2/locator2.log
 
     JVM Arguments: -Dgemfire.enable-cluster-configuration=true
@@ -276,7 +276,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     Process ID: 5813
     Uptime: 4 seconds
      Version: 
-    Java Version: .0.
+    Java Version: @@min_java_update@@.0.@@product_version@@
     Log File: /Users/username/new_geode/server4/server4.log
 
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10335]
@@ -297,7 +297,7 @@ This section provides a walk-through example of configuring a simple Apache Geod
     Process ID: 5954
     Uptime: 2 seconds
      Version: 
-    Java Version: .0.
+    Java Version: @@min_java_update@@.0.@@product_version@@
     Log File: /Users/username/new_geode/server5/server5.log
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10335] -Dgemfire.groups=group1
     -Dgemfire.start-dev-rest-api=false -Dgemfire.use-cluster-configuration=true

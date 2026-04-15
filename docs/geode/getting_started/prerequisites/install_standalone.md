@@ -26,7 +26,7 @@ Build from source or use the TAR distribution to install Apache Geode on every p
 1.  Set the JAVA\_HOME environment variable.
 
     ``` pre
-    JAVA_HOME=/usr/java/jdk-.0.
+    JAVA_HOME=/usr/java/jdk-@@min_java_version@@.0.@@min_java_update@@
     export JAVA_HOME
     ```
 
@@ -56,7 +56,7 @@ Build from source or use the TAR distribution to install Apache Geode on every p
 1.  Set the JAVA\_HOME environment variable. For example:
 
     ``` pre
-    $ set JAVA_HOME="C:\Program Files\Java\jdk-.0." 
+    $ set JAVA_HOME="C:\Program Files\Java\jdk-@@min_java_version@@.0.@@min_java_update@@" 
     ```
 
 2.  Install Gradle, version 2.3 or a more recent version.
@@ -93,14 +93,14 @@ Build from source or use the TAR distribution to install Apache Geode on every p
 3.  Set the JAVA\_HOME environment variable. On Linux/Unix platforms:
 
     ``` pre
-    JAVA_HOME=/usr/java/jdk-.0.
+    JAVA_HOME=/usr/java/jdk-@@min_java_version@@.0.@@min_java_update@@
     export JAVA_HOME
     ```
 
     On Windows platforms:
 
     ``` pre
-    set JAVA_HOME="C:\Program Files\Java\jdk-.0."
+    set JAVA_HOME="C:\Program Files\Java\jdk-@@min_java_version@@.0.@@min_java_update@@"
     ```
 
 4.  Add the Geode scripts to your PATH environment variable. On Linux/Unix platforms:

@@ -57,7 +57,7 @@ is currently online.
 Process ID: 27144
 Uptime: 5 seconds
  Version: 
-Java Version: .0.
+Java Version: @@min_java_update@@.0.@@product_version@@
 Log File: /Users/username/apache-geode/locator1/locator1.log
 JVM Arguments: -Dgemfire.enable-cluster-configuration=true 
 -Dgemfire.load-cluster-configuration-from-dir=false 

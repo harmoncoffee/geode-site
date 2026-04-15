@@ -56,7 +56,7 @@ The *locator* is a Geode process that tells new, connecting members where runnin
     Process ID: 3529
     Uptime: 18 seconds
      Version: 
-    Java Version: .0.
+    Java Version: @@min_java_update@@.0.@@product_version@@
     Log File: /home/username/my_geode/locator1/locator1.log
     JVM Arguments: -Dgemfire.enable-cluster-configuration=true -Dgemfire.load-cluster-configuration-from-dir=false
     -Dgemfire.launcher.registerSignalHandlers=true -Djava.awt.headless=true
@@ -413,7 +413,7 @@ In this step you restart the cache servers in parallel. Because the data is pers
     Process ID: 3402
     Uptime: 1 minute 46 seconds
      Version: 
-    Java Version: .0.
+    Java Version: @@min_java_update@@.0.@@product_version@@
     Log File: /home/username/my_geode/server1/server1.log
     JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334] -Dgemfire.use-cluster-configuration=true
     -XX:OnOutOfMemoryError=kill -KILL %p -Dgemfire.launcher.registerSignalHandlers=true

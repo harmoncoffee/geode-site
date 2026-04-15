@@ -198,7 +198,7 @@ You can verify that Geode has successfully started by inspecting the application
 info 2025/04/18 10:04:18.685 PDT <localhost-startStop-2> tid=0x1a]
 Initializing Geode Modules
 Java version:   2.0.0 user1 041816 2025-11-18 08:46:17 -0700
-javac .0.
+javac @@min_java_update@@.0.@@product_version@@
 Native version: native code unavailable
 Source revision: 19dd8eb1907e0beb2aa3e0a17d5f12c6cbec6968
 Source repository: develop

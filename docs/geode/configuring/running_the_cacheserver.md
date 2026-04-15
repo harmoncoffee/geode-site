@@ -153,7 +153,7 @@ Server in /home/username/server4 on 192.0.2.0[40404] as server4 is currently onl
 Process ID: 49008
 Uptime: 2 seconds
 Geode Version: 
-Java Version: .0.
+Java Version: @@min_java_update@@.0.@@product_version@@
 Log File: /Users/username/my_geode/server1/server1.log
 JVM Arguments: -Dgemfire.default.locators=192.0.2.0[10334]
 ```
