@@ -84,3 +84,8 @@ h4 {
 .footer__links {
   text-align: center;
 }
+
+/* Hide any default Docusaurus version banner */
+div[class*="theme-doc-version-banner"]:not([role="alert"]) {
+    display: none;
+}

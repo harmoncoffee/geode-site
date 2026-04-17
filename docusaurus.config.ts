@@ -61,7 +61,17 @@ const config: Config = {
               path: 'docs/geode',
               routeBasePath: 'docs',
               sidebarPath: require.resolve('./sidebars.geode.ts'),
+              versions: {
+                  current: {
+                      label: 'Apache Geode 1.15.x (Current Version)',
+                      banner: 'none',
+                  },
+                  // '1.15': {
+                  //     banner: 'none',
+                  // },
+              },
               editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
+
               beforeDefaultRemarkPlugins: [
                   [replaceDocVars, {pluginId: 'default', valuesByVersion: geodeVars}],
               ]
@@ -99,8 +109,17 @@ const config: Config = {
                 editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
                 showLastUpdateTime: true,
                 showLastUpdateAuthor: true,
+                versions: {
+                    current: {
+                        label: 'Geode Native C++ 1.15.x (Current Version)',
+                        banner: 'none',
+                    },
+                    // '1.15': {
+                    //     banner: 'none',
+                    // },
+                },
                 beforeDefaultRemarkPlugins: [
-                    [replaceDocVars, {pluginId: 'default', valuesByVersion: geodeVars}],
+                    [replaceDocVars, {pluginId: 'geode_native_cpp', valuesByVersion: cppVars}],
                 ]
             },
         ],
@@ -114,8 +133,18 @@ const config: Config = {
                 editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
                 showLastUpdateTime: true,
                 showLastUpdateAuthor: true,
+                disableVersioning: false,
+                versions: {
+                    current: {
+                        label: 'Geode Native .NET 1.15.x (Current Version)',
+                        banner: 'none',
+                    },
+                    // '1.15': {
+                    //     banner: 'none',
+                    // },
+                },
                 beforeDefaultRemarkPlugins: [
-                    [replaceDocVars, {pluginId: 'default', valuesByVersion: geodeVars}],
+                    [replaceDocVars, {pluginId: 'geode_native_dotnet', valuesByVersion: dotnetVars}],
                 ]
             },
         ],
