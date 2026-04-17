@@ -28,11 +28,11 @@ Client/server communication is done in two distinct ways. Each kind of communica
 
 -   **Pool connections**. The pool connection is used to send individual operations to the server to update cached data, to satisfy a local cache miss, or to run an ad hoc query. Each pool connection goes to a host/port location where a server is listening. The server responds to the request on the same connection. Generally, client threads use a pool connection for an individual operation and then return the connection to the pool for reuse, but you can configure to have connections owned by threads. This figure shows pool connections for one client and one server. At any time, a pool may have from zero to many pool connections to any of the servers.
 
-<img src="../../images_svg/cs_connection_pool.svg" id="how_the_pool_manages_connections__image_95B89D7587A94611826DB4FEF56AC4FE" class="image" />
+<img src="/images_svg/cs_connection_pool.svg" id="how_the_pool_manages_connections__image_95B89D7587A94611826DB4FEF56AC4FE" class="image" />
 
 -   **Subscription connections**. The subscription connection is used to stream cache events from the server to the client. To use this, set the client attribute `subscription-enabled` to true. The server establishes a queue to asynchronously send subscription events and the pool establishes a subscription connection to handle the incoming messages. The events sent depend on how the client subscribes.
 
-    <img src="../../images_svg/cs_subscriptions.svg" id="how_the_pool_manages_connections__image_5AB5718413AD4E7EBEDD357335D14C48" class="image" />
+    <img src="/images_svg/cs_subscriptions.svg" id="how_the_pool_manages_connections__image_5AB5718413AD4E7EBEDD357335D14C48" class="image" />
 
 ## <a id="how_the_pool_manages_connections__section_9EB09CBF19034C3A92FEFDBC28A6BBCC" class="no-quick-link"></a>How the Pool Chooses a Server Connection
 

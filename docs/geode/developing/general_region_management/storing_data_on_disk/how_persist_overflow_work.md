@@ -41,7 +41,7 @@ For persistence, the entry keys and values are copied to disk. For overflow, onl
 
 Persistence provides a disk backup of region entry data. The keys and values of all entries are saved to disk, like having a replica of the region on disk. Region entry operations such as put and destroy are carried out in memory and on disk.
 
-<img src="../../images_svg/developing_persistence.svg" id="how_persist_overflow_work__image_B53E1A5A568D437692247A2FD99348A6" class="image" />
+<img src="/images_svg/developing_persistence.svg" id="how_persist_overflow_work__image_B53E1A5A568D437692247A2FD99348A6" class="image" />
 
 When the member stops for any reason, the region data on disk remains. In partitioned regions, where data buckets are divided among members, this can result in some data only on disk and some on disk and in memory. The disk data can be used at member startup to populate the same region.
 
@@ -51,13 +51,13 @@ Overflow limits region size in memory by moving the values of least recently use
 
 In this figure, the value of entry X has been moved to disk to make space in memory. The key for X remains in memory. From the distributed system perspective, the value on disk is as much a part of the region as the data in memory.
 
-<img src="../../images_svg/developing_overflow.svg" id="how_persist_overflow_work__image_1F89C9FBACB54EDA844778EC60F61B8D" class="image" />
+<img src="/images_svg/developing_overflow.svg" id="how_persist_overflow_work__image_1F89C9FBACB54EDA844778EC60F61B8D" class="image" />
 
 ## <a id="how_persist_overflow_work__section_9CBEBC0B59554DB49CE4941435793C51" class="no-quick-link"></a>Persistence and Overflow Together
 
 Used together, persistence and overflow keep all entry keys and values on disk and only the most active entry values in memory. The removal of an entry value from memory due to overflow has no effect on the disk copy as all entries are already on disk.
 
-<img src="../../images_svg/developing_persistence_and_overflow.svg" id="how_persist_overflow_work__image_E40D9C2EA238406A991E954477C7EB78" class="image" />
+<img src="/images_svg/developing_persistence_and_overflow.svg" id="how_persist_overflow_work__image_E40D9C2EA238406A991E954477C7EB78" class="image" />
 
 ## Persistence and Multi-Site Configurations
 

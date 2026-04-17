@@ -117,7 +117,7 @@ If you are deploying an ear file:
 
 ## <a id="weblogic_setting_up_the_module__section_20294A39368D4402AEFB3D074E8D5887" class="no-quick-link"></a>Peer-to-Peer Setup
 
-<img src="../../images_svg/http_module_p2p_with_locator.svg" id="weblogic_setting_up_the_module__image_86E949E0F1AD4E9EB67605EFA4E97E13" class="image" />
+<img src="/images_svg/http_module_p2p_with_locator.svg" id="weblogic_setting_up_the_module__image_86E949E0F1AD4E9EB67605EFA4E97E13" class="image" />
 
 To run @@product_name@@ in a peer-to-peer configuration, use the `modify_war` script with options
 `-t peer-to-peer`,  `-p gemfire.property.locators=localhost[10334]`, and `-p gemfire.propery.cache-xml-file=<moduleDir>/conf/cache-peer.xml`
@@ -142,7 +142,7 @@ to result in the following `web.xml` content:
 
 ## <a id="weblogic_setting_up_the_module__section_B0CEBE93564540DBA165E0F7A10FDC0B" class="no-quick-link"></a>Client/Server Setup
 
-<img src="../../images_svg/http_module_cs_with_locator.svg" id="weblogic_setting_up_the_module__image_BDF2273487EA4FEB9895D02A6F6FD445" class="image" />
+<img src="/images_svg/http_module_cs_with_locator.svg" id="weblogic_setting_up_the_module__image_BDF2273487EA4FEB9895D02A6F6FD445" class="image" />
 
 To run @@product_name@@ in a client/server configuration, you make the application server operate as a @@product_name@@ client. Use the `-t client-server` option to the `modify_war` script. This adds the following filter to application server's `web.xml` file:
 

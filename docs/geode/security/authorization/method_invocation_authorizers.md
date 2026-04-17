@@ -74,7 +74,7 @@ Extra care should be taken, however, when configuring the internals of some of t
 
 The table below shows a summary of which security threats are fully addressed by each authorizer and which ones might be exploitable, depending on how they are configured (details are shown later for each implementation).
 
-<img src="../images/threatsAddressedByEachAuthorizer.png" class="image"></img>
+<img src="/images/threatsAddressedByEachAuthorizer.png" class="image"></img>
 
 ### <a id="restrictedMethodAuthorizer"></a>RestrictedMethodAuthorizer
 

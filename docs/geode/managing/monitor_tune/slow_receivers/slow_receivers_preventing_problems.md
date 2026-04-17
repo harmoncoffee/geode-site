@@ -38,7 +38,7 @@ The machines that host @@product_name@@ application and cache server processes s
 Eliminate congested areas on the network by rebalancing the traffic load. Work with your network administrator to identify and eliminate traffic bottlenecks, whether caused by the architecture of the distributed @@product_name@@ system or by contention between the @@product_name@@ traffic and other traffic on your network. Consider whether more subnets are needed to separate the @@product_name@@ administrative traffic from @@product_name@@ data transport and to separate all the @@product_name@@ traffic from the rest of your network load.
 
 The network connections between hosts need to have equal bandwidth. If not, you can end up with a configuration like the multicast example in the following figure, which creates conflicts among the members. For example, if app1 sends out data at 7Mbps, app3 and app4 would be fine, but app2 would miss some data. In that case, app2 contacts app1 on the TCP channel and sends a log message that it’s dropping data.
-<img src="../../images_svg/unbalanced_network_capacity_probs.svg" id="slow_recv__image_F8C424AB97C444298993294000676150" class="image" />
+<img src="/images_svg/unbalanced_network_capacity_probs.svg" id="slow_recv__image_F8C424AB97C444298993294000676150" class="image" />
 
 **Plan for Growth**
 

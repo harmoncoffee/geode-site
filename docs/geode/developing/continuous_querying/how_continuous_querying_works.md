@@ -36,7 +36,7 @@ When the CQ is running, the server sends the client all new events that affect t
 
 Your clients can execute any number of CQs, with each CQ assigned any number of listeners.
 
-<img src="../../images/ContinuousQuerying-1.gif" id="how_continuous_querying_works__image_B7C36491E8CA4376AEAE4E030C3DF86B" class="image" />
+<img src="/images/ContinuousQuerying-1.gif" id="how_continuous_querying_works__image_B7C36491E8CA4376AEAE4E030C3DF86B" class="image" />
 
 ## <a id="how_continuous_querying_works__section_F0E19919B3F645EF83EACBD7AFDF527E" class="no-quick-link"></a>Data Flow with CQs
 
@@ -56,7 +56,7 @@ In the following figure:
 -   The old price for entry Y satisfied the query, so it was part of the query results. The invalidation of entry Y makes it not satisfy the query. Because of this, the event is sent indicating that it is destroyed in the query results.
 -   The price for the newly created entry Z does not satisfy the query, so no event is sent.
 
-<img src="../../images/ContinuousQuerying-3.gif" id="how_continuous_querying_works__image_2F21A3820906449FAABE7ACC9654A564" class="image" />
+<img src="/images/ContinuousQuerying-3.gif" id="how_continuous_querying_works__image_2F21A3820906449FAABE7ACC9654A564" class="image" />
 
 ## <a id="how_continuous_querying_works__section_819CDBA814024315A6DDA83BD56D125C" class="no-quick-link"></a>CQ Events
 

@@ -32,4 +32,4 @@ The client/server data flow proceeds as follows:
 -   Clients can subscribe to events at startup. Events are streamed automatically from the servers to client listeners and into the client cache.
 -   Client data updates and data requests that the client cache does not fulfill are forwarded automatically to the servers.
 
-<img src="../../images_svg/client_server_deployment.svg" id="standard_deployment__image_7D26C05F80E7449C960A4D7FFC127012" class="image" />
+<img src="/images_svg/client_server_deployment.svg" id="standard_deployment__image_7D26C05F80E7449C960A4D7FFC127012" class="image" />

@@ -87,7 +87,7 @@ When using a distribution scope other than distributed-no-ack, alerts are issued
 
 When ack-severe-alert-threshold is set, regions are configured to use ether distributed-ack or global scope, or use the partition data policy. @@product_name@@ will wait for a total of ack-wait-threshold seconds for a response to a cache operation, then it logs a warning alert ("Membership: requesting removal of entry(\#). Disconnected as a slow-receiver"). After waiting an additional ack-severe-alert-threshold seconds after the first threshold is reached, the system also informs the failure detection mechanism that the receiver is suspect and may be disconnected, as shown in the following figure.
 
-<img src="../../images_svg/member_severe_alert.svg" id="slow_recv__image_BA474143B16744F28DE0AB1CAD00FB48" class="image" />
+<img src="/images_svg/member_severe_alert.svg" id="slow_recv__image_BA474143B16744F28DE0AB1CAD00FB48" class="image" />
 The events occur in this order:
 
 1.  CACHE\_OPERATION - transmission of cache operation is initiated.

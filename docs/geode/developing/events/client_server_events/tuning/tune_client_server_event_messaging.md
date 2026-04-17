@@ -24,6 +24,6 @@ The server uses an asynchronous messaging queue to send events to its clients. E
 
 A single client thread receives and processes messages from the server, tracking received messages to make sure it does not process duplicate sends. It does this using the process IDs from originating threads.
 
-<img src="../../images_svg/tune_cs_event_messaging.svg" id="client_server_event_messaging__image_656BDF5E745F4C6D92C844C423102948" class="image" />
+<img src="/images_svg/tune_cs_event_messaging.svg" id="client_server_event_messaging__image_656BDF5E745F4C6D92C844C423102948" class="image" />
 
 The client’s message tracking list holds the highest sequence ID of any message received for each originating thread. The list can become quite large in systems where there are many different threads coming and going and doing work on the cache. After a thread dies, its tracking entry is not needed. To avoid maintaining tracking information for threads that have died, the client expires entries that have had no activity for more than the `subscription-message-tracking-timeout`.

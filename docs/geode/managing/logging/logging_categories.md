@@ -62,7 +62,7 @@ When your application connects with logging enabled, it creates the main log fil
 
 Your current, main log file always has the name you specified in `log-file`. The old log files and child log files have names derived from the main log file name. These are the pieces of a renamed log or child log file name where `filename.extension` is the `log-file` specification
 
-<img src="../../images/logging-1.gif" id="how_logging_works__image_A144E5195FDA49A1A8914F233495BA88" class="image" />
+<img src="/images/logging-1.gif" id="how_logging_works__image_A144E5195FDA49A1A8914F233495BA88" class="image" />
 
 If child logs are not used, the child file sequence number is a constant 00 (two zeros).
 

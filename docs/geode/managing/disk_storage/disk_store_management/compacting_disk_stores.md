@@ -38,7 +38,7 @@ offline disk stores.
 
 ## <a id="compacting_disk_stores__section_98C6B6F48E4F4F0CB7749E426AF4D647" class="no-quick-link"></a>Log File Compaction for the Online Disk Store
 
-<img src="../../images/diskStores-3.gif" id="compacting_disk_stores__image_7E34CC58B13548B196DAA15F5B0A0ECA" class="image" />
+<img src="/images/diskStores-3.gif" id="compacting_disk_stores__image_7E34CC58B13548B196DAA15F5B0A0ECA" class="image" />
 
 For the online disk store, the current operation log is not available for
 compaction, no matter how much garbage it contains. You can use `DiskStore.forceRoll` to close the current oplog, making it eligible for compaction.

@@ -30,7 +30,7 @@ By default, @@product_name@@ clients and servers discover each other on a predef
 
 In this figure, only one locator is shown, but the recommended configuration uses multiple locators for high availability.
 
-<img src="../../images_svg/server_discovery.svg" alt="Locators track server availability and send clients to the most available servers. Clients send updates and requests to servers. Servers respond and send server events to clients. " id="how_server_discovery_works__image_6DD8320AF78C42F89CFC665F2AF1BEA3" class="image" />
+<img src="/images_svg/server_discovery.svg" alt="Locators track server availability and send clients to the most available servers. Clients send updates and requests to servers. Servers respond and send server events to clients. " id="how_server_discovery_works__image_6DD8320AF78C42F89CFC665F2AF1BEA3" class="image" />
 
 The locator and servers have the same peer discovery configured in their `gemfire.properties`:
 
@@ -62,7 +62,7 @@ To split data management between servers, configure some servers to host one set
 
 In this figure, the client use of the regions is also split, but you could have both pools and both regions defined in all of your clients.
 
-<img src="../../images_svg/server_grouping.svg" alt=" " id="how_server_discovery_works__image_AB77DA6DB7EA49FD8864F39C6C64E056" class="image" />
+<img src="/images_svg/server_grouping.svg" alt=" " id="how_server_discovery_works__image_AB77DA6DB7EA49FD8864F39C6C64E056" class="image" />
 
 This is the `gemfire.properties` definition for Server 1:
 

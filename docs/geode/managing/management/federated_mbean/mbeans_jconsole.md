@@ -50,4 +50,4 @@ To view @@product_name@@ MBeans through JConsole, perform the following steps:
 
     The following is an example screenshot of the MBean hierarchy in a @@product_name@@ cluster:
 
-    <img src="../../images/jconsole_mbeans.png" id="concept_492532E145834248997BD23BCAC7AD45__image_7A45BE69B67A44A7A8AD40343A2B0AEB" class="image" />
+    <img src="/images/jconsole_mbeans.png" id="concept_492532E145834248997BD23BCAC7AD45__image_7A45BE69B67A44A7A8AD40343A2B0AEB" class="image" />

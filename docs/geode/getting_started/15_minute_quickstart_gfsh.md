@@ -83,7 +83,7 @@ This command launches Pulse and automatically connects you to the JMX Manager ru
 
 The Pulse application now displays the locator you just started (locator1):
 
-<img src="../images/pulse_locator.png" id="topic_FE3F28ED18E145F787431EC87B676A76__image_ign_ff5_t4" class="image" />
+<img src="/images/pulse_locator.png" id="topic_FE3F28ED18E145F787431EC87B676A76__image_ign_ff5_t4" class="image" />
 
 ## <a id="topic_FE3F28ED18E145F787431EC87B676A76__section_C617BC1C70EB41B8BCA3691D6E3C891A" class="no-quick-link"></a>Step 4: Start a server
 

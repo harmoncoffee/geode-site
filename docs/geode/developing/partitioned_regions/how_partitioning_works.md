@@ -25,10 +25,10 @@ To use partitioned regions, you should understand how they work and your options
 
 <a id="how_partitioning_works__section_B540C49A80124551853AFCE2DE6BCFE8"></a>
 During operation, a partitioned region looks like one large virtual region, with the same logical view held by all of the members where the region is defined.
-<img src="../../images_svg/how_partitioning_works_1.svg" id="how_partitioning_works__image_305566EA091A4CBBB108BE0EA7658C0A" class="image" />
+<img src="/images_svg/how_partitioning_works_1.svg" id="how_partitioning_works__image_305566EA091A4CBBB108BE0EA7658C0A" class="image" />
 
 For each member where you define the region, you can choose how much space to allow for region data storage, including no local storage at all. The member can access all region data regardless of how much is stored locally.
-<img src="../../images_svg/how_partitioning_works_2.svg" id="how_partitioning_works__image_773C91B76D5E4739A1F81D9DF918BCDB" class="image" />
+<img src="/images_svg/how_partitioning_works_2.svg" id="how_partitioning_works__image_773C91B76D5E4739A1F81D9DF918BCDB" class="image" />
 
 A cluster can have multiple partitioned regions, and it can mix partitioned regions with distributed regions and local regions. The usual requirement for unique region names, except for regions with local scope, still applies. A single member can host multiple partitioned regions.
 

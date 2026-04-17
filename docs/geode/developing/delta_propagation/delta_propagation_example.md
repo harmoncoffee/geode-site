@@ -26,7 +26,7 @@ This topic provides an example of delta propagation.
 <a id="delta_propagation_example__section_F6700EB7F305462D9F0DEE3080497A14"></a>
 In this example, the feeder client is connected to the first server, and the receiver client is connected to the second. The servers are peers to each other.
 
-<img src="../../images/DeltaPropagation-3.gif" id="delta_propagation_example__image_E20DAE5925C44EBDA03D1AC8325D1122" class="image" />
+<img src="/images/DeltaPropagation-3.gif" id="delta_propagation_example__image_E20DAE5925C44EBDA03D1AC8325D1122" class="image" />
 
 The example demonstrates the following operations:
 

@@ -35,7 +35,7 @@ The following sections provide an overview of the main Pulse views:
 
 The cluster view is a high-level overview of the cluster. It is displayed immediately after you log into Pulse. Information displays around the perimeter of the cluster view show statistics such as memory usage, JVM pauses, and throughput. You can use the cluster view to drill down into details for individual members and regions in the cluster.
 
-<img src="../../images/pulse_cluster_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_CC7B54903DF24030850E55965CDB6EC4" class="image imageleft" width="624" />
+<img src="/images/pulse_cluster_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_CC7B54903DF24030850E55965CDB6EC4" class="image imageleft" width="624" />
 
 Use these basic controls while in Cluster view:
 
@@ -44,11 +44,11 @@ Use these basic controls while in Cluster view:
 
     For example, the following shows @@product_name@@ Members displayed in table view:
 
-    <img src="../../images/member_view_list.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_npw_sq3_wn" class="image" />
+    <img src="/images/member_view_list.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_npw_sq3_wn" class="image" />
     -   While in block view or table view, click the name of a @@product_name@@ member to display additional information in the [Member View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_3629814A3DF64D31A190495782DB0DBF).
     -   Click Topology, Server Groups, or Redundancy Zones to filter the view based on all members in the topology, configured server groups, or configured redundancy zones.
     The following shows @@product_name@@ Regions displayed in table view:
-    <img src="../../images/pulse-region-detail.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_glp_1jr_54" class="image" />
+    <img src="/images/pulse-region-detail.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_glp_1jr_54" class="image" />
     -   While in block view or table view, click the name of a @@product_name@@ region to display additional information in the [Region View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_D151776BAC8B4704A71F37F8B5CE063D).
 
 3.  While in icon view, click a host machine icon to display the @@product_name@@ members on that machine.
@@ -91,7 +91,7 @@ The following table describes the data pieces displayed on the Cluster View scre
 
 When you select an individual @@product_name@@ member in Cluster View, Pulse displays the regions available on that member, as well as member-specific information such as the configured listen ports.
 
-<img src="../../images/pulse_member_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_EDBD3D333B2741DCAA5CB94719B507B7" class="image imageleft" width="624" />
+<img src="/images/pulse_member_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_EDBD3D333B2741DCAA5CB94719B507B7" class="image imageleft" width="624" />
 
 Use these basic controls while in Member View:
 
@@ -131,7 +131,7 @@ The following table describes the data elements displayed on the Member View scr
 
 The Pulse Region View provides a comprehensive overview of all regions in the cluster:
 
-<img src="../../images/pulse_data_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_A533852E38654E79BE5628E938E170EB" class="image imageleft" width="624" />
+<img src="/images/pulse_data_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_A533852E38654E79BE5628E938E170EB" class="image imageleft" width="624" />
 
 Use these basic controls while in Region View:
 
@@ -166,7 +166,7 @@ See the `org.apache.geode.management.DistributedSystemMXBean` JavaDocs for infor
 
 The following shows an example Data Browser view:
 
-<img src="../../images/pulse-data-browser.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_hhp_dz2_44" class="image imageleft" width="624" />
+<img src="/images/pulse-data-browser.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_hhp_dz2_44" class="image imageleft" width="624" />
 
 Use these basic controls while in Data Browser view:
 
@@ -186,7 +186,7 @@ The Alerts Widget appears in the right portion of the screen and displays a list
 
 The alerts displayed for the cluster appear based on the alertLevel field set in the DistributedSystemMXBean. By default, log messages with the level of SEVERE are shown as alerts. You can modify the level by using the `DistributedMXBean.changeAlertLevel` method. See [System Alert Notifications](../../managing/management/notification_federation_and_alerts.html#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A__section_7463D13112D54406953416356835E290) for more information.
 
-<img src="../../images/pulse_alerts_widget.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_jrc_smt_qn" class="image" />
+<img src="/images/pulse_alerts_widget.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_jrc_smt_qn" class="image" />
 
 Use these basic controls in the Alerts Widget:
 

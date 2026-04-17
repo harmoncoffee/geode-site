@@ -203,7 +203,7 @@ Running JDK JConsole
 
 The JConsole application appears and auto-connects to a JMX Manager node if one is available:
 
-<img src="../../../images/JConsole.png" id="topic_D00507416F3944DFAB48D2FA2B9E4A31__image_AAB6A784AD4B4BD1B5155AC796C22F82" class="image imagecenter" />
+<img src="/../images/JConsole.png" id="topic_D00507416F3944DFAB48D2FA2B9E4A31__image_AAB6A784AD4B4BD1B5155AC796C22F82" class="image imagecenter" />
 
 **Error Messages:**
 
@@ -245,7 +245,7 @@ start jvisualvm [--J=value(,value)*]
 start jvisualvm
 ```
 
-**Sample Output:** <img src="../../../images/jvisualvm.png" id="topic_5B5BF8BEE905463D8B7762B89E2D65E7__image_BDA0F3A31F784C5FBBB5999EDA2BD942" class="image" />
+**Sample Output:** <img src="/../images/jvisualvm.png" id="topic_5B5BF8BEE905463D8B7762B89E2D65E7__image_BDA0F3A31F784C5FBBB5999EDA2BD942" class="image" />
 
 ## <a id="topic_591260CF25D64562A0EDD7260D2AC6D4" class="no-quick-link"></a>start locator
 

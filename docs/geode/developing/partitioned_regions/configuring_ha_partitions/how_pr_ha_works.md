@@ -59,4 +59,4 @@ By default, @@product_name@@ stores redundant copies on different machines. When
 
 In this figure, M1 is reading W, Y, and Z. It gets W directly from its local copy. Since it doesn't have a local copy of Y or Z, it goes to a cache that does, picking the source cache at random.
 
-<img src="../../images_svg/partitioned_data_HA.svg" id="how_pr_ha_works__image_574D1A1E641944D2A2DE68C4618D84B4" class="image" />
+<img src="/images_svg/partitioned_data_HA.svg" id="how_pr_ha_works__image_574D1A1E641944D2A2DE68C4618D84B4" class="image" />

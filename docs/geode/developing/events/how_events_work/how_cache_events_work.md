@@ -46,7 +46,7 @@ In the following figure:
 4.  The cache listener on M4 handles the notification of the remote event on M2.
 5.  Once everything on the other members has completed successfully, the original create operation on M2 succeeds and invokes the cache listener on M2.
 
-<img src="../../images/Events-2.gif" id="how_cache_events_work__image_E5E187C14A774144B85FA7B636239DBE" class="image" />
+<img src="/images/Events-2.gif" id="how_cache_events_work__image_E5E187C14A774144B85FA7B636239DBE" class="image" />
 
 ## <a id="how_cache_events_work__section_FACF58272C824907BA020B1727427D7A" class="no-quick-link"></a>Events in a Distributed Region
 
@@ -66,7 +66,7 @@ In the following figure:
 5.  M3 does a create, but M2 does an update, because the entry already existed in its cache.
 6.  The cache listener on M2 receives callbacks for the local update. Since there is no cache listener on M3, the callbacks from the create on M3 are not handled. An API call in member M1 creates an entry.
 
-<img src="../../images/Events-3.gif" id="how_cache_events_work__image_A24D6182B2A840D1843EBD4686966EEF" class="image" />
+<img src="/images/Events-3.gif" id="how_cache_events_work__image_A24D6182B2A840D1843EBD4686966EEF" class="image" />
 
 ## <a id="how_cache_events_work__section_B4DCA51DDF7F44699E7355277172BEF0" class="no-quick-link"></a>Managing Events in Multi-threaded Applications
 

@@ -35,7 +35,7 @@ Each member has its own set of disk stores, and they are completely separate fro
 
 This figure shows a member with disk stores D through R defined. The member has two persistent regions using disk store D and an overflow region and an overflow queue using disk store R.
 
-<img src="../../images/diskStores-1.gif" id="how_disk_stores_work__image_CB7972998C4A40B2A02550B97A723536" class="image" />
+<img src="/images/diskStores-1.gif" id="how_disk_stores_work__image_CB7972998C4A40B2A02550B97A723536" class="image" />
 
 ## <a id="how_disk_stores_work__section_433EEEA1560D40DD9842200181EB1D0A" class="no-quick-link"></a>What @@product_name@@ Writes to the Disk Store
 

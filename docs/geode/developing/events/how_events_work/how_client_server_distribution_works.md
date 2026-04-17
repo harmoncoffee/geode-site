@@ -28,7 +28,7 @@ When the client updates its cache, changes to client regions are automatically f
 
 The update is passed to the server and then passed, with the value, to every other client that has registered interest in the entry key. This figure shows how a client’s entry updates are propagated.
 
-<img src="../../images_svg/client_server_event_dist.svg" id="how_client_server_distribution_works__image_66AB57EEDC154962B32F7951667F4656" class="image" />
+<img src="/images_svg/client_server_event_dist.svg" id="how_client_server_distribution_works__image_66AB57EEDC154962B32F7951667F4656" class="image" />
 
 The figure shows the following process:
 
@@ -55,7 +55,7 @@ The server automatically sends entry modification events only for keys in which 
 
 This figure shows the complete event subscription event distribution for interest registrations, with value receipt requested (receiveValues=true) and without.
 
-<img src="../../images_svg/server_client_event_dist.svg" id="how_client_server_distribution_works__image_7FD1450B9D58429F860400801EDFDCAE" class="image" />
+<img src="/images_svg/server_client_event_dist.svg" id="how_client_server_distribution_works__image_7FD1450B9D58429F860400801EDFDCAE" class="image" />
 
 | Change in Server Cache | Effect on Client Cache |
 |---|---|
@@ -75,7 +75,7 @@ The server uses an asynchronous messaging queue to send events to its clients. E
 
 A single client thread receives and processes messages from the server, tracking received messages to make sure it does not process duplicate sends. It does this using the process IDs from originating threads.
 
-<img src="../../images_svg/client_server_message_tracking.svg" id="how_client_server_distribution_works__image_F4F9D13252E14F11AD63240AED39191A" class="image" />
+<img src="/images_svg/client_server_message_tracking.svg" id="how_client_server_distribution_works__image_F4F9D13252E14F11AD63240AED39191A" class="image" />
 
 The client’s message tracking list holds the highest sequence ID of any message received for each originating thread. The list can become quite large in systems where there are many different threads coming and going and doing work on the cache. After a thread dies, its tracking entry is not needed. To avoid maintaining tracking information for threads that have died, the client expires entries that have had no activity for more than the `subscription-message-tracking-timeout`.
 

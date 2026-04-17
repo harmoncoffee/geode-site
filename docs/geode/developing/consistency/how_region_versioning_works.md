@@ -83,7 +83,7 @@ The following example shows how a concurrent update is handled in a cluster of t
 
 **Step 1:** An application updates entry X on @@product_name@@ member A at the same time another application updates entry X on member C. Each member increments the version stamp for the entry and records the version stamp with their member ID in their local caches. In this case the entry was originally at version C2, so each member updates the version to 3 (A3 and C3, respectively) in their local caches.
 
-<img src="../../images_svg/region_entry_versions_1.svg" id="topic_C5B74CCDD909403C815639339AA03758__image_nt5_ptw_4r" class="image" />
+<img src="/images_svg/region_entry_versions_1.svg" id="topic_C5B74CCDD909403C815639339AA03758__image_nt5_ptw_4r" class="image" />
 
 **Step 2:** Member A distributes its update message to members B and C.
 
@@ -91,7 +91,7 @@ Member B compares the update version stamp (3) to its recorded version stamp (2)
 
 Member C compares the update version stamp (3) to its recorded version stamp (3) and identifies a concurrent update. To resolve the conflict, member C next compares the membership ID of the update to the membership ID stored in its local cache. Because the distributed system ID the update (A3) is lower than the ID stored in the cache (C3), member C discards the update (and increments the `conflatedEvents` statistic).
 
-<img src="../../images_svg/region_entry_versions_2.svg" id="topic_C5B74CCDD909403C815639339AA03758__image_ocs_35b_pr" class="image" />
+<img src="/images_svg/region_entry_versions_2.svg" id="topic_C5B74CCDD909403C815639339AA03758__image_ocs_35b_pr" class="image" />
 
 **Step 3:** Member C distributes the update message to members A and B.
 
@@ -99,7 +99,7 @@ Members A and B compare the update version stamp (3) to their recorded version s
 
 At this point, all members that host the region have achieved a consistent state for the concurrent updates on members A and C.
 
-<img src="../../images_svg/region_entry_versions_3.svg" id="topic_C5B74CCDD909403C815639339AA03758__image_gsv_k5b_pr" class="image" />
+<img src="/images_svg/region_entry_versions_3.svg" id="topic_C5B74CCDD909403C815639339AA03758__image_gsv_k5b_pr" class="image" />
 
 ## <a id="topic_321B05044B6641FCAEFABBF5066BD399" class="no-quick-link"></a>How Destroy and Clear Operations Are Resolved
 

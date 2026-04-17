@@ -35,7 +35,7 @@ At region creation, the system initializes the preloaded or replicated region wi
 3.  For preloaded region only. Another preloaded region that is already defined in the cluster.
 4.  The union of all copies of the region in the distributed cache.
 
-<img src="../../images_svg/distributed_replica_preload.svg" id="how_replication_works__image_5F50EBA30CE3408091F07A198F821741" class="image" />
+<img src="/images_svg/distributed_replica_preload.svg" id="how_replication_works__image_5F50EBA30CE3408091F07A198F821741" class="image" />
 
 While a region is being initialized from a replicated or preloaded region, if the source region crashes, the initialization starts over.
 
@@ -45,8 +45,8 @@ If a union of regions is used for initialization, as in the figure, and one of t
 
 Once initialized, the preloaded region operates like the region with a `normal` `data-policy`, receiving distributions only for entries it has defined in the local cache.
 
-<img src="../../images_svg/distributed_preload.svg" id="how_replication_works__image_994CA599B1004D3F95E1BB7C4FAC2AEF" class="image" />
+<img src="/images_svg/distributed_preload.svg" id="how_replication_works__image_994CA599B1004D3F95E1BB7C4FAC2AEF" class="image" />
 
 If the region is configured as a replicated region, it receives all new creations in the distributed region from the other members. This is the push distribution model. Unlike the preloaded region, the replicated region has a contract that states it will hold all entries that are present anywhere in the distributed region.
 
-<img src="../../images_svg/distributed_replica.svg" id="how_replication_works__image_2E7F3EB6213A47FEA3ABE32FD2CB1503" class="image" />
+<img src="/images_svg/distributed_replica.svg" id="how_replication_works__image_2E7F3EB6213A47FEA3ABE32FD2CB1503" class="image" />

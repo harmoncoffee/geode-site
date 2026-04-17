@@ -33,7 +33,7 @@ Peer member discovery is what defines a cluster. All applications and cache serv
 
 Members discover each other using one or more locators. A locator provides both discovery and load balancing services. Peer locators manage a dynamic list of cluster members. New members connect to one of the locators to retrieve the member list, which it uses to join the system.
 
-<img src="../../images_svg/locator_discovery.svg" id="how_member_discovery_works__image_dm3_y3x_15" class="image" />
+<img src="/images_svg/locator_discovery.svg" id="how_member_discovery_works__image_dm3_y3x_15" class="image" />
 
 **Note:**
 Multiple locators ensure the most stable start up and availability for your cluster.
@@ -51,7 +51,7 @@ For performance and cache coherency, clients must run as standalone members or i
 
 You do not need to run any special processes to use locators for server discovery. The locators that provide peer discovery in the server system also provide server discovery for clients to the server system. This is the standard configuration.
 
-<img src="../../images_svg/cs_locator_discovery.svg" id="how_member_discovery_works__image_ED0D22E30A274675ADF0815D102A7D5B" class="image" />
+<img src="/images_svg/cs_locator_discovery.svg" id="how_member_discovery_works__image_ED0D22E30A274675ADF0815D102A7D5B" class="image" />
 
 ## <a id="how_member_discovery_works__section_1CB9D1439346415FB630E9DCD373CAC9" class="no-quick-link"></a>Multi-site Discovery
 

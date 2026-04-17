@@ -64,8 +64,8 @@ Follow these guidelines to calculate the total number of buckets for the partiti
 
 You are trying to avoid the situation where some members have significantly more data entries than others. For example, compare the next two figures. This figure shows a region with three data stores and seven buckets. If all the entries are accessed at about the same rate, this configuration creates a hot spot in member M3, which has about fifty percent more data than the other data stores. M3 is likely to be a slow receiver and potential point of failure.
 
-<img src="../../images_svg/partitioned_data_buckets_1.svg" id="configuring_total_buckets__image_04B05CE3C732430C84D967A062D9EDDA" class="image" />
+<img src="/images_svg/partitioned_data_buckets_1.svg" id="configuring_total_buckets__image_04B05CE3C732430C84D967A062D9EDDA" class="image" />
 
 Configuring more buckets gives you fewer entries in a bucket and a more balanced data distribution. This figure uses the same data as before but increases the number of buckets to 13. Now the data entries are distributed more evenly.
 
-<img src="../../images_svg/partitioned_data_buckets_2.svg" id="configuring_total_buckets__image_326202046D07414391BA5CBA474920CA" class="image" />
+<img src="/images_svg/partitioned_data_buckets_2.svg" id="configuring_total_buckets__image_326202046D07414391BA5CBA474920CA" class="image" />

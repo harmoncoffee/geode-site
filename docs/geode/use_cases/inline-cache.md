@@ -26,7 +26,7 @@ A cache is formed from a region within a @@product_name@@ cluster,
 and the cache sits between the client application and a
 backing data store.
 
-<img src="../images/inline-cache.png" id="inline-cache-png" class="image" />
+<img src="/images/inline-cache.png" id="inline-cache-png" class="image" />
 
 The client application's cache lookup is a region get
 operation, and a cache write is a region put operation. 

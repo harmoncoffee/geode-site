@@ -58,7 +58,7 @@ So, for example, if you have one region with customer contact information and an
 
 This figure shows two regions with data colocation where the data is partitioned by customer type.
 
-<img src="../../images_svg/colocated_partitioned_regions.svg" id="custom_partitioning_and_data_colocation__image_525AC474950F473ABCDE8E372583C5DF" class="image" />
+<img src="/images_svg/colocated_partitioned_regions.svg" id="custom_partitioning_and_data_colocation__image_525AC474950F473ABCDE8E372583C5DF" class="image" />
 
 Data colocation requires the same data partitioning mechanism for all of the colocated regions. You can use the default partitioning provided by @@product_name@@ or any of the custom partitioning strategies.
 

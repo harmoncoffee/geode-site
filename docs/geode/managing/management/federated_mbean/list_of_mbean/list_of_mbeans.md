@@ -27,7 +27,7 @@ This topic provides descriptions for the various management and monitoring MBean
 
 The following diagram illustrates the relationship between the different JMX MBeans that have been developed to manage and monitor @@product_name_long@@.
 
-<img src="../../images_svg/MBeans.svg" id="topic_4BCF867697C3456D96066BAD7F39FC8B__image_66525625D6804EDE9675D6CE509360A3" class="image" />
+<img src="/images_svg/MBeans.svg" id="topic_4BCF867697C3456D96066BAD7F39FC8B__image_66525625D6804EDE9675D6CE509360A3" class="image" />
 
 -   **[JMX Manager MBeans](list_of_mbeans_full.html)**
 

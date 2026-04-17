@@ -23,7 +23,7 @@ limitations under the License.
 
 This topic describes network partitioning scenarios and what happens to the partitioned sides of the cluster.
 
-<img src="../../images_svg/network_partition_scenario.svg" id="concept_357ABE91AAA042D2A20328BD01FEB882__image_6ED88C6911EE4C68A19353ABD7B1552A" class="image" />
+<img src="/images_svg/network_partition_scenario.svg" id="concept_357ABE91AAA042D2A20328BD01FEB882__image_6ED88C6911EE4C68A19353ABD7B1552A" class="image" />
 
 ## <a id="concept_357ABE91AAA042D2A20328BD01FEB882__section_DAFBCB8BB421453EB6C5B4A348640762" class="no-quick-link"></a>What the Losing Side Does
 

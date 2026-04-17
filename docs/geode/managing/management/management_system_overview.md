@@ -27,7 +27,7 @@ limitations under the License.
 
 The following diagram depicts the architecture of the management and monitoring system components.
 
-<img src="../../images/JMX_Architecture.png" id="concept_1BAE2CE1146B4347ABD61F50B9F9781F__image_1E9E8575E13D4087BC47B6A288097B7A" class="image" />
+<img src="/images/JMX_Architecture.png" id="concept_1BAE2CE1146B4347ABD61F50B9F9781F__image_1E9E8575E13D4087BC47B6A288097B7A" class="image" />
 
 In this architecture every @@product_name@@ member is manageable. All @@product_name@@ MBeans for the local @@product_name@@ processes are automatically registered in the Platform MBeanServer (the default MBeanServer of each JVM that hosts platform MXBeans.)
 

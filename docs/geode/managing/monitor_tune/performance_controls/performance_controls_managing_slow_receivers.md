@@ -58,7 +58,7 @@ If you configure your consumers for slow receipt queuing, and your region scope 
 
 Depending on the application, conflation can greatly reduce the number of messages the producer needs to send to the consumer. With conflation, when an entry update is added to the queue, if the last operation queued for that key is also an update operation, the previously enqueued update is removed, leaving only the latest update to be sent to the consumer. Only entry update messages originating in a region with distributed-no-ack scope are conflated. Region operations and entry operations other than updates are not conflated.
 
-<img src="../../images_svg/async_system_queue_conflation.svg" id="perf__image_0FD90F27762F4440B9ECC40803988038" class="image" />
+<img src="/images_svg/async_system_queue_conflation.svg" id="perf__image_0FD90F27762F4440B9ECC40803988038" class="image" />
 
 Some conflation may not occur because entry updates are sent to the consumer before they can be conflated. For this example, assume no messages are sent while the update for Key A is added.
 

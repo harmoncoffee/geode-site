@@ -39,7 +39,7 @@ If you depend on a JDBC connection, every data store must have a connection to t
 **Note:**
 Partitioned regions generally require more JDBC connections than distributed regions.
 
-<img src="../../images_svg/cache_data_loader.svg" id="how_data_loaders_work__image_CD7CE9BD22ED4782AB6B296187AB983A" class="image" />
+<img src="/images_svg/cache_data_loader.svg" id="how_data_loaders_work__image_CD7CE9BD22ED4782AB6B296187AB983A" class="image" />
 
 ## <a id="how_data_loaders_work__section_6A2CE777CE9E4BD682B881F6986CF66C" class="no-quick-link"></a>Data Loading in Distributed Regions
 
@@ -47,7 +47,7 @@ In a non-partitioned distributed region, a cache loader defined in one member is
 
 In the following figure, these members of one cluster can be running on different machines. Loading for the distributed region is performed from M1.
 
-<img src="../../images_svg/cache_data_loader_2.svg" id="how_data_loaders_work__image_3C39A50218D64EF28A5448EB01A4C6EC" class="image" />
+<img src="/images_svg/cache_data_loader_2.svg" id="how_data_loaders_work__image_3C39A50218D64EF28A5448EB01A4C6EC" class="image" />
 
 ## <a id="how_data_loaders_work__section_BE33D9AB27104D1BB8AC8BFCE11A063E" class="no-quick-link"></a>Data Loading in Local Regions
 

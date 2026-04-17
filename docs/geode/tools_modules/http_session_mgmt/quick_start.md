@@ -86,7 +86,7 @@ These steps provide a basic starting point for using the Tomcat module. For more
 
 3. Confirm that Tomcat is running by opening a browser and navigating to `localhost:8080`. If you see the Tomcat home page, your installation was successful.
 
-    <img src="../../images/Apache_Tomcat_Homepage.png"></img>
+    <img src="/images/Apache_Tomcat_Homepage.png"></img>
     
 ## <a id="quick_start__section_1587C3E55F06406EBD4AB13014A406D4" class="no-quick-link"></a>Additional Instructions for AppServers Module
 

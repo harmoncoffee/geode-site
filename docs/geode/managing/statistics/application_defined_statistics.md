@@ -46,7 +46,7 @@ create a session-specific `Statistics` object. The server then uses the `Statist
 modify and retrieve the client’s statistics. The figures below illustrate the relationships between the
 statistics interfaces and show the implementation of this use case.
 
-<img src="../../images/Statistics-interfaces.png" class="image" />
+<img src="/images/Statistics-interfaces.png" class="image" />
 
 *The Statistics Interfaces*
 
@@ -54,7 +54,7 @@ Each `StatisticDescriptor` contains one piece of statistical information. `Stati
 are collected into a `StatisticsType`. The `StatisticsType` is instantiated to create a `Statistics`
 object.
 
-<img src="../../images/Statistics-implementation.png" class="image" />
+<img src="/images/Statistics-implementation.png" class="image" />
 
 *Statistics Implementation*
 

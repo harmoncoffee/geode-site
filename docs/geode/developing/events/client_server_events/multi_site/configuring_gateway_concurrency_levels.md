@@ -37,7 +37,7 @@ When multiple dispatcher threads are configured for a parallel queue, @@product_
 When multiple dispatcher threads are configured for a serial queue, @@product_name@@ creates an additional copy of the queue for each thread on each member that hosts the queue. To obtain the maximum throughput, increase the number of dispatcher threads until your network is saturated.
 
 The following diagram illustrates a serial gateway sender queue that is configured with multiple dispatcher threads.
-<img src="../../images/MultisiteConcurrency_WAN_Gateway.png" id="concept_6C52A037E39E4FD6AE4C6A982A4A1A85__image_093DAC58EBEE456485562C92CA79899F" class="image" width="624" />
+<img src="/images/MultisiteConcurrency_WAN_Gateway.png" id="concept_6C52A037E39E4FD6AE4C6A982A4A1A85__image_093DAC58EBEE456485562C92CA79899F" class="image" width="624" />
 
 ## <a id="concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_C4C83B5C0FDD4913BA128365EE7E4E35" class="no-quick-link"></a>Performance and Memory Considerations
 

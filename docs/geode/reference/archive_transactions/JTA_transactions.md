@@ -82,7 +82,7 @@ transaction manager.
 
 This figure shows the high-level operation of a JTA global transaction whose resources include a @@product_name@@ cache and a database.
 
-<img src="../../images/transactions_jta_app_server.png" id="concept_cp1_zx1_wk__image_C2935E48415349659FC39BF5C7E75579" class="image" />
+<img src="/images/transactions_jta_app_server.png" id="concept_cp1_zx1_wk__image_C2935E48415349659FC39BF5C7E75579" class="image" />
 
 An externally coordinated JTA global transaction is run in the following manner:
 
@@ -141,7 +141,7 @@ transaction, then the manager issues a "commit" instruction to the non-XAResourc
 local transaction resource. If the non-XAResource fails, then the transaction manager can rollback
 the XAResources.
 
-<img src="../../images/transactions_jca_adapter.png" id="concept_csy_vfb_wk__image_opb_sgb_wk" class="image" />
+<img src="/images/transactions_jca_adapter.png" id="concept_csy_vfb_wk__image_opb_sgb_wk" class="image" />
 
 <a id="task_sln_x3b_wk"></a>
 

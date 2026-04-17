@@ -32,7 +32,7 @@ In most distributed data management systems, the data stored in the system tends
 
 This figure shows delta propagation for a change to an entry with key, k, and value object, v.
 
-<img src="../../images/delta-propagation.png" class="image" />
+<img src="/images/delta-propagation.png" class="image" />
 
 1.  **`get` operation**. The `get` works as usual: the cache returns the full entry object from the local cache or, if it isn't available there, from a remote cache or from a loader.
 2.  **update methods**. You need to add code to the object's update methods so that they save delta information for object updates, in addition to the work they were already doing.

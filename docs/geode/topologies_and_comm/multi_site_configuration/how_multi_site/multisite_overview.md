@@ -27,7 +27,7 @@ The logical connections consist of a gateway sender in the sending site, and a g
 
 Gateway senders and receivers are defined at startup in the member caches. A site can use *serial* and/or *parallel* gateway sender configurations, as described in [Gateway Senders](multisite_overview.html#topic_9AA37B43642D4DE19072CA3367C849BA).
 
-<img src="../../images/consistent_multisite.png" id="topic_70045702D3994BC692E75102CE01BD7C__image_BCD6320F34A645A7911AA25EDEA6D971" class="image" />
+<img src="/images/consistent_multisite.png" id="topic_70045702D3994BC692E75102CE01BD7C__image_BCD6320F34A645A7911AA25EDEA6D971" class="image" />
 
 ## <a id="topic_C74A0961937640B199396DC925D8D782" class="no-quick-link"></a>Consistency for WAN Updates
 
@@ -72,7 +72,7 @@ Geode provides two types of gateway sender configurations: *serial* gateway send
 
 A *serial gateway sender* funnels region events through a single Geode server in the local cluster to a gateway receiver in the remote Geode cluster. Although multiple regions can use the same serial gateway for distribution, a serial gateway uses a single logical event queue to dispatch events for all regions that use the gateway sender.
 
-<img src="../../images/serial_sender.png" id="topic_9AA37B43642D4DE19072CA3367C849BA__image_CEF888583FAC4CCBB0445F2BF8F15F20" class="image" width="576" />
+<img src="/images/serial_sender.png" id="topic_9AA37B43642D4DE19072CA3367C849BA__image_CEF888583FAC4CCBB0445F2BF8F15F20" class="image" width="576" />
 
 Because a serial gateway sender has a single distribution point, it provides the most control over ordering region events as they are distributed across the WAN. However, a serial gateway sender provides only a finite amount of throughput, so it may be a performance bottleneck. As you add more regions and servers to the local cluster, you may need to configure additional serial gateway senders manually and isolate individual regions on specific serial gateway senders to handle the increased distribution traffic.
 
@@ -80,7 +80,7 @@ Because a serial gateway sender has a single distribution point, it provides the
 
 A *parallel gateway sender* distributes region events from each of the Geode servers that host a partitioned region. For a partitioned region, each server that hosts primary buckets for the region uses its own logical queue to distribute events for those buckets. As you add new servers to scale the partitioned region, WAN distribution throughput scales automatically with each new instance of the parallel gateway sender.
 
-<img src="../../images/parallel_sender.png" id="topic_9AA37B43642D4DE19072CA3367C849BA__image_D3BEABE6269543758DD0FAF4FFCD713A" class="image" width="576" />
+<img src="/images/parallel_sender.png" id="topic_9AA37B43642D4DE19072CA3367C849BA__image_D3BEABE6269543758DD0FAF4FFCD713A" class="image" width="576" />
 
 Replicated regions cannot use a parallel gateway sender.
 

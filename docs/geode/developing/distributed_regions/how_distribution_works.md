@@ -37,12 +37,12 @@ In a distributed region, new and updated entry values are automatically distribu
 
 **Step 1:** The application updates or creates the entry. At this point, the entry in the M1 cache may not yet exist.
 
-<img src="../../images_svg/distributed_how_1.svg" id="how_distribution_works__image_40EFE6E95E6945A1B08A68508ECBCC60" class="image" />
+<img src="/images_svg/distributed_how_1.svg" id="how_distribution_works__image_40EFE6E95E6945A1B08A68508ECBCC60" class="image" />
 
 **Step 2:** The new value is automatically distributed to caches holding the entry.
 
-<img src="../../images_svg/distributed_how_2.svg" id="how_distribution_works__image_AF8A3ADEB5D94E20B101FDA92BF6D002" class="image" />
+<img src="/images_svg/distributed_how_2.svg" id="how_distribution_works__image_AF8A3ADEB5D94E20B101FDA92BF6D002" class="image" />
 
 **Step 3:** The entry's value is the same throughout the cluster.
 
-<img src="../../images_svg/distributed_how_3.svg" id="how_distribution_works__image_5B1F06B54C9047E28A8C8673D1D5BD27" class="image" />
+<img src="/images_svg/distributed_how_3.svg" id="how_distribution_works__image_5B1F06B54C9047E28A8C8673D1D5BD27" class="image" />

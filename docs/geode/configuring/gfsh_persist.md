@@ -62,7 +62,7 @@ When you use `gfsh` commands to create @@product_name_long@@ regions, disk-store
 
 When you use `gfsh` to start new @@product_name_long@@ servers, the locator distributes the persisted configurations to the new server. If you specify a group when starting the server, the server receives the group-level configuration in addition to the cluster-level configuration. Group-level configurations are applied after cluster-wide configurations; therefore you can use group-level to override cluster-level settings.
 
-<img src="../../images_svg/cluster_config_overview.svg" id="concept_r22_hyw_bl__image_jjc_vhb_y4" class="image" />
+<img src="/images_svg/cluster_config_overview.svg" id="concept_r22_hyw_bl__image_jjc_vhb_y4" class="image" />
 
 ## <a id="gfsh-commands-that-create-cluster-configs" class="no-quick-link"></a>gfsh Commands that Create Cluster Configurations
 

@@ -29,7 +29,7 @@ Do not use conflation if your receiving applications depend on the specific orde
 
 Conflation is most useful when a single entry is updated frequently, but other sites only need to know the current value of the entry (rather than the value of each update). When an update is added to a queue that has conflation enabled, if there is already an update message in the queue for the entry key, then the existing message is removed and the new update is added to the end of the queue, as shown here for key A.
 
-<img src="../../images_svg/MultiSite-4.svg" id="conflate_multisite_gateway_queue__image_27219DAAB6D643348641389DBAEA1E94" class="image" />
+<img src="/images_svg/MultiSite-4.svg" id="conflate_multisite_gateway_queue__image_27219DAAB6D643348641389DBAEA1E94" class="image" />
 
 **Note:**
 This method of conflation is different from the one used for server-to-client subscription queue conflation and peer-to-peer distribution within a cluster.

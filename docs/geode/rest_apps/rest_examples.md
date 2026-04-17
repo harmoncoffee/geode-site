@@ -45,7 +45,7 @@ The following examples demonstrate the following:
 
 The following Java examples assume a project directory structure similar to the following:
 
-<img src="../images/rest_example_java_packages.png" id="topic_lvp_cd5_m4__image_rvd_ydd_3r" class="image" />
+<img src="/images/rest_example_java_packages.png" id="topic_lvp_cd5_m4__image_rvd_ydd_3r" class="image" />
 ## \#1. REST Java Client (RestClientApp.java)
 
 ``` pre

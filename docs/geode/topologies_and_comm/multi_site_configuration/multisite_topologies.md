@@ -47,7 +47,7 @@ neither forwards to the other.
 This is likewise true for any other initiating site.
 If any site is removed, the remaining two are still fully connected.
 
-<img src="../../images/multisite-topology-parallel.png" id="multisite_topologies__image_6CB125A80DF74DCE96A94020F7003DAE" class="image" />
+<img src="/images/multisite-topology-parallel.png" id="multisite_topologies__image_6CB125A80DF74DCE96A94020F7003DAE" class="image" />
 
 ## <a id="multisite_topologies__section_17EC1FD63A5241159FE2ED07F72CD5DC" class="no-quick-link"></a>Ring Topology
 
@@ -60,7 +60,7 @@ site 2 forwards the updates to site 3.
 No updates are forwarded to the original sender,
 so site 3 does not send the updates back to site 1.
 
-<img src="../../images/multisite-topology-serial.png" id="multisite_topologies__image_876567BB077C4398BEFB13EEC34DA53C" class="image" />
+<img src="/images/multisite-topology-serial.png" id="multisite_topologies__image_876567BB077C4398BEFB13EEC34DA53C" class="image" />
 
 A ring topology guarantees that every site receives one copy of
 each message sent by any site.
@@ -79,7 +79,7 @@ The following figure shows a hybrid topology that forms a ring,
 with an extra connection that fully connects
 sites 1 and 3.
 
-<img src="../../images/multisite-topology-hybrid-1.png" id="multisite_topologies__image_7656D6CEC2C947F8BFE67A0BB0BA5FDE" class="image" />
+<img src="/images/multisite-topology-hybrid-1.png" id="multisite_topologies__image_7656D6CEC2C947F8BFE67A0BB0BA5FDE" class="image" />
 
 With this hybrid topology, if site 2 went down,
 it would not affect communication between sites 1 and 3.
@@ -93,7 +93,7 @@ and the consumers (sites 2 and 3) have nothing to gain from
 being connected to each other.
 This topology also guarantees that no site receives the same update twice.
 
-<img src="../../images/multisite-topology-hybrid-2.png" id="multisite_topologies__image_1904C515A3224BE09589921A15D6D59B" class="image" />
+<img src="/images/multisite-topology-hybrid-2.png" id="multisite_topologies__image_1904C515A3224BE09589921A15D6D59B" class="image" />
 
 ## <a id="multisite_topologies__section_8D7912BF9D8549A491D9AE5E0DC3CC1F" class="no-quick-link"></a>Unsupported Topologies
 
@@ -106,4 +106,4 @@ Site 4 will receive more than one copy of the same message when
 site 1 sends a message to sites 2 and 3,
 and sites 2 and 3 each forward the message to site 4.
 
-<img src="../../images/multisite-topology-avoid-3.png" id="multisite_topologies__image_710EB20403C942D0B756F9D22B3359A6" class="image" />
+<img src="/images/multisite-topology-avoid-3.png" id="multisite_topologies__image_710EB20403C942D0B756F9D22B3359A6" class="image" />

@@ -27,7 +27,7 @@ Configuration is slightly different depending on the topology you are setting up
 
 ## <a id="tomcat_setting_up_the_module_p2p" class="no-quick-link"></a>Peer-to-Peer Setup
 
-<img src="../../images_svg/http_module_p2p_with_locator.svg" id="tomcat_setting_up_the_module__image_bsm_2gf_sv" class="image" />
+<img src="/images_svg/http_module_p2p_with_locator.svg" id="tomcat_setting_up_the_module__image_bsm_2gf_sv" class="image" />
 
 To run @@product_name@@ in a peer-to-peer configuration, you must first start a @@product_name@@ locator, then configure Tomcat to join the cluster as a peer member.
 
@@ -62,7 +62,7 @@ For Tomcat 10.1 and later (Jakarta EE 10):
 
 ## <a id="tomcat_setting_up_the_module_cs" class="no-quick-link"></a>Client/Server Setup
 
-<img src="../../images_svg/http_module_cs_with_locator.svg" id="tomcat_setting_up_the_module__image_aqn_jjf_sv" class="image" />
+<img src="/images_svg/http_module_cs_with_locator.svg" id="tomcat_setting_up_the_module__image_aqn_jjf_sv" class="image" />
 
 To run @@product_name@@ in a client/server configuration, the application server will operate as a @@product_name@@ client. To do this, add the following line to `$CATALINA_HOME$/conf/server.xml` within the `<Server>` tag:
 

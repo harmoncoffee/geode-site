@@ -34,7 +34,7 @@ When high availability is enabled:
 -   In the case of primary server failure, one of the secondaries becomes the primary and begins sending event messages from its queues to the clients. Immediately after failover, the new primary usually resends some messages that were already sent by the old primary. The client recognizes these as duplicates and discards them.
 
 In stage 1 of this figure, the primary sends an event message to the client and a synchronization message to its secondary. By stage 2, the secondary and client have updated their queue and message tracking information. If the primary failed at stage two, the secondary would start sending event messages from its queue beginning with message A10. The client would discard the resend of message A10 and then process subsequent messages as usual.
-<img src="../../images/ClientServerAdvancedTopics-5.gif" alt="High Availability Messaging: Server to Client and Primary Server to Secondary Server" id="ha_event_messaging_whats_next__image_8947A42EDEF74911BAB55B79ED8DA984" class="image" />
+<img src="/images/ClientServerAdvancedTopics-5.gif" alt="High Availability Messaging: Server to Client and Primary Server to Secondary Server" id="ha_event_messaging_whats_next__image_8947A42EDEF74911BAB55B79ED8DA984" class="image" />
 
 ## <a id="ha_event_messaging_whats_next__section_741052B413F24F47A14F5B7D7955F0AA" class="no-quick-link"></a>Change Server Queue Synchronization Frequency
 

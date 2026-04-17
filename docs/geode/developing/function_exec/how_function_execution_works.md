@@ -75,7 +75,7 @@ This figure shows the sequence of events for a data-independent function invoked
 
 <a id="how_function_execution_works__fig_server_distributed_system"></a>
 
-<img src="../../images/FuncExecOnServers.png" alt="A diagram showing the sequence of events for a data-independent function invoked from a client on all available servers" id="how_function_execution_works__image_993D1FD7705E40EA801CF0656C4E91E5" class="image" />
+<img src="/images/FuncExecOnServers.png" alt="A diagram showing the sequence of events for a data-independent function invoked from a client on all available servers" id="how_function_execution_works__image_993D1FD7705E40EA801CF0656C4E91E5" class="image" />
 
 The client contacts a locator to obtain host and port identifiers for each server in the cluster and issues calls to each server. As the instigator of the calls, the client also receives the call results.
 
@@ -84,7 +84,7 @@ shows the sequence of events for a data-independent function executed against me
 
 <a id="how_function_execution_works__fig_peer_distributed_system"></a>
 
-<img src="../../images/FuncExecOnMembers.png" alt="The sequence of events for a data-independent function executed against members in a peer-to-peer cluster." id="how_function_execution_works__image_041832B370AA4241980B8C2632DD1DC8" class="image" />
+<img src="/images/FuncExecOnMembers.png" alt="The sequence of events for a data-independent function executed against members in a peer-to-peer cluster." id="how_function_execution_works__image_041832B370AA4241980B8C2632DD1DC8" class="image" />
 
 You can think of `onMembers()` as the peer-to-peer counterpart of a client-server call to `onServers()`. Because it is called from a peer of other members in the cluster, an `onMembers()` function invocation has access to detailed metadata and does not require the services of a locator. The caller invokes the function on itself, if appropriate, as well as other members in the cluster and collects the results of all of the function executions.
 
@@ -94,7 +94,7 @@ You can think of `onMembers()` as the peer-to-peer counterpart of a client-serve
 
 <span class="figtitleprefix">Figure: </span>Data-dependent Function on a Region
 
-<img src="../../images/FuncExecOnRegionNoMetadata.png" alt="The path followed when the client lacks detailed metadata regarding target locations" id="how_function_execution_works__image_68742923936F4EEC8E50819F5CEECBCC" class="image" />
+<img src="/images/FuncExecOnRegionNoMetadata.png" alt="The path followed when the client lacks detailed metadata regarding target locations" id="how_function_execution_works__image_68742923936F4EEC8E50819F5CEECBCC" class="image" />
 
 An `onRegion()` call requires more detailed metadata than a locator provides in its host:port identifier. This diagram shows the path followed when the client lacks detailed metadata regarding target locations, as on the first call or when previously obtained metadata is no longer up to date.
 
@@ -106,7 +106,7 @@ After it has obtained current metadata, the client can act as its own dispatcher
 
 <span class="figtitleprefix">Figure: </span>Data-dependent function after obtaining current metadata
 
-<img src="../../images/FuncExecOnRegionWithMetadata.png" alt="A diagram showing the client acting as its own dispatcher after having obtained current metadata." class="image" />
+<img src="/images/FuncExecOnRegionWithMetadata.png" alt="A diagram showing the client acting as its own dispatcher after having obtained current metadata." class="image" />
 
 [Data-dependent Function on a Region with Keys](#how_function_execution_works__fig_data_dependent_function_region_keys) shows the same data-dependent function with the added specification of a set of keys on which to run.
 
@@ -114,7 +114,7 @@ After it has obtained current metadata, the client can act as its own dispatcher
 
 <span class="figtitleprefix">Figure: </span>Data-dependent Function on a Region with Keys
 
-<img src="../../images/FuncExecOnRegionWithFilter.png" alt="A data-dependent function on a region with specification of keys on which to run" id="how_function_execution_works__image_7FA8BE5D02F24CF8B49186C6FEB786BD" class="image" />
+<img src="/images/FuncExecOnRegionWithFilter.png" alt="A data-dependent function on a region with specification of keys on which to run" id="how_function_execution_works__image_7FA8BE5D02F24CF8B49186C6FEB786BD" class="image" />
 
 Servers that do not hold any keys are left out of the function execution.
 
@@ -124,7 +124,7 @@ Servers that do not hold any keys are left out of the function execution.
 
 <span class="figtitleprefix">Figure: </span>Peer-to-peer Data-dependent Function
 
-<img src="../../images/FuncExecOnRegionPeersWithFilter.png" alt="A data-dependent function where the caller is not an external client" id="how_function_execution_works__image_9B8E914BA80E4BBA99856E9603A9BDA0" class="image" />
+<img src="/images/FuncExecOnRegionPeersWithFilter.png" alt="A data-dependent function where the caller is not an external client" id="how_function_execution_works__image_9B8E914BA80E4BBA99856E9603A9BDA0" class="image" />
 
 The caller is a member of the cluster, not an external client, so the function runs in the caller’s cluster. Note the similarities between this diagram and the preceding figure ([Data-dependent Function on a Region with Keys](#how_function_execution_works__fig_data_dependent_function_region_keys)), which shows a client-server model where the client has up-to-date metadata regarding target locations within the cluster.
 
@@ -134,6 +134,6 @@ The caller is a member of the cluster, not an external client, so the function r
 
 <span class="figtitleprefix">Figure: </span>Client-server system with Up-to-date Target Metadata
 
-<img src="../../images/FuncExecOnRegionHAWithFilter.png" alt="A sequence of steps in a call to a highly available function in a client-server system in which the client has up-to-date metadata regarding target locations" id="how_function_execution_works__image_05E94BB0EBF349FF8822158F2001F313" class="image" />
+<img src="/images/FuncExecOnRegionHAWithFilter.png" alt="A sequence of steps in a call to a highly available function in a client-server system in which the client has up-to-date metadata regarding target locations" id="how_function_execution_works__image_05E94BB0EBF349FF8822158F2001F313" class="image" />
 
 In this example, three primary keys (X, Y, Z) and their secondary copies (X', Y', Z') are distributed among three servers. Because `optimizeForWrite` is `true`, the system first attempts to invoke the function where the primary keys reside: Server 1 and Server 2. Suppose, however, that Server 2 is off-line for some reason, so the call targeted for key Y fails. Because `isHA` is set to `true`, the call is retried on Server 1 (which succeeded the first time, so likely will do so again) and Server 3, where key Y' resides. This time, the function call returns successfully. Calls to highly available functions retry until they obtain a successful result or they reach a retry limit.

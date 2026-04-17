@@ -33,7 +33,7 @@ their caches by removing their local copies of the entries for which there is no
 (idle-time expiration). Requests for entries that have expired on the clients will be forwarded to
 the server.
 
-<img src="../../images/expiration.png" />
+<img src="/images/expiration.png" />
 
 ## <a id="how_expiration_works__section_B6C55A610F4243ED8F1986E8A98858CF" class="no-quick-link"></a>Expiration Types
 
