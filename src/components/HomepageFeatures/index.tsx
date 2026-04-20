@@ -120,7 +120,7 @@ function TopAboutSection() {
                     <p className={styles.aboutTagline}>Apache Geode™ is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures.</p>
 										<div className={styles.aboutButtons}>
 												<a className={clsx('button button--lg', styles.primaryButton)} href="https://github.com/apache/geode/releases">Download Geode</a>
-												<a className={clsx('button button--lg', styles.secondaryButton)} href="https://cwiki.apache.org/confluence/display/geode/">Learn more</a>
+												<a className={clsx('button button--lg', styles.secondaryButton)} href="/docs">Learn more</a>
 										</div>
                 </div>
             </div>
