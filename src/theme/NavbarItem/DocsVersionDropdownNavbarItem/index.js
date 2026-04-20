@@ -12,9 +12,8 @@ import {
     useActivePlugin,
     useVersions,
     useActiveDocContext,} from '@docusaurus/plugin-content-docs/client';
-import {useDocsPreferredVersion} from '@docusaurus/theme-common/internal';
 import {translate} from '@docusaurus/Translate';
-import {useLocation} from '@docusaurus/router';
+
 
 
 const getVersionMainDoc = (version) =>
@@ -27,7 +26,7 @@ export default function Index({
                                                           dropdownItemsAfter,
                                                           ...props
                                                       }) {
-    const location = useLocation();
+
     const activePlugin = useActivePlugin();
     const docsPluginId = activePlugin?.pluginId ?? 'default';
 
