@@ -28,11 +28,11 @@ By default, Micrometer is enabeled and can emit metrics to any meter registry. H
 The API is currently marked experimental.
 The `MetricsSession` and `MetricsPublishingService` interfaces may change.
 
--   **[Micrometer configuration and publishing](micrometer-configuration.html)**
+-   **[Micrometer configuration and publishing](micrometer-configuration)**
 
     Using Micrometer may require configuration, and in order to emit Micrometer metrics to one of the supported APM tools, or to a custom format/tool, a Meter Registry and accompanying publishing service will need to be used.
 
--   **[Micrometer meters and tags](micrometer-meters.html)**
+-   **[Micrometer meters and tags](micrometer-meters)**
 
     @@product_name@@ contains a set of meters, instrumented statistics, that provide information about each individual member of a cluster. Every member within a @@product_name@@ cluster will can emit a set of meters of different types, timer, gauge, and counters that are specific to the member.
 Each meter has a set of common tags, a name/value pair, that helps users identify where a meter is located in the cluster. There are also meter specific tags that vary based on the meter itself.

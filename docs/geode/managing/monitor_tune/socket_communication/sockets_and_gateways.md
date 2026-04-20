@@ -77,8 +77,7 @@ If possible, your TCP/IP buffer size settings should match across your installat
 **Note:**
 WAN deployments increase the messaging demands on a @@product_name@@ system. To avoid hangs related to WAN messaging, always use the default setting of <code class="ph codeph">conserve-sockets=false</code> for @@product_name@@ members that participate in a WAN deployment.
 
-## <a id="socket_comm__section_4A7C60D4471A4339884AA5AAC97B4DAA" class="no-quick-link"></a>Multi-site (WAN) Socket Requirements
-
+## Multi-site (WAN) Socket Requirements {#socket_comm__section_4A7C60D4471A4339884AA5AAC97B4DAA}
 Each gateway sender and gateway receiver uses a socket to distribute events or to listen for incoming connections from remote sites.
 
 <table>
@@ -110,10 +109,9 @@ Each gateway sender and gateway receiver uses a socket to distribute events or t
 
 Servers are peers in their own clusters and have the additional socket requirements as noted in the Peer-to-Peer section above.
 
-## <a id="socket_comm__section_66D11C8E84F941B58800EDB52194B087" class="no-quick-link"></a>Member produces SocketTimeoutException
-
+## Member produces SocketTimeoutException {#socket_comm__section_66D11C8E84F941B58800EDB52194B087}
 A client, server, gateway sender, or gateway receiver produces a `SocketTimeoutException` when it stops waiting for a response from the other side of the connection and closes the socket. This exception typically happens on the handshake or when establishing a callback connection.
 
 Response:
 
-Increase the default socket timeout setting for the member. This timeout is set separately for the client Pool and for the gateway sender and gateway receiver, either in the `cache.xml` file or through the API. For a client/server configuration, adjust the "read-timeout" value as described in [&lt;pool&gt;](../../reference/topics/client-cache.html#cc-pool) or use the `org.apache.geode.cache.client.PoolFactory.setReadTimeout` method. For a gateway sender or gateway receiver, see [WAN Configuration](../../reference/topics/elements_ref.html#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3).
+Increase the default socket timeout setting for the member. This timeout is set separately for the client Pool and for the gateway sender and gateway receiver, either in the `cache.xml` file or through the API. For a client/server configuration, adjust the "read-timeout" value as described in [&lt;pool&gt;](../../reference/topics/client-cache#cc-pool) or use the `org.apache.geode.cache.client.PoolFactory.setReadTimeout` method. For a gateway sender or gateway receiver, see [WAN Configuration](../../reference/topics/elements_ref#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3).

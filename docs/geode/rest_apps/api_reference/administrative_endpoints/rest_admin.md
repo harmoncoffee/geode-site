@@ -21,10 +21,10 @@ limitations under the License.
 
 Administrative endpoints provide management and monitoring functionality for the REST API interface.
 
--   **[\[HEAD | GET\] /geode/v1/ping](ping_service.html)**
+-   **[\[HEAD | GET\] /geode/v1/ping](ping_service)**
 
     Mechanism to check for REST API server and service availability.
 
--   **[GET /geode/v1/servers](get_servers.html)**
+-   **[GET /geode/v1/servers](get_servers)**
 
     Mechanism to obtain a list of all members in the cluster that are running the REST API service.

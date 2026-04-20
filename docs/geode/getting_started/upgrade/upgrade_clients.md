@@ -33,7 +33,6 @@ Changes you may need to make when you update, recompile, and link your client co
 - Removing or replacing obsolete identifiers
 - Reinstating secure client/server messaging
 
-## <a id="remove-replace-obsolete-identifiers" class="no-quick-link"></a>Remove or Replace Obsolete Identifiers
-
+## Remove or Replace Obsolete Identifiers {#remove-replace-obsolete-identifiers}
 Review the Release Notes for a list of classes, methods, and other identifiers that are no longer present in the current release.
 Update client code so it no longer uses any of these removed identifiers.

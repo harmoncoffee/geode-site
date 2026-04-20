@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Clients subscribe to server-side events by using SQL-type query filtering. The server sends all events that modify the query results. CQ event delivery uses the client/server subscription framework.
-
-<a id="how_continuous_querying_works__section_D473C4D532E14044820B7D76DEE83450"></a>
+## {#how_continuous_querying_works__section_D473C4D532E14044820B7D76DEE83450}
 With CQ, the client sends a query to the server side for execution and receives the events that satisfy the criteria. For example, in a region storing stock market trade orders, you can retrieve all orders over a certain price by running a CQ with a query like this:
 
 ``` pre
@@ -32,14 +31,12 @@ SELECT * FROM /tradeOrder t WHERE t.price > 100.00
 
 When the CQ is running, the server sends the client all new events that affect the results of the query. On the client side, listeners programmed by you receive and process incoming events. For this example query on `/tradeOrder`, you might program a listener to push events to a GUI where higher-priced orders are displayed. CQ event delivery uses the client/server subscription framework.
 
-## <a id="how_continuous_querying_works__section_777DEEA9D1DD45F59EC1BB35789C3A5D" class="no-quick-link"></a>Logical Architecture of Continuous Querying
-
+## Logical Architecture of Continuous Querying {#how_continuous_querying_works__section_777DEEA9D1DD45F59EC1BB35789C3A5D}
 Your clients can execute any number of CQs, with each CQ assigned any number of listeners.
 
 <img src="/images/ContinuousQuerying-1.gif" id="how_continuous_querying_works__image_B7C36491E8CA4376AEAE4E030C3DF86B" class="image" />
 
-## <a id="how_continuous_querying_works__section_F0E19919B3F645EF83EACBD7AFDF527E" class="no-quick-link"></a>Data Flow with CQs
-
+## Data Flow with CQs {#how_continuous_querying_works__section_F0E19919B3F645EF83EACBD7AFDF527E}
 CQs do not update the client region. This is in contrast to other server-to-client messaging like the updates sent to satisfy interest registration and responses to get requests from the client's `Pool`. CQs serve as notification tools for the CQ listeners, which can be programmed in any way your application requires.
 
 When a CQ is running against a server region, each entry event is evaluated against the CQ query by the thread that updates the server cache. If either the old or the new entry value satisfies the query, the thread puts a `CqEvent` in the client's queue. The `CqEvent` contains information from the original cache event plus information specific to the CQ's execution. Once received by the client, the `CqEvent` is passed to the `onEvent` method of all `CqListener`s defined for the CQ.
@@ -58,8 +55,7 @@ In the following figure:
 
 <img src="/images/ContinuousQuerying-3.gif" id="how_continuous_querying_works__image_2F21A3820906449FAABE7ACC9654A564" class="image" />
 
-## <a id="how_continuous_querying_works__section_819CDBA814024315A6DDA83BD56D125C" class="no-quick-link"></a>CQ Events
-
+## CQ Events {#how_continuous_querying_works__section_819CDBA814024315A6DDA83BD56D125C}
 CQ events do not change your client cache. They are provided as an event service only. This allows you to have any collection of CQs without storing large amounts of data in your regions. If you need to persist information from CQ events, program your listener to store the information where it makes the most sense for your application.
 
 The `CqEvent` object contains this information:
@@ -82,8 +78,7 @@ Region operations do not translate to specific query operations and query operat
 
 You can use the query operation to decide what to do with the `CqEvent` in your listeners. For example, a `CqListener` that displays query results on screen might stop displaying the entry, start displaying the entry, or update the entry display depending on the query operation.
 
-## <a id="how_continuous_querying_works__section_bfs_llr_gr" class="no-quick-link"></a>Region Type Restrictions for CQs
-
+## Region Type Restrictions for CQs {#how_continuous_querying_works__section_bfs_llr_gr}
 You can only create CQs on replicated or partitioned regions. If you attempt to create a CQ on a non-replicated or non-partitioned region, you will receive the following error message:
 
 ``` pre
@@ -96,4 +91,4 @@ In addition, you cannot create a CQ on a replicated region with eviction setting
 CQ is not supported for replicated region: <region name> with eviction action: LOCAL_DESTROY
 ```
 
-See also [Configure Distributed, Replicated, and Preloaded Regions](../distributed_regions/managing_distributed_regions.html) for potential issues with setting local-destroy eviction on replicated regions.
+See also [Configure Distributed, Replicated, and Preloaded Regions](../distributed_regions/managing_distributed_regions) for potential issues with setting local-destroy eviction on replicated regions.

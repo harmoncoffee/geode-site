@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Multicast installations require more planning and configuration than TCP installations. With IP multicast, you gain scalability but lose the administrative convenience of TCP.
-
-<a id="multicast__section_B7DA88707CBF4713A1E287CAA9A80EB9"></a>
+## {#multicast__section_B7DA88707CBF4713A1E287CAA9A80EB9}
 When you install an application that runs over TCP, the network is almost always set up for TCP and other applications are already using it. When you install an application to run over IP multicast it may be the first multicast application on the network.
 
 Multicast is very dependent on the environment in which it runs. Its operation is affected by the network hardware, the network software, the machines, which Geode processes run on which machines, and whether there are any competing applications. You could find that your site has connectivity in TCP but not in multicast because some switches and network cards do not support multicast. Your network could have latent problems that you would never see otherwise. To successfully implement a distributed Geode system using multicast requires the cooperation of both system and network administrators.

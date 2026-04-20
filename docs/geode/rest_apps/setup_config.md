@@ -38,8 +38,7 @@ Setting a `GEODE_HOME` environment variable with a path to the
 @@product_name@@ installation directory allows a server launcher
 to find the WAR file without any changes to the CLASSPATH.
 
-# <a id="setup_config_enabling_rest" class="no-quick-link"></a>Enabling the REST API
-
+# Enabling the REST API {#setup_config_enabling_rest}
 The REST API service for application development runs only on servers; you cannot run the service on a locator.
 
 To enable the Developer REST API service on a given server, use the `gfsh start server` command with the `--start-rest-api` option,
@@ -55,7 +54,7 @@ the REST API service (as well as the other embedded web services, such as Pulse)
 
 You can configure the Developer REST API service to run over HTTPS by enabling SSL for the `http`
 component in `gemfire.properties` or `gfsecurity.properties`, or on server startup.  See
-[SSL](../security/ssl_overview.html) for details on configuring SSL parameters.  These SSL
+[SSL](../security/ssl_overview) for details on configuring SSL parameters.  These SSL
 parameters apply to all HTTP services hosted on the configured server, which can include the
 following:
 
@@ -63,8 +62,7 @@ following:
 -   Management REST API service (for remote cluster management)
 -   Pulse monitoring tool
 
-# <a id="setup_config_starting_rest" class="no-quick-link"></a> Starting the REST API Service
-
+# Starting the REST API Service {#setup_config_starting_rest}
 To start a REST API service-enabled @@product_name@@ deployment, configure PDX serialization for your
 cluster, then start the service on one or more server nodes.
 
@@ -77,7 +75,7 @@ You must configure PDX if either or both of the following conditions apply:
 
 To configure PDX in your cluster, perform the following steps:
 
-1.  Start a locator running the [cluster configuration service](../configuring/cluster_config/gfsh_persist.html) (enabled by default). For example: 
+1.  Start a locator running the [cluster configuration service](../configuring/cluster_config/gfsh_persist) (enabled by default). For example: 
 
     ``` pre
     gfsh>start locator --name=locator1
@@ -192,10 +190,9 @@ Verify that the @@product_name@@ REST API service is up and running. To validate
 
 If you did not specify these properties upon server startup or in `gemfire.properties`, then use the
 default of localhost and port 7070. See [Using the Swagger UI to Browse REST
-APIs](using_swagger.html#concept_rlr_y3c_54) for more information.
+APIs](using_swagger#concept_rlr_y3c_54) for more information.
 
-# <a id="setup_config_implementing_auth" class="no-quick-link"></a>Implementing Authentication
-
+# Implementing Authentication {#setup_config_implementing_auth}
 To turn on integrated security, start your servers and locators with the security-manager property
 set in your gemfire.properties file or on the gfsh command-line.
 The following example uses the sample implementation that is included in the @@product_name@@ source,
@@ -234,8 +231,7 @@ http://super-user:1234567@localhost:8080/geode/v1
 ```
 
 
-# <a id="setup_config_implementing_auth" class="no-quick-link"></a>Programmatic Startup
-
+# Programmatic Startup {#setup_config_implementing_auth}
 You can also start and configure @@product_name@@ REST services programmatically. For example:
 
 ``` pre

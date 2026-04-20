@@ -22,12 +22,10 @@ limitations under the License.
 -->
 
 Disk store files include store management files, access control files, and the operation log, or oplog, files, consisting of one file for deletions and another for all other operations.
-
-<a id="file_names_and_extensions__section_AE90870A7BDB425B93111D1A6E166874"></a>
+## {#file_names_and_extensions__section_AE90870A7BDB425B93111D1A6E166874}
 The next tables describe file names and extensions; they are followed by example disk store files.
 
-## <a id="file_names_and_extensions__section_C99ABFDB1AEA4FE4B38F5D4F1D612F71" class="no-quick-link"></a>File Names
-
+## File Names {#file_names_and_extensions__section_C99ABFDB1AEA4FE4B38F5D4F1D612F71}
 File names have three parts: usage identifier, disk store name, and oplog sequence number.
 
 **First Part of File Name: Usage Identifier**
@@ -51,8 +49,7 @@ File names have three parts: usage identifier, disk store name, and oplog sequen
 |-----------------------------------|-------------------------------------------------|------------------------------------------------------------------------------|
 | Sequence number in the format \_n | Oplog data files only. Numbering starts with 1. | OVERFLOWoverflowDS1\_1.crf, BACKUPpersistDS1\_2.crf, BACKUPpersistDS1\_3.crf |
 
-## <a id="file_names_and_extensions__section_4FC89D10D6304088882B2E278A889A9B" class="no-quick-link"></a>File Extensions
-
+## File Extensions {#file_names_and_extensions__section_4FC89D10D6304088882B2E278A889A9B}
 | File extension | Used for                                         | Notes                                                                                                |
 |----------------|--------------------------------------------------|------------------------------------------------------------------------------------------------------|
 | if             | Disk store metadata                              | Stored in the first disk-dir listed for the store. Negligible size - not considered in size control. |

@@ -25,10 +25,9 @@ This section documents cache.xml file requirements and variables. It also points
 
 -   [Cache XML Requirements](#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3__section_A6B050113DCC4D12A6A9C0F250527AF8)
 -   [Variables in cache.xml](#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3__section_5DBA12F9FC08406AAD5557E13A3DEDF2)
--   [Configuration Quick Reference](elements_ref.html#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3__section_2076DDF1F0464CF8894B42ABC32AE4CB)
+-   [Configuration Quick Reference](elements_ref#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3__section_2076DDF1F0464CF8894B42ABC32AE4CB)
 
-## <a id="topic_7B1CABCAD056499AA57AF3CFDBF8ABE3__section_A6B050113DCC4D12A6A9C0F250527AF8" class="no-quick-link"></a>Cache XML Requirements
-
+## Cache XML Requirements {#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3__section_A6B050113DCC4D12A6A9C0F250527AF8}
 The cache.xml file has these requirements:
 
 -   The contents must conform to the XML schema definition provided in cache-1.0.xsd.
@@ -63,8 +62,7 @@ The schema definition file is available at
 
 -   Any class name specified in the file **must have a public zero-argument constructor** and must implement the `org.apache.geode.cache.Declarable` interface. Parameters declared in the XML for the class are passed to the class init method.
 
-## <a id="topic_7B1CABCAD056499AA57AF3CFDBF8ABE3__section_5DBA12F9FC08406AAD5557E13A3DEDF2" class="no-quick-link"></a>Variables in cache.xml
-
+## Variables in cache.xml {#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3__section_5DBA12F9FC08406AAD5557E13A3DEDF2}
 You can use variables in the `cache.xml` to customize your settings without modifying the XML file.
 
 Set your variables in Java system properties when you start your cache server or application process.
@@ -89,31 +87,30 @@ Example cache.xml with variables and the gfsh `start server` command that sets t
 gfsh>start server --name=server2 --cache-xml-file=cache.xml --J=-DPORT=30333 --J=-DMAXCNXS=77
 ```
 
-## <a id="topic_7B1CABCAD056499AA57AF3CFDBF8ABE3__section_2076DDF1F0464CF8894B42ABC32AE4CB" class="no-quick-link"></a>Configuration Quick Reference
-
+## Configuration Quick Reference {#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3__section_2076DDF1F0464CF8894B42ABC32AE4CB}
 To configure cache servers, clients, and WAN topologies, see the following sections:
 
 -   Server Configuration
 
-    -   [&lt;cache&gt; Element Reference](cache_xml.html#cache_xml_cache)
-    -   [&lt;cache-server&gt;](cache_xml.html#cache-server)
-    -   [&lt;region&gt;](cache_xml.html#region)
-    -   [&lt;region-attributes&gt;](cache_xml.html#region-attributes)
+    -   [&lt;cache&gt; Element Reference](cache_xml)
+    -   [&lt;cache-server&gt;](cache_xml#cache-server)
+    -   [&lt;region&gt;](cache_xml#region)
+    -   [&lt;region-attributes&gt;](cache_xml#region-attributes)
 
     You can set the same server configuration properties using the <span class="keyword apiname">`org.apache.geode.cache.server.CacheServer`</span> and <span class="keyword apiname">`org.apache.geode.cache.Cache`</span> interfaces. For detailed information, see the online Java API documentation.
 
 -   Client Configuration
 
-    -   [&lt;client-cache&gt; Element Reference](client-cache.html#cc-client-cache)
-    -   [&lt;pool&gt;](client-cache.html#cc-pool)
-    -   [&lt;region&gt;](client-cache.html#cc-region)
+    -   [&lt;client-cache&gt; Element Reference](client-cache)
+    -   [&lt;pool&gt;](client-cache#cc-pool)
+    -   [&lt;region&gt;](client-cache#cc-region)
 
     You can set the same client configuration properties using the <span class="keyword apiname">`org.apache.geode.cache.clientClientCache`</span> and <span class="keyword apiname">`Pool`</span> interfaces. For detailed information, see the online Java API documentation.
 
 -   Multi-site (WAN) Configuration and Asynchronous Event Queue Configuration
 
-    -   [&lt;gateway-sender&gt;](cache_xml.html#gateway-sender)
-    -   [&lt;gateway-receiver&gt;](cache_xml.html#gateway-receiver)
-    -   [&lt;async-event-queue&gt;](cache_xml.html#id_zrr_scq_rr)
+    -   [&lt;gateway-sender&gt;](cache_xml#gateway-sender)
+    -   [&lt;gateway-receiver&gt;](cache_xml#gateway-receiver)
+    -   [&lt;async-event-queue&gt;](cache_xml#id_zrr_scq_rr)
 
     The gateway sender and receiver APIs in <span class="keyword apiname">`org.apache.geode.cache.util`</span> provide corresponding getter and setter methods for these attributes.

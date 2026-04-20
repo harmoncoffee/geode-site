@@ -18,10 +18,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="topic_resume_command"></a>
-
-
+## {#topic_resume_command}
 Modify an existing @@product_name@@ resource.
 
 -   **[resume async-event-queue-dispatcher](#topic_resume_async_event_queue_dispatcher)**
@@ -32,8 +29,7 @@ Modify an existing @@product_name@@ resource.
 
     Resume specified gateway sender that is currently in a paused state.
 
-## <a id="topic_resume_async_event_queue_dispatcher" class="no-quick-link"></a>resume async-event-queue-dispatcher
-
+## resume async-event-queue-dispatcher {#topic_resume_async_event_queue_dispatcher}
 Resume dispatching of events on a specified asynchronous event queue which is currently in a paused state.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -44,9 +40,7 @@ Resume dispatching of events on a specified asynchronous event queue which is cu
 resume async-event-queue-dispatcher --id=value [--groups=value(,value)*]
 [--members=value(,value)*]
 ```
-
-<a id="concept_resume_async_event_queue_dispatcher__table_rwp_vbg_2w"></a>
-
+## {#concept_resume_async_event_queue_dispatcher__table_rwp_vbg_2w}
 | Name                                           | Description                                                  |
 |------------------------------------------------|--------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;id</span>     | *Required.* ID of the Asynchronous Event Queue.          |
@@ -59,8 +53,7 @@ resume async-event-queue-dispatcher --id=value [--groups=value(,value)*]
 resume async-event-queue-dispatcher --id=AEQ1 --groups=Group1
 ```
 
-## <a id="topic_resume_gateway_sender" class="no-quick-link"></a>resume gateway-sender
-
+## resume gateway-sender {#topic_resume_gateway_sender}
 Resume a gateway sender which is currently in a paused sate.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -71,9 +64,7 @@ Resume a gateway sender which is currently in a paused sate.
 resume gateway-sender --id=value [--groups=value(,value)*] 
 [--members=value(,value)*]
 ```
-
-<a id="concept_8B0532D13CF34E0CB04ACC3F14F1E4A2__table_rwp_vbg_2w"></a>
-
+## {#concept_8B0532D13CF34E0CB04ACC3F14F1E4A2__table_rwp_vbg_2w}
 | Name                                           | Description                                                  |
 |------------------------------------------------|--------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;id</span>     | *Required.* ID of the Gateway Sender.                        |

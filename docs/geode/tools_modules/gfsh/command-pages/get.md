@@ -28,9 +28,7 @@ Display an entry in a region.
 ``` pre
 get --key=value --region=value [--key-class=value] [--value-class=value]
 ```
-
-<a id="concept_837F6196CE334C8CA2CAFD34AB6EF869__table_ez2_s1h_2w"></a>
-
+## {#concept_837F6196CE334C8CA2CAFD34AB6EF869__table_ez2_s1h_2w}
 | Name                                                       | Description                                                                                                                                                  | Default Value                                                         |
 |------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;key </span>               | *Required.* String or JSON text from which to create the key. For example: "`James`", "`100L`" and "`('id': 'l34s')`".                                       |                                                                       |

@@ -21,7 +21,7 @@ limitations under the License.
 
 Pause a gateway sender.
 
-Pause the gateway sender on a member or members. See [Pausing Gateway Senders](../../../topologies_and_comm/topology_concepts/multisite_overview.html#topic_9AA37B43642D4DE19072CA3367C849BA__section_hdt_2js_bq) for details on pausing gateway senders.
+Pause the gateway sender on a member or members. See [Pausing Gateway Senders](../../../topologies_and_comm/topology_concepts/multisite_overview#topic_9AA37B43642D4DE19072CA3367C849BA__section_hdt_2js_bq) for details on pausing gateway senders.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -31,9 +31,7 @@ Pause the gateway sender on a member or members. See [Pausing Gateway Senders](.
 pause gateway-sender --id=value [--groups=value(,value)*] 
 [--members=value(,value)*]
 ```
-
-<a id="concept_44B6EC91FD464A1A91E438D6DF65C9D6__table_nhn_zcg_2w"></a>
-
+## {#concept_44B6EC91FD464A1A91E438D6DF65C9D6__table_nhn_zcg_2w}
 | Name                                           | Description                                                    |
 |------------------------------------------------|----------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;id</span>     | *Required.* ID of the gateway sender.                          |

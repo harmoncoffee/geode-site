@@ -29,14 +29,13 @@ The use of query bind parameters is now supported in Client-to-Server queries.
 
 The query parameters are identified by a dollar sign, $, followed by a digit that represents the parameter's position in the parameter array passed to the execute method. Counting begins at 1, so $1 references the first bound attribute, $2 the second attribute, and so on.
 
-The Query interface provides an overloaded execute method that accepts parameters inside an Object array. See the [Query.execute](/org/apache/geode/cache/query/Query.html) JavaDocs for more details.
+The Query interface provides an overloaded execute method that accepts parameters inside an Object array. See the [Query.execute](/org/apache/geode/cache/query/Query) JavaDocs for more details.
 
 The 0th element of the Object array is used for the first query parameter, and so on. If the parameter count or parameter types do not match the query specification, the execute method throws an exception. Specifically, if you pass in the wrong number of parameters, the method call throws a `QueryParameterCountInvalidException`. If a parameter object type is not compatible with what is expected, the method call throws a `TypeMismatchException`.
 
 In the following example, the first parameter, the integer **2**, is bound to the first element in the object array. The second parameter, **active**, is bound to the second element.
 
-## <a id="concept_173E775FE46B47DF9D7D1E40680D34DF__section_7F5A800E2DA643F2B30162EF45DBA390" class="no-quick-link"></a>Sample Code
-
+## Sample Code {#concept_173E775FE46B47DF9D7D1E40680D34DF__section_7F5A800E2DA643F2B30162EF45DBA390}
 ``` pre
 // specify the query string
 String queryString = "SELECT DISTINCT * FROM /exampleRegion p WHERE p.id = $1 and p.status = $2";
@@ -56,8 +55,7 @@ SelectResults results = (SelectResults) query.execute(params);
  int size = results.size();
 ```
 
-## <a id="concept_173E775FE46B47DF9D7D1E40680D34DF__section_90B4A0010CDA481581B650AE6D9EBA34" class="no-quick-link"></a>Using Query Bind Parameters in the Path Expression
-
+## Using Query Bind Parameters in the Path Expression {#concept_173E775FE46B47DF9D7D1E40680D34DF__section_90B4A0010CDA481581B650AE6D9EBA34}
 Additionally the query engine supports the use of query bind parameter in place of a region path. When you specify a bind parameter in the query's FROM clause, the parameter's referenced value must be bound to a collection.
 
 **Examples:**

@@ -61,8 +61,7 @@ Display details of a member's configuration, shell connection, disk-stores, memb
 
     Display the attributes and key information of a region.
 
-## <a id="topic_gyr_jgz_ck" class="no-quick-link"></a>describe client
-
+## describe client {#topic_gyr_jgz_ck}
 Displays details about a specified client.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -105,8 +104,7 @@ UP Time (seconds)              : 67
 Is Durable                     : No
 ```
 
-## <a id="topic_3C2C817D999C4E40AF788808B7B6AF99" class="no-quick-link"></a>describe config
-
+## describe config {#topic_3C2C817D999C4E40AF788808B7B6AF99}
 Display the configuration of a member.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -161,8 +159,7 @@ Cache-server attributes
  . bind-address         : localhost
 ```
 
-## <a id="topic_591DC6B781B641168E6173E69AC6D201" class="no-quick-link"></a>describe connection
-
+## describe connection {#topic_591DC6B781B641168E6173E69AC6D201}
 Display connection information details.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -188,8 +185,7 @@ Connection Endpoints
 GemFireUser[1099]
 ```
 
-## <a id="topic_C635B500BE6A4F1D9572D0BC98A224F2" class="no-quick-link"></a>describe disk-store
-
+## describe disk-store {#topic_C635B500BE6A4F1D9572D0BC98A224F2}
 Display information about a member's disk store.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -240,8 +236,7 @@ PDX Serialization Meta-Data Stored : No
 
 ```
 
-## <a id="describe_jndi-binding" class="no-quick-link"></a>describe jndi-binding
-
+## describe jndi-binding {#describe_jndi-binding}
 Print the configuration information that describes a JDBC connection.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -278,11 +273,10 @@ user-name         |
 connection-url    | jdbc:derby:newDB
 ```
 
-## <a id="describe_lucene_index" class="no-quick-link"></a>describe lucene index
-
+## describe lucene index {#describe_lucene_index}
 Describe a Lucene index.
 
-See also [create lucene index](create.html#create_lucene_index), [destroy lucene index](destroy.html#destroy_lucene_index), [list lucene indexes](list.html#list_lucene_indexes) and [search lucene](search.html#search_lucene).
+See also [create lucene index](create#create_lucene_index), [destroy lucene index](destroy#destroy_lucene_index), [list lucene indexes](list#list_lucene_indexes) and [search lucene](search#search_lucene).
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -321,8 +315,7 @@ gfsh>describe lucene index --name=analyzerIndex --region=/Person
 analyzerIndex | /Person     | [address, name, email] | {address=MyCharacterAnalyzer, email.. | Initialized | 1695             | 1008    | 962     | 1004
 ```
 
-## <a id="topic_D62F3D42B1D84CF68F03D54D5122806A" class="no-quick-link"></a>describe member
-
+## describe member {#topic_D62F3D42B1D84CF68F03D54D5122806A}
 Display details of a member with given name/id.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -373,8 +366,7 @@ Running            : true
 Client Connections : 0
 ```
 
-## <a id="topic_kys_yvk_2l" class="no-quick-link"></a>describe offline-disk-store
-
+## describe offline-disk-store {#topic_kys_yvk_2l}
 Display information about an offline member's disk store.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -449,8 +441,7 @@ PDX Enums:
   com.app.data.StockPdx$Day.Monday
 ```
 
-## <a id="topic_describe_query_service" class="no-quick-link"></a>describe query-service
-
+## describe query-service {#topic_describe_query_service}
 Print the information that describes the current configuration of the query service.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -474,8 +465,7 @@ gfsh>describe query-service
 Method Authorizer Class : org.apache.geode.cache.query.security.JavaBeanAccessorMethodAuthorizer
 ```
 
-## <a id="topic_DECF7D3D33F54071B6B8AD4EA7E3F90B" class="no-quick-link"></a>describe region
-
+## describe region {#topic_DECF7D3D33F54071B6B8AD4EA7E3F90B}
 Display the attributes and key information of a region.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.

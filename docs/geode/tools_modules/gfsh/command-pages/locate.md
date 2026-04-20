@@ -21,8 +21,7 @@ limitations under the License.
 
 Locate a region entry on a member.
 
-## <a id="concept_73B980C1138743DDBBFACE68009BD1E3__section_04BD7EC0032147DFA9CCD1331EE3B694" class="no-quick-link"></a>locate entry
-
+## locate entry {#concept_73B980C1138743DDBBFACE68009BD1E3__section_04BD7EC0032147DFA9CCD1331EE3B694}
 Locate a given entry on members using the specified key. This command is useful when using partitioned regions.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -33,9 +32,7 @@ Locate a given entry on members using the specified key. This command is useful 
 locate entry --key=value --region=value [--key-class=value] 
 [--value-class=value] [--recursive=value]
 ```
-
-<a id="concept_73B980C1138743DDBBFACE68009BD1E3__table_dk3_pdg_2w"></a>
-
+## {#concept_73B980C1138743DDBBFACE68009BD1E3__table_dk3_pdg_2w}
 | Name                                                | Description                                                                                                                                               | Default Value      |
 |-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
 | <span class="keyword parmname">&#8209;&#8209;key</span>         | *Required.* String or JSON text from which to create a key. Examples include: "`James`", "`100L`" and "`('id':                                 'l34s')`". | Â                   |

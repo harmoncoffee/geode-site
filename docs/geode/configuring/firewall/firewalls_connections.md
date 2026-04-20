@@ -29,7 +29,7 @@ As one example, firewalls may close connections to @@product_name@@ due to timeo
 
 For more information on how @@product_name@@ client and servers connect, see the following topics:
 
--   [How Client/Server Connections Work](../../topologies_and_comm/topology_concepts/how_the_pool_manages_connections.html#how_the_pool_manages_connections)
--   [Socket Communication](../../managing/monitor_tune/socket_communication.html)
--   [Controlling Socket Use](../../managing/monitor_tune/performance_controls_controlling_socket_use.html#perf)
--   [Setting Socket Buffer Sizes](../../managing/monitor_tune/socket_communication_setting_socket_buffer_sizes.html)
+-   [How Client/Server Connections Work](../../topologies_and_comm/topology_concepts/how_the_pool_manages_connections#how_the_pool_manages_connections)
+-   [Socket Communication](../../managing/monitor_tune/socket_communication)
+-   [Controlling Socket Use](../../managing/monitor_tune/performance_controls_controlling_socket_use#perf)
+-   [Setting Socket Buffer Sizes](../../managing/monitor_tune/socket_communication_setting_socket_buffer_sizes)

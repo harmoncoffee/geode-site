@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 A `PdxInstance` is a light-weight wrapper around PDX serialized bytes. It provides applications with run-time access to fields of a PDX serialized object.
-
-<a id="program_application_for_pdx__section_7F357A8E56B54BFB9A5778C0F89E034E"></a>
+## {#program_application_for_pdx__section_7F357A8E56B54BFB9A5778C0F89E034E}
 You can configure your cache to return a `PdxInstance` when a PDX serialized object is deserialized instead of deserializing the object to a domain class. You can then program your application code that reads your entries to handle `PdxInstance`s fetched from the cache.
 
 **Note:**
@@ -41,15 +40,11 @@ In mixed situations, such as where a server cache is populated from client opera
 When fetching data in a cache with PDX serialized reads enabled, the safest approach is to code to handle both types, receiving an `Object` from the fetch operation, checking the type and casting as appropriate. However, if you know that the class is not available in the JVM, then you can avoid performing the type check.
 
 `PdxInstance` overrides any custom implementation you might have coded for your object's `equals` and `hashcode` methods. Make sure you have marked at least one identity field when writing PDX serialized objects. If you do not set as least one identity field, then the PdxInstance`equals` and `hashCode` methods will use all PDX fields to compare objects and consequently, will not perform as well.
-
-<a id="program_application_for_pdx__section_03F8918B4CAD49CCA1823FAAE25D53A8"></a>
-
+## {#program_application_for_pdx__section_03F8918B4CAD49CCA1823FAAE25D53A8}
 **Prerequisites**
 
--   Understand generally how to configure the @@product_name@@ cache. See [Basic Configuration and Programming](../../basic_config/book_intro.html#basic_config_management).
-
-<a id="program_application_for_pdx__section_B3C7C7629DFD4483B32B27F84D64DFCF"></a>
-
+-   Understand generally how to configure the @@product_name@@ cache. See [Basic Configuration and Programming](../../basic_config/book_intro#basic_config_management).
+## {#program_application_for_pdx__section_B3C7C7629DFD4483B32B27F84D64DFCF}
 **Procedure**
 
 In your application where you fetch data from the cache, provide the following configuration and code as appropriate:

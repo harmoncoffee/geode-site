@@ -22,33 +22,33 @@ limitations under the License.
 **Note:**
 This documentation covers the **v1** release of Geode REST APIs for developing applications.
 
--   **[ Geode REST API Overview](chapter_overview.html)**
+-   **[ Geode REST API Overview](chapter_overview)**
 
     By using the Geode REST application interface, you can immediately access Geode 's data management capabilities in languages other than the natively supported Java language.
 
--   **[Prerequisites and Limitations for Writing REST Applications](rest_prereqs.html)**
+-   **[Prerequisites and Limitations for Writing REST Applications](rest_prereqs)**
 
     Before development, understand the prerequisites and limitations of the current REST implementation in Geode .
 
--   **[Setup and Configuration](setup_config.html)**
+-   **[Setup and Configuration](setup_config)**
 
     The Apache Geode developer REST interface runs as an embedded HTTP or HTTPS service (Jetty server) within a Geode data node.
 
--   **[Using the Swagger UI to Browse REST APIs](using_swagger.html)** Apache Geode     Developer REST APIs are integrated with the Swaggerâ„¢ framework. This framework provides a browser-based test client that allows you to visualize and try out Geode REST APIs.
+-   **[Using the Swagger UI to Browse REST APIs](using_swagger)** Apache Geode     Developer REST APIs are integrated with the Swaggerâ„¢ framework. This framework provides a browser-based test client that allows you to visualize and try out Geode REST APIs.
 
--   **[Developing REST Applications](develop_rest_apps.html)**
+-   **[Developing REST Applications](develop_rest_apps)**
 
     This section provides guidelines on writing REST client applications for Geode .
 
--   **[Sample REST Applications](rest_examples.html)**
+-   **[Sample REST Applications](rest_examples)**
 
     This section provides examples that illustrate how multiple clients, both REST and native, can access the same Geode region data.
 
--   **[Troubleshooting and FAQ](troubleshooting.html)**
+-   **[Troubleshooting and FAQ](troubleshooting)**
 
     This section provides troubleshooting guidance and frequently asked questions about Geode Developer REST APIs.
 
--   **[ Apache Geode REST API Reference](rest_api_reference.html)**
+-   **[ Apache Geode REST API Reference](rest_api_reference)**
 
     This section summarizes all available Apache Geode REST API resources and endpoints.
 

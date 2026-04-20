@@ -20,8 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="validating_disk_store__section_1782CD93DB6040A2BF52014A6600EA44"></a>
+## {#validating_disk_store__section_1782CD93DB6040A2BF52014A6600EA44}
 The `validate offline-disk-store` command verifies the health of your offline disk store and gives you information about the regions in it, the total entries, and the number of records that would be removed if you compacted the store.
 
 Use this command at these times:

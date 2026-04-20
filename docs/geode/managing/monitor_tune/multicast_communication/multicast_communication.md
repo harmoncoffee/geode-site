@@ -21,24 +21,24 @@ limitations under the License.
 
 You can make configuration adjustments to improve the UDP multicast performance of peer-to-peer communication in your @@product_name@@ system.
 
-Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../basic_config/book_intro.html). See also the general communication tuning and UDP tuning covered in [Socket Communication](socket_communication.html) and [UDP Communication](udp_communication.html#udp_comm).
+Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../basic_config/book_intro). See also the general communication tuning and UDP tuning covered in [Socket Communication](socket_communication) and [UDP Communication](udp_communication#udp_comm).
 
--   **[Provisioning Bandwidth for Multicast](multicast_communication_provisioning_bandwidth.html)**
+-   **[Provisioning Bandwidth for Multicast](multicast_communication_provisioning_bandwidth)**
 
     Multicast installations require more planning and configuration than TCP installations. With IP multicast, you gain scalability but lose the administrative convenience of TCP.
 
--   **[Testing Multicast Speed Limits](multicast_communication_testing_multicast_speed_limits.html)**
+-   **[Testing Multicast Speed Limits](multicast_communication_testing_multicast_speed_limits)**
 
     TCP automatically adjusts its speed to the capability of the processes using it and enforces bandwidth sharing so that every process gets a turn. With multicast, you must determine and explicitly set those limits.
 
--   **[Configuring Multicast Speed Limits](multicast_communication_configuring_speed_limits.html)**
+-   **[Configuring Multicast Speed Limits](multicast_communication_configuring_speed_limits)**
 
     After you determine the maximum transmission rate, configure and tune your production system.
 
--   **[Run-time Considerations for Multicast](multicast_communication_runtime_considerations.html)**
+-   **[Run-time Considerations for Multicast](multicast_communication_runtime_considerations)**
 
     When you use multicast for messaging and data distribution, you need to understand how the health monitoring setting works and how to control memory use.
 
--   **[Troubleshooting the Multicast Tuning Process](multicast_communication_troubleshooting.html)**
+-   **[Troubleshooting the Multicast Tuning Process](multicast_communication_troubleshooting)**
 
     Several problems may arise during the initial testing and tuning process for multicasting.

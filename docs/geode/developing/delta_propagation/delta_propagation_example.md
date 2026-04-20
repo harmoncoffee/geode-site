@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 This topic provides an example of delta propagation.
-
-<a id="delta_propagation_example__section_F6700EB7F305462D9F0DEE3080497A14"></a>
+## {#delta_propagation_example__section_F6700EB7F305462D9F0DEE3080497A14}
 In this example, the feeder client is connected to the first server, and the receiver client is connected to the second. The servers are peers to each other.
 
 <img src="/images/DeltaPropagation-3.gif" id="delta_propagation_example__image_E20DAE5925C44EBDA03D1AC8325D1122" class="image" />
@@ -33,9 +32,7 @@ The example demonstrates the following operations:
 1.  In the Feeder client, the application updates the entry object and puts the entry. In response to the `put`, @@product_name@@ calls `hasDelta`, which returns true, so @@product_name@@ calls `toDelta` and forwards the extracted delta to the server. If `hasDelta` returned false, @@product_name@@ would distribute the full entry value.
 2.  In Server1, @@product_name@@ applies the delta to the cache, distributes the received delta to the server's peers, and forwards it to any other clients with interest in the entry (there are no other clients to Server1 in this example)
 3.  In Server2, @@product_name@@ applies the delta to the cache and forwards it to its interested clients, which in this case is just the Receiver client.
-
-<a id="delta_propagation_example__section_185444FC51FB467587A62DFEC07C9C7D"></a>
-
+## {#delta_propagation_example__section_185444FC51FB467587A62DFEC07C9C7D}
 This example shows the basic approach to programming a `Delta` implementation.
 
 ``` pre

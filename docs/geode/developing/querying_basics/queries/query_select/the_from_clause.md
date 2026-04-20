@@ -21,13 +21,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<a id="the_from_clause__section_FAEBC02C4E414F91B1CA8D33E11218AF"></a>
+## The From Clause {#the_from_clause__section_FAEBC02C4E414F91B1CA8D33E11218AF}
 Use the FROM clause to bring the data you need into scope for the rest of your query. The FROM clause also includes object typing and iterator variables.
 
 The query engine resolves names and path expressions according to the name space that is currently in scope in the query.
 
-## <a id="the_from_clause__section_CF6063A6C5134EFC89C43D106B6A6D4D" class="no-quick-link"></a>Path Expressions
-
+## Path Expressions {#the_from_clause__section_CF6063A6C5134EFC89C43D106B6A6D4D}
 The initial name space for any query is composed of:
 
 -   **Regions.** In the context of a query, the name of a region is specified by its full path starting with a forward slash ( / ) and delimited by the forward slash between region names. For example, **/exampleRegion** or **/root/exampleRegion**.
@@ -78,8 +77,7 @@ Query values in the region. Return a collection of entry values in the region th
 SELECT * FROM /exampleRegion.values portfolio WHERE portfolio.status = 'active'
 ```
 
-## <a id="the_from_clause__section_AB1734C16DC348479C00FD6829B933AA" class="no-quick-link"></a>Aliases and Synonyms
-
+## Aliases and Synonyms {#the_from_clause__section_AB1734C16DC348479C00FD6829B933AA}
 In query strings, you can use aliases in path expressions (region and its objects) so that you can refer to the region or objects in other places in the query.
 
 You can also use the **AS** keyword to provide a label for joined path expressions.
@@ -94,8 +92,7 @@ SELECT DISTINCT * FROM /exampleRegion p WHERE p.status = 'active'
 SELECT * FROM /exampleRegion p, p.positions.values AS pos WHERE pos.secId != '1'
 ```
 
-## <a id="the_from_clause__section_A5B42CCB7C924949954AEC2DAAD51134" class="no-quick-link"></a>Object Typing
-
+## Object Typing {#the_from_clause__section_A5B42CCB7C924949954AEC2DAAD51134}
 Specifying object type in the FROM clause helps the query engine to process the query at optimal speed. Apart from specifying the object types during configuration (using key-constraint and value-constraint), type can be explicitly specified in the query string.
 
 **Example:**

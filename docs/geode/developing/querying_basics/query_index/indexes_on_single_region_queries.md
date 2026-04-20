@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Queries with one comparison operation may be improved with either a key or range index, depending on whether the attribute being compared is also the primary key.
-
-<a id="concept_0210701C193A470E8C572111F6CEC3FC__section_751427643EC3480BABCE9CA44E831E27"></a>
+## {#concept_0210701C193A470E8C572111F6CEC3FC__section_751427643EC3480BABCE9CA44E831E27}
 If pkid is the key in the /exampleRegion region, creating a key index on pkid is the best choice as a key index does not have maintenance overhead. If pkid is not the key, a range index on pkid should improve performance.
 
 ``` pre

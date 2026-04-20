@@ -23,8 +23,7 @@ limitations under the License.
 
 This section covers configuring whether and how redundancy is
 recovered in a partitioned region, after a member joins.
-
-<a id="set_join_redundancy_recovery__section_D6FB0D69CC454B53B9CF1E656A44465C"></a>
+## {#set_join_redundancy_recovery__section_D6FB0D69CC454B53B9CF1E656A44465C}
 Use the partition attribute `startup-recovery-delay` to specify member join redundancy recovery.
 
 | value of `startup-recovery-delay`            | Effect following a member join                                                                                                                                                                                               |

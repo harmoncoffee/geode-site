@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Region types define region behavior within a single cluster. You have various options for region data storage and distribution.
-
-<a id="region_types__section_E3435ED1D0D142538B99FA69A9E449EF"></a>
+## {#region_types__section_E3435ED1D0D142538B99FA69A9E449EF}
 Within a @@product_name@@ cluster, you can define distributed regions and non-distributed regions, and you can define regions whose data is spread across the cluster, and regions whose data is entirely contained in a single member.
 
 Your choice of region type is governed in part by the type of application you are running. In particular, you need to use specific region types for your servers and clients for effective communication between the two tiers:
@@ -32,10 +31,8 @@ Your choice of region type is governed in part by the type of application you ar
 -   Client regions are created inside a `ClientCache` by clients and are configured to distribute data and events between the client and the server tier. Client regions must have region type `local`. Client region configuration uses the `ClientRegionShortcut` enum settings.
 -   Peer regions are created inside a `Cache`. Peer regions may be server regions, or they may be regions that are not accessed by clients. Peer regions can have any region type. Peer region configuration uses the `RegionShortcut` enum settings.
 
-When you configure a server or peer region using `gfsh` or with the `cache.xml` file, you can use *region shortcuts* to define the basic configuration of your region. A region shortcut provides a set of default configuration attributes that are designed for various types of caching architectures. You can then add additional configuration attributes as needed to customize your application. For more information and a complete reference of these region shortcuts, see [Region Shortcuts Reference](../../reference/topics/region_shortcuts_reference.html#reference_lt4_54c_lk).
-
-<a id="region_types__section_A3449B07598C47A881D9219574DE46C5"></a>
-
+When you configure a server or peer region using `gfsh` or with the `cache.xml` file, you can use *region shortcuts* to define the basic configuration of your region. A region shortcut provides a set of default configuration attributes that are designed for various types of caching architectures. You can then add additional configuration attributes as needed to customize your application. For more information and a complete reference of these region shortcuts, see [Region Shortcuts Reference](../../reference/topics/region_shortcuts_reference#reference_lt4_54c_lk).
+## {#region_types__section_A3449B07598C47A881D9219574DE46C5}
 These are the primary configuration choices for each data region.
 
 | Region Type | Description | Best suited for... |
@@ -46,8 +43,7 @@ These are the primary configuration choices for each data region.
 | Non-distributed (local) | The region is visible only to the defining member. | Client regions and peer regions<br/><br/>- Data that is not shared between applications |
 
 
-## <a id="region_types__section_C92C7DBD8EF44F1789FCB36281D3F8BF" class="no-quick-link"></a>Partitioned Regions
-
+## Partitioned Regions {#region_types__section_C92C7DBD8EF44F1789FCB36281D3F8BF}
 Partitioning is a good choice for very large server regions. Partitioned regions are ideal for data sets in the hundreds of gigabytes and beyond.
 
 **Note:**
@@ -64,9 +60,7 @@ Use partitioning for:
 
 In partitioned regions, you can colocate keys within buckets and across multiple partitioned regions. You can also control which members store which data buckets.
 
-## <a id="region_types__section_iwt_dnj_bm" class="no-quick-link"></a>Replicated Regions
-
-
+## Replicated Regions {#region_types__section_iwt_dnj_bm}
 Replicated regions provide the highest performance in terms of throughput and latency.
 Replication is a good choice for small to medium size server regions.
 
@@ -77,8 +71,7 @@ Use replicated regions for:
 -   **High performance data access**. Replication guarantees local access from the heap for application threads, providing the lowest possible latency for data access.
 -   **Asynchronous distribution**. All distributed regions, replicated and non-replicated, provide the fastest distribution speeds.
 
-## <a id="region_types__section_2232BEC969F74CDB91B1BB74FEF67EE1" class="no-quick-link"></a>Distributed, Non-Replicated Regions
-
+## Distributed, Non-Replicated Regions {#region_types__section_2232BEC969F74CDB91B1BB74FEF67EE1}
 Distributed regions provide the same performance as replicated regions, but each member stores only  data in which it has expressed an interest, either by subscribing to events from other members or by defining the data entries in its cache.
 
 Use distributed, non-replicated regions for:
@@ -87,8 +80,7 @@ Use distributed, non-replicated regions for:
 -   **Data sets where individual members need only notification and updates for changes to a subset of the data**. In non-replicated regions, each member receives only update events for the data entries it has defined in the local cache.
 -   **Asynchronous distribution**. All distributed regions, replicated and non-replicated, provide the fastest distribution speeds.
 
-## <a id="region_types__section_A8150BDBC74E4019B1942481877A4370" class="no-quick-link"></a>Local Regions
-
+## Local Regions {#region_types__section_A8150BDBC74E4019B1942481877A4370}
 **Note:**
 When created using the `ClientRegionShortcut` settings, client regions are automatically defined as local, since all client distribution activities go to and come from the server tier.
 

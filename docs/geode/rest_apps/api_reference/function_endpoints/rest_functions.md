@@ -21,10 +21,10 @@ limitations under the License.
 
 @@product_name@@ functions allows you to write and execute server-side transactions and data operations. These may include anything ranging from initializing components or third-party services or aggregating data.
 
--   **[GET /geode/v1/functions](get_functions.html)**
+-   **[GET /geode/v1/functions](get_functions)**
 
     List all registered @@product_name@@ functions in the cluster.
 
--   **[POST /geode/v1/functions/\{functionId\}](post_execute_functions.html)**
+-   **[POST /geode/v1/functions/\{functionId\}](post_execute_functions)**
 
     Execute @@product_name@@ function on entire cluster or on a specified region, members and member groups.

@@ -18,16 +18,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="concept_C2DCEE6743304549825C9B62E66DBADF"></a>
-
-
+## {#concept_C2DCEE6743304549825C9B62E66DBADF}
 Configure Portable Data eXchange (PDX) for all the cache(s) in the cluster.
 
-## <a id="topic_jdkdiqbgphqh" class="no-quick-link"></a>configure pdx
-
-<a id="topic_jdkdiqbgphqh__section_C27BE964CE554180A65968DBEBF50B23"></a>
-
+## configure pdx {#topic_jdkdiqbgphqh}
+## {#topic_jdkdiqbgphqh__section_C27BE964CE554180A65968DBEBF50B23}
 Configures @@product_name@@'s Portable Data eXchange for all the cache(s) in the cluster
 and persists the pdx configuration in the locator with the cluster configuration service.
 

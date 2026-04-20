@@ -22,9 +22,7 @@ limitations under the License.
 -->
 
 The `gfsh` utility provides useful features for a shell environment, including command auto-complete, preserved command history, and delimiting of multi-line commands. Context-sensitive help is available by command and by topic.
-
-<a id="concept_45D28CC9710C4EAFB6EECFA0D651D439__section_A7A871DBD8C7464A80CEB007798E5AE7"></a>
-
+## {#concept_45D28CC9710C4EAFB6EECFA0D651D439__section_A7A871DBD8C7464A80CEB007798E5AE7}
 **To view a list of available gfsh commands, press Tab at an empty prompt.**
 
 The list of commands you see depends on whether you are connected to a @@product_name@@ cluster. If you are not connected, you see a list of local commands that are available.

@@ -31,8 +31,7 @@ The following sections provide an overview of the main Pulse views:
 -   [Data Browser](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__sec_pulsedatabrowser)
 -   [Alerts Widget](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_bfk_sc3_wn)
 
-# <a id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_9794B5754E474E10ABFBCD8B1DA240F8" class="no-quick-link"></a>Cluster View
-
+# Cluster View {#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_9794B5754E474E10ABFBCD8B1DA240F8}
 The cluster view is a high-level overview of the cluster. It is displayed immediately after you log into Pulse. Information displays around the perimeter of the cluster view show statistics such as memory usage, JVM pauses, and throughput. You can use the cluster view to drill down into details for individual members and regions in the cluster.
 
 <img src="/images/pulse_cluster_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_CC7B54903DF24030850E55965CDB6EC4" class="image imageleft" width="624" />
@@ -87,8 +86,7 @@ The following table describes the data pieces displayed on the Cluster View scre
 | **Alerts View** | Displays cluster alerts. |
 
 
-# <a id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_3629814A3DF64D31A190495782DB0DBF" class="no-quick-link"></a>Member View
-
+# Member View {#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_3629814A3DF64D31A190495782DB0DBF}
 When you select an individual @@product_name@@ member in Cluster View, Pulse displays the regions available on that member, as well as member-specific information such as the configured listen ports.
 
 <img src="/images/pulse_member_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_EDBD3D333B2741DCAA5CB94719B507B7" class="image imageleft" width="624" />
@@ -127,8 +125,7 @@ The following table describes the data elements displayed on the Member View scr
 | **Disk Throughput** | Rate of disk writes on the member. |
 
 
-# <a id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_D151776BAC8B4704A71F37F8B5CE063D" class="no-quick-link"></a>Region View
-
+# Region View {#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_D151776BAC8B4704A71F37F8B5CE063D}
 The Pulse Region View provides a comprehensive overview of all regions in the cluster:
 
 <img src="/images/pulse_data_view.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_A533852E38654E79BE5628E938E170EB" class="image imageleft" width="624" />
@@ -155,9 +152,8 @@ The following table describes the data elements displayed on the Region View scr
 | **Region Detail** | Right pane shows region information: **Name**, **Region Path**, **Type** (REPLICATE, PARTITION, etc.), **Members** (hosting count), **Empty Nodes** (DataPolicy `EMPTY` or `LocalMaxMemory=0`), **Entry Count**, **Disk Usage** (persistent data), **Persistence** (whether data is persisted), **Memory Usage** (used/total and %), **Reads/Writes** (last 15 minutes, memory and disk). |
 
 
-# <a id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__sec_pulsedatabrowser" class="no-quick-link"></a>Data Browser
-
-The Pulse Data Browser enables you to query region data. Note that there are two key attributes available on DistributedSystemMXBean (see [List of @@product_name@@ JMX MBeans](../../managing/management/list_of_mbeans.html#topic_4BCF867697C3456D96066BAD7F39FC8B)) that you can use to configure limits for the result sets displayed in Data Browser:
+# Data Browser {#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__sec_pulsedatabrowser}
+The Pulse Data Browser enables you to query region data. Note that there are two key attributes available on DistributedSystemMXBean (see [List of @@product_name@@ JMX MBeans](../../managing/management/list_of_mbeans#topic_4BCF867697C3456D96066BAD7F39FC8B)) that you can use to configure limits for the result sets displayed in Data Browser:
 
 -   `QueryResultSetLimit` limits the number of rows that Data Browser queries return. 1000 rows are displayed by default.
 -   `QueryCollectionsDepth` limits the number of elements of a collection that Data Browser queries return. This attribute applies to query results contain collections such as Map, List, and so forth. The default value is 100 elements.
@@ -173,18 +169,17 @@ Use these basic controls while in Data Browser view:
 1.  Search for the name of a specific region.
 2.  Select one or more regions to display the @@product_name@@ members that host those regions. The hosting @@product_name@@ members appear in the Region Members section.
 3.  Select one or more members from the Region Members section to restrict query results to those members.
-4.  Type in the text of a query to execute. See [Querying](../../developing/querying_basics/chapter_overview.html).
+4.  Type in the text of a query to execute. See [Querying](../../developing/querying_basics/chapter_overview).
 5.  Display a list of previously-executed queries. Double-click on a query from the history list to copy it to the Query Editor, or delete the query from your history.
 6.  Execute your query or clear the contents of the Query Editor.
 7.  View the current query results.
 8.  Export the query results to a text file.
 9.  Return to [Cluster View](#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_9794B5754E474E10ABFBCD8B1DA240F8).
 
-# <a id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_bfk_sc3_wn" class="no-quick-link"></a>Alerts Widget
-
+# Alerts Widget {#topic_F0ECE9E8179541CCA3D6C5F4FBA84404__section_bfk_sc3_wn}
 The Alerts Widget appears in the right portion of the screen and displays a list of alerts.
 
-The alerts displayed for the cluster appear based on the alertLevel field set in the DistributedSystemMXBean. By default, log messages with the level of SEVERE are shown as alerts. You can modify the level by using the `DistributedMXBean.changeAlertLevel` method. See [System Alert Notifications](../../managing/management/notification_federation_and_alerts.html#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A__section_7463D13112D54406953416356835E290) for more information.
+The alerts displayed for the cluster appear based on the alertLevel field set in the DistributedSystemMXBean. By default, log messages with the level of SEVERE are shown as alerts. You can modify the level by using the `DistributedMXBean.changeAlertLevel` method. See [System Alert Notifications](../../managing/management/notification_federation_and_alerts#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A__section_7463D13112D54406953416356835E290) for more information.
 
 <img src="/images/pulse_alerts_widget.png" id="topic_F0ECE9E8179541CCA3D6C5F4FBA84404__image_jrc_smt_qn" class="image" />
 

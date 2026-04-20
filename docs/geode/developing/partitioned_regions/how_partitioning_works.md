@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 To use partitioned regions, you should understand how they work and your options for managing them.
-
-<a id="how_partitioning_works__section_B540C49A80124551853AFCE2DE6BCFE8"></a>
+## {#how_partitioning_works__section_B540C49A80124551853AFCE2DE6BCFE8}
 During operation, a partitioned region looks like one large virtual region, with the same logical view held by all of the members where the region is defined.
 <img src="/images_svg/how_partitioning_works_1.svg" id="how_partitioning_works__image_305566EA091A4CBBB108BE0EA7658C0A" class="image" />
 
@@ -32,8 +31,7 @@ For each member where you define the region, you can choose how much space to al
 
 A cluster can have multiple partitioned regions, and it can mix partitioned regions with distributed regions and local regions. The usual requirement for unique region names, except for regions with local scope, still applies. A single member can host multiple partitioned regions.
 
-## <a id="how_partitioning_works__section_260C2455FC8C40A094B39BF585D06B7D" class="no-quick-link"></a>Data Partitioning
-
+## Data Partitioning {#how_partitioning_works__section_260C2455FC8C40A094B39BF585D06B7D}
 @@product_name@@ automatically determines the physical location of data in the members that host a partitioned region's data. @@product_name@@ breaks partitioned region data into units of storage known as buckets and stores each bucket in a region host member. Buckets are distributed in accordance to the member’s region attribute settings.
 
 When an entry is created, it is assigned to a bucket. Keys are grouped together in a bucket and always remain there. If the configuration allows, the buckets may be moved between members to balance the load.
@@ -42,18 +40,16 @@ You must run the data stores needed to accommodate storage for the partitioned r
 
 You can customize how @@product_name@@ groups your partitioned region data with custom partitioning and data colocation.
 
-## <a id="how_partitioning_works__section_155F9D4AB539473F848FD05E413B21B3" class="no-quick-link"></a>Partitioned Region Operation
-
+## Partitioned Region Operation {#how_partitioning_works__section_155F9D4AB539473F848FD05E413B21B3}
 A partitioned region operates much like a non-partitioned region with distributed scope. Most of the standard `Region` methods are available, although some methods that are normally local operations become distributed operations, because they work on the partitioned region as a whole instead of the local cache. For example, a `put` or `create` into a partitioned region may not actually be stored into the cache of the member that called the operation. The retrieval of any entry requires no more than one hop between members.
 
 Partitioned regions support the client/server model, just like other regions. If you need to connect dozens of clients to a single partitioned region, using servers greatly improves performance.
 
-## <a id="how_partitioning_works__section_3B47A291ADAB4988AF9D0DF34BC2CDAC" class="no-quick-link"></a>Additional Information About Partitioned Regions
-
+## Additional Information About Partitioned Regions {#how_partitioning_works__section_3B47A291ADAB4988AF9D0DF34BC2CDAC}
 Keep the following in mind about partitioned regions:
 
 -   Partitioned regions never run asynchronously. Operations in partitioned regions always wait for acknowledgement from the caches containing the original data entry and any redundant copies.
 -   A partitioned region needs a cache loader in every region data store (`local-max-memory` &gt; 0).
 -   @@product_name@@ distributes the data buckets as evenly as possible across all members storing the partitioned region data, within the limits of any custom partitioning or data colocation that you use. The number of buckets allotted for the partitioned region determines the granularity of data storage and thus how evenly the data can be distributed. The number of buckets is a total for the entire region across the cluster.
 -   In rebalancing data for the region, @@product_name@@ moves buckets, but does not move data around inside the buckets.
--   You can query partitioned regions, but there are certain limitations. See [Querying Partitioned Regions](../querying_basics/querying_partitioned_regions.html#querying_partitioned_regions) for more information.
+-   You can query partitioned regions, but there are certain limitations. See [Querying Partitioned Regions](../querying_basics/querying_partitioned_regions#querying_partitioned_regions) for more information.

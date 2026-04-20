@@ -21,19 +21,19 @@ limitations under the License.
 
 Data that you manage in @@product_name@@ must be serialized and deserialized for storage and transmittal between processes. You can choose among several options for data serialization.
 
--   **[Overview of Data Serialization](data_serialization_options.html)**
+-   **[Overview of Data Serialization](data_serialization_options)**
 
     @@product_name@@ offers serialization options other than Java serialization that give you higher performance and greater flexibility for data storage, transfers, and language types.
 
--   **[@@product_name@@ PDX Serialization](gemfire_pdx_serialization.html)**
+-   **[@@product_name@@ PDX Serialization](gemfire_pdx_serialization)**
 
     @@product_name@@'s Portable Data eXchange (PDX) is a cross-language data format that can reduce the cost of distributing and serializing your objects. PDX stores data in named fields that you can access individually, to avoid the cost of deserializing the entire data object. PDX also allows you to mix versions of objects where you have added or removed fields.
 
--   **[@@product_name@@ Data Serialization (DataSerializable and DataSerializer)](gemfire_data_serialization.html)**
+-   **[@@product_name@@ Data Serialization (DataSerializable and DataSerializer)](gemfire_data_serialization)**
 
     @@product_name@@'s `DataSerializable` interface gives you quick serialization of your objects.
 
--   **[Standard Java Serialization](java_serialization.html)**
+-   **[Standard Java Serialization](java_serialization)**
 
     You can use standard Java serialization for data you only distribute between Java applications. If you distribute your data between non-Java clients and Java servers, you need to do additional programming to get the data between the various class formats.
 

@@ -23,8 +23,7 @@ limitations under the License.
 
 This topic describes the various region shortcuts you can use to configure @@product_name@@ regions.
 
-## <a id="reference_w2h_3cd_lk" class="no-quick-link"></a>LOCAL
-
+## LOCAL {#reference_w2h_3cd_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">LOCAL</span> region shortcut is scoped only to its JVM and is not visible to other peer members. The region does not distribute data and operations to other caches.
@@ -68,8 +67,7 @@ Region | data-policy | NORMAL
 </region>
 ```
 
-## <a id="reference_wd5_lpy_lk" class="no-quick-link"></a>LOCAL\_HEAP\_LRU
-
+## LOCAL\_HEAP\_LRU {#reference_wd5_lpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">LOCAL\_HEAP\_LRU</span> region shortcut is scoped to its JVM and is not visible to other peer members. The region does not distribute data and operations to other caches. The region destroys the least recently used entries when it detects that the JVM is running low on memory.
@@ -132,8 +130,7 @@ Eviction | eviction-algorithm | lru-heap-percentage
 </region>
 ```
 
-## <a id="reference_adk_y4y_lk" class="no-quick-link"></a>LOCAL\_OVERFLOW
-
+## LOCAL\_OVERFLOW {#reference_adk_y4y_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">LOCAL\_OVERFLOW</span> region shortcut is scoped only to its JVM and is not visible to other peer members. The region does not distribute data and operations to other caches. The region moves the values of entries to disk when it detects that the JVM is running low on memory.
@@ -192,8 +189,7 @@ Eviction | eviction-algorithm | lru-heap-percentage
 </region>
 ```
 
-## <a id="reference_l5r_y4y_lk" class="no-quick-link"></a>LOCAL\_PERSISTENT
-
+## LOCAL\_PERSISTENT {#reference_l5r_y4y_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">LOCAL\_PERSISTENT</span> region shortcut is scoped to its JVM and is not visible to other peer members. The region does not distribute data and operations to other caches. The region writes its state to disk and can recover that state when the member restarts.
@@ -240,8 +236,7 @@ Region | size | 0
 </region>
 ```
 
-## <a id="reference_a45_y4y_lk" class="no-quick-link"></a>LOCAL\_PERSISTENT\_OVERFLOW
-
+## LOCAL\_PERSISTENT\_OVERFLOW {#reference_a45_y4y_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">LOCAL\_PERSISTENT\_OVERFLOW</span> region shortcut is scoped to its JVM and is not visible to other peer members. The region does not distribute data and operations to other caches. The region writes its state to disk and can recover that state when the member restarts. The region also removes the values of entries from memory when it detects that the JVM is running low on memory.
@@ -302,8 +297,7 @@ Eviction | eviction-algorithm | lru-heap-percentage
    </region-attributes>
 </region>
 ```
-## <a id="reference_ow5_4qy_lk" class="no-quick-link"></a>PARTITION
-
+## PARTITION {#reference_ow5_4qy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">PARTITION</span> region shortcut is partitioned across each peer member that created the region.
@@ -348,8 +342,7 @@ Region | size | 0
   </region>
 ```
 
-## <a id="reference_twx_y4y_lk" class="no-quick-link"></a>PARTITION\_HEAP\_LRU
-
+## PARTITION\_HEAP\_LRU {#reference_twx_y4y_lk}
 ### Description
 
 A region configured with <span class="keyword parmname">PARTITION\_HEAP\_LRU</span> is partitioned across each peer member that created the region. The region destroys entries when it detects that the JVM is running low on memory.
@@ -410,8 +403,7 @@ Eviction | eviction-algorithm | lru-heap-percentage
 </region>
 ```
 
-## <a id="reference_js1_z4y_lk" class="no-quick-link"></a>PARTITION\_OVERFLOW
-
+## PARTITION\_OVERFLOW {#reference_js1_z4y_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">PARTITION\_OVERFLOW</span> region shortcut has state that is partitioned across each peer member that creates the region. The region moves the values of entries to disk when it detects that the JVM is running low on memory.
@@ -470,8 +462,7 @@ Eviction | eviction-algorithm | lru-heap-percentage
 </region>
 ```
 
-## <a id="reference_d4k_jpy_lk" class="no-quick-link"></a>PARTITION\_PERSISTENT
-
+## PARTITION\_PERSISTENT {#reference_d4k_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">PARTITION\_PERSISTENT</span> region shortcut has state that is partitioned across each peer member that creates the region. The region writes its state to disk and can recover that state when the member restarts.
@@ -516,8 +507,7 @@ Region | size | 0
 </region>
 ```
 
-## <a id="reference_v5l_jpy_lk" class="no-quick-link"></a>PARTITION\_PERSISTENT\_OVERFLOW
-
+## PARTITION\_PERSISTENT\_OVERFLOW {#reference_v5l_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">PARTITION\_PERSISTENT\_OVERFLOW</span> region shortcut has state that is partitioned across each peer member that creates the region. The region writes its state to disk and can recover that state when the member restarts. The region removes the values of entries from memory when it detects that the JVM is running low on memory.
@@ -576,8 +566,7 @@ Eviction | eviction-algorithm | lru-heap-percentage
 </region>
 ```
 
-## <a id="reference_v4m_jpy_lk" class="no-quick-link"></a>PARTITION\_PROXY
-
+## PARTITION\_PROXY {#reference_v4m_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">PARTITION\_PROXY</span> region shortcut has no local state and forwards all operations to a peer region configured with the <span class="keyword parmname">PARTITION</span> shortcut or a peer region configured with the <span class="keyword parmname">PARTITION\_PERSISTENT</span> shortcut.
@@ -632,8 +621,7 @@ Partition | local-max-memory | 0
 </region>
 ```
 
-## <a id="reference_c1n_jpy_lk" class="no-quick-link"></a>PARTITION\_PROXY\_REDUNDANT
-
+## PARTITION\_PROXY\_REDUNDANT {#reference_c1n_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">PARTITION\_PROXY\_REDUNDANT</span> region shortcut has no local state and forwards all operations to a peer region configured with the <span class="keyword parmname">PARTITION\_REDUNDANT</span> shortcut or a peer region configured with the <span class="keyword parmname">PARTITION\_REDUNDANT\_PERSISTENT</span> shortcut.
@@ -691,8 +679,7 @@ Partition | redundant-copies | 1
 </region>
 ```
 
-## <a id="reference_shn_jpy_lk" class="no-quick-link"></a>PARTITION\_REDUNDANT
-
+## PARTITION\_REDUNDANT {#reference_shn_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">PARTITION\_REDUNDANT</span> region shortcut has state that is partitioned across each peer member that creates the region. The region maintains an extra copy of the data in memory.
@@ -747,8 +734,7 @@ Partition | redundant-copies | 1
 </region>
 ```
 
-## <a id="reference_m4n_jpy_lk" class="no-quick-link"></a>PARTITION\_REDUNDANT\_HEAP\_LRU
-
+## PARTITION\_REDUNDANT\_HEAP\_LRU {#reference_m4n_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">PARTITION\_REDUNDANT\_HEAP\_LRU</span> region shortcut has state that is partitioned across each peer member that creates the region. The region keeps an extra copy of the data in memory. The region destroys entries when it detects that the JVM is running low on memory.
@@ -818,8 +804,7 @@ Partition | redundant-copies   | 1
 </region>
 ```
 
-## <a id="reference_own_jpy_lk" class="no-quick-link"></a>PARTITION\_REDUNDANT\_OVERFLOW
-
+## PARTITION\_REDUNDANT\_OVERFLOW {#reference_own_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">PARTITION\_REDUNDANT\_OVERFLOW</span> region shortcut has state that is partitioned across each peer member that creates the region. The region keeps an extra copy of the data in memory. The region moves the values of entries to disk when it detects that the JVM is running low on memory.
@@ -887,8 +872,7 @@ Partition | redundant-copies   | 1
 </region>
 ```
 
-## <a id="reference_bd4_jpy_lk" class="no-quick-link"></a>PARTITION\_REDUNDANT\_PERSISTENT
-
+## PARTITION\_REDUNDANT\_PERSISTENT {#reference_bd4_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">PARTITION\_REDUNDANT\_PERSISTENT</span> region shortcut has state that is partitioned across each peer member that creates the region. The region writes its state to disk and recovers its state from disk when the region is created. The region maintains an extra copy of the data in memory.
@@ -943,8 +927,7 @@ Partition | redundant-copies | 1
 </region>
 ```
 
-## <a id="reference_xqq_tvc_lk" class="no-quick-link"></a>PARTITION\_REDUNDANT\_PERSISTENT\_OVERFLOW
-
+## PARTITION\_REDUNDANT\_PERSISTENT\_OVERFLOW {#reference_xqq_tvc_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">PARTITION\_REDUNDANT\_PERSISTENT\_OVERFLOW</span> region shortcut has state that is partitioned across each peer member that creates the region. The region writes its state to disk and recovers its state from disk when the region is created. The region maintains an extra copy of the data in memory. The region removes the values of entries from memory when it detects that the JVM is running out of memory.
@@ -1010,8 +993,7 @@ Partition | redundant-copies   | 1
 </region>
 ```
 
-## <a id="reference_wq4_jpy_lk" class="no-quick-link"></a>REPLICATE
-
+## REPLICATE {#reference_wq4_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">REPLICATE</span> region shortcut has local state that is kept in sync with all other peer regions configured with a REPLICATE data policy.
@@ -1050,8 +1032,7 @@ server2 | Region "/myRregion" created on "server2"
 </region>
 ```
 
-## <a id="reference_xx4_jpy_lk" class="no-quick-link"></a>REPLICATE\_HEAP\_LRU
-
+## REPLICATE\_HEAP\_LRU {#reference_xx4_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">REPLICATE\_HEAP\_LRU</span> region shortcut has local state that is kept in sync with all other peer regions configured with a REPLICATE data policy. The region destroys entries when it detects that the JVM is running low on memory.
@@ -1123,8 +1104,7 @@ Eviction | eviction-algorithm | lru-heap-percentage
 </region>
 ```
 
-## <a id="reference_t2p_jpy_lk" class="no-quick-link"></a>REPLICATE\_OVERFLOW
-
+## REPLICATE\_OVERFLOW {#reference_t2p_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">REPLICATE\_OVERFLOW</span> region shortcut has local state that is kept in sync with all other peer regions configured with a <span class="keyword parmname">REPLICATE</span> data policy.
@@ -1185,8 +1165,7 @@ Eviction | eviction-algorithm | lru-heap-percentage
 </region>
 ```
 
-## <a id="reference_emp_jpy_lk" class="no-quick-link"></a>REPLICATE\_PERSISTENT
-
+## REPLICATE\_PERSISTENT {#reference_emp_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">REPLICATE\_PERSISTENT</span> region shortcut has local state that is kept in sync with all other peer regions that are configured with a <span class="keyword parmname">REPLICATE</span> data policy. The region writes its state to disk and recovers that state when the member restarts.
@@ -1233,8 +1212,7 @@ Region | size | 0
 </region>
 ```
 
-## <a id="reference_tsp_jpy_lk" class="no-quick-link"></a>REPLICATE\_PERSISTENT\_OVERFLOW
-
+## REPLICATE\_PERSISTENT\_OVERFLOW {#reference_tsp_jpy_lk}
 ### Description
 
 A region configured with the <span class="keyword parmname">REPLICATE\_PERSISTENT\_OVERFLOW</span> region shortcut has local state that is kept in sync with all other peer regions configured with a <span class="keyword parmname">REPLICATE</span> data policy. The region writes its state to disk and recovers that state when the member restarts. The region removes the values of entries from memory when it detects that the JVM is running low on memory.

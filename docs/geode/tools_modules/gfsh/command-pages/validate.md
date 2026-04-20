@@ -20,8 +20,7 @@ limitations under the License.
 -->
 
 Validate offline disk stores.
-
-<a id="concept_1A965E61EA7A4A629117CF55FC567685__section_CECE13AEC08E4F5DAABEF4D9E500664A"></a>
+## {#concept_1A965E61EA7A4A629117CF55FC567685__section_CECE13AEC08E4F5DAABEF4D9E500664A}
 **Availability:** Offline.
 
 **Syntax:**
@@ -29,9 +28,7 @@ Validate offline disk stores.
 ``` pre
 validate offline-disk-store --name=value --disk-dirs=value(,value)*
 ```
-
-<a id="concept_1A965E61EA7A4A629117CF55FC567685__table_vd5_35g_2w"></a>
-
+## {#concept_1A965E61EA7A4A629117CF55FC567685__table_vd5_35g_2w}
 | Name                                               | Description                                                                   |
 |----------------------------------------------------|-------------------------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;name</span>       | *Required.* Name of the disk store to be validated.                           |

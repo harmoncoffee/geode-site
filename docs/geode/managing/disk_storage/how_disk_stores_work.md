@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Overflow and persistence use disk stores individually or together to store data.
-
-<a id="how_disk_stores_work__section_1A93EFBE3E514918833592C17CFC4C40"></a>
+## {#how_disk_stores_work__section_1A93EFBE3E514918833592C17CFC4C40}
 Disk storage is available for these items:
 
 -   **Regions**. Persist and/or overflow data from regions.
@@ -37,8 +36,7 @@ This figure shows a member with disk stores D through R defined. The member has 
 
 <img src="/images/diskStores-1.gif" id="how_disk_stores_work__image_CB7972998C4A40B2A02550B97A723536" class="image" />
 
-## <a id="how_disk_stores_work__section_433EEEA1560D40DD9842200181EB1D0A" class="no-quick-link"></a>What @@product_name@@ Writes to the Disk Store
-
+## What @@product_name@@ Writes to the Disk Store {#how_disk_stores_work__section_433EEEA1560D40DD9842200181EB1D0A}
 @@product_name@@ writes the following to the disk store:
 
 -   Persisted and overflowed data as specified when the disk store was created and configured
@@ -50,8 +48,7 @@ This figure shows a member with disk stores D through R defined. The member has 
 
 @@product_name@@ does not write indexes to disk.
 
-## <a id="how_disk_stores_work__section_C1A047CD5518499D94A0E9A0328F6DB8" class="no-quick-link"></a>Disk Store State
-
+## Disk Store State {#how_disk_stores_work__section_C1A047CD5518499D94A0E9A0328F6DB8}
 The files for a disk store are used by @@product_name@@ as a group. Treat them as a single entity. If you copy them, copy them all together. Do not change the file names.
 
 Disk store access and management differs according to whether the member is online or offline.

@@ -18,8 +18,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="implementing_durable_client_server_messaging__section_7A0D0B7D1F2748C7BA7479E0FD5C6BFA"></a>
+## {#implementing_durable_client_server_messaging__section_7A0D0B7D1F2748C7BA7479E0FD5C6BFA}
 Use durable messaging for subscriptions that you need maintained for your clients even when your clients are down or disconnected. You can configure any of your event subscriptions as durable. Events for durable queries and subscriptions are saved in a queue when the client is disconnected and played back when the client reconnects. Other queries and subscriptions are removed from the queue.
 
 Use durable messaging for client/server installations that use event subscriptions.
@@ -30,8 +29,7 @@ These are the high-level tasks described in this topic:
 2.  Decide which subscriptions should be durable and configure accordingly
 3.  Program your client to manage durable messaging for disconnect, reconnect, and event handling
 
-## <a id="implementing_durable_client_server_messaging__section_643EB5FA6F09463C80646786394F1E02" class="no-quick-link"></a>Configure the Client as Durable
-
+## Configure the Client as Durable {#implementing_durable_client_server_messaging__section_643EB5FA6F09463C80646786394F1E02}
 Use one of the following methods:
 
 -   `gemfire.properties` file:
@@ -49,15 +47,12 @@ Use one of the following methods:
     props.setProperty("durable-client-timeout", "" + 200); 
     CacheFactory cf = new CacheFactory(props);
     ```
-
-<a id="implementing_durable_client_server_messaging__section_B8E01FE4B5A347EB96085DA3194F6AE8"></a>
-
+## {#implementing_durable_client_server_messaging__section_B8E01FE4B5A347EB96085DA3194F6AE8}
 The `durable-client-id` indicates that the client is durable and gives the server an identifier to correlate the client to its durable messages. For a non-durable client, this id is an empty string. The ID can be any number that is unique among the clients attached to servers in the same cluster.
 
 The `durable-client-timeout` tells the server how long to wait for client reconnect. When this timeout is reached, the server stops storing to the client's message queue and discards any stored messages. The default is 300 seconds. This is a tuning parameter. If you change it, take into account the normal activity of your application, the average size of your messages, and the level of risk you can handle, both in lost messages and in the servers' capacity to store enqueued messages. Assuming that no messages are being removed from the queue, how long can the server run before the queue reaches the maximum capacity? How many durable clients can the server handle? To assist with tuning, use the @@product_name@@ message queue statistics for durable clients through the disconnect and reconnect cycles.
 
-## <a id="implementing_durable_client_server_messaging__section_BB5DCCE0582E4FE8B62DE473512FC704" class="no-quick-link"></a>Configure Durable Subscriptions and Continuous Queries
-
+## Configure Durable Subscriptions and Continuous Queries {#implementing_durable_client_server_messaging__section_BB5DCCE0582E4FE8B62DE473512FC704}
 The register interest and query creation methods all have an optional boolean parameter for indicating durability. By default all are non-durable.
 
 ``` pre
@@ -75,8 +70,7 @@ Save only critical messages while the client is disconnected by only indicating 
 **Note:**
 For a single durable client ID, you must maintain the same durability of your registrations and queries between client runs.
 
-## <a id="implementing_durable_client_server_messaging__section_0FBD23CC79784E588135FE93306EC0A4" class="no-quick-link"></a>Program the Client to Manage Durable Messaging
-
+## Program the Client to Manage Durable Messaging {#implementing_durable_client_server_messaging__section_0FBD23CC79784E588135FE93306EC0A4}
 Program your durable client to be durable-messaging aware when it disconnects, reconnects, and handles events from the server.
 
 1.  Disconnect with a request to keep your queues active by using `Pool.close` or `ClientCache.close` with the boolean `keepalive` parameter.
@@ -133,7 +127,7 @@ Program your durable client to be durable-messaging aware when it disconnects, r
     3.  Run all interest registration calls.
 
         **Note:**
-        Registering interest with `InterestResultPolicy.KEYS_VALUES` initializes the client cache with the *current* values of specified keys. If concurrency checking is enabled for the region, any earlier (older) region events that are replayed to the client are ignored and are not sent to configured listeners. If your client must process all replayed events for a region, register with `InterestResultPolicy.KEYS` or `InterestResultPolicy.NONE` when reconnecting. Or, disable concurrency checking for the region in the client cache. See [Consistency for Region Updates](../distributed_regions/region_entry_versions.html#topic_CF2798D3E12647F182C2CEC4A46E2045).
+        Registering interest with `InterestResultPolicy.KEYS_VALUES` initializes the client cache with the *current* values of specified keys. If concurrency checking is enabled for the region, any earlier (older) region events that are replayed to the client are ignored and are not sent to configured listeners. If your client must process all replayed events for a region, register with `InterestResultPolicy.KEYS` or `InterestResultPolicy.NONE` when reconnecting. Or, disable concurrency checking for the region in the client cache. See [Consistency for Region Updates](../distributed_regions/region_entry_versions#topic_CF2798D3E12647F182C2CEC4A46E2045).
 
     4.  Call `ClientCache.readyForEvents` so the server will replay stored events. If the ready message is sent earlier, the client may lose events.
 
@@ -152,8 +146,7 @@ Program your durable client to be durable-messaging aware when it disconnects, r
 
 The initial startup of a durable client is similar to the startup of any other client, except that it specifically calls the `ClientCache.readyForEvents` method when all regions and listeners on the client are ready to process messages from the server.
 
-## <a id="implementing_durable_client_server_messaging__section_9B9A9EE8C7FF47948C8108A0F7F4E32E" class="no-quick-link"></a>Disconnection
-
+## Disconnection {#implementing_durable_client_server_messaging__section_9B9A9EE8C7FF47948C8108A0F7F4E32E}
 While the client and servers are disconnected, their operation varies depending on the circumstances.
 
 -   **Normal disconnect**. When a client closes its connection, the servers stop sending messages to the client and release its connection. If the client requests it, the servers maintain the queues and durable interest list information until the client reconnects or times out. The non-durable interest lists are discarded. The servers continue to queue up incoming messages for entries on the durable interest list. All messages that were in the queue when the client disconnected remain in the queue. If the client requests not to have its subscriptions maintained, or if there are no durable subscriptions, the servers unregister the client and do the same cleanup as for a non-durable client.
@@ -161,8 +154,7 @@ While the client and servers are disconnected, their operation varies depending 
 -   **Client disconnected but operational**. If the client operates while it is disconnected, it gets what data it can from the local client cache. Since updates are not allowed, the data can become stale. An `UnconnectedException` occurs if an update is attempted.
 -   **Client stays disconnected past timeout period**. The servers track how long to keep a durable subscription queue alive based on the `durable-client-timeout` setting. If the client remains disconnected longer than the timeout, the servers unregister the client and do the same cleanup that is performed for a non-durable client. The servers also log an alert. When a timed-out client reconnects, the servers treat it as a new client making its initial connection.
 
-## <a id="implementing_durable_client_server_messaging__section_E3C42A6FDC884FC38ECC121955C06BDC" class="no-quick-link"></a>Reconnection
-
+## Reconnection {#implementing_durable_client_server_messaging__section_E3C42A6FDC884FC38ECC121955C06BDC}
 During initialization, the client cache is not blocked from doing operations, so you might be receiving old stored events from the server at the same time that your client cache is being updated by much more current events. These are the things that can act on the cache concurrently:
 
 -   Results returned by the server in response to the client’s interest registrations.
@@ -175,8 +167,7 @@ This figure shows the three concurrent procedures during the initialization proc
 
 <img src="/images/ClientServerAdvancedTopics-6.png" alt="Durable client reconnection. " class="image" />
 
-## <a id="implementing_durable_client_server_messaging__section_C848DF6D649F4DCAA2B895F5439BAA97" class="no-quick-link"></a>Durable Event Replay
-
+## Durable Event Replay {#implementing_durable_client_server_messaging__section_C848DF6D649F4DCAA2B895F5439BAA97}
 When a durable client reconnects before the timeout period, the servers replay the events that were stored while the client was gone and then resume normal event messaging to the client. To avoid overwriting current entries with old data, the stored events are not applied to the client cache. Stored events are distinguished from new normal events by a marker that is sent to the client once all old events are replayed.
 
 1.  All servers with a queue for this client place a marker in their queue when the client reconnects.
@@ -188,8 +179,7 @@ When a durable client reconnects before the timeout period, the servers replay t
 
 Even when a new client starts up for the first time, the client cache ready markers are inserted in the queues. If messages start coming into the new queues before the servers insert the marker, those messages are considered as having happened while the client was disconnected, and their events are replayed the same as in the reconnect case.
 
-## <a id="implementing_durable_client_server_messaging__section_E519D541E2844292ABD2E0BDF5FB5798" class="no-quick-link"></a>Application Operations During Interest Registration
-
+## Application Operations During Interest Registration {#implementing_durable_client_server_messaging__section_E519D541E2844292ABD2E0BDF5FB5798}
 Application operations take precedence over interest registration responses. The client can perform operations while it is receiving its interest registration responses. When adding register interest responses to the client cache, the following rules are applied:
 
 -   If the entry already exists in the cache with a valid value, it is not updated.

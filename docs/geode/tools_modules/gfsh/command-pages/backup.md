@@ -18,14 +18,12 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_E74ED23CB60342538B2175C326E7D758"></a>
-
-
+## {#topic_E74ED23CB60342538B2175C326E7D758}
 Back up persistent data from all members to the specified directory.
 
 The specified directory must exist on all members, but it can be a local directory on each machine. This command ensures that backup files are not corrupted by concurrent operations. Backing up a running system using the operating system copy command is not recommended.
 
-You can also use this command to perform an incremental backup. See [Creating Backups for System Recovery and Operational Management](../../../managing/disk_storage/backup_restore_disk_store.html#backup_restore_disk_store) for more information on incremental backup.
+You can also use this command to perform an incremental backup. See [Creating Backups for System Recovery and Operational Management](../../../managing/disk_storage/backup_restore_disk_store#backup_restore_disk_store) for more information on incremental backup.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -34,9 +32,7 @@ You can also use this command to perform an incremental backup. See [Creating Ba
 ``` pre
 backup disk-store --dir=value [--baseline-dir=value] [--include-disk-stores=value(,value)*]
 ```
-
-<a id="topic_E74ED23CB60342538B2175C326E7D758__table_2277A2CE8F6E4731B45FEFA2B1366DB6"></a>
-
+## {#topic_E74ED23CB60342538B2175C326E7D758__table_2277A2CE8F6E4731B45FEFA2B1366DB6}
 <table>
 <caption><span class="tablecap">Table 1. Backup Disk-Store Parameters</span></caption>
 <colgroup>

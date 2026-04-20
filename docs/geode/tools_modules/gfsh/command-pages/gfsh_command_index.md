@@ -21,206 +21,206 @@ limitations under the License.
 
 This section provides help and usage information on all `gfsh` commands, listed alphabetically.
 
--   **[alter](../../tools_modules/gfsh/command-pages/alter.html)**
+-   **[alter](alter)**
 
     Modify an existing @@product_name@@ resource.
 
--   **[backup disk-store](../../tools_modules/gfsh/command-pages/backup.html)**
+-   **[backup disk-store](backup)**
 
     Back up persistent data from all members to the specified directory.
 
--   **[change loglevel](../../tools_modules/gfsh/command-pages/change.html)**
+-   **[change loglevel](change)**
 
     Changes the logging level on specified members.
 
--   **[clear defined indexes](../../tools_modules/gfsh/command-pages/clear.html)**
+-   **[clear defined indexes](clear)**
 
     Clears all the defined indexes.
 
--   **[close](../../tools_modules/gfsh/command-pages/close.html)**
+-   **[close](close)**
 
     Close durable client CQs and durable clients.
 
--   **[compact](../../tools_modules/gfsh/command-pages/compact.html)**
+-   **[compact](compact)**
 
     Compact online and offline disk-stores.
 
--   **[configure](../../tools_modules/gfsh/command-pages/configure.html)**
+-   **[configure](configure)**
 
     Configure Portable Data eXchange for all the cache(s) in the cluster.
 
--   **[connect](../../tools_modules/gfsh/command-pages/connect.html)**
+-   **[connect](connect)**
 
     Connect to a jmx-manager either directly or via a locator.
 
--   **[create](../../tools_modules/gfsh/command-pages/create.html)**
+-   **[create](create)**
 
     Create async-event-queues, disk-stores, gateway receivers, gateway senders, indexes, and regions.
 
--   **[debug](../../tools_modules/gfsh/command-pages/debug.html)**
+-   **[debug](debug)**
 
     Enable or disable debugging output in `gfsh`.
 
--   **[define index](../../tools_modules/gfsh/command-pages/define.html)**
+-   **[define index](define)**
 
     Define an index that can be used when executing queries. Then, you can execute a single command to create multiple indexes all at once using `create defined          indexes`.
 
--   **[deploy](../../tools_modules/gfsh/command-pages/deploy.html)**
+-   **[deploy](deploy)**
 
     Deploy JAR-packaged applications to a member or members.
 
--   **[describe](../../tools_modules/gfsh/command-pages/describe.html)**
+-   **[describe](describe)**
 
     Display details of a member's configuration, shell connection, disk-stores, members, or regions.
 
--   **[destroy](../../tools_modules/gfsh/command-pages/destroy.html)**
+-   **[destroy](destroy)**
 
     Delete or unregister functions, remove indexes, gateway senders, gateway receivers, disk stores and regions.
 
--   **[disconnect](../../tools_modules/gfsh/command-pages/disconnect.html)**
+-   **[disconnect](disconnect)**
 
     Close any active connection(s).
 
--   **[echo](../../tools_modules/gfsh/command-pages/echo.html)**
+-   **[echo](echo)**
 
     Echo the given text, which may include system and user variables.
 
--   **[execute function](../../tools_modules/gfsh/command-pages/execute.html)**
+-   **[execute function](execute)**
 
     Execute functions on members or regions.
 
--   **[exit](../../tools_modules/gfsh/command-pages/exit.html)**
+-   **[exit](exit)**
 
     Exit the `gfsh` shell. You can also use `quit` to exit the shell.
 
--   **[export](../../tools_modules/gfsh/command-pages/export.html)**
+-   **[export](export)**
 
     Export configurations, data, logs and stack-traces.
 
--   **[gc](../../tools_modules/gfsh/command-pages/gc.html)**
+-   **[gc](gc)**
 
     Force GC (Garbage Collection) on a member or members.
 
--   **[get](../../tools_modules/gfsh/command-pages/get.html)**
+-   **[get](get)**
 
     Display an entry in a region.
 
--   **[help](../../tools_modules/gfsh/command-pages/help.html)**
+-   **[help](help)**
 
     Display syntax and usage information for all the available commands.
 
--   **[hint](../../tools_modules/gfsh/command-pages/hint.html)**
+-   **[hint](hint)**
 
     Display information on topics and a list of commands associated with a topic.
 
--   **[history](../../tools_modules/gfsh/command-pages/history.html)**
+-   **[history](history)**
 
     Show or save the command history.
 
--   **[import](../../tools_modules/gfsh/command-pages/import.html)**
+-   **[import](import)**
 
     You can import data into a region or import an existing cluster configuration into the cluster.
 
--   **[list](../../tools_modules/gfsh/command-pages/list.html)**
+-   **[list](list)**
 
     List existing @@product_name@@ resources such as deployed applications, disk-stores, functions, members, servers, and regions.
 
--   **[load-balance gateway-sender](../../tools_modules/gfsh/command-pages/load-balance.html)**
+-   **[load-balance gateway-sender](load-balance)**
 
     Causes the specified gateway sender to close its current connections and reconnect to remote gateway receivers in a more balanced fashion.
 
--   **[locate entry](../../tools_modules/gfsh/command-pages/locate.html)**
+-   **[locate entry](locate)**
 
     Locate a region entry on a member.
 
--   **[netstat](../../tools_modules/gfsh/command-pages/netstat.html)**
+-   **[netstat](netstat)**
 
     Report network information and statistics via the "netstat" operating system command.
 
--   **[pause gateway-sender](../../tools_modules/gfsh/command-pages/pause.html)**
+-   **[pause gateway-sender](pause)**
 
     Pause a gateway sender.
 
--   **[pdx rename](../../tools_modules/gfsh/command-pages/pdx.html)**
+-   **[pdx rename](pdx)**
 
     Renames PDX types in an offline disk store.
 
--   **[put](../../tools_modules/gfsh/command-pages/put.html)**
+-   **[put](put)**
 
     Add or update a region entry.
 
--   **[query](../../tools_modules/gfsh/command-pages/query.html)**
+-   **[query](query)**
 
     Run queries against @@product_name@@ regions.
 
--   **[rebalance](../../tools_modules/gfsh/command-pages/rebalance.html)**
+-   **[rebalance](rebalance)**
 
     Rebalance partitioned regions.
 
--   **[remove](../../tools_modules/gfsh/command-pages/remove.html)**
+-   **[remove](remove)**
 
     Remove an entry from a region.
 
--   **[restore redundancy](../../tools_modules/gfsh/command-pages/restore.html)**
+-   **[restore redundancy](restore)**
 
     Restore redundancy to partitioned regions and optionally reassign which members host the primary copies.
 
--   **[resume gateway-sender](../../tools_modules/gfsh/command-pages/resume.html)**
+-   **[resume gateway-sender](resume)**
 
     Resume any gateway senders that you have paused.
 
--   **[revoke missing-disk-store](../../tools_modules/gfsh/command-pages/revoke.html)**
+-   **[revoke missing-disk-store](revoke)**
 
     Instruct the member(s) of a cluster to stop waiting for a disk store to be available.
 
--   **[run](../../tools_modules/gfsh/command-pages/run.html)**
+-   **[run](run)**
 
     Execute a set of GFSH commands.
 
--   **[set variable](../../tools_modules/gfsh/command-pages/set.html)**
+-   **[set variable](set)**
 
     Set variables in the GFSH environment.
 
--   **[sh](../../tools_modules/gfsh/command-pages/sh.html)**
+-   **[sh](sh)**
 
     Execute operating system commands.
 
--   **[show](../../tools_modules/gfsh/command-pages/show.html)**
+-   **[show](show)**
 
     Display deadlocks, logs, metrics and missing disk-stores.
 
--   **[shutdown](../../tools_modules/gfsh/command-pages/shutdown.html)**
+-   **[shutdown](shutdown)**
 
     Stop all members.
 
--   **[sleep](../../tools_modules/gfsh/command-pages/sleep.html)**
+-   **[sleep](sleep)**
 
     Delay `gfsh` command execution.
 
--   **[start](../../tools_modules/gfsh/command-pages/start.html)**
+-   **[start](start)**
 
     Start servers, locators, gateway senders and gateway receivers, and monitoring tools.
 
--   **[status](../../tools_modules/gfsh/command-pages/status.html)**
+-   **[status](status)**
 
     Check the status of the cluster configuration service, partitioned region redundancy and @@product_name@@ member processes, including locators, gateway receivers, gateway senders, and servers.
 
--   **[stop](../../tools_modules/gfsh/command-pages/stop.html)**
+-   **[stop](stop)**
 
     Stop gateway receivers, gateway senders, locators and servers.
 
--   **[undeploy](../../tools_modules/gfsh/command-pages/undeploy.html)**
+-   **[undeploy](undeploy)**
 
     Undeploy the JAR files that were deployed on members or groups using `deploy` command.
 
--   **[validate offline-disk-store](../../tools_modules/gfsh/command-pages/validate.html)**
+-   **[validate offline-disk-store](validate)**
 
     Validate offline disk stores.
 
--   **[version](../../tools_modules/gfsh/command-pages/version.html)**
+-   **[version](version)**
 
     Display product version information.
 
--   **[wan-copy region](../../tools_modules/gfsh/command-pages/wan_copy_region.html)**
+-   **[wan-copy region](wan_copy_region)**
 
     Copy the data of a region from a WAN site to the same region on another WAN site by using a gateway sender.

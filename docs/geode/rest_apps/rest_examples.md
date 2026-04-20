@@ -20,14 +20,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="topic_lvp_cd5_m4"></a>
-
-
+## {#topic_lvp_cd5_m4}
 This section provides examples that illustrate how multiple clients, both REST and native, can access the same @@product_name@@ region data.
 
 **Note:**
-You must set PDX read-serialized to true when starting the cache server to achieve interoperability between different clients. See [Setup and Configuration](setup_config.html#topic_e21_qc5_m4) for instructions on starting up REST-enabled cache servers.
+You must set PDX read-serialized to true when starting the cache server to achieve interoperability between different clients. See [Setup and Configuration](setup_config#topic_e21_qc5_m4) for instructions on starting up REST-enabled cache servers.
 
 The following examples demonstrate the following:
 

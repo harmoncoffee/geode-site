@@ -33,9 +33,7 @@ This command has no effect on ping connections.
 ``` pre
 load-balance gateway-sender --id=value
 ```
-
-<a id="concept_fn2_qls_5q__table_jwk_tdg_2w"></a>
-
+## {#concept_fn2_qls_5q__table_jwk_tdg_2w}
 | Name                                       | Description                           |
 |--------------------------------------------|---------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;id</span> | *Required.* ID of the Gateway Sender. |

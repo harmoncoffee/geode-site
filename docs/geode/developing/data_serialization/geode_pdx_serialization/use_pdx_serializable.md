@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 For a domain object with source that you can modify, implement the `PdxSerializable` interface in the object and use its methods to serialize and deserialize the object's fields.
-
-<a id="use_pdx_serializable__section_7F357A8E56B54BFB9A5778C0F89E034E"></a>
+## {#use_pdx_serializable__section_7F357A8E56B54BFB9A5778C0F89E034E}
 **Procedure**
 
 1.  In your domain class, implement `PdxSerializable`, importing the required `org.apache.geode.pdx` classes.
@@ -112,4 +111,4 @@ For a domain object with source that you can modify, implement the `PdxSerializa
 
 **What to do next**
 
--   As needed, configure and program your @@product_name@@ applications to use `PdxInstance` for selective object deserialization. See [Programming Your Application to Use PdxInstances](program_application_for_pdx.html).
+-   As needed, configure and program your @@product_name@@ applications to use `PdxInstance` for selective object deserialization. See [Programming Your Application to Use PdxInstances](program_application_for_pdx).

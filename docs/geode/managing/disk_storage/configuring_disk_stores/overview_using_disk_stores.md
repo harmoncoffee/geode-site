@@ -21,14 +21,14 @@ limitations under the License.
 
 In addition to the disk stores you specify, @@product_name_long@@ has a default disk store that it uses when disk use is configured with no disk store name specified. You can modify default disk store behavior.
 
--   **[Designing and Configuring Disk Stores](using_disk_stores.html)**
+-   **[Designing and Configuring Disk Stores](using_disk_stores)**
 
     You define disk stores in your cache, then you assign them to your regions and queues by setting the `disk-store-name` attribute in your region and queue configurations.
 
--   **[Disk Store Configuration Parameters](disk_store_configuration_params.html)**
+-   **[Disk Store Configuration Parameters](disk_store_configuration_params)**
 
     You define your disk stores by using the `gfsh create disk-store` command or in `<disk-store>` subelements of your cache declaration in `cache.xml`. All disk stores are available for use by all of your regions and queues.
 
--   **[Modifying the Default Disk Store](using_the_default_disk_store.html)**
+-   **[Modifying the Default Disk Store](using_the_default_disk_store)**
 
     You can modify the behavior of the default disk store by specifying the attributes you want for the disk store named "DEFAULT".

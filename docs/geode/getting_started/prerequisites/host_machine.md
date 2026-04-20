@@ -20,8 +20,7 @@ limitations under the License.
 -->
 
 Host machines must meet a set of requirements for @@product_name_long@@.
-
-<a id="system_requirements__section_1E1F206FBC8B4A898A449E0699907A7A"></a>
+## {#system_requirements__section_1E1F206FBC8B4A898A449E0699907A7A}
 Each machine that will run @@product_name_long@@ must meet the following requirements:
 
 -   Java SE Development Kit @@min_java_version@@ with update @@min_java_update@@ or a more recent version @@min_java_version@@ update.  The same versions are supported with OpenJDK.
@@ -49,4 +48,4 @@ server clusters behind advanced firewall protection.
         sysctl -p
         ```
 
-    See [Disabling TCP SYN Cookies](../../managing/monitor_tune/disabling_tcp_syn_cookies.html) for details.
+    See [Disabling TCP SYN Cookies](../../managing/monitor_tune/disabling_tcp_syn_cookies) for details.

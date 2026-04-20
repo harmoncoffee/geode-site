@@ -83,7 +83,7 @@ For each process, complete these steps:
     [severe
     ```
 
-    For details on merging log files, see the `--merge-log` argument for the [export logs](../../tools_modules/gfsh/command-pages/export.html#topic_B80978CC659244AE91E2B8CE56EBDFE3)command.
+    For details on merging log files, see the `--merge-log` argument for the [export logs](../../tools_modules/gfsh/command-pages/export#topic_B80978CC659244AE91E2B8CE56EBDFE3)command.
 
 7.  Export and analyze the stack traces on the member or member group where the application is running. Use the `gfsh export stack-traces                         command`. For example:
 

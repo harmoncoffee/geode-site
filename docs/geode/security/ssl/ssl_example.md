@@ -24,8 +24,7 @@ limitations under the License.
 
 A simple example demonstrates the configuration and startup of @@product_name@@ system components with SSL.
 
-## <a id="ssl_example__section_A8817FA8EF654CFB862F2375C0DD6770" class="no-quick-link"></a>Provider-Specific Configuration File
-
+## Provider-Specific Configuration File {#ssl_example__section_A8817FA8EF654CFB862F2375C0DD6770}
 This example uses a keystore created by the Java `keytool` application to provide the proper credentials to the provider. To create the keystore, run the `keytool` utility:
 
 ``` pre
@@ -41,8 +40,7 @@ keytool -genkey \
 
 This creates a `./trusted.keystore` file to be used later.
 
-## <a id="ssl_example__section_4D54B2E9045C4E34AE6DFFBECDED9271" class="no-quick-link"></a>gemfire.properties File
-
+## gemfire.properties File {#ssl_example__section_4D54B2E9045C4E34AE6DFFBECDED9271}
 You can enable SSL in the `gemfire.properties` file. In this example, SSL is enabled for all
 components.
 
@@ -52,8 +50,7 @@ mcast-port=0
 locators=<hostaddress>[<port>]
 ```
 
-## <a id="ssl_example__section_7B8E0BBF4A4C4B9FB9BC34AC1CDD4D3E" class="no-quick-link"></a>gfsecurity.properties File
-
+## gfsecurity.properties File {#ssl_example__section_7B8E0BBF4A4C4B9FB9BC34AC1CDD4D3E}
 You can specify the provider-specific settings in a `gfsecurity.properties` file, which can then be
 secured by restricting access to this file. The following example configures the default JSSE
 provider settings included with the JDK.
@@ -68,8 +65,7 @@ security-userPassword=yyyy
 ```
 
 
-## <a id="ssl_example__section_32E55F2088804667BB448DB577AC2940" class="no-quick-link"></a>Locator Startup
-
+## Locator Startup {#ssl_example__section_32E55F2088804667BB448DB577AC2940}
 Before starting other system members, we started the locator with the SSL and provider-specific
 configuration settings. After properly configuring `gemfire.properties` and `gfsecurity.properties`,
 start the locator and provide the location of the properties files. If any of the password fields
@@ -81,8 +77,7 @@ gfsh>start locator --name=my_locator --port=12345 \
 --security-properties-file=/path/to/your/gfsecurity.properties
 ```
 
-## <a id="ssl_example__section_8FCC32091E97422BA45AA76C82D8294D" class="no-quick-link"></a>Other Member Startup
-
+## Other Member Startup {#ssl_example__section_8FCC32091E97422BA45AA76C82D8294D}
 Applications and cache servers can be started similarly to the locator startup, with the appropriate
 `gemfire.properties` file and `gfsecurity.properties` files placed in the current working
 directory. You can also pass in the location of both files as system properties on the command
@@ -94,8 +89,7 @@ gfsh>start server --name=my_server \
 --security-properties-file=/path/to/your/gfsecurity.properties
 ```
 
-## <a id="ssl_example__section_connect_cluster" class="no-quick-link"></a>Connecting to a Running Cluster
-
+## Connecting to a Running Cluster {#ssl_example__section_connect_cluster}
 You can use `gfsh` to connect to an SSL-enabled cluster that is already running by specifying the
 `use-ssl` command-line option and providing a path to the security configuration file:
 

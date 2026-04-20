@@ -23,9 +23,8 @@ limitations under the License.
 
 gfsh offers several ways to run commands in a scripting environment.
 
-## <a id="concept_9B2F7550F16C4717831AD40A56922259__section_037953D46A644471910B295001E5CE6B" class="no-quick-link"></a>Running gfsh Scripts
-
-You can create and run scripts that contain gfsh commands that you wish to execute. To execute the script, use the gfsh [run](command-pages/run.html) command. For example:
+## Running gfsh Scripts {#concept_9B2F7550F16C4717831AD40A56922259__section_037953D46A644471910B295001E5CE6B}
+You can create and run scripts that contain gfsh commands that you wish to execute. To execute the script, use the gfsh [run](command-pages/run) command. For example:
 
 ``` pre
 gfsh run --file=mycommands.gfsh

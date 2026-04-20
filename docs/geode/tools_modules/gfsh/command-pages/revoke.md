@@ -30,9 +30,7 @@ Only revoke a disk store if its files are lost as it will no longer be recoverab
 ``` pre
 revoke missing-disk-store --id=value
 ```
-
-<a id="concept_22551CABF07B4512B5159DDAE036722D__table_ywr_rbg_2w"></a>
-
+## {#concept_22551CABF07B4512B5159DDAE036722D__table_ywr_rbg_2w}
 | Name | Description                                             |
 |------|---------------------------------------------------------|
 | &#8209;&#8209;id | *Required.* ID of the missing disk store to be revoked. |

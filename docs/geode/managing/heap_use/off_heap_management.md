@@ -20,9 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="managing-off-heap-memory"></a>
-
-
+## {#managing-off-heap-memory}
 @@product_name@@ can be configured to store region values in off-heap memory, which is memory within the JVM that is not subject to Java garbage collection.
 
 Garbage collection (GC) within a JVM can prove to be a performance impediment. A server cannot exert control over when garbage collection within the JVM heap memory takes place, and the server has little control over the triggers for invocation. Off-heap memory offloads values to a storage area that is not subject to Java GC. By taking advantage of off-heap storage, an application can reduce the amount of heap storage that is subject to GC overhead.
@@ -76,13 +74,13 @@ Region values that are less than or equal to eight bytes in size will not reside
 
 ## Controlling Off-heap Use with the Resource Manager
 
-The @@product_name@@ resource manager controls off-heap memory by means of two thresholds, in much the same way as it does JVM heap memory. See [Using the @@product_name@@ Resource Manager](heap_management.html#how_the_resource_manager_works). The resource manager prevents the cache from consuming too much off-heap memory by evicting old data. If the off-heap memory manager is unable to keep up, the resource manager refuses additions to the cache until the off-heap memory manager has freed an adequate amount of memory.
+The @@product_name@@ resource manager controls off-heap memory by means of two thresholds, in much the same way as it does JVM heap memory. See [Using the @@product_name@@ Resource Manager](heap_management#how_the_resource_manager_works). The resource manager prevents the cache from consuming too much off-heap memory by evicting old data. If the off-heap memory manager is unable to keep up, the resource manager refuses additions to the cache until the off-heap memory manager has freed an adequate amount of memory.
 
 The resource manager has two threshold settings, each expressed as a percentage of the total off-heap memory. Both are disabled by default.
 
 1.  **Eviction Threshold**. The percentage of off-heap memory at which eviction should begin. Evictions continue until the resource manager determines that off-heap memory use is again below the eviction threshold. Set the eviction threshold with the `eviction-off-heap-percentage` region attribute. The resource manager enforces an eviction threshold only on regions with the HEAP\_LRU characteristic. If critical threshold is non-zero, the default eviction threshold is 5% below the critical threshold. If critical threshold is zero, the default eviction threshold is 80% of total off-heap memory.
 
-    The resource manager enforces eviction thresholds only on regions whose LRU eviction policies are based on heap percentage. Regions whose eviction policies based on entry count or memory size use other mechanisms to manage evictions. See [Eviction](../../developing/eviction/chapter_overview.html) for more detail regarding eviction policies.
+    The resource manager enforces eviction thresholds only on regions whose LRU eviction policies are based on heap percentage. Regions whose eviction policies based on entry count or memory size use other mechanisms to manage evictions. See [Eviction](../../developing/eviction/chapter_overview) for more detail regarding eviction policies.
 
 2.  **Critical Threshold**. The percentage of off-heap memory at which the cache is at risk of becoming inoperable. When cache use exceeds the critical threshold, all activity that might add data to the cache is refused. Any operation that would increase consumption of off-heap memory throws a `LowMemoryException` instead of completing its operation. Set the critical threshold with the `critical-off-heap-percentage` region attribute.
 
@@ -92,7 +90,7 @@ The resource manager has two threshold settings, each expressed as a percentage 
 
 To use off-heap memory, specify the following options when setting up servers and regions:
 
--   Start the JVM as described in [Tuning the JVM's Garbage Collection Parameters](heap_management.html#tuning_jvm_gc_parameters). In particular, set the initial and maximum heap sizes to the same value. Sizes less than 32GB are optimal when you plan to use off-heap memory.
+-   Start the JVM as described in [Tuning the JVM's Garbage Collection Parameters](heap_management#tuning_jvm_gc_parameters). In particular, set the initial and maximum heap sizes to the same value. Sizes less than 32GB are optimal when you plan to use off-heap memory.
 -   From gfsh, start each server that will support off-heap memory with a non-zero `off-heap-memory-size` value, specified in megabytes (m) or gigabytes (g). If you plan to use the resource manager, specify critical threshold, eviction threshold, or (in most cases) both.
 
     Example:
@@ -115,10 +113,10 @@ To use off-heap memory, specify the following options when setting up servers an
 gfsh supports off-heap memory in server and region creation operations and in reporting functions:
 
 alter disk-store  
-`--off-heap=(true | false)` resets the off-heap attribute for the specified region. See [alter disk-store](../../tools_modules/gfsh/command-pages/alter.html#topic_99BCAD98BDB5470189662D2F308B68EB) for details.
+`--off-heap=(true | false)` resets the off-heap attribute for the specified region. See [alter disk-store](../../tools_modules/gfsh/command-pages/alter#topic_99BCAD98BDB5470189662D2F308B68EB) for details.
 
 create region  
-`--off-heap=(true | false) `sets the off-heap attribute for the specified region. See [create region](../../tools_modules/gfsh/command-pages/create.html#topic_54B0985FEC5241CA9D26B0CE0A5EA863) for details.
+`--off-heap=(true | false) `sets the off-heap attribute for the specified region. See [create region](../../tools_modules/gfsh/command-pages/create#topic_54B0985FEC5241CA9D26B0CE0A5EA863) for details.
 
 describe member  
 displays off-heap size
@@ -133,7 +131,7 @@ show metrics
 includes off-heap metrics `maxMemory`, `freeMemory`, `usedMemory`, `objects`, `fragmentation` and `defragmentationTime`
 
 start server  
-supports off-heap options `--lock-memory`, `‑‑off-heap-memory-size`, `‑‑critical-off-heap-percentage`, and `‑‑eviction-off-heap-percentage` See [start server](../../tools_modules/gfsh/command-pages/start.html#topic_3764EE2DB18B4AE4A625E0354471738A) for details.
+supports off-heap options `--lock-memory`, `‑‑off-heap-memory-size`, `‑‑critical-off-heap-percentage`, and `‑‑eviction-off-heap-percentage` See [start server](../../tools_modules/gfsh/command-pages/start#topic_3764EE2DB18B4AE4A625E0354471738A) for details.
 
 ## ResourceManager API
 
@@ -154,7 +152,7 @@ off-heap-memory-size=4096m
 off-heap-memory-size=120g
 ```
 
-See [gemfire.properties and gfsecurity.properties (@@product_name@@ Properties)](../../reference/topics/gemfire_properties.html) for details.
+See [gemfire.properties and gfsecurity.properties (@@product_name@@ Properties)](../../reference/gemfire_properties) for details.
 
 The cache.xml file supports one region attribute:
 
@@ -167,15 +165,15 @@ Specifies that the region uses off-heap memory; defaults to `false`. For example
 </region-attributes>
 ```
 
-See [&lt;region-attributes&gt;](../../reference/topics/cache_xml.html#region-attributes) for details.
+See [&lt;region-attributes&gt;](../../reference/cache/cache_xml#region-attributes) for details.
 
 The cache.xml file supports two resource manager attributes:
 
 `critical-off-heap-percentage=value`  
-Specifies the percentage of off-heap memory at or above which the cache is considered in danger of becoming inoperable due to out of memory exceptions. See [&lt;resource-manager&gt;](../../reference/topics/cache_xml.html#resource-manager) for details.
+Specifies the percentage of off-heap memory at or above which the cache is considered in danger of becoming inoperable due to out of memory exceptions. See [&lt;resource-manager&gt;](../../reference/cache/cache_xml#resource-manager) for details.
 
 `eviction-off-heap-percentage=value`  
-Specifies the percentage of off-heap memory at or above which eviction should begin. Can be set for any region, but actively operates only in regions configured for HEAP\_LRU eviction. See [&lt;resource-manager&gt;](../../reference/topics/cache_xml.html#resource-manager) for details.
+Specifies the percentage of off-heap memory at or above which eviction should begin. Can be set for any region, but actively operates only in regions configured for HEAP\_LRU eviction. See [&lt;resource-manager&gt;](../../reference/cache/cache_xml#resource-manager) for details.
 
 For example:
 
@@ -189,9 +187,8 @@ For example:
 </cache>
 ```
 
-## <a id="managing-off-heap-memory__section_o4s_tg5_gv" class="no-quick-link"></a>Tuning Off-heap Memory Usage
-
-@@product_name@@ collects statistics on off-heap memory usage which you can view with the gfsh `show metrics` command. See [Off-Heap (OffHeapMemoryStats)](../../reference/statistics_list.html#topic_ohc_tjk_w5) for a description of available off-heap statistics.
+## Tuning Off-heap Memory Usage {#managing-off-heap-memory__section_o4s_tg5_gv}
+@@product_name@@ collects statistics on off-heap memory usage which you can view with the gfsh `show metrics` command. See [Off-Heap (OffHeapMemoryStats)](../../reference/statistics_list#topic_ohc_tjk_w5) for a description of available off-heap statistics.
 
 Off-heap memory is optimized, by default, for storing values of 128 KB in size. This figure is known as the "maximum optimized stored value size," which we will denote here by *maxOptStoredValSize*. If your data typically runs larger, you can enhance performance by increasing the OFF\_HEAP\_FREE\_LIST\_COUNT system parameter to a number larger than `maxOptStoredValSize/8`, where *maxOptStoredValSize* is expressed in KB (1024 bytes). So, the default values correspond to:
 

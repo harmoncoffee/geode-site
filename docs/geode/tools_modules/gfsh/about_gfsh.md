@@ -37,6 +37,6 @@ With `gfsh`, you can:
 
 The `gfsh` command line interface lets developers spend less time configuring cache instance XML, properties, logs, and statistics. gfsh commands generate reports; capture cluster-wide statistics; and support the export of statistics, logs, and configurations. Like Spring Roo, gfsh features command completion (so you do not have to know the syntax), context-sensitive help, scripting, and the ability to invoke any commands from within an application by using a simple API. The gfsh interface uses JMX/RMI to communicate with @@product_name_long@@ processes.
 
-You can connect gfsh to a remote cluster using the HTTP protocol. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../configuring/cluster_config/gfsh_remote.html).
+You can connect gfsh to a remote cluster using the HTTP protocol. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../configuring/gfsh_remote).
 
-By default, the cluster configuration service saves the configuration of your @@product_name_long@@ cluster as you create @@product_name_long@@ objects using gfsh. You can export this configuration and import it into another @@product_name_long@@ cluster. See [Overview of the Cluster Configuration Service](../../configuring/cluster_config/gfsh_persist.html#concept_r22_hyw_bl).
+By default, the cluster configuration service saves the configuration of your @@product_name_long@@ cluster as you create @@product_name_long@@ objects using gfsh. You can export this configuration and import it into another @@product_name_long@@ cluster. See [Overview of the Cluster Configuration Service](../../configuring/gfsh_persist#concept_r22_hyw_bl).

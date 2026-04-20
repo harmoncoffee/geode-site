@@ -30,7 +30,6 @@ export default function Index({
     const location = useLocation();
     const activePlugin = useActivePlugin();
     const docsPluginId = activePlugin?.pluginId ?? 'default';
-    console.log('PLUGIN ID:', docsPluginId);
 
     const activeDocContext = useActiveDocContext(docsPluginId);
     const versions = useVersions(docsPluginId);

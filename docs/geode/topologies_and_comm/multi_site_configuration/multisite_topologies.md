@@ -22,15 +22,13 @@ limitations under the License.
 -->
 
 To configure your multi-site topology, you should understand the recommended topologies and the topologies to avoid.
-
-<a id="multisite_topologies__section_26A561471249495A847B4C3854EE04C9"></a>
+## {#multisite_topologies__section_26A561471249495A847B4C3854EE04C9}
 This section describes @@product_name@@'s support for various topologies. Depending on your application needs, there may be several topologies that work. These are considerations to keep in mind:
 
 -   When a @@product_name@@ site receives a message from a gateway sender, it forwards it to the other sites it knows about, excluding those sites that it knows have already seen the message. Each message contains the initial sender's ID and the ID of each of the sites the initial sender sent to, so no site forwards to those sites. However, messages do not pick up the ID of the sites they pass through, so it is possible in certain topologies for more than one copy of a message to be sent to one site.
 -   In some configurations, the loss of one site affects how other sites communicate with one another.
 
-## <a id="multisite_topologies__section_7ECE1AFB1F94446FAA0A9FD504217C76" class="no-quick-link"></a>Fully Connected Mesh Topology
-
+## Fully Connected Mesh Topology {#multisite_topologies__section_7ECE1AFB1F94446FAA0A9FD504217C76}
 A fully connected mesh network topology is one in which all sites
 know about each other.
 This is a robust configuration,
@@ -49,8 +47,7 @@ If any site is removed, the remaining two are still fully connected.
 
 <img src="/images/multisite-topology-parallel.png" id="multisite_topologies__image_6CB125A80DF74DCE96A94020F7003DAE" class="image" />
 
-## <a id="multisite_topologies__section_17EC1FD63A5241159FE2ED07F72CD5DC" class="no-quick-link"></a>Ring Topology
-
+## Ring Topology {#multisite_topologies__section_17EC1FD63A5241159FE2ED07F72CD5DC}
 A ring topology is one in which each site forwards information
 to one other site,
 and the sites are connected in a circular manner.
@@ -70,8 +67,7 @@ all sites.
 If site 2 went down, for example,
 site 3 could send to site 1, but site 1 could not send to site 3.
 
-## <a id="multisite_topologies__section_AA3A864753DF4C218133C0A7460D2D19" class="no-quick-link"></a>Hybrid Multi-site Topology
-
+## Hybrid Multi-site Topology {#multisite_topologies__section_AA3A864753DF4C218133C0A7460D2D19}
 There are numerous hybrid network topologies.
 Some of the sites are fully connected, while others form a ring. 
 
@@ -95,8 +91,7 @@ This topology also guarantees that no site receives the same update twice.
 
 <img src="/images/multisite-topology-hybrid-2.png" id="multisite_topologies__image_1904C515A3224BE09589921A15D6D59B" class="image" />
 
-## <a id="multisite_topologies__section_8D7912BF9D8549A491D9AE5E0DC3CC1F" class="no-quick-link"></a>Unsupported Topologies
-
+## Unsupported Topologies {#multisite_topologies__section_8D7912BF9D8549A491D9AE5E0DC3CC1F}
 Topologies in which the same update may be delivered twice
 to a particular site do not work and are unsupported.
 

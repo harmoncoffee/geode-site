@@ -20,9 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_r5z_lj5_m4"></a>
-
-
+## {#topic_r5z_lj5_m4}
 This section provides troubleshooting guidance and frequently asked questions about @@product_name@@ Developer REST APIs.
 
 ## Checking if the REST API Service is Up and Running

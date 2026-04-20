@@ -30,9 +30,7 @@ Asks all the members that have a cache to close the cache and disconnect from th
 ``` pre
 shutdown [--time-out=value] [--include-locators=value]
 ```
-
-<a id="concept_249C98CFF0BF4BCCA7778AE2D751F52E__table_gfr_3jf_2w"></a>
-
+## {#concept_249C98CFF0BF4BCCA7778AE2D751F52E__table_gfr_3jf_2w}
 | Name                                                     | Description                                                                                                                 | Default Value |
 |----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|---------------|
 | <span class="keyword parmname">&#8209;&#8209;time-out </span>        | Time to wait (in seconds) for a graceful shutdown. Should be at least 10 seconds. The default value if not specified is 10. | 10            |

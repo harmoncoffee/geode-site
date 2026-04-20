@@ -35,10 +35,10 @@ The SSL implementation ensures that only the applications identified by you can 
 <img src="/images/security-5.gif" id="how_ssl_works__image_0437E0FC3EE74FB297BE4EBCC0FD4321" class="image" />
 
 
--   **[Configuring SSL](implementing_ssl.html)**
+-   **[Configuring SSL](implementing_ssl)**
 
     You configure SSL for mutual authentication between members and to protect your data during distribution. You can use SSL alone or in conjunction with the other @@product_name@@ security options.
 
--   **[SSL Sample Implementation](ssl_example.html)**
+-   **[SSL Sample Implementation](ssl_example)**
 
     A simple example demonstrates the configuration and startup of @@product_name@@ system components with SSL.

@@ -23,8 +23,7 @@ limitations under the License.
 
 Some examples of cache event handlers.
 
-## <a id="cache_event_handler_examples__section_F2790678E9DE4A81B73A4B6346CB210B" class="no-quick-link"></a>Declaring and Loading an Event Handler with Parameters
-
+## Declaring and Loading an Event Handler with Parameters {#cache_event_handler_examples__section_F2790678E9DE4A81B73A4B6346CB210B}
 This declares an event handler for a region in the `cache.xml`. The handler is a cache listener designed to communicate changes to a DB2 database. The declaration includes the listener’s parameters, which are the database path, username, and password.
 
 ``` pre
@@ -72,8 +71,7 @@ implements Declarable {
 }
 ```
 
-## <a id="cache_event_handler_examples__section_2B4275C1AE744794AAD22530E5ECA8CC" class="no-quick-link"></a>Installing an Event Handler Through the API
-
+## Installing an Event Handler Through the API {#cache_event_handler_examples__section_2B4275C1AE744794AAD22530E5ECA8CC}
 This listing defines a cache listener using the `RegionFactory` method `addCacheListener`.
 
 ``` pre
@@ -92,8 +90,7 @@ Region newReg = cache.createRegionFactory()
  
 ```
 
-## <a id="cache_event_handler_examples__section_C62E9535C43B4BC5A7AA7B8B4125D1EB" class="no-quick-link"></a>Installing Multiple Listeners on a Region
-
+## Installing Multiple Listeners on a Region {#cache_event_handler_examples__section_C62E9535C43B4BC5A7AA7B8B4125D1EB}
 XML:
 
 ``` pre
@@ -127,8 +124,7 @@ Region nr = cache.createRegionFactory()
   .create(name);
 ```
 
-## <a id="cache_event_handler_examples__section_3AF3D7C9927F491F8BACDB72834E42AA" class="no-quick-link"></a>Installing a Write-Behind Cache Listener
-
+## Installing a Write-Behind Cache Listener {#cache_event_handler_examples__section_3AF3D7C9927F491F8BACDB72834E42AA}
 ``` pre
 //AsyncEventQueue with listener that performs WBCL work
 <cache>

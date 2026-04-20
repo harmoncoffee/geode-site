@@ -23,8 +23,7 @@ limitations under the License.
 
 Custom partitioning and data colocation can be used separately or in conjunction with one another.
 
-## <a id="custom_partitioning_and_data_colocation__section_ABFEE9CB17AF44F1AE252AC10FB5E999" class="no-quick-link"></a>Custom Partitioning
-
+## Custom Partitioning {#custom_partitioning_and_data_colocation__section_ABFEE9CB17AF44F1AE252AC10FB5E999}
 Use custom partitioning to group like entries into region buckets within a region. By default, @@product_name@@ assigns new entries to buckets based on the entry key's hash code. With custom partitioning, you can assign your entries to buckets in whatever way you want.
 
 You can generally get better performance if you use custom partitioning to group similar data within a region. For example, a query run on all accounts created in January runs faster if all January account data is hosted by a single member. Grouping all data for a single customer can improve performance of data operations that work on customer data. Data aware function execution also takes advantage of custom partitioning.
@@ -32,7 +31,7 @@ You can generally get better performance if you use custom partitioning to group
 With custom partitioning, you have two choices:
 
 -   **Standard custom partitioning**. With standard custom partitioning, you group entries into buckets, but you do not specify where the buckets reside. @@product_name@@ always keeps the entries in the buckets you have specified, but may move the buckets around for load balancing.
-See [Standard Custom Partitioning](standard_custom_partitioning.html) for
+See [Standard Custom Partitioning](standard_custom_partitioning) for
 implementation and configuration details.
 -   **Fixed custom partitioning**. With fixed custom partitioning,
 you specify the exact member where each region entry resides.
@@ -47,11 +46,10 @@ You name specific members as primary and secondary hosts of each partition.
     -   @@product_name@@ cannot rebalance fixed partition region data, because it cannot move the buckets around among the host members. You must carefully consider your expected data loads for the partitions you create.
     -   With fixed partitioning, the region configuration is different between host members. Each member identifies the named partitions it hosts, and whether it is hosting the primary copy or a secondary copy. You then program a fixed-partition resolver to return the partition id, so the entry is placed on the right members. Only one member can be primary for a particular partition name, and that member cannot be the partition's secondary.
 
-    See [Fixed Custom Partitioning](fixed_custom_partitioning.html) for
+    See [Fixed Custom Partitioning](fixed_custom_partitioning) for
 implementation and configuration details.
 
-## <a id="custom_partitioning_and_data_colocation__section_D2C66951FE38426F9C05050D2B9028D8" class="no-quick-link"></a>Data Colocation Between Regions
-
+## Data Colocation Between Regions {#custom_partitioning_and_data_colocation__section_D2C66951FE38426F9C05050D2B9028D8}
 With data colocation, @@product_name@@ stores entries that are related across multiple data regions in a single member. @@product_name@@ does this by storing all of the regions' buckets with the same ID together in the same member. During rebalancing operations, @@product_name@@ moves these bucket groups together or not at all.
 
 So, for example, if you have one region with customer contact information and another region with customer orders, you can use colocation to keep all contact information and all orders for a single customer in a single member. This way, any operation done for a single customer uses the cache of only a single member.
@@ -64,4 +62,4 @@ Data colocation requires the same data partitioning mechanism for all of the col
 
 You must use the same high availability settings across your colocated regions.
 
-See [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data.html) for implementation and configuration details.
+See [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data) for implementation and configuration details.

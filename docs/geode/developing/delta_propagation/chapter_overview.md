@@ -21,27 +21,27 @@ limitations under the License.
 
 Delta propagation allows you to reduce the amount of data you send over the network by including only changes to objects rather than the entire object.
 
--   **[How Delta Propagation Works](how_delta_propagation_works.html)**
+-   **[How Delta Propagation Works](how_delta_propagation_works)**
 
     Delta propagation reduces the amount of data you send over the network. You do this by only sending the change, or delta, information about an object, instead of sending the entire changed object. If you do not use cloning when applying the deltas, you can also expect to generate less garbage in your receiving JVMs.
 
--   **[When to Avoid Delta Propagation](when_to_use_delta_prop.html)**
+-   **[When to Avoid Delta Propagation](when_to_use_delta_prop)**
 
     Generally, the larger your objects and the smaller the deltas, the greater the benefits of using delta propagation. Partitioned regions with higher redundancy levels generally benefit more from delta propagation. However, in some application scenarios, delta propagation does not show any significant benefits. On occasion it results in performance degradation.
 
--   **[Delta Propagation Properties](delta_propagation_properties.html)**
+-   **[Delta Propagation Properties](delta_propagation_properties)**
 
     This topic describes the properties that can be used to configure delta propagation.
 
--   **[Implementing Delta Propagation](implementing_delta_propagation.html)**
+-   **[Implementing Delta Propagation](implementing_delta_propagation)**
 
     By default, delta propagation is enabled in your cluster. When enabled, delta propagation is used for objects that implement `org.apache.geode.Delta`. You program the methods to store and extract delta information for your entries and to apply received delta information.
 
--   **[Errors In Delta Propagation](errors_in_delta_propagation.html)**
+-   **[Errors In Delta Propagation](errors_in_delta_propagation)**
 
     This topic lists the errors that can occur when using delta propagation.
 
--   **[Delta Propagation Example](delta_propagation_example.html)**
+-   **[Delta Propagation Example](delta_propagation_example)**
 
     This topic provides an example of delta propagation.
 

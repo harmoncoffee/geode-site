@@ -23,8 +23,7 @@ limitations under the License.
 
 @@product_name@@'s `DataSerializable` interface gives you quick serialization of your objects.
 
-## <a id="gemfire_data_serialization__section_0C84D6BF5E9748CB865E6BB944A077DE" class="no-quick-link"></a>Data Serialization with the DataSerializable Interface
-
+## Data Serialization with the DataSerializable Interface {#gemfire_data_serialization__section_0C84D6BF5E9748CB865E6BB944A077DE}
 @@product_name@@'s `DataSerializable` interface gives you faster and more compact data serialization than the standard Java serialization or @@product_name@@ PDX serialization. However, while @@product_name@@ `DataSerializable` interface is generally more performant than @@product_name@@'s `PdxSerializable`, it requires full deserialization on the server and then reserialization to send the data back to the client.
 
 You can further speed serialization by registering the instantiator for your `DataSerializable` class through `Instantiator`, eliminating the need for reflection to find the right serializer. You can provide your own serialization through the API.
@@ -47,8 +46,7 @@ The following provides an example of how to register an instantiator using cache
 
 In addition to speeding standard object serialization, you can use the `DataSerializable` interface to serialize any custom objects you store in the cache.
 
-## <a id="gemfire_data_serialization__section_B21408E7090C41B08BF300146F87648B" class="no-quick-link"></a>Serializing Your Domain Object with DataSerializer
-
+## Serializing Your Domain Object with DataSerializer {#gemfire_data_serialization__section_B21408E7090C41B08BF300146F87648B}
 You can also use `DataSerializer` to serialize domain objects. It serializes data in the same way as `DataSerializable` but allows you to serialize classes without modifying the domain class code.
 
-See the JavaDocs on [DataSerializable](/org/apache/geode/DataSerializable.html) and [DataSerializer](/org/apache/geode/DataSerializer.html) for more information.
+See the JavaDocs on [DataSerializable](/org/apache/geode/DataSerializable) and [DataSerializer](/org/apache/geode/DataSerializer) for more information.

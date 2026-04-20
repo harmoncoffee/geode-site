@@ -28,9 +28,7 @@ Enable or disable debugging output in `gfsh`.
 ``` pre
 debug --state=value
 ```
-
-<a id="concept_B70E7B27CEF1496CB3B7217B15FF4726__table_B6D7C12CE550464CB7D6B2159BD94A1E"></a>
-
+## {#concept_B70E7B27CEF1496CB3B7217B15FF4726__table_B6D7C12CE550464CB7D6B2159BD94A1E}
 | Name                                           | Description                                                                        | Default Value |
 |------------------------------------------------|------------------------------------------------------------------------------------|---------------|
 | <span class="keyword parmname">&#8209;&#8209;state </span> | Whether to turn debugging ON or OFF. Valid options are: ON, OFF (Case insensitive) | OFF           |

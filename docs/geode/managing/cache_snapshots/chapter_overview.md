@@ -28,23 +28,23 @@ The snapshot file is a binary file that contains all data from a particular regi
 **Note:**
 The previous `Region.loadSnapshot` and `Region.saveSnapshot` APIs have been deprecated. Data written in this format is not compatible with the new APIs.
 
--   **[Usage and Performance Notes](using_cache_and_region_snapshots.html)**
+-   **[Usage and Performance Notes](using_cache_and_region_snapshots)**
 
     Optimize the cache and region snapshot feature by understanding how it performs.
 
--   **[Exporting Cache and Region Snapshots](exporting_a_snapshot.html)**
+-   **[Exporting Cache and Region Snapshots](exporting_a_snapshot)**
 
     To save Geode cache or region data to a snapshot that you can later load into another cluster or region, use the `cache.getSnapshotService.save` API, `region.getSnapshotService.save` API, or the `gfsh` command-line interface (`export data`).
 
--   **[Importing Cache and Region Snapshots](importing_a_snapshot.html)**
+-   **[Importing Cache and Region Snapshots](importing_a_snapshot)**
 
     To import a Geode cache or region data snapshot that you previously exported into another cluster or region, use the `cache.getSnapshotService.load` API, `region.getSnapshotService.load` API, or the `gfsh` command-line interface (`import data`).
 
--   **[Filtering Entries During Import or Export](filtering_snapshot_entries.html)**
+-   **[Filtering Entries During Import or Export](filtering_snapshot_entries)**
 
     You can customize your snapshot by filtering entries during the import or export of a region or a cache.
 
--   **[Reading Snapshots Programmatically](read_snapshots_programmatically.html)**
+-   **[Reading Snapshots Programmatically](read_snapshots_programmatically)**
 
     You can read a snapshot entry-by-entry for further processing or transformation into other formats.
 

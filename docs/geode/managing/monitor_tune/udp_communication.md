@@ -25,16 +25,14 @@ You can make configuration adjustments to improve multicast and unicast UDP perf
 
 You can tune your @@product_name@@ UDP messaging to maximize throughput. There are two main tuning goals: to use the largest reasonable datagram packet sizes and to reduce retransmission rates. These actions reduce messaging overhead and overall traffic on your network while still getting your data where it needs to go. @@product_name@@ also provides statistics to help you decide when to change your UDP messaging settings.
 
-Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../basic_config/book_intro.html). See also the general communication tuning and multicast-specific tuning covered in [Socket Communication](socket_communication.html) and [Multicast Communication](multicast_communication.html#multicast).
+Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../basic_config/book_intro). See also the general communication tuning and multicast-specific tuning covered in [Socket Communication](socket_communication) and [Multicast Communication](multicast_communication#multicast).
 
-## <a id="udp_comm__section_4089ACC33AF34FA888BAE3CA3602A730" class="no-quick-link"></a>UDP Datagram Size
-
+## UDP Datagram Size {#udp_comm__section_4089ACC33AF34FA888BAE3CA3602A730}
 You can change the UDP datagram size with the @@product_name@@ property `udp-fragment-size`. This is the maximum packet size for transmission over UDP unicast or multicast sockets. When possible, smaller messages are combined into batches up to the size of this setting.
 
 Most operating systems set a maximum transmission size of 64k for UDP datagrams, so this setting should be kept under 60k to allow for communication headers. Setting the fragment size too high can result in extra network traffic if your network is subject to packet loss, as more data must be resent for each retransmission. If many UDP retransmissions appear in DistributionStats, you maybe achieve better throughput by lowering the fragment size.
 
-## <a id="udp_comm__section_B9882A4EBA004599B2207B9CB1D3ADC9" class="no-quick-link"></a>UDP Flow Control
-
+## UDP Flow Control {#udp_comm__section_B9882A4EBA004599B2207B9CB1D3ADC9}
 UDP protocols typically have a flow-control protocol built into them to keep processes from being
 overrun by incoming no-ack messages. The @@product_name@@ UDP flow-control protocol is a credit based system in
 which the sender has a maximum number of bytes it can send before getting its byte credit count
@@ -52,8 +50,7 @@ configured using a three-part @@product_name@@ property `mcast-flow-control`. Th
 
 In a well-tuned system, where consumers of cache events are keeping up with producers, the `byteAllowance` can be set high to limit flow-of-control messaging and pauses. JVM bloat or frequent message retransmissions are an indication that cache events from producers are overrunning consumers.
 
-## <a id="udp_comm__section_FB1F54A41D2643A29DB416D309ED4C56" class="no-quick-link"></a>UDP Retransmission Statistics
-
+## UDP Retransmission Statistics {#udp_comm__section_FB1F54A41D2643A29DB416D309ED4C56}
 @@product_name@@ stores retransmission statistics for its senders and receivers. You can use these statistics to help determine whether your flow control and fragment size settings are appropriate for your system.
 
 The retransmission rates are stored in the DistributionStats `ucastRetransmits` and

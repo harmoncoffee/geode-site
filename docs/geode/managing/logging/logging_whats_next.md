@@ -23,8 +23,7 @@ limitations under the License.
 
 The best way to manage and understand the logs is to have each member log to its own files.
 
-## <a id="logging_whats_next__section_82C0D09E8A414693A7E6342E30209FC4" class="no-quick-link"></a>Log File Naming Recommendation
-
+## Log File Naming Recommendation {#logging_whats_next__section_82C0D09E8A414693A7E6342E30209FC4}
 For members running on the same machine, you can have them log to their own files by starting them in different working directories and using the same, relative `log-file` specification. For example, you could set this in `<commonDirectoryPath>/gemfire.properties`:
 
 ``` pre
@@ -39,8 +38,7 @@ java -DgemfirePropertyFile=<commonDirectoryPath>/gemfire.properties
 
 This way, each member has its own log files under its own working directory.
 
-## <a id="logging_whats_next__section_5502E3248A424E978B13B1142360F445" class="no-quick-link"></a>Searching the Log Files
-
+## Searching the Log Files {#logging_whats_next__section_5502E3248A424E978B13B1142360F445}
 For the clearest picture, merge the log files, with the `gfsh export                 logs` command:
 
 ``` pre
@@ -53,6 +51,5 @@ Search for lines that begin with these strings:
 -   \[error
 -   \[severe
 
-## <a id="logging_whats_next__section_32F26033A2134525BCC10F3A6C6FAD7B" class="no-quick-link"></a>Creating Your Own Log Messages
-
+## Creating Your Own Log Messages {#logging_whats_next__section_32F26033A2134525BCC10F3A6C6FAD7B}
 In addition to the system logs, you can add your own application logs from your Java code. For information on adding custom logging to your applications, see the online Java documentation for the `org.apache.geode.LogWriter` interface. Both system and application logging is output and stored according to your logging configuration settings.

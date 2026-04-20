@@ -25,8 +25,7 @@ You can configure and deploy Gemcached servers in a Java class or by using the g
 
 The following sections describe how to configure and deploy an embedded Gemcached server. You can configure and start a GemCached server either by invoking a Java class that calls the cache server's `start()` method, or by starting the cache server using the gfsh command line.
 
-## <a id="topic_7B158074B27A4FEF9D38E7C369905C72__section_17E7E4058D914334B9C5AC2E3DC1F7F2" class="no-quick-link"></a>Embedding a Gemcached server in a @@product_name@@ Java Application
-
+## Embedding a Gemcached server in a @@product_name@@ Java Application {#topic_7B158074B27A4FEF9D38E7C369905C72__section_17E7E4058D914334B9C5AC2E3DC1F7F2}
 The `org.apache.geode.memcached` package contains a single class, `GemFireMemcachedServer` (see the @@product_name@@ Javadocs.) Use this class to configure and embed a Gemcached server in a @@product_name@@ cache server. For example, the following statement creates and starts an embedded Gemcached server on port number 5555 using the binary protocol:
 
 ``` pre
@@ -38,10 +37,9 @@ GemFireMemcachedServer server =
 **Note:**
 By default, Gemcached servers use the ASCII protocol.
 
-When you start a Gemcached server, by default, it creates a `RegionShortcut.PARTITION` region named `gemcached` where data used by memcached clients is stored. You can alter these defaults by configuring the region using the `cache.xml` or `gemfire.properties` files. See [Distributed System and Cache Configuration](../../basic_config/config_concepts/chapter_overview.html).
+When you start a Gemcached server, by default, it creates a `RegionShortcut.PARTITION` region named `gemcached` where data used by memcached clients is stored. You can alter these defaults by configuring the region using the `cache.xml` or `gemfire.properties` files. See [Distributed System and Cache Configuration](../../basic_config/config_concepts/chapter_overview).
 
-## <a id="topic_7B158074B27A4FEF9D38E7C369905C72__section_58A3FFED5BBB4F92A79FBD50421DC3F3" class="no-quick-link"></a>Starting a Gemcached Server Using a gfsh Command
-
+## Starting a Gemcached Server Using a gfsh Command {#topic_7B158074B27A4FEF9D38E7C369905C72__section_58A3FFED5BBB4F92A79FBD50421DC3F3}
 You can also start a Gemcached server with the gfsh command-line interface. Use the following syntax:
 
 ``` pre
@@ -57,12 +55,9 @@ You can also set the memcached port number and protocol in the `gemfire.properti
 
 If the `memcached-port` property is not specified, the embedded Gemcached server is not started.
 
-## <a id="topic_7B158074B27A4FEF9D38E7C369905C72__section_E5587FE56A21424FBAEE8CF61DF34219" class="no-quick-link"></a>Configuring a Gemcached Server with the gemfire.properties File
-
+## Configuring a Gemcached Server with the gemfire.properties File {#topic_7B158074B27A4FEF9D38E7C369905C72__section_E5587FE56A21424FBAEE8CF61DF34219}
 You can set the following properties in the `gemfire.properties` file that are used when starting Gemcached servers:
-
-<a id="topic_7B158074B27A4FEF9D38E7C369905C72__table_3F586259E06E42C4BD82AD661B3AFEA4"></a>
-
+## {#topic_7B158074B27A4FEF9D38E7C369905C72__table_3F586259E06E42C4BD82AD661B3AFEA4}
 | Property | Description |
 |---|---|
 | `memcached-port` | The port number where the Gemcached server listens for connections from memcached clients.<br/><br/>If the port number is set to `0` or the `memcached-port` parameter is omitted, the Gemcached server does not start. |

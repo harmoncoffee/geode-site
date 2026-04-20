@@ -20,8 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="data_regions__section_18A9481217204613958897FE64105097"></a>
+## {#data_regions__section_18A9481217204613958897FE64105097}
 Operations that create, destroy, invalidate, clear, and change the 
 configuration of regions work with gfsh commands, through an XML description,
 and via API calls.
@@ -32,7 +31,7 @@ The `org.apache.geode.cache.Region` interface implements `java.util.Map`.
 Each region's attributes define how the data in the region is stored, distributed, and managed. Data regions can be distributed, partitioned among system members, or local to the member.
 
 *Region shortcuts* identify commonly-used types of regions.
-See [Region Shortcuts](../../reference/topics/chapter_overview_regionshortcuts.html) for more information.
+See [Region Shortcuts](../../reference/region_shortcuts/chapter_overview_regionshortcuts) for more information.
 
 **Note:**
 If you change attributes that define a region, you must restart the member for the changes to take effect.
@@ -45,7 +44,7 @@ A simple and fast way to create a data region in the @@product_name_long@@ cache
 
 Region creation is subject to attribute consistency checks, both internal to the cache and, if the region is not local, between all caches where the region is defined.
 
-The `gfsh create region` [command reference page](../../tools_modules/gfsh/command-pages/create.html) details command line options for creating a region with `gfsh`.
+The `gfsh create region` [command reference page](../../tools_modules/gfsh/command-pages/create) details command line options for creating a region with `gfsh`.
 
 With `gfsh` connected to a JMX server,
 an example command that creates a replicated region is
@@ -54,10 +53,10 @@ an example command that creates a replicated region is
 gfsh>create region --name=region1 --type=REPLICATE
 ```
 
-Export the configuration files of your server so that you can save your region's configuration and recreate the region with the same attributes the next time you start up your cache server. See [export config](../../tools_modules/gfsh/command-pages/export.html#topic_C7C69306F93743459E65D46537F4A1EE) for details. 
+Export the configuration files of your server so that you can save your region's configuration and recreate the region with the same attributes the next time you start up your cache server. See [export config](../../tools_modules/gfsh/command-pages/export#topic_C7C69306F93743459E65D46537F4A1EE) for details. 
 
 **Note:**
-The cluster configuration service, which is enabled by default, automatically saves the configuration on the locators in the cluster. After you use the gfsh create region command, any new servers that you start that attach to the same locator receive the same configuration. You can also create alternate configurations within a cluster by specifying a group when creating the region and starting servers. See [Overview of the Cluster Configuration Service](../../configuring/cluster_config/gfsh_persist.html).
+The cluster configuration service, which is enabled by default, automatically saves the configuration on the locators in the cluster. After you use the gfsh create region command, any new servers that you start that attach to the same locator receive the same configuration. You can also create alternate configurations within a cluster by specifying a group when creating the region and starting servers. See [Overview of the Cluster Configuration Service](../../configuring/gfsh_persist).
 
 
 ###  Creating a Region Through the cache.xml File
@@ -120,8 +119,7 @@ an event listener in which entries expire:
 </region>
 ```
 
-### <a id="data_regions__section_028F2602395646818680C906F205526B" class="no-quick-link"></a>Creating a Region Through the API
-
+### Creating a Region Through the API {#data_regions__section_028F2602395646818680C906F205526B}
 @@product_name@@'s regions APIs provide specialized behavior for different system member types.
 
 -   **Peer/Server Region APIs**.
@@ -208,8 +206,7 @@ Region<String, String> region =
 ```
 
 
-## <a id="data_regions__section_jn1_sry_5m" class="no-quick-link"></a>Create and Access Data Subregions
-
+## Create and Access Data Subregions {#data_regions__section_jn1_sry_5m}
 An individual region can contain multiple subregions.
 Subregions are an older feature that will not be useful in new designs
 and applications.
@@ -255,16 +252,14 @@ You can create subregions using one of the following methods:
 `Region` method calls with a `recursive` parameter operate on the given
 region(s) and then recursively on all contained subregions. 
 
-## <a id="data_regions__section_7AD53DCC71064883BFA9C53E6040D85A" class="no-quick-link"></a>Update the Configuration of Data Regions
-
+## Update the Configuration of Data Regions {#data_regions__section_7AD53DCC71064883BFA9C53E6040D85A}
 Update your region properties and contents through `alter region` command, the API or from `cache.xml` file declarations.
 
--   Use the [gfsh alter region](../../tools_modules/gfsh/command-pages/alter.html#topic_E74ED23CB60342538B2175C326E7D758) command.
+-   Use the [gfsh alter region](../../tools_modules/gfsh/command-pages/alter#topic_E74ED23CB60342538B2175C326E7D758) command.
 -   In the API, use `Cache` and `Region` methods to change configuration parameters and modify region structure and data.
 -   Load new XML declarations using the `Cache.loadCacheXml` method. Where possible, declarations in the new `cache.xml` file supersede existing definitions. For example, if a region declared in the `cache.xml` file already exists in the cache, its mutable attributes are modified according to the file declarations. Immutable attributes are not affected. If a region does not already exist, it is created. Entries and indexes are created or updated according to the state of the cache and the file declarations.
 
-## <a id="data_regions__section_953E19F03F4541BAA3AE58118E7EA7E4" class="no-quick-link"></a>Invalidate a Region
-
+## Invalidate a Region {#data_regions__section_953E19F03F4541BAA3AE58118E7EA7E4}
 An invalidate region operation removes all entry values for a region, while leaving the entry keys intact. This operation can be invoked only through the API on a `Region` instance. Event notification occurs.
 
 ``` pre
@@ -321,8 +316,7 @@ The destroy operation can be propagated only to online members. The system will 
 
 An edge case results in issues when destroying a persistent region (R-removed) by removing its specification from the `cache.xml` file, and region R-removed was colocated with another persistent region (R-remains). The issue occurs because the persistent information contained within R-remains is inconsistent with the (lack of) specification of R-removed. Upon restart of R-remains, its persisted metadata refers to R-removed as a colocated region, and the startup of R-remains is dependent on that removed region. Thus, the startup of R-remains blocks, unable to complete. The issue may manifest with operations on the R-remains region such as a query, put, or get, that never finishes. To fix this issue, shut down all members with the persisted metadata that refers to the removed region. Once those members are in the offline state, use the `gfsh alter disk-store` command with the `--remove` option on each offline member to remove the region. Then, restart each member.
 
-## <a id="data_regions__section_3C0A7E088FDB413297ED8C0CD606968D" class="no-quick-link"></a>Close a Region
-
+## Close a Region {#data_regions__section_3C0A7E088FDB413297ED8C0CD606968D}
 Use this to stop local caching of persistent and partitioned regions without closing the entire cache:
 
 ``` pre
@@ -332,6 +326,6 @@ Region.close();
 The `Region.close` operation works like the `Region.localDestroyRegion` operation with these significant differences:
 
 -   The `close` method is called for every callback installed on the region.
--   No events are invoked. Of particular note, the entry events, `beforeDestroy` and `afterDestroy`, and the region events, `beforeRegionDestroy` and `afterRegionDestroy`, are not invoked. See [Events and Event Handling](../../developing/events/chapter_overview.html#implementing_event_handlers).
+-   No events are invoked. Of particular note, the entry events, `beforeDestroy` and `afterDestroy`, and the region events, `beforeRegionDestroy` and `afterRegionDestroy`, are not invoked. See [Events and Event Handling](../../developing/events/chapter_overview#implementing_event_handlers).
 -   If persistent, the region is removed from memory but its disk files are retained.
 -   If partitioned, the region is removed from the local cache. If the partitioned region is redundant, local data caching fails over to another cache. Otherwise, local data is lost.

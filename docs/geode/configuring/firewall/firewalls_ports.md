@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Make sure your port settings are configured correctly for firewalls.
-
-<a id="concept_5ED182BDBFFA4FAB89E3B81366EBC58E__section_F9C1D7419F954DC1A305C34714C8615C"></a>
+## {#concept_5ED182BDBFFA4FAB89E3B81366EBC58E__section_F9C1D7419F954DC1A305C34714C8615C}
 There are several different port settings that need to be considered when using firewalls:
 
 -   Port that the cache server listens on. This is configurable using the `cache-server` element in cache.xml, on the CacheServer class in Java APIs, and as a command line option to the `gfsh start server` command.
@@ -193,6 +192,6 @@ accessible by gateway senders from across the WAN.
 
 | Configuration Area | Property or Setting | Definition |
 |--------------------|---------------------|------------|
-| multi-site (WAN) config for gateway sender | [hostname-for-senders](../../reference/topics/cache_xml.html#gateway-receiver) | Hostname or IP address of the gateway receiver used by gateway senders to connect. |
-| multi-site (WAN) config for locator | [remote-locators](../../reference/topics/gemfire_properties.html#gemfire_properties) | List of locators (and their ports) that are available on the remote WAN site. |
-| multi-site (WAN) config for gateway receiver | [start-port](../../reference/topics/cache_xml.html#gateway-receiver) and [end-port](../../reference/topics/cache_xml.html#gateway-receiver) (cache.xml) or <code class="ph codeph">--start-port</code> and <code class="ph codeph">--end-port</code> parameters to the <code class=" ph codeph">gfsh start gateway receiver</code> command | Port range that the gateway receiver can use to listen for gateway sender communication. |
+| multi-site (WAN) config for gateway sender | [hostname-for-senders](../../reference/cache/cache_xml#gateway-receiver) | Hostname or IP address of the gateway receiver used by gateway senders to connect. |
+| multi-site (WAN) config for locator | [remote-locators](../../reference/gemfire_properties#gemfire_properties) | List of locators (and their ports) that are available on the remote WAN site. |
+| multi-site (WAN) config for gateway receiver | [start-port](../../reference/cache/cache_xml#gateway-receiver) and [end-port](../../reference/cache/cache_xml#gateway-receiver) (cache.xml) or <code class="ph codeph">--start-port</code> and <code class="ph codeph">--end-port</code> parameters to the <code class=" ph codeph">gfsh start gateway receiver</code> command | Port range that the gateway receiver can use to listen for gateway sender communication. |

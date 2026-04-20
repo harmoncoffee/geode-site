@@ -25,8 +25,7 @@ This topic describes the properties that can be used to configure delta propagat
 
 Delta propagation properties can be configured through the API and through the `gemfire.properties` and `cache.xml` files.
 
-## <a id="delta_propagation_properties__section_561D6DA876E24469B7536E98AB12F676" class="no-quick-link"></a>delta-propagation
-
+## delta-propagation {#delta_propagation_properties__section_561D6DA876E24469B7536E98AB12F676}
 A `gemfire.properties` boolean that enables or disables delta propagation. When false, full entry values are sent for every update. The default setting is true, which enables delta propagation.
 
 Disable delta propagation as follows:
@@ -45,8 +44,7 @@ Disable delta propagation as follows:
     this.cache = new ClientCacheFactory(props).create();
     ```
 
-## <a id="delta_propagation_properties__section_7D4590512D1548FD94F81C8726A2CA44" class="no-quick-link"></a>cloning-enabled
-
+## cloning-enabled {#delta_propagation_properties__section_7D4590512D1548FD94F81C8726A2CA44}
 A region attributes boolean that affects how `fromDelta` applies deltas to the local cache. When true, the updates are applied to a clone of the value and then the clone is saved to the cache. When false, the value is modified in place in the cache. The default value is false.
 
 Exceptions to this behavior:

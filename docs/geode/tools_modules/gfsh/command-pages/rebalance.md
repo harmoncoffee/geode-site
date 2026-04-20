@@ -31,9 +31,7 @@ The default is for all partitioned regions to be rebalanced.
 rebalance [--include-region=value(,value)*] 
 [--exclude-region=value(,value)*] [--time-out=value] [--simulate(=value)?]
 ```
-
-<a id="concept_213FDC5574474CE1AC28444DA202E05B__table_tqp_ccg_2w"></a>
-
+## {#concept_213FDC5574474CE1AC28444DA202E05B__table_tqp_ccg_2w}
 | Name                                                    | Description                                                                                              | Default Value                        |
 |---------------------------------------------------------|----------------------------------------------------------------------------------------------------------|--------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;include-region</span>  | Partitioned Region paths to be included for rebalance operation. Includes take precedence over excludes. | Â                                     |

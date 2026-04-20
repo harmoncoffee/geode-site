@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Equi-join queries are queries in which two regions are joined through an equality condition in the WHERE clause.
-
-<a id="concept_A90C5FD84FCB45B2B28D6CE78DE1D117__section_47CFF4EF4D964FCFBB772B0347C02214"></a>
+## {#concept_A90C5FD84FCB45B2B28D6CE78DE1D117__section_47CFF4EF4D964FCFBB772B0347C02214}
 To use an index with an equi-join query:
 
 1.  Create an index for each side of the equi-join condition. The query engine can quickly evaluate the query's equi-join condition by iterating over the keys of the left-side and right-side indexes for an equality match.

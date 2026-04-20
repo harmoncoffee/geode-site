@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 When a member crashes, the remaining members continue operation as though the missing application or cache server had never existed. The recovery process differs according to region type and scope, as well as data redundancy configuration.
-
-<a id="rec_app_p2p_crash__section_1C54E03359AB4775A9211899A63362A4"></a>
+## {#rec_app_p2p_crash__section_1C54E03359AB4775A9211899A63362A4}
 The other system members are told that it has left unexpectedly. If any remaining system member is waiting for a response (ACK), the ACK still succeeds and returns, because every member that is still alive has responded. If the lost member had ownership of a GLOBAL entry, then the next attempt to obtain that ownership acts as if no owner exists.
 
 Recovery depends on how the member has its cache configured. This section covers the following:
@@ -57,15 +56,14 @@ The reassigned clients continue operating smoothly, as in the failover case. A s
 
 If rebalancing fails, the client fails over to an active server with the normal failover behavior.
 
-## <a id="rec_app_p2p_crash__section_0E7D482DD8E84250A10070431B29AAC5" class="no-quick-link"></a>Recovery for Partitioned Regions
-
+## Recovery for Partitioned Regions {#rec_app_p2p_crash__section_0E7D482DD8E84250A10070431B29AAC5}
 When an application or cache server crashes, any data in local memory is lost, including any entries in a local partitioned region data store.
 
 **Recovery for Partitioned Regions With Data Redundancy**
 
 If the partitioned region is configured for redundancy and a member crashes, the system continues to operate with the remaining copies of the data. You may need to perform recovery actions depending on how many members you have lost and how you have configured redundancy in your system.
 
-By default, @@product_name@@ does not make new copies of the data until a new member is brought online to replace the member that crashed. You can control this behavior using the recovery delay attributes. For more information, see [Configure High Availability for a Partitioned Region](../../developing/partitioned_regions/configuring_ha_for_pr.html).
+By default, @@product_name@@ does not make new copies of the data until a new member is brought online to replace the member that crashed. You can control this behavior using the recovery delay attributes. For more information, see [Configure High Availability for a Partitioned Region](../../developing/partitioned_regions/configuring_ha_for_pr).
 
 To recover, start a replacement member. The new member regenerates the lost copies and returns them to the configured redundancy level.
 
@@ -76,7 +74,7 @@ Even with high availability, you can lose data if too many applications and cach
 
 *The number of members that can fail at the same time without losing data is equal to the number of redundant copies configured for the region.* So if redundant-copies=1, then at any given time only one member can be down without data loss. If a second goes down at the same time, any data stored by those two members will be lost.
 
-You can also lose access to all copies of your data through network failure. See [Understanding and Recovering from Network Outages](recovering_from_network_outages.html#rec_network_crash).
+You can also lose access to all copies of your data through network failure. See [Understanding and Recovering from Network Outages](recovering_from_network_outages#rec_network_crash).
 
 **Recovery Without Data Redundancy**
 
@@ -84,7 +82,7 @@ If a member crashes and there are no redundant copies, any logic that tries to i
 
 To recover, restart the member. The application returns to active work and automatically begins to create new data.
 
-If the members with the relevant disk stores cannot be restarted, then you will have to revoke the missing disk stores manually using gfsh. See [revoke missing-disk-store](../../tools_modules/gfsh/command-pages/revoke.html).
+If the members with the relevant disk stores cannot be restarted, then you will have to revoke the missing disk stores manually using gfsh. See [revoke missing-disk-store](../../tools_modules/gfsh/command-pages/revoke).
 
 **Maintaining and Recovering Partitioned Region Redundancy**
 
@@ -147,23 +145,20 @@ Response:
 -   Add additional members configured as data stores for the partitioned region.
 -   Consider starting another member.
 
-## <a id="rec_app_p2p_crash__section_19CFA40F5EE64C4F8062BFBF7A6C1571" class="no-quick-link"></a>Recovery for Distributed Regions
-
+## Recovery for Distributed Regions {#rec_app_p2p_crash__section_19CFA40F5EE64C4F8062BFBF7A6C1571}
 Restart the process. The system member recreates its cache automatically. If replication is used, data is automatically loaded from the replicated regions, creating an up-to-date cache in sync with the rest of the system. If you have persisted data but no replicated regions, data is automatically loaded from the disk store files. Otherwise, the lost data is replaced with new data created by the application as it returns to active work.
 
-## <a id="rec_app_p2p_crash__section_745AB095D1FA48E392F2C1B95DC18090" class="no-quick-link"></a>Recovery for Regions of Local Scope
-
+## Recovery for Regions of Local Scope {#rec_app_p2p_crash__section_745AB095D1FA48E392F2C1B95DC18090}
 Regions of local scope have no memory backup, but may have data persisted to disk. If the region is configured for persistence, the data remains in the region’s disk directories after a crash. The data on disk will be used to initialize the region when you restart.
 
-## <a id="rec_app_p2p_crash__section_D9202624335D45BFA2FCC55D702125F7" class="no-quick-link"></a>Recovering Data from Disk
-
-When you persist a region, the entry data on disk outlives the region in memory. If the member exits or crashes, the data remains in the region’s disk directories. See [Disk Storage](../disk_storage/chapter_overview.html). If the same region is created again, this saved disk data can be used to initialize the region.
+## Recovering Data from Disk {#rec_app_p2p_crash__section_D9202624335D45BFA2FCC55D702125F7}
+When you persist a region, the entry data on disk outlives the region in memory. If the member exits or crashes, the data remains in the region’s disk directories. See [Disk Storage](../disk_storage/chapter_overview). If the same region is created again, this saved disk data can be used to initialize the region.
 
 Some general considerations for disk data recovery:
 
 -   Region persistence causes only entry keys and values to be stored to disk. Statistics and user attributes are not stored.
 -   If the application was writing to the disk asynchronously, the chances of data loss are greater. The choice is made at the region level, with the disk-synchronous attribute.
--   When a region is initialized from disk, last modified time is persisted from before the member exit or crash. For information on how this might affect the region data, see [Expiration](../../developing/expiration/chapter_overview.html).
+-   When a region is initialized from disk, last modified time is persisted from before the member exit or crash. For information on how this might affect the region data, see [Expiration](../../developing/expiration/chapter_overview).
 
 **Disk Recovery for Disk Writing—Synchronous Mode and Asynchronous Mode**
 

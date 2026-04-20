@@ -23,7 +23,7 @@ This archival section on transactions exists as a reference
 for understanding how to work with JTA transactions.
 
 
--   **[JTA Global Transactions with Geode ](JTA_transactions.html)**
+-   **[JTA Global Transactions with Geode ](JTA_transactions)**
 
     Use JTA global transactions to coordinate Geode transactions and JDBC transactions.
 

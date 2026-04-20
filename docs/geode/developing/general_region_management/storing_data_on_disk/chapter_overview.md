@@ -22,19 +22,19 @@ limitations under the License.
 You can persist data on disk for backup purposes and overflow it to disk to free up memory without completely removing the data from your cache.
 
 **Note:**
-This supplements the general steps for managing data regions provided in [Basic Configuration and Programming](../../basic_config/book_intro.html).
+This supplements the general steps for managing data regions provided in [Basic Configuration and Programming](../../basic_config/book_intro).
 
-All disk storage uses Apache Geode [Disk Storage](../../managing/disk_storage/chapter_overview.html).
+All disk storage uses Apache Geode [Disk Storage](../../managing/disk_storage/chapter_overview).
 
--   **[How Persistence and Overflow Work](how_persist_overflow_work.html)**
+-   **[How Persistence and Overflow Work](how_persist_overflow_work)**
 
     To use Geode persistence and overflow, you should understand how they work with your data.
 
--   **[Configure Region Persistence and Overflow](storing_data_on_disk.html)**
+-   **[Configure Region Persistence and Overflow](storing_data_on_disk)**
 
     Plan persistence and overflow for your data regions and configure them accordingly.
 
--   **[Overflow Configuration Examples](overflow_config_examples.html)**
+-   **[Overflow Configuration Examples](overflow_config_examples)**
 
     The `cache.xml` examples show configuration of region and server subscription queue overflows.
 

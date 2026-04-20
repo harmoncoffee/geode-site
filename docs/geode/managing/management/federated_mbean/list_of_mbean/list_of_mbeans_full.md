@@ -18,24 +18,21 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_14E3721DD0CF47D7AD8C742DFBE9FB9C"></a>
-
-
+## {#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C}
 This section describes the MBeans that are available on the JMX Manager node.
 
-The JMX Manager node includes all local beans listed under [Managed Node MBeans](list_of_mbeans_full.html#topic_48194A5BDF3F40F68E95A114DD702413) and the following beans that are available only on the JMX Manager node:
+The JMX Manager node includes all local beans listed under [Managed Node MBeans](list_of_mbeans_full#topic_48194A5BDF3F40F68E95A114DD702413) and the following beans that are available only on the JMX Manager node:
 
--   [ManagerMXBean](list_of_mbeans_full.html#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_7B878B450B994514BDFE96571F0D3827)
--   [DistributedSystemMXBean](list_of_mbeans_full.html#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_4D7A4C82DD974BB5A5E52B34A6D888B4)
--   [DistributedRegionMXBean](list_of_mbeans_full.html#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_48384B091AB846E591F22EEA2770DD36)
--   [DistributedLockServiceMXBean](list_of_mbeans_full.html#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_9E004D8AA3D24647A5C19CAA1879F0A4)
+-   [ManagerMXBean](list_of_mbeans_full#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_7B878B450B994514BDFE96571F0D3827)
+-   [DistributedSystemMXBean](list_of_mbeans_full#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_4D7A4C82DD974BB5A5E52B34A6D888B4)
+-   [DistributedRegionMXBean](list_of_mbeans_full#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_48384B091AB846E591F22EEA2770DD36)
+-   [DistributedLockServiceMXBean](list_of_mbeans_full#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_9E004D8AA3D24647A5C19CAA1879F0A4)
 
-## <a id="topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_7B878B450B994514BDFE96571F0D3827" class="no-quick-link"></a>ManagerMXBean
-
+## ManagerMXBean {#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_7B878B450B994514BDFE96571F0D3827}
 Represents the @@product_name@@ Management layer for the hosting member. Controls the scope of management. This MBean provides `start` and `stop` methods to turn a managed node into a JMX Manager node or to stop a node from being a JMX Manager. For potential managers (`jmx-manager=true` and `jmx-manager-start=false`), this MBean is created when a Locator requests it.
 
 **Note:**
-You must configure the node to allow it to become a JMX Manager. See [Configuring a JMX Manager](jmx_manager_operations.html#topic_263072624B8D4CDBAD18B82E07AA44B6) for configuration information.
+You must configure the node to allow it to become a JMX Manager. See [Configuring a JMX Manager](jmx_manager_operations#topic_263072624B8D4CDBAD18B82E07AA44B6) for configuration information.
 
 **MBean Details**
 
@@ -48,13 +45,12 @@ You must configure the node to allow it to become a JMX Manager. See [Configurin
 
 See the `org.apache.geode.management.ManagerMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_4D7A4C82DD974BB5A5E52B34A6D888B4" class="no-quick-link"></a>DistributedSystemMXBean
-
+## DistributedSystemMXBean {#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_4D7A4C82DD974BB5A5E52B34A6D888B4}
 System-wide aggregate MBean that provides a high-level view of the entire cluster including all members (cache servers, peers, locators) and their caches. At any given point of time, it can provide a snapshot of the complete cluster and its operations.
 
 The DistributedSystemMXBean provides APIs for performing cluster-wide operations such as backing up all members, shutting down all members or showing various cluster metrics.
 
-You can attach a standard JMX NotificationListener to this MBean to listen for notifications throughout the cluster. See [@@product_name@@ JMX MBean Notifications](mbean_notifications.html) for more information.
+You can attach a standard JMX NotificationListener to this MBean to listen for notifications throughout the cluster. See [@@product_name@@ JMX MBean Notifications](mbean_notifications) for more information.
 
 This MBean also provides some MBean model navigation APIS. These APIs should be used to navigate through all the MBeans exposed by a @@product_name@@ System.
 
@@ -69,8 +65,7 @@ This MBean also provides some MBean model navigation APIS. These APIs should be 
 
 See the `org.apache.geode.management.DistributedSystemMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_48384B091AB846E591F22EEA2770DD36" class="no-quick-link"></a>DistributedRegionMXBean
-
+## DistributedRegionMXBean {#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_48384B091AB846E591F22EEA2770DD36}
 System-wide aggregate MBean of a named region. It provides a high-level view of a region for all members hosting and/or using that region. For example, you can obtain a list of all members that are hosting the region. Some methods are only available for partitioned regions.
 
 **MBean Details**
@@ -84,8 +79,7 @@ System-wide aggregate MBean of a named region. It provides a high-level view of 
 
 See the `org.apache.geode.management.DistributedRegionMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_9E004D8AA3D24647A5C19CAA1879F0A4" class="no-quick-link"></a>DistributedLockServiceMXBean
-
+## DistributedLockServiceMXBean {#topic_14E3721DD0CF47D7AD8C742DFBE9FB9C__section_9E004D8AA3D24647A5C19CAA1879F0A4}
 Represents a named instance of DistributedLockService . Any number of DistributedLockService can be created in a member.
 
 A named instance of DistributedLockService defines a space for locking arbitrary names across the cluster defined by a specified distribution manager. Any number of DistributedLockService instances can be created with different service names. For all processes in the cluster that have created an instance of DistributedLockService with the same name, no more than one thread is permitted to own the lock on a given name in that instance at any point in time. Additionally, a thread can lock the entire service, preventing any other threads in the system from locking the service or any names in the service.
@@ -101,28 +95,26 @@ A named instance of DistributedLockService defines a space for locking arbitrary
 
 See the `org.apache.geode.management.DistributedLockServiceMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="topic_48194A5BDF3F40F68E95A114DD702413" class="no-quick-link"></a>Managed Node MBeans
-
+## Managed Node MBeans {#topic_48194A5BDF3F40F68E95A114DD702413}
 This section describes the MBeans that are available on all managed nodes.
 
 MBeans that are available on all managed nodes include:
 
--   [MemberMXBean](list_of_mbeans_full.html#topic_48194A5BDF3F40F68E95A114DD702413__section_796A989549304BF7A536A33A913322A4)
--   [CacheServerMXBean](list_of_mbeans_full.html#topic_48194A5BDF3F40F68E95A114DD702413__section_7287A7560650426E9B8249E2D87CE55F)
--   [RegionMXBean](list_of_mbeans_full.html#topic_48194A5BDF3F40F68E95A114DD702413__section_577A666924E54352AF69294DC8DEFEBF)
--   [LockServiceMXBean](list_of_mbeans_full.html#topic_48194A5BDF3F40F68E95A114DD702413__section_2F9F00081BB14CE0ADA251F5B6289BF2)
--   [DiskStoreMXBean](list_of_mbeans_full.html#topic_48194A5BDF3F40F68E95A114DD702413__section_1F475F68E73B4EAE875BA40825E736C9)
--   [AsyncEventQueueMXBean](list_of_mbeans_full.html#topic_48194A5BDF3F40F68E95A114DD702413__section_6A77030A15704BFEAEBBD7DB88266BF6)
--   [LocatorMXBean](list_of_mbeans_full.html#topic_48194A5BDF3F40F68E95A114DD702413__section_BB83107990D346F39271ACCC14CB84A0)
--   [LuceneServiceMXBean](list_of_mbeans_full.html#LuceneServiceMXBean_desc)
+-   [MemberMXBean](list_of_mbeans_full#topic_48194A5BDF3F40F68E95A114DD702413__section_796A989549304BF7A536A33A913322A4)
+-   [CacheServerMXBean](list_of_mbeans_full#topic_48194A5BDF3F40F68E95A114DD702413__section_7287A7560650426E9B8249E2D87CE55F)
+-   [RegionMXBean](list_of_mbeans_full#topic_48194A5BDF3F40F68E95A114DD702413__section_577A666924E54352AF69294DC8DEFEBF)
+-   [LockServiceMXBean](list_of_mbeans_full#topic_48194A5BDF3F40F68E95A114DD702413__section_2F9F00081BB14CE0ADA251F5B6289BF2)
+-   [DiskStoreMXBean](list_of_mbeans_full#topic_48194A5BDF3F40F68E95A114DD702413__section_1F475F68E73B4EAE875BA40825E736C9)
+-   [AsyncEventQueueMXBean](list_of_mbeans_full#topic_48194A5BDF3F40F68E95A114DD702413__section_6A77030A15704BFEAEBBD7DB88266BF6)
+-   [LocatorMXBean](list_of_mbeans_full#topic_48194A5BDF3F40F68E95A114DD702413__section_BB83107990D346F39271ACCC14CB84A0)
+-   [LuceneServiceMXBean](list_of_mbeans_full#LuceneServiceMXBean_desc)
 
 JMX Manager nodes will have managed node MBeans for themselves since they are also manageable entities in the cluster.
 
-## <a id="topic_48194A5BDF3F40F68E95A114DD702413__section_796A989549304BF7A536A33A913322A4" class="no-quick-link"></a>MemberMXBean
-
+## MemberMXBean {#topic_48194A5BDF3F40F68E95A114DD702413__section_796A989549304BF7A536A33A913322A4}
 Member's local view of its connection and cache. It is the primary gateway to manage a particular member. It exposes member level attributes and statistics. Some operations like `createCacheServer()` and `createManager()` will help to create some @@product_name@@ resources. Any JMX client can connect to the MBean server and start managing a @@product_name@@ Member by using this MBean.
 
-See [MemberMXBean Notifications](list_of_mbean_notifications.html#reference_czt_hq2_vj) for a list of notifications emitted by this MBean.
+See [MemberMXBean Notifications](list_of_mbean_notifications#reference_czt_hq2_vj) for a list of notifications emitted by this MBean.
 
 **MBean Details**
 
@@ -135,11 +127,10 @@ See [MemberMXBean Notifications](list_of_mbean_notifications.html#reference_czt_
 
 See the `org.apache.geode.management.MemberMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="topic_48194A5BDF3F40F68E95A114DD702413__section_7287A7560650426E9B8249E2D87CE55F" class="no-quick-link"></a>CacheServerMXBean
-
+## CacheServerMXBean {#topic_48194A5BDF3F40F68E95A114DD702413__section_7287A7560650426E9B8249E2D87CE55F}
 Represents the @@product_name@@ CacheServer. Provides data and notifications about server, subscriptions, durable queues and indices.
 
-See [CacheServerMXBean Notifications](list_of_mbean_notifications.html#cacheservermxbean_notifications) for a list of notifications emitted by this MBean.
+See [CacheServerMXBean Notifications](list_of_mbean_notifications#cacheservermxbean_notifications) for a list of notifications emitted by this MBean.
 
 **MBean Details**
 
@@ -152,8 +143,7 @@ See [CacheServerMXBean Notifications](list_of_mbean_notifications.html#cacheserv
 
 See the `org.apache.geode.management.CacheServerMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="topic_48194A5BDF3F40F68E95A114DD702413__section_577A666924E54352AF69294DC8DEFEBF" class="no-quick-link"></a>RegionMXBean
-
+## RegionMXBean {#topic_48194A5BDF3F40F68E95A114DD702413__section_577A666924E54352AF69294DC8DEFEBF}
 Member's local view of region.
 
 **MBean Details**
@@ -167,8 +157,7 @@ Member's local view of region.
 
 See the `org.apache.geode.management.RegionMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="topic_48194A5BDF3F40F68E95A114DD702413__section_2F9F00081BB14CE0ADA251F5B6289BF2" class="no-quick-link"></a>LockServiceMXBean
-
+## LockServiceMXBean {#topic_48194A5BDF3F40F68E95A114DD702413__section_2F9F00081BB14CE0ADA251F5B6289BF2}
 Represents a named instance of a LockService . Any number of LockServices can be created in a member.
 
 **MBean Details**
@@ -182,8 +171,7 @@ Represents a named instance of a LockService . Any number of LockServices can be
 
 See the `org.apache.geode.management.LockServiceMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="topic_48194A5BDF3F40F68E95A114DD702413__section_1F475F68E73B4EAE875BA40825E736C9" class="no-quick-link"></a>DiskStoreMXBean
-
+## DiskStoreMXBean {#topic_48194A5BDF3F40F68E95A114DD702413__section_1F475F68E73B4EAE875BA40825E736C9}
 Represents a DiskStore object which provides disk storage for one or more regions
 
 **MBean Details**
@@ -197,8 +185,7 @@ Represents a DiskStore object which provides disk storage for one or more region
 
 See the `org.apache.geode.management.DiskStoreMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="topic_48194A5BDF3F40F68E95A114DD702413__section_6A77030A15704BFEAEBBD7DB88266BF6" class="no-quick-link"></a>AsyncEventQueueMXBean
-
+## AsyncEventQueueMXBean {#topic_48194A5BDF3F40F68E95A114DD702413__section_6A77030A15704BFEAEBBD7DB88266BF6}
 An AsyncEventQueueMXBean provides access to an AsyncEventQueue, which represent the channel over which events are delivered to the AsyncEventListener.
 
 **MBean Details**
@@ -212,8 +199,7 @@ An AsyncEventQueueMXBean provides access to an AsyncEventQueue, which represent 
 
 See the `org.apache.geode.management.AsyncEventQueueMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="topic_48194A5BDF3F40F68E95A114DD702413__section_BB83107990D346F39271ACCC14CB84A0" class="no-quick-link"></a>LocatorMXBean
-
+## LocatorMXBean {#topic_48194A5BDF3F40F68E95A114DD702413__section_BB83107990D346F39271ACCC14CB84A0}
 A LocatorMXBean represents a locator.
 
 **MBean Details**
@@ -227,8 +213,7 @@ A LocatorMXBean represents a locator.
 
 See the `org.apache.geode.management.LocatorMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="LuceneServiceMXBean_desc" class="no-quick-link"></a>LuceneServiceMXBean
-
+## LuceneServiceMXBean {#LuceneServiceMXBean_desc}
 The member's local view of existing Lucene indexes.
 
 **MBean Details**
@@ -242,8 +227,7 @@ The member's local view of existing Lucene indexes.
 
 See the `org.apache.geode.cache.lucene.management.LuceneServiceMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="GatewaySenderMXBean" class="no-quick-link"></a>GatewaySenderMXBean
-
+## GatewaySenderMXBean {#GatewaySenderMXBean}
 A GatewaySenderMXBean represents a gateway sender.
 
 **MBean Details**
@@ -257,8 +241,7 @@ A GatewaySenderMXBean represents a gateway sender.
 
 See the `org.apache.geode.management.GatewaySenderMXBean` JavaDocs for information on available MBean methods and attributes.
 
-## <a id="GatewayReceiverMXBean" class="no-quick-link"></a>GatewayReceiverMXBean
-
+## GatewayReceiverMXBean {#GatewayReceiverMXBean}
 A GatewayReceiverMXBean represents a gateway receiver.
 
 **MBean Details**

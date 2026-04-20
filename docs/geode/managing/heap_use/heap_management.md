@@ -21,18 +21,16 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## <a id="how_the_resource_manager_works" class="no-quick-link"></a>Using the @@product_name@@ Resource Manager
-
+## Using the @@product_name@@ Resource Manager {#how_the_resource_manager_works}
 The @@product_name@@ resource manager works with your JVM's tenured garbage collector to control heap use and protect your member from hangs and crashes due to memory overload.
-
-<a id="how_the_resource_manager_works__section_53E80B61991447A2915E8A754383B32D"></a>
+## {#how_the_resource_manager_works__section_53E80B61991447A2915E8A754383B32D}
 The @@product_name@@ resource manager prevents the cache from consuming too much memory by evicting old data. If the garbage collector is unable to keep up, the resource manager refuses additions to the cache until the collector has freed an adequate amount of memory.
 
 The resource manager has two threshold settings, each expressed as a percentage of the total tenured heap. Both are disabled by default.
 
   1.  **Eviction Threshold**. Above this, the manager orders evictions for all regions with `eviction-attributes` set to `lru-heap-percentage`. This prompts dedicated background evictions, independent of any application threads and it also tells all application threads adding data to the regions to evict at least as much data as they add. The JVM garbage collector removes the evicted data, reducing heap use. The evictions continue until the manager determines that heap use is again below the eviction threshold.
 
-    The resource manager enforces eviction thresholds only on regions whose LRU eviction policies are based on heap percentage. Regions whose eviction policies based on entry count or memory size use other mechanisms to manage evictions. See [Eviction](../../developing/eviction/chapter_overview.html) for more detail regarding eviction policies.
+    The resource manager enforces eviction thresholds only on regions whose LRU eviction policies are based on heap percentage. Regions whose eviction policies based on entry count or memory size use other mechanisms to manage evictions. See [Eviction](../../developing/eviction/chapter_overview) for more detail regarding eviction policies.
 
   2.  **Critical Threshold**. Above this, all activity that might add data to the cache is refused. This threshold is set above the eviction threshold and is intended to allow the eviction and GC work to catch up. This JVM, all other JVMs in the cluster, and all clients to the system receive `LowMemoryException` for operations that would add to this critical member's heap consumption. Activities that fetch or reduce data are allowed. For a list of refused operations, see the Javadocs for the `ResourceManager` method `setCriticalHeapPercentage`.
 
@@ -46,8 +44,7 @@ When heap use exceeds the critical threshold, the manager logs an error-level me
 
 For more information, see `org.apache.geode.cache.control.ResourceManager` in the online API documentation.
 
-## <a id="how_the_resource_manager_works__section_EA5E52E65923486488A71E3E6F0DE9DA" class="no-quick-link"></a>How Background Eviction Is Performed
-
+## How Background Eviction Is Performed {#how_the_resource_manager_works__section_EA5E52E65923486488A71E3E6F0DE9DA}
 When the manager kicks off evictions:
 
 1.  From all regions in the local cache that are configured for heap LRU eviction, the background eviction manager creates a randomized list containing one entry for each partitioned region bucket (primary or secondary) and one entry for each non-partitioned region. So each partitioned region bucket is treated the same as a single, non-partitioned region.
@@ -56,13 +53,11 @@ When the manager kicks off evictions:
 
 3.  Each thread iterates round-robin over its bucket/region list, evicting one LRU entry per bucket/region until the resource manager sends a signal to stop evicting.
 
-See also [Memory Requirements for Cached Data](../../reference/topics/memory_requirements_for_cache_data.html#calculating_memory_requirements).
+See also [Memory Requirements for Cached Data](../../reference/topics/memory_requirements_for_cache_data#calculating_memory_requirements).
 
-## <a id="configuring_resource_manager_controlling_heap_use" class="no-quick-link"></a>Controlling Heap Use with the Resource Manager
-
+## Controlling Heap Use with the Resource Manager {#configuring_resource_manager_controlling_heap_use}
 Resource manager behavior is closely tied to the triggering of Garbage Collection (GC) activities, the use of concurrent garbage collectors in the JVM, and the number of parallel GC threads used for concurrency.
-
-<a id="configuring_resource_manager__section_B47A78E7BA0048C89FBBDB7441C308BE"></a>
+## {#configuring_resource_manager__section_B47A78E7BA0048C89FBBDB7441C308BE}
 The recommendations provided here for using the manager assume you have a solid understanding of your Java VM's heap management and garbage collection service.
 
 The resource manager is available for use in any @@product_name_long@@ member, but you may not want to activate it everywhere. For some members it might be better to occasionally restart after a hang or OME crash than to evict data and/or refuse distributed caching activities. Also, members that do not risk running past their memory limits would not benefit from the overhead the resource manager consumes. Cache servers are often configured to use the manager because they generally host more data and have more data activity than other members, requiring greater responsiveness in data cleanup and collection.
@@ -79,22 +74,19 @@ For the members where you want to activate the resource manager:
 
 5.  In production, keep monitoring and tuning to meet changing needs.
 
-## <a id="configuring_resource_manager__section_4949882892DA46F6BB8588FA97037F45" class="no-quick-link"></a>Configure @@product_name@@ for Heap LRU Management
-
+## Configure @@product_name@@ for Heap LRU Management {#configuring_resource_manager__section_4949882892DA46F6BB8588FA97037F45}
 The configuration terms used here are `cache.xml` elements and attributes, but you can also configure through `gfsh` and the `org.apache.geode.cache.control.ResourceManager` and `Region` APIs.
 
 1.  When starting up your server, set `initial-heap` and `max-heap` to the same value.
 
 2.  Set the `resource-manager` `critical-heap-percentage` threshold. This should be as as close to 100 as possible while still low enough so the manager's response can prevent the member from hanging or getting `OutOfMemoryError`. The threshold is zero (no threshold) by default.
 
-    **Note:** When you set this threshold, it also enables a query monitoring feature that prevents most out-of-memory exceptions when executing queries or creating indexes. See [Monitoring Queries for Low Memory](../../developing/querying_basics/monitor_queries_for_low_memory.html#topic_685CED6DE7D0449DB8816E8ABC1A6E6F).
+    **Note:** When you set this threshold, it also enables a query monitoring feature that prevents most out-of-memory exceptions when executing queries or creating indexes. See [Monitoring Queries for Low Memory](../../developing/querying_basics/monitor_queries_for_low_memory#topic_685CED6DE7D0449DB8816E8ABC1A6E6F).
 
 3.  Set the `resource-manager` `eviction-heap-percentage` threshold to a value lower than the critical threshold. This should be as high as possible while still low enough to prevent your member from reaching the critical threshold. The threshold is zero (no threshold) by default.
 
-4.  Decide which regions will participate in heap eviction and set their `eviction-attributes` to `lru-heap-percentage`. See [Eviction](../../developing/eviction/chapter_overview.html). The regions you configure for eviction should have enough data activity for the evictions to be useful and should contain data your application can afford to delete or offload to disk.
-
-<a id="configuring_resource_manager__section_5D88064B75C643B0849BBD4345A6671B"></a>
-
+4.  Decide which regions will participate in heap eviction and set their `eviction-attributes` to `lru-heap-percentage`. See [Eviction](../../developing/eviction/chapter_overview). The regions you configure for eviction should have enough data activity for the evictions to be useful and should contain data your application can afford to delete or offload to disk.
+## {#configuring_resource_manager__section_5D88064B75C643B0849BBD4345A6671B}
 gfsh example:
 
 ``` pre
@@ -114,8 +106,7 @@ cache.xml example:
 
 **Note:** The `resource-manager` specification must appear after the region declarations in your cache.xml file.
 
-## <a id="tuning_jvm_gc_parameters" class="no-quick-link"></a>Tuning the JVM's Garbage Collection Parameters
-
+## Tuning the JVM's Garbage Collection Parameters {#tuning_jvm_gc_parameters}
 Because @@product_name_long@@ is specifically designed to manipulate data held in memory, you can optimize your application's performance by tuning the way @@product_name_long@@ uses the JVM heap.
 
 See your JVM documentation for all JVM-specific settings that can be used to improve garbage collection (GC) response. Best configuration can vary depending of the use case and JVM garbage collector used.
@@ -159,8 +150,7 @@ Extensive testing is recommended before using G1 garbage collector. See your JVM
 Size of objects stored on a region must also be taken into account. If the primary heap objects you allocate are larger than 50 percent of the G1 region size (what are called "humongous" objects), this can cause the JVM to report `out of heap memory` when it has used only 50 percent of the heap.
 The default G1 region size is 1 Mb; it can be increased up to 32 Mb (with values that are always a power of 2) by using the `--J-XX:G1HeapRegionSize=VALUE` JVM parameter. If you are using large objects and want to use G1GC without increasing its heap region size (or if your values are larger than 16 Mb), then you could configure your @@product_name_long@@ regions to store the large values off-heap. However, even if you do that the large off-heap values will allocate large temporary heap values that G1GC will treat as "humongous" allocations, even though they will be short lived. Consider using CMS if most of you values will result in "humongous" allocations.
 
-## <a id="configuring_resource_manager__section_DE1CC494C2B547B083AA00821250972A" class="no-quick-link"></a>Monitor and Tune Heap LRU Configurations
-
+## Monitor and Tune Heap LRU Configurations {#configuring_resource_manager__section_DE1CC494C2B547B083AA00821250972A}
 In tuning the resource manager, your central focus should be keeping the member below the critical threshold. The critical threshold is provided to avoid member hangs and crashes, but because of its exception-throwing behavior for distributed updates, the time spent in critical negatively impacts the entire cluster. To stay below critical, tune so that the @@product_name@@ eviction and the JVM's GC respond adequately when the eviction threshold is reached.
 
 Use the statistics provided by your JVM to make sure your memory and GC settings are sufficient for your needs.
@@ -180,9 +170,8 @@ Applications that quickly put a lot of data into the cache can more easily overr
  - **Your choice of JVM:**
 Each JVM has its own GC behavior, which affects how efficiently the collector can operate, how quickly it kicks in when needed, and other factors.
 
-## <a id="resource_manager_example_configurations" class="no-quick-link"></a>Resource Manager Example Configurations
-
-<a id="resource_manager_example_configurations__section_B50C552B114D47F3A63FC906EB282024"></a>
+## Resource Manager Example Configurations {#resource_manager_example_configurations}
+## {#resource_manager_example_configurations__section_B50C552B114D47F3A63FC906EB282024}
 These examples set the critical threshold to 85 percent of the tenured heap and the eviction threshold to 75 percent. The region `bigDataStore` is configured to participate in the resource manager's eviction activities.
 
 -   gfsh Example:
@@ -222,8 +211,7 @@ These examples set the critical threshold to 85 percent of the tenured heap and 
       Region region = rf.create("bigDataStore");
     ```
 
-## <a id="resource_manager_example_configurations__section_95497FDF114A4DC8AC5D899E05E324E5" class="no-quick-link"></a>Use Case for the Example Code
-
+## Use Case for the Example Code {#resource_manager_example_configurations__section_95497FDF114A4DC8AC5D899E05E324E5}
 This is one possible scenario for the configuration used in the examples:
 
 -   A 64-bit Java VM with 8 Gb of heap space on a 4 CPU system running Linux.

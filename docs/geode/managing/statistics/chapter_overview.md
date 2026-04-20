@@ -21,23 +21,23 @@ limitations under the License.
 
 Every application and server in a cluster can access statistical data about Apache Geode operations. You can configure the gathering of statistics by using the `alter runtime` command of `gfsh` or in the `gemfire.properties` file to facilitate system analysis and troubleshooting.
 
--   **[How Statistics Work](how_statistics_work.html)**
+-   **[How Statistics Work](how_statistics_work)**
 
     Each application or cache server that joins the cluster can collect and archive statistical data for analyzing system performance.
 
--   **[Transient Region and Entry Statistics](transient_region_and_entry_statistics.html)**
+-   **[Transient Region and Entry Statistics](transient_region_and_entry_statistics)**
 
     For replicated, distributed, and local regions, Geode provides a standard set of statistics for the region and its entries.
 
--   **[Application-Defined and Custom Statistics](application_defined_statistics.html)**
+-   **[Application-Defined and Custom Statistics](application_defined_statistics)**
 
      includes interfaces for defining and maintaining your own statistics.
 
--   **[Configuring and Using Statistics](setting_up_statistics.html)**
+-   **[Configuring and Using Statistics](setting_up_statistics)**
 
     You configure statistics and statistics archiving in several different ways.
 
--   **[Viewing Archived Statistics](viewing_statistics.html)**
+-   **[Viewing Archived Statistics](viewing_statistics)**
 
 
 

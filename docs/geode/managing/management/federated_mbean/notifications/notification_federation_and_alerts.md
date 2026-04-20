@@ -25,8 +25,7 @@ All notifications emitted from managed nodes are federated to all JMX Managers i
 
 These notifications are federated and then emitted by the DistributedSystemMXBean. If you attach a `javax.management.NotificationListener` to your DistributedSystemMXBean, the NotificationListener can listen to notifications from all MemberMXBeans and all CacheServerMXBeans.
 
-## <a id="topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A__section_2909371D90764736B3AC7BE9E4BC1BE4" class="no-quick-link"></a>Attaching Listeners to MXBeans
-
+## Attaching Listeners to MXBeans {#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A__section_2909371D90764736B3AC7BE9E4BC1BE4}
 When you attach a notification listener to the DistributedSystemMXBean, the DistributedSystemMXBean then acts as the notification hub for the entire cluster. You do not have to attach a listener to each individual member or cache server MBean in order to listen to all the notifications in the cluster.
 
 The following is an example of attaching a NotificationListener to an MBean using the JMX MBeanServer API:
@@ -41,8 +40,7 @@ JMX Managers will emit notifications for all cluster members with two exceptions
 -   If you use cache.xml to define resources such as regions and disks, then notifications for these resources are not federated to the JMX Manager. In those cases, the DistributedSystemMXBean cannot emit those notifications.
 -   If a JMX Manager is started after a resource has been created, the JMX Manager cannot emit notifications for that resource.
 
-## <a id="topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A__section_7463D13112D54406953416356835E290" class="no-quick-link"></a>System Alert Notifications
-
+## System Alert Notifications {#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A__section_7463D13112D54406953416356835E290}
 System alerts are @@product_name@@ alerts wrapped within a JMX notification. The JMX Manager registers itself as an alert listener with each member of the system, and by default, it receives all messages logged with the SEVERE alert level by any node in the cluster. Consequently, the DistributedSystemMXBean will then emit notifications for these alerts on behalf of the DistributedSystem.
 
 By default, the JMX Manager registers itself to send notifications only for SEVERE level alerts. To change the alert level that the JMX Manager will send notifications for, use the `DistributedMXBean.changeAlertLevel` method. Possible alert levels to set are WARNING, ERROR, SEVERE, and NONE. After changing the level, the JMX Manager will only emit that level of log message as notifications.

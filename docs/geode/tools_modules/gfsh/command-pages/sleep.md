@@ -30,9 +30,7 @@ Delay for a specified amount of time in seconds - floating point values are allo
 ``` pre
 sleep [--time=value]
 ```
-
-<a id="concept_249C98CFF0BF4BCCA7778AE2D751F52E__table_kyd_fjf_2w"></a>
-
+## {#concept_249C98CFF0BF4BCCA7778AE2D751F52E__table_kyd_fjf_2w}
 | Name                                          | Description                 | Default Value |
 |-----------------------------------------------|-----------------------------|---------------|
 | <span class="keyword parmname">&#8209;&#8209;time </span> | Number of seconds to sleep. | 3             |

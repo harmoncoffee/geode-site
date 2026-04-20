@@ -21,19 +21,19 @@ limitations under the License.
 
 *Basic Configuration and Programming* describes how to configure cluster and cache properties for your @@product_name_long@@ installation. For your applications, it provides guidance for writing code to manage your cache and cluster connection, data regions, and data entries, including custom classes.
 
--   **[Cluster and Cache Configuration](config_concepts/chapter_overview.html)**
+-   **[Cluster and Cache Configuration](config_concepts/chapter_overview)**
 
     To work with your @@product_name_long@@ applications, you use a combination of configuration files and application code.
 
--   **[Cache Management](the_cache/chapter_overview.html)**
+-   **[Cache Management](the_cache/chapter_overview)**
 
     The @@product_name@@ cache is the entry point to @@product_name@@ caching management. @@product_name@@ provides different APIs and XML configuration models to support the behaviors of different members.
 
--   **[Data Regions](data_regions/chapter_overview.html)**
+-   **[Data Regions](data_regions/chapter_overview)**
 
     The region is the core building block of the @@product_name_long@@ cluster. All cached data is organized into data regions and you do all of your data puts, gets, and querying activities against them.
 
--   **[Data Entries](data_entries_custom_classes/chapter_overview.html)**
+-   **[Data Entries](data_entries_custom_classes/chapter_overview)**
 
     The data entry is the key/value pair where you store your data. You can manage your entries individually and in batches. To use domain objects for your entry values and keys, you need to follow @@product_name_long@@ requirements for data storage and distribution.
 

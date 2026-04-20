@@ -21,9 +21,9 @@ limitations under the License.
 
 Echo the given text, which may include system and user variables.
 
-The command can also echo gfsh environment properties (using '[set variable](set.html)' command) if variable name is pre-pended with '$' - like UNIX.
+The command can also echo gfsh environment properties (using '[set variable](set)' command) if variable name is pre-pended with '$' - like UNIX.
 
-See [Useful gfsh Shell Variables](../useful_gfsh_shell_variables.html#concept_731ECA5E40E943CBA5C1198A0745D8EE) for a list of gfsh environment variables.
+See [Useful gfsh Shell Variables](../useful_gfsh_shell_variables#concept_731ECA5E40E943CBA5C1198A0745D8EE) for a list of gfsh environment variables.
 
 **Availability:** Online or offline.
 
@@ -32,9 +32,7 @@ See [Useful gfsh Shell Variables](../useful_gfsh_shell_variables.html#concept_73
 ``` pre
 echo [--string=value]
 ```
-
-<a id="concept_2828E2617F6A49D7BB811917BE268704__table_uwf_sch_2w"></a>
-
+## {#concept_2828E2617F6A49D7BB811917BE268704__table_uwf_sch_2w}
 | Name                                            | Description                                                                                                  |
 |-------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;string </span> | String to be echoed. For example, `SYS_USER                                 variable is set to ${SYS_USER}`. |

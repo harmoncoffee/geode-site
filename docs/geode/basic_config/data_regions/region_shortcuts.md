@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 @@product_name@@ provides region shortcut settings, with preset region configurations for the most common region types. For the easiest configuration, start with a shortcut setting and customize as needed. You can also store your own custom configurations in the cache for use by multiple regions.
-
-<a id="region_shortcuts__section_D9E58754D2B0435FA2986DBBF3063D4C"></a>
+## {#region_shortcuts__section_D9E58754D2B0435FA2986DBBF3063D4C}
 You configure automated management of data regions and their entries through region shortcuts and region attributes. These region configuration settings determine such things as where the data resides, how the region is managed in memory, reliability behavior, and the automatic loading, distribution, and expiration of data entries.
 
 **Note:**
@@ -57,8 +56,7 @@ You can create your own named attributes as needed, by providing an `id` in your
     </region>
     ```
 
-## <a id="region_shortcuts__section_20548383511141B19EBC053E36877B1A" class="no-quick-link"></a>Shortcut Attribute Options
-
+## Shortcut Attribute Options {#region_shortcuts__section_20548383511141B19EBC053E36877B1A}
 You can select the most common region attributes settings from @@product_name@@â€™s predefined named region attributes in these classes:
 
 -   **`org.apache.geode.cache.RegionShortcut`**. For peers and servers.
@@ -66,12 +64,11 @@ You can select the most common region attributes settings from @@product_name@@â
 
 Shortcut attributes are a convenience only. They are just named attributes that @@product_name@@ has already stored for you. You can override their settings by storing new attributes with the same id as the predefined attributes.
 
-For a full list of all available region shortcuts, see [Region Shortcuts Quick Reference](../../reference/topics/region_shortcuts_table.html#reference_ufj_5kz_4k).
+For a full list of all available region shortcuts, see [Region Shortcuts Quick Reference](../../reference/topics/region_shortcuts_table#reference_ufj_5kz_4k).
 
 The `org.apache.geode.cache.RegionShortcut` Javadocs give complete listings of the options.
 
-## <a id="region_shortcuts__section_D0975C76572E41F79C1A6EE7CF371251" class="no-quick-link"></a>RegionShortcuts for Peers and Servers
-
+## RegionShortcuts for Peers and Servers {#region_shortcuts__section_D0975C76572E41F79C1A6EE7CF371251}
 These are the primary options available in the region shortcut settings. The names listed appear in the shortcut identifier alone or in combination, like "`PARTITION`" in `PARTITION`, `PARTITION_PROXY`, and `PARTITION_REDUNDANT`.
 
 **Cache Data Storage Mode**
@@ -94,8 +91,7 @@ You can specify these alone or in combination:
 -   **`PERSISTENT`**. Backs up all data to disk, in addition to storing it in memory.
 -   **`OVERFLOW`**. Moves data out of memory and on to disk, when memory use becomes too high.
 
-## <a id="region_shortcuts__section_BD136ACEB8274B17ACFB9A5954D116E4" class="no-quick-link"></a>ClientRegionShortcuts for Clients
-
+## ClientRegionShortcuts for Clients {#region_shortcuts__section_BD136ACEB8274B17ACFB9A5954D116E4}
 These are the primary options available in the client region shortcut settings. The names listed appear in the shortcut identifier alone or in combination, like "`PROXY`" in `PROXY` and `CACHING_PROXY`.
 
 **Communication with Servers and Data Storage**

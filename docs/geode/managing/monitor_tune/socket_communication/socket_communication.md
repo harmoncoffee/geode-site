@@ -23,24 +23,24 @@ limitations under the License.
 
 The adjustments you make to tune your @@product_name@@ communication may run up against operating system limits. If this happens, check with your system administrator about adjusting the operating system settings.
 
-All of the settings discussed here are listed as `gemfire.properties` and `cache.xml` settings. They can also be configured through the API and some can be configured at the command line. Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../basic_config/book_intro.html).
+All of the settings discussed here are listed as `gemfire.properties` and `cache.xml` settings. They can also be configured through the API and some can be configured at the command line. Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../basic_config/book_intro).
 
--   **[Setting Socket Buffer Sizes](socket_communication_setting_socket_buffer_sizes.html)**
+-   **[Setting Socket Buffer Sizes](socket_communication_setting_socket_buffer_sizes)**
 
     When you determine buffer size settings, you try to strike a balance between communication needs and other processing.
 
--   **[Ephemeral TCP Port Limits](socket_communication_ephemeral_tcp_port_limits.html)**
+-   **[Ephemeral TCP Port Limits](socket_communication_ephemeral_tcp_port_limits)**
 
     By default, Windows’ ephemeral ports are within the range 1024-4999, inclusive.You can increase the range.
 
--   **[Making Sure You Have Enough Sockets](socket_communication_have_enough_sockets.html)**
+-   **[Making Sure You Have Enough Sockets](socket_communication_have_enough_sockets)**
 
     The number of sockets available to your applications is governed by operating system limits.
 
--   **[TCP/IP KeepAlive Configuration](socket_tcp_keepalive.html)**
+-   **[TCP/IP KeepAlive Configuration](socket_tcp_keepalive)**
 
     @@product_name@@ supports TCP KeepAlive to prevent socket connections from being timed out.
 
--   **[TCP/IP Peer-to-Peer Handshake Timeouts](socket_communication_tcpip_p2p_handshake_timeouts.html)**
+-   **[TCP/IP Peer-to-Peer Handshake Timeouts](socket_communication_tcpip_p2p_handshake_timeouts)**
 
     You can alleviate connection handshake timeouts for TCP/IP connections by increasing the connection handshake timeout interval with the system property p2p.handshakeTimeoutMs.

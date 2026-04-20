@@ -21,11 +21,11 @@ limitations under the License.
 
 Use expiration to keep data current and to reduce region size by removing stale entries. Expiration actions are triggered by time-based thresholds.
 
--   **[How Expiration Works](how_expiration_works.html)**
+-   **[How Expiration Works](how_expiration_works)**
 
     Expiration removes old entries and entries that you are not using. You can choose whether expired entries are invalidated or destroyed.
 
--   **[Configure Data Expiration](configuring_data_expiration.html)**
+-   **[Configure Data Expiration](configuring_data_expiration)**
 
     Configure the type of expiration and the expiration action to use.
 

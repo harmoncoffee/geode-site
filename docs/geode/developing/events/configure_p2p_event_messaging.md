@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 You can receive events from cluster peers for any region that is not a local region. Local regions receive only local cache events.
-
-<a id="configuring_event_distribution__section_7D5B1F0C0EF24E58BB3C335CB4EA9A3C"></a>
+## {#configuring_event_distribution__section_7D5B1F0C0EF24E58BB3C335CB4EA9A3C}
 Peer distribution is done according to the region's configuration.
 
 -   Replicated regions always receive all events from peers and require no further configuration. Replicated regions are configured using the `REPLICATE` region shortcut settings.
@@ -47,4 +46,4 @@ Peer distribution is done according to the region's configuration.
     For partitioned regions, this only affects the receipt of events, as the data is stored according to the region partitioning. Partitioned regions with interest policy of `all` can create network bottlenecks, so if you can, run listeners in every member that hosts the partitioned region data and use the `cache-content` interest policy.
 
 **Note:**
-You can also configure Regions using the gfsh command-line interface. See [Region Commands](../../tools_modules/gfsh/quick_ref_commands_by_area.html#topic_EF03119A40EE492984F3B6248596E1DD).
+You can also configure Regions using the gfsh command-line interface. See [Region Commands](../../tools_modules/gfsh/quick_ref_commands_by_area#topic_EF03119A40EE492984F3B6248596E1DD).

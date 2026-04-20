@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Peer members discover each other using one or more locators.
-
-<a id="setting_up_membership__section_8C0147A16D5A488FB9C0EB765BDEC07B"></a>
+## {#setting_up_membership__section_8C0147A16D5A488FB9C0EB765BDEC07B}
 The `gemfire.properties` file can list the locators:
 
 ``` pre

@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 You can use distribution with and without acknowledgment, or global locking for your region distribution. Regions that are configured for distribution with acknowledgment can also be configured to resolve concurrent updates consistently across all @@product_name@@ members that host the region.
-
-<a id="choosing_level_of_dist__section_F2528B151DD54CEFA05C4BA655BCF016"></a>
+## {#choosing_level_of_dist__section_F2528B151DD54CEFA05C4BA655BCF016}
 Each distributed region must have the same scope and concurrency checking setting throughout the cluster.
 
 Distributed scope is provided at three levels:

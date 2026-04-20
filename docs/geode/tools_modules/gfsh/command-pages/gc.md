@@ -34,9 +34,7 @@ This can cause slow-responding members to be perceived as unresponsive and disco
 ``` pre
 gc [--groups=value(,value)*] [--member=value]
 ```
-
-<a id="concept_95E57FE81F5244FB810C58816212323E__table_dz5_bbh_2w"></a>
-
+## {#concept_95E57FE81F5244FB810C58816212323E__table_dz5_bbh_2w}
 | Name                                           | Description                                                                 |
 |------------------------------------------------|-----------------------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;groups</span>  | One or more group(s) of members on which garbage collection will be forced. |

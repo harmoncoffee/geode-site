@@ -18,22 +18,21 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="concept_5B8BA904DF2A41BEAA057017777D4E90__section_33F0FD791A2448CB812E8397828B33C2"></a>
+## {#concept_5B8BA904DF2A41BEAA057017777D4E90__section_33F0FD791A2448CB812E8397828B33C2}
 This section covers the following querying language features:
 
--   **[Supported Character Sets](../querying_basics/supported_character_sets.html)**
+-   **[Supported Character Sets](supported_character_sets)**
 
--   **[Supported Keywords](supported_keywords.html)**
+-   **[Supported Keywords](supported_keywords)**
 
--   **[Case Sensitivity](case_sensitivity.html)**
+-   **[Case Sensitivity](case_sensitivity)**
 
--   **[Comments in Query Strings](../querying_basics/comments_in_query_strings.html)**
+-   **[Comments in Query Strings](comments_in_query_strings)**
 
--   **[Query Language Grammar](../querying_basics/query_grammar_and_reserved_words.html)**
+-   **[Query Language Grammar](query_grammar_and_reserved_words)**
 
--   **[Operators](operators.html)**
+-   **[Operators](operators)**
 
--   **[Reserved Words](../querying_basics/reserved_words.html)**
+-   **[Reserved Words](reserved_words)**
 
--   **[Supported Literals](literals.html)**
+-   **[Supported Literals](literals)**

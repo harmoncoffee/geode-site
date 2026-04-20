@@ -23,14 +23,14 @@ Cluster and cache operations can be restricted, intercepted and
 modifed, or completely blocked based on configured access rights set for
 the various cluster components. 
 
--   **[Implementing Authorization](implementing_authorization.html)**
+-   **[Implementing Authorization](implementing_authorization)**
 
     To use authorization for client/server systems, your client connections must be authenticated by their servers.
 
--   **[Method Invocation Authorizers](method_invocation_authorizers.html)**
+-   **[Method Invocation Authorizers](method_invocation_authorizers)**
 
     Authorizers used during query execution, how to configure them and how to implement your own.
 
--   **[Authorization Examples](authorization_example.html)**
+-   **[Authorization Examples](authorization_example)**
 
     This topic discusses the authorization examples provided in the product under `geode-core/src/main/java/org/apache/geode/examples/security`.

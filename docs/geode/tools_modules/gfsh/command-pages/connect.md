@@ -20,8 +20,7 @@ limitations under the License.
 -->
 
 Connect to a JMX manager either directly or via a locator.
-
-<a id="concept_C2DCEE6743304549825C9B62E66DBADF__section_C27BE964CE554180A65968DBEBF50B23"></a>
+## {#concept_C2DCEE6743304549825C9B62E66DBADF__section_C27BE964CE554180A65968DBEBF50B23}
 If you are connecting via a locator, and a JMX manager does not already exist, the locator starts one.
 
 gfsh connects as a discovery client to the locator service and asks where the JMX Manager is. The
@@ -45,8 +44,7 @@ connect [--locator=value] [--jmx-manager=value] [--use-http(=value)?] [--url=val
     [--protocols=value] [--security-properties-file=value] [--use-ssl(=value)?]
     [--skip-ssl-validation(=value)?]
 ```
-
-<a id="concept_C2DCEE6743304549825C9B62E66DBADF__table_B25D38C67FA047EB8F00A521573F1375"></a>
+## {#concept_C2DCEE6743304549825C9B62E66DBADF__table_B25D38C67FA047EB8F00A521573F1375}
 **Table 1. Connect Parameters**
 
 | Name | Description | Default |

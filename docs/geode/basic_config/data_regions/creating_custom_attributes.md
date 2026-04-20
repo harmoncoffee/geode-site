@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Use custom attributes to store information related to your region or its entries in your cache. These attributes are only visible to the local application and are not distributed.
-
-<a id="creating_custom_attributes__section_A8752F55C157480FAF435738D6244503"></a>
+## {#creating_custom_attributes__section_A8752F55C157480FAF435738D6244503}
 You can define custom user attributes so you can associate data with the region or entry and retrieve it later. Unlike the other configuration settings, these attributes are used only by your application.
 
 **Note:**
@@ -59,8 +58,7 @@ public class PortfolioDBWriter extends CacheWriterAdapter {
 }
 ```
 
-## <a id="creating_custom_attributes__section_A5CB456E4E96410584F8856EAFB5BB83" class="no-quick-link"></a>Limitations and Alternatives
-
+## Limitations and Alternatives {#creating_custom_attributes__section_A5CB456E4E96410584F8856EAFB5BB83}
 User attributes are not distributed to other processes, so if you need to define each attribute in every process that uses the region or entry. You need to update every instance of the region separately. User attributes are not stored to disk for region persistence or overflow, so they cannot be recovered to reinitialize the region.
 
 If your application requires features not supported by user attributes, an alternative is to create a separate region to hold this data instead. For instance, a region, AttributesRegion, defined by you, could use region names as keys and the user attributes as values. Changes to AttributesRegion would be distributed to other processes, and you could configure the region for persistence or overflow if needed.

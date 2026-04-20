@@ -28,9 +28,7 @@ Define an index that can be used when executing queries. Then, you can execute a
 ``` pre
 define index --name=value --expression=value --region=value [--type=value]
 ```
-
-<a id="concept_B70E7B27CEF1496CB3B7217B15FF4726__table_B6D7C12CE550464CB7D6B2159BD94A1E"></a>
-
+## {#concept_B70E7B27CEF1496CB3B7217B15FF4726__table_B6D7C12CE550464CB7D6B2159BD94A1E}
 | Name                                               | Description                                                                            | Default Value |
 |----------------------------------------------------|----------------------------------------------------------------------------------------|---------------|
 | <span class="keyword parmname">&#8209;&#8209;name </span>      | *Required.* Name of the index to define.                                               | Â              |

@@ -36,8 +36,7 @@ The Apache Lucene integration:
 For more details, see Javadocs for the classes and interfaces that implement Apache Lucene indexes and searches, including
 `LuceneService`, `LuceneSerializer`, `LuceneIndexFactory`, `LuceneQuery`, `LuceneQueryFactory`, `LuceneQueryProvider`, and `LuceneResultStruct`.
 
-# <a id="using-the-apache-lucene-integration" class="no-quick-link"></a>Using the Apache Lucene Integration
-
+# Using the Apache Lucene Integration {#using-the-apache-lucene-integration}
 You can interact with Apache Lucene indexes through a Java API,
 through the `gfsh` command-line utility, or by means of the `cache.xml` configuration file.
 
@@ -48,8 +47,7 @@ through the `gfsh` command-line utility, or by means of the `cache.xml` configur
 - A Lucene index applies to only one region. Multiple indexes can be defined for a single region.
 - Heterogeneous objects in a single region are supported.
 
-## <a id="lucene-index-create" class="no-quick-link"></a>Creating a Lucene Index
-
+## Creating a Lucene Index {#lucene-index-create}
 <p class="note">
 <strong>Note:</strong> Create the Lucene index <strong>before</strong> creating the region.
 </p>
@@ -78,8 +76,7 @@ regarding Lucene indexes for nested objects.
 
 As a third alternative, you can create your own serializer, which must implement the `LuceneSerializer` interface.
 
-### <a id="api-create-example" class="no-quick-link"></a>Creating a Lucene Index: Java API Example
-
+### Creating a Lucene Index: Java API Example {#api-create-example}
 The following example uses the Java API to create a Lucene index with two fields.
 No analyzers are specified, so the default analyzer handles both fields.
 No serializer is specified, so the default serializer is used.
@@ -99,9 +96,8 @@ Region region = cache.createRegionFactory(RegionShortcut.PARTITION)
   .create(regionName);
 ```
 
-### <a id="gfsh-create-example" class="no-quick-link"></a>Creating a Lucene Index: Gfsh Example
-
-In gfsh, use the [create lucene index](gfsh/command-pages/create.html#create_lucene_index) command to create Lucene indexes.
+### Creating a Lucene Index: Gfsh Example {#gfsh-create-example}
+In gfsh, use the [create lucene index](gfsh/command-pages/create#create_lucene_index) command to create Lucene indexes.
 
 The following example creates an index with two fields. The default analyzer handles both fields, and the default serializer is used.
 
@@ -117,8 +113,7 @@ gfsh>create lucene index --name=indexName --region=/orders
   --field=customer,tags --analyzer=DEFAULT,org.apache.lucene.analysis.bg.BulgarianAnalyzer
 ```
 
-### <a id="xml-configuration" class="no-quick-link"></a>Creating a Lucene Index: XML Example
-
+### Creating a Lucene Index: XML Example {#xml-configuration}
 This XML configuration file specifies a Lucene index with three fields and three analyzers:
 
 ``` pre
@@ -146,8 +141,7 @@ This XML configuration file specifies a Lucene index with three fields and three
 </cache>
 ```
 
-## <a id="using-flatformatserializer" class="no-quick-link"></a>Using FlatFormatSerializer to Index Fields within Nested Objects
-
+## Using FlatFormatSerializer to Index Fields within Nested Objects {#using-flatformatserializer}
 @@product_name@@ supplies a built-in serializer, `org.apache.geode.cache.lucene.FlatFormatSerializer`
 that renders collections and nested objects as searchable fields, which you can access using the syntax
 `fieldnameAtLevel1.fieldnameAtLevel2` for both indexing and querying.
@@ -241,19 +235,16 @@ gfsh>search lucene --name=customerIndex --region=Customer
   --defaultField=name
 ```
 
-## <a id="lucene-index-query" class="no-quick-link"></a>Queries
-
-### <a id="gfsh-query-example" class="no-quick-link"></a>Querying a Lucene Index: Gfsh Example
-
-For details, see the [gfsh search lucene](gfsh/command-pages/search.html#search_lucene") command reference page.
+## Queries {#lucene-index-query}
+### Querying a Lucene Index: Gfsh Example {#gfsh-query-example}
+For details, see the [gfsh search lucene](gfsh/command-pages/search#search_lucene") command reference page.
 
 ``` pre
 gfsh>search lucene --name=indexName --region=/orders --queryString="Jones*"
    --defaultField=customer
 ```
 
-### <a id="api-query-example" class="no-quick-link"></a>Querying a Lucene Index: Java API Example
-
+### Querying a Lucene Index: Java API Example {#api-query-example}
 ``` pre
 LuceneQuery<String, Person> query = luceneService.createLuceneQueryFactory()
   .create(indexName, regionName, "name:John AND zipcode:97006", defaultField);
@@ -261,14 +252,12 @@ LuceneQuery<String, Person> query = luceneService.createLuceneQueryFactory()
 Collection<Person> results = query.findValues();
 ```
 
-## <a id="lucene-index-destroy" class="no-quick-link"></a>Destroying an Index
-
+## Destroying an Index {#lucene-index-destroy}
 Since a region-destroy operation does not cause the destruction
 of any Lucene indexes,
 destroy any Lucene indexes prior to destroying the associated region.
 
-### <a id="API-destroy-example" class="no-quick-link"></a>Destroying a Lucene Index: Java API Example
-
+### Destroying a Lucene Index: Java API Example {#API-destroy-example}
 ``` pre
 luceneService.destroyIndex(indexName, regionName);
 ```
@@ -282,9 +271,8 @@ java.lang.IllegalStateException: The parent region [/orders] in colocation chain
  destroyed
 ...
 ```
-### <a id="gfsh-destroy-example" class="no-quick-link"></a>Destroying a Lucene Index: Gfsh Example
-
-For details, see the [gfsh destroy lucene index](gfsh/command-pages/destroy.html#destroy_lucene_index") command reference page.
+### Destroying a Lucene Index: Gfsh Example {#gfsh-destroy-example}
+For details, see the [gfsh destroy lucene index](gfsh/command-pages/destroy#destroy_lucene_index") command reference page.
 
 The error message that results from an attempt to destroy a region
 prior to destroying its associated Lucene index
@@ -295,8 +283,7 @@ Region /orders cannot be destroyed because it defines Lucene index(es)
   [/ordersIndex]. Destroy all Lucene indexes before destroying the region.
 ```
 
-## <a id="lucene-index-change" class="no-quick-link"></a>Changing an Index
-
+## Changing an Index {#lucene-index-change}
 Changing an index requires rebuilding it.
 Implement these steps to change an index:
 
@@ -325,17 +312,15 @@ invoke callbacks will be similar to this code fragment:
     ```
 7. Alter the region to add the user-defined business logic callbacks.
 
-## <a id="addl-gfsh-api" class="no-quick-link"></a>Additional Gfsh Commands
-
-See the [gfsh describe lucene index](gfsh/command-pages/describe.html#describe_lucene_index") command reference page for the command that prints details about
+## Additional Gfsh Commands {#addl-gfsh-api}
+See the [gfsh describe lucene index](gfsh/command-pages/describe#describe_lucene_index") command reference page for the command that prints details about
 a specific index.
 
-See the [gfsh list lucene index](gfsh/command-pages/list.html#list_lucene_index") command reference page
+See the [gfsh list lucene index](gfsh/command-pages/list#list_lucene_index") command reference page
 for the command that prints details about the 
 Lucene indexes created for all members.
 
-# <a id="LuceneRandC" class="no-quick-link"></a>Requirements and Caveats
-
+# Requirements and Caveats {#LuceneRandC}
 - Join queries between regions are not supported.
 - Lucene indexes are stored in on-heap memory only.
 - Lucene queries from within transactions are not supported.

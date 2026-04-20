@@ -23,8 +23,7 @@ limitations under the License.
 
 An `AsyncEventListener` asynchronously processes batches of events after they have been applied to a region. You can use an `AsyncEventListener` implementation as a write-behind cache event handler to synchronize region updates with a database.
 
-## <a id="implementing_write_behind_cache_event_handling__section_35B3ADC77E1147468A568E49C8C308E1" class="no-quick-link"></a>How an AsyncEventListener Works
-
+## How an AsyncEventListener Works {#implementing_write_behind_cache_event_handling__section_35B3ADC77E1147468A568E49C8C308E1}
 An `AsyncEventListener` instance is serviced by its own dedicated thread in which a callback method is invoked. Events that update a region are placed in an internal `AsyncEventQueue`, and one or more threads dispatch batches of events at a time to the listener implementation.
 
 You can configure an `AsyncEventQueue` to be either serial or parallel. A serial queue is deployed to one @@product_name@@ member, and it delivers all of a region's events, in order of occurrence, to a configured `AsyncEventListener` implementation. A parallel queue is deployed to multiple @@product_name@@ members, and each instance of the queue delivers region events, possibly simultaneously, to a local `AsyncEventListener` implementation.
@@ -57,8 +56,7 @@ These operations are not distributed:
 -   Expiration actions
 -   Expiration destroy, if the `forward-expiration-destroy` attribute is set to `false`. The default value is `false`.
 
-## <a id="implementing_write_behind_cache_event_handling__section_6FDBAFCB9C194EB0AF0822A509F2F9F2" class="no-quick-link"></a>Guidelines for Using an AsyncEventListener
-
+## Guidelines for Using an AsyncEventListener {#implementing_write_behind_cache_event_handling__section_6FDBAFCB9C194EB0AF0822A509F2F9F2}
 Review the following guidelines before using an AsyncEventListener:
 
 -   If you use an `AsyncEventListener` to implement a write-behind cache listener, your code should check for the possibility that an existing database connection may have been closed due to an earlier exception. For example, check for `Connection.isClosed()` in a catch block and re-create the connection as needed before performing further operations.
@@ -70,8 +68,7 @@ Review the following guidelines before using an AsyncEventListener:
 -   To preserve pending events through member shutdowns, configure @@product_name@@ to persist the internal queue of the `AsyncEventListener` to an available disk store. By default, any pending events that reside in the internal queue of an `AsyncEventListener` are lost if the active listener's member shuts down.
 -   To ensure high availability and reliable delivery of events, configure the event queue to be both persistent and redundant.
 
-## <a id="implementing_write_behind_cache_event_handling__section_FB3EB382E37945D9895E09B47A64D6B9" class="no-quick-link"></a>Implementing an AsyncEventListener
-
+## Implementing an AsyncEventListener {#implementing_write_behind_cache_event_handling__section_FB3EB382E37945D9895E09B47A64D6B9}
 To receive region events for processing, you create a class that implements the `AsyncEventListener` interface. The `processEvents` method in your listener receives a list of queued `AsyncEvent` objects in each batch.
 
 Each `AsyncEvent` object contains information about a region event, such as the name of the region where the event occurred, the type of region operation, and the affected key and value.
@@ -94,9 +91,8 @@ class MyAsyncEventListener implements AsyncEventListener {
 }
 ```
 
-## <a id="implementing_write_behind_cache_event_handling__section_AB80262CFB6D4867B52A5D6D880A5294" class="no-quick-link"></a>Processing AsyncEvents
-
-Use the [AsyncEventListener.processEvents](/org/apache/geode/cache/asyncqueue/AsyncEventListener.html) method to process AsyncEvents. This method is called asynchronously when events are queued to be processed. The size of the list reflects the number of batch events where batch size is defined in the AsyncEventQueueFactory. The `processEvents` method returns a boolean; true if the AsyncEvents are processed correctly, and false if any events fail processing. As long as `processEvents` returns false, @@product_name@@ continues to re-try processing the events.
+## Processing AsyncEvents {#implementing_write_behind_cache_event_handling__section_AB80262CFB6D4867B52A5D6D880A5294}
+Use the [AsyncEventListener.processEvents](/org/apache/geode/cache/asyncqueue/AsyncEventListener) method to process AsyncEvents. This method is called asynchronously when events are queued to be processed. The size of the list reflects the number of batch events where batch size is defined in the AsyncEventQueueFactory. The `processEvents` method returns a boolean; true if the AsyncEvents are processed correctly, and false if any events fail processing. As long as `processEvents` returns false, @@product_name@@ continues to re-try processing the events.
 
 You can use the `getDeserializedValue` method to obtain cache values for entries that have been updated or created. Since the `getDeserializedValue` method will return a null value for destroyed entries, you should use the `getKey` method to obtain references to cache objects that have been destroyed. Here's an example of processing AsyncEvents:
 
@@ -132,13 +128,12 @@ public boolean processEvents(@SuppressWarnings("rawtypes") List<AsyncEvent> list
      }  
 ```
 
-## <a id="implementing_write_behind_cache_event_handling__section_9286E8C6B3C54089888E1680B4F43692" class="no-quick-link"></a>Configuring an AsyncEventListener
-
+## Configuring an AsyncEventListener {#implementing_write_behind_cache_event_handling__section_9286E8C6B3C54089888E1680B4F43692}
 To configure a write-behind cache listener, you first configure an asynchronous queue to dispatch the region events, and then create the queue with your listener implementation. You then assign the queue to a region in order to process that region's events.
 
 **Procedure**
 
-1.  Configure a unique `AsyncEventQueue` with the name of your listener implementation. You can optionally configure the queue for parallel operation, persistence, batch size, and maximum memory size. See [WAN Configuration](../../reference/topics/elements_ref.html#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3) for more information.
+1.  Configure a unique `AsyncEventQueue` with the name of your listener implementation. You can optionally configure the queue for parallel operation, persistence, batch size, and maximum memory size. See [WAN Configuration](../../reference/topics/elements_ref#topic_7B1CABCAD056499AA57AF3CFDBF8ABE3) for more information.
 
     **gfsh configuration**
 
@@ -153,7 +148,7 @@ To configure a write-behind cache listener, you first configure an asynchronous 
     [--persistent(=value)?] [--disk-store=value] [--max-queue-memory=value] [--listener-param=value(,value)*]
     ```
 
-    For more information, see [create async-event-queue](../../tools_modules/gfsh/command-pages/create.html#topic_ryz_pb1_dk).
+    For more information, see [create async-event-queue](../../tools_modules/gfsh/command-pages/create#topic_ryz_pb1_dk).
 
     **cache.xml Configuration**
 
@@ -192,7 +187,7 @@ To configure a write-behind cache listener, you first configure an asynchronous 
 
 2.  If you are using a parallel `AsyncEventQueue`, the gfsh example above requires no alteration, as gfsh applies to all members. If using cache.xml or the Java API to configure your `AsyncEventQueue`, repeat the above configuration in each @@product_name@@ member that will host the region. Use the same ID and configuration settings for each queue configuration.
     **Note:**
-    You can ensure other members use the sample configuration by using the cluster configuration service available in gfsh. See [Overview of the Cluster Configuration Service](../../configuring/cluster_config/gfsh_persist.html).
+    You can ensure other members use the sample configuration by using the cluster configuration service available in gfsh. See [Overview of the Cluster Configuration Service](../../configuring/gfsh_persist).
 
 3.  On each @@product_name@@ member that hosts the `AsyncEventQueue`, assign the queue to each region that you want to use with the `AsyncEventListener` implementation.
 
@@ -236,12 +231,12 @@ To configure a write-behind cache listener, you first configure an asynchronous 
     mutator.addAsyncEventQueueId("sampleQueue");        
     ```
 
-    See the [@@product_name@@ API documentation](/org/apache/geode/cache/AttributesMutator.html) for more information.
+    See the [@@product_name@@ API documentation](/org/apache/geode/cache/AttributesMutator) for more information.
 
 4.  Optionally configure persistence and conflation for the queue.
     **Note:**
     You must configure your AsyncEventQueue to be persistent if you are using persistent data regions. Using a non-persistent queue with a persistent region is not supported.
 
-5.  Optionally configure multiple dispatcher threads and the ordering policy for the queue using the instructions in [Configuring Dispatcher Threads and Order Policy for Event Distribution](configuring_gateway_concurrency_levels.html).
+5.  Optionally configure multiple dispatcher threads and the ordering policy for the queue using the instructions in [Configuring Dispatcher Threads and Order Policy for Event Distribution](configuring_gateway_concurrency_levels).
 
 The `AsyncEventListener` receives events from every region configured with the associated `AsyncEventQueue`.

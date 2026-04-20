@@ -26,8 +26,7 @@ To use a data loader:
 
 2. Configure and deploy the implementation.
 
-## <a id="implementing_data_loaders__section_88076AF5EC184FE88AAF4C806A0CA9DF" class="no-quick-link"></a>Implement the CacheLoader Interface
-
+## Implement the CacheLoader Interface {#implementing_data_loaders__section_88076AF5EC184FE88AAF4C806A0CA9DF}
 For a get operation, if the key is not in the cache,
 the thread serving the get operation invokes the `CacheLoader.load` method.
 Implement `load` to return the value for the key,
@@ -148,7 +147,7 @@ gfsh>deploy --jars=/var/data/lib/myLoader.jar
 
 We do not generally use the gfsh deploy command when
 the servers host replicated regions,
-as detailed in [How Data Loaders Work](how_data_loaders_work.html).
+as detailed in [How Data Loaders Work](how_data_loaders_work).
 
 Use gfsh to apply the configuration of the `CacheLoader` implementation
 to the region with `gfsh create region` or `gfsh alter region`.

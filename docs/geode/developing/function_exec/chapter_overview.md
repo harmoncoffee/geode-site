@@ -33,9 +33,9 @@ The function execution service provides solutions for a variety of use cases, in
 
 Check the following sections for more information:
 
--   **[How Function Execution Works](how_function_execution_works.html)**
+-   **[How Function Execution Works](how_function_execution_works)**
 
--   **[Executing a Function in Apache Geode ](function_execution.html)**
+-   **[Executing a Function in Apache Geode ](function_execution)**
 
 
 

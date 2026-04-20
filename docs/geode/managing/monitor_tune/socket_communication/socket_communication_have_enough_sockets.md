@@ -19,8 +19,7 @@ The number of sockets available to your applications is governed by operating sy
 
 Sockets use file descriptors and the operating system’s view of your application’s socket use is expressed in terms of file descriptors. There are two limits, one on the maximum descriptors available to a single application and the other on the total number of descriptors available in the system. If you get error messages telling you that you have too many files open, you might be hitting the operating system limits with your use of sockets. Your system administrator might be able to increase the system limits so that you have more available. You can also tune your members to use fewer sockets for their outgoing connections. This section discusses socket use in @@product_name@@ and ways to limit socket consumption in your @@product_name@@ members.
 
-## <a id="socket_comm__section_31B4EFAD6F384AB1BEBCF148D3DEA514" class="no-quick-link"></a>Socket Sharing
-
+## Socket Sharing {#socket_comm__section_31B4EFAD6F384AB1BEBCF148D3DEA514}
 You can configure socket sharing for peer-to-peer:
 
 - **Peer-to-peer**. You can configure whether your members share sockets both at the application
@@ -31,15 +30,13 @@ recommend that you use the default value of `false`.
     At the thread level, developers can override this setting by using the DistributedSystem API method `setThreadsSocketPolicy`. You might want to enable socket sharing at the application level and then have threads that do a lot of cache work take sole ownership of their sockets. Make sure to program these threads to release their sockets as soon as possible using the `releaseThreadsSockets` method, rather than waiting for a timeout or thread death.
 
 
-## <a id="socket_comm__section_6189D4E5E14F47E7882354603FBCE471" class="no-quick-link"></a>Socket Lease Time
-
+## Socket Lease Time {#socket_comm__section_6189D4E5E14F47E7882354603FBCE471}
 You can force the release of an idle socket connection for peer-to-peer and client-to-server connections:
 
 -   **Peer-to-peer**. For peer-to-peer threads that do not share sockets, you can use the `socket-lease-time` to make sure that no socket sits idle for too long. When a socket that belongs to an individual thread remains unused for this time period, the system automatically closes that socket. The next time the thread needs a socket, it creates a new socket.
 -   **Client**. For client connections, you can affect the same lease-time behavior by setting the pool `idle-timeout`.
 
-## <a id="socket_comm__section_936C6562C0034A2EAC9A63FFE9FDAC36" class="no-quick-link"></a>Calculating Connection Requirements
-
+## Calculating Connection Requirements {#socket_comm__section_936C6562C0034A2EAC9A63FFE9FDAC36}
 Each type of member has its own connection requirements. Clients need connections to their servers, peers need connections to peers, and so on. Many members have compound roles. Use these guidelines to figure each member’s socket needs and to calculate the combined needs of members that run on a single host system.
 
 A member’s socket use is governed by a number of factors, including:
@@ -53,8 +50,7 @@ The socket requirements described here are worst-case. Generally, it is not prac
 
 To calculate any member’s socket requirements, add up the requirements for every category that applies to the member. For example, a cache server running in a cluster with clients connected to it has both peer-to-peer and server socket requirements.
 
-## <a id="socket_comm__section_DF64BDE7B6AA47A9B08E0540CAD6DA3A" class="no-quick-link"></a>Peer-to-Peer Socket Requirements Per Member
-
+## Peer-to-Peer Socket Requirements Per Member {#socket_comm__section_DF64BDE7B6AA47A9B08E0540CAD6DA3A}
 Every member of a cluster maintains two outgoing and two incoming connections to every peer. If threads share sockets, these fixed sockets are the sockets they share.
 
 For every thread that does not share sockets, additional sockets, one in and one out, are added for each peer. This affects not only the member’s socket count, but the socket count for every member the member thread connects to.
@@ -103,8 +99,7 @@ In this table:
 **Note:**
 The threads servicing client requests add to the total count of thread-owned sockets both for this member connecting to its peers and for peers that connect to this member.
 
-## <a id="socket_comm__section_0497E07414CC4E0B968B4F3A7AFD3690" class="no-quick-link"></a>Server Socket Requirements Per Server
-
+## Server Socket Requirements Per Server {#socket_comm__section_0497E07414CC4E0B968B4F3A7AFD3690}
 Servers use one connection for each incoming client connection. By default, each connection is serviced by a server thread. These threads that service client requests communicate with the rest of the servers to satisfy the requests and distributed update operations. Each of these threads uses its own thread-owned sockets for peer-to-peer communication. So this adds to the server’s group of thread-owned sockets.
 
 The thread and connection count in the server may be limited by server configuration settings. These
@@ -157,8 +152,7 @@ With client/server installations, the number of client connections to any single
 
 Servers are peers in their own cluster and have the additional socket requirements as noted in the Peer-to-Peer section above.
 
-## <a id="socket_comm__section_0D46E55422D24BA1B0CD888E14FD5182" class="no-quick-link"></a>Client Socket Requirements per Client
-
+## Client Socket Requirements per Client {#socket_comm__section_0D46E55422D24BA1B0CD888E14FD5182}
 Client connection requirements are compounded by how many pools they use. The use varies according to runtime client connection needs, but will usually have maximum and minimum settings. Look for the &lt;pool&gt; element in the `cache.xml` for the configuration properties.
 
 <table>

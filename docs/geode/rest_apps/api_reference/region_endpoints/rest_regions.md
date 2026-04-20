@@ -21,60 +21,60 @@ limitations under the License.
 
 A @@product_name@@ region is how @@product_name@@ logically groups data within its cache. Regions stores data as entries, which are key-value pairs. Using the REST APIs you can read, add (or update), and delete region data.
 
-See also [Data Regions](../basic_config/data_regions/chapter_overview.html#data_regions) for more information on working with regions.
+See also [Data Regions](../basic_config/data_regions/chapter_overview#data_regions) for more information on working with regions.
 
--   **[GET /geode/v1](get_regions.html)**
+-   **[GET /geode/v1](get_regions)**
 
     List all available resources (regions) in the @@product_name@@ cluster.
 
--   **[GET /geode/v1/\{region\}](get_region_data.html)**
+-   **[GET /geode/v1/\{region\}](get_region_data)**
 
     Read data for the region. The optional limit URL query parameter specifies the number of values from the Region that will be returned. The default limit is 50. If the user specifies a limit of “ALL”, then all entry values for the region will be returned.
 
--   **[GET /geode/v1/\{region\}/keys](get_region_keys.html)**
+-   **[GET /geode/v1/\{region\}/keys](get_region_keys)**
 
     List all keys for the specified region.
 
--   **[GET /geode/v1/\{region\}/\{key\}](get_region_key_data.html)**
+-   **[GET /geode/v1/\{region\}/\{key\}](get_region_key_data)**
 
     Read data for a specific key in the region.
 
--   **[GET /geode/v1/\{region\}/\{key1\},\{key2\},...,\{keyN\}](get_region_data_for_multiple_keys.html)**
+-   **[GET /geode/v1/\{region\}/\{key1\},\{key2\},...,\{keyN\}](get_region_data_for_multiple_keys)**
 
     Read data for multiple keys in the region.
 
--   **[HEAD /geode/v1/\{region\}](head_region_size.html)**
+-   **[HEAD /geode/v1/\{region\}](head_region_size)**
 
     An HTTP HEAD request that returns region's size (number of entries) within the HEADERS, which is a response without the content-body. Region size is specified in the pre-defined header named "Resource-Count".
 
--   **[POST /geode/v1/\{region\}?key=&lt;key&gt;](post_if_absent_data.html)**
+-   **[POST /geode/v1/\{region\}?key=&lt;key&gt;](post_if_absent_data)**
 
     Create (put-if-absent) data in region.
 
--   **[PUT /geode/v1/\{region\}/\{key\}](put_update_data.html)**
+-   **[PUT /geode/v1/\{region\}/\{key\}](put_update_data)**
 
     Update or insert (put) data for key in region.
 
--   **[PUT /geode/v1/\{region\}/\{key1\},\{key2\},...\{keyN\}](put_multiple_values_for_keys.html)**
+-   **[PUT /geode/v1/\{region\}/\{key1\},\{key2\},...\{keyN\}](put_multiple_values_for_keys)**
 
     Update or insert (put) data for multiple keys in the region.
 
--   **[PUT /geode/v1/\{region\}/\{key\}?op=REPLACE](put_replace_data.html)**
+-   **[PUT /geode/v1/\{region\}/\{key\}?op=REPLACE](put_replace_data)**
 
     Update (replace) data with key(s) if and only if the key(s) exists in region. The Key(s) must be present in the Region for the update to occur.
 
--   **[PUT /geode/v1/\{region\}/\{key\}?op=CAS](put_update_cas_data.html)**
+-   **[PUT /geode/v1/\{region\}/\{key\}?op=CAS](put_update_cas_data)**
 
     Update (compare-and-set) value having key with a new value if and only if the "@old" value sent matches the current value having key in region.
 
--   **[DELETE /geode/v1/\{region\}](delete_all_data.html)**
+-   **[DELETE /geode/v1/\{region\}](delete_all_data)**
 
     Delete all entries in the region.
 
--   **[DELETE /geode/v1/\{region\}/\{key\}](delete_data_for_key.html)**
+-   **[DELETE /geode/v1/\{region\}/\{key\}](delete_data_for_key)**
 
     Delete entry for specified key in the region.
 
--   **[DELETE /geode/v1/\{region\}/\{key1\},\{key2\},...\{keyN\}](delete_data_for_multiple_keys.html)**
+-   **[DELETE /geode/v1/\{region\}/\{key1\},\{key2\},...\{keyN\}](delete_data_for_multiple_keys)**
 
     Delete entries for multiple keys in the region.

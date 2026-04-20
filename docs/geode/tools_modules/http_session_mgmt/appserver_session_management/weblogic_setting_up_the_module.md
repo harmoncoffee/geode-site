@@ -23,14 +23,13 @@ limitations under the License.
 
 To use the module, you need to modify your application's `web.xml` files. Configuration is slightly different depending on the topology you are setting up.
 
-Refer to [Common Topologies for HTTP Session Management](common_gemfire_topologies.html#common_gemfire_topologies) for more information. Modifying the war file can be done manually or with the `modify_war` script. To see the command line options for the `modify_war` script, invoke:
+Refer to [Common Topologies for HTTP Session Management](common_gemfire_topologies#common_gemfire_topologies) for more information. Modifying the war file can be done manually or with the `modify_war` script. To see the command line options for the `modify_war` script, invoke:
 
 ``` pre
 $ modify_war -h
 ```
 
-## <a id="weblogic_setting_up_the_module__section_9D330F0A9E934B209D77C5A5D79B741C" class="no-quick-link"></a>Manual Configuration
-
+## Manual Configuration {#weblogic_setting_up_the_module__section_9D330F0A9E934B209D77C5A5D79B741C}
 To modify your war or ear file manually, make the following updates:
 
 -   **web.xml** needs a filter added as follows. If you have your own filters, the @@product_name@@ Module filter **must** be the first one.
@@ -115,8 +114,7 @@ If you are deploying an ear file:
     lib/log4j-jul-2.25.3.jar
     ```
 
-## <a id="weblogic_setting_up_the_module__section_20294A39368D4402AEFB3D074E8D5887" class="no-quick-link"></a>Peer-to-Peer Setup
-
+## Peer-to-Peer Setup {#weblogic_setting_up_the_module__section_20294A39368D4402AEFB3D074E8D5887}
 <img src="/images_svg/http_module_p2p_with_locator.svg" id="weblogic_setting_up_the_module__image_86E949E0F1AD4E9EB67605EFA4E97E13" class="image" />
 
 To run @@product_name@@ in a peer-to-peer configuration, use the `modify_war` script with options
@@ -140,8 +138,7 @@ to result in the following `web.xml` content:
 </filter>
 ```
 
-## <a id="weblogic_setting_up_the_module__section_B0CEBE93564540DBA165E0F7A10FDC0B" class="no-quick-link"></a>Client/Server Setup
-
+## Client/Server Setup {#weblogic_setting_up_the_module__section_B0CEBE93564540DBA165E0F7A10FDC0B}
 <img src="/images_svg/http_module_cs_with_locator.svg" id="weblogic_setting_up_the_module__image_BDF2273487EA4FEB9895D02A6F6FD445" class="image" />
 
 To run @@product_name@@ in a client/server configuration, you make the application server operate as a @@product_name@@ client. Use the `-t client-server` option to the `modify_war` script. This adds the following filter to application server's `web.xml` file:
@@ -169,8 +166,7 @@ to result in the following `web.xml` content:
 
 The `cache-client.xml` file contains a &lt;pool&gt; element pointing at the locator. Its default value is localhost\[10334\].
 
-## <a id="weblogic_setting_up_the_module__section_2B97047AB30A4C549D91AD258657FBA6" class="no-quick-link"></a>Starting the Application Server
-
+## Starting the Application Server {#weblogic_setting_up_the_module__section_2B97047AB30A4C549D91AD258657FBA6}
 After you update the configuration, you are now ready to start your application server instance. Instantiate the locator first:
 
 ``` pre
@@ -190,8 +186,7 @@ $ gfsh start server \
 
 Once the application server is started, the @@product_name@@ client will automatically launch within the application server process.
 
-## <a id="weblogic_setting_up_the_module__section_3E186713737E4D5383E23B41CDFED59B" class="no-quick-link"></a>Verifying that @@product_name@@ Started
-
+## Verifying that @@product_name@@ Started {#weblogic_setting_up_the_module__section_3E186713737E4D5383E23B41CDFED59B}
 You can verify that @@product_name@@ has successfully started by inspecting the application server log file. For example:
 
 ``` pre

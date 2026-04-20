@@ -20,8 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="conflate_the_server_subscription_queue__section_1791DFB89502480EB57F81D16AC0EBAC"></a>
+## {#conflate_the_server_subscription_queue__section_1791DFB89502480EB57F81D16AC0EBAC}
 Conflating the server subscription queue can save space in the server and time in message processing.
 
 Enable conflation at the server level in the server region configuration:

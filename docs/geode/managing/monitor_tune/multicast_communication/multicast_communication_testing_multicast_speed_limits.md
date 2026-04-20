@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 TCP automatically adjusts its speed to the capability of the processes using it and enforces bandwidth sharing so that every process gets a turn. With multicast, you must determine and explicitly set those limits.
-
-<a id="multicast__section_AB06591284DB4E9785EE79FBE1C59554"></a>
+## {#multicast__section_AB06591284DB4E9785EE79FBE1C59554}
 Without the proper configuration, multicast delivers its traffic as fast as possible, overrunning the ability of consumers to process the data and locking out other processes that are waiting for the bandwidth. You can tune your multicast and unicast behavior using mcast-flow-control in `gemfire.properties`.
 
 **Using Iperf**

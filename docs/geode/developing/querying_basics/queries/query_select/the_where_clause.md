@@ -20,8 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="the_where_clause__section_56BB3A7F44124CA9BFBC20E19399C6E4"></a>
+## {#the_where_clause__section_56BB3A7F44124CA9BFBC20E19399C6E4}
 Each FROM clause expression must resolve to a collection of objects. The collection is then available for iteration in the query expressions that follow in the WHERE clause.
 
 For example:
@@ -38,8 +37,7 @@ In the next example query, the collection specified in the first FROM clause exp
 SELECT DISTINCT * FROM /exampleRegion, positions.values p WHERE p.qty > 1000.00
 ```
 
-## <a id="the_where_clause__section_99CA3FA508B740DCBAB4F01F8F9B1390" class="no-quick-link"></a>Implementing equals and hashCode Methods
-
+## Implementing equals and hashCode Methods {#the_where_clause__section_99CA3FA508B740DCBAB4F01F8F9B1390}
 You must implement the `equals` and `hashCode` methods in your custom objects if you are doing ORDER BY and DISTINCT queries on the objects. The methods must conform to the properties and behavior documented in the online Java API documentation for `java.lang.Object`. Inconsistent query results may occur if these methods are absent.
 
 If you have implemented `equals` and `hashCode` methods in your custom objects, you must provide detailed implementations of these methods so that queries execute properly against the objects. For example, assume that you have defined a custom object (CustomObject) with the following variables:
@@ -91,8 +89,7 @@ To avoid unpredictable querying behavior, implement detailed versions of the `eq
 
 If you are comparing a non-primitive field of the object in the WHERE clause, use the `equals` method instead of the `=` operator. For example instead of `nonPrimitiveObj = objToBeCompared` use `nonPrimitiveObj.equals(objToBeCompared)`.
 
-## <a id="the_where_clause__section_7484AD999D01473385628246697F37F6" class="no-quick-link"></a>Querying Serialized Objects
-
+## Querying Serialized Objects {#the_where_clause__section_7484AD999D01473385628246697F37F6}
 Objects must implement serializable if you will be querying partitioned regions or if you are performing client-server querying.
 
 If you are using PDX serialization, you can access the values of individual fields without having to deserialize the entire object. This is accomplished by using PdxInstance, which is a wrapper around the serialized stream. The PdxInstance provides a helper method that takes field-name and returns the value without deserializing the object. While evaluating the query, the query engine will access field values by calling the getField method thus avoiding deserialization.
@@ -103,7 +100,7 @@ To use PdxInstances in querying, ensure that PDX serialization reads are enabled
 gfsh>configure pdx --read-serialized=true
 ```
 
-See [configure pdx](../../tools_modules/gfsh/command-pages/configure.html#topic_jdkdiqbgphqh) for more information.
+See [configure pdx](../../tools_modules/gfsh/command-pages/configure#topic_jdkdiqbgphqh) for more information.
 
 In cache.xml, set the following:
 
@@ -116,8 +113,7 @@ In cache.xml, set the following:
 </cache>
 ```
 
-## <a id="the_where_clause__section_75A114F9FEBF40A586621CAA1780DBD3" class="no-quick-link"></a>Attribute Visibility
-
+## Attribute Visibility {#the_where_clause__section_75A114F9FEBF40A586621CAA1780DBD3}
 You can access any object or object attribute that is available in the current scope of a query. In querying, an object's attribute is any identifier that can be mapped to a public field or method in the object. In the FROM specification, any object that is in scope is valid. Therefore, at the beginning of a query, all locally cached regions and their attributes are in scope.
 
 For attribute Position.secId which is public and has getter method "getSecId()", the query can be written as the following:
@@ -130,8 +126,7 @@ SELECT DISTINCT * FROM /exampleRegion p WHERE p.position1.getSecId() = '1'
 
 The query engine tries to evaluate the value using the public field value. If a public field value is not found, it makes a get call using field name (note that the first character is uppercase.)
 
-## <a id="the_where_clause__section_EB7B976238104C0EACD959C52E5BD75B" class="no-quick-link"></a>Joins
-
+## Joins {#the_where_clause__section_EB7B976238104C0EACD959C52E5BD75B}
 If collections in the FROM clause are not related to each other, the WHERE clause can be used to join them.
 
 The statement below returns all portfolios from the /exampleRegion and /exampleRegion2 regions that have the same status.
@@ -140,7 +135,7 @@ The statement below returns all portfolios from the /exampleRegion and /exampleR
 SELECT * FROM /exampleRegion portfolio1, /exampleRegion2 portfolio2 WHERE portfolio1.status = portfolio2.status
 ```
 
-To create indexes for region joins you create single-region indexes for both sides of the join condition. These are used during query execution for the join condition. Partitioned regions do not support region joins. For more information on indexes, see [Working with Indexes](../query_index/query_index.html).
+To create indexes for region joins you create single-region indexes for both sides of the join condition. These are used during query execution for the join condition. Partitioned regions do not support region joins. For more information on indexes, see [Working with Indexes](../query_index/query_index).
 
 **Examples:**
 
@@ -162,8 +157,7 @@ Same query as the previous example, with the additional constraint that matches 
 SELECT * FROM /exampleRegion portfolio1, portfolio1.positions.values positions1, /exampleRegion2 portfolio2, portfolio2.positions.values positions2 WHERE portfolio1.ID = 1 AND positions1.secId = positions2.secId
 ```
 
-## <a id="the_where_clause__section_D91E0B06FFF6431490CC0BFA369425AD" class="no-quick-link"></a>LIKE
-
+## LIKE {#the_where_clause__section_D91E0B06FFF6431490CC0BFA369425AD}
 @@product_name@@ offers limited support for the LIKE predicate. LIKE can be used to mean 'equals to'. If you terminate the string with a wildcard ('%'), it behaves like 'starts with'. You can also place a wildcard (either '%' or '\_') at any other position in the comparison string. You can escape the wildcard characters to represent the characters themselves.
 
 **Note:**
@@ -199,8 +193,7 @@ or
 SELECT * FROM /exampleRegion WHERE foo.toLowerCase LIKE '%bar%'
 ```
 
-## <a id="the_where_clause__section_D2F8D17B52B04895B672E2FCD675A676" class="no-quick-link"></a>Method Invocations
-
+## Method Invocations {#the_where_clause__section_D2F8D17B52B04895B672E2FCD675A676}
 To use a method in a query, use the attribute name that maps to the public method you want to invoke, or directly use the public method name instead.
 It is important to note that when you use the attribute name instead of the method name, @@product_name_long@@ will search for public methods named as the attribute itself or public methods with the `get` prefix. 
 
@@ -212,7 +205,7 @@ SELECT DISTINCT * FROM /exampleRegion p WHERE p.positions.size >= 2     - maps t
 
 Methods declared to return void evaluate to `null` when invoked through the query processor.
 
-You cannot invoke a static method. See [Enum Objects](the_where_clause.html#the_where_clause__section_59E7D64746AE495D942F2F09EF7DB9B5) for more information.
+You cannot invoke a static method. See [Enum Objects](the_where_clause.md#the_where_clause__section_59E7D64746AE495D942F2F09EF7DB9B5) for more information.
 
 **Methods without parameters**
 
@@ -243,15 +236,14 @@ When a `null` argument is used, if the query processor cannot determine the prop
 
 **Methods calls with the `SecurityManager` enabled**
 
-When the `SecurityManager` is enabled, by default @@product_name@@ throws a `NotAuthorizedException` when any method that does not belong to the to the list of default allowed methods, given in [RestrictedMethodAuthorizer](../../security/method_invocation_authorizers.html#restrictedMethodAuthorizer), is invoked.
+When the `SecurityManager` is enabled, by default @@product_name@@ throws a `NotAuthorizedException` when any method that does not belong to the to the list of default allowed methods, given in [RestrictedMethodAuthorizer](../../security/method_invocation_authorizers#restrictedMethodAuthorizer), is invoked.
 
-In order to further customize this authorization check, see [Changing the Method Authorizer](../../security/method_invocation_authorizers.html#changing_method_authorizer).
+In order to further customize this authorization check, see [Changing the Method Authorizer](../../security/method_invocation_authorizers#changing_method_authorizer).
 
 In the past you could use the system property `gemfire.QueryService.allowUntrustedMethodInvocation` to disable the check altogether, but this approach is deprecated and will be removed in future releases;
-you need to configure the [UnrestrictedMethodAuthorizer](../../security/method_invocation_authorizers.html#unrestrictedMethodAuthorizer) instead.
+you need to configure the [UnrestrictedMethodAuthorizer](../../security/method_invocation_authorizers#unrestrictedMethodAuthorizer) instead.
 
-## <a id="the_where_clause__section_59E7D64746AE495D942F2F09EF7DB9B5" class="no-quick-link"></a>Enum Objects
-
+## Enum Objects {#the_where_clause__section_59E7D64746AE495D942F2F09EF7DB9B5}
 To write a query based on the value of an Enum object field, you must use the `toString` method of the enum object or use a query bind parameter.
 
 For example, the following query is NOT valid:
@@ -280,8 +272,7 @@ Query enum type using a bind parameter. The value of the desired Enum field ( Da
 select distinct * from /QueryRegion0 where aDay = $1
 ```
 
-## <a id="the_where_clause__section_AC12146509F141378E493078540950C7" class="no-quick-link"></a>IN and SET
-
+## IN and SET {#the_where_clause__section_AC12146509F141378E493078540950C7}
 The IN expression is a boolean indicating if one expression is present inside a collection of expressions of compatible type. The determination is based on the expressions' equals semantics.
 
 If `e1` and `e2` are expressions, `e2` is a collection, and `e1` is an object or a literal whose type is a subtype or the same type as the elements of `e2`, then `e1 IN                     e2` is an expression of type boolean.
@@ -331,8 +322,7 @@ where a set value is searched in collection of set values.
 
 One problem is that you cannot create indexes on Set or List types (collection types) that are not comparable. To workaround this, you can create an index on a custom collection type that implements Comparable.
 
-## <a id="the_where_clause__section_E7206D045BEC4F67A8D2B793922BF213" class="no-quick-link"></a>Double.NaN and Float.NaN Comparisons
-
+## Double.NaN and Float.NaN Comparisons {#the_where_clause__section_E7206D045BEC4F67A8D2B793922BF213}
 The comparison behavior of Double.NaN and Float.NaN within @@product_name@@ queries follow the semantics of the JDK methods Float.compareTo and Double.compareTo.
 
 In summary, the comparisons differ in the following ways from those performed by the Java language numerical comparison operators `(<, <=, ==, >= >)` when applied to primitive double [float] values:
@@ -366,8 +356,7 @@ To retrieve NaN values without having another field already stored as NaN, you c
 String query = "SELECT * FROM /positions p WHERE p.value > " + Float.MAX_VALUE;
 ```
 
-## <a id="the_where_clause_arith_operators" class="no-quick-link"></a>Arithmetic Operations
-
+## Arithmetic Operations {#the_where_clause_arith_operators}
 Arithmetic operators may be used in any expression.
 
 For example, this query selects all people with a body mass index less than 25:

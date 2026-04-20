@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 At creation, each operation log is initialized at the disk store's `max-oplog-size`, with the size divided between the `crf` and `drf` files. When the oplog is closed, @@product_name_long@@ shrinks the files to the space used in each file.
-
-<a id="operation_logs__section_C0B1391492394A908577C29772902A42"></a>
+## {#operation_logs__section_C0B1391492394A908577C29772902A42}
 After the oplog is closed, @@product_name@@ also attempts to create a `krf` file, which contains the key names as well as the offset for the value within the `crf` file. Although this file is not required for startup, if it is available, it will improve startup performance by allowing @@product_name@@ to load the entry values in the background after the entry keys are loaded.
 
 When an operation log is full, @@product_name@@ automatically closes it and creates a new log with the next sequence number. This is called *oplog rolling*. You can also request an oplog rolling through the API call `DiskStore.forceRoll`. You may want to do this immediately before compacting your disk stores, so the latest oplog is available for compaction.
@@ -47,8 +46,7 @@ drwxrwxr-x   2 person users       2560 Mar 22 13:57 .
 
 The system rotates through all available disk directories to write its logs. The next log is always started in a directory that has not reached its configured capacity, if one exists.
 
-## <a id="operation_logs__section_8431984F4E6644D79292850CCA60E6E3" class="no-quick-link"></a>When Disk Store Oplogs Reach the Configured Disk Capacity
-
+## When Disk Store Oplogs Reach the Configured Disk Capacity {#operation_logs__section_8431984F4E6644D79292850CCA60E6E3}
 If no directory exists that is within its capacity limits, how @@product_name@@ handles this depends on whether automatic compaction is enabled.
 
 -   If auto-compaction is enabled, @@product_name@@ creates a new oplog in one of the directories, going over the limit, and logs a warning that reports:

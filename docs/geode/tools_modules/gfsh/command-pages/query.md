@@ -24,7 +24,7 @@ Run queries against @@product_name@@ regions.
 If a limit restricting the result size is not set in the query,
 then a default limit of the gfsh environment variable `APP_FETCH_SIZE`,
 as defined in
-[Useful gfsh Shell Variables](../useful_gfsh_shell_variables.html),
+[Useful gfsh Shell Variables](../useful_gfsh_shell_variables),
 will be applied.
 
 Surround the OQL query with single quote marks.
@@ -39,9 +39,7 @@ This command should not be executed from `gfsh` if the objects being queried con
 ``` pre
 query --query=value [--file=path/to/results/file] [--member=member-name]
 ```
-
-<a id="concept_89A129F729DF4D3B9056C8D9016AA760__table_ocr_gcg_2w"></a>
-
+## {#concept_89A129F729DF4D3B9056C8D9016AA760__table_ocr_gcg_2w}
 | Name                     | Description                                                    |
 |--------------------------|----------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;query </span>      | *Required.* The OQL string     |

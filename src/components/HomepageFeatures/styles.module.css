@@ -129,7 +129,6 @@
     margin: 1rem 1rem 1rem 0;
     flex-wrap: wrap;
 	min-width: 160px;
-    background-color: none;
     color: var(--ifm-color-primary);
     border: 1px solid;
 }

@@ -25,8 +25,7 @@ This section describes alerts for and appropriate responses to various kinds of 
 
 If a system member withdraws from the cluster involuntarily because the member, host, or network fails, the other members automatically adapt to the loss and continue to operate. The cluster does not experience any disturbance such as timeouts.
 
-## <a id="sys_failure__section_846B00118184487FB8F1E0CD1DC3A81B"></a>Planning for Data Recovery
-
+## Planning for Data Recovery {#sys_failure__section_846B00118184487FB8F1E0CD1DC3A81B}
 In planning a strategy for data recovery, consider these factors:
 
 -   Whether the region is configured for data redundancy—partitioned regions only.
@@ -39,8 +38,7 @@ In planning a strategy for data recovery, consider these factors:
 
 The rest of this section provides recovery instructions for various kinds system failures.
 
-## <a id="sys_failure__section_2C390F0783724048A6E12F7F369EB8DC"></a>Network Partitioning, Slow Response, and Member Removal Alerts
-
+## Network Partitioning, Slow Response, and Member Removal Alerts {#sys_failure__section_2C390F0783724048A6E12F7F369EB8DC}
 When a network partition detection or slow responses occur, these alerts are generated:
 
 -   Network Partitioning is Detected
@@ -49,10 +47,9 @@ When a network partition detection or slow responses occur, these alerts are gen
 -   Warning Notifications Before Removal
 -   Member is Forced Out
 
-For information on configuring system members to help avoid a network partition configuration condition in the presence of a network failure or when members lose the ability to communicate to each other, refer to [Understanding and Recovering from Network Outages](recovering_from_network_outages.html#rec_network_crash).
+For information on configuring system members to help avoid a network partition configuration condition in the presence of a network failure or when members lose the ability to communicate to each other, refer to [Understanding and Recovering from Network Outages](recovering_from_network_outages#rec_network_crash).
 
-### <a id="sys_failure__section_D52D902E665F4F038DA4B8298E3F8681"></a>Network Partitioning Detected
-
+### Network Partitioning Detected {#sys_failure__section_D52D902E665F4F038DA4B8298E3F8681}
 Alert:
 
 ``` pre
@@ -73,8 +70,7 @@ Response:
 
 Check the network connectivity and health of the listed cache processes.
 
-### <a id="sys_failure__section_2C5E8A37733D4B31A12F22B9155796FD"></a>Member Taking Too Long to Respond
-
+### Member Taking Too Long to Respond {#sys_failure__section_2C5E8A37733D4B31A12F22B9155796FD}
 Alert:
 
 ``` pre
@@ -169,8 +165,7 @@ Response:
 
 None.
 
-### <a id="sys_failure__section_AF4F913C244044E7A541D89EC6BCB961"></a>No Locators Can Be Found
-
+### No Locators Can Be Found {#sys_failure__section_AF4F913C244044E7A541D89EC6BCB961}
 **Note:**
 It is likely that all processes using the locators will exit with the same message.
 
@@ -236,8 +231,7 @@ Response:
 
 The operator should examine and restart the disconnected process.
 
-### <a id="sys_failure__section_77BDB0886A944F87BDA4C5408D9C2FC4"></a>Warning Notifications Before Removal
-
+### Warning Notifications Before Removal {#sys_failure__section_77BDB0886A944F87BDA4C5408D9C2FC4}
 Alert:
 
 ``` pre
@@ -267,8 +261,7 @@ Response:
 
 The operator can turn this off by setting the system property gemfire.disable-same-machine-warnings to true. However, it is best to run locator processes, which act as membership coordinators when network partition detection is enabled, on separate machines from cache processes.
 
-### <a id="sys_failure__section_E777C6EC8DEC4FE692AC5863C4420238"></a>Member Is Forced Out
-
+### Member Is Forced Out {#sys_failure__section_E777C6EC8DEC4FE692AC5863C4420238}
 Alert:
 
 ``` pre
@@ -287,8 +280,7 @@ Response:
 
 The operator should examine the locator processes and logs.
 
-### <a id="sys_failure__section_disk_access_exceptions"></a>Disk Access Exceptions
-
+### Disk Access Exceptions {#sys_failure__section_disk_access_exceptions}
 Alert:
 
 ``` pre
@@ -318,11 +310,10 @@ In either case, the member shuts down when an operation attempts to update the d
 Response:
 
 You must address the underlying disk issue and restart the server.
-See [Preventing and Recovering from Disk Full Errors](prevent_and_recover_disk_full_errors.html) for suggestions.
+See [Preventing and Recovering from Disk Full Errors](prevent_and_recover_disk_full_errors) for suggestions.
 
 
-## <a id="sys_failure__section_how_data_is_recovered"></a>How Data is Recovered From Persistent Regions
-
+## How Data is Recovered From Persistent Regions {#sys_failure__section_how_data_is_recovered}
 A persistent region is one whose contents (keys and values) can be restored from disk.  Upon
 restart, data recovery of a persistent region always recovers keys.  Under the default behavior, the
 region is regarded as ready for use when the keys have been recovered.

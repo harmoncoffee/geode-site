@@ -34,9 +34,7 @@ the user running gfsh.
 ``` pre
 history [--file=<history text file>]
 ```
-
-<a id="concept_3C89B4C4D3EA47DE9CB046286D26F0BC__table_onp_pfg_2w"></a>
-
+## {#concept_3C89B4C4D3EA47DE9CB046286D26F0BC__table_onp_pfg_2w}
 | Name    | Description                                              | Default Value |
 |---------|----------------------------------------------------------|---------------|
 | &#8209;&#8209;file  | File to which the history is to be saved.                |               |

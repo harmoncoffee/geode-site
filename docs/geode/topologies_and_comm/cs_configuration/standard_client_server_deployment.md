@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 In the most common client/server topology, a farm of cache servers provides caching services to many clients. Cache servers have a homogeneous data store in data regions that are replicated or partitioned across the server farm.
-
-<a id="standard_deployment__section_5DC4875B143F4160BC790C4AFAB75265"></a>
+## {#standard_deployment__section_5DC4875B143F4160BC790C4AFAB75265}
 The client/server data flow proceeds as follows:
 
 -   Cache servers send their address and load information to the server locator, if locators are used.

@@ -39,8 +39,7 @@ Start up again in this order:
 2.  Create all `RegionService` instances. Initialize CQ listeners.
 3.  Call `ClientCache` instance `readyForEvents` method.
 
-## <a id="continuous_querying_whats_next__section_35F929682CD24478AF0B2249C5065A27" class="no-quick-link"></a>States of a CQ
-
+## States of a CQ {#continuous_querying_whats_next__section_35F929682CD24478AF0B2249C5065A27}
 A CQ has three possible states, which are maintained on the server. You can check them from the client through `CqQuery.getState`.
 
 | Query State | What does this mean?                                                                               | When does the CQ reach this state?                                                                             | Notes                                                                                                                                                                                                                                                                                                                                                          |
@@ -49,8 +48,7 @@ A CQ has three possible states, which are maintained on the server. You can chec
 | RUNNING     | The CQ is running against server region events and the client listeners are waiting for CQ events. | When CQ is executed from a stopped state.                                                                      | This is the only state in which events are sent to the client.                                                                                                                                                                                                                                                                                                 |
 | CLOSED      | The CQ is not available for any further activities. You cannot rerun a closed CQ.                  | When CQ is closed by the client and when cache or connection conditions make it impossible to maintain or run. | The closed CQ does not use system resources.                                                                                                                                                                                                                                                                                                                   |
 
-## <a id="continuous_querying_whats_next__section_4E308A70BCE44031BB1F37B95B4D06E6" class="no-quick-link"></a>CQ Management Options
-
+## CQ Management Options {#continuous_querying_whats_next__section_4E308A70BCE44031BB1F37B95B4D06E6}
 You manage your CQs from the client side. All calls are executed only for the calling client's CQs.
 
 | Task                                         | For a single CQ use ...                                   | For groups of CQs use ...                 |
@@ -64,16 +62,14 @@ You manage your CQs from the client side. All calls are executed only for the ca
 | Access CQ Runtime Statistics                 | `CqQuery.getStatistics`                                   | `QueryService.getCqStatistics`            |
 | Get all durable CQs registered on the server | N/A                                                       | `QueryService.getAllDurableCqsFromServer` |
 
-## <a id="continuous_querying_whats_next__section_B274DA982AE6441288323A1D11B58786" class="no-quick-link"></a>Managing CQs and Durable Clients Using gfsh
-
+## Managing CQs and Durable Clients Using gfsh {#continuous_querying_whats_next__section_B274DA982AE6441288323A1D11B58786}
 Using the `gfsh` command-line utility, you can perform the following actions:
 
--   Close durable clients and durable client CQs. See [close](../../tools_modules/gfsh/command-pages/close.html#topic_27555B1929D7487D9158096BC065D372).
--   List all durable CQs for a given durable client ID. See [list](../../tools_modules/gfsh/command-pages/list.html).
--   Show the subscription event queue size for a given durable client ID. See [show subscription-queue-size](../../tools_modules/gfsh/command-pages/show.html#topic_395C96B500AD430CBF3D3C8886A4CD2E).
+-   Close durable clients and durable client CQs. See [close](../../tools_modules/gfsh/command-pages/close#topic_27555B1929D7487D9158096BC065D372).
+-   List all durable CQs for a given durable client ID. See [list](../../tools_modules/gfsh/command-pages/list).
+-   Show the subscription event queue size for a given durable client ID. See [show subscription-queue-size](../../tools_modules/gfsh/command-pages/show#topic_395C96B500AD430CBF3D3C8886A4CD2E).
 
-## <a id="continuous_querying_whats_next__section_345E9C144EB544FBA61FC9C83BF1C1ED" class="no-quick-link"></a>Retrieving an Initial Result Set of a CQ
-
+## Retrieving an Initial Result Set of a CQ {#continuous_querying_whats_next__section_345E9C144EB544FBA61FC9C83BF1C1ED}
 You can optionally retrieve an initial result set when you execute your CQ. To do this, execute the CQ with the `executeWithInitialResults` method. The initial `SelectResults` returned is the same that you would get if you ran the query ad hoc, by calling `QueryService.newQuery.execute` on the server cache, but with the key included. This example retrieves keys and values from an initial result set:
 
 ``` pre

@@ -22,22 +22,22 @@ limitations under the License.
 You can deploy your @@product_name_long@@ configuration files in your system directory structure or in jar files. You determine how you want to deploy your configuration files and set them up accordingly.
 
 **Note:**
-If you use the cluster configuration service to create and manage your @@product_name_long@@ cluster configuration, the procedures described in this section are not needed because @@product_name@@ automatically manages the distribution of the configuration files and jar files to members of the cluster. See [Overview of the Cluster Configuration Service](../cluster_config/gfsh_persist.html).
+If you use the cluster configuration service to create and manage your @@product_name_long@@ cluster configuration, the procedures described in this section are not needed because @@product_name@@ automatically manages the distribution of the configuration files and jar files to members of the cluster. See [Overview of the Cluster Configuration Service](../cluster_config/gfsh_persist).
 
 You can use the procedures described in this section to distribute configurations that are member-specific, or for situations where you do not want to use the cluster configuration service.
 
--   **[Main Steps to Deploying Configuration Files](deploy_config_files_intro.html)**
+-   **[Main Steps to Deploying Configuration Files](deploy_config_files_intro)**
 
     These are the basic steps for deploying configuration files, with related detail in sections that follow.
 
--   **[Default File Specifications and Search Locations](default_file_specs.html)**
+-   **[Default File Specifications and Search Locations](default_file_specs)**
 
     Each file has a default name, a set of file search locations, and a system property you can use to override the defaults.
 
--   **[Changing the File Specifications](change_file_spec.html)**
+-   **[Changing the File Specifications](change_file_spec)**
 
     You can change all file specifications in the `gemfire.properties` file and at the command line.
 
--   **[Deploying Configuration Files in JAR Files](deploying_config_jar_files.html)**
+-   **[Deploying Configuration Files in JAR Files](deploying_config_jar_files)**
 
     This section provides a procedure and an example for deploying configuration files in JAR files.

@@ -20,18 +20,16 @@ limitations under the License.
 -->
 
 Continuous querying continuously returns events that match the queries you set up.
-
-<a id="continuous__section_779B4E4D06E948618E5792335174E70D"></a>
-
--   **[How Continuous Querying Works](how_continuous_querying_works.html)**
+## {#continuous__section_779B4E4D06E948618E5792335174E70D}
+-   **[How Continuous Querying Works](how_continuous_querying_works)**
 
     Clients subscribe to server-side events by using SQL-type query filtering. The server sends all events that modify the query results. CQ event delivery uses the client/server subscription framework.
 
--   **[Implementing Continuous Querying](implementing_continuous_querying.html)**
+-   **[Implementing Continuous Querying](implementing_continuous_querying)**
 
     Use continuous querying in your clients to receive continuous updates to queries run on the servers.
 
--   **[Managing Continuous Querying](continuous_querying_whats_next.html)**
+-   **[Managing Continuous Querying](continuous_querying_whats_next)**
 
     This topic discusses CQ management options, CQ states, and retrieving initial result sets.
 

@@ -30,8 +30,7 @@ For example, if Apache Tomcat is installed in `/opt/apache-tomcat-10.1.30` then
 CATALINA_HOME=/opt/apache-tomcat-10.1.30
 ```
 
-## <a id="quick_start__section_6A4A00B6DA404E10A5C29E5E31101445" class="no-quick-link"></a>Quick Start Instructions
-
+## Quick Start Instructions {#quick_start__section_6A4A00B6DA404E10A5C29E5E31101445}
 1.  Download and install one of the application servers.
 
     | Supported Application Server | Version | Download Location       |
@@ -52,12 +51,11 @@ CATALINA_HOME=/opt/apache-tomcat-10.1.30
     **Note:** Support for Pivotal tc Server has been removed. Users should migrate to Tomcat 10.1 or later.
 
 3.  Complete the appropriate set up instructions for your application server described in the following sections:
-    -   [Additional Quick Start Instructions for Tomcat Module](quick_start.html#quick_start__section_4689A4FA609A4F4FB091F03E9BECA4DB)
-    -   [Additional Instructions for AppServers Module](quick_start.html#quick_start__section_1587C3E55F06406EBD4AB13014A406D4)
+    -   [Additional Quick Start Instructions for Tomcat Module](quick_start#quick_start__section_4689A4FA609A4F4FB091F03E9BECA4DB)
+    -   [Additional Instructions for AppServers Module](quick_start#quick_start__section_1587C3E55F06406EBD4AB13014A406D4)
 
-## <a id="quick_start__section_4689A4FA609A4F4FB091F03E9BECA4DB" class="no-quick-link"></a>Additional Quick Start Instructions for Tomcat Module
-
-These steps provide a basic starting point for using the Tomcat module. For more configuration options, see [HTTP Session Management Module for Tomcat](session_mgmt_tomcat.html).
+## Additional Quick Start Instructions for Tomcat Module {#quick_start__section_4689A4FA609A4F4FB091F03E9BECA4DB}
+These steps provide a basic starting point for using the Tomcat module. For more configuration options, see [HTTP Session Management Module for Tomcat](session_mgmt_tomcat).
 
 1.  Modify Tomcat's `server.xml` and `context.xml` files. Configuration is slightly different depending on the topology you are setting up.
 
@@ -76,7 +74,7 @@ These steps provide a basic starting point for using the Tomcat module. For more
 
     **Note:** For Tomcat 10.1+, use `Tomcat10DeltaSessionManager`. Support for Tomcat 7, 8, and 9 has been discontinued.
 
-    See [Setting Up the HTTP Module for Tomcat](tomcat_setting_up_the_module.html) for additional instructions.
+    See [Setting Up the HTTP Module for Tomcat](tomcat_setting_up_the_module) for additional instructions.
 
 2.  Start the Tomcat application server.
 
@@ -88,9 +86,8 @@ These steps provide a basic starting point for using the Tomcat module. For more
 
     <img src="/images/Apache_Tomcat_Homepage.png"></img>
     
-## <a id="quick_start__section_1587C3E55F06406EBD4AB13014A406D4" class="no-quick-link"></a>Additional Instructions for AppServers Module
-
-These steps provide a basic starting point for using the AppServers module with WebLogic, WebSphere or JBoss. For more configuration options, see [HTTP Session Management Module for AppServers](session_mgmt_weblogic.html).
+## Additional Instructions for AppServers Module {#quick_start__section_1587C3E55F06406EBD4AB13014A406D4}
+These steps provide a basic starting point for using the AppServers module with WebLogic, WebSphere or JBoss. For more configuration options, see [HTTP Session Management Module for AppServers](session_mgmt_weblogic).
 
 **Note:**
 

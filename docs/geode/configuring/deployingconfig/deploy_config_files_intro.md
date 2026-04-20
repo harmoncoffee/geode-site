@@ -27,10 +27,9 @@ These are the basic steps for deploying configuration files, with related detail
 2.  Place the files in your directories or jar files.
 3.  For any file with a non-default name or location, provide the file specification in the system properties file and/or in the member `CLASSPATH.`
 
-## <a id="concept_337B365782E44951B73F33E1E17AB07B__section_53C98F9DB1584E3BABFA315CDF254A92" class="no-quick-link"></a>@@product_name@@ Configuration Files
-
+## @@product_name@@ Configuration Files {#concept_337B365782E44951B73F33E1E17AB07B__section_53C98F9DB1584E3BABFA315CDF254A92}
 -   `gemfire.properties`. Contains the settings required by members of a cluster. These settings include licensing, system member discovery, communication parameters, logging, and statistics. 
-See the [@@product_name@@ Properties Reference](../../reference/topics/gemfire_properties.html).
+See the [@@product_name@@ Properties Reference](../../reference/gemfire_properties).
 -   **`gfsecurity.properties`**. An optional separate file that contains security-related (`security-*`) settings that are otherwise defined in `gemfire.properties`. Placing these member properties into a separate file allows you to restrict user access to those specific settings. 
-See the [@@product_name@@ Properties Reference](../../reference/topics/gemfire_properties.html).
--   `cache.xml`. Declarative cache configuration file. This file contains XML declarations for cache, region, and region entry configuration. You also use it to configure disk stores, database login credentials, server and remote site location information, and socket information. See [cache.xml](../../reference/topics/chapter_overview_cache_xml.html#cache_xml).
+See the [@@product_name@@ Properties Reference](../../reference/gemfire_properties).
+-   `cache.xml`. Declarative cache configuration file. This file contains XML declarations for cache, region, and region entry configuration. You also use it to configure disk stores, database login credentials, server and remote site location information, and socket information. See [cache.xml](../../reference/cache/chapter_overview_cache_xml#cache_xml).

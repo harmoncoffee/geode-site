@@ -58,8 +58,7 @@ Delete or unregister functions, remove indexes, disk stores and regions.
 
     Destroy or remove a region.
 
-## <a id="topic_destroy-async-event-queue" class="no-quick-link"></a>destroy async-event-queue
-
+## destroy async-event-queue {#topic_destroy-async-event-queue}
 Destroy an asynchronous event queue.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -85,8 +84,7 @@ destroy async-event-queue --id=value [--groups=value(,value)*] [--if-exists=valu
 destroy async-event-queue --id=myAsyncEventQueue
 ```
 
-## <a id="topic_yfr_l2z_ck" class="no-quick-link"></a>destroy disk-store
-
+## destroy disk-store {#topic_yfr_l2z_ck}
 Delete a disk store and all files on disk used by the disk store. Data for closed regions that previously used this disk store are lost.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -121,8 +119,7 @@ Member  | Result
 server1 | Success
 ```
 
-## <a id="topic_E48C2DF809054C12A162026D8A2139BB" class="no-quick-link"></a>destroy function
-
+## destroy function {#topic_E48C2DF809054C12A162026D8A2139BB}
 Destroy or unregister a function.
 
 The default is for the function to be unregistered from all members.
@@ -151,8 +148,7 @@ destroy function --id=value [--groups=value(,value)*] [--member=value]
 (2) destroy function --id=InterestCalculations --member=server1
 (3) destroy function --id=InterestCalculations --group=Group1
 ```
-## <a id="destroy-gr" class="no-quick-link"></a>destroy gateway-receiver
-
+## destroy gateway-receiver {#destroy-gr}
 Destroy the gateway receiver on one or more members.
 Since there can be only one gateway receiver per member,
 specifying the member specifies which gateway receiver to destroy.
@@ -180,8 +176,7 @@ destroy gateway-receiver [--group=value(,value)*]
 destroy gateway-receiver --member=server1,server2
 ```
 
-## <a id="destroy-gs" class="no-quick-link"></a>destroy gateway-sender
-
+## destroy gateway-sender {#destroy-gs}
 Destroy a gateway sender that is no longer used by a region.
 
 The default is for the gateway sender to be destroyed on all members.
@@ -227,8 +222,7 @@ destroy gateway-sender --id=value [--groups=value(,value)*]
 destroy gateway-sender --id=SiteASender
 ```
 
-## <a id="topic_D00219CCD6F64C1582A0802AC5CDF3F3" class="no-quick-link"></a>destroy index
-
+## destroy index {#topic_D00219CCD6F64C1582A0802AC5CDF3F3}
 Destroy or remove the specified index.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -261,8 +255,7 @@ destroy index --members=server2
 destroy index --name=MyKeyIndex
 ```
 
-## <a id="destroy_jndi-binding" class="no-quick-link"></a>destroy jndi-binding
-
+## destroy jndi-binding {#destroy_jndi-binding}
 Destroy a specified JNDI binding that holds the configuration for
 an XA data source.
 
@@ -287,11 +280,10 @@ destroy jndi-binding --name=value [--if-exists=value]
 destroy jndi-binding --name=jndi1
 ```
 
-## <a id="destroy_lucene_index" class="no-quick-link"></a>destroy lucene index
-
+## destroy lucene index {#destroy_lucene_index}
 Destroy or remove the specified Lucene index.
 
-See also [create lucene index](create.html#create_lucene_index), [describe lucene index](describe.html#describe_lucene_index), [list lucene indexes](list.html#list_lucene_indexes) and [search lucene](search.html#search_lucene).
+See also [create lucene index](create#create_lucene_index), [describe lucene index](describe#describe_lucene_index), [list lucene indexes](list#list_lucene_indexes) and [search lucene](search#search_lucene).
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -316,8 +308,7 @@ destroy lucene index --region=region1
 destroy lucene index --region=region1 --name=MyKeyIndex
 ```
 
-## <a id="topic_BEDACECF4599407794ACBC0E56B30F65" class="no-quick-link"></a>destroy region
-
+## destroy region {#topic_BEDACECF4599407794ACBC0E56B30F65}
 Destroy or remove a region.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.

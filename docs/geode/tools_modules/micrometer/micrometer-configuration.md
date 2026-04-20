@@ -26,7 +26,7 @@ limitations under the License.
 
 Out of the box @@product_name@@ is instrumented and can emit meters with a properly created Meter Registry. 
 
-However, any meters that are timers based on the system clock time, similar to the time statistics, they will obey the existing `enable-time-statistics` geode.properties setting, see **[Setting up Statistics](../../managing/statistics/setting_up_statistics.html)**.
+However, any meters that are timers based on the system clock time, similar to the time statistics, they will obey the existing `enable-time-statistics` geode.properties setting, see **[Setting up Statistics](../../managing/statistics/setting_up_statistics)**.
 
 
 ## Publishing metrics using a meter registry

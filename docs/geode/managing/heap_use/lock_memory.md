@@ -20,10 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="locking-memory"></a>
-
-
+## {#locking-memory}
 On Linux systems, you can lock memory to prevent the operating system from paging out heap or off-heap memory.
 
 To use this feature:

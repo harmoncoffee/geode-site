@@ -22,12 +22,9 @@ limitations under the License.
 -->
 
 Delta propagation reduces the amount of data you send over the network. You do this by only sending the change, or delta, information about an object, instead of sending the entire changed object. If you do not use cloning when applying the deltas, you can also expect to generate less garbage in your receiving JVMs.
-
-<a id="how_delta_propagation_works__section_78D584B3FFD04D1D9BA83203FF2B55A9"></a>
+## {#how_delta_propagation_works__section_78D584B3FFD04D1D9BA83203FF2B55A9}
 In most distributed data management systems, the data stored in the system tends to be created once and then updated frequently. These updates are sent to other members for event propagation, redundancy management, and cache consistency in general. Tracking only the changes in an updated object and sending only the deltas mean lower network transmission costs and lower object serialization/deserialization costs. Performance improvements can be significant, especially when changes to an object are small relative to its overall size.
-
-<a id="how_delta_propagation_works__section_ABE3589920D6477BBB2223A583AF169A"></a>
-
+## {#how_delta_propagation_works__section_ABE3589920D6477BBB2223A583AF169A}
 @@product_name@@ propagates object deltas using methods that you program. The methods are in the `Delta` interface, which you implement in your cached objects' classes. If any of your classes are plain old Java objects, you need to wrap them for this implementation.
 
 This figure shows delta propagation for a change to an entry with key, k, and value object, v.
@@ -40,8 +37,7 @@ This figure shows delta propagation for a change to an entry with key, k, and va
 4.  **receipt of delta at remote member**. `fromDelta` extracts the delta information that was serialized by `toDelta` and applies it to the object in the local cache. The delta is applied directly to the existing value or to a clone, depending on how you configure it for the region.
 5.  **additional distributions**. As with full distributions, receiving members forward the delta according to their configurations and connections to other members. For example, if VM1 is a client and VM2 is a server, VM2 forwards the delta to its peers and its other clients as needed. Receiving members do not recreate the delta; `toDelta` is only called in the originating member.
 
-## <a id="how_delta_propagation_works__section_25EC5BE960F0402DAEDBE0A5A6589ACA" class="no-quick-link"></a>General Characteristics of Delta Propagation
-
+## General Characteristics of Delta Propagation {#how_delta_propagation_works__section_25EC5BE960F0402DAEDBE0A5A6589ACA}
 To use the delta propagation feature, all updates on a key in a region must have value types that implement the `Delta` interface. You cannot mix object types for an entry key where some of the types implement delta and some do not. This is because, when a type implementing the delta interface is received for an update, the existing value for the key is cast to a `Delta` type to apply the received delta. If the existing type does not also implement the `Delta` interface, the operation throws a `ClassCastException`.
 
 **Note:** Only the object itself being placed in the cache can implement the `Delta` interface and propagate changes. Any sub-objects of the cache object do not propagate their changes.
@@ -56,8 +52,7 @@ Sometimes `fromDelta` cannot be invoked because there is no object to apply the 
 -   The `putAll` operation
 -   JVMs running @@product_name@@ versions that do not support delta propagation (6.0 and earlier)
 
-## <a id="how_delta_propagation_works__section_F4A102A74530429F87BEA53C90D5CCFB" class="no-quick-link"></a>Supported Topologies and Limitations
-
+## Supported Topologies and Limitations {#how_delta_propagation_works__section_F4A102A74530429F87BEA53C90D5CCFB}
 The following topologies support delta propagation (with some limitations):
 
 -   **Peer-to-peer**. @@product_name@@ system members distribute and receive entry changes using delta propagation, with these requirements and caveats:

@@ -21,14 +21,14 @@ limitations under the License.
 
 By default, @@product_name_long@@ uses the JVM heap. @@product_name_long@@ also offers an option to store data off heap. This section describes how to manage heap and off-heap memory to best support your application.
 
--   **[Heap memory management](heap_management.html)**
+-   **[Heap memory management](heap_management)**
 
     Tips to optimize your application's performance by tuning the way @@product_name_long@@ uses the JVM heap.
 
--   **[Off-heap memory management](off_heap_management.html)**
+-   **[Off-heap memory management](off_heap_management)**
 
     How to configure @@product_name@@ to store region values in off-heap memory, which is memory within the JVM that is not subject to Java garbage collection.
 
--   **[Locking memory](lock_memory.html)**
+-   **[Locking memory](lock_memory)**
 
     How to prevent the operating system from paging out heap or off-heap memory.

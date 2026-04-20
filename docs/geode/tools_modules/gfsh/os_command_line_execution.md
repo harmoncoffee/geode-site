@@ -20,8 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="topic_fpf_y1g_tp__section_4BACD4EE33934083AC7046DF8B0A753A"></a>
+## {#topic_fpf_y1g_tp__section_4BACD4EE33934083AC7046DF8B0A753A}
 You can run some `gfsh` commands directly from your operating system's prompt by preceding the command with `gfsh`. This can be useful for Unix shell or Windows batch scripting. For example:
 
 ``` pre

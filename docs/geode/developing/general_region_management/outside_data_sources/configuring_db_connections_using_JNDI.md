@@ -41,8 +41,7 @@ The `jndi-name` attribute of the `jndi-binding` element is the key binding param
 **Note:**
 Include any data source JAR files in your CLASSPATH.
 
-## <a id="topic_F67EC20067124A618A8099AB4CBF634C" class="no-quick-link"></a>Example DataSource Configurations in cache.xml
-
+## Example DataSource Configurations in cache.xml {#topic_F67EC20067124A618A8099AB4CBF634C}
 The following sections show example `cache.xml` files configured for each of the `DataSource` connection types.
 
 ## XAPooledDataSource cache.xml Example (Derby)

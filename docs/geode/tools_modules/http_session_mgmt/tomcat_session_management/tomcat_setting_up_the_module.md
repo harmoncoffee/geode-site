@@ -23,10 +23,9 @@ limitations under the License.
 
 To use the @@product_name@@ HTTP module with Tomcat application servers, you will need to modify Tomcat's `server.xml` and `context.xml` files.
 
-Configuration is slightly different depending on the topology you are setting up: [peer-to-peer](#tomcat_setting_up_the_module_p2p) or [client/server](#tomcat_setting_up_the_module_cs). Refer to [Common Topologies for HTTP Session Management](common_gemfire_topologies.html#common_gemfire_topologies) for more information.
+Configuration is slightly different depending on the topology you are setting up: [peer-to-peer](#tomcat_setting_up_the_module_p2p) or [client/server](#tomcat_setting_up_the_module_cs). Refer to [Common Topologies for HTTP Session Management](common_gemfire_topologies#common_gemfire_topologies) for more information.
 
-## <a id="tomcat_setting_up_the_module_p2p" class="no-quick-link"></a>Peer-to-Peer Setup
-
+## Peer-to-Peer Setup {#tomcat_setting_up_the_module_p2p}
 <img src="/images_svg/http_module_p2p_with_locator.svg" id="tomcat_setting_up_the_module__image_bsm_2gf_sv" class="image" />
 
 To run @@product_name@@ in a peer-to-peer configuration, you must first start a @@product_name@@ locator, then configure Tomcat to join the cluster as a peer member.
@@ -60,8 +59,7 @@ For Tomcat 10.1 and later (Jakarta EE 10):
 
 **Note:** Tomcat 10.1+ implements Jakarta EE 10 with Servlet 6.0 specification and uses the Jakarta EE namespace (`jakarta.servlet.*`) instead of the legacy `javax.servlet.*` namespace. Ensure your application has been migrated to Jakarta EE 10 before using this module. Support for Tomcat 7, 8, and 9 has been discontinued.
 
-## <a id="tomcat_setting_up_the_module_cs" class="no-quick-link"></a>Client/Server Setup
-
+## Client/Server Setup {#tomcat_setting_up_the_module_cs}
 <img src="/images_svg/http_module_cs_with_locator.svg" id="tomcat_setting_up_the_module__image_aqn_jjf_sv" class="image" />
 
 To run @@product_name@@ in a client/server configuration, the application server will operate as a @@product_name@@ client. To do this, add the following line to `$CATALINA_HOME$/conf/server.xml` within the `<Server>` tag:
@@ -108,15 +106,13 @@ $ gfsh start server --name=server1 --locators=localhost[10334] --server-port=0 \
   --classpath=$CLASSPATH
 ```
 
-## <a id="tomcat_setting_up_the_module__section_2B97047AB30A4C549D91AD258657FBA6" class="no-quick-link"></a>Starting the Application Server
-
+## Starting the Application Server {#tomcat_setting_up_the_module__section_2B97047AB30A4C549D91AD258657FBA6}
 Once you've updated the XML configuration files, you are now ready to start your Tomcat instance. Refer to your application server documentation for starting the application server. Once started, @@product_name@@ will automatically launch within the application server process.
 
 **Note:**
 @@product_name@@ session state management provides its own clustering functionality. If you are using @@product_name@@, you should NOT turn on Tomcat clustering as well.
 
-## <a id="tomcat_setting_up_the_module__section_3E186713737E4D5383E23B41CDFED59B" class="no-quick-link"></a>Verifying that @@product_name@@ Started
-
+## Verifying that @@product_name@@ Started {#tomcat_setting_up_the_module__section_3E186713737E4D5383E23B41CDFED59B}
 You can verify that @@product_name@@ has successfully started by inspecting the Tomcat log file. For example:
 
 ``` pre
@@ -163,8 +159,7 @@ locator1    | 192.168.1.100(locator1:12345:locator)
 server1     | 192.168.1.100(server1:67890)
 ```
 
-## <a id="tomcat_setting_up_the_module__section_troubleshooting" class="no-quick-link"></a>Troubleshooting
-
+## Troubleshooting {#tomcat_setting_up_the_module__section_troubleshooting}
 **Problem:** Tomcat logs show `ClassNotFoundException: org.apache.geode.modules.util.BootstrappingFunction` (client/server only)
 
 **Solution:** Ensure you started the locator and server with the `--classpath` option as shown in the client/server configuration. The @@product_name@@ server must have access to the session module classes.
@@ -179,4 +174,4 @@ server1     | 192.168.1.100(server1:67890)
 
 **Problem:** Web applications fail to deploy with session manager errors
 
-**Solution:** Check that you completed all installation steps, including copying all JAR files from `$GEODE_HOME/lib` to `$CATALINA_HOME/lib` as described in [Installing the HTTP Module for Tomcat](./tomcat_installing_the_module.html).
+**Solution:** Check that you completed all installation steps, including copying all JAR files from `$GEODE_HOME/lib` to `$CATALINA_HOME/lib` as described in [Installing the HTTP Module for Tomcat](./tomcat_installing_the_module).

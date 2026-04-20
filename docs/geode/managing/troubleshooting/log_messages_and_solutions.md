@@ -24,11 +24,10 @@ limitations under the License.
 This section provides explanations of @@product_name@@ Log  messages with potential resolutions.
 
 Depending on how your system is configured, log files can be found in a number of locations.
-See [Log File Locations](../../security/security-audit.html#topic_5B6DF783A14241399DC25C6EE8D0048A) and
-[Naming, Searching, and Creating Log Files](../logging/logging_whats_next.html) for more information.
+See [Log File Locations](../../security/security-audit#topic_5B6DF783A14241399DC25C6EE8D0048A) and
+[Naming, Searching, and Creating Log Files](../logging/logging_whats_next) for more information.
 
-## <a id="aboveheapevictionthreshold"></a>above heap eviction threshold
-
+## above heap eviction threshold {#aboveheapevictionthreshold}
 **Log Message:**
 
 ```
@@ -53,8 +52,7 @@ NOTE:  @@product_name@@ eviction is not truly compatible with G1GC given how G1G
 You should consider increasing the total heap.   This will increase tenured space, and potentially eliminate these messages.   You can also increase your eviction-threshold percentage, but this can risk growing heap to the point where you encounter heap fragmentation issues.   
 
 
-## <a id="belowheapevictionthreshold"></a>below heap eviction threshold
-
+## below heap eviction threshold {#belowheapevictionthreshold}
 **Log Message:**
 
 ```
@@ -75,8 +73,7 @@ xxx(xxx-server01:29847)<v9>:11096 below heap eviction threshold
   Follow the guidance provided in the ["above heap eviction threshold"](#aboveheapevictionthreshold) message.
 
 
-## <a id="aboveheapcriticalthreshold"></a>above heap critical threshold
-
+## above heap critical threshold {#aboveheapcriticalthreshold}
 **Log Message:**
 
 ```
@@ -122,8 +119,7 @@ low enough.  The default of 45 is too high, so consider trying 30% to see if the
 behavior becomes more stable.
 
 
-## <a id="queryexecutioncanceledafterexceedingmaxexecutiontime"></a>Query execution canceled after exceeding max execution time
-
+## Query execution canceled after exceeding max execution time {#queryexecutioncanceledafterexceedingmaxexecutiontime}
 **Log Message:**
 
 ```
@@ -154,8 +150,7 @@ Perhaps the query did not incorporate the use of a configured index, or indexes,
 order to obtain this deeper understanding, you can incorporate verbose logging for your queries by
 setting the @@product_name@@ system property, “gemfire.Query.VERBOSE”.
 
-## <a id="Queryexecutioncanceledduetomemorythresholdcrossedinsystem"></a>Query execution canceled due to memory threshold crossed in system
-
+## Query execution canceled due to memory threshold crossed in system {#Queryexecutioncanceledduetomemorythresholdcrossedinsystem}
 **Log Message:**
 
 ```
@@ -193,10 +188,9 @@ delay the inevitable.  You could configure your regions to use the eviction-thre
 protect the system in many cases of hitting such high levels of heap surpassing the
 critical-threshold configured.
 
-## <a id="therearenstuckthreadsinthisnode"></a>There are &lt;n&gt; stuck threads in this node
-## <a id="threadnisstuck"></a>Thread &lt;n&gt; is stuck
-## <a id="threadnisstuck"></a>Thread &lt;n&gt; that was executed at &lt;time&gt; has been stuck for &lt;nn&gt; seconds
-
+## There are &lt;n&gt; stuck threads in this node {#therearenstuckthreadsinthisnode}
+## Thread &lt;n&gt; is stuck {#threadnisstuck}
+## Thread &lt;n&gt; that was executed at &lt;time&gt; has been stuck for &lt;nn&gt; seconds {#threadnisstuck}
 **Log Message:**
 
 ```
@@ -246,10 +240,8 @@ it is often possible, by analyzing the “15 seconds have elapsed” messages in
 described more in the [Seconds have elapsed](#secondshaveelapsed) message in this document.
 
 
-## <a id="disconnectingolsdistributedsystem"></a>Disconnecting old DistributedSystem to prepare for a reconnect attempt
-
-## <a id="attemptingtoreconnecttothedistributedsystem"></a>Attempting to reconnect to the DistributedSystem.  This is attempt #n
-
+## Disconnecting old DistributedSystem to prepare for a reconnect attempt {#disconnectingolsdistributedsystem}
+## Attempting to reconnect to the DistributedSystem.  This is attempt #n {#attemptingtoreconnecttothedistributedsystem}
 **Log Message:**
 
 ```
@@ -270,8 +262,7 @@ DistributedSystem to prepare for a reconnect attempt
  Examine the logs of the member that is being forced out of the system.  Perhaps the member became unresponsive. Look for other logging with keywords such as “elapsed”, “wakeup”, or “heartbeat”, all relatively unique words which can be searched for to proactively find potential issues.    If any of these are discovered, GC tuning is likely needed.
 
 
-## <a id="unabletoformatcpipconnection"></a>Unable to form a TCP/IP connection in a reasonable amount of time
-
+## Unable to form a TCP/IP connection in a reasonable amount of time {#unabletoformatcpipconnection}
 **Log Message:**
 
 ```
@@ -301,8 +292,7 @@ repeated occurrences.
    This message alone doesn’t generally reveal how to proceed to eliminate issues.  That said, a deep analysis of the logs for other significant related messages may be helpful, and following the potential resolutions for those could help to reduce or eliminate these messages.
 
 
-## <a id="receivedsuspectmessage"></a>Received Suspect Message
-
+## Received Suspect Message {#receivedsuspectmessage}
 **Log Message:**
 
 ```
@@ -338,8 +328,7 @@ means that you should also see the “Suspecting member” message shown above. 
 your version of @@product_name@@, It may require debug level logging to see that message.
 
 
-## <a id="secondshaveelapsed"></a>&lt;n&gt; Seconds Have Elapsed
-
+## &lt;n&gt; Seconds Have Elapsed {#secondshaveelapsed}
 **Log Message:**
 
 ```
@@ -379,8 +368,7 @@ gather some information, you could try bouncing that member to see if this resto
 members to a healthier state.
 
 
-## <a id="memberisnotrespondingtohearbeatrequests"></a>Member isn’t responding to heartbeat requests
-
+## Member isn’t responding to heartbeat requests {#memberisnotrespondingtohearbeatrequests}
 **Log Message:**
 
 ```
@@ -419,8 +407,7 @@ cluster.  Logs, stats, and GC logs will be required in order to understand what 
 on in this situation.
 
 
-## <a id="enablednetworkpartitiondetectionissettofalse"></a>Enabled-network-partition-detection is set to false
-
+## Enabled-network-partition-detection is set to false {#enablednetworkpartitiondetectionissettofalse}
 **Log Message:**
 
 ```
@@ -444,8 +431,7 @@ split.
   The best option is to choose to keep enable-network-partition-detection set to true. Beyond that, any split brain driven data divergence will require your manual intervention to avoid possible data loss.
 
 
-## <a id="statisticssamplingthreaddetectedawakeupdelay"></a>Statistics sampling thread detected a wakeup delay
-
+## Statistics sampling thread detected a wakeup delay {#statisticssamplingthreaddetectedawakeupdelay}
 **Log Message:**
 
 ```
@@ -469,8 +455,7 @@ issue. Check the GC, memory, and CPU statistics.
 If this is urgent and you need immediate resolution without having time to fine tune GC, one possible temporary patch is to increase the member-timeout in the gemfire.properties file.  This would make @@product_name@@ more tolerant of processes being somewhat unresponsive for longer durations.
 
 
-## <a id="redundancyhasdroppedbelownconfigurecopies"></a>Redundancy has dropped below &lt;n&gt; configured copies
-
+## Redundancy has dropped below &lt;n&gt; configured copies {#redundancyhasdroppedbelownconfigurecopies}
 **Log Message:**
 
 ```
@@ -495,8 +480,7 @@ Processor20> tid=0x1d66] Configured redundancy of 2 copies has been restored to
 Investigate the cause of the loss in redundancy if it’s not already known.  It could simply have been a planned maintenance that drove the cluster below configured redundancy levels.   The settings that generally apply here are the number of copies configured, and then, the recovery-delay and startup-recovery-delay settings, which control whether and when we restore redundancy with the loss of a member of the distributed system and when it is added back in.   Our documentation discusses these settings in detail.
 
 
-## <a id="rejectedconnection"></a>Rejected connection
-
+## Rejected connection {#rejectedconnection}
 **Log Message:**
 
 ```
@@ -537,8 +521,7 @@ you are likely using the default value of 4, which has been seen to be insuffici
 environments.  Recommend increasing this @@product_name@@ system property to at least 20.
 
 
-## <a id="pccservicemetricscomponentfailingtoconnect"></a>PCC service metrics component failing to connect to locator/server
-
+## PCC service metrics component failing to connect to locator/server {#pccservicemetricscomponentfailingtoconnect}
 **Log Message:**
 
 ```
@@ -571,8 +554,7 @@ io.pivotal.cloudcache.metrics.cli.JMXPropertiesEmitter.main(JMXPropertiesEmitter
  Every VM in PCC for locators or servers has its own service-metrics component. The job of this component is to periodically check the health of the @@product_name@@ server/locator processes running. The way it does that job is by making an RMI call to the JMX manager. When it cannot connect to the locator/server process, it starts logging these errors in its own log.
 
 
-## <a id="sslhandshakeexception"></a>SSLHandshakeException:  &lt;version&gt; is disabled
-
+## SSLHandshakeException:  &lt;version&gt; is disabled {#sslhandshakeexception}
 **Log Message:**
 
 ```
@@ -602,8 +584,7 @@ javax.net.ssl.SSLHandshakeException: <<ssl_version>> is disabled
  This means the specified SSL/TLS protocol is not compatible with, or configured correctly, on one or more members. The simplest workaround is to use “any'' as the protocol, however, some customers have strict security requirements that mandate specific versions and ciphers, which will require that all members are configured with compatible (matching) protocols and ciphers and that those protocols/ciphers are supported by the underlying JRE.
 
 
-## <a id="unabletocreatenewnativethread"></a>Unable To Create New Native Thread
-
+## Unable To Create New Native Thread {#unabletocreatenewnativethread}
 **Log Message:**
 
 ```
@@ -625,8 +606,7 @@ Depending on the resource limit encountered, you may need to increase the maximu
 Alternatively, you might be able to decrease the stack size of each thread, by setting the JVM parameter “-xss” to something smaller (the defaults are 320 KB for 32-bit JVMs and 1024 KB for 64-bit JVMs), but this must be done with care as it can cause threads to not have enough stack to properly operate. The last and safest option is to add free memory to the system by either adding memory or reducing other consumers of system memory (e.g. other applications).
 
 
-## <a id="toomanyopenfiles"></a>Too Many Open Files
-                                                                                                                                                    
+## Too Many Open Files {#toomanyopenfiles}
 **Log Message:**
 
 ```
@@ -646,8 +626,7 @@ java.net.SocketException: Too many open files (Socket creation failed/Accept fai
 There are two limits on the maximum descriptors available to a single application, a soft limit, which can be increased using the ulimit command as a user, and a “hard” limit which will require editing “/etc/security/limits.conf” and relogging in. (There is also an OS level limit that will require a system administrator to tune kernel parameters, however, this limit is typically large and is rarely hit.)   It is also possible that the FD’s being consumed are being driven by a major increase of connections/threads due to some burst of activity or connections timing out.  This can lead to retry activity driving the number of open files to increase.   If you increase the soft and hard limits, and continue to observe these messages, you may need to analyze whether you have connections timing out, sufficient TCP accept queue, etc.   This can require an increase of the p2p.backlog and net.core.somaxconn settings.
 
 
-## <a id="commitconflictexception"></a>CommitConflictException
-
+## CommitConflictException {#commitconflictexception}
 **Log Message:**
 
 ```
@@ -677,8 +656,7 @@ detected The key xxx in region /xxx was being modified by another transaction lo
  }    
 ```
 
-## <a id="initializationofregioncompleted"></a>Initialization of Region &lt;\_B\_\_RegionName_BucketNumber&gt; Completed
-
+## Initialization of Region &lt;\_B\_\_RegionName_BucketNumber&gt; Completed {#initializationofregioncompleted}
 **Log Message:**
 
 ```
@@ -718,8 +696,7 @@ There is no “resolution” here, but customers have asked how to determine whe
 The above command could tell you exactly where each bucket exists for region RegionName.   If you use only `Initialization of region _B__` instead, this would then output the buckets across all partitioned regions.    This output could then be used to know where each specific bucket exists across the cluster, to serve whatever purpose you deem helpful in monitoring your cluster.   There does exist some great documentation and project for how to identify where buckets are located in this article:  [https://community.pivotal.io/s/article/GemFire-Monitoring-PR-Entry-and-Bucket-Details](https://community.pivotal.io/s/article/GemFire-Monitoring-PR-Entry-and-Bucket-Details).
 
 
-## <a id="unknownpdxtypeerror"></a>Unknown pdx Type error
-
+## Unknown pdx Type error {#unknownpdxtypeerror}
 **Log Message:**
 
 ```
@@ -762,8 +739,7 @@ Below mentioned is an example of how to configure PDX persistence on the server 
 <pdx read-serialized="true" persistent="true" disk-store-name="pdxDiskStore"/>
 ```
 
-## <a id="errorcalculatingexpiration"></a>Error calculating expiration
-
+## Error calculating expiration {#errorcalculatingexpiration}
 **Log Message:**
 
 ```
@@ -813,8 +789,7 @@ Caused by: java.io.IOException: Unknown header byte 83
 This is due to inconsistencies in the data stored on region/disk vs. the PdxType and may throw during deserialization. Cleaning the data or syncing it according to PdxType is a possible solution. 
 
 
-## <a id="pdxtypelimitationsforgfshqueries"></a>PdxType limitations for GFSH queries
-
+## PdxType limitations for GFSH queries {#pdxtypelimitationsforgfshqueries}
 **Log Message:**
 
 ```
@@ -868,8 +843,7 @@ Other than primitive types like object types (String, Character, Date etc.) will
 
 
 
-## <a id="apachegeodeclientallconnectionsinuseexception"></a>Apache.Geode.Client.AllConnectionsInUseException
-
+## Apache.Geode.Client.AllConnectionsInUseException {#apachegeodeclientallconnectionsinuseexception}
 **Log Message:**
 
 **In StdOut/StdError on Client Side:**
@@ -891,8 +865,7 @@ Resolution: Increase the max-connections property to higher value as appropriate
 
 
 
-## <a id="orgapachegeodepdxpdxinitializationexception"></a>org.apache.geode.pdx.PdxInitializationException
-
+## org.apache.geode.pdx.PdxInitializationException {#orgapachegeodepdxpdxinitializationexception}
 **Log Message:  / Stack-trace / StdError:**
 
 ```
@@ -919,8 +892,7 @@ Exception in thread "main" org.apache.geode.pdx.PdxInitializationException: Coul
 Stop locator(s), then clear the cluster configs/pdx disk stores and, finally, start the locator(s). KB exists: [https://community.pivotal.io/s/article/Fails-to-Start-a-Cache-Member-with-orgapachegeodepdxPdxInitializationException-Could-not-create-pdx-registry?language=en_US](https://community.pivotal.io/s/article/Fails-to-Start-a-Cache-Member-with-orgapachegeodepdxPdxInitializationException-Could-not-create-pdx-registry?language=en_US).
 
 
-## <a id="formatofthestringcachexmlfilecontent"></a>Format of the string &lt;&lt;cache xml file’s content&gt;&gt; used for parameterization is unresolvable
-
+## Format of the string &lt;&lt;cache xml file’s content&gt;&gt; used for parameterization is unresolvable {#formatofthestringcachexmlfilecontent}
 Note: the spelling “perameterization” is wrong in the codebase [https://github.com/apache/geode/blob/a5bd36f9fa787d3a71c6e6efafed5a7b0fe52d2b/geode-core/src/main/java/org/apache/geode/internal/cache/xmlcache/CacheXmlPropertyResolver.java#L125](https://github.com/apache/geode/blob/a5bd36f9fa787d3a71c6e6efafed5a7b0fe52d2b/geode-core/src/main/java/org/apache/geode/internal/cache/xmlcache/CacheXmlPropertyResolver.java#L125). Working to report & fix this. 
 
 **Log Message:**
@@ -955,8 +927,7 @@ This error occurs when the parameterized values are provided for the properties/
 Fix the errors for incorrect values or their types when provided dynamically. 
 
 
-## <a id="regionexistexception"></a>RegionExistException
-
+## RegionExistException {#regionexistexception}
 **Log Message:**
 
 ```
@@ -989,8 +960,7 @@ Remove duplicate region definition from the configurations.
 - If “enable-cluster-configuration=false” in locator properties, then remove the duplicate region definition from cache.xml.
 
 
-## <a id="missingdiskstoreexception"></a>Missing Diskstore Exception
-
+## Missing Diskstore Exception {#missingdiskstoreexception}
 **Log Message:**
 
 ```
@@ -1028,8 +998,7 @@ that are being waited on by other members.
 * Respond to the waiting members by starting the server on which the waiting member is waiting on.
 
 
-## <a id="couldnotcreateaninstanceofaclass"></a>Could not create an instance of a class
-
+## Could not create an instance of a class {#couldnotcreateaninstanceofaclass}
 **Log Message:**
 
 ```
@@ -1050,8 +1019,7 @@ Could not create an instance of a class com.xxx.yyy.zzz
 * Deploy the class on cache servers.
 
 
-## <a id="partitionedregioncleanupfailedinitialization"></a>PartitionedRegion#cleanupFailedInitialization: Failed to clean the PartitionRegion allPartitionedRegions
-
+## PartitionedRegion#cleanupFailedInitialization: Failed to clean the PartitionRegion allPartitionedRegions {#partitionedregioncleanupfailedinitialization}
 **Log Message:**
 
 ```
@@ -1080,8 +1048,7 @@ acknowledge a new membership view and then failed tcp/ip connection attempt
 Make sure that regions are recovered before issuing any destroy command.
 
 
-## <a id="couldnotfindanyservertocreateprimaryclientqueueon"></a>Could not find any server to create primary client queue on.
-
+## Could not find any server to create primary client queue on. {#couldnotfindanyservertocreateprimaryclientqueueon}
 **Log Message:**
 
 ```
@@ -1103,8 +1070,7 @@ null.
 Make sure that the server, to which the Cache Client Updater Thread is connected, is up and running.
 
 
-## <a id="clusterconfigurationservicenotavailable"></a>Cluster configuration service not available
-
+## Cluster configuration service not available {#clusterconfigurationservicenotavailable}
 **Log Message:**
 
 ```
@@ -1126,8 +1092,7 @@ Exception in thread "main" org.apache.geode.GemFireConfigException: cluster conf
 
 Ensure that the locator has "enable-cluster-configuration=true" and the cache servers are able to get the cluster configurations from locators.
 
-## <a id="thesecondarymapalreadycontainedanevent"></a>The secondary map already contained an event from hub null so ignoring new event
-
+## The secondary map already contained an event from hub null so ignoring new event {#thesecondarymapalreadycontainedanevent}
 **Log Message:**
 
 ```
@@ -1152,8 +1117,7 @@ bytes...
 This message, if seen occasionally, is harmless in most situations.
 
 
-## <a id="createispresentinmorethanoneoplog"></a>Create is present in more than one Oplog. This should not be possible. The Oplog Key ID for this entry is
-
+## Create is present in more than one Oplog. This should not be possible. The Oplog Key ID for this entry is {#createispresentinmorethanoneoplog}
 **Log Message:**
 
 ```
@@ -1175,8 +1139,7 @@ java.lang.AssertionError: Oplog::readNewEntry: Create is present in more than on
  Clean up the disk stores.
 
 
-## <a id="detectedconflictingpdxtypesdurintimport"></a>Detected conflicting PDX types during import
-
+## Detected conflicting PDX types during import {#detectedconflictingpdxtypesdurintimport}
 **Log Message:**
 
 ```
@@ -1195,8 +1158,7 @@ Could not process command due to error. Detected conflicting PDX types during im
 
 Import data in the empty cluster or programmatically read the .gfd file and then perform the put operation.
 
-## <a id="atenuredheapgarbagecollectionhasoccurred"></a>A tenured heap garbage collection has occurred
-
+## A tenured heap garbage collection has occurred {#atenuredheapgarbagecollectionhasoccurred}
 **Log Message:**
 
 ```
@@ -1220,8 +1182,7 @@ If you see this value constantly increasing over time, without a similar rate of
 No resolution necessary.  This is informative only.  If you see this message frequently, however, it is a sign that you may need more heap, or finer tuning.  You may be imbalanced unknowingly, etc.    If seeing this message more frequently than every 1 hour, consistently, it is a sign that you may need tuning.   Note:  G1GC “mixed” collections may not drive this message, unless you are using more current versions of the JDK.   
 
 
-## <a id="allocatinglargernetworkreadbuffer"></a>Allocating larger network read buffer
-
+## Allocating larger network read buffer {#allocatinglargernetworkreadbuffer}
 **Log Message:**
 
 ```
@@ -1246,8 +1207,7 @@ remote port=57345> tid=0x4c] Allocating larger network read buffer, new size is
 Set all members, including locators, to the same socket-buffer-size.   If you have seen this message, and appear to be impacted in the system, it may warrant some deeper analysis of the health of the system.   Check for stuck threads, potentially gather thread dumps, to assess whether you are impacted. 
 
 
-## <a id="socketsendbuffersizeisminstead"></a>Socket send buffer size is &lt;m&gt; instead of the requested &lt;n&gt;
-
+## Socket send buffer size is &lt;m&gt; instead of the requested &lt;n&gt; {#socketsendbuffersizeisminstead}
 **Log Message:**
 
 ```
@@ -1268,8 +1228,7 @@ Socket send buffer size is 6710884 instead of the requested 16777215.
 Make sure to set all members OS configurations to be the same, similar enough to avoid having this less than optimal potential chunking of messages when sending messages between members of the @@product_name@@ distributed system.
 
 
-## <a id="quorumhasbeenlost"></a>quorum has been lost
-
+## quorum has been lost {#quorumhasbeenlost}
 **Log Message:**
 
 ```
@@ -1301,8 +1260,7 @@ even though it includes the only still running members. Restart members to resto
 full health, and determine the root cause for why so many members crashed simultaneously.
 
 
-## <a id="possiblelossofquorum"></a>possible loss of quorum due to the loss of &lt;n&gt; cache processes
-
+## possible loss of quorum due to the loss of &lt;n&gt; cache processes {#possiblelossofquorum}
 **Log Message:**
 
 ```
@@ -1344,7 +1302,7 @@ Note: This message generally comes with a full stack trace showing the forceDisc
 
 Follow the guidance provided in the, “quorum has been lost,” message.    We definitely recommend having enable-network-partition-detection=true set to protect you from split brain driving the data in your split (now 2) distributed systems diverging and becoming unrecoverable without manual intervention.    Do some research to determine whether some network event drove the @@product_name@@ cluster into this state due to an inability to communicate across the distributed system.
 
-## <a id="memberhadaweightofn"></a>&lt;member&gt; had a weight of &lt;n&gt;
+## &lt;member&gt; had a weight of &lt;n&gt; {#memberhadaweightofn}
 **Log Message:**
 
 ```
@@ -1364,8 +1322,7 @@ You certainly want to understand the cause of the member leaving the distributed
 
 
 
-## <a id="anadditionalfunctionexecutionprocessorthreadisbeinglaunched"></a>An additional Function Execution Processor thread is being launched
-
+## An additional Function Execution Processor thread is being launched {#anadditionalfunctionexecutionprocessorthreadisbeinglaunched}
 **Log Message:**
 
 ```
@@ -1384,10 +1341,9 @@ all <n> thread pool threads are in use for greater than <t> ms
 
 If you see this message, then you should increase your DistributionManager.MAX_FE_THREADS configured setting, ,until you have eliminated such messages.   You may want to consider the same for your DistributionManager.MAX_THREADS and DistributionManager.MAX_PR_THREADS settings, if not recently updated based on your current operations and load in the system. 
 
-## <a id="sendingnewview"></a>Sending new view
-## <a id="receivednewview"></a>Received new view
-## <a id="admittingmember"></a>Admitting member
-
+## Sending new view {#sendingnewview}
+## Received new view {#receivednewview}
+## Admitting member {#admittingmember}
 **Log Message:**
 
 ```
@@ -1415,8 +1371,7 @@ there are 6 non-admin member(s).
 
 These are informational only, but if you do see unexpected membership changes, which drive these “new view” messages, you can search the logs for these messages to see whether it was considered graceful, a crash, etc., and look for other logging messages which likely provide additional insight.
 
-## <a id="memberatmemberipunexpectedlyleftthedistributedcache"></a>Member at &lt;memberIP&gt; unexpectedly left the distributed cache
-
+## Member at &lt;memberIP&gt; unexpectedly left the distributed cache {#memberatmemberipunexpectedlyleftthedistributedcache}
 **Log Message:**
 
 ```
@@ -1436,10 +1391,9 @@ membership view
 This specific message doesn’t tell you much other than the change in ownership.  Search for other messages across the cluster which may indicate the reason, such as being unresponsive.   Perhaps it’s due to not responding to “heartbeat” messages.   WIth auto reconnect, it is possible that the membership has been restored to a full membership, but it’s also important to check on the balance of data and load.   A rebalance may be prudent to restore the balance in the system.  This includes redistributing primary buckets for partitioned regions, which is generally a good idea after any changes in ownership, when time permits.
 
 
-## <a id="cache serverfailedacceptingclientconnection"></a>Cache server: failed accepting client connection
-## <a id="remotehostclosedconnectionduringhandshake"></a>Remote host closed connection during handshake
-## <a id="sslpeershutdownincorrectly"></a>SSL peer shut down incorrectly
-
+## Cache server: failed accepting client connection {#cache serverfailedacceptingclientconnection}
+## Remote host closed connection during handshake {#remotehostclosedconnectionduringhandshake}
+## SSL peer shut down incorrectly {#sslpeershutdownincorrectly}
 **Log Message:**
 
 ```
@@ -1473,8 +1427,7 @@ Review client logs to see if there’s anything informative there, such as SSL/T
 
 
 
-## <a id="functioncannotbeexecutedbecausethemembersarerunninglowonmemory"></a>Function: &lt;functionName&gt; cannot be executed because the members [list of members] are running low on memory
-
+## Function: &lt;functionName&gt; cannot be executed because the members [list of members] are running low on memory {#functioncannotbeexecutedbecausethemembersarerunninglowonmemory}
 **Log Message:**
 
 ```
@@ -1494,8 +1447,7 @@ members [<list of members>)<v3>:10104] are running low on memory
 Please follow the same guidelines as the “Query execution canceled due to memory threshold” message.
 
 
-## <a id="regionbuckethaspersistentdatathatisnolongeronline"></a>Region &lt;regionName&gt; bucket &lt;n&gt; has persistent data that is no longer online stored at these locations
-
+## Region &lt;regionName&gt; bucket &lt;n&gt; has persistent data that is no longer online stored at these locations {#regionbuckethaspersistentdatathatisnolongeronline}
 **Log Message:**
 
 ```

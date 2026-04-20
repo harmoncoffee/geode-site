@@ -22,17 +22,15 @@ limitations under the License.
 -->
 
 You use a bind address configuration to send network traffic through non-default network cards and to distribute the load of network traffic for @@product_name@@ across multiple cards. If no bind address setting is found, @@product_name@@ uses the host machine's default address.
-
-<a id="using_bind_addresses__section_6063D5004787488A90EC03085991F902"></a>
+## {#using_bind_addresses__section_6063D5004787488A90EC03085991F902}
 Host machines transmit data to the network and receive data from the network through one or more network cards, also referred to as network interface cards (NIC) or LAN cards. A host with more than one card is referred to as a multi-homed host. On multi-homed hosts, one network card is used by default. You can use bind addresses to configure your @@product_name@@ members to use non-default network cards on a multi-homed host.
 
 **Note:**
 When you specify a non-default card address for a process, all processes that connect to it need to use the same address in their connection settings. For example, if you use bind addresses for your server locators, you must use the same addresses to configure the server pools in your clients.
 
-Use IPv4 or IPv6 numeric address specifications for your bind address settings. For information on these specifications, see [Choosing Between IPv4 and IPv6](IPv4_and_IPv6.html). Do not use host names for your address specifications. Host names resolve to default machine addresses.
+Use IPv4 or IPv6 numeric address specifications for your bind address settings. For information on these specifications, see [Choosing Between IPv4 and IPv6](IPv4_and_IPv6). Do not use host names for your address specifications. Host names resolve to default machine addresses.
 
-## <a id="using_bind_addresses__section_63589355AB684F739145E9185806D023" class="no-quick-link"></a>Peer and Server Communication
-
+## Peer and Server Communication {#using_bind_addresses__section_63589355AB684F739145E9185806D023}
 You can configure peer, and server communication so that each communication type uses its own address or types use the same address. If no setting is found for a specific communication type, @@product_name@@ uses the host machine's default address.
 
 **Note:**
@@ -97,8 +95,7 @@ bind-address=192.0.2.0
   <region ...
 ```
 
-## <a id="using_bind_addresses__section_B58645AD8C504AF6822315BB94BA2E0B" class="no-quick-link"></a>Locator Communication
-
+## Locator Communication {#using_bind_addresses__section_B58645AD8C504AF6822315BB94BA2E0B}
 Set the locator bind address using one of these methods:
 
 -   On the gfsh command line, specify the bind address when you start the locator, the same as you specify any other address:

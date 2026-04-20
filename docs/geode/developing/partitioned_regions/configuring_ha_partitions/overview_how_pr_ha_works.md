@@ -21,10 +21,10 @@ limitations under the License.
 
 By default, @@product_name_long@@ stores only a single copy of your partitioned region data among the region's data stores. You can configure @@product_name@@ to maintain redundant copies of your partitioned region data for high availability.
 
--   **[Understanding High Availability for Partitioned Regions](how_pr_ha_works.html)**
+-   **[Understanding High Availability for Partitioned Regions](how_pr_ha_works)**
 
     With high availability, each member that hosts data for the partitioned region gets some primary copies and some redundant (secondary) copies.
 
--   **[Configure High Availability for a Partitioned Region](configuring_ha_for_pr.html)**
+-   **[Configure High Availability for a Partitioned Region](configuring_ha_for_pr)**
 
     Configure in-memory high availability for your partitioned region. Set other high-availability options, like redundancy zones and redundancy recovery strategies.

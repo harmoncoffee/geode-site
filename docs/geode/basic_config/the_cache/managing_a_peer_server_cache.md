@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 You start your peer or server cache using a combination of XML declarations and API calls. Close the cache when you are done.
-
-<a id="creating_and_closing_a_peer_cache__section_1633A80F0DB04794BB6C3A7F05EED97E"></a>
+## {#creating_and_closing_a_peer_cache__section_1633A80F0DB04794BB6C3A7F05EED97E}
 @@product_name@@ peers are members of a @@product_name@@ cluster that do not act as clients to another @@product_name@@ cluster. @@product_name@@ servers are peers that also listen for and process client requests.
 
 1.  Create your cache:

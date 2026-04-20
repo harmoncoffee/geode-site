@@ -21,7 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-Eviction keeps a region's resource use under a specified level by removing least recently used (LRU) entries to make way for new entries. You can choose whether expired entries are overflowed to disk or destroyed. See [Persistence and Overflow](../storing_data_on_disk/chapter_overview.html).
+Eviction keeps a region's resource use under a specified level by removing least recently used (LRU) entries to make way for new entries. You can choose whether expired entries are overflowed to disk or destroyed. See [Persistence and Overflow](../storing_data_on_disk/chapter_overview).
 
 Eviction is triggered when a size-based threshold is exceeded. A region's eviction threshold can be based on:
 
@@ -50,8 +50,7 @@ the region type to "preloaded" to accommodate the local modification.
 entry's key is retained in the cache. This is the only eviction action fully supported
 for partitioned regions.
 
-## <a id="how_eviction_works__section_69E2AA453EDE4E088D1C3332C071AFE1" class="no-quick-link"></a>Eviction in Partitioned Regions
-
+## Eviction in Partitioned Regions {#how_eviction_works__section_69E2AA453EDE4E088D1C3332C071AFE1}
 In partitioned regions, @@product_name@@ removes the oldest entry it can find *in the bucket where the new entry operation is being performed*. @@product_name@@ maintains LRU entry information on a bucket-by-bucket basis, as the cost of maintaining information across the partitioned region would slow the system's performance.
 
 -   For memory and entry count eviction, LRU eviction is done in the bucket where the new entry operation is being performed until the overall size of the combined buckets in the member has dropped enough to perform the operation without going over the limit.

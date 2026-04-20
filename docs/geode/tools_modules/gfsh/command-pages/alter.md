@@ -18,9 +18,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_9323467A645D4F2B82EC236448030D14"></a>
-
-
+## {#topic_9323467A645D4F2B82EC236448030D14}
 Modify an existing Geode resource.
 
 -   **[alter async-event-queue](#topic_alter_async_event_queue)**
@@ -47,8 +45,7 @@ Modify an existing Geode resource.
 
     Alters configuration properties for all members or a subset of members while the member or members are running.
 
-## <a id="topic_alter_async_event_queue" class="no-quick-link"></a>alter async-event-queue
-
+## alter async-event-queue {#topic_alter_async_event_queue}
 Alter attributes of a specified asynchronous event queue. Each server hosting the specified async event queue must be restarted for the new attribute
 settings to take effect on that server.
 
@@ -80,8 +77,7 @@ The required option, `--id`, identifies the async event queue to be altered.
 alter async-event-queue --id=myAsyncEventQueue --batch-size=50 --if-exists
 ```
 
-## <a id="topic_99BCAD98BDB5470189662D2F308B68EB" class="no-quick-link"></a>alter disk-store
-
+## alter disk-store {#topic_99BCAD98BDB5470189662D2F308B68EB}
 Modify or remove a region from an offline disk-store.
 
 When modifying a region's configuration, it is customary to take the region off-line and restart using the new configuration. You can use the `alter disk-store` command to change the configuration of the region stored in the disk-store to match the configuration you will use at restart.
@@ -126,8 +122,7 @@ alter disk-store --name=DiskStore1 --region=region1 --disk-dirs=/Disks/DiskStore
 alter disk-store --name=DiskStore1 --region=region1 --disk-dirs=/Disks/DiskStore1 --remove
 ```
 
-## <a id="topic_alter_gateway_sender" class="no-quick-link"></a>alter gateway-sender
-
+## alter gateway-sender {#topic_alter_gateway_sender}
 Alter attributes of a specified gateway sender on one or more members of a cluster.
 
 **Availability:** Online. You must be connected in <span class="keyword parmname">gfsh</span> to a JMX Manager member to use this command.
@@ -162,8 +157,7 @@ The required option, `--id`, identifies the gateway sender to be altered.
 alter gateway-sender --id=sender1 --alert-threshold=100 --batch-size=200 --group-transaction-events
 ```
 
-## <a id="topic_alter_query_service" class="no-quick-link"></a>alter query-service
-
+## alter query-service {#topic_alter_query_service}
 Alter configuration details of the query configuration service.
 
 **Availability:** Online. You must be connected in <span class="keyword parmname">gfsh</span> to a JMX Manager member to use this command.
@@ -191,11 +185,10 @@ alter query-service --method-authorizer=org.apache.geode.cache.query.security.Un
 alter query-service --method-authorizer=org.apache.geode.cache.query.security.JavaBeanAccessorMethodAuthorizer --authorizer-parameters=java.lang;java.util
 ```
 
-## <a id="topic_E74ED23CB60342538B2175C326E7D758" class="no-quick-link"></a>alter region
-
+## alter region {#topic_E74ED23CB60342538B2175C326E7D758}
 Alters the configuration of a region.
 
-See [Specifying JSON within Command-Line Options](../json_in_gfsh.html)
+See [Specifying JSON within Command-Line Options](../json_in_gfsh)
 for syntax details.
 
 **Availability:** Online. You must be connected in <span class="keyword parmname">gfsh</span> to a JMX Manager member to use this command.
@@ -259,15 +252,14 @@ Member  | Status
 server1 | Region "/customer" altered on "server1"
 ```
 
-## <a id="topic_7E6B7E1B972D4F418CB45354D1089C2B" class="no-quick-link"></a>alter runtime
-
+## alter runtime {#topic_7E6B7E1B972D4F418CB45354D1089C2B}
 Alters configuration properties for all servers or a subset of servers while the member or members are running.
 Alter runtime is a cluster configuration command that affects the configuration for newly joining servers.
 In order for running members to adopt the alteration, they must be stopped and restarted.
 
 The alter runtime command does not apply to locators.
 
-For more information on these configuration properties, see [cache.xml](../../../reference/topics/chapter_overview_cache_xml.html#cache_xml) and configuration parameter reference.
+For more information on these configuration properties, see [cache.xml](../../../reference/cache/chapter_overview_cache_xml#cache_xml) and configuration parameter reference.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 

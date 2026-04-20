@@ -37,8 +37,7 @@ You can implement and deploy two different types of filter for multi-site events
 
     When a gateway sender processes a batch of events for distribution, @@product_name@@ delivers the stream to the `getInputStream` method of a configured `GatewayTransportFilter` implementation. The filter processes and returns the stream, which is then transmitted to the gateway receiver. When the gateway receiver receives the batch, @@product_name@@ calls the `getOutputStream` method of a configured filter, which again processes and returns the stream so that the events can be applied in the local cluster.
 
-## <a id="topic_E97BB68748F14987916CD1A50E4B4542__section_E20B4A8A98FD4EDAAA8C14B8059AA7F7" class="no-quick-link"></a>Configuring Multi-Site Event Filters
-
+## Configuring Multi-Site Event Filters {#topic_E97BB68748F14987916CD1A50E4B4542__section_E20B4A8A98FD4EDAAA8C14B8059AA7F7}
 You install a `GatewayEventFilter` implementation to a configured gateway sender in order to decide which events are queued and distributed. You install a `GatewayTransportFilter` implementation to both a gateway sender and a gateway receiver to process the stream of batched events that are distributed between two sites:
 
 -   **XML example**
@@ -84,7 +83,7 @@ You install a `GatewayEventFilter` implementation to a configured gateway sender
     --gateway-transport-filter=org.apache.geode.util.SampleTransportFilter
     ```
 
-    See [create gateway-sender](../../tools_modules/gfsh/command-pages/create.html#topic_hg2_bjz_ck).
+    See [create gateway-sender](../../tools_modules/gfsh/command-pages/create#topic_hg2_bjz_ck).
 
     ``` pre
     gfsh>create gateway-receiver --start-port=1530 --end-port=1551 \
@@ -94,7 +93,7 @@ You install a `GatewayEventFilter` implementation to a configured gateway sender
     **Note:**
     You cannot specify parameters and values for the Java class you specify with the `--gateway-transport-filter` option.
 
-    See [create gateway-receiver](../../tools_modules/gfsh/command-pages/create.html#topic_a4x_pb1_dk).
+    See [create gateway-receiver](../../tools_modules/gfsh/command-pages/create#topic_a4x_pb1_dk).
 
 -   **API example**
 

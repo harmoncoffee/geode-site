@@ -64,7 +64,7 @@ There are @@product_name@@ specific meters that have been instrumented to allow 
 | Type:               | Gauge               |
 | Description:        | The current count of entries in the cache for this member (locators will not have this metric)|
 | Tag:                |      region: The name of the region associated with the count of entries|
-| Tag:                |      data.policy: The data policy described for these regions, see [RegionShortcuts for Peers and Servers](../../basic_config/data_regions/region_shortcuts.html#region_shortcuts__section_D0975C76572E41F79C1A6EE7CF371251) |
+| Tag:                |      data.policy: The data policy described for these regions, see [RegionShortcuts for Peers and Servers](../../basic_config/data_regions/region_shortcuts#region_shortcuts__section_D0975C76572E41F79C1A6EE7CF371251) |
 
 | Meter:              | geode.function.executions |
 |---------------------|---------------------------|

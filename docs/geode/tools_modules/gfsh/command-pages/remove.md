@@ -28,9 +28,7 @@ Remove an entry from a region.
 ``` pre
 remove --region=value [--key=value] [--all(=value)?] [--key-class=value]
 ```
-
-<a id="concept_D452C829146D434CB5069126D93944FD__table_lx4_ybg_2w"></a>
-
+## {#concept_D452C829146D434CB5069126D93944FD__table_lx4_ybg_2w}
 | Name                                               | Description                                                                 | Default Value                                   |
 |----------------------------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;key</span>        | String or JSON text that will be used to create a key to retrieve a value . |                                                 |

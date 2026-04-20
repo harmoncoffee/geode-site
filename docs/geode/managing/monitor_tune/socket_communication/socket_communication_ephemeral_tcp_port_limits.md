@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 By default, Windows’ ephemeral ports are within the range 1024-4999, inclusive. You can increase the range.
-
-<a id="socket_comm__section_F535D5D99206498DBBD5A6CC3230F25B"></a>
+## {#socket_comm__section_F535D5D99206498DBBD5A6CC3230F25B}
 If you are repeatedly receiving the following exception:
 
 ``` pre

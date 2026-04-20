@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 @@product_name_long@@ uses a federated Open MBean strategy to manage and monitor all members of the cluster. This strategy gives you a consolidated, single-agent view of the cluster.
-
-<a id="concept_F7B9EE348DA744D3BBDFD68E7F48A604__section_37CECE9B26644505A79784EA0CD1FDAE"></a>
+## {#concept_F7B9EE348DA744D3BBDFD68E7F48A604__section_37CECE9B26644505A79784EA0CD1FDAE}
 Application and manager development is much easier because you do not have to find the right MBeanServer to make a request on an MBean. Instead, you interact with a single MBeanServer that aggregates MBeans from all other local and remote MBeanServers.
 
 Some other key advantages and features of @@product_name@@ administration architecture:
@@ -34,8 +33,7 @@ Some other key advantages and features of @@product_name@@ administration archit
 -   Any @@product_name@@ member can be configured to provide a federated view of all the MXBeans for all members in a @@product_name@@ cluster.
 -   @@product_name@@ has also modified its use of JMX to be industry-standard and friendly to generic JMX clients. You can now easily monitor or manage the cluster by using any third-party tool that is compliant with JMX. For example, JConsole.
 
-## <a id="concept_F7B9EE348DA744D3BBDFD68E7F48A604__section_A3166A9657044E088DA0FE2C2B8325BE" class="no-quick-link"></a>References
-
+## References {#concept_F7B9EE348DA744D3BBDFD68E7F48A604__section_A3166A9657044E088DA0FE2C2B8325BE}
 For more information on MXBeans and Open MBeans, see:
 
 -   [http://docs.oracle.com/javase/8/docs/api/javax/management/MXBean.html](http://docs.oracle.com/javase/8/docs/api/javax/management/MXBean.html)

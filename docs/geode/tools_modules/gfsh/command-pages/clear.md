@@ -23,7 +23,7 @@ Clears all the defined indexes.
 
 Index definitions are stored locally on the `gfsh` client. If you want to create a new set of indexes or if one or more of the index creations fail, you might want to clear the definitions
 
-See also [define index](define.html).
+See also [define index](define).
 
 **Availability:** Online or offline.
 

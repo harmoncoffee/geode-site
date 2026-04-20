@@ -21,26 +21,26 @@ limitations under the License.
 
 @@product_name@@ uses a query syntax based on OQL (Object Query Language) to query region data. Since @@product_name@@ regions are key-value stores, values can range from simple byte arrays to complex nested objects.
 
--   **[GET /geode/v1/queries](get_queries.html)**
+-   **[GET /geode/v1/queries](get_queries)**
 
     List all parameterized queries by ID or name.
 
--   **[POST /geode/v1/queries?id=&lt;queryId&gt;&q=&lt;OQL-statement&gt;](post_create_query.html)**
+-   **[POST /geode/v1/queries?id=&lt;queryId&gt;&q=&lt;OQL-statement&gt;](post_create_query)**
 
     Create (prepare) the specified parameterized query and assign the corresponding ID for lookup.
 
--   **[POST /geode/v1/queries/\{queryId\}](post_execute_query.html)**
+-   **[POST /geode/v1/queries/\{queryId\}](post_execute_query)**
 
     Execute the specified named query passing in scalar values for query parameters in the POST body.
 
--   **[PUT /geode/v1/queries/\{queryId\}](put_update_query.html)**
+-   **[PUT /geode/v1/queries/\{queryId\}](put_update_query)**
 
     Update a named, parameterized query.
 
--   **[DELETE /geode/v1/queries/\{queryId\}](delete_named_query.html)**
+-   **[DELETE /geode/v1/queries/\{queryId\}](delete_named_query)**
 
     Delete the specified named query.
 
--   **[GET /geode/v1/queries/adhoc?q=&lt;OQL-statement&gt;](get_execute_adhoc_query.html)**
+-   **[GET /geode/v1/queries/adhoc?q=&lt;OQL-statement&gt;](get_execute_adhoc_query)**
 
     Run an unnamed (unidentified), ad-hoc query passed as a URL parameter.

@@ -18,9 +18,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="concept_B8A3E21674294C65AE9F9A60F37A284E"></a>
-
-
+## {#concept_B8A3E21674294C65AE9F9A60F37A284E}
 Export configurations, data, logs and stack-traces.
 
 -   **[export cluster-configuration](#topic_mdv_jgz_ck)**
@@ -47,8 +45,7 @@ Export configurations, data, logs and stack-traces.
 
     Export the stack trace for a member or members.
 
-## <a id="topic_mdv_jgz_ck" class="no-quick-link"></a>export cluster-configuration
-
+## export cluster-configuration {#topic_mdv_jgz_ck}
 Exports a single XML file or a ZIP file with cluster configuration that contains the `cache.xml` files, `gemfire.properties` files, and application JAR files needed to configure and operate a cluster.
 
 When neither a file name nor a ZIP file name is specified,
@@ -56,7 +53,7 @@ the cluster configuration is written to standard output.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
-See [Overview of the Cluster Configuration Service](../../../configuring/cluster_config/gfsh_persist.html#concept_r22_hyw_bl).
+See [Overview of the Cluster Configuration Service](../../../configuring/gfsh_persist#concept_r22_hyw_bl).
 
 **Syntax:**
 
@@ -89,8 +86,7 @@ gfsh>export cluster-configuration --zip-file-name=mySharedConfig.zip
 Downloading cluster configuration : /home/username/gemfire/mySharedConfig.zip
 ```
 
-## <a id="topic_C7C69306F93743459E65D46537F4A1EE" class="no-quick-link"></a>export config
-
+## export config {#topic_C7C69306F93743459E65D46537F4A1EE}
 Export configuration properties for a member or members.
 
 If you do not specify any parameters, all member configurations will be exported.
@@ -127,7 +123,7 @@ Downloading Cache XML file: c:\PivotalGemFire\Latest\.\member1-cache.xml
 Downloading properties file: c:\PivotalGemFire\Latest\.\member1-gf.properties
 ```
 
-## <a id="topic_263B70069BFC4A7185F86B3272011734" class="no-quick-link"></a>export data
+## export data {#topic_263B70069BFC4A7185F86B3272011734}
 
 Export user data from a region to a file or files.
 
@@ -179,8 +175,7 @@ Data succesfully exported from region : region2 to file : C:\PivotalGemFire\
 Latest\server1\region2_20121001.gfd on host : 192.0.2.0
 ```
 
-## <a id="topic_B80978CC659244AE91E2B8CE56EBDFE3" class="no-quick-link"></a>export logs
-
+## export logs {#topic_B80978CC659244AE91E2B8CE56EBDFE3}
 Export logs to a given directory.
 
 All files that have logs in the specified time range will be exported. If no time range is specified, all logs will be exported.
@@ -238,8 +233,7 @@ Logs exported to the connected member's file system: /my-locator/data/logs/expor
 ```
 
 
-## <a id="topic_sjg_bvt_gq" class="no-quick-link"></a>export offline-disk-store
-
+## export offline-disk-store {#topic_sjg_bvt_gq}
 Export region data from an offline disk store into gemfire snapshot files.
 
 **Availability:** Online or offline.
@@ -265,8 +259,7 @@ export offline-disk-store --name=value --disk-dirs=value(,value)* --dir=value
 --disk-dirs=/home/username/gemfire/mydiskStore1Dir --dir=/home/username/gemfire/export
 ```
 
-## <a id="topic_195D27B8B2B64A4E84CF2256636D54BD" class="no-quick-link"></a>export stack-traces
-
+## export stack-traces {#topic_195D27B8B2B64A4E84CF2256636D54BD}
 Export the stack trace for one or more cluster members (locators and servers).
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.

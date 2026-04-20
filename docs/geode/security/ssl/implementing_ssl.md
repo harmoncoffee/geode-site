@@ -28,8 +28,7 @@ distribution. You can use SSL alone or in conjunction with the other @@product_n
 described here apply to @@product_name@@ servers and to Java-based clients. SSL configuration in non-Java
 clients may differ &mdash; see the client's documentation for details.
 
-## <a id="ssl_configurable_components" class="no-quick-link"></a>SSL-Configurable Components
-
+## SSL-Configurable Components {#ssl_configurable_components}
 You can specify that SSL be used system-wide, or you can independently configure SSL for specific
 system components.  The following list shows the system components that can be separately configured
 to communicate using SSL, and the kind of communications to which each component name refers:
@@ -65,8 +64,7 @@ Specifying that a component is enabled for SSL applies to the component's server
 client-socket side.  For example, if you enable SSL for locators, then any process that communicates
 with a locator must also have SSL enabled.  If you provide "" as the value, SSL is turned off for all components.
 
-## <a id="ssl_configuration_properties" class="no-quick-link"></a>SSL Configuration Properties
-
+## SSL Configuration Properties {#ssl_configuration_properties}
 You can use @@product_name@@ configuration properties to enable or disable SSL, to identify SSL ciphers and
 protocols, and to provide the location and credentials for key and trust stores.
 
@@ -187,8 +185,7 @@ ssl-truststore=secret/truststore.dat
 ssl-truststore-password=changeit
 ```
  
-## <a id="ssl_property_reference_tables" class="no-quick-link"></a>SSL Property Reference Tables
-
+## SSL Property Reference Tables {#ssl_property_reference_tables}
 The following table lists the components you can configure to use SSL.
 
 <span class="tablecap">Table 1. SSL-Configurable Components</span>
@@ -225,16 +222,15 @@ The following table lists the properties you can use to configure SSL on your @@
 | ssl-truststore-password            | trust store password                        | string |
 | ssl-truststore-type                | trust store type                            | string |
 
-## <a id="implementing_ssl__sec_ssl_impl_proc" class="no-quick-link"></a>Procedure
-
+## Procedure {#implementing_ssl__sec_ssl_impl_proc}
 1.  Make sure your Java installation includes the JSSE API and familiarize yourself with its
 use. For information, see the [Oracle JSSE website](http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136007.html).
 
 2.  Configure SSL as needed for each connection type:
 
     1.  Use locators for member discovery within the clusters and for client discovery of
-    servers. See [Configuring Peer-to-Peer Discovery](../topologies_and_comm/p2p_configuration/setting_up_a_p2p_system.html) and
-    [Configuring a Client/Server System](../topologies_and_comm/cs_configuration/setting_up_a_client_server_system.html#setting_up_a_client_server_system).
+    servers. See [Configuring Peer-to-Peer Discovery](../topologies_and_comm/p2p_configuration/setting_up_a_p2p_system) and
+    [Configuring a Client/Server System](../topologies_and_comm/cs_configuration/setting_up_a_client_server_system#setting_up_a_client_server_system).
 
     2.  Configure SSL properties as necessary for different component types, using the properties
     described above. For example, to enable SSL for

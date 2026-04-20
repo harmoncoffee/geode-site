@@ -23,11 +23,10 @@ limitations under the License.
 
 Indexes are automatically kept current with the region data they reference. The region attribute `IndexMaintenanceSynchronous` specifies whether the region indexes are updated synchronously when a region is modified or asynchronously in a background thread.
 
-## <a id="concept_98ED3F38919A490B9AE2553568455C35__section_FF1945F2AAFA4B158067CEE967410616" class="no-quick-link"></a>Index Maintenance Behavior
-
+## Index Maintenance Behavior {#concept_98ED3F38919A490B9AE2553568455C35__section_FF1945F2AAFA4B158067CEE967410616}
 Asynchronous index maintenance batches up multiple updates to the same region key. The default mode is synchronous, since this provides the greatest consistency with region data.
 
-See [RegionFactory.setIndexMaintenanceSynchronous](/org/apache/geode/cache/RegionFactory.html).
+See [RegionFactory.setIndexMaintenanceSynchronous](/org/apache/geode/cache/RegionFactory).
 
 This declarative index creation sets the maintenance mode to asynchronous:
 
@@ -36,8 +35,7 @@ This declarative index creation sets the maintenance mode to asynchronous:
 </region-attributes>
 ```
 
-## <a id="concept_98ED3F38919A490B9AE2553568455C35__section_68308B5597CF4A9EAA8EC0BD83A233E6" class="no-quick-link"></a>Internal Index Structure and Storage
-
+## Internal Index Structure and Storage {#concept_98ED3F38919A490B9AE2553568455C35__section_68308B5597CF4A9EAA8EC0BD83A233E6}
 Indexes are stored either as compact or non-compact data structures based on the indexed expression (even if the index key type is the same.) For example, consider the following Passenger object:
 
 ``` pre

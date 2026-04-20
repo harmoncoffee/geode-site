@@ -21,35 +21,35 @@ limitations under the License.
 
 The security framework permits authentication of connecting components and authorization of operations for all communicating components of the cluster.
 
--   **[Security Model](security_model.html)**
+-   **[Security Model](security_model)**
 
     This section describes the security model for Apache Geode. It is intended to help users understand how Geode controls access to information and resources so that they can make informed decisions about how to deploy and manage Geode clusters and clients.
 
--   **[Security Implementation Introduction and Overview](implementing_security.html)**
+-   **[Security Implementation Introduction and Overview](implementing_security)**
 
     Encryption, SSL secure communication, authentication, and authorization help to secure the cluster.
 
--   **[Security Detail Considerations](security_audit_overview.html)**
+-   **[Security Detail Considerations](security_audit_overview)**
 
     This section gathers discrete details in one convenient location to better help you assess and configure the security of your environment.
 
--   **[Enable Security with Property Definitions](enable_security.html)**
+-   **[Enable Security with Property Definitions](enable_security)**
 
--   **[Authentication](authentication_overview.html)**
+-   **[Authentication](authentication_overview)**
 
     A cluster using authentication bars malicious peers or clients, and deters inadvertent access to its cache.
 
--   **[Authorization](/authorization_overview.html)**
+-   **[Authorization](/authorization_overview)**
 
     Client operations on a cache server can be restricted or completely blocked based on the roles and permissions assigned to the credentials submitted by the client.
 
--   **[Post Processing of Region Data](/post_processing.html)**
+-   **[Post Processing of Region Data](/post_processing)**
 
--   **[SSL](/ssl_overview.html)**
+-   **[SSL](/ssl_overview)**
 
     SSL protects your data in transit between applications.
 
--   **[Serialization](/serialization.html)**
+-   **[Serialization](/serialization)**
 
     This section describes the serialization mechanisms available in Apache Geode, including global serialization filters and PDX serialization.
 

@@ -81,8 +81,7 @@ Build from source or use the TAR distribution to install @@product_name_long@@ o
     v1.1.0
     ```
 
-## <a id="concept_0129F6A1D0EB42C4A3D24861AF2C5425__section_D3326496B2BB47A7AB0CFC1A5E266842" class="no-quick-link"></a>Install Binaries from .tgz File
-
+## Install Binaries from .tgz File {#concept_0129F6A1D0EB42C4A3D24861AF2C5425__section_D3326496B2BB47A7AB0CFC1A5E266842}
 1.  Download the .tgz file from the Releases page found at [http://geode.apache.org](http://geode.apache.org/).
 2.  Expand the .tgz file, where `path_to_product` is an absolute path, and the file name will vary due to the version number:
 

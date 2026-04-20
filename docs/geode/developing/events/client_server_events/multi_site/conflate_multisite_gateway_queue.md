@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Conflating a queue improves distribution performance. When conflation is enabled, only the latest queued value is sent for a particular key.
-
-<a id="conflate_multisite_gateway_queue__section_294AD2E2328E4D6B8D6A73966F7B3B14"></a>
+## {#conflate_multisite_gateway_queue__section_294AD2E2328E4D6B8D6A73966F7B3B14}
 **Note:**
 Do not use conflation if your receiving applications depend on the specific ordering of entry modifications, or if they need to be notified of every change to an entry.
 
@@ -34,8 +33,7 @@ Conflation is most useful when a single entry is updated frequently, but other s
 **Note:**
 This method of conflation is different from the one used for server-to-client subscription queue conflation and peer-to-peer distribution within a cluster.
 
-## <a id="conflate_multisite_gateway_queue__section_207FA6BF0F734F9A91EAACB136F8D6B5" class="no-quick-link"></a>Examples—Configuring Conflation for a Gateway Sender Queue
-
+## Examples—Configuring Conflation for a Gateway Sender Queue {#conflate_multisite_gateway_queue__section_207FA6BF0F734F9A91EAACB136F8D6B5}
 To enable conflation for a gateway sender queue, use one of the following mechanisms:
 
 -   **cache.xml configuration**

@@ -23,16 +23,14 @@ limitations under the License.
 
 You can extend the `ReflectionBasedAutoSerializer` to handle serialization in a customized manner. This section provides an overview of the available method-based customization options and an example of extending the serializer to support BigDecimal and BigInteger types.
 
-## <a id="concept_9E020566EE794A81A48A90BA798EC279__section_378C0C68A1B342DD9D754DDBDC4874B3" class="no-quick-link"></a>Reasons to Extend the ReflectionBasedAutoSerializer
-
+## Reasons to Extend the ReflectionBasedAutoSerializer {#concept_9E020566EE794A81A48A90BA798EC279__section_378C0C68A1B342DD9D754DDBDC4874B3}
 One of the main use cases for extending the `ReflectionBasedAutoSerializer` is that you want it to handle an object that would currently need to be handled by standard Java serialization. There are several issues with having to use standard Java serialization that can be addressed by extending the PDX `ReflectionBasedAutoSerializer`.
 
 -   Each time we transition from a @@product_name@@ serialized object to an object that will be Java I/O serialized, extra data must get serialized. This can cause a great deal of serialization overhead. This is why it is worth extending the `ReflectionBasedAutoSerializer` to handle any classes that normally would have to be Java I/O serialized.
 -   Expanding the number of classes that can use the `ReflectionBasedAutoSerializer` is beneficial when you encounter object graphs. After we use Java I/O serialization on an object, any objects under that object in the object graph will also have to be Java I/O serialized. This includes objects that normally would have been serialized using PDX or `DataSerializable`.
 -   If standard Java I/O serialization is done on an object and you have enabled check-portability, then an exception will be thrown. Even if you are not concerned with the object's portability, you can use this flag to find out what classes would use standard Java serialization (by getting an exception on them) and then enhancing your auto serializer to handle them.
 
-## <a id="concept_9E020566EE794A81A48A90BA798EC279__section_A739691C60FB4EB291289AADCD66C675" class="no-quick-link"></a>Overriding ReflectionBasedAutoSerializer Behavior
-
+## Overriding ReflectionBasedAutoSerializer Behavior {#concept_9E020566EE794A81A48A90BA798EC279__section_A739691C60FB4EB291289AADCD66C675}
 You can customize the specific behaviors in `ReflectionBasedAutoSerializer` by overriding the following methods:
 
 -   **`isClassAutoSerialized`** customizes which classes to autoserialize.
@@ -46,10 +44,9 @@ You can customize the specific behaviors in `ReflectionBasedAutoSerializer` by o
 
 These methods are only called the first time the `ReflectionBasedAutoSerializer` sees a new class. The results will be remembered and used the next time the same class is seen.
 
-For details on these methods and their default behaviors, see the JavaDocs on [ReflectionBasedAutoSerializer](/org/apache/geode/pdx/ReflectionBasedAutoSerializer.html) for details.
+For details on these methods and their default behaviors, see the JavaDocs on [ReflectionBasedAutoSerializer](/org/apache/geode/pdx/ReflectionBasedAutoSerializer) for details.
 
-## <a id="concept_9E020566EE794A81A48A90BA798EC279__section_7C4CC39FD82A48A9B5F8376522078192" class="no-quick-link"></a>Example of Optimizing Autoserialization of BigInteger and BigDecimal Types
-
+## Example of Optimizing Autoserialization of BigInteger and BigDecimal Types {#concept_9E020566EE794A81A48A90BA798EC279__section_7C4CC39FD82A48A9B5F8376522078192}
 This section provides an example of extending the `ReflectionBasedAutoSerializer` to optimize the automatic serialization of BigInteger and BigDecimal types.
 
 The following code sample illustrates a subclass of the `ReflectionBasedAutoSerializer` that optimizes BigInteger and BigDecimal autoserialization:

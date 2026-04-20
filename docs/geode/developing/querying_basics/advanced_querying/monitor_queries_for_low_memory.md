@@ -20,10 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="topic_685CED6DE7D0449DB8816E8ABC1A6E6F"></a>
-
-
+## {#topic_685CED6DE7D0449DB8816E8ABC1A6E6F}
 The query monitoring feature prevents out-of-memory exceptions from occurring when you execute queries or create indexes.
 
 You enable this feature when you set 
@@ -45,8 +42,7 @@ queries will throw a `QueryExecutionLowMemoryException`.
 Any indexes that are in the process of being created will throw
 an `InvalidIndexException` with the message indicating the reason.
 
-## <a id="topic_685CED6DE7D0449DB8816E8ABC1A6E6F__section_2E9DEEC9D9C94D038543DDE03BC60B20" class="no-quick-link"></a>Partitioned Region Queries and Low Memory
-
+## Partitioned Region Queries and Low Memory {#topic_685CED6DE7D0449DB8816E8ABC1A6E6F__section_2E9DEEC9D9C94D038543DDE03BC60B20}
 Partitioned region queries are likely causes for out-of-memory exceptions. If query monitoring is enabled, partitioned region queries drop or ignore results that are being gathered by other servers if the executing server is low in memory.
 
 Query-monitoring does not address a scenario in which a low-level collection is expanded while the partitioned region query is gathering results. For example, if a row is added and then causes a Java level collection or array to expand, it is possible to then encounter an out-of-memory exception. This scenario is rare and is only possible if the collection size itself expands before a low memory condition is met and then expands beyond the remaining available memory. As a workaround, in the event that you encounter this situation, you may be able to tune the system by additionally lowering the `critical-heap-percentage`.

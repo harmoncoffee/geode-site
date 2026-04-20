@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 You can configure a gateway sender queue or an asynchronous event queue to persist data to disk similar to the way in which replicated regions are persisted.
-
-<a id="configuring_highly_available_gateway_queues__section_7EB2A7E38B074AAAA06D22C59687CB8A"></a>
+## {#configuring_highly_available_gateway_queues__section_7EB2A7E38B074AAAA06D22C59687CB8A}
 Persisting a queue provides high availability for the event messaging that the sender performs. For example, if a persistent gateway sender queue exits for any reason, when the member that hosts the sender restarts it automatically reloads the queue and resumes sending messages. If an asynchronous event queue exits for any reason, write-back caching can resume where it left off when the queue is brought back online.
 @@product_name@@ persists an event queue if you set the `enable-persistence` attribute to true. The queue is persisted to the disk store specified in the queue's `disk-store-name` attribute, or to the default disk store if you do not specify a store name.
 

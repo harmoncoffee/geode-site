@@ -30,9 +30,7 @@ Only one of either `--jars` or `--dir` may be specified.
 ``` pre
 deploy [--groups=value(,value)*] [--jars=value(,value)*] [--dir=value]
 ```
-
-<a id="concept_6B38CB283BC048778A8E3908C1BDF221__table_gfk_42h_2w"></a>
-
+## {#concept_6B38CB283BC048778A8E3908C1BDF221__table_gfk_42h_2w}
 | Name                                          | Description                                                                                                                       |
 |-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;groups</span> | Group(s) to which the specified JARs will be deployed. If this option is not specified, the deployment will occur on all members. |

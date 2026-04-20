@@ -21,10 +21,10 @@ limitations under the License.
 
 @@product_name_long@@ MBeans emit notifications when specific events occur or if an alert is raised in the @@product_name@@ system. Using standard JMX APIs, users can add notification handlers to listen for these events.
 
--   **[Notification Federation](notification_federation_and_alerts.html)**
+-   **[Notification Federation](notification_federation_and_alerts)**
 
     All notifications emitted from managed nodes are federated to all JMX Managers in the system.
 
--   **[List of JMX MBean Notifications](list_of_mbean_notifications.html)**
+-   **[List of JMX MBean Notifications](list_of_mbean_notifications)**
 
     This topic lists all available JMX notifications emitted by @@product_name@@ MBeans.

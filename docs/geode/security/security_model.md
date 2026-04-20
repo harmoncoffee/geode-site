@@ -23,13 +23,13 @@ limitations under the License.
 Every component of Apache Geode is built with security considerations as a top priority. However, certain security
 solutions require user-specific design and implementation. Geode's default configuration combines maximum flexibility
 and performance without any input needed from the user. Because of this, certain security measures like 
-**[authentication](authentication_overview.html)**, 
-**[authorization](authorization_overview.html)**,
-**[serialization](../security/serialization.html)** and 
-**[over-the-wire encryption](ssl_overview.html)** 
+**[authentication](authentication_overview)**, 
+**[authorization](authorization_overview)**,
+**[serialization](../security/serialization)** and 
+**[over-the-wire encryption](ssl_overview)** 
 are absent from a default Geode installation.
 It is highly recommended that users review Geode's security capabilities and implement them as they see fit. See the 
-**[Security Implementation Introduction and Overview](implementing_security.html)**
+**[Security Implementation Introduction and Overview](implementing_security)**
 to get started with Apache Geode security.
 
 Additional documentation related to security can be found on Apache Geode Wiki 

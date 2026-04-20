@@ -39,7 +39,7 @@ You can override the default values and add additional configurations within a `
 </region>
 ```
 
-You can also create your own, named region shortcuts for common custom configurations. See [Region Shortcuts and Custom Named Region Attributes](../../basic_config/data_regions/region_shortcuts.html).
+You can also create your own, named region shortcuts for common custom configurations. See [Region Shortcuts and Custom Named Region Attributes](../../basic_config/data_regions/region_shortcuts).
 
 To configure a region using the gfsh command-line tool, specify the shortcut name with the `--type` argument. For example:
 
@@ -50,8 +50,8 @@ gfsh>create region --name=myRegion --type=PARTITION_REDUNDANT
 **Note:**
 If you change the cache.xml file that defines a region, you must restart the member before the changes take effect.
 
-For more information about configuring regions, see [Region Management](../../basic_config/data_regions/managing_data_regions.html).
+For more information about configuring regions, see [Region Management](../../basic_config/data_regions/managing_data_regions).
 
-For more information about using the various types of @@product_name@@ regions and when to use them, see [Region Types](../../developing/region_options/region_types.html#region_types).
+For more information about using the various types of @@product_name@@ regions and when to use them, see [Region Types](../../developing/region_options/region_types#region_types).
      
-For a quick reference listing all region shortcuts, see [Region Shortcuts Quick Reference](region_shortcuts_table.html).
+For a quick reference listing all region shortcuts, see [Region Shortcuts Quick Reference](region_shortcuts_table).

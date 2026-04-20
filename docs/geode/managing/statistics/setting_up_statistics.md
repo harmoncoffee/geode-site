@@ -23,9 +23,8 @@ limitations under the License.
 
 You can configure statistics and statistics archiving in several ways.
 
-## <a id="setting_up_statistics__section_215BB4074BD64834BAADA87BE84C34DE" class="no-quick-link"></a>Configure Cluster or Server Statistics
-
-In this procedure it is assumed that you understand [Basic Configuration and Programming](../../basic_config/book_intro.html).
+## Configure Cluster or Server Statistics {#setting_up_statistics__section_215BB4074BD64834BAADA87BE84C34DE}
+In this procedure it is assumed that you understand [Basic Configuration and Programming](../../basic_config/book_intro).
 
 Execute the following commands to modify the cluster's configuration and enable cluster or server statistics.
 
@@ -36,7 +35,7 @@ gfsh>alter runtime --enable-statistics=true -–statistic-archive-file=myStatist
 
 Note that setting `statistic-archive-file` to `/dev/null` still calculates statistics, but they are not archived to a file.
 
-You can also configure sample rate and the filename of your statistic archive files. See [alter runtime](../../tools_modules/gfsh/command-pages/alter.html#topic_7E6B7E1B972D4F418CB45354D1089C2B) for more command options.
+You can also configure sample rate and the filename of your statistic archive files. See [alter runtime](../../tools_modules/gfsh/command-pages/alter#topic_7E6B7E1B972D4F418CB45354D1089C2B) for more command options.
 
 Alternately, if you are not using the cluster configuration service, configure `gemfire.properties` for the statistics monitoring and archiving that you need:
 
@@ -78,8 +77,7 @@ Alternately, if you are not using the cluster configuration service, configure `
 If these statistics are on, you are able to access archived statistics through the `gfsh show metrics` command.
 
 
-## <a id="setting_up_statistics__section_region_level" class="no-quick-link"></a>Configure Transient Region and Entry Statistics
-
+## Configure Transient Region and Entry Statistics {#setting_up_statistics__section_region_level}
 Enable transient region and entry statistics gathering on the regions where you need them. This configuration is distinct from the enabling of cluster or server statistics.
 
 **gfsh example:**
@@ -114,8 +112,7 @@ RegionAttributes attrs = this.currRegion.getAttributes();
   }
 ```
 
-## <a id="setting_up_statistics__section_custom_level" class="no-quick-link"></a> Configure Custom Statistics
-
+## Configure Custom Statistics {#setting_up_statistics__section_custom_level}
 Create and manage any custom statistics that you need through `cache.xml` and the API.
 
 **cache/cluster.xml example:**
@@ -150,8 +147,7 @@ this.samplerStats.incLong(this.sampleTimeId, nanosSpentWorking / 1000000);
 ```
 
 
-## <a id="setting_up_statistics__section_D511BB61B27A44749E2012B066A5C906" class="no-quick-link"></a>Controlling the Size of Archive Files
-
+## Controlling the Size of Archive Files {#setting_up_statistics__section_D511BB61B27A44749E2012B066A5C906}
 You can specify limits on the archive files for statistics using the gfsh `alter runtime` command. These are the areas of control:
 
 -   **Archive File Growth Rate**.

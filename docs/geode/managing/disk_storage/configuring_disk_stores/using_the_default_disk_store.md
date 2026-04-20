@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 You can modify the behavior of the default disk store by specifying the attributes you want for the disk store named "DEFAULT".
-
-<a id="using_the_default_disk_store__section_7D6E1A05D28840AC8606EF0D88E9B373"></a>
+## {#using_the_default_disk_store__section_7D6E1A05D28840AC8606EF0D88E9B373}
 Whenever you use disk stores without specifying the disk store to use, @@product_name@@ uses the disk store named "DEFAULT".
 
 For example, these region and queue configurations specify persistence and/or overflow, but do not specify the disk-store-name. Because no disk store is specified, these use the disk store named "DEFAULT".
@@ -50,8 +49,7 @@ Example of using the default disk store for server subscription queue overflow (
 </cache-server>
 ```
 
-## <a id="using_the_default_disk_store__section_671AED6EAFEE485D837411DEBE0C6BC6" class="no-quick-link"></a>Change the Behavior of the Default Disk Store
-
+## Change the Behavior of the Default Disk Store {#using_the_default_disk_store__section_671AED6EAFEE485D837411DEBE0C6BC6}
 @@product_name@@ initializes the default disk store with the default disk store configuration settings. You can modify the behavior of the default disk store by specifying the attributes you want for the disk store named "DEFAULT". The only thing you can’t change about the default disk store is the name.
 
 The following example changes the default disk store to allow manual compaction and to use multiple, non-default directories:
@@ -67,5 +65,4 @@ cache.xml:
      </disk-dirs>
 </disk-store>
 ```
-
-<a id="using_the_default_disk_store__section_C61BA9AD9A6442DA934C2B20C75E0996"></a>
+## {#using_the_default_disk_store__section_C61BA9AD9A6442DA934C2B20C75E0996}

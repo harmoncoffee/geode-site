@@ -23,19 +23,19 @@ limitations under the License.
 
 You can customize how @@product_name_long@@ groups your partitioned region data with custom partitioning and data colocation.
 
--   **[Understanding Custom Partitioning and Data Colocation](custom_partitioning_and_data_colocation.html)**
+-   **[Understanding Custom Partitioning and Data Colocation](custom_partitioning_and_data_colocation)**
 
     Custom partitioning and data colocation can be used separately or in conjunction with one another.
 
--   **[Standard Custom Partitioning](standard_custom_partitioning.html)**
+-   **[Standard Custom Partitioning](standard_custom_partitioning)**
 
     By default, @@product_name@@ partitions each data entry into a bucket using a hashing policy on the key. Additionally, the physical location of the key-value pair is abstracted away from the application. You can change these policies for a partitioned region by providing a standard partition resolver that maps entries to a set of buckets called a partition.
 
--   **[Fixed Custom Partitioning](fixed_custom_partitioning.html)**
+-   **[Fixed Custom Partitioning](fixed_custom_partitioning)**
 
     By default, @@product_name@@ partitions each data entry into a bucket using a hashing policy on the key. Additionally, the physical location of the key-value pair is abstracted away from the application. You can change these policies for a partitioned region by providing a fixed partition resolver that not only maps entries to a set of buckets called a partition, but also specifies which members host which data buckets.
 
--   **[Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data.html)**
+-   **[Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data)**
 
     By default, @@product_name@@ allocates the data locations for a partitioned region independent of the data locations for any other partitioned region. You can change this policy for any group of partitioned regions, so that cross-region, related data is all hosted by the same member.
 Colocation is required for some operations,

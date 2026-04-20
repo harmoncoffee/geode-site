@@ -50,8 +50,7 @@ is one of the following types where the exception will always be propagated up t
 * multi-user client mode
 * event-dispatching (CQ and registered interest)
 
-## <a id="authentication_expiry_considerations"></a>Authentication Expiry Considerations
-
+## Authentication Expiry Considerations {#authentication_expiry_considerations}
 The common cycle for authentication and authorization is the following:
 
 ```pre

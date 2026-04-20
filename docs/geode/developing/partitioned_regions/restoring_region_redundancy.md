@@ -22,7 +22,7 @@ limitations under the License.
 -->
 Restoring redundancy is a member operation. It affects all partitioned regions defined by the member, regardless of whether the member hosts data for the regions.
 
-Restoring redundancy creates new redundant copies of buckets on members hosting the region and by default reassigns which members host the primary buckets to give better load balancing. It does not move buckets from one member to another. The reassignment of primary hosts can be prevented using the appropriate flags, as described below. See [Configure High Availability for a Partitioned Region](configuring_ha_for_pr.html) for further detail on redundancy.
+Restoring redundancy creates new redundant copies of buckets on members hosting the region and by default reassigns which members host the primary buckets to give better load balancing. It does not move buckets from one member to another. The reassignment of primary hosts can be prevented using the appropriate flags, as described below. See [Configure High Availability for a Partitioned Region](configuring_ha_for_pr) for further detail on redundancy.
 
 For efficiency, when starting multiple members, trigger the restore redundancy a single time, after you have added all members.
 
@@ -34,7 +34,7 @@ Initiate a restore redundancy operation using one of the following:
     gfsh>restore redundancy
     ```
 
-    Optionally, you can specify regions to include or exclude from restoring redundancy, and prevent the operation from reassigning which members host primary copies. Type `help restore redundancy` or see [restore redundancy](../../tools_modules/gfsh/command-pages/restore.html) for more information.
+    Optionally, you can specify regions to include or exclude from restoring redundancy, and prevent the operation from reassigning which members host primary copies. Type `help restore redundancy` or see [restore redundancy](../../tools_modules/gfsh/command-pages/restore) for more information.
 
 -   API call:
 

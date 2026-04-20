@@ -26,12 +26,11 @@ You can change these policies for a partitioned region by providing
 your own partition resolver.
 The partitioning can go further with a fixed-partition resolver
 that specifies which members host which data buckets.
-
-<a id="custom_partition_region_data__section_CF05CE974C9C4AF78430DA55601D2158"></a>
+## {#custom_partition_region_data__section_CF05CE974C9C4AF78430DA55601D2158}
 **Note:**
 If you are both colocating region data and custom partitioning,
 all colocated regions must use the same custom partitioning mechanism.
-See [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data.html#colocating_partitioned_region_data).
+See [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data#colocating_partitioned_region_data).
 
 To custom-partition your region data, follow two steps:
 
@@ -301,7 +300,7 @@ The resolver will work with Java single-hop clients.
 
 -  Set the fixed-partition attributes for each member.
 
-    These attributes define the data stored for the region by the member and must be different for different members. See `org.apache.geode.cache.FixedPartitionAttributes` for definitions of the attributes. Define each `partition-name` in your data-host members for the region. For each partition name, in the member you want to host the primary copy, define it with `is-primary` set to `true`. In every member you want to host the secondary copy, define it with `is-primary` set to `false` (the default). The number of secondaries must match the number of redundant copies you have defined for the region. See [Configure High Availability for a Partitioned Region](configuring_ha_for_pr.html).
+    These attributes define the data stored for the region by the member and must be different for different members. See `org.apache.geode.cache.FixedPartitionAttributes` for definitions of the attributes. Define each `partition-name` in your data-host members for the region. For each partition name, in the member you want to host the primary copy, define it with `is-primary` set to `true`. In every member you want to host the secondary copy, define it with `is-primary` set to `false` (the default). The number of secondaries must match the number of redundant copies you have defined for the region. See [Configure High Availability for a Partitioned Region](configuring_ha_for_pr).
 
     **Note:**
     Buckets for a partition are hosted only by the members that have defined the partition name in their `FixedPartitionAttributes`.

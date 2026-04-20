@@ -21,8 +21,7 @@ limitations under the License.
 
 Execute functions on members or regions.
 
-## <a id="concept_F2ED1987126E4338AEB14A7C8F561A2A__section_FB435A8AC76E4E1A8E72DBEA64BA2E57" class="no-quick-link"></a>execute function
-
+## execute function {#concept_F2ED1987126E4338AEB14A7C8F561A2A__section_FB435A8AC76E4E1A8E72DBEA64BA2E57}
 Execute the function with the specified ID. By default, the function executes on all members.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -34,9 +33,7 @@ execute function --id=value [--groups=value(,value)*]
 [--members=value(,value)*] [--region=value] 
 [--arguments=value(,value)*] [--result-collector=value] [--filter=value]
 ```
-
-<a id="concept_F2ED1987126E4338AEB14A7C8F561A2A__table_i4q_dch_2w"></a>
-
+## {#concept_F2ED1987126E4338AEB14A7C8F561A2A__table_i4q_dch_2w}
 |                                                          |                                                                                                       |
 |----------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;id</span>               | *Required.* ID of the function to execute.                                                            |

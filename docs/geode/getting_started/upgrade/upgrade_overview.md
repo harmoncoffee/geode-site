@@ -34,24 +34,23 @@ so that the cluster as a whole remains functional during the upgrade process; th
 In other cases, the entire system must be stopped in order to accomplish the upgrade,
 which will require some downtime for your system.
 
-See [Planning an Upgrade](upgrade_planning.html) to choose the upgrade scenario that best suits your implementation and to understand the resources
+See [Planning an Upgrade](upgrade_planning) to choose the upgrade scenario that best suits your implementation and to understand the resources
 you will need to accomplish the upgrade. Then select the appropriate upgrade procedure for more detailed instructions that fit your specific needs.
 
-## <a id="upgrade_details" class="no-quick-link"></a>Upgrade Details
-
--   **[Planning an Upgrade](upgrade_planning.html)**
+## Upgrade Details {#upgrade_details}
+-   **[Planning an Upgrade](upgrade_planning)**
 
     This section discusses the upgrade paths for various @@product_name_long@@
     versions, and it lists information you need to know before you begin
     the upgrade process.
 
--   **[Rolling Upgrade](upgrade_rolling.html)**
+-   **[Rolling Upgrade](upgrade_rolling)**
 
     A rolling upgrade allows you to keep your existing cluster running while you upgrade your members gradually.
 
--   **[Offline Upgrade](upgrade_offline.html)**
+-   **[Offline Upgrade](upgrade_offline)**
 
     An offline upgrade can handle the widest variety of software versions and cluster configurations, but requires shutting down the entire
     system for at least a short time.
 
--   **[Upgrading Clients](upgrade_clients.html)**
+-   **[Upgrading Clients](upgrade_clients)**

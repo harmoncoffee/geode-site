@@ -27,14 +27,13 @@ Applications can use memcached clients that are written in Python, C\#, Ruby, PH
 
 To integrate memcached with @@product_name_long@@, you embed a Gemcached server within a @@product_name@@ cache server. These *Gemcached* servers take the place of memcached servers. The memcached client uses its normal wire protocol to communicate with the Gemcached servers, which appear to the client as memcached servers. No code changes in the clients are needed. @@product_name@@ manages the distribution and access to data among the embedded Gemcached servers.
 
-As shown in [Gemcached Architecture](about_gemcached.html#concept_4C654CA7F6B34E4CA1B0318BC9644536__fig_8BF351B5FAF1490F8B0D0E7F3098BC73), memcached clients, which ordinarily maintain a list of memcached servers, now maintain a list of embedded Gemcached servers. If more embedded Gemcached servers are added to the cluster, the new servers automatically become part of the cluster. The memcached clients can continue to communicate with the servers on the list, without having to update their list of servers.
-
-<a id="concept_4C654CA7F6B34E4CA1B0318BC9644536__fig_8BF351B5FAF1490F8B0D0E7F3098BC73"></a>
+As shown in [Gemcached Architecture](about_gemcached#concept_4C654CA7F6B34E4CA1B0318BC9644536__fig_8BF351B5FAF1490F8B0D0E7F3098BC73), memcached clients, which ordinarily maintain a list of memcached servers, now maintain a list of embedded Gemcached servers. If more embedded Gemcached servers are added to the cluster, the new servers automatically become part of the cluster. The memcached clients can continue to communicate with the servers on the list, without having to update their list of servers.
+## {#concept_4C654CA7F6B34E4CA1B0318BC9644536__fig_8BF351B5FAF1490F8B0D0E7F3098BC73}
 <span class="figtitleprefix">Figure: </span>Gemcached Architecture
 
 <img src="/images/Gemcached.png" id="concept_4C654CA7F6B34E4CA1B0318BC9644536__image_98B6222F29B940CD93381D03325C4455" class="image" />
 
-Memcached clients use the memcached API to read and write data that is stored in memcached servers; therefore, client-side @@product_name@@ features are not available to these clients. Gemcached servers, however, can use @@product_name@@'s server-side features and API. These features include the following. (For more detail, see [Advantages of Gemcached over Memcached](advantages.html#topic_849581E507544E63AF23793FBC47D778).)
+Memcached clients use the memcached API to read and write data that is stored in memcached servers; therefore, client-side @@product_name@@ features are not available to these clients. Gemcached servers, however, can use @@product_name@@'s server-side features and API. These features include the following. (For more detail, see [Advantages of Gemcached over Memcached](advantages#topic_849581E507544E63AF23793FBC47D778).)
 
 -   Data consistency and scalability.
 -   High availability.

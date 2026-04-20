@@ -21,18 +21,18 @@ limitations under the License.
 
 Keep your distributed cache in sync with an outside data source by programming and installing application plug-ins for your region.
 
--   **[Overview of Outside Data Sources](chapter_overview.html)**
+-   **[Overview of Outside Data Sources](chapter_overview)**
 
     @@product_name_long@@ has application plug-ins to read data into the cache and write it out.
 
--   **[Configuring Database Connections Using JNDI](configuring_db_connections_using_JNDI.html)**.
+-   **[Configuring Database Connections Using JNDI](configuring_db_connections_using_JNDI)**.
 
     Use JNDI to maintain a connection pool that includes outside data sources.
 
--   **[How Data Loaders Work](how_data_loaders_work.html)**
+-   **[How Data Loaders Work](how_data_loaders_work)**
 
     By default, a region has no data loader defined. Plug an application-defined loader into any region by setting the region attribute cache-loader on the members that host data for the region.
 
--   **[Implement a Data Loader](implementing_data_loaders.html)**
+-   **[Implement a Data Loader](implementing_data_loaders)**
 
     Program a data loader and configure your region to use it.

@@ -19,11 +19,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## <a id="search_lucene" class="no-quick-link"></a>search lucene
-
+## search lucene {#search_lucene}
 Search a Lucene index
 
-See also [create lucene index](create.html#create_lucene_index), [describe lucene index](describe.html#describe_lucene_index), [destroy lucene index](destroy.html#destroy_lucene_index) and [list lucene indexes](list.html#list_lucene_indexes).
+See also [create lucene index](create#create_lucene_index), [describe lucene index](describe#describe_lucene_index), [destroy lucene index](destroy#destroy_lucene_index) and [list lucene indexes](list#list_lucene_indexes).
 
 **Availability:** Online.
 

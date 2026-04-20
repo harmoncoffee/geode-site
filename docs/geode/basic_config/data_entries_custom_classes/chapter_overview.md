@@ -21,15 +21,15 @@ limitations under the License.
 
 The data entry is the key/value pair where you store your data. You can manage your entries individually and in batches. To use domain objects for your entry values and keys, you need to follow @@product_name_long@@ requirements for data storage and distribution.
 
--   **[Managing Data Entries](managing_data_entries.html)**
+-   **[Managing Data Entries](managing_data_entries)**
 
     Program your applications to create, modify, and manage your cached data entries.
 
--   **[Copy on Read Behavior](copy_on_read.html)**
+-   **[Copy on Read Behavior](copy_on_read)**
 
     Set the copy-on-read region attribute to cause operations that get data to make a copy of the data, instead of returning a reference to the data.
 
--   **[Requirements for Using Custom Classes in Data Caching](using_custom_classes.html)**
+-   **[Requirements for Using Custom Classes in Data Caching](using_custom_classes)**
 
     Follow these guidelines to use custom domain classes for your cached entry keys and values.
 

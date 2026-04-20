@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Using PDX objects as region entry keys is highly discouraged.
-
-<a id="concept_E5B95958B8D04B2285CB5E4DC6FABC78__section_900BD620D716407AA78BE0E38C2C396D"></a>
+## {#concept_E5B95958B8D04B2285CB5E4DC6FABC78__section_900BD620D716407AA78BE0E38C2C396D}
 The best practice for creating region entry keys is to use a simple key; for example, use a String or Integer. If the key must be a domain class, then you should use a non-PDX-serialized class.
 
 If you must use PDX serialized objects as region entry keys, ensure that you do not set `read-serialized` to `true`. This configuration setting will cause problems in partitioned regions because partitioned regions require the hash code of the key to be the same on all JVMs in the distributed system. When the key is a `PdxInstance` object, its hash code will likely not be the same as the hash code of the domain object.

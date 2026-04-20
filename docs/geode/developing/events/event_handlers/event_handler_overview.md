@@ -23,18 +23,18 @@ limitations under the License.
 
 You can specify event handlers for region and region entry operations and for administrative events.
 
--   **[Implementing Cache Event Handlers](implementing_cache_event_handlers.html)**
+-   **[Implementing Cache Event Handlers](implementing_cache_event_handlers)**
 
     Depending on your installation and configuration, cache events can come from local operations, peers, servers, and remote sites. Event handlers register their interest in one or more events and are notified when the events occur.
 
--   **[Implementing an AsyncEventListener for Write-Behind Cache Event Handling](implementing_write_behind_event_handler.html)**
+-   **[Implementing an AsyncEventListener for Write-Behind Cache Event Handling](implementing_write_behind_event_handler)**
 
     An `AsyncEventListener` asynchronously processes batches of events after they have been applied to a region. You can use an `AsyncEventListener` implementation as a write-behind cache event handler to synchronize region updates with a database.
 
--   **[How to Safely Modify the Cache from an Event Handler Callback](writing_callbacks_that_modify_the_cache.html)**
+-   **[How to Safely Modify the Cache from an Event Handler Callback](writing_callbacks_that_modify_the_cache)**
 
     Event handlers are synchronous. If you need to change the cache or perform any other distributed operation from event handler callbacks, be careful to avoid activities that might block and affect your overall system performance.
 
--   **[Cache Event Handler Examples](cache_event_handler_examples.html)**
+-   **[Cache Event Handler Examples](cache_event_handler_examples)**
 
     Some examples of cache event handlers.

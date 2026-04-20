@@ -28,12 +28,11 @@ is abstracted away from the application.
 You can change these policies for a partitioned region
 by providing a standard custom partition resolver that maps entries
 in a custom manner.
-
-<a id="custom_partition_region_data__section_CF05CE974C9C4AF78430DA55601D2158"></a>
+## {#custom_partition_region_data__section_CF05CE974C9C4AF78430DA55601D2158}
 **Note:**
 If you are both colocating region data and custom partitioning,
 all colocated regions must use the same custom partitioning mechanism.
-See [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data.html#colocating_partitioned_region_data).
+See [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data#colocating_partitioned_region_data).
 
 To custom-partition your region data, follow two steps:
 

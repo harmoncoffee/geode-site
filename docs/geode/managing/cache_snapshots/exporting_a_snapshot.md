@@ -25,8 +25,7 @@ To save @@product_name@@ cache or region data to a snapshot that you can later l
 
 If an error occurs during export, the export halts and the snapshot operation is canceled. Typical errors that halt an export include scenarios such as full disk, problems with file permissions, and network partitioning.
 
-## <a id="concept_D1A4D9677F4146078F65C73BF436C19D__section_98B33450FD95450EAC027384EE82E00C" class="no-quick-link"></a>Exporting Cache Snapshots
-
+## Exporting Cache Snapshots {#concept_D1A4D9677F4146078F65C73BF436C19D__section_98B33450FD95450EAC027384EE82E00C}
 When you export an entire cache, it exports all regions in the cache as individual snapshot files into a directory. If no directory is specified, the default is the current directory. A snapshot file is created for each region, and the export operation automatically names each snapshot filename using the following convention:
 
 `snapshot-<region>[-<subregion>]*`
@@ -42,10 +41,9 @@ Cache cache = ...
 cache.getSnapshotService().save(mySnapshotDir, SnapshotFormat.GEMFIRE);
 ```
 
-Optionally, you can set a filter on the snapshot entries during the export. See [Filtering Entries During Import or Export](filtering_snapshot_entries.html) for an example.
+Optionally, you can set a filter on the snapshot entries during the export. See [Filtering Entries During Import or Export](filtering_snapshot_entries) for an example.
 
-## <a id="concept_D1A4D9677F4146078F65C73BF436C19D__section_30C1BBB41C194825A46E49E5756369D6" class="no-quick-link"></a>Exporting a Region Snapshot
-
+## Exporting a Region Snapshot {#concept_D1A4D9677F4146078F65C73BF436C19D__section_30C1BBB41C194825A46E49E5756369D6}
 You can also export a specific region using the API or gfsh commands below.
 
 **Note:**
@@ -74,12 +72,11 @@ where *Region* corresponds to the name of the region that you want to export, *F
 gfsh>export data --region=region1 --file=region1_2012_10_10.gfd --member=server1
 ```
 
-The snapshot file will be written on the remote member at the location specified by the `--file` argument. For example, in the example command above, the `region1_2012_10_10.gfd` file will be written in the working directory of `server1`. For more information on this command, see [export data](../../tools_modules/gfsh/command-pages/export.html#topic_263B70069BFC4A7185F86B3272011734).
+The snapshot file will be written on the remote member at the location specified by the `--file` argument. For example, in the example command above, the `region1_2012_10_10.gfd` file will be written in the working directory of `server1`. For more information on this command, see [export data](../../tools_modules/gfsh/command-pages/export#topic_263B70069BFC4A7185F86B3272011734).
 
-###<a id="export_example_with_options" class="no-quick-link"></a>Export Example with Options
-
+### Export Example with Options {#export_example_with_options}
 These examples show how to include the `parallel` option for exporting partitioned regions. 
-Note that the `parallel` option takes a directory rather than a file; see [export data](../../tools_modules/gfsh/command-pages/export.html#topic_263B70069BFC4A7185F86B3272011734) for details.
+Note that the `parallel` option takes a directory rather than a file; see [export data](../../tools_modules/gfsh/command-pages/export#topic_263B70069BFC4A7185F86B3272011734) for details.
 
 **Java API:**
 

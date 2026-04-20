@@ -21,49 +21,49 @@ limitations under the License.
 
 `gfsh` (pronounced "jee-fish") provides a single, powerful command-line interface from which you can launch, manage, and monitor Geode processes, data, and applications.
 
--   **[What You Can Do with gfsh](about_gfsh.html)**
+-   **[What You Can Do with gfsh](about_gfsh)**
 
     `gfsh` supports the administration, debugging, and deployment of Apache Geode processes and applications.
 
--   **[Starting gfsh](starting_gfsh.html)**
+-   **[Starting gfsh](starting_gfsh)**
 
     Before you start `gfsh`, confirm that you have set JAVA\_HOME and that your PATH variable includes the `gfsh` executable.
 
--   **[Configuring the gfsh Environment](configuring_gfsh.html)**
+-   **[Configuring the gfsh Environment](configuring_gfsh)**
 
     The `gfsh.bat` and `gfsh` bash script automatically append the required Apache Geode and JDK .jar libraries to your existing CLASSPATH. There are user-configurable properties you can set for security, environment variables, logging, and troubleshooting.
 
--   **[Useful gfsh Shell Variables](useful_gfsh_shell_variables.html)**
+-   **[Useful gfsh Shell Variables](useful_gfsh_shell_variables)**
 
     You can use the built-in `gfsh` shell variables in scripts.
 
--   **[Basic Shell Features and Command-Line Usage](getting_started_gfsh.html)**
+-   **[Basic Shell Features and Command-Line Usage](getting_started_gfsh)**
 
     The `gfsh` utility provides useful features for a shell environment, including command auto-complete, preserved command history, and delimiting of multi-line commands. Context-sensitive help is available by command and by topic.
 
--   **[Specifying JSON within Command-Line Options](json_in_gfsh.html)**
+-   **[Specifying JSON within Command-Line Options](json_in_gfsh)**
 
     Some `gfsh` commands allow JSON specifications within command-line options.
 
--   **[Tutorialâ€”Performing Common Tasks with gfsh](tour_of_gfsh.html)**
+-   **[Tutorialâ€”Performing Common Tasks with gfsh](tour_of_gfsh)**
 
     This topic takes you through a typical sequence of tasks that you execute after starting `gfsh`.
 
--   **[Quick Reference of gfsh Commands by Functional Area](gfsh_quick_reference.html)**
+-   **[Quick Reference of gfsh Commands by Functional Area](gfsh_quick_reference)**
 
     This quick reference sorts all commands into functional areas.
 
--   **[gfsh Command Help](gfsh_command_index.html)**
+-   **[gfsh Command Help](gfsh_command_index)**
 
     This section provides help and usage information on all `gfsh` commands, listed alphabetically.
 
--   **[Creating and Running gfsh Command Scripts](command_scripting.html)**
+-   **[Creating and Running gfsh Command Scripts](command_scripting)**
 
     `gfsh` offers several ways to run commands in a scripting environment.
 
--   **[Running gfsh Commands on the OS Command Line](os_command_line_execution.html)**
+-   **[Running gfsh Commands on the OS Command Line](os_command_line_execution)**
 
--   **[Mapping of cache.xml Elements to gfsh Configuration Commands.](cache_xml_2_gfsh.html)**
+-   **[Mapping of cache.xml Elements to gfsh Configuration Commands.](cache_xml_2_gfsh)**
 
     You can configure a Geode cluster using either cache.xml files, or you can use `gfsh` and the cluster configuration service to configure a cluster. This section maps cache.xml elements to the `gfsh` commands that configure and manage a cluster.
 

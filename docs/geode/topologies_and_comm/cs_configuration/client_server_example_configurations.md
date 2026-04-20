@@ -23,8 +23,7 @@ limitations under the License.
 
 For easy configuration, you can start with these example client/server configurations and modify for your systems.
 
-## <a id="client_server_example_configurations__section_556E0D3D72624AD9B27C636BA628ADC0" class="no-quick-link"></a>Examples of Standard Client/Server Configuration
-
+## Examples of Standard Client/Server Configuration {#client_server_example_configurations__section_556E0D3D72624AD9B27C636BA628ADC0}
 Generally, locators and servers use the same properties file, which lists locators as the discovery mechanism for peer members and for connecting clients. For example:
 
 ``` pre
@@ -139,8 +138,7 @@ private static void runSubscriber() throws InterruptedException {
 } 
 ```
 
-## <a id="client_server_example_configurations__section_A7759DCB9BFE47448B8E8D72DDCDE058" class="no-quick-link"></a>Example of a Static Server List in Client/Server Configuration
-
+## Example of a Static Server List in Client/Server Configuration {#client_server_example_configurations__section_A7759DCB9BFE47448B8E8D72DDCDE058}
 You can specify a static server list instead of a locator list in the client configuration. With this configuration, the client’s server information does not change for the life of the client member. You do not get dynamic server discovery, server load conditioning, or the option of logical server grouping. This model is useful for very small deployments, such as test systems, where your server pool is stable. It avoids the administrative overhead of running locators.
 
 This model is also suitable if you must use hardware load balancers. You can put the addresses of the load balancers in your server list and allow the balancers to redirect your client connections.

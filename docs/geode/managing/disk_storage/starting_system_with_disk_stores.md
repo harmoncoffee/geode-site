@@ -62,8 +62,7 @@ Each member’s persistent regions load and go online as quickly as possible, no
 -   Once at least one copy of each and every bucket is recovered from disk, the region is available. Secondary buckets will load asynchronously.
 -   Entry keys are loaded from the key file in the disk store before considering entry values. Once all keys are loaded, @@product_name@@ loads the entry values asynchronously. If a value is requested before it has loaded, the value will immediately be fetched from the disk store.
 
-## <a id="starting_system_with_disk_stores__section_D0A7403707B847749A22BF9221A2C823" class="no-quick-link"></a>Start Up Procedure
-
+## Start Up Procedure {#starting_system_with_disk_stores__section_D0A7403707B847749A22BF9221A2C823}
 To start a system with disk stores:
 
 1.  **Start all members with persisted data first and at the same time**. Exactly how you do this depends on your members. Make sure to start members that host colocated regions, as well as persistent gateway senders.
@@ -90,15 +89,14 @@ To start a system with disk stores:
     exit $STATUS;
     ```
 
-2.  **Respond to blocked members**. When a member blocks waiting for more recent data from another member, the member waits indefinitely rather than coming online with stale data. Check for missing disk stores with the `gfsh show                             missing-disk-stores` command. See [Handling Missing Disk Stores](handling_missing_disk_stores.html#handling_missing_disk_stores).
-    -   If no disk stores are missing, the cache initialization must be slow for some other reason. Check the information on member hangs in [Diagnosing System Problems](../troubleshooting/diagnosing_system_probs.html#diagnosing_system_probs).
+2.  **Respond to blocked members**. When a member blocks waiting for more recent data from another member, the member waits indefinitely rather than coming online with stale data. Check for missing disk stores with the `gfsh show                             missing-disk-stores` command. See [Handling Missing Disk Stores](handling_missing_disk_stores#handling_missing_disk_stores).
+    -   If no disk stores are missing, the cache initialization must be slow for some other reason. Check the information on member hangs in [Diagnosing System Problems](../troubleshooting/diagnosing_system_probs#diagnosing_system_probs).
     -   If disk stores are missing that you think should be there:
-        -   Make sure you have started the member. Check the logs for any failure messages. See [Logging](../logging/logging.html#concept_30DB86B12B454E168B80BB5A71268865).
+        -   Make sure you have started the member. Check the logs for any failure messages. See [Logging](../logging/logging#concept_30DB86B12B454E168B80BB5A71268865).
         -   Make sure your disk store files are accessible. If you have moved your member or disk store files, you must update your disk store configuration to match.
     -   If disk stores are missing that you know are lost, because you have deleted them or their files are otherwise unavailable, revoke them so the startup can continue.
 
-## <a id="starting_system_with_disk_stores__section_5E32F488EB5D4E74AAB6BF394E4329D6" class="no-quick-link"></a>Example Startup to Illustrate Ordering
-
+## Example Startup to Illustrate Ordering {#starting_system_with_disk_stores__section_5E32F488EB5D4E74AAB6BF394E4329D6}
 The following lists the two possibilities for starting up a replicated persistent region after a shutdown. Assume that Member A (MA) exits first, leaving persisted data on disk for RegionP. Member B (MB) continues to run operations on RegionP, which update its disk store and leave the disk store for MA in a stale condition. MB exits, leaving the most up-to-date data on disk for RegionP.
 
 -   Restart order 1

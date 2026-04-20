@@ -27,8 +27,7 @@ Normally @@product_name@@ uses metadata to determine automatically which copy of
 
 The following sections describe scenarios that can cause `ConflictingPersistentDataException`s in @@product_name@@ and how to resolve the conflict.
 
-## <a id="topic_ghw_z2m_jq__section_sj3_lpm_jq" class="no-quick-link"></a>Independently Created Copies
-
+## Independently Created Copies {#topic_ghw_z2m_jq__section_sj3_lpm_jq}
 Trying to merge two independently created clusters into a single cluster will cause a `ConflictingPersistentDataException`.
 
 There are a few ways to end up with independently created systems.
@@ -36,10 +35,9 @@ There are a few ways to end up with independently created systems.
 -   Create two different clusters by having members connect to different locators that are not aware of each other.
 -   Shut down all persistent members and then start up a different set of brand new persistent members.
 
-@@product_name@@ will not automatically merge independently created data for the same region. Instead, you need to export the data from one of the systems and import it into the other system. See the section [Cache and Region Snapshots](../cache_snapshots/chapter_overview.html#concept_E6AC3E25404D4D7788F2D52D83EE3071) for instructions on how to export data from one system and import it into another.
+@@product_name@@ will not automatically merge independently created data for the same region. Instead, you need to export the data from one of the systems and import it into the other system. See the section [Cache and Region Snapshots](../cache_snapshots/chapter_overview#concept_E6AC3E25404D4D7788F2D52D83EE3071) for instructions on how to export data from one system and import it into another.
 
-## <a id="topic_ghw_z2m_jq__section_op5_hpm_jq" class="no-quick-link"></a>Starting New Members First
-
+## Starting New Members First {#topic_ghw_z2m_jq__section_op5_hpm_jq}
 Starting a brand new member that has no persistent data before starting older members with persistent data can cause a `ConflictingPersistentDataException`.
 
 One accidental way this can happen is to shut the system down, add a new member to the startup scripts, and start all members in parallel. By chance, the new member may start first. The issue is that the new member will create an empty, independent copy of the data before the older members start up. @@product_name@@ will be treat this situation like the [Independently Created Copies](#topic_ghw_z2m_jq__section_sj3_lpm_jq) case.

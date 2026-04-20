@@ -31,9 +31,7 @@ Report important network usage information/statistics for the given member.
 netstat [--members=value(,value)*] [--group=value] [--file=value] 
 [--with-lsof(=value)?]
 ```
-
-<a id="concept_8B8D6D6E3CE84B46ABCFE59B63F15684__table_ow3_kdg_2w"></a>
-
+## {#concept_8B8D6D6E3CE84B46ABCFE59B63F15684__table_ow3_kdg_2w}
 | Name                                              | Description                                                                                                                                               | Default Value |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
 | <span class="keyword parmname">&#8209;&#8209;members </span>   | Name or ID of the member(s) on which to run the `netstat` command.                                                                                        | Â              |

@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 @@product_name@@ offers serialization options other than Java serialization that give you higher performance and greater flexibility for data storage, transfers, and language types.
-
-<a id="data_serialization_options__section_B1BDB0E7F6814DFD8BACD8D8C5CAA81B"></a>
+## {#data_serialization_options__section_B1BDB0E7F6814DFD8BACD8D8C5CAA81B}
 All data that @@product_name@@ moves out of the local cache must be serializable. However, you do not necessarily need to implement `java.io.Serializable` since other serialization options are available in @@product_name@@. Region data that must be serializable falls under the following categories:
 
 -   Partitioned regions
@@ -35,14 +34,12 @@ All data that @@product_name@@ moves out of the local cache must be serializable
 -   Regions that provide function arguments and results
 
 **Note:**
-If you are storing objects with the [HTTP Session Management Modules](../../tools_modules/http_session_mgmt/chapter_overview.html), these objects must be serializable since they are serialized before being stored in the region.
+If you are storing objects with the [HTTP Session Management Modules](../../tools_modules/http_session_mgmt/chapter_overview), these objects must be serializable since they are serialized before being stored in the region.
 
 To minimize the cost of serialization and deserialization, @@product_name@@ avoids changing the data format whenever possible. This means your data might be stored in the cache in serialized or deserialized form, depending on how you use it. For example, if a server acts only as a storage location for data distribution between clients, it makes sense to leave the data in serialized form, ready to be transmitted to clients that request it. Partitioned region data is always initially stored in serialized form.
 
-## <a id="data_serialization_options__section_691C2CF5A4E24D599070A7AADEDF2BEC" class="no-quick-link"></a>Data Serialization Options
-
-<a id="data_serialization_options__section_44CC2DEEDA0F41D49D416ABA921A6436"></a>
-
+## Data Serialization Options {#data_serialization_options__section_691C2CF5A4E24D599070A7AADEDF2BEC}
+## {#data_serialization_options__section_44CC2DEEDA0F41D49D416ABA921A6436}
 With @@product_name@@, you have the option to serialize your domain objects automatically or to implement serialization using one of @@product_name@@'s interfaces. Enabling automatic serialization means that domain objects are serialized and deserialized without your having to make any code changes to those objects. This automatic serialization is performed by registering your domain objects with a custom `PdxSerializer` called the `ReflectionBasedAutoSerializer`, which uses Java reflection to infer which fields to serialize.
 
 If autoserialization does not meet your needs, you can serialize your objects by implementing one of the @@product_name@@ interfaces, `PdxSerializable` or `DataSerializable`. You can use these interfaces to replace any standard Java data serialization for better performance. If you cannot or do not want to modify your domain classes, each interface has an alternate serializer class, `PdxSerializer` and `DataSerializer`. To use these, you create your custom serializer class and then associate it with your domain class in the @@product_name@@ cache configuration.
@@ -63,6 +60,5 @@ If autoserialization does not meet your needs, you can serialize your objects by
 
 **Note:** By default, you can use @@product_name@@ delta propagation with PDX serialization. However, delta propagation will not work if you have set the @@product_name@@ property `read-serialized` to "true". In terms of deserialization, to apply a change delta propagation requires a domain class instance and the `fromDelta `method. If you have set `read-serialized` to true, then you will receive a `PdxInstance` instead of a domain class instance and `PdxInstance` does not have the `fromDelta` method required for delta propagation.
 
-## <a id="data_serialization_options__section_D90C2C09B95C40B6803CF202CF8008BF" class="no-quick-link"></a>Differences between @@product_name@@ Serialization (PDX or Data Serializable) and Java Serialization
-
+## Differences between @@product_name@@ Serialization (PDX or Data Serializable) and Java Serialization {#data_serialization_options__section_D90C2C09B95C40B6803CF202CF8008BF}
 @@product_name@@ serialization (either PDX Serialization or Data Serialization) does not support circular object graphs whereas Java serialization does. In @@product_name@@ serialization, if the same object is referenced more than once in an object graph, the object is serialized for each reference, and deserialization produces multiple copies of the object. By contrast in this situation, Java serialization serializes the object once and when deserializing the object, it produces one instance of the object with multiple references.

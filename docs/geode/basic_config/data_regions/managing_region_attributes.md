@@ -22,12 +22,10 @@ limitations under the License.
 -->
 
 Use region attributes to fine-tune the region configuration provided by the region shortcut settings.
+## {#managing_region_attributes__section_B6363B281A994141B9B9BDD952173330}
+All region attributes have default settings, so you only need to use region attributes to set the ones you want to override. See [&lt;region-attributes&gt;](../../reference/cache/cache_xml#region-attributes).
 
-<a id="managing_region_attributes__section_B6363B281A994141B9B9BDD952173330"></a>
-All region attributes have default settings, so you only need to use region attributes to set the ones you want to override. See [&lt;region-attributes&gt;](../../reference/topics/cache_xml.html#region-attributes).
-
-## <a id="managing_region_attributes__section_DDBF2810ABB54A55B1479AD786ED48DF" class="no-quick-link"></a>Define Region Attributes
-
+## Define Region Attributes {#managing_region_attributes__section_DDBF2810ABB54A55B1479AD786ED48DF}
 Create region attributes using any of these methods:
 
 -   Declarations inside the `cache.xml` `<region>` element:
@@ -77,8 +75,7 @@ Create region attributes using any of these methods:
 
 -   By issuing the gfsh `create region` command.
 
-## <a id="managing_region_attributes__section_F69A7664F72D47BBA463D81B72C03B4D" class="no-quick-link"></a>Modify Region Attributes
-
+## Modify Region Attributes {#managing_region_attributes__section_F69A7664F72D47BBA463D81B72C03B4D}
 You can modify a region’s event handlers and expiration and eviction attributes after the region is created.
 
 **Note:**
@@ -111,4 +108,4 @@ Modify attributes in one of these ways:
     mutator.addCacheListener(new LoggingCacheListener()); 
     ```
 
--   By issuing the gfsh `alter region` command. See [alter region](../../tools_modules/gfsh/command-pages/alter.html#topic_E74ED23CB60342538B2175C326E7D758).
+-   By issuing the gfsh `alter region` command. See [alter region](../../tools_modules/gfsh/command-pages/alter#topic_E74ED23CB60342538B2175C326E7D758).

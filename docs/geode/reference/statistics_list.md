@@ -20,10 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="statistics_list"></a>
-
-
+## {#statistics_list}
 This section describes the primary statistics gathered by @@product_name@@ when statistics are enabled.
 
 All statistics gathering requires the `gemfire.properties` `statistic-sampling-enabled` in `gemfire.properties` file to be true. Statistics that use time require the `gemfire.properties` `enable-time-statistics` to be true.
@@ -86,8 +83,7 @@ Performance statistics are collected for each Java application or cache server t
 
 -   **[Statistics Collection (StatSampler)](#section_55F3AF6413474317902845EE4996CC21)**
 
-## <a id="section_DEF8D3644D3246AB8F06FE09A37DC5C8" class="no-quick-link"></a>Cache Performance (CachePerfStats)
-
+## Cache Performance (CachePerfStats) {#section_DEF8D3644D3246AB8F06FE09A37DC5C8}
 Statistics for the @@product_name@@ cache. These can be used to determine the type and number of cache operations being performed and how much time they consume.
 
 Regarding @@product_name@@ cache transactions, transaction-related statistics are compiled and stored as properties in the CachePerfStats statistic resource. Because the transaction’s data scope is the cache, these statistics are collected on a per-cache basis.
@@ -104,7 +100,7 @@ The primary statistics are:
 | `cacheWriterCallTime`            | Total time spent doing cache writer calls.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `compressions`                   | Total number of compression operations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `compressTime`                   | Total time, in nanoseconds, spent compressing data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `conflatedEvents`                | The number of events that were conflated, and not delivered to event listeners or gateway senders on this member. Events are typically conflated because a later event was already applied to the cache, or because a concurrent event was ignored to ensure cache consistency. Note that some members may discard an update while other members apply the update, depending on the order in which each member receives the update. For this reason, the `conflatedEvents` statistic will differ for each @@product_name@@ member. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions.html#topic_CF2798D3E12647F182C2CEC4A46E2045). |
+| `conflatedEvents`                | The number of events that were conflated, and not delivered to event listeners or gateway senders on this member. Events are typically conflated because a later event was already applied to the cache, or because a concurrent event was ignored to ensure cache consistency. Note that some members may discard an update while other members apply the update, depending on the order in which each member receives the update. For this reason, the `conflatedEvents` statistic will differ for each @@product_name@@ member. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions#topic_CF2798D3E12647F182C2CEC4A46E2045). |
 | `creates`                        | The total number of times an entry is added to this cache.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `decompressions`                 | Total number of decompression operations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `decompressTime`                 | Total time, in nanoseconds, spent decompressing data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -131,7 +127,7 @@ The primary statistics are:
 | `netsearchesCompleted`           | Total number of times network searches initiated by this cache have completed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `netsearchesInProgress`          | Current number of threads doing a network search initiated by a get() in this cache.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `netsearchTimeDesc`              | Total time spent doing network searches for cache values.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `nonReplicatedTombstonesSize`    | The approximate number of bytes that are currently consumed by tombstones in non-replicated regions. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions.html#topic_CF2798D3E12647F182C2CEC4A46E2045).                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `nonReplicatedTombstonesSize`    | The approximate number of bytes that are currently consumed by tombstones in non-replicated regions. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions#topic_CF2798D3E12647F182C2CEC4A46E2045).                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `partitionedRegions`             | The current number of partitioned regions in the cache.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `postCompressedBytes`            | Total number of bytes after compressing.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `preCompressedBytes`             | Total number of bytes before compressing.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -143,9 +139,9 @@ The primary statistics are:
 | `queryExecutions`                | Total number of times some query has been executed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `queryExecutionTime`             | Total time spent executing queries.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `regions`                        | The current number of regions in the cache.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `replicatedTombstonesSize`       | The approximate number of bytes that are currently consumed by tombstones in replicated or partitioned regions. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions.html#topic_CF2798D3E12647F182C2CEC4A46E2045).                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `tombstoneCount`                 | The total number of tombstone entries created for performing concurrency checks. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions.html#topic_CF2798D3E12647F182C2CEC4A46E2045).                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `tombstoneGCCount`               | The total number of tombstone garbage collection cycles that a member has performed. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions.html#topic_CF2798D3E12647F182C2CEC4A46E2045).                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `replicatedTombstonesSize`       | The approximate number of bytes that are currently consumed by tombstones in replicated or partitioned regions. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions#topic_CF2798D3E12647F182C2CEC4A46E2045).                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `tombstoneCount`                 | The total number of tombstone entries created for performing concurrency checks. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions#topic_CF2798D3E12647F182C2CEC4A46E2045).                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `tombstoneGCCount`               | The total number of tombstone garbage collection cycles that a member has performed. See [Consistency for Region Updates](../developing/distributed_regions/region_entry_versions#topic_CF2798D3E12647F182C2CEC4A46E2045).                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `txCommitChanges`                | Total number of changes made by committed transactions.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `txCommits`                      | Total number of times a transaction commit has succeeded.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `txCommitTime`                   | The total amount of time, in nanoseconds, spent doing successful transaction commits.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -162,8 +158,7 @@ The primary statistics are:
 | `updates`                        | The total number of updates originating remotely that have been applied to this cache.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `updateTime`                     | Total time spent performing an update.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
-## <a id="section_EF5C2C59BFC74FFB8607F9571AB9A471" class="no-quick-link"></a>Cache Server (CacheServerStats)
-
+## Cache Server (CacheServerStats) {#section_EF5C2C59BFC74FFB8607F9571AB9A471}
 Statistics used for cache servers and for gateway receivers are recorded in CacheServerStats in a cache server. The primary statistics are:
 
 | Statistic                                 | Description                                                                                                                                    |
@@ -249,8 +244,7 @@ Statistics used for cache servers and for gateway receivers are recorded in Cach
 | `writePutResponseTime`                    | Total time, in nanoseconds, spent in writing put responses.                                                                                    |
 | `writeQueryResponseTime`                  | Total time, in nanoseconds, spent in writing query responses.                                                                                  |
 
-## <a id="section_B08C0783BBF9489E8BB48B4AEC597C62" class="no-quick-link"></a>Client-Side Notifications (CacheClientUpdaterStats)
-
+## Client-Side Notifications (CacheClientUpdaterStats) {#section_B08C0783BBF9489E8BB48B4AEC597C62}
 Statistics in a client that pertain to server-to-client data pushed from the server over a queue to the client (they are the client side of the server’s `CacheClientNotifierStatistics`) :
 
 | Statistic                   | Description                                                                                  |
@@ -259,8 +253,7 @@ Statistics in a client that pertain to server-to-client data pushed from the ser
 | `messagesBeingReceived`     | Current number of message being received off the network or being processed after reception. |
 | `messageBytesBeingReceived` | Current number of bytes consumed by messages being received or processed.                    |
 
-## <a id="section_04B7D7387E584712B7710B5ED1E876BB" class="no-quick-link"></a>Client-to-Server Messaging Performance (ClientStats & ClientSendStats)
-
+## Client-to-Server Messaging Performance (ClientStats & ClientSendStats) {#section_04B7D7387E584712B7710B5ED1E876BB}
 These statistics are in a client and they describe all the messages sent from the client to a specific server. The primary statistics of ClientStats are:
 
 | Statistic                              | Description                                                                                   |
@@ -530,8 +523,7 @@ The primary statistics of ClientSendStats are:
 | `unregisterInterestSendTime`                  | Total amount of time, in nanoseconds, spent doing unregisterInterestSends.                                                                                          |
 
 
-## <a id="section_6C247F61DB834C079A16BE92789D4692" class="no-quick-link"></a>Client Connection Pool (PoolStats)
-
+## Client Connection Pool (PoolStats) {#section_6C247F61DB834C079A16BE92789D4692}
 These statistics are in a client and they describe one of the client’s connection pools. The primary statistics are:
 
 | Statistic                   | Description                                                                                                          |
@@ -556,8 +548,7 @@ These statistics are in a client and they describe one of the client’s connect
 | `REQUESTS_TO_LOCATOR`       | Number of requests from this connection pool to a locator.                                                           |
 | `RESPONSES_FROM_LOCATOR`    | Number of responses from the locator to this connection pool.                                                        |
 
-## <a id="section_66C0E7748501480B85209D57D24256D5" class="no-quick-link"></a>Continuous Querying (CqQueryStats)
-
+## Continuous Querying (CqQueryStats) {#section_66C0E7748501480B85209D57D24256D5}
 These statistics are for continuous querying information. The statistics are:
 
 | Statistic                        | Description                                                                                                            |
@@ -602,8 +593,7 @@ These statistics are for continuous querying information. The statistics are:
 | `cqCount`                        | Number of CQs operations on the client. For server notification to a single client.                                    |
 | `cqProcessingTime`               | Total time, in nanoseconds, spent by the cache client notifier processing CQs. For server notification to all clients. |
 
-## <a id="section_D4ABED3FF94245C0BEE0F6FC9481E867" class="no-quick-link"></a>Delta Propagation (DeltaPropagationStatistics)
-
+## Delta Propagation (DeltaPropagationStatistics) {#section_D4ABED3FF94245C0BEE0F6FC9481E867}
 These statistics are for delta propagation between members. The primary statistics are:
 
 | Statistic                                      | Description                                                                                                                                                                 |
@@ -636,8 +626,7 @@ These statistics are for delta propagation between members. The primary statisti
 | `processedDeltaPuts`                           | Number of cache client put requests containing delta received from a client and processed successfuly.                                                                      |
 | `processedDeltaPutsTime`                       | Total time spent in applying delta received from a client on existing value in this server's region.                                                                        |
 
-## <a id="section_6C2BECC63A83456190B029DEDB8F4BE3" class="no-quick-link"></a>Disk Space Usage (DiskDirStatistics)
-
+## Disk Space Usage (DiskDirStatistics) {#section_6C2BECC63A83456190B029DEDB8F4BE3}
 These statistics pertain to the disk usage for a region’s disk directory. The primary statistics are:
 
 | Statistic               | Description                                                                                                                                                |
@@ -649,8 +638,7 @@ These statistics pertain to the disk usage for a region’s disk directory. The 
 | `volumeFreeSpaceTime`   | The total time, in nanseconds, spent checking disk usage.                                                                                                  |
 | `volumeSize`            | The total size in bytes of the disk volume.                                                                                                                |
 
-## <a id="section_3456190B026C2BECC63A89DEDB8F4BE3" class="no-quick-link"></a>Disk Store Statistics (DiskStoreStatistics)
-
+## Disk Store Statistics (DiskStoreStatistics) {#section_3456190B026C2BECC63A89DEDB8F4BE3}
 Statistics about a Region's use of the disk. The primary statistics are:
 
 | Statistic                        | Description                                                                                                                                                            |
@@ -698,8 +686,7 @@ Statistics about a Region's use of the disk. The primary statistics are:
 | `writeTime`                      | The total amount of time spent writing to disk.                                                                                                                        |
 | `writtenBytes`                   | The total number of bytes that have been written to disk.                                                                                                              |
 
-## <a id="section_983BFC6D53C74829A04A91C39E06315F" class="no-quick-link"></a>Disk Usage and Performance (DiskRegionStatistics)
-
+## Disk Usage and Performance (DiskRegionStatistics) {#section_983BFC6D53C74829A04A91C39E06315F}
 Statistics regarding operations performed on a disk region for persistence/overflow. The primary statistics are:
 
 | Statistic        | Description                                                                                                                                                                            |
@@ -724,8 +711,7 @@ Statistics regarding operations performed on a disk region for persistence/overf
 | `writeTime`      | Total amount of time, in nanoseconds, spent writing to the disk.                                                                                                                       |
 | `writtenBytes`   | Total number of bytes that have been written to the disk.                                                                                                                              |
 
-## <a id="section_ACB4161F10D64BC0B15871D003FF6FDF" class="no-quick-link"></a>Distributed System Messaging (DistributionStats)
-
+## Distributed System Messaging (DistributionStats) {#section_ACB4161F10D64BC0B15871D003FF6FDF}
 Statistics on the @@product_name@@ distribution layer. These statistics can be used to tell how much message traffic exists between this member and other cluster members.
 
 The primary statistics are:
@@ -926,8 +912,7 @@ The distribution statistics provide statistics pertaining to slow receivers. The
 | `asyncQueueTimeoutExceeded`        | Incremented every time a queue flushing has exceeded `async-queue-timeout` and the receiver has been sent a disconnect message.                                                                       |
 | `asyncSocketWrite*`                | Used anytime a producer is distributing to one or more consumers with a non-zero distribution timeout. These statistics also reflect the writes done by the threads that service asynchronous queues. |
 
-## <a id="section_78D346A580724E1EA645E31626EECE40" class="no-quick-link"></a>Distributed Lock Services (DLockStats)
-
+## Distributed Lock Services (DLockStats) {#section_78D346A580724E1EA645E31626EECE40}
 These statistics are for distributed lock services. The primary statistics are:
 
 | Statistic                                    | Description                                                                                                 |
@@ -996,8 +981,7 @@ These statistics are for distributed lock services. The primary statistics are:
 | `waitingQueueSizeDesc`                       | The number of distribution messages currently waiting for some other resource before they can be processed. |
 | `waitingThreadsDesc`                         | The number of threads currently processing messages that had to wait for a resource.                        |
 
-## <a id="section_5E211DDB0E8640689AD0A4659511E17A" class="no-quick-link"></a>Function Execution (FunctionStatistics)
-
+## Function Execution (FunctionStatistics) {#section_5E211DDB0E8640689AD0A4659511E17A}
 These are the statistics for each execution of the function. The primary statistics are:
 
 | Statistic                                            | Description                                                                                                     |
@@ -1012,8 +996,7 @@ These are the statistics for each execution of the function. The primary statist
 | `resultsReceived`                                    | Total number of results received and passed to the ResultCollector.                                             |
 | `resultsSentToResultCollector`                       | Total number of results sent to the ResultCollector.                                                            |
 
-## <a id="section_C4199A541B1F4B82B6178C416C0FAE4B" class="no-quick-link"></a>Gateway Queue (GatewaySenderStatistics)
-
+## Gateway Queue (GatewaySenderStatistics) {#section_C4199A541B1F4B82B6178C416C0FAE4B}
 These statistics are for outgoing gateway queue and its connection. The primary statistics are:
 
 | Statistic                             | Description                                                                                                                             |
@@ -1039,8 +1022,7 @@ These statistics are for outgoing gateway queue and its connection. The primary 
 | `unprocessedTokensRemovedBySecondary` | Number of tokens removed from the secondary's unprocessed token map by the secondary.                                                   |
 | `unprocessedTokensRemovedByTimeout`   | Number of tokens removed from the secondary's unprocessed token map by a timeout.                                                       |
 
-## <a id="section_86A61860024B480592DAC67FFB882538" class="no-quick-link"></a>Indexes (IndexStats)
-
+## Indexes (IndexStats) {#section_86A61860024B480592DAC67FFB882538}
 ## Query-Independent Statistics on Indexes
 
 | Statistic           | Description                                                                                                                                             |
@@ -1059,8 +1041,7 @@ These statistics are for outgoing gateway queue and its connection. The primary 
 | `usesInProgress` | Current number of uses of the index in progress or current number of concurrent threads accessing the index for querying. Concurrent use of an index is allowed for different queries. |
 | `useTime`        | Total time during the use of the Index for querying.                                                                                                                                   |
 
-## <a id="section_607C3867602E410CAE5FAB26A7FF1CB9" class="no-quick-link"></a>JVM Performance
-
+## JVM Performance {#section_607C3867602E410CAE5FAB26A7FF1CB9}
 ## @@product_name@@ JVM Resource Manager (ResourceManagerStats)
 
 Statistics related to the @@product_name@@'s resource manager. Use these to help analyze and tune your JVM memory settings and the @@product_name@@ resource manager settings. The primary statistics are:
@@ -1152,8 +1133,7 @@ Show details about the JVM thread. The primary statistics are:
 | `waited`      | Total number of times this thread waited for notification.                                                                                                                            |
 | `waitedTime`  | Total amount of elapsed time, approximately, that this thread has spent waiting for notification. May need to be enabled by setting `-Dgemfire.enableContentionTime=true`             |
 
-## <a id="section_C48B654F973E4B44AD825D459C23A6CD" class="no-quick-link"></a>Locator (LocatorStats)
-
+## Locator (LocatorStats) {#section_C48B654F973E4B44AD825D459C23A6CD}
 These statistics are on the @@product_name@@ locator. The primary statistics are:
 
 | Statistic                | Description                                                                   |
@@ -1167,8 +1147,7 @@ These statistics are on the @@product_name@@ locator. The primary statistics are
 | `RESPONSES_FROM_LOCATOR` | Number of responses this locator has sent to clients.                         |
 | `SERVER_LOAD_UPDATES`    | Total number of times a server load update has been received.                 |
 
-## <a id="LuceneStats" class="no-quick-link"></a>Lucene Indexes (LuceneIndexStats)
-
+## Lucene Indexes (LuceneIndexStats) {#LuceneStats}
 These statistics quantify the use of Lucene indexes. The primary statistics are:
 
 | Statistic             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -1189,8 +1168,7 @@ These statistics quantify the use of Lucene indexes. The primary statistics are:
 | `commitsInProgress`  | The number of Lucene index commits in progress.    |
 | `documents`  | The number of documents in the index.    |
 
-## <a id="topic_ohc_tjk_w5" class="no-quick-link"></a>Off-Heap (OffHeapMemoryStats)
-
+## Off-Heap (OffHeapMemoryStats) {#topic_ohc_tjk_w5}
 These statistics quantify the use of off-heap memory. The primary statistics are:
 
 | Statistic             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -1207,8 +1185,7 @@ These statistics quantify the use of off-heap memory. The primary statistics are
 | `reads`               | The total number of reads of objects that are stored in off-heap memory.                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `usedMemory`          | The number of bytes of off-heap memory currently used for region values.                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-## <a id="section_923B28F01BC3416786D3AFBD87F22A5E" class="no-quick-link"></a>Operating System Statistics - Linux
-
+## Operating System Statistics - Linux {#section_923B28F01BC3416786D3AFBD87F22A5E}
 Operating system statistics are available only for Linux operating systems.
 
 ## Linux Process Performance (LinuxProcessStats)
@@ -1260,9 +1237,7 @@ memory, and disk usage on the machine. The primary statistics are:
 | `xmitDrops`       | Total number of network transmits (packets) dropped.                                                                                                                                                                                                                                                                                      |
 | `xmitErrors`      | Total number of network transmit errors.                                                                                                                                                                                                                                                                                                  |
 | `xmitPackets`     | Total number of network packets transmitted (excluding loopback).                                                                                                                                                                                                                                                                          |
-
-<a id="section_35AC170770C944C3A336D9AEC2D2F7C5"></a>
-
+## {#section_35AC170770C944C3A336D9AEC2D2F7C5}
 # Partitioned Regions (PartitionedRegion&lt;partitioned\_region\_name&gt;Statistics)
 
 **Partitioned Region Statistics on Region Operations**
@@ -1350,8 +1325,7 @@ These statistics track status on partitioned region data copies. The primary sta
 | `configuredRedundantCopies` | Equivalent to the `PartitionAttributes.getRedundantCopies` configuration used to create this partitioned region. This value remains unchanged for a given partitioned region. |
 | `lowRedundancyBucketCount` | The number of buckets in this partitioned region that currently have fewer copies than `configuredRedundantCopies`. This value may rise above zero when a data store is lost and return to zero when one or more data stores are added. It may also rise temporarily during partitioned region creation or destruction and then return to zero.<br/><br/>:::note<br/>If this value remains above zero, partitioned region data is at risk and may be lost if another data store is lost.<br/>:::<br/><br/>This value is above zero whenever `actualRedundantCopies` is less than `configuredRedundantCopies`. A healthy partitioned region maintains a value of zero. Add one or more data stores if the value remains above zero. High availability may cause brief fluctuations, but it should return to zero if sufficient data stores are present (for example, terminating one data store causes its data to fail over to another). |
 
-## <a id="section_374FBD92A3B74F6FA08AA23047929B4F" class="no-quick-link"></a>Region Entry Eviction – Count-Based (LRUStatistics)
-
+## Region Entry Eviction – Count-Based (LRUStatistics) {#section_374FBD92A3B74F6FA08AA23047929B4F}
 The entry-count least recently used (LRU) eviction mechanism records these LRUStatistics. The primary statistics are:
 
 | Statistic          | Description                                                                |
@@ -1364,8 +1338,7 @@ The entry-count least recently used (LRU) eviction mechanism records these LRUSt
 | `lruEvictions`     | Number of total entry evictions triggered by an LRU.                       |
 | `lruGreedyReturns` | Number of non-LRU entries evicted during LRU operations.                   |
 
-## <a id="section_3B74F6FA08A374FBD92AA23047929B4F" class="no-quick-link"></a>Region Entry Eviction – Heap-based eviction (HeapLRUStatistics)
-
+## Region Entry Eviction – Heap-based eviction (HeapLRUStatistics) {#section_3B74F6FA08A374FBD92AA23047929B4F}
 The least recently used (LRU) mechanism that keeps the JVM heap size under a given set point records these LRUStatistics. The primary statistics are:
 
 | Statistic          | Description                                                                |
@@ -1376,8 +1349,7 @@ The least recently used (LRU) mechanism that keeps the JVM heap size under a giv
 | `lruEvictions`     | Total number of entry evictions triggered by an LRU.                       |
 | `lruGreedyReturns` | Number of non-LRU entries evicted during LRU operations.                   |
 
-## <a id="section_3D2AA2BCE5B6485699A7B6ADD1C49FF7" class="no-quick-link"></a>Region Entry Eviction – Size-based (MemLRUStatistics)
-
+## Region Entry Eviction – Size-based (MemLRUStatistics) {#section_3D2AA2BCE5B6485699A7B6ADD1C49FF7}
 The least recently used (LRU) mechanism that keeps the size of a region under a given set point records these MemLRUStatistics. The primary statistics are:
 
 | Statistic          | Description                                                             |
@@ -1389,8 +1361,7 @@ The least recently used (LRU) mechanism that keeps the size of a region under a 
 | `lruEvictions`     | Total number of entry evictions triggered by LRU.                       |
 | `lruGreedyReturns` | Number of non-LRU entries evicted during LRU operations.                |
 
-## <a id="section_5362EF9AECBC48D69475697109ABEDFA" class="no-quick-link"></a>Server Notifications for All Clients (CacheClientNotifierStatistics)
-
+## Server Notifications for All Clients (CacheClientNotifierStatistics) {#section_5362EF9AECBC48D69475697109ABEDFA}
 Statistics regarding cache server operations sent to all clients.
 
 | Statistic                            | Description                                                                               |
@@ -1405,8 +1376,7 @@ Statistics regarding cache server operations sent to all clients.
 | `eventsEnqueuedWhileClientAwayCount` | Number of events enqueued for a durable client.                                           |
 | `queueDroppedCount`                  | Number of times the client subscription queue for a particular durable client is dropped. |
 
-## <a id="section_E03865F509E543D9B8F9462B3DA6255E" class="no-quick-link"></a>Server Notifications for Single Client (CacheClientProxyStatistics)
-
+## Server Notifications for Single Client (CacheClientProxyStatistics) {#section_E03865F509E543D9B8F9462B3DA6255E}
 Statistics regarding cache server operations and cache server client notifications sent to a single client.
 
 | Statistic                        | Description                                                                                                                                                                          |
@@ -1422,8 +1392,7 @@ Statistics regarding cache server operations and cache server client notificatio
 | `messagesReceived`               | Number of client operations messages received.                                                                                                                                       |
 | `messagesWaitingToQueue`         | Number of client operations messages waiting to be put in the subscription queue.                                                                                                                                 |
 
-## <a id="section_3AB1C0AA55014163A2BBF68E13D25E3A" class="no-quick-link"></a>Server-to-Client Messaging Performance (ClientSubscriptionStats)
-
+## Server-to-Client Messaging Performance (ClientSubscriptionStats) {#section_3AB1C0AA55014163A2BBF68E13D25E3A}
 Collected in the server, these statistics track event messages queued on the server to be sent to the client. The statistics are gathered for each client subscription queue and are incremental for the lifetime of the queue. The event messages are referred to as events in these statistics. The primary statistics are:
 
 | Statistic             | Description                                                                                                                                                                                                                                |
@@ -1438,8 +1407,7 @@ Collected in the server, these statistics track event messages queued on the ser
 | `numVoidRemovals`     | Number of events which were supposed to be destroyed from the subscription queue through remove but were removed by some other operation like conflation or expiration.                                                                    |
 | `threadIdentifiers`   | Number of ThreadIdentifier objects (units) in the subscription queue.                                                                                                                                                                      |
 
-## <a id="section_55F3AF6413474317902845EE4996CC21" class="no-quick-link"></a>Statistics Collection (StatSampler)
-
+## Statistics Collection (StatSampler) {#section_55F3AF6413474317902845EE4996CC21}
 These statistics show how much time is spent collecting statistics. The primary statistics are:
 
 | Statistic     | Description                                    |

@@ -25,13 +25,12 @@ Pulse requires all users to authenticate themselves before they can use the Puls
 
 If you run Pulse in embedded mode, the Pulse application runs on the JMX Manager node and no JMX authentication is required. You do not need to specify valid JMX credentials to start an embedded Pulse application.
 
-If you host Pulse on a web application server (non-embedded mode) and you configure JMX authentication on the @@product_name@@ manager node, then the Pulse Web application must authenticate itself with the manager node when it starts. Specify the credentials of a valid JMX user account in the `pulse.properties` file, as described in [Hosting Pulse on a Web Application Server](pulse-hosted.html).
+If you host Pulse on a web application server (non-embedded mode) and you configure JMX authentication on the @@product_name@@ manager node, then the Pulse Web application must authenticate itself with the manager node when it starts. Specify the credentials of a valid JMX user account in the `pulse.properties` file, as described in [Hosting Pulse on a Web Application Server](pulse-hosted).
 
 **Note:**
-The credentials that you specify must have both read and write privileges in the JMX Manager node. See [Configuring a JMX Manager](../../managing/management/jmx_manager_operations.html#topic_263072624B8D4CDBAD18B82E07AA44B6).
+The credentials that you specify must have both read and write privileges in the JMX Manager node. See [Configuring a JMX Manager](../../managing/management/jmx_manager_operations#topic_263072624B8D4CDBAD18B82E07AA44B6).
 
-## <a id="pulse-auth-https"></a>Configuring Pulse to use HTTPS
-
+## Configuring Pulse to use HTTPS {#pulse-auth-https}
 You can configure Pulse to use HTTPS in either embedded or non-embedded mode.
 
 **Embedded Mode**
@@ -40,7 +39,7 @@ In embedded mode, @@product_name@@ uses an embedded Jetty server to host the
 Pulse Web application. To make the embedded server use HTTPS, you must
 enable the `http` SSL component in
 `gemfire.properties` or `gfsecurity.properties`.
-See [SSL](../../security/ssl_overview.html) for details on configuring these parameters.
+See [SSL](../../security/ssl_overview) for details on configuring these parameters.
 
 These SSL parameters apply to all HTTP services hosted on the JMX Manager, which includes the following:
 
@@ -57,8 +56,7 @@ browsers with proper certificates.
 
 In non-embedded mode where you are running Pulse on a standalone web application server, such as Tomcat, you must use the web server's SSL configuration to make the HTTP requests secure.
 
-## <a id="pulse-auth-geode-security-manager"></a>Configuring Pulse to use Security Manager
-
+## Configuring Pulse to use Security Manager {#pulse-auth-geode-security-manager}
 You can configure Pulse to use the @@product_name@@ Security Manager in either embedded or non-embedded mode.
 
 **Embedded Mode**
@@ -73,8 +71,7 @@ When running Pulse on a standalone web application server, such as Tomcat, you n
 -Dspring.profiles.active=pulse.authentication.gemfire
 ```
 
-## <a id="pulse-auth-custom"></a>Configuring Pulse to use a Custom Security Profile
-
+## Configuring Pulse to use a Custom Security Profile {#pulse-auth-custom}
 You can use a custom security profile only if you are NOT using a Security Manager in your cluster. A custom security profile only controls who can access the Pulse Web page. You will need to create an XML file named `pulse-authentication-custom.xml` that defines the credentials and roles of the users of Pulse.
 
 **Example pulse-authentication-custom.xml for Spring simple in-memory User Details Service**
@@ -113,8 +110,7 @@ Put `pulse-authentication-custom.xml` in the Pulse Web app's classpath, and star
 
 Start Pulse and log in using credentials that are authorized in the custom configuration.
 
-## <a id="pulse-auth-oauth"></a>Configuring Pulse to use an OAuth Authentication Provider
-
+## Configuring Pulse to use an OAuth Authentication Provider {#pulse-auth-oauth}
 You can configure Pulse to use any Authentication Provider that supports OpenID and custom scopes. You will need to:
 
 - Register with the authentication provider, obtaining a valid client ID and client secret for Pulse.

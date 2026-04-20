@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Use these examples to get started with @@product_name@@ region shortcuts.
-
-<a id="region_shortcuts__section_D9E58754D2B0435FA2986DBBF3063D4C"></a>
+## {#region_shortcuts__section_D9E58754D2B0435FA2986DBBF3063D4C}
 @@product_name@@ region shortcuts, in `org.apache.geode.cache.RegionShortcut` for peers and servers and `org.apache.geode.cache.client.ClientRegionShortcut` for clients, are available wherever you create a region in the `cache.xml` or through the API. Custom named attributes, stored by you, are available from the moment you store them on.
 
 The region shortcuts are special @@product_name@@ named region attributes, with identifying names. Create custom named region attributes by setting the attributes and storing them with a unique identifier in the region attribute `id`. Retrieve named attributes by providing the shortcut enum value or the name you assigned in the `id` to the region creation:
@@ -31,8 +30,7 @@ The region shortcuts are special @@product_name@@ named region attributes, with 
 -   In the API, use the identifier in the region factory creation
 -   In the `cache.xml`, use the identifier in the `<region>` or `<region-attribute>` `refid` setting. The `refid` is available in both elements for convenience
 
-## <a id="region_shortcuts__section_8FCBCC4BDCDE4A85A27E5B9B70603F63" class="no-quick-link"></a>Examples
-
+## Examples {#region_shortcuts__section_8FCBCC4BDCDE4A85A27E5B9B70603F63}
 **Example \#1**
 
 This example shows partitioned region creation in the `cache.xml`:

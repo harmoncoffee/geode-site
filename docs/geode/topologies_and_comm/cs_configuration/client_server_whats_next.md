@@ -23,8 +23,7 @@ limitations under the License.
 
 You can fine-tune your client/server system with server load-balancing. For example, you can configure how often the servers check their load with the cache server `load-poll-interval` property, or configure your own server load metrics by implementing the `org.apache.geode.cache.server` package.
 
-## <a id="client_server_whats_next__section_64AD4CBC253B4C309E3D592D0CED2A6B" class="no-quick-link"></a>How Server Load Conditioning Works
-
+## How Server Load Conditioning Works {#client_server_whats_next__section_64AD4CBC253B4C309E3D592D0CED2A6B}
 When the client pool requests connection information from the server locator, the locator returns the least-loaded server for the connection type. The pool uses this "best server" response to open new connections and to condition (rebalance) its existing pool connections.
 
 -   The locator tracks server availability and load according to information that the servers provide. Each server probes its load metrics periodically and, when it detects a change, sends new information to the locator. This information consists of current load levels and estimates of how much load would be added for each additional connection. The locator compares the load information from its servers to determine which servers can best handle more connections.

@@ -19,23 +19,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 --> Apache Geode architecture and management features help detect and resolve network partition problems.
 
--   **[How Network Partitioning Management Works](how_network_partitioning_management_works.html)** Geode     handles network outages by using a weighting system to determine whether the remaining available members have a sufficient quorum to continue as a cluster.
+-   **[How Network Partitioning Management Works](how_network_partitioning_management_works)** Geode     handles network outages by using a weighting system to determine whether the remaining available members have a sufficient quorum to continue as a cluster.
 
--   **[Failure Detection and Membership Views](failure_detection.html)** Geode     uses failure detection to remove unresponsive members from membership views.
+-   **[Failure Detection and Membership Views](failure_detection)** Geode     uses failure detection to remove unresponsive members from membership views.
 
--   **[Membership Coordinators, Lead Members and Member Weighting](membership_coordinators_lead_members_and_weighting.html)**
+-   **[Membership Coordinators, Lead Members and Member Weighting](membership_coordinators_lead_members_and_weighting)**
 
     Network partition detection uses a designated membership coordinator and a weighting system that accounts for a lead member to determine whether a network partition has occurred.
 
--   **[Network Partitioning Scenarios](network_partitioning_scenarios.html)**
+-   **[Network Partitioning Scenarios](network_partitioning_scenarios)**
 
     This topic describes network partitioning scenarios and what happens to the partitioned sides of the cluster.
 
--   **[Configure Apache Geode to Handle Network Partitioning](handling_network_partitioning.html)**
+-   **[Configure Apache Geode to Handle Network Partitioning](handling_network_partitioning)**
 
     This section lists the configuration steps for network partition detection.
 
--   **[Preventing Network Partitions](preventing_network_partitions.html)**
+-   **[Preventing Network Partitions](preventing_network_partitions)**
 
     This section provides a short list of things you can do to prevent network partition from occurring.
 

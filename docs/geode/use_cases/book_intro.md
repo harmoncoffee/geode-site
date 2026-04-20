@@ -20,10 +20,8 @@ limitations under the License.
 --> Geode may be used to implement a wide variety
 of designs. This section introduces designs and informs developers how to
 implement and configure those designs.
-
-<a id="Use_Cases"></a>
-
--   **[The Inline Cache](inline-cache.html)**
+## {#Use_Cases}
+-   **[The Inline Cache](inline-cache)**
 
     This classic caching structure causes a backend data store lookup
 upon a cache miss.

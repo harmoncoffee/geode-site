@@ -273,21 +273,20 @@ This table classifies the permissions assigned for JMX operations.
 Complete these items to implement authorization.
 
 - Decide upon an authorization algorithm.
-The [Authorization Example](authorization_example.html)
+The [Authorization Example](authorization_example)
 stores a mapping of which principals (users) are permitted to do
 which operations.
 The algorithm bases its decision
 on a look up of the permissions granted to the principal attempting
 the operation.
 - Define the `security-manager` property.
-See [Enable Security with Property Definitions](enable_security.html)
+See [Enable Security with Property Definitions](enable_security)
 for details about this property.
 - Implement the  `authorize` method of the `SecurityManager` interface.
 - Define any extra resources that the implemented authorization algorithm
 needs in order to make a decision.
 
-### <a id="AuthorizeFcnExecution" class="no-quick-link"></a>Authorization of Function Execution
-
+### Authorization of Function Execution {#AuthorizeFcnExecution}
 By default, a function executed on servers requires that the
 entity invoking the function have `DATA:WRITE` permission on the
 region(s) involved.
@@ -300,7 +299,6 @@ in the function's class.
 The method should return a `Collection` of the permissions
 required of the entity that invokes an execution of the function.
 
-### <a id="AuthorizeMethodsInQueries" class="no-quick-link"></a>Authorization of Methods Invoked from Queries
-
+### Authorization of Methods Invoked from Queries {#AuthorizeMethodsInQueries}
 Enabling the `SecurityManager` affects queries by restricting the methods that a running query may invoke.
-See [Method Invocations](../developing/query_select/the_where_clause.html#the_where_clause__section_D2F8D17B52B04895B672E2FCD675A676) and [Method Invocation Authorizers](../security/method_invocation_authorizers.html) for details.
+See [Method Invocations](../developing/querying_basics/query_select/the_where_clause.md#the_where_clause__section_D2F8D17B52B04895B672E2FCD675A676) and [Method Invocation Authorizers](../security/method_invocation_authorizers) for details.

@@ -25,17 +25,14 @@ Executes operating system (OS) commands. Use "`&`" to return to the `gfsh` promp
 
 **Note:**
 Commands that pass output to another shell command are not supported.
-
-<a id="concept_E6D5DCFCDFC0433EA2A9AD7AB9B904D6__section_2F424FA975F44E0890E8943AF385A5BA"></a>
+## {#concept_E6D5DCFCDFC0433EA2A9AD7AB9B904D6__section_2F424FA975F44E0890E8943AF385A5BA}
 **Syntax:**
 
 ``` pre
 sh command [--use-console(=value)?]
  
 ```
-
-<a id="concept_E6D5DCFCDFC0433EA2A9AD7AB9B904D6__table_p3g_fkf_2w"></a>
-
+## {#concept_E6D5DCFCDFC0433EA2A9AD7AB9B904D6__table_p3g_fkf_2w}
 | Name                                                | Description                                                                                                                                    | Default Value |
 |-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
 | <span class="keyword parmname">&#8209;&#8209;use-console</span> | Set this parameter on UNIX systems for applications which need a handle to the console. Adds "`</dev/tty >/dev/tty`" to the specified command. | false         |

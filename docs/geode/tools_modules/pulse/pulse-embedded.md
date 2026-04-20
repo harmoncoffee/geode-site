@@ -65,10 +65,10 @@ cluster using gfsh, use the `start pulse` command to load the correct URL in you
 of a valid Pulse account in the login screen. Otherwise, enter the default "admin" in both
 fields. Click **Sign In** to continue.
 
-    See [Configuring Pulse Authentication](pulse-auth.html).
+    See [Configuring Pulse Authentication](pulse-auth).
 
 4.  After you log in, Pulse displays the main cluster view for the local cluster. See
-[Using Pulse Views](pulse-views.html).
+[Using Pulse Views](pulse-views).
 
 **Note:**
 When running in embedded mode, the Pulse application connects only to the JMX Manager running in the

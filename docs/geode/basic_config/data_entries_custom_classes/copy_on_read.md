@@ -66,7 +66,7 @@ it cannot be set for individual regions.
         </cache>
         ```
 
-    - Use [`gfsh alter runtime`](../../tools_modules/gfsh/command-pages/alter.html#topic_7E6B7E1B972D4F418CB45354D1089C2B) to set the `copy-on-read` attribute
+    - Use [`gfsh alter runtime`](../../tools_modules/gfsh/command-pages/alter#topic_7E6B7E1B972D4F418CB45354D1089C2B) to set the `copy-on-read` attribute
     once the servers have been started.
 
 

@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 The server pools in your @@product_name_long@@ client processes manage all client connection requests to the server tier. To make the best use of the pool functionality, you should understand how the pool manages the server connections.
-
-<a id="how_the_pool_manages_connections__section_2C419926908B4A3599FF0B8EAB7E69A1"></a>
+## {#how_the_pool_manages_connections__section_2C419926908B4A3599FF0B8EAB7E69A1}
 Client/server communication is done in two distinct ways. Each kind of communication uses a different type of connection for maximum performance and availability.
 
 -   **Pool connections**. The pool connection is used to send individual operations to the server to update cached data, to satisfy a local cache miss, or to run an ad hoc query. Each pool connection goes to a host/port location where a server is listening. The server responds to the request on the same connection. Generally, client threads use a pool connection for an individual operation and then return the connection to the pool for reuse, but you can configure to have connections owned by threads. This figure shows pool connections for one client and one server. At any time, a pool may have from zero to many pool connections to any of the servers.
@@ -34,15 +33,13 @@ Client/server communication is done in two distinct ways. Each kind of communica
 
     <img src="/images_svg/cs_subscriptions.svg" id="how_the_pool_manages_connections__image_5AB5718413AD4E7EBEDD357335D14C48" class="image" />
 
-## <a id="how_the_pool_manages_connections__section_9EB09CBF19034C3A92FEFDBC28A6BBCC" class="no-quick-link"></a>How the Pool Chooses a Server Connection
-
+## How the Pool Chooses a Server Connection {#how_the_pool_manages_connections__section_9EB09CBF19034C3A92FEFDBC28A6BBCC}
 The pool gets server connection information from the server locators or, alternately, from the static server list.
 
 -   **Server Locators**. Server locators maintain information about which servers are available and which has the least load. New connections are sent to the least loaded servers. The pool requests server information from a locator when it needs a new connection. The pool randomly chooses the locator to use and the pool sticks with a locator until the connection fails.
 -   **Static Server List**. If you use a static server list, the pool shuffles it once at startup, to provide randomness between clients with the same list configuration, and then runs through the list round robin connecting as needed to the next server in the list. There is no load balancing or dynamic server discovery with the static server list.
 
-## <a id="how_the_pool_manages_connections__section_8BE1FD1D602048978C4DE870134EC648" class="no-quick-link"></a>How the Pool Connects to a Server
-
+## How the Pool Connects to a Server {#how_the_pool_manages_connections__section_8BE1FD1D602048978C4DE870134EC648}
 When a pool needs a new connection, it goes through these steps until either it successfully establishes a connection, it has exhausted all available servers, or the `free-connection-timeout` is reached.
 
 1.  Requests server connection information from the locator or retrieves the next server from the static server list.
@@ -52,8 +49,7 @@ If the pool fails to connect while creating a subscription connection or provisi
 
 If an application thread calls an operation that needs a connection and the pool can’t create it, the operation returns a `NoAvailableServersException`.
 
-## <a id="how_the_pool_manages_connections__section_B3A7B441939040E39324343A77EED6EE" class="no-quick-link"></a>How the Pool Manages Pool Connections
-
+## How the Pool Manages Pool Connections {#how_the_pool_manages_connections__section_B3A7B441939040E39324343A77EED6EE}
 Each `Pool` instance in your client maintains its own connection pool. The pool responds as efficiently as possible to connection loss and requests for new connections, opening new connections as needed. When you use a pool with the server locator, the pool can quickly respond to changes in server availability, adding new servers and disconnecting from unhealthy or dead servers with little or no impact on your client threads. Static server lists require more close attention as the client pool is only able to connect to servers at the locations specified in the list.
 
 The pool adds a new pool connection when one of the following happens:
@@ -69,8 +65,7 @@ The pool closes a pool connection when one of the following occurs:
 
 When it closes a connection that a thread is using, the pool switches the thread to another server connection, opening a new one if needed.
 
-## <a id="how_the_pool_manages_subscription_connections" class="no-quick-link"></a>How the Pool Manages Subscription Connections
-
+## How the Pool Manages Subscription Connections {#how_the_pool_manages_subscription_connections}
 The pool’s subscription connection is established in the same way as the pool connections, by
 requesting server information from the locator and then sending a request to the server, or, if you
 are using a static server list, by connecting to the next server in the list.
@@ -90,6 +85,5 @@ Value options include:
 - A value of one or more times out the server connection after the specified number of ping intervals have
 elapsed. A value of one is not recommended.
 
-## <a id="how_the_pool_manages_connections__section_6286FB8DC6564F0AA082004B447F1FC4" class="no-quick-link"></a>How the Pool Conditions Server Load
-
+## How the Pool Conditions Server Load {#how_the_pool_manages_connections__section_6286FB8DC6564F0AA082004B447F1FC4}
 When locators are used, the pool periodically conditions its pool connections. Each connection has an internal lifetime counter. When the counter reaches the configured `load-conditioning-interval`, the pool checks with the locator to see if the connection is using the least loaded server. If not, the pool establishes a new connection to the least loaded server, silently puts it in place of the old connection, and closes the old connection. In either case, when the operation completes, the counter starts at zero. Conditioning happens behind the scenes and does not affect your application’s connection use. This automatic conditioning allows very efficient upscaling of your server pool. It is also useful following planned and unplanned server outages, during which time the entire client load will have been placed on a subset of the normal set of servers.

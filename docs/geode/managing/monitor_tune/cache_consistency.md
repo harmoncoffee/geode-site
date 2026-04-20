@@ -23,8 +23,7 @@ limitations under the License.
 
 Maintaining data consistency between caches in a distributed @@product_name@@ system is vital for ensuring its functional integrity and preventing data loss.
 
-## <a id="cache_const__section_lf3_lvn_nr" class="no-quick-link"></a>General Guidelines
-
+## General Guidelines {#cache_const__section_lf3_lvn_nr}
 **Before Restarting a Region with a Disk Store, Consider the State of the Entire Region**
 
 **Note:**
@@ -63,8 +62,7 @@ A region in a cache with transactions may not stay in sync with a region of the 
 
 Two applications running the same sequence of operations in their transactions may get different results. This could occur because operations happening outside a transaction in one of the members can overwrite the transaction, even in the process of committing. This could also occur if the results of a large transaction exceed the machine’s memory or the capacity of @@product_name@@. Those limits can vary by machine, so the two members may not be in sync.
 
-## <a id="cache_const__section_qxx_kvn_nr" class="no-quick-link"></a>Guidelines for Multi-Site Deployments
-
+## Guidelines for Multi-Site Deployments {#cache_const__section_qxx_kvn_nr}
 **Optimize socket-buffer-size**
 
 In a multi-site installation using gateways, if the link between sites is not tuned for optimum throughput, it could cause messages to back up in the cache queues. If a queue overflows because of inadequate buffer sizes, it will become out of sync with the sender and the receiver will be unaware of the condition. You can configure the send-receive buffer sizes of the TCP/IP connections used for data transmissions by changing the socket-buffer-size attribute of the gateway-sender and gateway-receiver elements in the `cache.xml` file. Set the buffer size by determining the link bandwidth and then using ping to measure the round-trip time.

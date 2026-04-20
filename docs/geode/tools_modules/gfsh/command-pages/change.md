@@ -18,8 +18,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_E74ED23CB60342538B2175C326E7D758"></a>
-
+## {#topic_E74ED23CB60342538B2175C326E7D758}
 Changes the logging level on specified members. This command takes effect if the default @@product_name@@ logging configuration is used.
 
 When using a custom `Log4J` configuration, this command takes effect only if the member whose logging level you want to change was started using the `--J=-Dgeode.LOG_LEVEL_UPDATE_OCCURS=ALWAYS` system property.
@@ -33,9 +32,7 @@ The `change loglevel` command applies only to the members specified, whether the
 ``` pre
 change loglevel --log-level=value [--members=value(,value)*] [--groups=value(,value)*]
 ```
-
-<a id="topic_E74ED23CB60342538B2175C326E7D758__table_2277A2CE8F6E4731B45FEFA2B1366DB6"></a>
-
+## {#topic_E74ED23CB60342538B2175C326E7D758__table_2277A2CE8F6E4731B45FEFA2B1366DB6}
 **Table 1. Change Loglevel Parameters**
 
 | Name | Description | Default Value |

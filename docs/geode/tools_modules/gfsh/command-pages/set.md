@@ -20,17 +20,16 @@ limitations under the License.
 -->
 
 Set variables in the gfsh environment.
-
-<a id="concept_E9CC746480464556AA8FF69EB991776E__section_66C36B0123F54A52AE3815E5D31F8239"></a>
+## {#concept_E9CC746480464556AA8FF69EB991776E__section_66C36B0123F54A52AE3815E5D31F8239}
 Set gfsh variables that can be used by commands.
 
-You can use the gfsh [echo](echo.html) command to view the value of a variable. For example, to see a list of all environment variables and their current values, use the following command:
+You can use the gfsh [echo](echo) command to view the value of a variable. For example, to see a list of all environment variables and their current values, use the following command:
 
 ``` pre
 gfsh>echo --string=$*
 ```
 
-See [Useful gfsh Shell Variables](../useful_gfsh_shell_variables.html#concept_731ECA5E40E943CBA5C1198A0745D8EE) for a description of preset environment variables.
+See [Useful gfsh Shell Variables](../useful_gfsh_shell_variables#concept_731ECA5E40E943CBA5C1198A0745D8EE) for a description of preset environment variables.
 
 **Availability:** Online or offline.
 
@@ -39,9 +38,7 @@ See [Useful gfsh Shell Variables](../useful_gfsh_shell_variables.html#concept_73
 ``` pre
 set variable --name=value --value=value
 ```
-
-<a id="concept_E9CC746480464556AA8FF69EB991776E__table_ec2_jkf_2w"></a>
-
+## {#concept_E9CC746480464556AA8FF69EB991776E__table_ec2_jkf_2w}
 | Name                                          | Description                                                                                                                               |
 |-----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;name</span>  | *Required.* The name to be assigned for the variable. The name must only be composed of letters, digits, and the underscore character (`_`); the name may not start with a digit. |

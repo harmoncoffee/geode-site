@@ -29,17 +29,17 @@ with the familiar `begin`, `commit`, and `rollback` methods
 that implement the same operations as in 
 relational database transactions methods.
 
--   **[Adherence to ACID Promises](transactions_intro.html)**
+-   **[Adherence to ACID Promises](transactions_intro)**
   
     This section explains the ways in which Geode 's
 implementation of optimistic transactions provides ACID semantics.
 
--   **[Code Examples](directed_example.html)**
+-   **[Code Examples](directed_example)**
 
     An application-based transaction and a transaction embedded in
     a function provide examples to model.
 
--   **[Design Considerations](design_considerations.html)**
+-   **[Design Considerations](design_considerations)**
 
     Designs that extend beyond the basics introduce other considerations.
     This section identifies and discusses how transactions interact

@@ -20,12 +20,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="handling_missing_disk_stores__section_9345819FC27E41FB94F5E54979B7C506"></a>
+## {#handling_missing_disk_stores__section_9345819FC27E41FB94F5E54979B7C506}
 This section applies to disk stores that hold the latest copy of your data for at least one region.
 
-## <a id="handling_missing_disk_stores__section_9E8FBB7935F34239AD5E65A3E857EEAA" class="no-quick-link"></a>Show Missing Disk Stores
-
+## Show Missing Disk Stores {#handling_missing_disk_stores__section_9E8FBB7935F34239AD5E65A3E857EEAA}
 Using `gfsh`, the `show missing-disk-stores` command lists all disk stores with most recent data that are being waited on by other members.
 
 For replicated regions, this command only lists missing members that are preventing other members from starting up. For partitioned regions, this command also lists any offline data stores, even when other data stores for the region are online, because their offline status may be causing `PartitionOfflineExceptions` in cache operations or preventing the system from satisfying redundancy.
@@ -52,8 +50,7 @@ Disk stores usually go missing because their member fails to start. The member c
 -   Network partitioning
 -   Drive failure
 
-## <a id="handling_missing_disk_stores__section_FDF161F935054AB190D9DB0D7930CEAA" class="no-quick-link"></a>Revoke Missing Disk Stores
-
+## Revoke Missing Disk Stores {#handling_missing_disk_stores__section_FDF161F935054AB190D9DB0D7930CEAA}
 This section applies to disk stores for which both of the following are true:
 
 -   Disk stores that have the most recent copy of data for one or more regions or region buckets.

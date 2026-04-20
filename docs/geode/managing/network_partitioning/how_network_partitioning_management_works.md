@@ -22,13 +22,12 @@ limitations under the License.
 -->
 
 @@product_name@@ handles network outages by using a weighting system to determine whether the remaining available members have a sufficient quorum to continue as a cluster.
-
-<a id="how_network_partitioning_management_works__section_548146BB8C24412CB7B43E6640272882"></a>
+## {#how_network_partitioning_management_works__section_548146BB8C24412CB7B43E6640272882}
 Individual members are each assigned a weight, and the quorum is determined by comparing the total weight of currently responsive members to the previous total weight of responsive members.
 
 Your cluster can split into separate running systems when members lose the ability to see each other. The typical cause of this problem is a failure in the network. When a partitioned system is detected, only one side of the system keeps running and the other side automatically shuts down.
 
-The network partitioning detection feature is enabled by default with a true value for the `enable-network-partition-detection` property. See [Configure @@product_name_long@@ to Handle Network Partitioning](handling_network_partitioning.html#handling_network_partitioning) for details. Quorum weight calculations are always performed and logged regardless of this configuration setting.
+The network partitioning detection feature is enabled by default with a true value for the `enable-network-partition-detection` property. See [Configure @@product_name_long@@ to Handle Network Partitioning](handling_network_partitioning#handling_network_partitioning) for details. Quorum weight calculations are always performed and logged regardless of this configuration setting.
 
 The overall process for detecting a network partition is as follows:
 
@@ -36,7 +35,7 @@ The overall process for detecting a network partition is as follows:
 2.  After the members start up, the oldest member, typically a locator, assumes the role of the membership coordinator. Peer discovery occurs as members come up and members generate a membership discovery list for the cluster. Locators hand out the membership discovery list as each member process starts up. This list typically contains a hint on who the current membership coordinator is.
 3.  Members join and if necessary, depart the cluster:
     -   Member processes make a request to the coordinator to join the cluster. If authenticated, the coordinator creates a new membership view, hands the new membership view to the new member, and begins the process of sending the new membership view (to add the new member or members) by sending out a view preparation message to existing members in the view.
-    -   While members are joining the system, it is possible that members are also leaving or being removed through the normal failure detection process. Failure detection removes unresponsive or slow members. See [Managing Slow Receivers](../monitor_tune/slow_receivers_managing.html) and [Failure Detection and Membership Views](failure_detection.html#concept_CFD13177F78C456095622151D6EE10EB) for descriptions of the failure detection process. If a new membership view is sent out that includes one or more failed processes, the coordinator will log the new weight calculations. At any point, if quorum loss is detected due to unresponsive processes, the coordinator will also log a severe level message to identify the failed processes:
+    -   While members are joining the system, it is possible that members are also leaving or being removed through the normal failure detection process. Failure detection removes unresponsive or slow members. See [Managing Slow Receivers](../monitor_tune/slow_receivers_managing) and [Failure Detection and Membership Views](failure_detection#concept_CFD13177F78C456095622151D6EE10EB) for descriptions of the failure detection process. If a new membership view is sent out that includes one or more failed processes, the coordinator will log the new weight calculations. At any point, if quorum loss is detected due to unresponsive processes, the coordinator will also log a severe level message to identify the failed processes:
 
         ``` pre
         Possible loss of quorum detected due to loss of {0} cache processes: {1}

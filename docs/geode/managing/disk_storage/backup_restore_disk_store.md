@@ -23,15 +23,14 @@ limitations under the License.
 
 A backup is a copy of persisted data from a disk store. A backup is used to restore the disk store to the state it was in when the backup was made. The appropriate back up and restore procedures differ based upon whether the cluster is online or offline. An online system has currently running members. An offline system does not have any running members.
 
--   [Making a Backup While the System Is Online](backup_restore_disk_store.html#backup_restore_disk_store__section_63AB5917BF24432898A79DBE8E4071FF)
--   [What a Full Online Backup Saves](backup_restore_disk_store.html#backup_restore_disk_store__section_C08E52E65DAD4CD5AE076BBDCF1DB340)
--   [What an Incremental Online Backup Saves](backup_restore_disk_store.html#backup_restore_disk_store__section_59E23EEA4AB24374A45B99A8B44FD49B)
--   [Disk Store Backup Directory Structure and Contents](backup_restore_disk_store.html#backup_restore_disk_store__section_22809A237A344015B40C962B704D8F34)
--   [Offline Members—Manual Catch-Up to an Online Backup](backup_restore_disk_store.html#backup_restore_disk_store__section_6F998080AF7640D1A9E951D155A75E3A)
--   [Restore Using a Backup Made While the System Was Online](backup_restore_disk_store.html#backup_restore_disk_store__section_D08DC489B9D947DE97B8F96261E4A977)
+-   [Making a Backup While the System Is Online](backup_restore_disk_store#backup_restore_disk_store__section_63AB5917BF24432898A79DBE8E4071FF)
+-   [What a Full Online Backup Saves](backup_restore_disk_store#backup_restore_disk_store__section_C08E52E65DAD4CD5AE076BBDCF1DB340)
+-   [What an Incremental Online Backup Saves](backup_restore_disk_store#backup_restore_disk_store__section_59E23EEA4AB24374A45B99A8B44FD49B)
+-   [Disk Store Backup Directory Structure and Contents](backup_restore_disk_store#backup_restore_disk_store__section_22809A237A344015B40C962B704D8F34)
+-   [Offline Members—Manual Catch-Up to an Online Backup](backup_restore_disk_store#backup_restore_disk_store__section_6F998080AF7640D1A9E951D155A75E3A)
+-   [Restore Using a Backup Made While the System Was Online](backup_restore_disk_store#backup_restore_disk_store__section_D08DC489B9D947DE97B8F96261E4A977)
 
-## <a id="backup_restore_disk_store__section_63AB5917BF24432898A79DBE8E4071FF" class="no-quick-link"></a>Making a Backup While the System Is Online
-
+## Making a Backup While the System Is Online {#backup_restore_disk_store__section_63AB5917BF24432898A79DBE8E4071FF}
 The gfsh command `backup disk-store` creates a backup of the disk stores for all members running in the cluster. The backup works by passing commands to the running system members; therefore, the members need to be online for this operation to succeed. Each member with persistent data creates a backup of its own configuration and disk stores. The backup does not block any activities within the cluster, but it does use resources.
 
 **Note:**
@@ -39,7 +38,7 @@ Do not try to create backup files from a running system by using your operating 
 
 **Preparing to Make a Backup**
 
--   Consider compacting your disk store before making a backup. If auto-compaction is turned off, you may want to do a manual compaction to save on the quantity of data copied over the network by the backup. For more information on configuring a manual compaction, see [Manual Compaction](compacting_disk_stores.html#compacting_disk_stores__li_63CF8C35153D4173AADF7DC35FEC61F9).
+-   Consider compacting your disk store before making a backup. If auto-compaction is turned off, you may want to do a manual compaction to save on the quantity of data copied over the network by the backup. For more information on configuring a manual compaction, see [Manual Compaction](compacting_disk_stores#compacting_disk_stores__li_63CF8C35153D4173AADF7DC35FEC61F9).
 -   Take the backup when region operations are quiescent,
 to avoid the possibility of an inconsistency between region data and
 an asynchronous event queue (AEQ) or a WAN Gateway sender
@@ -124,8 +123,7 @@ The output will appear the same as the output for a full online backup.
 
 Any online member that fails to complete its incremental backup will leave a file named `INCOMPLETE_BACKUP` in its highest level backup directory. The existence of this file identifies that the backup file contains only a partial backup, and it cannot be used in a restore operation. The next time a backup is made, a full backup will be made.
 
-## <a id="backup_restore_disk_store__section_C08E52E65DAD4CD5AE076BBDCF1DB340" class="no-quick-link"></a>What a Full Online Backup Saves
-
+## What a Full Online Backup Saves {#backup_restore_disk_store__section_C08E52E65DAD4CD5AE076BBDCF1DB340}
 For each member with persistent data, a full backup includes the following:
 
 -   Disk store files for all members containing persistent region data.
@@ -136,7 +134,7 @@ For each member with persistent data, a full backup includes the following:
     <backup>/users/user/gfSystemInfo/myCustomerConfig.doc</backup>
     ```
 
--   Deployed JAR files that were deployed using the gfsh [deploy](../../tools_modules/gfsh/command-pages/deploy.html) command.
+-   Deployed JAR files that were deployed using the gfsh [deploy](../../tools_modules/gfsh/command-pages/deploy) command.
 -   Configuration files from the member startup.
     -   `gemfire.properties`, including the properties with which the member was started.
     -   `cache.xml`, if used.
@@ -144,14 +142,12 @@ For each member with persistent data, a full backup includes the following:
     These configuration files are not automatically restored, to avoid interfering with more recent configurations. In particular, if these are extracted from a primary `jar` file, copying the separate files into your working area can override the files in the `jar`. If you want to back up and restore these files, add them as custom `<backup>` elements.
 -   A restore script, called `restore.bat` on Windows, and called `restore.sh` on Linux. This script may later be used to do a restore. The script copies files back to their original locations.
 
-## <a id="backup_restore_disk_store__section_59E23EEA4AB24374A45B99A8B44FD49B" class="no-quick-link"></a>What an Incremental Online Backup Saves
-
+## What an Incremental Online Backup Saves {#backup_restore_disk_store__section_59E23EEA4AB24374A45B99A8B44FD49B}
 An incremental backup saves the difference between the last backup and the current data. An incremental backup copies only operations logs that are not already present in the baseline directories for each member. For incremental backups, the restore script contains explicit references to operation logs in one or more previously chained incremental backups. When the restore script is run from an incremental backup, it also restores the operation logs from previous incremental backups that are part of the backup chain.
 
 If members are missing from the baseline directory because they were offline or did not exist at the time of the baseline backup, those members place full backups of all their files into the incremental backup directory.
 
-## <a id="backup_restore_disk_store__section_22809A237A344015B40C962B704D8F34" class="no-quick-link"></a>Disk Store Backup Directory Structure and Contents
-
+## Disk Store Backup Directory Structure and Contents {#backup_restore_disk_store__section_22809A237A344015B40C962B704D8F34}
 ``` pre
 $ cd thebackupdir
 $ ls -R
@@ -176,8 +172,7 @@ BACKUPDEFAULT_1.crf BACKUPDEFAULT_1.drf BACKUPDEFAULT.if
 ./2012-10-18-13-44-53/dasmith_e6410_server1_8623_v1_33892/user:
 ```
 
-## <a id="backup_restore_disk_store__section_6F998080AF7640D1A9E951D155A75E3A" class="no-quick-link"></a>Offline Members—Manual Catch-Up to an Online Backup
-
+## Offline Members—Manual Catch-Up to an Online Backup {#backup_restore_disk_store__section_6F998080AF7640D1A9E951D155A75E3A}
 If you must have a member offline during an online backup, you can manually back up its disk stores. Bring this member’s files into the online backup framework manually, and create a restore script by hand starting with a copy of another member’s script:
 
 1.  Duplicate the directory structure of a backed up member for this member.
@@ -186,8 +181,7 @@ If you must have a member offline during an online backup, you can manually back
 4.  Copy in this member’s files.
 5.  Modify the restore script to work for this member.
 
-## <a id="backup_restore_disk_store__section_D08DC489B9D947DE97B8F96261E4A977" class="no-quick-link"></a>Restore Using a Backup Made While the System Was Online
-
+## Restore Using a Backup Made While the System Was Online {#backup_restore_disk_store__section_D08DC489B9D947DE97B8F96261E4A977}
 The `restore.sh` or `restore.bat` script copies files back to their original locations.
 
 1.  Restore your disk stores while cache members are offline and the system is down.

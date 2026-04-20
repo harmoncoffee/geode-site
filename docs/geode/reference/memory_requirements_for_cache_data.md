@@ -30,10 +30,7 @@ These requirements include estimates for the following resources:
 -   network bandwidth
 
 The information here is only a guideline, and assumes a basic understanding of @@product_name@@. While no two applications or use cases are exactly alike, the information here should be a solid starting point, based on real-world experience. Much like with physical database design, ultimately the right configuration and physical topology for deployment is based on the performance requirements, application data access characteristics, and resource constraints (i.e., memory, CPU, and network bandwidth) of the operating environment.
-
-
-<a id="topic_ipt_dqz_j4"></a>
-
+## {#topic_ipt_dqz_j4}
 # Core Guidelines for @@product_name@@ Data Region Design
 
 The following guidelines apply to region design:
@@ -44,8 +41,7 @@ The following guidelines apply to region design:
 -   If you have a large data set and can tolerate an on-disk subset of data, you should be using either replicated regions or partitioned regions with overflow to disk.
 -   If you have different data sets that meet the above conditions, then you might want to consider a hybrid solution mixing replicated and partition regions. Do not exceed 50 to 75% of the JVM heap size depending on how write intensive your application is.
 
-## <a id="topic_ppn_pqz_j4" class="no-quick-link"></a>Memory Usage Overview
-
+## Memory Usage Overview {#topic_ppn_pqz_j4}
 The following guidelines should provide a rough estimate of the amount of memory consumed by your system.
 
 Memory calculation about keys and entries (objects) and region overhead for them can be divided by the number of members of the cluster for data placed in partitioned regions only. For other regions, the calculation is for each member that hosts the region. Memory used by sockets, threads, and the small amount of application overhead for @@product_name@@ is per member.
@@ -64,8 +60,7 @@ There are several additional considerations for calculating your memory requirem
 
     The following section "Calculating Application Object Overhead" provides details on how to estimate the memory overhead of the keys and values stored in the cache.
 
-## <a id="topic_kjx_brz_j4" class="no-quick-link"></a>Calculating Application Object Overhead
-
+## Calculating Application Object Overhead {#topic_kjx_brz_j4}
 To compute the memory overhead of a Java object, perform the following steps:
 
 1.  **Determine the object header size.** Each Java object has an object header. For a 32-bit JVM, it is 8 bytes. For a 64-bit JVM with a heap less than or equal to 32GB, it is 12 bytes. For a 64-bit JVM with a heap greater than 32GB, it is 16 bytes.
@@ -91,8 +86,7 @@ An exception to this is if the serialized from is encoded with PDX, then setting
 
 See [Determining Object Serialization Overhead](#topic_psn_5tz_j4) for additional information on how to calculate memory usage requirements for storing serialized objects.
 
-## <a id="topic_exn_2tz_j4" class="no-quick-link"></a>Using Key Storage Optimization
-
+## Using Key Storage Optimization {#topic_exn_2tz_j4}
 Keys are stored in object form except for certain classes where the storage of keys is optimized. Key storage is optimized by replacing the entry's object reference to the key with one or two primitive fields on the entry that store the key's data "inline". The following rules apply to determine whether a key is stored "inline":
 
 -   If the key's class is `java.lang.Integer`, `java.lang.Long`, or `java.util.UUID`, then the key is always stored inline. The memory overhead for an inlined Integer or Long key is 0 (zero). The memory overhead for an inlined UUID is 8.
@@ -113,8 +107,7 @@ The key inlining feature can be disabled by specifying the following @@product_n
 -Dgemfire.DISABLE_INLINE_REGION_KEYS=true
 ```
 
-## <a id="topic_ac4_mtz_j4" class="no-quick-link"></a>Measuring Cache Overhead
-
+## Measuring Cache Overhead {#topic_ac4_mtz_j4}
 This table gives estimates for the cache overhead in a 32-bit JVM. The overhead is required even when an entry is overflowed or persisted to disk. Actual memory use varies based on a number of factors, including the JVM type and the platform you run on. For 64-bit JVMs, the usage will usually be larger than with 32-bit JVMs and may be as much as 80% more.
 
 | When calculating cache overhead…                                                                                | You should…                                                                   |
@@ -137,14 +130,12 @@ For indexes used in querying, the overhead varies greatly depending on the type 
 -   Lucene indexes add approximately 737 bytes per entry.
 The other index overhead estimates listed here also apply to Lucene indexes.
 
-## <a id="topic_i1m_stz_j4" class="no-quick-link"></a>Estimating Management and Monitoring Overhead
-
+## Estimating Management and Monitoring Overhead {#topic_i1m_stz_j4}
 The @@product_name@@ JMX management and monitoring system contributes to memory overhead and should be accounted for when establishing the memory requirements for your deployment. Specifically, the memory footprint of any processes (such as locators) that are running as JMX managers can increase.
 
 For each resource in the cluster that is being managed and monitored by the JMX Manager (for example, each MXBean such as MemberMXBean, RegionMXBean, DiskStoreMXBean, LockServiceMXBean and so on), you should add 10 KB of required memory to the JMX Manager node.
 
-## <a id="topic_psn_5tz_j4" class="no-quick-link"></a>Determining Object Serialization Overhead
-
+## Determining Object Serialization Overhead {#topic_psn_5tz_j4}
 @@product_name@@ PDX serialization can provide significant space savings over Java Serializable in addition to better performance. In some cases we have seen savings of up to 65%, but the savings will vary depending on the domain objects. PDX serialization is most likely to provide the most space savings of all available options. DataSerializable is more compact, but it requires that objects are deserialized on access, so that should be taken into account. On the other hand, PDX serializable does not require deserialization for most operations, and because of that, it may provide greater space savings.
 
 In any case, the kinds and volumes of operations that would be done on the server side should be considered in the context of data serialization, as @@product_name@@ has to deserialize data for some types of operations (access). For example, if a function invokes a get operation on the server side, the value returned from the get operation will be deserialized in most cases (the only time it will not be deserialized is when PDX serialization is used and the read-serialized attribute is set). The only way to find out the actual overhead is by running tests, and examining the memory usage.
@@ -179,8 +170,7 @@ If you do want to estimate memory usage for PDX serialized data, the following t
 
 A note of caution: If the domain object contains many domain objects as member fields, then the memory overhead of PDX serialization can be considerably more than other types of serialization.
 
-## <a id="topic_d3g_c5z_j4" class="no-quick-link"></a>Calculating Socket Memory Requirements
-
+## Calculating Socket Memory Requirements {#topic_d3g_c5z_j4}
 Servers always maintain two outgoing connections to each of their peers. So for each peer a server has, there are four total connections: two going out to the peer and two coming in from the peer.
 
 The server threads that service client requests also communicate with peers to distribute events and forward client requests. If the server's @@product_name@@ connection property *conserve-sockets* is set to true, these threads use the already-established peer connections for this communication.

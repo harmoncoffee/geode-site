@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 After you determine the maximum transmission rate, configure and tune your production system.
-
-<a id="multicast__section_8E225FC6829946C287552BC7996F2765"></a>
+## {#multicast__section_8E225FC6829946C287552BC7996F2765}
 For best performance, the producer and the consumers should run on different machines and each process should have at least one CPU dedicated to it. The following is a list of configuration changes that can improve multicast performance. Check with your system administrator about changing any of the limits discussed here.
 
 -   Increase the default datagram size for systems running Microsoft Windows from 1024 bytes to a value that matches your network’s maximum transmission unit (MTU), which is typically 1500 bytes. The higher setting should improve the system’s network performance.

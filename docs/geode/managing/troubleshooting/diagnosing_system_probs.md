@@ -23,35 +23,34 @@ limitations under the License.
 
 This section provides possible causes and suggested responses for system problems.
 
--   [Locator does not start](diagnosing_system_probs.html#diagnosing_system_probs__section_7BC1FF8CE0FC492CB49235FC4BC4060B)
--   [Application or cache server process does not start](diagnosing_system_probs.html#diagnosing_system_probs__section_D51F5FA86ABA43C699B593D890BC3E28)
--   [Application or cache server does not join the cluster](diagnosing_system_probs.html#diagnosing_system_probs__section_53D97CED679443F28E20E8B08C699056)
--   [Member process seems to hang](diagnosing_system_probs.html#diagnosing_system_probs__section_D607C96A6CBE42FD880F1463A20A8BEF)
--   [Member process does not read settings from the gemfire.properties file](diagnosing_system_probs.html#diagnosing_system_probs__section_E3B4A6DB81AB4C659C6093D2D61EFD71)
--   [Cache creation fails - must match schema definition root](diagnosing_system_probs.html#diagnosing_system_probs__section_B0698527A4DF4D84877B1AF66291ABFD)
--   [Cache is not configured properly](diagnosing_system_probs.html#diagnosing_system_probs__section_B2DAD06E80A4475D96FF2ACCF30FE198)
--   [Unexpected results for keySetOnServer and containsKeyOnServer](diagnosing_system_probs.html#diagnosing_system_probs__section_6B4E2AD4ECBB4C08B8F1DB5E07AFE7F6)
--   [Data operation returns PartitionOfflineException](diagnosing_system_probs.html#diagnosing_system_probs__section_9276E09D9FAC408E899F73B7068E80C6)
--   [Entries are not being evicted or expired as expected](diagnosing_system_probs.html#diagnosing_system_probs__section_A3BB709B754949C6981C431F1F8023D6)
--   [Cannot find the log file](diagnosing_system_probs.html#diagnosing_system_probs__section_346C62F16B19491E83B59B0A51D9E2B6)
--   [OutOfMemoryError](diagnosing_system_probs.html#diagnosing_system_probs__section_3CFAA7BA258B43A795AEAB09F9DD9AAB)
--   [PartitionedRegionDistributionException](diagnosing_system_probs.html#diagnosing_system_probs__section_B49BD03F4CA241C7BED4A2C4D5936A7A)
--   [PartitionedRegionStorageException](diagnosing_system_probs.html#diagnosing_system_probs__section_7DE15A6C99974821B6CA418BC2AF98F1)
--   [Application crashes without producing an exception](diagnosing_system_probs.html#diagnosing_system_probs__section_AFA1D06BC3AA44A4AB0593FD1EF0B0B7)
--   [Timeout alert](diagnosing_system_probs.html#diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D8)
--   [Thread stuck alert](diagnosing_system_probs.html#diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D81)
--   [Member produces SocketTimeoutException](diagnosing_system_probs.html#diagnosing_system_probs__section_66D11C8E84F941B58800EDB52194B087)
--   [Member logs ForcedDisconnectException, Cache and DistributedSystem forcibly closed](diagnosing_system_probs.html#diagnosing_system_probs__section_8C7CB2EA0A274DAF90083FECE0BF3B1F)
--   [Members cannot see each other](diagnosing_system_probs.html#diagnosing_system_probs__section_778D150443044847B1C73B9E02BE247B)
--   [One part of the cluster cannot see another part](diagnosing_system_probs.html#diagnosing_system_probs__section_E31AFADE4A3A45C7A6EABB67697CFF33)
--   [Data distribution has stopped, although member processes are running](diagnosing_system_probs.html#diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2)
--   [Distributed-ack operations take a very long time to complete](diagnosing_system_probs.html#diagnosing_system_probs__section_7A6113ED20044B8C868483AABC45216E)
--   [Slow system performance](diagnosing_system_probs.html#diagnosing_system_probs__section_E5DB25F2CC454510A9E58790C09C8CE3)
--   [Can’t get Windows performance data](diagnosing_system_probs.html#diagnosing_system_probs__section_F93DD765FF2A43439D3FF7936F8883DE)
--   [Java applications on 64-bit platforms hang or use 100% CPU](diagnosing_system_probs.html#diagnosing_system_probs__section_E70C332303A242BEAE9D2C0A2EE70E0A)
+-   [Locator does not start](diagnosing_system_probs#diagnosing_system_probs__section_7BC1FF8CE0FC492CB49235FC4BC4060B)
+-   [Application or cache server process does not start](diagnosing_system_probs#diagnosing_system_probs__section_D51F5FA86ABA43C699B593D890BC3E28)
+-   [Application or cache server does not join the cluster](diagnosing_system_probs#diagnosing_system_probs__section_53D97CED679443F28E20E8B08C699056)
+-   [Member process seems to hang](diagnosing_system_probs#diagnosing_system_probs__section_D607C96A6CBE42FD880F1463A20A8BEF)
+-   [Member process does not read settings from the gemfire.properties file](diagnosing_system_probs#diagnosing_system_probs__section_E3B4A6DB81AB4C659C6093D2D61EFD71)
+-   [Cache creation fails - must match schema definition root](diagnosing_system_probs#diagnosing_system_probs__section_B0698527A4DF4D84877B1AF66291ABFD)
+-   [Cache is not configured properly](diagnosing_system_probs#diagnosing_system_probs__section_B2DAD06E80A4475D96FF2ACCF30FE198)
+-   [Unexpected results for keySetOnServer and containsKeyOnServer](diagnosing_system_probs#diagnosing_system_probs__section_6B4E2AD4ECBB4C08B8F1DB5E07AFE7F6)
+-   [Data operation returns PartitionOfflineException](diagnosing_system_probs#diagnosing_system_probs__section_9276E09D9FAC408E899F73B7068E80C6)
+-   [Entries are not being evicted or expired as expected](diagnosing_system_probs#diagnosing_system_probs__section_A3BB709B754949C6981C431F1F8023D6)
+-   [Cannot find the log file](diagnosing_system_probs#diagnosing_system_probs__section_346C62F16B19491E83B59B0A51D9E2B6)
+-   [OutOfMemoryError](diagnosing_system_probs#diagnosing_system_probs__section_3CFAA7BA258B43A795AEAB09F9DD9AAB)
+-   [PartitionedRegionDistributionException](diagnosing_system_probs#diagnosing_system_probs__section_B49BD03F4CA241C7BED4A2C4D5936A7A)
+-   [PartitionedRegionStorageException](diagnosing_system_probs#diagnosing_system_probs__section_7DE15A6C99974821B6CA418BC2AF98F1)
+-   [Application crashes without producing an exception](diagnosing_system_probs#diagnosing_system_probs__section_AFA1D06BC3AA44A4AB0593FD1EF0B0B7)
+-   [Timeout alert](diagnosing_system_probs#diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D8)
+-   [Thread stuck alert](diagnosing_system_probs#diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D81)
+-   [Member produces SocketTimeoutException](diagnosing_system_probs#diagnosing_system_probs__section_66D11C8E84F941B58800EDB52194B087)
+-   [Member logs ForcedDisconnectException, Cache and DistributedSystem forcibly closed](diagnosing_system_probs#diagnosing_system_probs__section_8C7CB2EA0A274DAF90083FECE0BF3B1F)
+-   [Members cannot see each other](diagnosing_system_probs#diagnosing_system_probs__section_778D150443044847B1C73B9E02BE247B)
+-   [One part of the cluster cannot see another part](diagnosing_system_probs#diagnosing_system_probs__section_E31AFADE4A3A45C7A6EABB67697CFF33)
+-   [Data distribution has stopped, although member processes are running](diagnosing_system_probs#diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2)
+-   [Distributed-ack operations take a very long time to complete](diagnosing_system_probs#diagnosing_system_probs__section_7A6113ED20044B8C868483AABC45216E)
+-   [Slow system performance](diagnosing_system_probs#diagnosing_system_probs__section_E5DB25F2CC454510A9E58790C09C8CE3)
+-   [Can’t get Windows performance data](diagnosing_system_probs#diagnosing_system_probs__section_F93DD765FF2A43439D3FF7936F8883DE)
+-   [Java applications on 64-bit platforms hang or use 100% CPU](diagnosing_system_probs#diagnosing_system_probs__section_E70C332303A242BEAE9D2C0A2EE70E0A)
 
-## <a id="diagnosing_system_probs__section_7BC1FF8CE0FC492CB49235FC4BC4060B" class="no-quick-link"></a>Locator does not start
-
+## Locator does not start {#diagnosing_system_probs__section_7BC1FF8CE0FC492CB49235FC4BC4060B}
 Invocation of a locator with gfsh fails with an error like this:
 
 ``` pre
@@ -82,10 +81,9 @@ Response:
 
 -   Check that your locators specification includes the address you are using to start your locator.
 -   If you use a bind address, you must use numeric addresses for the locator specification. The bind address will not resolve to the machine’s default address.
--   If you are using a 64-bit Linux system, check whether your system is experiencing the leap second bug. See [Java applications on 64-bit platforms hang or use 100% CPU](diagnosing_system_probs.html#diagnosing_system_probs__section_E70C332303A242BEAE9D2C0A2EE70E0A) for more information.
+-   If you are using a 64-bit Linux system, check whether your system is experiencing the leap second bug. See [Java applications on 64-bit platforms hang or use 100% CPU](diagnosing_system_probs#diagnosing_system_probs__section_E70C332303A242BEAE9D2C0A2EE70E0A) for more information.
 
-## <a id="diagnosing_system_probs__section_D51F5FA86ABA43C699B593D890BC3E28" class="no-quick-link"></a>Application or cache server process does not start
-
+## Application or cache server process does not start {#diagnosing_system_probs__section_D51F5FA86ABA43C699B593D890BC3E28}
 If the process tries to start and then silently disappears, on Windows this indicates a memory problem.
 
 Response:
@@ -96,12 +94,11 @@ Response:
     gfsh>start server --name=server_name --max-heap=1024m
     ```
 
-    For details, see [JVM Memory Settings and System Performance](../monitor_tune/system_member_performance_jvm_mem_settings.html#sys_mem_perf).
+    For details, see [JVM Memory Settings and System Performance](../monitor_tune/system_member_performance_jvm_mem_settings#sys_mem_perf).
 
 -   If this doesn’t work, try rebooting.
 
-## <a id="diagnosing_system_probs__section_53D97CED679443F28E20E8B08C699056" class="no-quick-link"></a>Application or cache server does not join the cluster
-
+## Application or cache server does not join the cluster {#diagnosing_system_probs__section_53D97CED679443F28E20E8B08C699056}
 Response: Check these possible causes.
 
 -   Network problem—the most common cause. First, try to ping the other hosts.
@@ -109,19 +106,17 @@ Response: Check these possible causes.
 -   Wrong multicast port when using multicast for membership. Check the `gemfire.properties` file of this application or cache server to see that the mcast-port is configured correctly. If you are running multiple clusters at your site, each cluster must use a unique multicast port.
 -   Can not connect to locator (when using TCP for discovery).
     -   Check that the locators attribute in this process’s `gemfire.properties` has the correct IP address for the locator.
-    -   Check that the locator process is running. If not, see instructions for related problem, [Data distribution has stopped, although member processes are running](diagnosing_system_probs.html#diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2).
-    -   Bind address set incorrectly on a multi-homed host. When you specify the bind address, use the IP address rather than the host name. Sometimes multiple network adapters are configured with the same hostname. See [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview.html#concept_7628F498DB534A2D8A99748F5DA5DC94) for more information about using bind addresses.
+    -   Check that the locator process is running. If not, see instructions for related problem, [Data distribution has stopped, although member processes are running](diagnosing_system_probs#diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2).
+    -   Bind address set incorrectly on a multi-homed host. When you specify the bind address, use the IP address rather than the host name. Sometimes multiple network adapters are configured with the same hostname. See [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview#concept_7628F498DB534A2D8A99748F5DA5DC94) for more information about using bind addresses.
 -   Wrong version of @@product_name@@ . A version mismatch can cause the process to hang or crash. Check the software version with the gemfire version command.
 
-## <a id="diagnosing_system_probs__section_D607C96A6CBE42FD880F1463A20A8BEF" class="no-quick-link"></a>Member process seems to hang
-
+## Member process seems to hang {#diagnosing_system_probs__section_D607C96A6CBE42FD880F1463A20A8BEF}
 Response:
 
--   **During initialization**—For persistent regions, the member may be waiting for another member with more recent data to start and load from its disk stores. See [Disk Storage](../disk_storage/chapter_overview.html). Wait for the initialization to finish or time out. The process could be busy—some caches have millions of entries, and they can take a long time to load. Look for this especially with cache servers, because their regions are typically replicas and therefore store all the entries in the region. Applications, on the other hand, typically store just a subset of the entries. For partitioned regions, if the initialization eventually times out and produces an exception, the system architect needs to repartition the data.
+-   **During initialization**—For persistent regions, the member may be waiting for another member with more recent data to start and load from its disk stores. See [Disk Storage](../disk_storage/chapter_overview). Wait for the initialization to finish or time out. The process could be busy—some caches have millions of entries, and they can take a long time to load. Look for this especially with cache servers, because their regions are typically replicas and therefore store all the entries in the region. Applications, on the other hand, typically store just a subset of the entries. For partitioned regions, if the initialization eventually times out and produces an exception, the system architect needs to repartition the data.
 -   **For a running process**—Investigate whether another member is initializing. Under some optional cluster configurations, a process can be required to wait for a response from other processes before it proceeds.
 
-## <a id="diagnosing_system_probs__section_E3B4A6DB81AB4C659C6093D2D61EFD71" class="no-quick-link"></a>Member process does not read settings from the gemfire.properties file
-
+## Member process does not read settings from the gemfire.properties file {#diagnosing_system_probs__section_E3B4A6DB81AB4C659C6093D2D61EFD71}
 Either the process can’t find the configuration file or, if it is an application, it may be doing programmatic configuration.
 
 Response:
@@ -130,8 +125,7 @@ Response:
 -   Make sure the process is not picking up settings from another `gemfire.properties` file earlier in the search path. @@product_name@@ looks for a `gemfire.properties` file in the current working directory, the home directory, and the CLASSPATH, in that order.
 -   For an application, check the documentation to see whether it does programmatic configuration. If so, the properties that are set programmatically cannot be reset in a `gemfire.properties` file. See your application’s customer support group for configuration changes.
 
-## <a id="diagnosing_system_probs__section_B0698527A4DF4D84877B1AF66291ABFD" class="no-quick-link"></a>Cache creation fails - must match schema definition root
-
+## Cache creation fails - must match schema definition root {#diagnosing_system_probs__section_B0698527A4DF4D84877B1AF66291ABFD}
 System member startup fails with an error like one of these:
 
 ``` pre
@@ -180,19 +174,17 @@ Response:
 </client-cache>
 ```
 
-## <a id="diagnosing_system_probs__section_B2DAD06E80A4475D96FF2ACCF30FE198" class="no-quick-link"></a>Cache is not configured properly
-
+## Cache is not configured properly {#diagnosing_system_probs__section_B2DAD06E80A4475D96FF2ACCF30FE198}
 An empty cache can be a normal condition. Some applications start with an empty cache and populate it programmatically, but others are designed to bulk load data during initialization.
 
 Response:
 
 If your application should start with a full cache but it comes up empty, check these possible causes:
 
--   **No regions**—If the cache has no regions, the process isn’t reading the cache configuration file. Check that the name and location of the cache configuration file match those configured in the cache-xml-file attribute in `gemfire.properties`. If they match, the process may not be reading `gemfire.properties`. See [Member process does not read settings from the gemfire.properties file](diagnosing_system_probs.html#diagnosing_system_probs__section_E3B4A6DB81AB4C659C6093D2D61EFD71).
+-   **No regions**—If the cache has no regions, the process isn’t reading the cache configuration file. Check that the name and location of the cache configuration file match those configured in the cache-xml-file attribute in `gemfire.properties`. If they match, the process may not be reading `gemfire.properties`. See [Member process does not read settings from the gemfire.properties file](diagnosing_system_probs#diagnosing_system_probs__section_E3B4A6DB81AB4C659C6093D2D61EFD71).
 -   **Regions without data**—If the cache starts with regions, but no data, this process may not have joined the correct cluster. Check the log file for messages that indicate other members. If you don’t see any, the process may be running alone in its own cluster. In a process that is clearly part of the correct cluster, regions without data may indicate an implementation design error.
 
-## <a id="diagnosing_system_probs__section_6B4E2AD4ECBB4C08B8F1DB5E07AFE7F6" class="no-quick-link"></a>Unexpected results for keySetOnServer and containsKeyOnServer
-
+## Unexpected results for keySetOnServer and containsKeyOnServer {#diagnosing_system_probs__section_6B4E2AD4ECBB4C08B8F1DB5E07AFE7F6}
 Client calls to keySetOnServer and containsKeyOnServer can return incomplete or inconsistent results if your server regions are not configured as partitioned or replicated regions.
 
 A non-partitioned, non-replicate server region may not hold all data for the distributed region, so these methods would operate on a partial view of the data set.
@@ -212,10 +204,9 @@ These configurations provide consistent results:
 -   Replicated server region
 -   Empty server region: keySetOnServer returns the empty set and containsKeyOnServer returns false
 
-Response: Use a partitioned or replicate data-policy for your server regions. This is the only way to provide a consistent view to clients of your server data set. See [Region Data Storage and Distribution Options](../../developing/region_options/chapter_overview.html).
+Response: Use a partitioned or replicate data-policy for your server regions. This is the only way to provide a consistent view to clients of your server data set. See [Region Data Storage and Distribution Options](../../developing/region_options/chapter_overview).
 
-## <a id="diagnosing_system_probs__section_9276E09D9FAC408E899F73B7068E80C6" class="no-quick-link"></a>Data operation returns PartitionOfflineException
-
+## Data operation returns PartitionOfflineException {#diagnosing_system_probs__section_9276E09D9FAC408E899F73B7068E80C6}
 In partitioned regions that are persisted to disk, if you have any members offline, the partitioned region will still be available but may have some buckets represented only in offline disk stores. In this case, methods that access the bucket entries return a PartitionOfflineException, similar to this:
 
 ``` pre
@@ -226,26 +217,23 @@ longer online stored at these locations:
 created at timestamp 1270834766733 version 0]
 ```
 
-Response: Bring the missing member online, if possible. This restores the buckets to memory and you can work with them again. If the missing member cannot be brought back online, or the disk stores for the member are corrupt, you may need to revoke the member, which will allow the system to create the buckets in new members and resume operations with the entries. See [Handling Missing Disk Stores](../disk_storage/handling_missing_disk_stores.html#handling_missing_disk_stores).
+Response: Bring the missing member online, if possible. This restores the buckets to memory and you can work with them again. If the missing member cannot be brought back online, or the disk stores for the member are corrupt, you may need to revoke the member, which will allow the system to create the buckets in new members and resume operations with the entries. See [Handling Missing Disk Stores](../disk_storage/handling_missing_disk_stores#handling_missing_disk_stores).
 
-## <a id="diagnosing_system_probs__section_A3BB709B754949C6981C431F1F8023D6" class="no-quick-link"></a>Entries are not being evicted or expired as expected
-
+## Entries are not being evicted or expired as expected {#diagnosing_system_probs__section_A3BB709B754949C6981C431F1F8023D6}
 Check these possible causes.
 
 -   Transactions—Entries that are due to be expired may remain in the cache if they are involved in a transaction. Further, transactions never time out, so if a transaction hangs, the entries involved in the transaction will remain stuck in the cache. If you have a process with a hung transaction, you may need to end the process to remove the transaction. In your application programming, do not leave transactions open ended. Program all transactions to end with a commit or a rollback.
--   Partitioned regions—For performance reasons, eviction and expiration behave differently in partitioned regions and can cause entries to be removed before you expect. See [Eviction](../../developing/eviction/chapter_overview.html) and [Expiration](../../developing/expiration/chapter_overview.html).
+-   Partitioned regions—For performance reasons, eviction and expiration behave differently in partitioned regions and can cause entries to be removed before you expect. See [Eviction](../../developing/eviction/chapter_overview) and [Expiration](../../developing/expiration/chapter_overview).
 
-## <a id="diagnosing_system_probs__section_346C62F16B19491E83B59B0A51D9E2B6" class="no-quick-link"></a>Cannot find the log file
-
+## Cannot find the log file {#diagnosing_system_probs__section_346C62F16B19491E83B59B0A51D9E2B6}
 Operating without a log file can be a normal condition, so the process does not log a warning.
 
 Response:
 
 -   Check whether the log-file attribute is configured in `gemfire.properties`. If not, logging defaults to standard output, and on Windows it may not be visible at all.
--   If log-file is configured correctly, the process may not be reading `gemfire.properties`. See [Member process does not read settings from the gemfire.properties file](diagnosing_system_probs.html#diagnosing_system_probs__section_E3B4A6DB81AB4C659C6093D2D61EFD71).
+-   If log-file is configured correctly, the process may not be reading `gemfire.properties`. See [Member process does not read settings from the gemfire.properties file](diagnosing_system_probs#diagnosing_system_probs__section_E3B4A6DB81AB4C659C6093D2D61EFD71).
 
-## <a id="diagnosing_system_probs__section_3CFAA7BA258B43A795AEAB09F9DD9AAB" class="no-quick-link"></a>OutOfMemoryError
-
+## OutOfMemoryError {#diagnosing_system_probs__section_3CFAA7BA258B43A795AEAB09F9DD9AAB}
 An application gets an OutOfMemoryError if it needs more object memory than the process is able to give. The messages include java.lang.OutOfMemoryError.
 
 Response:
@@ -253,7 +241,7 @@ Response:
 The process may be hitting its virtual address space limits. The virtual address space has to be large enough to accommodate the heap, code, data, and dynamic link libraries (DLLs).
 
 -   If your application is out of memory frequently, you may want to profile it to determine the cause.
--   If you suspect your heap size is set too low, you can increase direct memory by resetting the maximum heap size, using -Xmx. For details, see [JVM Memory Settings and System Performance](../monitor_tune/system_member_performance_jvm_mem_settings.html#sys_mem_perf).
+-   If you suspect your heap size is set too low, you can increase direct memory by resetting the maximum heap size, using -Xmx. For details, see [JVM Memory Settings and System Performance](../monitor_tune/system_member_performance_jvm_mem_settings#sys_mem_perf).
 -   You may need to lower the thread stack size. The default thread stack size is quite large: 512kb on Sparc and 256kb on Intel for 1.3 and 1.4 32-bit JVMs, 1mb with the 64-bit Sparc 1.4 JVM; and 128k for 1.2 JVMs. If you have thousands of threads then you might be wasting a significant amount of stack space. If this is your problem, the error may be this:
 
     ``` pre
@@ -265,8 +253,7 @@ The process may be hitting its virtual address space limits. The virtual address
 -   You can also control memory use by setting entry limits for the regions.
 
 
-## <a id="diagnosing_system_probs__section_B49BD03F4CA241C7BED4A2C4D5936A7A" class="no-quick-link"></a>PartitionedRegionDistributionException
-
+## PartitionedRegionDistributionException {#diagnosing_system_probs__section_B49BD03F4CA241C7BED4A2C4D5936A7A}
 The org.apache.geode.cache.PartitionedRegionDistributionException appears when @@product_name@@ fails after many attempts to complete a distributed operation. This exception indicates that no data store member can be found to perform a destroy, invalidate, or get operation.
 
 Response:
@@ -275,8 +262,7 @@ Response:
 -   Look at the overall installation for problems, such as operations at the application level set to a higher priority than the @@product_name@@ processes.
 -   If you keep seeing PartitionedRegionDistributionException, you should evaluate whether you need to start more members.
 
-## <a id="diagnosing_system_probs__section_7DE15A6C99974821B6CA418BC2AF98F1" class="no-quick-link"></a>PartitionedRegionStorageException
-
+## PartitionedRegionStorageException {#diagnosing_system_probs__section_7DE15A6C99974821B6CA418BC2AF98F1}
 The org.apache.geode.cache.PartitionedRegionStorageException appears when @@product_name@@ can’t create a new entry. This exception arises from a lack of storage space for put and create operations or for get operations with a loader. PartitionedRegionStorageException often indicates data loss or impending data loss.
 
 The text string indicates the cause of the exception, as in these examples:
@@ -295,15 +281,13 @@ Response:
 -   Look at the overall installation for problems, such as operations at the application level set to a higher priority than the @@product_name@@ processes.
 -   If you keep seeing PartitionedRegionStorageException, you should evaluate whether you need to start more members.
 
-## <a id="diagnosing_system_probs__section_AFA1D06BC3AA44A4AB0593FD1EF0B0B7" class="no-quick-link"></a>Application crashes without producing an exception
-
-If an application crashes without any exception, this may be caused by an object memory problem. The process is probably hitting its virtual address space limits. For details, see [OutOfMemoryError](diagnosing_system_probs.html#diagnosing_system_probs__section_3CFAA7BA258B43A795AEAB09F9DD9AAB).
+## Application crashes without producing an exception {#diagnosing_system_probs__section_AFA1D06BC3AA44A4AB0593FD1EF0B0B7}
+If an application crashes without any exception, this may be caused by an object memory problem. The process is probably hitting its virtual address space limits. For details, see [OutOfMemoryError](diagnosing_system_probs#diagnosing_system_probs__section_3CFAA7BA258B43A795AEAB09F9DD9AAB).
 
 Response: Control memory use by setting entry limits for the regions.
 
 
-## <a id="diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D8" class="no-quick-link"></a>Timeout alert
-
+## Timeout alert {#diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D8}
 If a distributed message does not get a response within a specified time, it sends an alert to signal that something might be wrong with the system member that hasn’t responded. The alert is logged in the sender’s log as a warning.
 
 A timeout alert can be considered normal.
@@ -314,8 +298,7 @@ Response:
 -   If you see these alerts constantly during normal operation, consider raising the ack-wait-threshold above the default 15 seconds.
 
 
-## <a id="diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D81" class="no-quick-link"></a>Thread stuck alert
-
+## Thread stuck alert {#diagnosing_system_probs__section_06C68EA0DACC46C58AA88E98C19AD2D81}
 If a thread in a member has been stuck for longer than the configured time (max-thread-stuck-minutes System Property), it sends an alert to signal that something might be wrong with the member or with some other member. The alert is logged in the member’s log as fatal.
 
 A thread stuck timeout alert warns about a thread that is stuck in a member that would probably never progress. A possible cause would be a bug in the code.
@@ -324,16 +307,14 @@ Response:
 
 -   If you see these alerts, consider bouncing the member at a convenient time to release the stuck thread.
 
-## <a id="diagnosing_system_probs__section_66D11C8E84F941B58800EDB52194B087" class="no-quick-link"></a>Member produces SocketTimeoutException
-
+## Member produces SocketTimeoutException {#diagnosing_system_probs__section_66D11C8E84F941B58800EDB52194B087}
 A client and server produces a SocketTimeoutException when it stops waiting for a response from the other side of the connection and closes the socket. This exception typically happens on the handshake or when establishing a callback connection.
 
 Response:
 
-Increase the default socket timeout setting for the member. This timeout is set separately for the client Pool. For a client/server configuration, adjust the "read-timeout" value as described in [&lt;pool&gt;](../../reference/topics/client-cache.html#cc-pool) or use the `org.apache.geode.cache.client.PoolFactory.setReadTimeout` method.
+Increase the default socket timeout setting for the member. This timeout is set separately for the client Pool. For a client/server configuration, adjust the "read-timeout" value as described in [&lt;pool&gt;](../../reference/topics/client-cache#cc-pool) or use the `org.apache.geode.cache.client.PoolFactory.setReadTimeout` method.
 
-## <a id="diagnosing_system_probs__section_8C7CB2EA0A274DAF90083FECE0BF3B1F" class="no-quick-link"></a>Member logs ForcedDisconnectException, Cache and DistributedSystem forcibly closed
-
+## Member logs ForcedDisconnectException, Cache and DistributedSystem forcibly closed {#diagnosing_system_probs__section_8C7CB2EA0A274DAF90083FECE0BF3B1F}
 A cluster member’s Cache and DistributedSystem are forcibly closed by the system membership coordinator if it becomes sick or too slow to respond to heartbeat requests. When this happens, listeners receive RegionDestroyed notification with an opcode of FORCED\_DISCONNECT. The @@product_name@@ log file for the member shows a ForcedDisconnectException with the message
 
 ``` pre
@@ -345,18 +326,16 @@ Response:
 
 To minimize the chances of this happening, you can increase the DistributedSystem property member-timeout. Take care, however, as this setting also controls the length of time required to notice a network failure. It should not be set too high.
 
-## <a id="diagnosing_system_probs__section_778D150443044847B1C73B9E02BE247B" class="no-quick-link"></a>Members cannot see each other
-
+## Members cannot see each other {#diagnosing_system_probs__section_778D150443044847B1C73B9E02BE247B}
 Suspect a network problem or a problem in the configuration of transport for memory and discovery.
 
 Response:
 
 -   Check your network monitoring tools to see whether the network is down or flooded.
--   If you are using multi-homed hosts, make sure a bind address is set and consistent for all system members. For details about using bind addresses, see [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview.html#concept_7628F498DB534A2D8A99748F5DA5DC94).
+-   If you are using multi-homed hosts, make sure a bind address is set and consistent for all system members. For details about using bind addresses, see [Topology and Communication General Concepts](../../topologies_and_comm/topology_concepts/chapter_overview#concept_7628F498DB534A2D8A99748F5DA5DC94).
 -   Check that all the applications and cache servers are using the same locator address.
 
-## <a id="diagnosing_system_probs__section_E31AFADE4A3A45C7A6EABB67697CFF33" class="no-quick-link"></a>One part of the cluster cannot see another part
-
+## One part of the cluster cannot see another part {#diagnosing_system_probs__section_E31AFADE4A3A45C7A6EABB67697CFF33}
 This situation can leave your caches in an inconsistent state. In networking circles, this kind of network outage is called the "split brain problem."
 
 Response:
@@ -366,10 +345,9 @@ Response:
 -   Enable network partition detection.
 
 Also see
-[Understanding and Recovering from Network Outages](recovering_from_network_outages.html#rec_network_crash).
+[Understanding and Recovering from Network Outages](recovering_from_network_outages#rec_network_crash).
 
-## <a id="diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2" class="no-quick-link"></a>Data distribution has stopped, although member processes are running
-
+## Data distribution has stopped, although member processes are running {#diagnosing_system_probs__section_04CEF27475924E5D9860BEE6D64C49E2}
 Suspect a problem with the network, the locator, or the multicast configuration, depending on the transport your cluster is using.
 
 Response:
@@ -380,7 +358,7 @@ Response:
     Uncaught exception
     ```
 
-    An uncaught exception means a severe error, often an OutOfMemoryError. See [OutOfMemoryError](diagnosing_system_probs.html#diagnosing_system_probs__section_3CFAA7BA258B43A795AEAB09F9DD9AAB).
+    An uncaught exception means a severe error, often an OutOfMemoryError. See [OutOfMemoryError](diagnosing_system_probs#diagnosing_system_probs__section_3CFAA7BA258B43A795AEAB09F9DD9AAB).
 
 -   Check your network monitoring tools to see whether the network is down or flooded.
 -   If you are using multicast, check whether the existing configuration is no long appropriate for the current network traffic.
@@ -393,24 +371,21 @@ Response:
         4.  Restart the applications and cache servers in the usual order.
 -   Create a watchdog daemon or service on each locator host to restart the locator process when it stops
 
-## <a id="diagnosing_system_probs__section_7A6113ED20044B8C868483AABC45216E" class="no-quick-link"></a>Distributed-ack operations take a very long time to complete
-
+## Distributed-ack operations take a very long time to complete {#diagnosing_system_probs__section_7A6113ED20044B8C868483AABC45216E}
 This problem can occur in systems with a great number of distributed-no-ack operations. That is, the presence of many no-ack operations can cause ack operation to take a long time to complete.
 
 Response:
 
-For information on alleviating this problem, see [Slow distributed-ack Messages](../monitor_tune/slow_messages.html#slow_mess).
+For information on alleviating this problem, see [Slow distributed-ack Messages](../monitor_tune/slow_messages#slow_mess).
 
-## <a id="diagnosing_system_probs__section_E5DB25F2CC454510A9E58790C09C8CE3" class="no-quick-link"></a>Slow system performance
-
+## Slow system performance {#diagnosing_system_probs__section_E5DB25F2CC454510A9E58790C09C8CE3}
 Slow system performance is sometimes caused by a buffer size that is too small for the objects being distributed.
 
 Response:
 
-If you are experiencing slow performance and are sending large objects (multiple megabytes), try increasing the socket buffer size settings in your system. For more information, see [Socket Communication](../monitor_tune/socket_communication.html).
+If you are experiencing slow performance and are sending large objects (multiple megabytes), try increasing the socket buffer size settings in your system. For more information, see [Socket Communication](../monitor_tune/socket_communication).
 
-## <a id="diagnosing_system_probs__section_F93DD765FF2A43439D3FF7936F8883DE" class="no-quick-link"></a>Can’t get Windows performance data
-
+## Can’t get Windows performance data {#diagnosing_system_probs__section_F93DD765FF2A43439D3FF7936F8883DE}
 Attempting to run performance measurements for @@product_name@@ on Windows can produce this error message:
 
 ``` pre
@@ -431,8 +406,7 @@ An example of reasonable security on the performance data would be to grant admi
 
 See [http://support.microsoft.com/kb/310426](http://support.microsoft.com/kb/310426) and [http://support.microsoft.com/kb/146906](http://support.microsoft.com/kb/146906) for instructions about how to ensure that @@product_name@@ processes have access to the registry keys associated with performance.
 
-## <a id="diagnosing_system_probs__section_E70C332303A242BEAE9D2C0A2EE70E0A" class="no-quick-link"></a>Java applications on 64-bit platforms hang or use 100% CPU
-
+## Java applications on 64-bit platforms hang or use 100% CPU {#diagnosing_system_probs__section_E70C332303A242BEAE9D2C0A2EE70E0A}
 If your Java applications suddenly start to use 100% CPU, you may be experiencing the leap second bug. This bug is found in the Linux kernel and can severely affect Java programs. In particular, you may notice that method invocations using `Thread.sleep(n)` where `n` is a small number will actually sleep for much longer period of time than defined by the method. To verify that you are experiencing this bug, check the host's `dmesg` output for the following message:
 
 ``` pre

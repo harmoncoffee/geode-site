@@ -28,9 +28,7 @@ Display product version information.
 ``` pre
 version [--full]
 ```
-
-<a id="concept_DEBBA885D95243ABA510416F731D0E75__table_uzb_f5g_2w"></a>
-
+## {#concept_DEBBA885D95243ABA510416F731D0E75__table_uzb_f5g_2w}
 | Name                                          | Description                                             | Defalut Value |
 |-----------------------------------------------|---------------------------------------------------------|---------------|
 | <span class="keyword parmname">&#8209;&#8209;full </span> | Show the full version information. | false         |

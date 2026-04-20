@@ -31,7 +31,7 @@ Initiate an operation to report the current redundancy status of regions using o
     gfsh>status redundancy
     ```
 
-    Optionally, you can specify regions to include or exclude from restoring redundancy. Type `help restore redundancy` or see [status redundancy](../../tools_modules/gfsh/command-pages/status.html#topic_status_redundancy) for more information.
+    Optionally, you can specify regions to include or exclude from restoring redundancy. Type `help restore redundancy` or see [status redundancy](../../tools_modules/gfsh/command-pages/status#topic_status_redundancy) for more information.
 
 -   API call:
 
@@ -44,6 +44,6 @@ Initiate an operation to report the current redundancy status of regions using o
     System.out.println("Status for region " + regionName + ": " + currentStatus.getRegionResult(regionName).getMessage();
     ```
 
-If you have `startup-recovery-delay=-1` configured for your partitioned region, you will need to trigger a restore redundancy operation on your region after you restart any members in your cluster in order to recover redundancy. See [Restoring Redundancy in Partitioned Regions](restoring_region_redundancy.html).
+If you have `startup-recovery-delay=-1` configured for your partitioned region, you will need to trigger a restore redundancy operation on your region after you restart any members in your cluster in order to recover redundancy. See [Restoring Redundancy in Partitioned Regions](restoring_region_redundancy).
 
 If you have `startup-recovery-delay` set to a low number, you may need to wait extra time until the region has recovered redundancy.

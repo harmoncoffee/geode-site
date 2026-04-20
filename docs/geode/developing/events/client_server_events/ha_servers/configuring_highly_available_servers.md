@@ -20,8 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="configuring_highly_available_servers__section_7EB2A7E38B074AAAA06D22C59687CB8A"></a>
+## {#configuring_highly_available_servers__section_7EB2A7E38B074AAAA06D22C59687CB8A}
 With highly-available servers, one of the backups steps in and takes over messaging with no interruption in service if the client's primary server crashes.
 
 To configure high availability, set the `subscription-redundancy` in the client's pool configuration. This setting indicates the number of secondary servers to use. For example:

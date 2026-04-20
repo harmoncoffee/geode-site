@@ -20,9 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_lvp_cd5_m4"></a>
-
-
+## {#topic_lvp_cd5_m4}
 This section provides guidelines on writing REST client applications for @@product_name@@.
 
 You can browse, query, update and delete data stored in your @@product_name@@ deployment. You can also manage and execute pre-deployed functions on @@product_name@@ members.
@@ -39,17 +37,16 @@ You can browse, query, update and delete data stored in your @@product_name@@ de
 
     @@product_name@@ REST APIs support the discovery and execution of predefined @@product_name@@ functions on your cluster deployments.
 
-## <a id="topic_qhs_f25_m4" class="no-quick-link"></a>Working with Regions
-
+## Working with Regions {#topic_qhs_f25_m4}
 The @@product_name@@ REST APIs provide basic CRUD (create, read, update and delete) operations for data entries stored in your regions.
 
 Regions are the resources of the @@product_name@@ REST API. Each region represents a resource or a collection of resources.
 
-You cannot create or delete the regions themselves with the REST APIs, but you can work with the data stored within predefined @@product_name@@ regions. Use the [gfsh](../tools_modules/gfsh/chapter_overview.html) command utility to add, configure or delete regions in your @@product_name@@ deployment. Any additions or modifications to regions made through `gfsh` are then accessible by the REST APIs.
+You cannot create or delete the regions themselves with the REST APIs, but you can work with the data stored within predefined @@product_name@@ regions. Use the [gfsh](../tools_modules/gfsh/chapter_overview) command utility to add, configure or delete regions in your @@product_name@@ deployment. Any additions or modifications to regions made through `gfsh` are then accessible by the REST APIs.
 
 ## Listing Available Regions
 
-The main resource endpoint to the @@product_name@@ API is [GET /geode/v1](get_regions.html#topic_itv_mg5_m4). Use this endpoint to discover which regions are available in your cluster.
+The main resource endpoint to the @@product_name@@ API is [GET /geode/v1](get_regions#topic_itv_mg5_m4). Use this endpoint to discover which regions are available in your cluster.
 
 Example call:
 
@@ -108,7 +105,7 @@ Date: Sat, 18 Jan 2014 20:05:47 GMT
 Each region listed in the response includes the following region attributes:
 
 -   **name**. Name of the region.
--   **type**. Type of region. For example, REPLICATE, PARTITION, or EMPTY. See [Region Types](../developing/region_options/region_types.html#region_types) for more information.
+-   **type**. Type of region. For example, REPLICATE, PARTITION, or EMPTY. See [Region Types](../developing/region_options/region_types#region_types) for more information.
 -   **key-constraint**. If defined, the fully qualified class name of the key's type. Otherwise, null.
 -   **value-constraint**. If defined, the fully qualified class name of the value's type. Otherwise, null.
 
@@ -438,8 +435,7 @@ DELETE /geode/v1/{region}/{key}{key1},{key2},...{keyN}
 
 If any of the supplied keys are not found in the region, the request will fail and return a 404 NOT FOUND ERROR.
 
-## <a id="topic_fcn_g25_m4" class="no-quick-link"></a>Working with Queries
-
+## Working with Queries {#topic_fcn_g25_m4}
 @@product_name@@ supports the use of queries to extract data from its regions. Using REST APIs, you can create and execute either prepared or ad-hoc queries on @@product_name@@ regions. You can also update and delete prepared queries.
 
 ## Listing Queries
@@ -452,8 +448,7 @@ GET /geode/v1/queries
 
 All queries that have been predefined and assigned IDs in @@product_name@@ are listed.
 
-## <a id="topic_fcn_g25_m4__section_t4h_wtp_y4" class="no-quick-link"></a>Creating a New Query
-
+## Creating a New Query {#topic_fcn_g25_m4__section_t4h_wtp_y4}
 To create a query, use the following endpoint:
 
 ``` pre
@@ -473,8 +468,7 @@ You can specify query bind parameters ($1) in your predefined queries and then p
 
 To update this query at a later time, use the [PUT operation](#topic_fcn_g25_m4__section_oj1_b5p_y4) described below.
 
-## <a id="topic_fcn_g25_m4__section_b1p_wtp_y4" class="no-quick-link"></a>Executing a Prepared Query
-
+## Executing a Prepared Query {#topic_fcn_g25_m4__section_b1p_wtp_y4}
 To run a prepared query, use:
 
 ``` pre
@@ -581,8 +575,7 @@ Content-Type: application/json
 ]
 ```
 
-## <a id="topic_fcn_g25_m4__section_oj1_b5p_y4" class="no-quick-link"></a>Modifying a Prepared Query
-
+## Modifying a Prepared Query {#topic_fcn_g25_m4__section_oj1_b5p_y4}
 To modify an existing prepared query, use the following endpoint:
 
 ``` pre
@@ -599,16 +592,14 @@ You can specify query bind parameters ($1) in your predefined queries, and then 
 
 A PUT operation will only succeed if the specified queryId already exists (for example, created with the [POST operation](#topic_fcn_g25_m4__section_t4h_wtp_y4) above.) If the queryId does already exist, you will receive a 404 response - "Named query (selectKey456) does not exist!"
 
-## <a id="topic_fcn_g25_m4__section_igg_b5p_y4" class="no-quick-link"></a>Deleting a Prepared Query
-
+## Deleting a Prepared Query {#topic_fcn_g25_m4__section_igg_b5p_y4}
 To delete an existing prepared query, use the following endpoint:
 
 ``` pre
 DELETE /geode/v1/queries/{queryId}
 ```
 
-## <a id="topic_fcn_g25_m4__section_wbk_b5p_y4" class="no-quick-link"></a>Executing an Ad-Hoc Query
-
+## Executing an Ad-Hoc Query {#topic_fcn_g25_m4__section_wbk_b5p_y4}
 To run an unnamed query, use the following endpoint:
 
 ``` pre
@@ -623,8 +614,7 @@ For example:
 http://localhost:7070/geode/v1/queries/adhoc?q="SELECT * FROM /customers"
 ```
 
-## <a id="topic_rbc_h25_m4" class="no-quick-link"></a>Working with Functions
-
+## Working with Functions {#topic_rbc_h25_m4}
 @@product_name@@ REST APIs support the discovery and execution of predefined @@product_name@@ functions on your cluster deployments.
 
 Before you can access functions using REST APIs, you must have already defined and registered the functions in your @@product_name@@ deployment. Additionally, any domain objects that are being accessed by the functions must be available on the CLASSPATH of the server running the REST endpoint service.

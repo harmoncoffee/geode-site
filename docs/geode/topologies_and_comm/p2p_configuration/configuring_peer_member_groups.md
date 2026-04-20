@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 In a peer-to-peer configuration, you can organize members into logical member groups and use those groups to associate specific data or assign tasks to a pre-defined set of members.
-
-<a id="concept_032521546EF34FABB40EB2C18080ED35__section_411EA6C46AD4456C987C0759A05340F2"></a>
+## {#concept_032521546EF34FABB40EB2C18080ED35__section_411EA6C46AD4456C987C0759A05340F2}
 You can use logical member groups to deploy JAR applications across multiple members or to execute functions across a member group.
 
 To add a peer to a member group, you can configure the following:

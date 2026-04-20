@@ -22,12 +22,10 @@ limitations under the License.
 -->
 
 To work with replicated and preloaded regions, you should understand how their data is initialized and maintained in the cache.
-
-<a id="how_replication_works__section_C75BB463A0584491ABD982A55E5A050F"></a>
+## {#how_replication_works__section_C75BB463A0584491ABD982A55E5A050F}
 Replicated and preloaded regions are configured by using one of the `REPLICATE` region shortcut settings, or by setting the region attribute `data-policy` to `replicate`, `persistent-replicate`, or `preloaded`.
 
-## <a id="how_replication_works__section_B4E76BBCC6104A27BC0A8ECA6B9CDF91" class="no-quick-link"></a>Initialization of Replicated and Preloaded Regions
-
+## Initialization of Replicated and Preloaded Regions {#how_replication_works__section_B4E76BBCC6104A27BC0A8ECA6B9CDF91}
 At region creation, the system initializes the preloaded or replicated region with the most complete and up-to-date data set it can find. The system uses these data sources to initialize the new region, following this order of preference:
 
 1.  Another replicated region that is already defined in the cluster.
@@ -41,8 +39,7 @@ While a region is being initialized from a replicated or preloaded region, if th
 
 If a union of regions is used for initialization, as in the figure, and one of the individual source regions goes away during the initialization (due to cache closure, member crash, or region destruction), the new region may contain a partial data set from the crashed source region. When this happens, there is no warning logged or exception thrown. The new region still has a complete set of the remaining members' regions.
 
-## <a id="how_replication_works__section_6BE7555A711E4CA490B02E58B5DDE396" class="no-quick-link"></a>Behavior of Replicated and Preloaded Regions After Initialization
-
+## Behavior of Replicated and Preloaded Regions After Initialization {#how_replication_works__section_6BE7555A711E4CA490B02E58B5DDE396}
 Once initialized, the preloaded region operates like the region with a `normal` `data-policy`, receiving distributions only for entries it has defined in the local cache.
 
 <img src="/images_svg/distributed_preload.svg" id="how_replication_works__image_994CA599B1004D3F95E1BB7C4FAC2AEF" class="image" />

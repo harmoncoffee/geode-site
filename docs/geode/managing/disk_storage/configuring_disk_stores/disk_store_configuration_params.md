@@ -25,8 +25,7 @@ You define your disk stores by using the `gfsh create disk-store` command or in 
 
 These `<disk-store>` attributes and subelements have corresponding `gfsh create disk-store` command-line parameters as well as getter and setter methods in the `org.apache.geode.cache.DiskStoreFactory` and `org.apache.geode.cache.DiskStore` APIs.
 
-## <a id="disk_store_configuration_params__section_77273B9B5EA54227A2D25682BD77BAC3" class="no-quick-link"></a>Disk Store Configuration Attributes and Elements
-
+## Disk Store Configuration Attributes and Elements {#disk_store_configuration_params__section_77273B9B5EA54227A2D25682BD77BAC3}
 <table>
 <colgroup>
 <col width="33%" />
@@ -103,8 +102,7 @@ if auto-compaction is turned on. If not, the file will be eligible for manual co
 |-------------------------|-----------------------------------------------------------------------------------------|------------------------|
 | `<disk-dirs>`           | Defines the system directories where the disk store is written and their maximum sizes. | `.` with no size limit |
 
-## <a id="disk_store_configuration_params__section_366001C72D674AF69B2CED91BFA73A9B" class="no-quick-link"></a>disk-dirs Element
-
+## disk-dirs Element {#disk_store_configuration_params__section_366001C72D674AF69B2CED91BFA73A9B}
 The `<disk-dirs>` element defines the host system directories to use for the disk store. It contains one or more single `<disk-dir>` elements with the following contents:
 
 -   The directory specification, provided as the text of the `disk-dir` element.

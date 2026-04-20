@@ -18,8 +18,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="ha_event_messaging_whats_next__section_F163917311E8478399D1DD273E8BCDF5"></a>
+## {#ha_event_messaging_whats_next__section_F163917311E8478399D1DD273E8BCDF5}
 With server redundancy, each pool has a primary server and some number of secondaries. The primaries and secondaries are assigned on a per-pool basis and are generally spread out for load balancing, so a single client with multiple pools may have primary queues in more than one server.
 
 The primary server pushes events to clients and the secondaries maintain queue backups. If the primary server fails, one of the secondaries becomes primary to provide uninterrupted event messaging.
@@ -36,8 +35,7 @@ When high availability is enabled:
 In stage 1 of this figure, the primary sends an event message to the client and a synchronization message to its secondary. By stage 2, the secondary and client have updated their queue and message tracking information. If the primary failed at stage two, the secondary would start sending event messages from its queue beginning with message A10. The client would discard the resend of message A10 and then process subsequent messages as usual.
 <img src="/images/ClientServerAdvancedTopics-5.gif" alt="High Availability Messaging: Server to Client and Primary Server to Secondary Server" id="ha_event_messaging_whats_next__image_8947A42EDEF74911BAB55B79ED8DA984" class="image" />
 
-## <a id="ha_event_messaging_whats_next__section_741052B413F24F47A14F5B7D7955F0AA" class="no-quick-link"></a>Change Server Queue Synchronization Frequency
-
+## Change Server Queue Synchronization Frequency {#ha_event_messaging_whats_next__section_741052B413F24F47A14F5B7D7955F0AA}
 By default, the primary server sends queue synchronization messages to the secondaries every second. You can change this interval with the `gfsh alter                     runtime` command
 
 Set the interval for queue synchronization messages as follows:
@@ -67,8 +65,7 @@ The ideal setting for this interval depends in large part on your application be
 -   A shorter interval requires less memory in the secondary servers because it reduces queue buildup between synchronizations. In addition, fewer old messages in the secondary queues means reduced message re-sends after a failover. These considerations are most important for systems with high data update rates.
 -   A longer interval requires fewer distribution messages between the primary and secondary, which benefits overall system performance.
 
-## <a id="ha_event_messaging_whats_next__section_DF51950D30154A58818F6AD777BB3090" class="no-quick-link"></a>Set Frequency of Orphan Removal from the Secondary Queues
-
+## Set Frequency of Orphan Removal from the Secondary Queues {#ha_event_messaging_whats_next__section_DF51950D30154A58818F6AD777BB3090}
 Usually, all event messages are removed from secondary subscription queues based on the primary's synchronization messages. Occasionally, however, some messages are orphaned in the secondary queues. For example, if a primary fails in the middle of sending a synchronization message to its secondaries, some secondaries might receive the message and some might not. If the failover goes to a secondary that did receive the message, the system will have secondary queues holding messages that are no longer in the primary queue. The new primary will never synchronize on these messages, leaving them orphaned in the secondary queues.
 
 To make sure these messages are eventually removed, the secondaries expire all messages that have been enqueued longer than the time indicated by the servers' `message-time-to-live`.

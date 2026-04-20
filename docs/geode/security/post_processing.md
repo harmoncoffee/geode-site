@@ -40,7 +40,7 @@ on the identity of the requester (principal).
 By default, the key and value parameters to the `processRegionValue` method
 are references to the region entry.
 Modify copies of these parameters to avoid changing the region entries.
-[Copy on Read Behavior](../basic_config/data_entries_custom_classes/copy_on_read.html) discusses the issue.
+[Copy on Read Behavior](../basic_config/data_entries_custom_classes/copy_on_read) discusses the issue.
 
 <!-- GEODE-2153 aims to make this possible:
 A use of post processing will be to sanitize or mask out sensitive
@@ -71,6 +71,6 @@ on every get operation.
 Complete these items to implement post processing.
 
 - Define the `security-post-processor` property.
-See [Enable Security with Property Definitions](enable_security.html)
+See [Enable Security with Property Definitions](enable_security)
 for details about this property.
 - Implement the  `processRegionValue` method of the `PostProcessor` interface.

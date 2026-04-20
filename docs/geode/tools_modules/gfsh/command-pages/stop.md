@@ -18,9 +18,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_45125131A45F4713BBC63E7225AAD91B"></a>
-
-
+## {#topic_45125131A45F4713BBC63E7225AAD91B}
 Stop gateway receivers, gateway senders, locators and servers.
 
 -   **[stop gateway-receiver](#topic_CD1D526FD6F84A7B80B25C741129ED30)**
@@ -39,8 +37,7 @@ Stop gateway receivers, gateway senders, locators and servers.
 
     Stop a @@product_name@@ cache server.
 
-## <a id="topic_CD1D526FD6F84A7B80B25C741129ED30" class="no-quick-link"></a>stop gateway-receiver
-
+## stop gateway-receiver {#topic_CD1D526FD6F84A7B80B25C741129ED30}
 Stop the gateway receiver on a member or members.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -50,9 +47,7 @@ Stop the gateway receiver on a member or members.
 ``` pre
 stop gateway-receiver [--groups=value(,value)*] [--members=value(,value)*]
 ```
-
-<a id="topic_CD1D526FD6F84A7B80B25C741129ED30__table_knl_r5g_2w"></a>
-
+## {#topic_CD1D526FD6F84A7B80B25C741129ED30__table_knl_r5g_2w}
 | Name                                            | Description                                                                                                       |
 |-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;groups</span>  | Group(s) of members on which to stop the Gateway Receiver. Use a comma-separated list for multiple member groups. |
@@ -89,12 +84,11 @@ pc13(2293)<v24>:55810| OK     | GatewayReceiver is stopped on member pc13(2293)<
 pc13(2266)<v22>:4522 | OK     | GatewayReceiver is stopped on member pc13(2266)<v22>:4522
 ```
 
-## <a id="topic_0BBDD4B3B8A44A65A610F766C9E85519" class="no-quick-link"></a>stop gateway-sender
-
+## stop gateway-sender {#topic_0BBDD4B3B8A44A65A610F766C9E85519}
 Stop a gateway sender with a given id on a specified member or members of a specified member group.
 
 **CAUTION:**
-Use caution with the `stop gateway-sender` command (or equivalent `GatewaySender.stop()` API) on parallel gateway senders. Instead of stopping an individual parallel gateway sender on a member, we recommend shutting down the entire member to ensure that proper failover of partition region events to other gateway sender members. Using this command on an individual parallel gateway sender can occur in event loss. See [Stopping Gateway Senders](../../../topologies_and_comm/topology_concepts/multisite_overview.html#topic_9AA37B43642D4DE19072CA3367C849BA__section_aqm_2js_bq) for more details.
+Use caution with the `stop gateway-sender` command (or equivalent `GatewaySender.stop()` API) on parallel gateway senders. Instead of stopping an individual parallel gateway sender on a member, we recommend shutting down the entire member to ensure that proper failover of partition region events to other gateway sender members. Using this command on an individual parallel gateway sender can occur in event loss. See [Stopping Gateway Senders](../../../topologies_and_comm/topology_concepts/multisite_overview#topic_9AA37B43642D4DE19072CA3367C849BA__section_aqm_2js_bq) for more details.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -103,9 +97,7 @@ Use caution with the `stop gateway-sender` command (or equivalent `GatewaySender
 ``` pre
 stop gateway-sender --id=value [--groups=value(,value)*] [--members=value(,value)*]
 ```
-
-<a id="topic_0BBDD4B3B8A44A65A610F766C9E85519__table_ggf_55g_2w"></a>
-
+## {#topic_0BBDD4B3B8A44A65A610F766C9E85519__table_ggf_55g_2w}
 | Name                                            | Description                                                |
 |-------------------------------------------------|------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;id </span>    | *Required.* ID of the Gateway Sender.                      |
@@ -143,8 +135,7 @@ pc13(5184)<v19>:20055 | OK     | GatewaySender ln is stopped on member pc13(5184
 pc13(5192)<v20>:14622 | OK     | GatewaySender ln is stopped on member pc13(5192)<v20>:14622
 ```
 
-## <a id="topic_EF61C54B35BA4AB7B14E58CF911F283E" class="no-quick-link"></a>stop locator
-
+## stop locator {#topic_EF61C54B35BA4AB7B14E58CF911F283E}
 Stop a locator.
 
 **Note:** One of the command line options `--name` or `--dir` 
@@ -157,12 +148,10 @@ must be specified to identify the locator to be stopped.
 ``` pre
 stop locator --name=value | --dir=value
 ```
-
-<a id="topic_EF61C54B35BA4AB7B14E58CF911F283E__table_ojb_x5g_2w"></a>
-
+## {#topic_EF61C54B35BA4AB7B14E58CF911F283E__table_ojb_x5g_2w}
 | Name                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                     | Default Value     |
 |----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| <span class="keyword parmname">&#8209;&#8209;name</span> | The @@product_name@@ member name of the locator to stop. You must be connected to the JMX Manager to use this option. Can be used to stop remote locators. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/cluster_config/gfsh_remote.html). | |
+| <span class="keyword parmname">&#8209;&#8209;name</span> | The @@product_name@@ member name of the locator to stop. You must be connected to the JMX Manager to use this option. Can be used to stop remote locators. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/gfsh_remote). | |
 | <span class="keyword parmname">&#8209;&#8209;dir</span>  | Directory in which the locator was started. | current directory |
 
 <span class="tablecap">Table 3. Stop Locator Parameters</span>
@@ -193,8 +182,7 @@ Log File: /Users/test/loc2/loc2.log
 No longer connected to 192.0.2.0[1099].
 ```
 
-## <a id="topic_723EE395A63A40D6819618AFC2902115" class="no-quick-link"></a>stop server
-
+## stop server {#topic_723EE395A63A40D6819618AFC2902115}
 Stop a @@product_name@@ cache server.
 
 **Availability:** Online or offline. If you want to stop a cache server while you are offline, use the `--dir` option.
@@ -204,12 +192,10 @@ Stop a @@product_name@@ cache server.
 ``` pre
 stop server [--name=value] [--dir=value]
 ```
-
-<a id="topic_723EE395A63A40D6819618AFC2902115__table_f12_2vg_2w"></a>
-
+## {#topic_723EE395A63A40D6819618AFC2902115__table_f12_2vg_2w}
 | Name                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                           | Default Value     |
 |-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| <span class="keyword parmname">&#8209;&#8209;name </span> | Name/Id of the @@product_name@@ Cache Server to stop. You must be connected to the JMX Manager to use this option. Can be used to stop remote servers. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/cluster_config/gfsh_remote.html). |                   |
+| <span class="keyword parmname">&#8209;&#8209;name </span> | Name/Id of the @@product_name@@ Cache Server to stop. You must be connected to the JMX Manager to use this option. Can be used to stop remote servers. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../../configuring/gfsh_remote). |                   |
 | <span class="keyword parmname">&#8209;&#8209;dir </span>  | Directory in which the @@product_name@@ Cache Server was started.                                                                                                                                                                                                                                                                                                                                                   | current directory |
 
 <span class="tablecap">Table 4. Stop Server Parameters</span>

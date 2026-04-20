@@ -25,8 +25,7 @@ limitations under the License.
 @@product_name@@ supports the creation of hash indexes for the purpose of performing equality-based queries.
 
 
-## <a id="concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_8A927DFB29364DA7856E7FE122FC1654" class="no-quick-link"></a>Hash Index Performance
-
+## Hash Index Performance {#concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_8A927DFB29364DA7856E7FE122FC1654}
 The performance of put operations and recovery time when using a hash index 
 will be worse than a range index.
 Queries are expected to be slower due to the implementation 
@@ -45,11 +44,8 @@ thereby using less memory.
 Tests achieved as high as a 30% reduction in memory footprint,
 but the savings depend on the keys and data being used.
 
-## <a id="concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_2EF23A54378E44FFBF1BEB32E41ABD61" class="no-quick-link"></a>Performance Considerations
-
-
-## <a id="concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_800401C53E5841269F389329B8A4CDF3" class="no-quick-link"></a>Limitations
-
+## Performance Considerations {#concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_2EF23A54378E44FFBF1BEB32E41ABD61}
+## Limitations {#concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_800401C53E5841269F389329B8A4CDF3}
 The following limitations must be considered when creating hash indexes:
 
 -   You can only use hash indexes with equals and not equals queries.
@@ -60,8 +56,7 @@ The following limitations must be considered when creating hash indexes:
 and recovery time substantially.
 If memory is not a concern, use a range index instead of a hash index.
 
-## <a id="concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_CA2476E015D14DE7B522377C931A8492" class="no-quick-link"></a>Examples of Creating a Hash Index
-
+## Examples of Creating a Hash Index {#concept_5C7614F71F394C62ACA1BDC5684A7AC4__section_CA2476E015D14DE7B522377C931A8492}
 **Hash indexes are deprecated.**
 
 **Using the Java API:**

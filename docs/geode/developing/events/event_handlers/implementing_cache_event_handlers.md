@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Depending on your installation and configuration, cache events can come from local operations, peers, servers, and remote sites. Event handlers register their interest in one or more events and are notified when the events occur.
-
-<a id="implementing_cache_event_handlers__section_9286E8C6B3C54089888E1680B4F43692"></a>
+## {#implementing_cache_event_handlers__section_9286E8C6B3C54089888E1680B4F43692}
 For each type of handler, @@product_name@@ provides a convenience class with empty stubs for the interface callback methods.
 
 **Note:**
@@ -40,7 +39,7 @@ Write-behind cache listeners are created by extending the `AsyncEventListener` i
     3.  Implement the handler's callback methods as needed by your application.
 
         **Note:**
-        Improperly programmed event handlers can block your distributed system. Cache events are synchronous. To modify your cache or perform distributed operations based on events, avoid blocking your system by following the guidelines in [How to Safely Modify the Cache from an Event Handler Callback](writing_callbacks_that_modify_the_cache.html#writing_callbacks_that_modify_the_cache).
+        Improperly programmed event handlers can block your distributed system. Cache events are synchronous. To modify your cache or perform distributed operations based on events, avoid blocking your system by following the guidelines in [How to Safely Modify the Cache from an Event Handler Callback](writing_callbacks_that_modify_the_cache#writing_callbacks_that_modify_the_cache).
 
         Example:
 
@@ -118,8 +117,7 @@ Write-behind cache listeners are created by extending the `AsyncEventListener` i
 
 The event handlers are initialized automatically during region creation when you start the member.
 
-## <a id="implementing_cache_event_handlers__section_C62E9535C43B4BC5A7AA7B8B4125D1EB" class="no-quick-link"></a>Installing Multiple Listeners on a Region
-
+## Installing Multiple Listeners on a Region {#implementing_cache_event_handlers__section_C62E9535C43B4BC5A7AA7B8B4125D1EB}
 XML:
 
 ``` pre

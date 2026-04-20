@@ -112,6 +112,6 @@ port, and application name; substitute the correct items to access the deployed 
 
 9.  If you have configured authentication for the Pulse application, enter the username and password of a valid Pulse account in the login screen. Otherwise, enter the default "admin" in both fields. Click **Sign In** to continue.
 
-    See [Configuring Pulse Authentication](pulse-auth.html).
+    See [Configuring Pulse Authentication](pulse-auth).
 
-10.  After you log in, Pulse displays the main cluster view for the distributed system to which it has connected. See [Using Pulse Views](pulse-views.html).
+10.  After you log in, Pulse displays the main cluster view for the distributed system to which it has connected. See [Using Pulse Views](pulse-views).

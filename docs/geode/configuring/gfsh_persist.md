@@ -23,8 +23,7 @@ limitations under the License.
 
 The @@product_name_long@@ cluster configuration service persists cluster configurations created by `gfsh` commands to the locators in a cluster and distributes the configurations to members of the cluster.
 
-## <a id="why-use-the-cluster-config-svc" class="no-quick-link"></a>Why Use the Cluster Configuration Service
-
+## Why Use the Cluster Configuration Service {#why-use-the-cluster-config-svc}
 We highly recommend that you use the `gfsh` command line 
 and the cluster configuration service as the primary mechanism
 to manage your cluster configuration.
@@ -40,8 +39,7 @@ You can use the cluster configuration service to:
 -   Start additional servers without having to configure each server separately.
 -   Configure some servers to host certain regions and other servers to host different regions, and configure all servers to host a set of common regions.
 
-## <a id="using-the-cluster-config-svc" class="no-quick-link"></a>Using the Cluster Configuration Service
-
+## Using the Cluster Configuration Service {#using-the-cluster-config-svc}
 To use the cluster configuration service in @@product_name@@, you must use dedicated, standalone locators in your deployment. You cannot use the cluster configuration service with co-located locators (locators running in another process such as a server) or in multicast environments.
 
 The standalone locators distribute configuration to all locators in a cluster. Every locator in the cluster with `--enable-cluster-configuration` set to true keeps a record of all cluster-level and group-level configuration settings.
@@ -51,21 +49,19 @@ The default behavior for `gfsh` is to create and save cluster configurations. Yo
 
 You can load existing configuration into
 the cluster by using the
-[`gfsh import cluster-configuration`](../../tools_modules/gfsh/command-pages/import.html#topic_vnv_grz_ck)
+[`gfsh import cluster-configuration`](../../tools_modules/gfsh/command-pages/import#topic_vnv_grz_ck)
 command after starting up a locator.
 
 Subsequently, any servers that you start with `gfsh` that have `--use-cluster-configuration` set to `true` will pick up the cluster configuration from the locator as well as any appropriate group-level configurations (for member groups they belong to). To disable the cluster configuration service on a server, you must start the server with the `--use-cluster-configuration` parameter set to `false`. By default, the parameter is set to true.
 
-## <a id="how-the-cluster-config-svc-works" class="no-quick-link"></a>How the Cluster Configuration Service Works
-
+## How the Cluster Configuration Service Works {#how-the-cluster-config-svc-works}
 When you use `gfsh` commands to create @@product_name_long@@ regions, disk-stores, and other objects, the cluster configuration service saves the configurations on each locator in the cluster. If you specify a group when issuing these commands, a separate configuration is saved containing only configurations that apply to the group.
 
 When you use `gfsh` to start new @@product_name_long@@ servers, the locator distributes the persisted configurations to the new server. If you specify a group when starting the server, the server receives the group-level configuration in addition to the cluster-level configuration. Group-level configurations are applied after cluster-wide configurations; therefore you can use group-level to override cluster-level settings.
 
 <img src="/images_svg/cluster_config_overview.svg" id="concept_r22_hyw_bl__image_jjc_vhb_y4" class="image" />
 
-## <a id="gfsh-commands-that-create-cluster-configs" class="no-quick-link"></a>gfsh Commands that Create Cluster Configurations
-
+## gfsh Commands that Create Cluster Configurations {#gfsh-commands-that-create-cluster-configs}
 The following `gfsh` commands cause the configuration to be written to all locators in the cluster (the locators write the configuration to disk):
 
 -   `configure pdx`\*
@@ -92,8 +88,7 @@ The following `gfsh` commands cause the configuration to be written to all locat
 
 **\*\*** If cluster configuration is enabled, the region this command is applied to must exist in the cluster configuration. If that is not the case, the command will fail saying the region does not exist.
 
-## <a id="concept_r22_hyw_bl__section_bn3_23p_y4" class="no-quick-link"></a>gfsh Limitations
-
+## gfsh Limitations {#concept_r22_hyw_bl__section_bn3_23p_y4}
 These are the configurations that you cannot create or alter using `gfsh`.
 These configurations must be within a `cache.xml` file or be applied
 by using the API:
@@ -126,6 +121,5 @@ by using the API:
     -   `gateway-transport-filter`
     -   `gateway-event-substitution-filter`
 
-## <a id="concept_r22_hyw_bl__section_fh1_c3p_y4" class="no-quick-link"></a>Disabling the Cluster Configuration Service
-
+## Disabling the Cluster Configuration Service {#concept_r22_hyw_bl__section_fh1_c3p_y4}
 If you do not want to use the cluster configuration service, start up your locator with the `--enable-cluster-configuration` parameter set to false or do not use standalone locators. You will then need to configure the cache (via cache.xml or API) separately on all your cluster members.

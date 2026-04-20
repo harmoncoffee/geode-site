@@ -22,11 +22,10 @@ limitations under the License.
 -->
 
 By default @@product_name_long@@ uses TCP for communication between members of a single distributed system. You can modify this at the member and region levels.
+## {#setting_up_communication__section_34509F5B17A943D8BBF19A3497E32BAE}
+Before you begin, you should have already determined the address and port settings for multicast, including any bind addresses. See [Topology and Communication General Concepts](../topology_concepts/chapter_overview).
 
-<a id="setting_up_communication__section_34509F5B17A943D8BBF19A3497E32BAE"></a>
-Before you begin, you should have already determined the address and port settings for multicast, including any bind addresses. See [Topology and Communication General Concepts](../topology_concepts/chapter_overview.html).
-
-See the [Reference](../../reference/book_intro.html#reference).
+See the [Reference](../../reference/book_intro#reference).
 
 1.  **Configure general messaging to use TCP or UDP unicast**.
 

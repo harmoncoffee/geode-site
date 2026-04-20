@@ -23,14 +23,13 @@ limitations under the License.
 
 @@product_name@@ uses failure detection to remove unresponsive members from membership views.
 
-## <a id="concept_CFD13177F78C456095622151D6EE10EB__section_1AAE6C92FED249EFBA476D8A480B8E51" class="no-quick-link"></a>Failure Detection
-
+## Failure Detection {#concept_CFD13177F78C456095622151D6EE10EB__section_1AAE6C92FED249EFBA476D8A480B8E51}
 Network partitioning has a failure detection protocol that is not subject to hanging when NICs or machines fail. Failure detection has each member observe messages from the peer to its right within the membership view (see "Membership Views" below for the view layout). A member that suspects the failure of its peer to the right sends a datagram heartbeat request to the suspect member. With no response from the suspect member, the suspicious member broadcasts a `SuspectMembersMessage` datagram message to all other members. The coordinator attempts to connect to the suspect member. If the connection attempt is unsuccessful, the suspect member is removed from the membership view. The suspect member is sent a message to disconnect from the cluster and close the cache. In parallel to the receipt of the `SuspectMembersMessage`, a distributed algorithm promotes the leftmost member within the view to act as the coordinator, if the coordinator is the suspect member.
 
 Failure detection processing is also initiated on a member if the `gemfire.properties` `ack-wait-threshold` elapses before receiving a response to a message, if a TCP/IP connection cannot be made to the member for peer-to-peer (P2P) messaging, and if no other traffic is detected from the member.
 
 **Note:**
-The TCP connection ping is not used for connection keep alive purposes; it is only used to detect failed members. See [TCP/IP KeepAlive Configuration](../monitor_tune/socket_tcp_keepalive.html#topic_jvc_pw3_34) for TCP keep alive configuration.
+The TCP connection ping is not used for connection keep alive purposes; it is only used to detect failed members. See [TCP/IP KeepAlive Configuration](../monitor_tune/socket_tcp_keepalive#topic_jvc_pw3_34) for TCP keep alive configuration.
 
 If a new membership view is sent out that includes one or more failed members, the coordinator will log new quorum weight calculations. At any point, if quorum loss is detected due to unresponsive processes, the coordinator will also log a severe level message to identify the failed members:
 ``` pre
@@ -39,8 +38,7 @@ Possible loss of quorum detected due to loss of {0} cache processes: {1}
 
 in which {0} is the number of processes that failed and {1} lists the members (cache processes).
 
-## <a id="concept_CFD13177F78C456095622151D6EE10EB__section_1170FBBD6B7A483AB2C2A837F1B8876D" class="no-quick-link"></a>Membership Views
-
+## Membership Views {#concept_CFD13177F78C456095622151D6EE10EB__section_1170FBBD6B7A483AB2C2A837F1B8876D}
 The following is a sample membership view:
 
 ``` pre

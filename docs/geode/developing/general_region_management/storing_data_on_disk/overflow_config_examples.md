@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 The `cache.xml` examples show configuration of region and server subscription queue overflows.
-
-<a id="overflow_config_examples__section_FD38DA72706245C996ACB7B23927F6AF"></a>
+## {#overflow_config_examples__section_FD38DA72706245C996ACB7B23927F6AF}
 Configure overflow criteria based on one of these factors:
 
 -   Entry count

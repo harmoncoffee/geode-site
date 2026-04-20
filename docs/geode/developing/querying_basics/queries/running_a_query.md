@@ -18,14 +18,12 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="running_a_querying__section_C285160AF91C4486A39444C3A22D6475"></a>
+## {#running_a_querying__section_C285160AF91C4486A39444C3A22D6475}
 The @@product_name@@ QueryService provides methods to create the Query object. You can then use the Query object to perform query-related operations.
 
 The QueryService instance you should use depends on whether you are querying the local cache of an application or if you want your application to query the server cache.
 
-## <a id="running_a_querying__section_8B9C3F5BFBA6421A81EEB404DBE512C2" class="no-quick-link"></a>Querying a Local Cache
-
+## Querying a Local Cache {#running_a_querying__section_8B9C3F5BFBA6421A81EEB404DBE512C2}
 To query the application's local cache or to query other members, use `org.apache.geode.cache.Cache.getQueryService`.
 
 **Sample Code**
@@ -50,8 +48,7 @@ To query the application's local cache or to query other members, use `org.apach
  Portfolio p = (Portfolio)results.iterator().next(); /* Region containing Portfolio object. */
 ```
 
-## <a id="running_a_querying__section_BAD35A249F784095857CC6848F91F6A4" class="no-quick-link"></a>Querying a Server Cache from a Client
-
+## Querying a Server Cache from a Client {#running_a_querying__section_BAD35A249F784095857CC6848F91F6A4}
 To perform a client to server query, use `org.apache.geode.cache.client.Pool.getQueryService`.
 
 **Sample Code**
@@ -78,22 +75,21 @@ To perform a client to server query, use `org.apache.geode.cache.client.Pool.get
 
 Refer to the following JavaDocs for specific APIs:
 
--   [Query package](/org/apache/geode/cache/query/package-summary.html)
--   [QueryService](/org/apache/geode/cache/query/QueryService.html)
+-   [Query package](/org/apache/geode/cache/query/package-summary)
+-   [QueryService](/org/apache/geode/cache/query/QueryService)
 
 **Note:**
-You can also perform queries using the gfsh `query` command. See [query](../../tools_modules/gfsh/command-pages/query.html).
+You can also perform queries using the gfsh `query` command. See [query](../../tools_modules/gfsh/command-pages/query).
 
-## <a id="quering-next-steps" class="no-quick-link"></a>Next Steps
-
-- **[Building a Query String](what_is_a_query_string.html)**
+## Next Steps {#quering-next-steps}
+- **[Building a Query String](what_is_a_query_string)**
 
 To build a query string, you combine supported keywords, expressions, and operators to create an expression that returns the information you require.
 
-- **[OQL Syntax and Semantics](../query_additional/query_language_features.html)**
+- **[OQL Syntax and Semantics](../query_additional/query_language_features)**
 
 This section covers the following querying language features.
 
-- **[Query Language Restrictions and Unsupported Features](restrictions_and_unsupported_features.html)**
+- **[Query Language Restrictions and Unsupported Features](restrictions_and_unsupported_features)**
 
 This section describes some limitations of which developers should be aware when composing queries in OQL.

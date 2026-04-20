@@ -23,8 +23,7 @@ limitations under the License.
 
 Create a topology plan and a detailed list of machines and communication ports that your members will use. Configure your @@product_name_long@@ systems and the communication between systems.
 
-## <a id="membership_and_communication__section_AC0D7685A2CA4999A40BCEFD514BF599" class="no-quick-link"></a>Determine Protocols and Addresses
-
+## Determine Protocols and Addresses {#membership_and_communication__section_AC0D7685A2CA4999A40BCEFD514BF599}
 Your configuration governs how your applications find each other and distribute events and data among themselves.
 
 Work with your system administrator to determine the protocols and addresses you will use for membership and communication.
@@ -38,10 +37,9 @@ Work with your system administrator to determine the protocols and addresses you
         **Note:**
         Use different port numbers for different systems, even if you use different multicast addresses. Some operating systems do not keep communication separate between systems that have unique addresses but the same port number.
 
-## <a id="membership_and_communication__section_vy1_cg1_2v" class="no-quick-link"></a>Set Up Membership and Communication
-
+## Set Up Membership and Communication {#membership_and_communication__section_vy1_cg1_2v}
 Using the protocols and addresses you determined above, do the following:
 
 -   Set up membership in your systems.
--   Set up communication between system members. See [Configuring Peer Communication](../p2p_configuration/setting_up_peer_communication.html).
--   As needed, set up communication between your systems. See [Configuring a Client/Server System](../cs_configuration/setting_up_a_client_server_system.html#setting_up_a_client_server_system).
+-   Set up communication between system members. See [Configuring Peer Communication](../p2p_configuration/setting_up_peer_communication).
+-   As needed, set up communication between your systems. See [Configuring a Client/Server System](../cs_configuration/setting_up_a_client_server_system#setting_up_a_client_server_system).

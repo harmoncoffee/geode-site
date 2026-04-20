@@ -27,8 +27,7 @@ Several log files are written by the various parts of the session management cod
 -   `cacheserver.log`. Log file written by the @@product_name@@ server process.
 -   `gemfire_modules.log`. Log file written by the @@product_name@@ cache client.
 
-## <a id="concept_33F73F78783D4994B721486243827E15__section_A547F9C7AA4541ED9B99CF0DEAC1417A" class="no-quick-link"></a>Adding FINE Debug Logging to catalina.log
-
+## Adding FINE Debug Logging to catalina.log {#concept_33F73F78783D4994B721486243827E15__section_A547F9C7AA4541ED9B99CF0DEAC1417A}
 To add @@product_name@@-specific FINE logging to the `catalina.log` file, add the following lines to your `<instance>/conf/logging.properties` file:
 
 ``` pre
@@ -52,8 +51,7 @@ Created session region: org.apache.geode.internal.cache.LocalRegion[path='/gemfi
 scope=LOCAL';dataPolicy=EMPTY; gatewayEnabled=false]
 ```
 
-## <a id="concept_33F73F78783D4994B721486243827E15__section_CF950FC81CC046838F42A3E6783985BD" class="no-quick-link"></a>Add Session State Logging to the @@product_name@@ Server Log
-
+## Add Session State Logging to the @@product_name@@ Server Log {#concept_33F73F78783D4994B721486243827E15__section_CF950FC81CC046838F42A3E6783985BD}
 To add session-state-specific logging to the @@product_name@@ server log file, add the following property to the `catalina.properties` file for the tc Server instance:
 
 ``` pre
@@ -75,8 +73,7 @@ sessionRegionName=gemfire_modules_sessions; operatingRegionName=unset]
 key=5782ED83A3D9F101BBF8D851CE4E798E
 ```
 
-## <a id="concept_33F73F78783D4994B721486243827E15__section_B446063292F0447CA178DB67245B72C1" class="no-quick-link"></a>Adding Additional Debug Logging to the @@product_name@@ Server Log
-
+## Adding Additional Debug Logging to the @@product_name@@ Server Log {#concept_33F73F78783D4994B721486243827E15__section_B446063292F0447CA178DB67245B72C1}
 To add fine-level logging to the @@product_name@@ cache server, add the 'log-level' property to the server process. For example:
 
 ``` pre
@@ -89,8 +86,7 @@ This will add fine-level logging to the `server.log` file.
 **Note:**
 This will help debug @@product_name@@ server issues, but it adds a lot of logging to the file.
 
-## <a id="concept_33F73F78783D4994B721486243827E15__section_D36A81360D904450B8BE7334897C5685" class="no-quick-link"></a>Add Debug Logging to gemfire\_modules.log
-
+## Add Debug Logging to gemfire\_modules.log {#concept_33F73F78783D4994B721486243827E15__section_D36A81360D904450B8BE7334897C5685}
 To add fine-level logging to the @@product_name@@ Cache Client, add the 'log-level' property to the Listener element in the tc Server or Tomcat `server.xml` file. For example:
 
 ``` pre

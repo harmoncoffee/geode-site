@@ -22,9 +22,8 @@ limitations under the License.
 -->
 
 You configure logging in a member's `gemfire.properties` or at startup with `gfsh`.
-
-<a id="setting_up_logging__section_35F8A9028A91441785BCACD6CD40A498"></a>
-Before you begin, make sure you understand [Basic Configuration and Programming](../../basic_config/book_intro.html).
+## {#setting_up_logging__section_35F8A9028A91441785BCACD6CD40A498}
+Before you begin, make sure you understand [Basic Configuration and Programming](../../basic_config/book_intro).
 
 1.  Run a time synchronization service such as NTP on all @@product_name@@ host machines. This is the only way to produce logs that are useful for troubleshooting. Synchronized time stamps ensure that log messages from different hosts can be merged to accurately reproduce a chronological history of a distributed run.
 2.  Use a sniffer to monitor your logs Look for new or unexpected warnings, errors, or severe messages. The logs output by your system have their own characteristics, indicative of your system configuration and of the particular behavior of your applications, so you must become familiar with your applications' logs to use them effectively.
@@ -39,7 +38,7 @@ Before you begin, make sure you understand [Basic Configuration and Programming]
     ```
 
     **Note:**
-    You can also specify logging parameters when you start up members (either locators or servers) using the `gfsh` command-line utility. In addition, you can modify log file properties and log-level settings while a member is already running by using the [alter runtime](../../tools_modules/gfsh/command-pages/alter.html#topic_7E6B7E1B972D4F418CB45354D1089C2B) command.
+    You can also specify logging parameters when you start up members (either locators or servers) using the `gfsh` command-line utility. In addition, you can modify log file properties and log-level settings while a member is already running by using the [alter runtime](../../tools_modules/gfsh/command-pages/alter#topic_7E6B7E1B972D4F418CB45354D1089C2B) command.
 
     1.  Set `log-level`. Options are `severe` (the highest level), `error`, `warning`, `info`, `config`, and `fine`. The lower levels include higher level settings, so a setting of `warning` would log `warning`, `error`, and `severe` messages. For general troubleshooting, we recommend setting the log level at `config` or higher.  The `fine` setting can fill up disk rather quickly and impact system performance. Use `fine` only if necessary.
 

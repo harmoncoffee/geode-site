@@ -21,8 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## <a id="query_grammar_and_reserved_words__section_F6DF7EBA0201463F9F19645849748D54" class="no-quick-link"></a>Language Grammar
-
+## Language Grammar {#query_grammar_and_reserved_words__section_F6DF7EBA0201463F9F19645849748D54}
 Notation used in the grammar:
 n   
 A nonterminal symbol that has to appear at some place within the grammar on the left side of a rule. All nonterminal symbols have to be derived to be terminal symbols.
@@ -148,8 +147,7 @@ plus ::= +
             
 ```
 
-## <a id="query_grammar_and_reserved_words__section_B074373F2ED44DC7B98652E70ABC5D5D" class="no-quick-link"></a>Language Notes
-
+## Language Notes {#query_grammar_and_reserved_words__section_B074373F2ED44DC7B98652E70ABC5D5D}
 -   Query language keywords such as SELECT, NULL, and DATE are case-insensitive. Identifiers such as attribute names, method names, and path expressions are case-sensitive.
 -   Comment lines begin with &#8209;&#8209; (double dash).
 -   Comment blocks begin with /\* and end with \*/.

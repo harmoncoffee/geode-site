@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 This section provides a high-level introduction to @@product_name@@ querying such as building a query string and describes query language features.
-
-<a id="querying_with_oql__section_828A9660B5014DCAA883A58A45E6B51A"></a>
+## {#querying_with_oql__section_828A9660B5014DCAA883A58A45E6B51A}
 @@product_name@@ provides a SQL-like querying language that allows you to access data stored in @@product_name@@ regions. Since @@product_name@@ regions are key-value stores where values can range from simple byte arrays to complex nested objects, @@product_name@@ uses a query syntax based on OQL (Object Query Language) to query region data. OQL and SQL have many syntactical similarities, however they have significant differences. For example, while OQL does not offer all of the capabilities of SQL like aggregates, OQL does allow you to execute queries on complex object graphs, query object attributes and invoke object methods.
 
 The syntax of a typical @@product_name@@ OQL query is:
@@ -44,7 +43,7 @@ SELECT DISTINCT * FROM /exampleRegion WHERE status = ‘active’
 
 An important characteristic of @@product_name@@ querying to note is that by default, @@product_name@@ queries on the values of a region and not on keys. To obtain keys from a region, you must use the keySet path expression on the queried region. For example, `/exampleRegion.keySet`.
 
-For those new to the @@product_name@@ querying, see also the [@@product_name@@ Querying FAQ and Examples](../../getting_started/querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E).
+For those new to the @@product_name@@ querying, see also the [@@product_name@@ Querying FAQ and Examples](../../getting_started/querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E).
 
 ## Advantages of OQL
 

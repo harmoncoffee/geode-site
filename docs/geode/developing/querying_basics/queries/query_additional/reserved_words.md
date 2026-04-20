@@ -21,8 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## <a id="concept_4F288B1F9579422FA481FBE2C3ADD007__section_3415163C3EFB46A6BE873E2606C9DE0F" class="no-quick-link"></a>Reserved Words
-
+## Reserved Words {#concept_4F288B1F9579422FA481FBE2C3ADD007__section_3415163C3EFB46A6BE873E2606C9DE0F}
 These words are reserved for the query language and may not be used as identifiers. The words with asterisk (`*`) after them are not currently used by @@product_name@@, but are reserved for future implementation.
 
 <table>

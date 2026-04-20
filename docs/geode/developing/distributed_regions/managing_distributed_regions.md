@@ -22,11 +22,10 @@ limitations under the License.
 -->
 
 Plan the configuration and ongoing management of your distributed, replicated, and preloaded regions, and configure the regions.
+## {#configure_distributed_region__section_11E9E1B3EB5845D9A4FB226A992B8D0D}
+Before you begin, understand [Basic Configuration and Programming](../../basic_config/book_intro).
 
-<a id="configure_distributed_region__section_11E9E1B3EB5845D9A4FB226A992B8D0D"></a>
-Before you begin, understand [Basic Configuration and Programming](../../basic_config/book_intro.html).
-
-1.  Choose the region shortcut setting that most closely matches your region configuration. See **`org.apache.geode.cache.RegionShortcut`** or [Region Shortcuts](../../reference/topics/chapter_overview_regionshortcuts.html#concept_ymp_rkz_4dffhdfhk). To create a replicated region, use one of the `REPLICATE` shortcut settings. To create a preloaded region, set your region `data-policy` to `preloaded`. This `cache.xml` declaration creates a replicated region:
+1.  Choose the region shortcut setting that most closely matches your region configuration. See **`org.apache.geode.cache.RegionShortcut`** or [Region Shortcuts](../../reference/region_shortcuts/chapter_overview_regionshortcuts#concept_ymp_rkz_4dffhdfhk). To create a replicated region, use one of the `REPLICATE` shortcut settings. To create a preloaded region, set your region `data-policy` to `preloaded`. This `cache.xml` declaration creates a replicated region:
 
     ``` pre
     <region-attributes refid="REPLICATE"> 
@@ -39,7 +38,7 @@ Before you begin, understand [Basic Configuration and Programming](../../basic_c
     gfsh>create region --name=regionA --type=REPLICATE
     ```
 
-    See [Region Types](../region_options/region_types.html#region_types).
+    See [Region Types](../region_options/region_types#region_types).
 
 2.  Choose the level of distribution for your region. The region shortcuts in `RegionShortcut` for distributed regions use `distributed-ack` scope. If you need a different scope, set the `region-attributes` `scope` to `distributed-no-ack` or `global`.
 
@@ -61,6 +60,5 @@ Before you begin, understand [Basic Configuration and Programming](../../basic_c
 
 4.  If you are using `global` scope, program any explicit locking you need in addition to the automated locking provided by @@product_name@@.
 
-## <a id="configure_distributed_region__section_6F53FB58B8A84D0F8086AFDB08A649F9" class="no-quick-link"></a>Local Destroy and Invalidate in the Replicated Region
-
+## Local Destroy and Invalidate in the Replicated Region {#configure_distributed_region__section_6F53FB58B8A84D0F8086AFDB08A649F9}
 Of all the operations that affect the local cache only, only local region destroy is allowed in a replicated region. Other operations are not configurable or throw exceptions. For example, you cannot use local destroy as the expiration action on a replicated region. This is because local operations like entry invalidation and destruction remove data from the local cache only. A replicated region would no longer be complete if data were removed locally but left intact.

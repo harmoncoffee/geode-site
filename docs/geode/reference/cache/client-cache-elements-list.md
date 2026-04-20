@@ -23,7 +23,7 @@ limitations under the License.
 
 This section shows the hierarchy of `<client-cache>` element sub-elements that you use to configure @@product_name@@ caches and clients.
 
-For details, see [&lt;client-cache&gt; Element Reference.](client-cache.html)
+For details, see [&lt;client-cache&gt; Element Reference.](client-cache)
 
 ``` pre
 <client-cache>

@@ -22,8 +22,7 @@ limitations under the License.
 Display information on topics and a list of commands associated with a topic.
 
 Provide hints for a topic or lists all available topics if a topic is not specified.
-
-<a id="concept_0FD387293BE14CB5B3CC2C6ADA90AAFB__section_47FACBC27C4F4BE1AD07AE65785A9C50"></a>
+## {#concept_0FD387293BE14CB5B3CC2C6ADA90AAFB__section_47FACBC27C4F4BE1AD07AE65785A9C50}
 **Availability:** Online or offline.
 
 **Syntax:**

@@ -71,8 +71,7 @@ List existing @@product_name@@ resources such as deployed applications, disk-sto
 
     Display regions of a member or members. If no parameter is specified, all regions in the cluster are listed.
 
-## <a id="topic_j22_kzk_2l" class="no-quick-link"></a>list async-event-queues
-
+## list async-event-queues {#topic_j22_kzk_2l}
 Display a list of async event queues for all members.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -89,8 +88,7 @@ list async-event-queues
 list async-event-queues
 ```
 
-## <a id="topic_ts1_qb1_dk" class="no-quick-link"></a>list clients
-
+## list clients {#topic_ts1_qb1_dk}
 Display a list of connected clients and the servers to which they connect.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -120,8 +118,7 @@ ClientList
 192.0.2.0(5065:loner):39906:a6f598cf | member=server2,port=53508;  member=server1,port=56806
 ```
 
-## <a id="topic_59DF60DE71AD4097B281749425254BFF" class="no-quick-link"></a>list deployed
-
+## list deployed {#topic_59DF60DE71AD4097B281749425254BFF}
 Display a list of JARs that were deployed to members using the deploy command.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -163,8 +160,7 @@ datanode2 | group1_functions.jar | /usr/local/gemfire/deploy/vf.gf#group1_functi
 No JAR Files Found
 ```
 
-## <a id="topic_BC14AD57EA304FB3845766898D01BD04" class="no-quick-link"></a>list disk-stores
-
+## list disk-stores {#topic_BC14AD57EA304FB3845766898D01BD04}
 List all available disk stores across the @@product_name@@ cluster.
 
 The command also lists the configured disk directories and any Regions, Cache Servers, Gateways, PDX Serialization and Async Event Queues using Disk Stores to either overflow and/or persist information to disk. Use the `describe disk-store` command to see the details for a particular Disk Store.
@@ -201,8 +197,7 @@ gfsh> list disk-stores
 No Disk Stores Found
 ```
 
-## <a id="topic_66016A698C334F4EBA19B99F51B0204B" class="no-quick-link"></a>list durable-cqs
-
+## list durable-cqs {#topic_66016A698C334F4EBA19B99F51B0204B}
 List durable client CQs associated with the specified durable client id.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -254,8 +249,7 @@ Occurred on members
 3.server3
 ```
 
-## <a id="topic_DCC7CCBBEF5942B783A8F2A4A5B2FABF" class="no-quick-link"></a>list functions
-
+## list functions {#topic_DCC7CCBBEF5942B783A8F2A4A5B2FABF}
 Display a list of registered functions. The default is to display functions for all members.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -313,8 +307,7 @@ gfsh> list functions --matches=reconcile.*
 No Functions Found
 ```
 
-## <a id="topic_B1D89671C7B74074899C7D52F15849ED" class="no-quick-link"></a>list gateways
-
+## list gateways {#topic_B1D89671C7B74074899C7D52F15849ED}
 Display the gateway senders and receivers for a member or members.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -369,8 +362,7 @@ mymac(ny-4:88724)<v5>:52993 | 5247 | 3            |["mymac(ln-1:88651)<v2>:48277
 
 ```
 
-## <a id="topic_B3B51B6DEA484EE086C4F657EC9831F2" class="no-quick-link"></a>list indexes
-
+## list indexes {#topic_B3B51B6DEA484EE086C4F657EC9831F2}
 Display the list of indexes created for all members.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -424,8 +416,7 @@ ps...        | 192...    | /producers  | pidIdx   | RANGE | id                 |
 No Indexes Found
 ```
 
-## <a id="list_jndi-binding" class="no-quick-link"></a>list jndi-binding
-
+## list jndi-binding {#list_jndi-binding}
 List all JNDI bindings, active and configured.
 An active binding is one that is bound to the server's JNDI context
 and is also listed in the cluster configuration.
@@ -459,11 +450,10 @@ land-gifted-gun | java:UserTransaction    | org.apache.geode.internal.jta.UserTr
 land-gifted-gun | java:TransactionManager | org.apache.geode.internal.jta.TransactionManagerImpl
 ```
 
-## <a id="list_lucene_indexes" class="no-quick-link"></a>list lucene indexes
-
+## list lucene indexes {#list_lucene_indexes}
 Display the list of Lucene indexes created for all members. The optional `--with-stats` qualifier shows activity on the indexes.
 
-See also [create lucene index](create.html#create_lucene_index), [describe lucene index](describe.html#describe_lucene_index), [destroy lucene index](destroy.html#destroy_lucene_index) and [search lucene](search.html#search_lucene).
+See also [create lucene index](create#create_lucene_index), [describe lucene index](describe#describe_lucene_index), [destroy lucene index](destroy#destroy_lucene_index) and [search lucene](search#search_lucene).
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -503,8 +493,7 @@ pageIndex     | /Page       | [id, title, content]                              
 personIndex   | /Person     | [name, email, address, revenue]                                    | {}            | Initialized
 ```
 
-## <a id="topic_5B5BFB2E5F314210858641BE3A689637" class="no-quick-link"></a>list members
-
+## list members {#topic_5B5BFB2E5F314210858641BE3A689637}
 Display all or a subset of members.
 
 Within the output, the membership coordinator is listed.
@@ -547,8 +536,7 @@ server1      | 192.0.2.0(server1:888)<v7>:10839
 server2      | 192.0.2.0(server2:3260)<v8>:16721
 ```
 
-## <a id="topic_F0ECEFF26086474498598035DD83C588" class="no-quick-link"></a>list regions
-
+## list regions {#topic_F0ECEFF26086474498598035DD83C588}
 Display regions of a member or members. If no parameter is specified, all regions in the cluster are listed.
 
 **Syntax:**

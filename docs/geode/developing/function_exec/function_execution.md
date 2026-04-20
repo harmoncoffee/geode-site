@@ -20,19 +20,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="function_execution__section_BE483D79B81C49EE9855F506ED5AB014"></a>
+## {#function_execution__section_BE483D79B81C49EE9855F506ED5AB014}
 In this procedure it is assumed that you have your members and regions defined where you want to run functions.
 
 Main tasks:
 
 1.  Write the function code.
-2.  Register the function on all servers where you want to execute the function. The easiest way to register a function is to use the `gfsh` `deploy` command to deploy the JAR file containing the function code. Deploying the JAR automatically registers the function for you. See [Register the Function Automatically by Deploying a JAR](function_execution.html#function_execution__section_164E27B88EC642BA8D2359B18517B624) for details. Alternatively, you can write the XML or application code to register the function. See [Register the Function Programmatically](function_execution.html#function_execution__section_1D1056F843044F368FB76F47061FCD50) for details.
+2.  Register the function on all servers where you want to execute the function. The easiest way to register a function is to use the `gfsh` `deploy` command to deploy the JAR file containing the function code. Deploying the JAR automatically registers the function for you. See [Register the Function Automatically by Deploying a JAR](function_execution#function_execution__section_164E27B88EC642BA8D2359B18517B624) for details. Alternatively, you can write the XML or application code to register the function. See [Register the Function Programmatically](function_execution#function_execution__section_1D1056F843044F368FB76F47061FCD50) for details.
 3.  Write the application code to run the function and, if the function returns results, to handle the results.
 4.  If your function returns results and you need special results handling, code a custom `ResultsCollector` implementation and use it in your function execution.
 
-## <a id="function_execution__section_7D43B0C628D54F579D5C434D3DF69B3C" class="no-quick-link"></a>Write the Function Code
-
+## Write the Function Code {#function_execution__section_7D43B0C628D54F579D5C434D3DF69B3C}
 To write the function code, you implement the `Function` interface in the `org.apache.geode.cache.execute` package.
 
 Code the methods you need for the function. These steps do not have to be done in this order.
@@ -48,7 +46,7 @@ Code the methods you need for the function. These steps do not have to be done i
 - If the function should be run with an authorization level other than
 the default of `DATA:WRITE`,
 implement an override of the `Function.getRequiredPermissions()` method.
-See [Authorization of Function Execution](../../security/implementing_authorization.html#AuthorizeFcnExecution) for details on this method.
+See [Authorization of Function Execution](../../security/implementing_authorization#AuthorizeFcnExecution) for details on this method.
 - Code the `execute` method to perform the work of the function.
     1.  Make `execute` thread safe to accommodate simultaneous invocations.
     2.  For high availability, code `execute` to accommodate multiple identical calls to the function. Use the `RegionFunctionContext` `isPossibleDuplicate` to determine whether the call may be a high-availability re-execution. This boolean is set to true on execution failure and is false otherwise.
@@ -61,7 +59,7 @@ See [Authorization of Function Execution](../../security/implementing_authorizat
         -   For partitioned regions, the `PartitionRegionHelper` provides access to additional information and data for the region. For single regions, use `getLocalDataForContext`. For colocated regions, use `getLocalColocatedRegions`.
             **Note:**
             When you use `PartitionRegionHelper.getLocalDataForContext`, `putIfAbsent` may not return expected results if you are working on local data set instead of the region.
-    4.  To propagate an error condition or exception back to the caller of the function, throw a FunctionException from the `execute` method. @@product_name@@ transmits the exception back to the caller as if it had been thrown on the calling side. See the Java API documentation for [FunctionException](/org/apache/geode/cache/execute/FunctionException.html) for more information.
+    4.  To propagate an error condition or exception back to the caller of the function, throw a FunctionException from the `execute` method. @@product_name@@ transmits the exception back to the caller as if it had been thrown on the calling side. See the Java API documentation for [FunctionException](/org/apache/geode/cache/execute/FunctionException) for more information.
 
 Example function code:
 
@@ -110,8 +108,7 @@ public class MultiGetFunction implements Function {
 }
 ```
 
-## <a id="function_execution__section_164E27B88EC642BA8D2359B18517B624" class="no-quick-link"></a>Register the Function Automatically by Deploying a JAR
-
+## Register the Function Automatically by Deploying a JAR {#function_execution__section_164E27B88EC642BA8D2359B18517B624}
 When you deploy a JAR file that contains a Function (in other words, contains a class that implements the Function interface), the Function will be automatically registered via the `FunctionService.registerFunction` method.
 
 To register a function by using `gfsh`:
@@ -128,10 +125,9 @@ To register a function by using `gfsh`:
 
 If another JAR file is deployed (either with the same JAR filename or another filename) with the same Function, the new implementation of the Function will be registered, overwriting the old one. If a JAR file is undeployed, any Functions that were auto-registered at the time of deployment will be unregistered. Since deploying a JAR file that has the same name multiple times results in the JAR being un-deployed and re-deployed, Functions in the JAR will be unregistered and re-registered each time this occurs. If a Function with the same ID is registered from multiple differently named JAR files, the Function will be unregistered if either of those JAR files is re-deployed or un-deployed.
 
-See [Deploying Application JARs to @@product_name_long@@ Members](../../configuring/cluster_config/deploying_application_jars.html#concept_4436C021FB934EC4A330D27BD026602C) for more details on deploying JAR files.
+See [Deploying Application JARs to @@product_name_long@@ Members](../../configuring/deploying_application_jars#concept_4436C021FB934EC4A330D27BD026602C) for more details on deploying JAR files.
 
-## <a id="function_execution__section_1D1056F843044F368FB76F47061FCD50" class="no-quick-link"></a>Register the Function Programmatically
-
+## Register the Function Programmatically {#function_execution__section_1D1056F843044F368FB76F47061FCD50}
 This section applies to functions that are invoked using the `Execution.execute(String functionId)` signature. When this method is invoked, the calling application sends the function ID to all members where the `Function.execute` is to be run. Receiving members use the ID to look up the function in the local `FunctionService`. In order to do the lookup, all of the receiving member must have previously registered the function with the function service.
 
 The alternative to this is the `Execution.execute(Function function)` signature. When this method is invoked, the calling application serializes the instance of `Function` and sends it to all members where the `Function.execute` is to be run. Receiving members deserialize the `Function` instance, create a new local instance of it, and run execute from that. This option is not available for non-Java client invocation of functions on servers.
@@ -163,8 +159,7 @@ Register your function using one of these methods:
     **Note:**
     Modifying a function instance after registration has no effect on the registered function. If you want to execute a new function, you must register it with a different identifier.
 
-## <a id="function_execution__section_6A0F4C9FB77C477DA5D995705C8BDD5E" class="no-quick-link"></a>Run the Function
-
+## Run the Function {#function_execution__section_6A0F4C9FB77C477DA5D995705C8BDD5E}
 This assumes you’ve already followed the steps for writing and registering the function.
 
 In every member where you want to explicitly execute the function and process the results, you can use the `gfsh` command line to run the function or you can write an application to run the function.
@@ -181,7 +176,7 @@ In every member where you want to explicitly execute the function and process th
 
     Where *function\_id* equals the unique ID assigned to the function. You can obtain this ID using the `Function.getId` method.
 
-See [Function Execution Commands](../../tools_modules/gfsh/quick_ref_commands_by_area.html#topic_8BB061D1A7A9488C819FE2B7881A1278) for more `gfsh` commands related to functions.
+See [Function Execution Commands](../../tools_modules/gfsh/quick_ref_commands_by_area#topic_8BB061D1A7A9488C819FE2B7881A1278) for more `gfsh` commands related to functions.
 
 **Running the Function via API Calls**
 
@@ -220,8 +215,7 @@ ResultCollector rc = execution.execute(function);
 List result = (List)rc.getResult();
 ```
 
-## <a id="function_execution__section_F2AFE056650B4BF08BC865F746BFED38" class="no-quick-link"></a>Write a Custom Results Collector
-
+## Write a Custom Results Collector {#function_execution__section_F2AFE056650B4BF08BC865F746BFED38}
 This topic applies to functions that return results.
 
 When you execute a function that returns results, the function stores the results into a `ResultCollector` and returns the `ResultCollector` object. The calling application can then retrieve the results through the `ResultCollector` `getResult` method. Example:
@@ -252,6 +246,5 @@ To customize results collecting:
         .withCollector(new MyArrayListResultCollector());
     ```
 
-## <a id="function_execution__section_638E1FB9B08F4CC4B62C07DDB3661C14" class="no-quick-link"></a>Targeting Single Members of a Member Group or Entire Member Groups
-
+## Targeting Single Members of a Member Group or Entire Member Groups {#function_execution__section_638E1FB9B08F4CC4B62C07DDB3661C14}
 To execute a data independent function on a group of members or one member in a group of members, you can write your own nested function. You will need to write one nested function if you are executing the function from client to server and another nested function if you are executing a function from server to all members.

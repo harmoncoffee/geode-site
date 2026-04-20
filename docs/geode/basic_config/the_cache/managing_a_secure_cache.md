@@ -26,7 +26,7 @@ and authorization prior to cache operations.
 Client apps and cluster members (servers and locators) require
 configuration and setup when the `SecurityManager` is enabled.
 
-See the section on  [Security](../../security/chapter_overview.html)
+See the section on  [Security](../../security/chapter_overview)
 for details.
 For authentication, see 
-[Implementing Authentication](../../security/implementing_authentication.html).
+[Implementing Authentication](../../security/implementing_authentication).

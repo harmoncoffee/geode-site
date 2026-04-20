@@ -18,22 +18,20 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_3751C8A924884B7F88F993CAD350D4FE"></a>
-
-
+## {#topic_3751C8A924884B7F88F993CAD350D4FE}
 Gemcached is a Geode adapter that allows Memcached clients to communicate with a Geode server cluster, as if the servers were memcached servers. Memcached is an open-source caching solution that uses a distributed, in-memory hash map to store key-value pairs of string or object data.
 
 For information about Memcached, see [http://www.memcached.org](http://www.memcached.org).
 
--   **[How Gemcached Works](about_gemcached.html)**
+-   **[How Gemcached Works](about_gemcached)**
 
     Applications use memcached clients to access data stored in embedded Gemcached servers.
 
--   **[Deploying and Configuring a Gemcached Server](deploying_gemcached.html)**
+-   **[Deploying and Configuring a Gemcached Server](deploying_gemcached)**
 
     You can configure and deploy Gemcached servers in a Java class or by using the gfsh command-line interface.
 
--   **[Advantages of Gemcached over Memcached](advantages.html)**
+-   **[Advantages of Gemcached over Memcached](advantages)**
 
     The standard memcached architecture has inherent architectural challenges that make memcached applications difficult to write, maintain, and scale. Using Gemcached with Geode addresses these challenges.
 

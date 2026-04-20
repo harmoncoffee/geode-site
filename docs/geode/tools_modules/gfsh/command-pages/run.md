@@ -33,9 +33,7 @@ Some commands specified in the file require online status.
 ``` pre
 run --file=value [--quiet(=value)?] [--continue-on-error(=value)?]
 ```
-
-<a id="concept_970BC9839C8243AF86CAEAAB22FDF40C__table_zyc_clf_2w"></a>
-
+## {#concept_970BC9839C8243AF86CAEAAB22FDF40C__table_zyc_clf_2w}
 | Name | Description | Default Value |
 |---|---|---|
 | `--file` | **Required.** Path to the script file containing `gfsh` commands. Path may be relative or absolute. |  |

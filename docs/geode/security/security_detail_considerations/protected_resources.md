@@ -21,10 +21,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## <a id="topic_263072624B8D4CDBAD18B82E07AA44B6" class="no-quick-link"></a> 
-
-These configuration files should be readable and writeable *only* by the dedicated user who runs servers:
-
+## These configuration files should be readable and writeable *only* by the dedicated user who runs servers: {#topic_263072624B8D4CDBAD18B82E07AA44B6}
 -   `gemfire.properties`
 -   `cache.xml`
 -   `gfsecurity.properties`

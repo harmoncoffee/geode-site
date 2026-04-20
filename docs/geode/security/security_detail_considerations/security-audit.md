@@ -21,9 +21,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-## <a id="topic_686158E9AFBD47518BE1B4BEB232C190"></a> Geode 
-
-
+## Geode {#topic_686158E9AFBD47518BE1B4BEB232C190}
 Geode processes use either UDP or TCP/IP ports to communicate with other processes or clients.
 
 For example:
@@ -33,7 +31,7 @@ For example:
 -   JMX clients (such as `gfsh` and JConsole) can connect to JMX Managers and other manageable members on the pre-defined RMI port 1099. You can configure a different port if necessary.
 -   Each gateway receiver usually has a port range where it listens for incoming communication.
 
-See [Firewalls and Ports](../configuring/running/firewalls_ports.html#concept_5ED182BDBFFA4FAB89E3B81366EBC58E) for the complete list of ports used by Geode Geode, their default values, and how to configure them if you do not want to use the default value. Geode 
+See [Firewalls and Ports](../configuring/running/firewalls_ports#concept_5ED182BDBFFA4FAB89E3B81366EBC58E) for the complete list of ports used by Geode Geode, their default values, and how to configure them if you do not want to use the default value. Geode 
 
 Geode does not have any external interfaces or services that need to be enabled or opened.
 

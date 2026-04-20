@@ -22,12 +22,11 @@ limitations under the License.
 -->
 
 @@product_name@@ allows you to persist PDX metadata to disk and specify the disk store to use.
-
-<a id="persist_pdx_metadata_to_disk__section_7F357A8E56B54BFB9A5778C0F89E034E"></a>
+## {#persist_pdx_metadata_to_disk__section_7F357A8E56B54BFB9A5778C0F89E034E}
 **Prerequisites**
 
--   Understand generally how to configure the @@product_name@@ cache. See [Basic Configuration and Programming](../../basic_config/book_intro.html).
--   Understand how @@product_name@@ disk stores work. See [Disk Storage](../../managing/disk_storage/chapter_overview.html).
+-   Understand generally how to configure the @@product_name@@ cache. See [Basic Configuration and Programming](../../basic_config/book_intro).
+-   Understand how @@product_name@@ disk stores work. See [Disk Storage](../../managing/disk_storage/chapter_overview).
 
 **Procedure**
 
@@ -36,7 +35,7 @@ limitations under the License.
     **Note:**
     If you are using PDX serialized objects as region entry keys and you are using persistent regions, then you must configure your PDX disk store to be a different one than the disk store used by the persistent regions.
 
-3.  (Optional) If you later want to rename the PDX types that are persisted to disk, you can do so on your offline disk-stores by executing the `pdx rename` command. See [pdx rename](../../tools_modules/gfsh/command-pages/pdx.html).
+3.  (Optional) If you later want to rename the PDX types that are persisted to disk, you can do so on your offline disk-stores by executing the `pdx rename` command. See [pdx rename](../../tools_modules/gfsh/command-pages/pdx).
 
 **Example cache.xml:**
 

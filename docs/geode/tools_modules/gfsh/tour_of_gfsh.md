@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 This topic takes you through a typical sequence of tasks that you execute after starting `gfsh`.
-
-<a id="concept_0B7DE9DEC1524ED0897C144EE1B83A34__section_C183031258CF493D9E334593729E156D"></a>
+## {#concept_0B7DE9DEC1524ED0897C144EE1B83A34__section_C183031258CF493D9E334593729E156D}
 Step 1: Create a scratch working directory and change to that directory. For example:
 
 ``` pre
@@ -45,7 +44,7 @@ Monitor and Manage @@product_name@@
 gfsh>
 ```
 
-See [Starting gfsh](starting_gfsh.html#concept_DB959734350B488BBFF91A120890FE61) for details.
+See [Starting gfsh](starting_gfsh#concept_DB959734350B488BBFF91A120890FE61) for details.
 
 **Step 2: Start up a locator.** Enter the following command:
 
@@ -155,7 +154,7 @@ Connecting to Manager at [host=localhost, port=1099] ..
 Successfully connected to: [host=localhost, port=1099]
 ```
 
-In addition, you can connect to remote clusters over HTTP. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../configuring/cluster_config/gfsh_remote.html).
+In addition, you can connect to remote clusters over HTTP. See [Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](../../configuring/gfsh_remote).
 
 **Step 5: Disconnect and close the second terminal window.** Type the following commands to disconnect and exit the second `gfsh` prompt:
 

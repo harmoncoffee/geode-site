@@ -20,19 +20,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_4BCF867697C3456D96066BAD7F39FC8B"></a>
-
-
+## {#topic_4BCF867697C3456D96066BAD7F39FC8B}
 This topic provides descriptions for the various management and monitoring MBeans that are available in @@product_name@@.
 
 The following diagram illustrates the relationship between the different JMX MBeans that have been developed to manage and monitor @@product_name_long@@.
 
 <img src="/images_svg/MBeans.svg" id="topic_4BCF867697C3456D96066BAD7F39FC8B__image_66525625D6804EDE9675D6CE509360A3" class="image" />
 
--   **[JMX Manager MBeans](list_of_mbeans_full.html)**
+-   **[JMX Manager MBeans](list_of_mbeans_full)**
 
     This section describes the MBeans that are available on the JMX Manager node.
 
--   **[Managed Node MBeans](list_of_mbeans_full.html#topic_48194A5BDF3F40F68E95A114DD702413)**
+-   **[Managed Node MBeans](list_of_mbeans_full#topic_48194A5BDF3F40F68E95A114DD702413)**
 
     This section describes the MBeans that are available on all managed nodes.

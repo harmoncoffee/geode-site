@@ -23,13 +23,12 @@ limitations under the License.
 
 @@product_name@@ provides many types of events and event handlers to help you manage your different data and application needs.
 
-## <a id="event_handlers_and_events__section_E7B7502F673B43E794884D0F6BF537CF" class="no-quick-link"></a>Event Handlers
-
+## Event Handlers {#event_handlers_and_events__section_E7B7502F673B43E794884D0F6BF537CF}
 Use either cache handlers or membership handlers in any single application. Do not use both. The event handlers in this table are cache handlers unless otherwise noted.
 
 | Handler API | Events received | Description |
 |---|---|---|
-| `AsyncEventListener` | `AsyncEvent` | Tracks changes in a region for write-behind processing. Extends the `CacheCallback` interface. You install a write-back cache listener to an `AsyncEventQueue` instance. You can then add the `AsyncEventQueue` instance to one or more regions for write-behind processing. See [Implementing an AsyncEventListener for Write-Behind Cache Event Handling](implementing_write_behind_event_handler.html#implementing_write_behind_cache_event_handling). |
+| `AsyncEventListener` | `AsyncEvent` | Tracks changes in a region for write-behind processing. Extends the `CacheCallback` interface. You install a write-back cache listener to an `AsyncEventQueue` instance. You can then add the `AsyncEventQueue` instance to one or more regions for write-behind processing. See [Implementing an AsyncEventListener for Write-Behind Cache Event Handling](implementing_write_behind_event_handler#implementing_write_behind_cache_event_handling). |
 | `CacheCallback` | — | Superinterface of all cache event listeners. Functions only to clean up resources that the callback allocated. |
 | `CacheListener` | `RegionEvent`, `EntryEvent` | Tracks changes to a region and its data entries. Responds synchronously. Extends `CacheCallback`. Installed in a region. Receives only local cache events. Install one in every member where you want the events handled. In a partitioned region, the cache listener fires only in the primary data store. Listeners on secondaries are not fired. |
 | `CacheWriter` | `RegionEvent`, `EntryEvent` | Receives events for *pending* changes to the region and its data entries in this member or one of its peers. Can cancel the operation. Extends `CacheCallback`. Installed in a region. Receives events from anywhere in the distributed region, so you can install one in a single member for the entire distributed region. In partitioned regions, events are received only in the primary data store, so install one in every data store. |
@@ -43,8 +42,7 @@ Use either cache handlers or membership handlers in any single application. Do n
 | `UniversalMembershipListenerAdapter` | `MembershipEvent`, `ClientMembershipEvent` | Replaces deprecated Admin APIs. Provides a wrapper for `MembershipListener` and `ClientMembershipListener` callbacks for both clients and peers. |
 
 
-## <a id="event_handlers_and_events__section_48C81FE4C1934DBBB287925A6F7A473D" class="no-quick-link"></a>Events
-
+## Events {#event_handlers_and_events__section_48C81FE4C1934DBBB287925A6F7A473D}
 The events in this table are cache events unless otherwise noted.
 
 <table>

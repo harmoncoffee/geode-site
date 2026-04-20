@@ -22,11 +22,10 @@ limitations under the License.
 -->
 
 This section lists configuration considerations relating to network partition detection.
-
-<a id="handling_network_partitioning__section_EAF1957B6446491A938DEFB06481740F"></a>
+## {#handling_network_partitioning__section_EAF1957B6446491A938DEFB06481740F}
 The system uses a combination of member coordinators and system members, designated as lead members, to detect and resolve network partitioning problems.
 
--   Network partition detection works in all environments. Using multiple locators mitigates the effect of network partitioning. See [Configuring Peer-to-Peer Discovery](../../topologies_and_comm/p2p_configuration/setting_up_a_p2p_system.html).
+-   Network partition detection works in all environments. Using multiple locators mitigates the effect of network partitioning. See [Configuring Peer-to-Peer Discovery](../../topologies_and_comm/p2p_configuration/setting_up_a_p2p_system).
 
 -   Network partition detection is enabled by default. The default setting in the `gemfire.properties` file is
 
@@ -62,4 +61,4 @@ The system uses a combination of member coordinators and system members, designa
     -   If the system has clients connecting to it, the clients' `cache.xml` pool `read-timeout` should be set to at least three times the `member-timeout` setting in the server's `gemfire.properties` file. The default pool `read-timeout` setting is 10000 milliseconds.
     -   You can adjust the default weights of members by specifying the system property `gemfire.member-weight` upon startup. For example, if you have some VMs that host a needed service, you could assign them a higher weight upon startup.
 
--   By default, members that are forced out of the cluster by a network partition event will automatically restart and attempt to reconnect. Data members will attempt to reinitialize the cache. See [Handling Forced Cache Disconnection Using Autoreconnect](../member-reconnect.html).
+-   By default, members that are forced out of the cluster by a network partition event will automatically restart and attempt to reconnect. Data members will attempt to reinitialize the cache. See [Handling Forced Cache Disconnection Using Autoreconnect](../member-reconnect).

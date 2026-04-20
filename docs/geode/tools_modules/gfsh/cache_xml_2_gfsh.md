@@ -26,9 +26,7 @@ or you can use gfsh and the cluster configuration service
 to configure a cluster.
 This table maps `cache.xml` elements to the gfsh commands that
 configure and manage a cluster.
-
-<a id="reference_qvw_zyq_54__table_in3_dzq_54"></a>
-
+## {#reference_qvw_zyq_54__table_in3_dzq_54}
 | cache.xml Element | gfsh Command |
 |---|---|
 | `<cache>`, `<cache-server>` | • `start server`<br/>• `status server`<br/>• `stop server`<br/>• `alter runtime` |

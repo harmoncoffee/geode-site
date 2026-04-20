@@ -18,23 +18,20 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="mbean_notifications_list"></a>
-
-
+## {#mbean_notifications_list}
 This topic lists all available JMX notifications emitted by @@product_name@@ MBeans.
 
 Notifications are emitted by the following MBeans:
 
--   **[MemberMXBean Notifications](list_of_mbean_notifications.html#reference_czt_hq2_vj)**
+-   **[MemberMXBean Notifications](list_of_mbean_notifications#reference_czt_hq2_vj)**
 
--   **[MemberMXBean Gateway Notifications](list_of_mbean_notifications.html#reference_dzt_hq2_vj)**
+-   **[MemberMXBean Gateway Notifications](list_of_mbean_notifications#reference_dzt_hq2_vj)**
 
--   **[CacheServerMXBean Notifications](list_of_mbean_notifications.html#cacheservermxbean_notifications)**
+-   **[CacheServerMXBean Notifications](list_of_mbean_notifications#cacheservermxbean_notifications)**
 
--   **[DistributedSystemMXBean Notifications](list_of_mbean_notifications.html#distributedsystemmxbean_notifications)**
+-   **[DistributedSystemMXBean Notifications](list_of_mbean_notifications#distributedsystemmxbean_notifications)**
 
-## <a id="reference_czt_hq2_vj" class="no-quick-link"></a>MemberMXBean Notifications
-
+## MemberMXBean Notifications {#reference_czt_hq2_vj}
 | Notification Type                                   | Notification Source | Message                                                     |
 |-----------------------------------------------------|---------------------|-------------------------------------------------------------|
 | gemfire.distributedsystem.cache.region.created      | Member name or ID   | Region Created with Name &lt;Region Name&gt;                |
@@ -48,8 +45,7 @@ Notifications are emitted by the following MBeans:
 | gemfire.distributedsystem.cache.server.stopped      | Member name or ID   | Cache Server is stopped in the VM                           |
 | gemfire.distributedsystem.locator.started           | Member name or ID   | Locator is Started in the VM                                |
 
-## <a id="reference_dzt_hq2_vj" class="no-quick-link"></a>MemberMXBean Gateway Notifications
-
+## MemberMXBean Gateway Notifications {#reference_dzt_hq2_vj}
 | Notification Type                                  | Notification Source | Message                                           |
 |----------------------------------------------------|---------------------|---------------------------------------------------|
 | gemfire.distributedsystem.gateway.sender.created   | Member name or ID   | GatewaySender Created in the VM                   |
@@ -62,16 +58,14 @@ Notifications are emitted by the following MBeans:
 | gemfire.distributedsystem.gateway.receiver.stopped | Member name or ID   | GatewayReceiver Stopped in the VM                 |
 | gemfire.distributedsystem.cache.server.started     | Member name or ID   | Cache Server is Started in the VM                 |
 
-## <a id="cacheservermxbean_notifications" class="no-quick-link"></a>CacheServerMXBean Notifications
-
+## CacheServerMXBean Notifications {#cacheservermxbean_notifications}
 | Notification Type                                    | Notification Source    | Message                                  |
 |------------------------------------------------------|------------------------|------------------------------------------|
 | gemfire.distributedsystem.cacheserver.client.joined  | CacheServer MBean Name | Client joined with Id &lt;Client ID&gt;  |
 | gemfire.distributedsystem.cacheserver.client.left    | CacheServer MBean Name | Client crashed with Id &lt;Client ID&gt; |
 | gemfire.distributedsystem.cacheserver.client.crashed | CacheServer MBean name | Client left with Id &lt;Client ID&gt;    |
 
-## <a id="distributedsystemmxbean_notifications" class="no-quick-link"></a>DistributedSystemMXBean Notifications
-
+## DistributedSystemMXBean Notifications {#distributedsystemmxbean_notifications}
 | Notification Type                               | Notification Source                               | Message                                                                    |
 |-------------------------------------------------|---------------------------------------------------|----------------------------------------------------------------------------|
 | gemfire.distributedsystem.cache.member.joined   | Name or ID of member who joined                   | Member Joined &lt;Member Name or ID&gt;                                    |

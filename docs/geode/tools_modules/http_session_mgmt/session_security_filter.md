@@ -21,8 +21,7 @@ limitations under the License.
 
 This topic describes how to configure session deserialization security using ObjectInputFilter (JEP 290) to protect against deserialization vulnerabilities.
 
-## <a id="overview" class="no-quick-link"></a>Overview
-
+## Overview {#overview}
 Apache Geode HTTP Session Management uses Java serialization to store session attributes in the distributed cache. To protect against deserialization attacks, you can configure an ObjectInputFilter that controls which classes are allowed to be deserialized.
 
 **Key Benefits:**
@@ -32,8 +31,7 @@ Apache Geode HTTP Session Management uses Java serialization to store session at
 - **Defense in Depth**: Explicit allowlist prevents gadget chain attacks
 - **Backward Compatible**: Existing applications continue to work without configuration
 
-## <a id="security-warning" class="no-quick-link"></a>Security Warning
-
+## Security Warning {#security-warning}
 **Without a configured filter, session deserialization has NO restrictions.** Any serializable class can be deserialized, leaving your application vulnerable to:
 
 - Remote Code Execution (RCE)
@@ -42,8 +40,7 @@ Apache Geode HTTP Session Management uses Java serialization to store session at
 
 **Always configure a deserialization filter for production deployments.**
 
-## <a id="basic-config" class="no-quick-link"></a>Basic Configuration
-
+## Basic Configuration {#basic-config}
 ### Step 1: Add Filter Pattern to web.xml
 
 Add a context parameter to your application's `web.xml`:
@@ -68,8 +65,7 @@ Add a context parameter to your application's `web.xml`:
 
 Deploy or redeploy your WAR file to the application server. The filter takes effect immediately—no cluster restart required.
 
-## <a id="pattern-syntax" class="no-quick-link"></a>Pattern Syntax
-
+## Pattern Syntax {#pattern-syntax}
 The filter pattern follows [JEP 290](https://openjdk.org/jeps/290) syntax:
 
 | Pattern | Meaning |
@@ -87,8 +83,7 @@ The filter pattern follows [JEP 290](https://openjdk.org/jeps/290) syntax:
 3. First matching pattern determines the result
 4. Always end with `!*` for default deny
 
-## <a id="examples" class="no-quick-link"></a>Configuration Examples
-
+## Configuration Examples {#examples}
 ### Minimal Configuration
 
 Allow only your application models and essential Java classes:
@@ -138,8 +133,7 @@ Allow only your application models and essential Java classes:
 </param-value>
 ```
 
-## <a id="multi-app" class="no-quick-link"></a>Multi-Application Deployments
-
+## Multi-Application Deployments {#multi-app}
 Each web application has its own isolated security policy:
 
 **Application 1 (E-commerce):**
@@ -173,8 +167,7 @@ Each web application has its own isolated security policy:
 
 Each application's sessions can only deserialize classes allowed by its specific filter pattern.
 
-## <a id="best-practices" class="no-quick-link"></a>Best Practices
-
+## Best Practices {#best-practices}
 ### 1. Use Explicit Allowlists
 
 **Don't:**
@@ -225,8 +218,7 @@ After configuring the filter:
 3. Test session failover scenarios
 4. Monitor logs for `ObjectInputFilter` rejections
 
-## <a id="troubleshooting" class="no-quick-link"></a>Troubleshooting
-
+## Troubleshooting {#troubleshooting}
 ### ClassNotFoundException or Deserialization Failures
 
 **Symptom:** Session attributes fail to deserialize after adding filter
@@ -268,8 +260,7 @@ After configuring the filter:
 </param-value>
 ```
 
-## <a id="migration" class="no-quick-link"></a>Migration Guide
-
+## Migration Guide {#migration}
 ### For Existing Applications
 
 1. **Identify Session Attribute Classes**
@@ -303,8 +294,7 @@ After configuring the filter:
 - Only allowed classes can be deserialized
 - Protected against deserialization attacks
 
-## <a id="security-reference" class="no-quick-link"></a>Security Reference
-
+## Security Reference {#security-reference}
 ### JEP 290
 
 The filter implementation uses Java's [JEP 290: Filter Incoming Serialization Data](https://openjdk.org/jeps/290), which provides:
@@ -318,8 +308,7 @@ The filter implementation uses Java's [JEP 290: Filter Incoming Serialization Da
 - [OWASP Deserialization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html)
 - [Java Serialization Security Best Practices](https://www.oracle.com/java/technologies/javase/seccodeguide.html#8)
 
-## <a id="related-topics" class="no-quick-link"></a>Related Topics
-
-- [Setting Up the HTTP Module for Tomcat](tomcat_setting_up_the_module.html)
-- [Setting Up the HTTP Module for tc Server](tc_setting_up_the_module.html)
-- [HTTP Session Management Quick Start](quick_start.html)
+## Related Topics {#related-topics}
+- [Setting Up the HTTP Module for Tomcat](tomcat_setting_up_the_module)
+- [Setting Up the HTTP Module for tc Server](tc_setting_up_the_module)
+- [HTTP Session Management Quick Start](quick_start)

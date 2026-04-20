@@ -45,7 +45,7 @@ Use gfsh to:
 -   Script various operations involving @@product_name@@ members
 -   Save the configuration for all members of a cluster
 
-gfsh runs in its own shell, or you can [execute gfsh commands directly from the OS command line](../../tools_modules/gfsh/os_command_line_execution.html#topic_fpf_y1g_tp). gfsh can interact with remote systems [using the http protocol](../../configuring/cluster_config/gfsh_remote.html). You can also [write scripts that run in a gfsh shell](../../tools_modules/gfsh/command_scripting.html#concept_9B2F7550F16C4717831AD40A56922259) to automate system startup.
+gfsh runs in its own shell, or you can [execute gfsh commands directly from the OS command line](../../tools_modules/gfsh/os_command_line_execution#topic_fpf_y1g_tp). gfsh can interact with remote systems [using the http protocol](../../configuring/gfsh_remote). You can also [write scripts that run in a gfsh shell](../../tools_modules/gfsh/command_scripting#concept_9B2F7550F16C4717831AD40A56922259) to automate system startup.
 
 You can use gfsh to create shared cluster configurations for your cluster. You can define configurations that apply to the entire cluster, or that apply only to groups of similar members that all share a common configuration. @@product_name@@ locators maintain these configurations as a hidden region and distribute the configuration to all locators in the cluster. The locator also persists the shared configurations on disk as `cluster.xml` and `cluster.properties` files. You can use those shared cluster configuration files to re-start your system, migrate the system to a new environment, add new members to a cluster, or to restore existing members after a failure.
 
@@ -55,13 +55,13 @@ A basic cluster configuration consists of:
 -   `cluster.properties` file shared by the cluster
 -   Deployed jar files containing application Java classes.
 
-See [Overview of the Cluster Configuration Service](../../configuring/cluster_config/gfsh_persist.html) and [Cluster Configuration Files and Troubleshooting](../../configuring/cluster_config/gfsh_config_troubleshooting.html#concept_ylt_2cb_y4) for additional details on gfsh cluster configuration files.
+See [Overview of the Cluster Configuration Service](../../configuring/gfsh_persist) and [Cluster Configuration Files and Troubleshooting](../../configuring/gfsh_config_troubleshooting#concept_ylt_2cb_y4) for additional details on gfsh cluster configuration files.
 
 Using the gfsh tool, you can easily migrate a @@product_name@@-based application from a development environment into a testing or production environment.
 
 ## Executing gfsh commands with the management API
 
-You can also use @@product_name@@'s management APIs to execute gfsh commands in a Java class. See [Executing gfsh Commands through the Management API](gfsh_and_management_api.html#concept_451F0978285245E69C3E8DE795BD8635).
+You can also use @@product_name@@'s management APIs to execute gfsh commands in a Java class. See [Executing gfsh Commands through the Management API](gfsh_and_management_api#concept_451F0978285245E69C3E8DE795BD8635).
 
 ## Member Configuration Management
 
@@ -75,7 +75,7 @@ You can also directly create configurations using `cache.xml` and `gemfire.prope
 
 @@product_name@@'s implementation of JMX is industry-standard and friendly to generic JMX clients. You can monitor or manage the cluster by using any third-party tool that is compliant with JMX. For example, JConsole.
 
-See [@@product_name_long@@ Management and Monitoring](management_and_monitoring.html)
+See [@@product_name_long@@ Management and Monitoring](management_and_monitoring)
 
 ## @@product_name@@ Java API
 
@@ -87,8 +87,8 @@ The @@product_name@@ API provides a set of Java classes you can use to manage an
 
 Use Pulse to examine total memory, CPU, and disk space used by members, uptime statistics, client connections, and critical notifications. Pulse communicates with a @@product_name@@ JMX manager to provide a complete view of your @@product_name@@ deployment.
 
-See [@@product_name@@ Pulse](../../tools_modules/pulse/pulse-overview.html).
+See [@@product_name@@ Pulse](../../tools_modules/pulse/pulse-overview).
 
 ## JConsole
 
-JConsole is a JMX monitoring utility provided with a Java Development Kit (JDK). You use gfsh to connect to @@product_name@@, and then launch JConsole with a gfsh command. The JConsole application allows you to browse MBeans, attributes, operations, and notifications. See [Browsing @@product_name@@ MBeans through JConsole](mbeans_jconsole.html).
+JConsole is a JMX monitoring utility provided with a Java Development Kit (JDK). You use gfsh to connect to @@product_name@@, and then launch JConsole with a gfsh command. The JConsole application allows you to browse MBeans, attributes, operations, and notifications. See [Browsing @@product_name@@ MBeans through JConsole](mbeans_jconsole).

@@ -42,8 +42,7 @@ PdxInstance pi = cache.createPdxInstanceFactory("com.company.DomainObject")
 
 For more information, see `PdxInstanceFactory` in the Java API documentation.
 
-## <a id="concept_FFECBE8249D848E9A2CF7FD02514EC68__section_F4EC56197730427084FBF040820A6149" class="no-quick-link"></a>Enum Objects as PdxInstances
-
+## Enum Objects as PdxInstances {#concept_FFECBE8249D848E9A2CF7FD02514EC68__section_F4EC56197730427084FBF040820A6149}
 You can now work with enum objects as PdxInstances. When you fetch an enum object from the cache, you can now deserialize it as a `PdxInstance`. To check whether a `PdxInstance` is an enum, use the `PdxInstance.isEnum` method. An enum `PdxInstance` will have one field named "name" whose value is a String that corresponds to the enum constant name.
 
 An enum `PdxInstance` is not writable; if you call `createWriter` it will throw an exception.

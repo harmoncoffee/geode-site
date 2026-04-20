@@ -23,25 +23,25 @@ limitations under the License.
 
 *Reference* documents Apache Geode properties, region attributes, the `cache.xml` file, cache memory requirements, and statistics.
 
--   **[gemfire.properties and gfsecurity.properties ( Properties)](/topics/gemfire_properties.html)**
+-   **[gemfire.properties and gfsecurity.properties ( Properties)](gemfire_properties)**
 
     You use the `gemfire.properties` settings to join a cluster and configure cluster member behavior. Cluster members include applications, the cache server, the locator, and other Geode processes.
 
--   **[cache.xml](/topics/chapter_overview_cache_xml.html)**
+-   **[cache.xml](cache/chapter_overview_cache_xml)**
 
     Use the cache.xml file to set up general cache facilities and behavior and to create and initialize cached data regions. These sections document cache.xml requirements; provide hierarchical diagrams of `<cache>` and `<client-cache>      `elements; and describe the function of each element.
 
--   **[Region Shortcuts](/topics/chapter_overview_regionshortcuts.html)**
+-   **[Region Shortcuts](region_shortcuts/chapter_overview_regionshortcuts)**
 
     This topic describes the various region shortcuts you can use to configure Geode regions.
 
--   **[Exceptions and System Failures](/topics/handling_exceptions_and_failures.html)**
+-   **[Exceptions and System Failures](handling_exceptions_and_failures)**
 
     Your application needs to catch certain classes to handle all the exceptions and system failures thrown by Apache Geode .
 
--   **[Memory Requirements for Cached Data](/topics/memory_requirements_for_cache_data.html)** Geode     solutions architects need to estimate resource requirements for meeting application performance, scalability and availability goals.
+-   **[Memory Requirements for Cached Data](memory_requirements_for_cache_data)** Geode     solutions architects need to estimate resource requirements for meeting application performance, scalability and availability goals.
 
--   **[ Geode Statistics List](statistics_list.html)**
+-   **[ Geode Statistics List](statistics_list)**
 
     This section describes the primary statistics gathered by Geode when statistics are enabled.
 

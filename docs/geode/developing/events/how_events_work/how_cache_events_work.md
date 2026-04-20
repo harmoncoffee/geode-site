@@ -22,12 +22,10 @@ limitations under the License.
 -->
 
 When a region or entry operation is performed, @@product_name@@ distributes the associated events in the cluster according to system and cache configurations.
-
-<a id="how_cache_events_work__section_7864A275FDB549FD8E2D046DD59CB9F4"></a>
+## {#how_cache_events_work__section_7864A275FDB549FD8E2D046DD59CB9F4}
 Install a cache listener for a region in each system member that needs to receive notification of region and entry changes.
 
-## <a id="how_cache_events_work__section_CACE500A00214CD88CE232D22899263B" class="no-quick-link"></a>Events in a Partitioned Region
-
+## Events in a Partitioned Region {#how_cache_events_work__section_CACE500A00214CD88CE232D22899263B}
 A distributed operation follows this sequence in a partitioned region:
 
 1.  Apply the operation to the cache with the primary data entry, if appropriate.
@@ -48,8 +46,7 @@ In the following figure:
 
 <img src="/images/Events-2.gif" id="how_cache_events_work__image_E5E187C14A774144B85FA7B636239DBE" class="image" />
 
-## <a id="how_cache_events_work__section_FACF58272C824907BA020B1727427D7A" class="no-quick-link"></a>Events in a Distributed Region
-
+## Events in a Distributed Region {#how_cache_events_work__section_FACF58272C824907BA020B1727427D7A}
 A distributed operation follows this sequence in a distributed region:
 
 1.  Apply the operation to the local cache, if appropriate.
@@ -68,6 +65,5 @@ In the following figure:
 
 <img src="/images/Events-3.gif" id="how_cache_events_work__image_A24D6182B2A840D1843EBD4686966EEF" class="image" />
 
-## <a id="how_cache_events_work__section_B4DCA51DDF7F44699E7355277172BEF0" class="no-quick-link"></a>Managing Events in Multi-threaded Applications
-
+## Managing Events in Multi-threaded Applications {#how_cache_events_work__section_B4DCA51DDF7F44699E7355277172BEF0}
 For partitioned regions, @@product_name@@ guarantees ordering of events across threads, but for distributed regions it doesn’t. For multi-threaded applications that create distributed regions, you need to use your application synchronization to make sure that one operation completes before the next one begins. Distribution through the distributed-no-ack queue can work with multiple threads if you set the `conserve-sockets` attribute to true. Then the threads share one queue, preserving the order of the events in distributed regions. Different threads can invoke the same listener, so if you allow different threads to send events, it can result in concurrent invocations of the listener. This is an issue only if the threads have some shared state - if they are incrementing a serial number, for example, or adding their events to a log queue. Then you need to make your code thread safe.

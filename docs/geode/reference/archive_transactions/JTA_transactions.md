@@ -60,16 +60,14 @@ See the Java documentation for more information on topics such as JTA, `javax.tr
 
     The "last resource" feature in certain third party containers such as WebLogic allow the use one non-XAResource (such as @@product_name@@) in a transaction with multiple XAResources while ensuring consistency.
 
--   **[Behavior of @@product_name@@ Cache Writers and Loaders Under JTA](cache_plugins_with_jta.html)**
+-   **[Behavior of @@product_name@@ Cache Writers and Loaders Under JTA](cache_plugins_with_jta)**
 
     When @@product_name@@ participates in a global transactions, you can still have @@product_name@@ cache writers and cache loaders operating in the usual way.
 
--   **[Turning Off JTA Transactions](turning_off_jta.html)**
+-   **[Turning Off JTA Transactions](turning_off_jta)**
 
     You can configure regions to not participate in any JTA global transaction.
-
-<a id="concept_cp1_zx1_wk"></a>
-
+## {#concept_cp1_zx1_wk}
 # Coordinating with External JTA Transaction Managers
 
 @@product_name@@ can work with the JTA transaction managers of several containers such as JBoss, WebLogic, GlassFish, and so on.
@@ -91,19 +89,18 @@ An externally coordinated JTA global transaction is run in the following manner:
 3.  After a successful `beforeCommit()`callback, JTA transaction manager asks other data sources to commit their transaction.
 4.  @@product_name@@ then gets a `afterCommit()` callback in which changes are applied to the cache and distributed to other members.
 
-You can disable JTA in any region that should not participate in JTA transactions. See [Turning Off JTA Transactions](turning_off_jta.html#concept_nw2_5gs_xk).
+You can disable JTA in any region that should not participate in JTA transactions. See [Turning Off JTA Transactions](turning_off_jta#concept_nw2_5gs_xk).
 
-## <a id="task_j3g_3mn_1l" class="no-quick-link"></a>How to Run a JTA Transaction Coordinated by an External Transaction Manager
-
+## How to Run a JTA Transaction Coordinated by an External Transaction Manager {#task_j3g_3mn_1l}
 Use the following procedure to run a @@product_name@@ global JTA transaction coordinated by an external JTA transaction manager.
 
 1.  **Configure the external data sources in the external container.** Do not configure the data sources in cache.xml . They are not guaranteed to get bound to the JNDI tree.
 2.  
 
-    Configure @@product_name@@ for any necessary transactional behavior in the `cache.xml` file. For example, enable `copy-on-read` and specify a transaction listener, as needed. See [Copy on Read Behavior](../../basic_config/data_entries_custom_classes/copy_on_read.html).
+    Configure @@product_name@@ for any necessary transactional behavior in the `cache.xml` file. For example, enable `copy-on-read` and specify a transaction listener, as needed. See [Copy on Read Behavior](../../basic_config/data_entries_custom_classes/copy_on_read).
 3.  
 
-    Make sure that JTA transactions are enabled for the regions that will participate in the transaction. See [Turning Off JTA Transactions](turning_off_jta.html#concept_nw2_5gs_xk) for details. 
+    Make sure that JTA transactions are enabled for the regions that will participate in the transaction. See [Turning Off JTA Transactions](turning_off_jta#concept_nw2_5gs_xk) for details. 
 4.  
 
      Start the transaction through the external container. 
@@ -116,9 +113,7 @@ Use the following procedure to run a @@product_name@@ global JTA transaction coo
 7.  
 
      Commit the transaction through the external container. 
-
-<a id="concept_csy_vfb_wk"></a>
-
+## {#concept_csy_vfb_wk}
 # Using @@product_name@@ as the "Last Resource" in a Container-Managed JTA Transaction
 
 The "last resource" feature in certain third party containers such as WebLogic allow the use of one
@@ -142,9 +137,7 @@ local transaction resource. If the non-XAResource fails, then the transaction ma
 the XAResources.
 
 <img src="/images/transactions_jca_adapter.png" id="concept_csy_vfb_wk__image_opb_sgb_wk" class="image" />
-
-<a id="task_sln_x3b_wk"></a>
-
+## {#task_sln_x3b_wk}
 ## How to Run JTA Transactions with @@product_name@@ as a "Last Resource"
 
 1.  Locate the version-specific `geode-jca` RAR file within 
@@ -177,7 +170,7 @@ the `lib` directory of your Geode installation.
         ```
 3.  Make sure that the `geode-dependencies.jar` is accessible in the CLASSPATH of the JTA transaction coordinator container.
 4.  Deploy the version-specific `geode-jca` RAR file on the JTA transaction coordinator container. When deploying the file, you specify the JNDI name and so on. 
-5.  Configure @@product_name@@ for any necessary transactional behavior. Enable `copy-on-read` and specify a transaction listener, if you need one.  See [Copy on Read Behavior](../../basic_config/data_entries_custom_classes/copy_on_read.html).
+5.  Configure @@product_name@@ for any necessary transactional behavior. Enable `copy-on-read` and specify a transaction listener, if you need one.  See [Copy on Read Behavior](../../basic_config/data_entries_custom_classes/copy_on_read).
 6.  Get an initial context through `org.apache.geode.cache.GemFireCache.getJNDIContext`. For example:
 
     ``` pre

@@ -20,8 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="syncing_offline_disk_store__section_7D01550D750E48289EFBA9BBDB5A334E"></a>
+## {#syncing_offline_disk_store__section_7D01550D750E48289EFBA9BBDB5A334E}
 Recovering data from an offline disk store proceeds most quickly when the configuration of the offline data matches that of the online data.
 
 Whenever you change or remove persistent regions (by modifying your cache.xml or the code that configures
@@ -35,12 +34,11 @@ the JVM), the disk-store recovery will fail.
 It is common practice to have more than one off-line disk store, because each member of the cluster usually has its own copy.
 Be sure to apply the same `alter disk-store` command to each offline copy of the disk store.
 
-## <a id="syncing_offline_disk_store__section_7B95B20F07BD40699CDB7F3D6A93B905" class="no-quick-link"></a>Change Region Configuration
-
+## Change Region Configuration {#syncing_offline_disk_store__section_7B95B20F07BD40699CDB7F3D6A93B905}
 When your disk store is offline, you can keep the configuration for its regions up-to-date with your
 `cache.xml` and API settings. The disk store retains a subset of the region configuration
 attributes.  (For a list of the retained attributes, see [alter
-disk-store](../../tools_modules/gfsh/command-pages/alter.html#topic_99BCAD98BDB5470189662D2F308B68EB)).  If the configurations do not
+disk-store](../../tools_modules/gfsh/command-pages/alter#topic_99BCAD98BDB5470189662D2F308B68EB)).  If the configurations do not
 match at startup, the `cache.xml` and API override any disk store settings and the disk store is
 automatically updated to match. So you do not need to modify your disk store to keep your cache
 configuration and disk store synchronized, but you will save startup time and memory if you do.
@@ -60,8 +58,7 @@ gfsh>alter disk-store --name=myDiskStoreName --region=partitioned_region
 --disk-dirs=/firstDiskStoreDir,/secondDiskStoreDir,/thirdDiskStoreDir  
 ```
 
-## <a id="syncing_offline_disk_store__section_0CA17ED106394686A1A5B30601758DA6" class="no-quick-link"></a>Take a Region Out of Your Cache Configuration and Disk Store
-
+## Take a Region Out of Your Cache Configuration and Disk Store {#syncing_offline_disk_store__section_0CA17ED106394686A1A5B30601758DA6}
 You might remove a region from your application if you decide to rename it or to split its data into two entirely different regions. Any significant data restructuring can cause you to retire some data regions.
 
 This applies to the removal of regions while the disk store is offline. Regions you destroy through API calls or by `gfsh` are automatically removed from the disk store of online members.

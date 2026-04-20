@@ -20,17 +20,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="topic_7A4B6C6169BD4B1ABD356294F744D236"></a>
-
+## {#topic_7A4B6C6169BD4B1ABD356294F744D236}
 @@product_name@@ performs different consistency checks depending on the type of region you have configured.
 
-## <a id="topic_7A4B6C6169BD4B1ABD356294F744D236__section_B090F5FB87D84104A7BE4BCEA6BAE6B7" class="no-quick-link"></a>Partitioned Region Consistency
+## Partitioned Region Consistency {#topic_7A4B6C6169BD4B1ABD356294F744D236__section_B090F5FB87D84104A7BE4BCEA6BAE6B7}
+For a partitioned region, @@product_name@@ maintains consistency by routing all updates on a given key to the @@product_name@@ member that holds the primary copy of that key. That member holds a lock on the key while distributing updates to other members that host a copy of the key. Because all updates to a partitioned region are serialized on the primary @@product_name@@ member, all members apply the updates in the same order and consistency is maintained at all times. See [Understanding Partitioning](../partitioned_regions/how_partitioning_works).
 
-For a partitioned region, @@product_name@@ maintains consistency by routing all updates on a given key to the @@product_name@@ member that holds the primary copy of that key. That member holds a lock on the key while distributing updates to other members that host a copy of the key. Because all updates to a partitioned region are serialized on the primary @@product_name@@ member, all members apply the updates in the same order and consistency is maintained at all times. See [Understanding Partitioning](../partitioned_regions/how_partitioning_works.html).
-
-## <a id="topic_7A4B6C6169BD4B1ABD356294F744D236__section_72DFB366C8F14ADBAF2A136669ECAB1E" class="no-quick-link"></a>Replicated Region Consistency
-
+## Replicated Region Consistency {#topic_7A4B6C6169BD4B1ABD356294F744D236__section_72DFB366C8F14ADBAF2A136669ECAB1E}
 For a replicated region, any member that hosts the region can update a key and distribute that update to other members without locking the key. It is possible that two members can update the same key at the same time (a concurrent update). It is also possible that, due to network latency, an update in one member is distributed to other members at a later time, after those members have already applied more recent updates to the key (an out-of-order update). By default, @@product_name@@ members perform conflict checking before applying region updates in order to detect and consistently resolve concurrent and out-of-order updates. Conflict checking ensures that region data eventually becomes consistent on all members that host the region. The conflict checking behavior for replicated regions is summarized as follows:
 
 -   If two members update the same key at the same time, conflict checking ensures that all members eventually apply the same value, which is the value of one of the two concurrent updates.
@@ -38,38 +34,33 @@ For a replicated region, any member that hosts the region can update a key and d
 
 [How Consistency Checking Works for Replicated Regions](#topic_C5B74CCDD909403C815639339AA03758) and [How Destroy and Clear Operations Are Resolved](#topic_321B05044B6641FCAEFABBF5066BD399) provide more details about how @@product_name@@ performs conflict checking when applying an update.
 
-## <a id="topic_7A4B6C6169BD4B1ABD356294F744D236__section_313045F430EE459CB411CAAE7B00F3D8" class="no-quick-link"></a>Non-Replicated Regions and Client Cache Consistency
-
+## Non-Replicated Regions and Client Cache Consistency {#topic_7A4B6C6169BD4B1ABD356294F744D236__section_313045F430EE459CB411CAAE7B00F3D8}
 When a member receives an update for an entry in a non-replicated region and applies an update, it performs conflict checking in the same way as for a replicated region. However, if the member initiates an operation on an entry that is not present in the region, it first passes that operation to a member that hosts a replicate. The member that hosts the replica generates and provides the version information necessary for subsequent conflict checking. See [How Consistency Checking Works for Replicated Regions](#topic_C5B74CCDD909403C815639339AA03758).
 
 Client caches also perform consistency checking in the same way when they receive an update for a region entry. However, all region operations that originate in the client cache are first passed onto an available @@product_name@@ server, which generates the version information necessary for subsequent conflict checking.
 
-## <a id="topic_B64891585E7F4358A633C792F10FA23E" class="no-quick-link"></a>Configuring Consistency Checking
-
+## Configuring Consistency Checking {#topic_B64891585E7F4358A633C792F10FA23E}
 @@product_name@@ enables consistency checking by default. You cannot disable consistency checking for persistent regions. For all other regions, you can explicitly enable or disable consistency checking by setting the `concurrency-checks-enabled` region attribute in `cache.xml` to "true" or "false."
 
 All @@product_name@@ members that host a region must use the same `concurrency-checks-enabled` setting for that region.
 
 A client cache can disable consistency checking for a region even if server caches enable consistency checking for the same region. This configuration ensures that the client sees all events for the region, but it does not prevent the client cache region from becoming out-of-sync with the server cache.
 
-See [&lt;region-attributes&gt;](../../reference/topics/cache_xml.html#region-attributes).
+See [&lt;region-attributes&gt;](../../reference/cache/cache_xml#region-attributes).
 
 **Note:**
 Regions that do not enable consistency checking remain subject to race conditions. Concurrent updates may result in one or more members having different values for the same key. Network latency can result in older updates being applied to a key after more recent updates have occurred.
 
-## <a id="topic_0BDACA590B2C4974AC9C450397FE70B2" class="no-quick-link"></a>Overhead for Consistency Checks
-
+## Overhead for Consistency Checks {#topic_0BDACA590B2C4974AC9C450397FE70B2}
 Consistency checking requires additional overhead for storing and distributing version and timestamp information, as well as for maintaining destroyed entries for a period of time to meet consistency requirements.
 
 To provide consistency checking, each region entry uses an additional 16 bytes. When an entry is deleted, a tombstone entry of approximately 13 bytes is created and maintained until the tombstone expires or is garbage-collected in the member. (When an entry is destroyed, the member temporarily retains the entry with its current version stamp to detect possible conflicts with operations that have occurred. The retained entry is referred to as a tombstone.) See [How Destroy and Clear Operations Are Resolved](#topic_321B05044B6641FCAEFABBF5066BD399).
 
-If you cannot support the additional overhead in your deployment, you can disable consistency checks by setting `concurrency-checks-enabled` to "false" for each region. See [Consistency for Region Updates](region_entry_versions.html#topic_CF2798D3E12647F182C2CEC4A46E2045).
+If you cannot support the additional overhead in your deployment, you can disable consistency checks by setting `concurrency-checks-enabled` to "false" for each region. See [Consistency for Region Updates](region_entry_versions#topic_CF2798D3E12647F182C2CEC4A46E2045).
 
-## <a id="topic_C5B74CCDD909403C815639339AA03758" class="no-quick-link"></a>How Consistency Checking Works for Replicated Regions
-
+## How Consistency Checking Works for Replicated Regions {#topic_C5B74CCDD909403C815639339AA03758}
 Each region stores version and timestamp information for use in conflict detection. @@product_name@@ members use the recorded information to detect and resolve conflicts consistently before applying a distributed update.
-
-<a id="topic_C5B74CCDD909403C815639339AA03758__section_763B071061C94D1E82E8883325294547"></a>
+## {#topic_C5B74CCDD909403C815639339AA03758__section_763B071061C94D1E82E8883325294547}
 By default, each entry in a region stores the ID of the @@product_name@@ member that last updated the entry, as well as a version stamp for the entry that is incremented each time an update occurs. The version information is stored in each local entry, and the version stamp is distributed to other @@product_name@@ members when the local entry is updated.
 
 A @@product_name@@ member or client that receives an update message first compares the update version stamp with the version stamp recorded in its local cache. If the update version stamp is larger, it represents a newer version of the entry, so the receiving member applies the update locally and updates the version information. A smaller update version stamp indicates an out-of-order update, which is discarded.
@@ -77,7 +68,7 @@ A @@product_name@@ member or client that receives an update message first compar
 An identical version stamp indicates that multiple @@product_name@@ members updated the same entry at the same time. To resolve a concurrent update, a @@product_name@@ member always applies (or keeps) the region entry that has the highest membership ID; the region entry having the lower membership ID is discarded.
 
 **Note:**
-When a @@product_name@@ member discards an update message (either for an out-of-order update or when resolving a concurrent update), it does not pass the discarded event to an event listener for the region. You can track the number of discarded updates for each member using the `conflatedEvents` statistic. See [@@product_name@@ Statistics List](../../reference/statistics_list.html#statistics_list). Some members may discard an update while other members apply the update, depending on the order in which each member receives the update. For this reason, the `conflatedEvents` statistic differs for each @@product_name@@ member. The example below describes this behavior in more detail.
+When a @@product_name@@ member discards an update message (either for an out-of-order update or when resolving a concurrent update), it does not pass the discarded event to an event listener for the region. You can track the number of discarded updates for each member using the `conflatedEvents` statistic. See [@@product_name@@ Statistics List](../../reference/statistics_list#statistics_list). Some members may discard an update while other members apply the update, depending on the order in which each member receives the update. For this reason, the `conflatedEvents` statistic differs for each @@product_name@@ member. The example below describes this behavior in more detail.
 
 The following example shows how a concurrent update is handled in a cluster of three @@product_name@@ members. Assume that Members A, B, and C have membership IDs of 1, 2, and 3, respectively. Each member currently stores an entry, X, in their caches at version C2 (the entry was last updated by member C):
 
@@ -101,8 +92,7 @@ At this point, all members that host the region have achieved a consistent state
 
 <img src="/images_svg/region_entry_versions_3.svg" id="topic_C5B74CCDD909403C815639339AA03758__image_gsv_k5b_pr" class="image" />
 
-## <a id="topic_321B05044B6641FCAEFABBF5066BD399" class="no-quick-link"></a>How Destroy and Clear Operations Are Resolved
-
+## How Destroy and Clear Operations Are Resolved {#topic_321B05044B6641FCAEFABBF5066BD399}
 When consistency checking is enabled for a region, a @@product_name@@ member does not immediately remove an entry from the region when an application destroys the entry. Instead, the member retains the entry with its current version stamp for a period of time in order to detect possible conflicts with operations that have occurred. The retained entry is referred to as a *tombstone*. @@product_name@@ retains tombstones for partitioned regions and non-replicated regions as well as for replicated regions, in order to provide consistency.
 
 A tombstone in a client cache or a non-replicated region expires after 8 minutes, at which point the tombstone is immediately removed from the cache.
@@ -112,14 +102,12 @@ A tombstone for a replicated or partitioned region expires after 10 minutes. Exp
 **Note:**
 To avoid out-of-memory errors, a @@product_name@@ member also initiates garbage collection for tombstones when the amount of free memory drops below 30 percent of total memory.
 
-You can monitor the total number of tombstones in a cache using the `tombstoneCount` statistic in `CachePerfStats`. The `tombstoneGCCount` statistic records the total number of tombstone garbage collection cycles that a member has performed. `replicatedTombstonesSize` and `nonReplicatedTombstonesSize` show the approximate number of bytes that are currently consumed by tombstones in replicated or partitioned regions, and in non-replicated regions, respectively. See [@@product_name@@ Statistics List](../../reference/statistics_list.html#statistics_list).
+You can monitor the total number of tombstones in a cache using the `tombstoneCount` statistic in `CachePerfStats`. The `tombstoneGCCount` statistic records the total number of tombstone garbage collection cycles that a member has performed. `replicatedTombstonesSize` and `nonReplicatedTombstonesSize` show the approximate number of bytes that are currently consumed by tombstones in replicated or partitioned regions, and in non-replicated regions, respectively. See [@@product_name@@ Statistics List](../../reference/statistics_list#statistics_list).
 
-## <a id="topic_321B05044B6641FCAEFABBF5066BD399__section_4D0140E96A3141EB8D983D0A43464097" class="no-quick-link"></a>About Region.clear() Operations
-
+## About Region.clear() Operations {#topic_321B05044B6641FCAEFABBF5066BD399__section_4D0140E96A3141EB8D983D0A43464097}
 Region entry version stamps and tombstones ensure consistency only when individual entries are destroyed. A `Region.clear()` operation, however, operates on all entries in a region at once. To provide consistency for `Region.clear()` operations, @@product_name@@ obtains a distributed read/write lock for the region, which blocks all concurrent updates to the region. Any updates that were initiated before the clear operation are allowed to complete before the region is cleared.
 
-## <a id="topic_32ACFA5542C74F3583ECD30467F352B0" class="no-quick-link"></a>Transactions with Consistent Regions
-
+## Transactions with Consistent Regions {#topic_32ACFA5542C74F3583ECD30467F352B0}
 A transaction that modifies a region having consistency checking enabled generates all necessary version information for region updates when the transaction commits.
 
 If a transaction modifies a normal, preloaded or empty region, the transaction is first delegated to a @@product_name@@ member that holds a replicate for the region. This behavior is similar to the transactional behavior for partitioned regions, where the partitioned region transaction is forwarded to a member that hosts the primary for the partitioned region update.

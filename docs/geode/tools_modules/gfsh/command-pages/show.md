@@ -18,9 +18,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_7171CA38456645D5B08C16FD73AD0B2A"></a>
-
-
+## {#topic_7171CA38456645D5B08C16FD73AD0B2A}
 Display deadlocks, logs, metrics and missing disk-stores.
 
 -   **[show dead-locks](#topic_1125347FAD6541DF995C9999650165B1)**
@@ -43,8 +41,7 @@ Display deadlocks, logs, metrics and missing disk-stores.
 
     Shows the number of events in the subscription queue.
 
-## <a id="topic_1125347FAD6541DF995C9999650165B1" class="no-quick-link"></a>show dead-locks
-
+## show dead-locks {#topic_1125347FAD6541DF995C9999650165B1}
 Display any deadlocks in the cluster.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -54,9 +51,7 @@ Display any deadlocks in the cluster.
 ``` pre
 show dead-locks --file=value
 ```
-
-<a id="topic_1125347FAD6541DF995C9999650165B1__table_hhr_njf_2w"></a>
-
+## {#topic_1125347FAD6541DF995C9999650165B1__table_hhr_njf_2w}
 | Name                                         | Description                                                                         |
 |----------------------------------------------|-------------------------------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;file</span> | *Required.* Name of the file to which dependencies between members will be written. |
@@ -78,8 +73,7 @@ No dead lock detected.
 Please view the dependencies between the members in file : deadlocks.txt
 ```
 
-## <a id="topic_45AAEDAC3AFF46EC9BB68B24FC9A32B3" class="no-quick-link"></a>show log
-
+## show log {#topic_45AAEDAC3AFF46EC9BB68B24FC9A32B3}
 Display the log for a member.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -89,9 +83,7 @@ Display the log for a member.
 ``` pre
 show log --member=value [--lines=value]
 ```
-
-<a id="topic_45AAEDAC3AFF46EC9BB68B24FC9A32B3__table_mwp_qjf_2w"></a>
-
+## {#topic_45AAEDAC3AFF46EC9BB68B24FC9A32B3__table_mwp_qjf_2w}
 | Name                                                       | Description                                | Default Value                                 |
 |------------------------------------------------------------|--------------------------------------------|---------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;member</span> |          *Required.* Name/ID of the member whose log file will be displayed. |  |
@@ -119,8 +111,7 @@ ame=region1/subregion1 --type=LOCAL".
 r=server1 --lines=5".
 ```
 
-## <a id="topic_6EB786C63AEB46179EEE8FA18624295A" class="no-quick-link"></a>show metrics
-
+## show metrics {#topic_6EB786C63AEB46179EEE8FA18624295A}
 Display or export metrics for the entire cluster, a member, or a region.
 
 When no command line arguments are given,
@@ -135,9 +126,7 @@ are displayed.
 show metrics [--member=value] [--region=value] [--file=value]
 [--port=value] [--categories=value(,value)*]
 ```
-
-<a id="topic_6EB786C63AEB46179EEE8FA18624295A__table_l4n_tjf_2w"></a>
-
+## {#topic_6EB786C63AEB46179EEE8FA18624295A__table_l4n_tjf_2w}
 **Table 3. Show Metrics Parameters**
 
 | Name | Description |
@@ -191,8 +180,7 @@ query     | queryRequestRate      | 0
 
 ```
 
-## <a id="topic_7B3D624D5B4F41D1A0F8A9C3C8B2E780" class="no-quick-link"></a>show missing-disk-stores
-
+## show missing-disk-stores {#topic_7B3D624D5B4F41D1A0F8A9C3C8B2E780}
 Display a summary of the disk stores that are currently missing from the cluster.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -219,8 +207,7 @@ gfsh> show missing-disk-stores
 60399215-532b-406f-b81f-9b5bd8d1b55a | excalibur | /usr/local/gemfire/deploy/disk_store1
 ```
 
-## <a id="topic_395C96B500AD430CBF3D3C8886A4CD2E" class="no-quick-link"></a>show subscription-queue-size
-
+## show subscription-queue-size {#topic_395C96B500AD430CBF3D3C8886A4CD2E}
 Shows the number of events in the subscription queue.
 
 If a CQ name is provided, it counts the number of events in the subscription queue for the specified CQ.
@@ -233,9 +220,7 @@ If a CQ name is provided, it counts the number of events in the subscription que
 show subscription-queue-size --durable-client-Id=value
  [--members=value(,value)*] [--groups=value(,value)*]
 ```
-
-<a id="topic_395C96B500AD430CBF3D3C8886A4CD2E__table_rcq_zjf_2w"></a>
-
+## {#topic_395C96B500AD430CBF3D3C8886A4CD2E__table_rcq_zjf_2w}
 | Name                                                       | Description                                                                  |
 |------------------------------------------------------------|------------------------------------------------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;durable-client-id </span> | *Required.* The ID used to identify the durable client.                      |

@@ -24,18 +24,15 @@ limitations under the License.
 The `gfsh.bat` and `gfsh` bash script automatically append the required @@product_name_long@@ and JDK .jar libraries to your existing CLASSPATH. There are user-configurable properties you can set for security, environment variables, logging, and troubleshooting.
 
 
-## <a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_0D2EEA7A9ED54DFDB2E1EE955E47921E" class="no-quick-link"></a>JAR Libraries in CLASSPATH
-
+## JAR Libraries in CLASSPATH {#concept_3B9C6CE2F64841E98C33D9F6441DF487__section_0D2EEA7A9ED54DFDB2E1EE955E47921E}
 When you start up `gfsh`, it will automatically load required JAR files that have been packaged in the `gfsh-dependencies.jar` file. You do not need to modify your CLASSPATH to run `gfsh`.
 
 The JAR files are packaged within your installation directory in the `lib` directory.
 
-## <a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_02EEF9A519094EAD9D6B5C8E896EBA27" class="no-quick-link"></a>Machine Hostname
-
+## Machine Hostname {#concept_3B9C6CE2F64841E98C33D9F6441DF487__section_02EEF9A519094EAD9D6B5C8E896EBA27}
 On some operating systems, you may need to ensure that the hostname of your machine is configured in your system hosts file. For example, on macOS you may need to map your machine's hostname to your IP address in the `/etc/hosts` file in order for `gfsh` and Pulse to operate correctly.
 
-## <a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_3FA4CD2B451B4A30A12D30DDE8DF8619" class="no-quick-link"></a>Configuring gfsh Security
-
+## Configuring gfsh Security {#concept_3B9C6CE2F64841E98C33D9F6441DF487__section_3FA4CD2B451B4A30A12D30DDE8DF8619}
 Since `gfsh` must connect to a JMX Manager member to run certain commands (namely those commands that manage and monitor other members), JMX Manager configuration properties can affect `gfsh` security. In `gemfire.properties`, the following @@product_name@@ properties can affect `gfsh` connection settings to the JMX Manager:
 
 -   `jmx-manager-ssl`
@@ -43,10 +40,9 @@ Since `gfsh` must connect to a JMX Manager member to run certain commands (namel
 -   `jmx-manager-password-file`
 -   `jmx-manager-access-file`
 
-You may also need to verify that the ports are available and open to client connections. See [Configuring a JMX Manager](../../managing/management/jmx_manager_operations.html#topic_263072624B8D4CDBAD18B82E07AA44B6) for details on these security properties.
+You may also need to verify that the ports are available and open to client connections. See [Configuring a JMX Manager](../../managing/management/jmx_manager_operations#topic_263072624B8D4CDBAD18B82E07AA44B6) for details on these security properties.
 
-## <a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_C69A2711A7664A9091A5E634221053CB" class="no-quick-link"></a>Configuring gfsh Environment Variables
-
+## Configuring gfsh Environment Variables {#concept_3B9C6CE2F64841E98C33D9F6441DF487__section_C69A2711A7664A9091A5E634221053CB}
 In addition, you can set gfsh-specific preset SHELL variables by using the `set variable` command. For example, you can set `gfsh` to run in quiet mode.
 Not all `gfsh` variables are modifiable.
 User-configurable variables include:
@@ -54,10 +50,9 @@ User-configurable variables include:
 -   APP\_FETCH\_SIZE
 -   APP\_QUIET\_EXECUTION
 
-See [Useful gfsh Shell Variables](useful_gfsh_shell_variables.html#concept_731ECA5E40E943CBA5C1198A0745D8EE) for more information.
+See [Useful gfsh Shell Variables](useful_gfsh_shell_variables#concept_731ECA5E40E943CBA5C1198A0745D8EE) for more information.
 
-## <a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_BE7FB8B355E748FA8BEFE75B2C3CB86E" class="no-quick-link"></a>Configuring gfsh Session Logging
-
+## Configuring gfsh Session Logging {#concept_3B9C6CE2F64841E98C33D9F6441DF487__section_BE7FB8B355E748FA8BEFE75B2C3CB86E}
 By default, `gfsh` session logging is disabled. To enable gfsh logging, you must set the Java system property `-Dgfsh.log-level=desired_log_level` where *desired\_log \_level* is one of the following values: severe, warning, info, config, fine, finer, finest. For example, in Linux:
 
 ``` pre
@@ -105,8 +100,7 @@ gfsh> start locator --name=locator1 --redirect-output
 ```
 
 
-## <a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_jcs_ltx_n4" class="no-quick-link"></a>Tab Completion
-
+## Tab Completion {#concept_3B9C6CE2F64841E98C33D9F6441DF487__section_jcs_ltx_n4}
 *This section applies only to UNIX installations.*
 
 When you run gfsh commands from a UNIX bash shell, you can enable automatic tab-completion in the shell by running the following command:
@@ -117,14 +111,12 @@ source <gemfire-install-directory>/bin/gfsh-completion.bash
 
 After running this command, you can use auto completion when running gfsh commands from the bash shell.
 
-See [Using Tab Completion](getting_started_gfsh.html#concept_45D28CC9710C4EAFB6EECFA0D651D439__p_sb2_ttx_n4).
+See [Using Tab Completion](getting_started_gfsh#concept_45D28CC9710C4EAFB6EECFA0D651D439__p_sb2_ttx_n4).
 
-## <a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_72323A45E0064FD2982663F7AC2A2E07" class="no-quick-link"></a>Command History and gfsh.history
-
+## Command History and gfsh.history {#concept_3B9C6CE2F64841E98C33D9F6441DF487__section_72323A45E0064FD2982663F7AC2A2E07}
 A history of commands that have been executed successfully is logged in `.gfsh.history` file in a `.gemfire` directory under the home directory of the user running gfsh. You can also export a history file by using the `history --file=your_file_name` command.
 
-## <a id="concept_3B9C6CE2F64841E98C33D9F6441DF487__section_C84414FF16AB4279A43A41C6C8B61A7E" class="no-quick-link"></a>JMX Manager Update Rate and System Monitoring
-
+## JMX Manager Update Rate and System Monitoring {#concept_3B9C6CE2F64841E98C33D9F6441DF487__section_C84414FF16AB4279A43A41C6C8B61A7E}
 When you perform data operations (such as put) and then monitor the state of the system (such as using the gfsh `show metrics` command or @@product_name@@ Pulse), the monitored system may not immediately reflect the most recent operations. For example, if you perform a put operation and then immediately execute the `show metrics` gfsh command, you may not see the correct number of entries in the region. The management layer updates every 2 seconds. Wait a few seconds after performing operational activity to see the most accurate results.
 
 You can modify the `jmx-manager-update-rate` property in `gemfire.properties` to increase or decrease the rate (specified in milliseconds) at which updates are pushed to the JMX Manager. This property setting should be greater than or equal to the `statistic-sample-rate`. You may want to increase this rate if you are experiencing performance issues; however, setting this value too high will cause stale values to be seen in `gfsh` and @@product_name@@ Pulse.

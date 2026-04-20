@@ -24,8 +24,7 @@ To set up the HTTP Module for tc Server, start a tc Server instance with the app
 **Note:**
 In the procedures that follow, you may be required to log in as root or use sudo to run the commands in Unix, especially if you installed Pivotal tc Server from RPM using yum.
 
-## <a id="tc_setting_up_the_module__section_564B0D4008E343D7AF2791A1271B1F8E" class="no-quick-link"></a>Setup and Start
-
+## Setup and Start {#tc_setting_up_the_module__section_564B0D4008E343D7AF2791A1271B1F8E}
 Edit the configuration in the appropriate file for the topology to set the locator host and port. For peer-to-peer topology, edit `geode-p2p/conf/catalina.properties` to set the `geode-p2p.locators` property. For client/server topology, edit `geode-cs/conf/cache-client.xml`.
 
 Create a tc Server instance using one of these commands, choosing the appropriate template for the topology. Add the `--version` option if you need to pin your tc Server instance to a specific version of the tc Runtime:
@@ -86,8 +85,7 @@ $ gfsh start server --name=server1 --locators=localhost[10334] \
         --server-port=0 --classpath=$CLASSPATH
 ```
 
-## <a id="tc_setting_up_the_module__section_B6AA6C00DBBD44E68649BDB793578694" class="no-quick-link"></a>Starting the Application Server
-
+## Starting the Application Server {#tc_setting_up_the_module__section_B6AA6C00DBBD44E68649BDB793578694}
 Once you've created a tc Server instance, you are ready to start the instance.
 
 ``` pre

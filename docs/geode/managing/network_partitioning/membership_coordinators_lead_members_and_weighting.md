@@ -23,8 +23,7 @@ limitations under the License.
 
 Network partition detection uses a designated membership coordinator and a weighting system that accounts for a lead member to determine whether a network partition has occurred.
 
-## <a id="concept_23C2606D59754106AFBFE17515DF4330__section_7C67F1D30C1645CC8489E481873691D9" class="no-quick-link"></a>Membership Coordinators and Lead Members
-
+## Membership Coordinators and Lead Members {#concept_23C2606D59754106AFBFE17515DF4330__section_7C67F1D30C1645CC8489E481873691D9}
 The membership coordinator is a member that manages entry and exit of other members of the cluster. With network partition detection enabled, the coordinator can be any @@product_name@@ member but locators are preferred. In a locator-based system, if all locators are in the reconnecting state, the system continues to function, but new members are not able to join until a locator has successfully reconnected. After a locator has reconnected, the reconnected locator will take over the role of coordinator.
 
 When a coordinator is shutting down, it sends out a view that removes itself from the list and the other members must determine who the new coordinator is.
@@ -33,8 +32,7 @@ The lead member is determined by the coordinator. Any member that has enabled ne
 
 The purpose of the lead member role is to provide extra weight. It does not perform any specific functionality.
 
-## <a id="concept_23C2606D59754106AFBFE17515DF4330__section_D819DE21928F4D658C132981307447E3" class="no-quick-link"></a>Member Weighting System
-
+## Member Weighting System {#concept_23C2606D59754106AFBFE17515DF4330__section_D819DE21928F4D658C132981307447E3}
 By default, individual members are assigned the following weights:
 
 -   Each member has a weight of 10 except the lead member.
@@ -47,8 +45,7 @@ The weights of members prior to the view change are added together and compared 
 
 The loss percentage threshold is 51 (meaning 51%). Note that the percentage calculation uses standard rounding. Therefore, a value of 50.51 is rounded to 51. If the rounded loss percentage is equal to or greater than 51%, the membership coordinator initiates shut down.
 
-## <a id="concept_23C2606D59754106AFBFE17515DF4330__section_53C963D1B2DF417C973A60981E52CDCF" class="no-quick-link"></a>Sample Member Weight Calculations
-
+## Sample Member Weight Calculations {#concept_23C2606D59754106AFBFE17515DF4330__section_53C963D1B2DF417C973A60981E52CDCF}
 This section provides some example calculations.
 
 **Example 1:** Cluster with 12 members. 2 locators, 10 cache servers (one cache server is designated as lead member.) View total weight equals 111.

@@ -22,16 +22,16 @@ limitations under the License.
 Authentication verifies the identities of components within the
 cluster such as peers, clients, and those connecting to a JMX manager.
 
--   **[Implementing Authentication](implementing_authentication.html)**
+-   **[Implementing Authentication](implementing_authentication)**
 
     All components of the cluster authenticate the same way,
     through a custom-written method.
 
--   **[Authentication Example](authentication_examples.html)**
+-   **[Authentication Example](authentication_examples)**
 
     The example demonstrates the basics of an implementation of the
 `SecurityManager.authenticate` method.
 
--   **[Implementing Authentication Expiry](implementing_authentication_expiry.html)**
+-   **[Implementing Authentication Expiry](implementing_authentication_expiry)**
 
     Client credentials can be given a limited life time to enhance the security of the cluster.

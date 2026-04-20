@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 In global regions, the system locks entries and the region during updates. You can also explicitly lock the region and its entries as needed by your application. Locking includes system settings that help you optimize performance and locking behavior between your members.
-
-<a id="locking_in_global_regions__section_065B3A57CCCA4F17821D170A312B6675"></a>
+## {#locking_in_global_regions__section_065B3A57CCCA4F17821D170A312B6675}
 In regions with global scope, locking helps ensure cache consistency.
 
 Locking of regions and entries is done in two ways:
@@ -34,8 +33,7 @@ Locking of regions and entries is done in two ways:
     **Note:**
     You must use the `Region` API to lock regions and region entries. Do not use the `DistributedLockService` in the `org.apache.geode.distributed` package. That service is available only for locking in arbitrary distributed applications. It is not compatible with the `Region` locking methods.
 
-## <a id="locking_in_global_regions__section_5B47F9C5C27A4B789A3498AC553BB1FB" class="no-quick-link"></a>Lock Timeouts
-
+## Lock Timeouts {#locking_in_global_regions__section_5B47F9C5C27A4B789A3498AC553BB1FB}
 Getting a lock on a region or entry is a two-step process of getting a lock instance for the entity and then using the instance to set the lock. Once you have the lock, you hold it for your operations, then release it for someone else to use. You can set limits on the time spent waiting to get a lock and the time spent holding it. Both implicit and explicit locking operations are affected by the timeouts:
 
 -   The lock timeout limits the wait to get a lock. The cache attribute `lock-timeout` governs implicit lock requests. For explicit locking, specify the wait time through your calls to the instance of `java.util.concurrent.locks.Lock` returned from the `Region` API. You can wait a specific amount of time, return immediately either with or without the lock, or wait indefinitely.
@@ -63,8 +61,7 @@ Getting a lock on a region or entry is a two-step process of getting a lock inst
     gfsh>alter runtime --lock-lease=120
     ```
 
-## <a id="locking_in_global_regions__section_031727F04D114B42944872360A386907" class="no-quick-link"></a>Optimize Locking Performance
-
+## Optimize Locking Performance {#locking_in_global_regions__section_031727F04D114B42944872360A386907}
 For each global region, one of the members with the region defined will be assigned the job of lock grantor. The lock grantor runs the lock service that receives lock requests from system members, queues them as needed, and grants them in the order received.
 
 The lock grantor is at a slight advantage over other members as it is the only one that does not have to send a message to request a lock. The grantor’s requests cost the least for the same reason. Thus, you can optimize locking in a region by assigning lock grantor status to the member that acquires the most locks. This may be the member that performs the most puts and thus requires the most implicit locks or this may be the member that performs many explicit locks.
@@ -82,8 +79,7 @@ You can request lock grantor status:
 
 2.  After region creation through the region `becomeLockGrantor` method. Changing lock grantors should be done with care, however, as doing so takes cycles from other operations. In particular, be careful to avoid creating a situation where you have members vying for lock grantor status.
 
-## <a id="locking_in_global_regions__section_34661E38DFF9420B89C1A2B25F232D53" class="no-quick-link"></a>Examples
-
+## Examples {#locking_in_global_regions__section_34661E38DFF9420B89C1A2B25F232D53}
 These two examples show entry locking and unlocking. Note how the entry’s `Lock` object is obtained and then its lock method invoked to actually set the lock. The example program stores the entry lock information in a hash table for future reference.
 
 ``` pre

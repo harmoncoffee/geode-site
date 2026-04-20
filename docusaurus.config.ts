@@ -42,8 +42,13 @@ const config: Config = {
   baseUrl: '/',
 
   //   TODO @harmoncoffee fix after all broken doc links are fixed.
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+    onBrokenLinks: 'warn',
+
+    markdown: {
+        hooks: {
+            onBrokenMarkdownLinks: 'warn',
+        },
+    },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -59,7 +64,7 @@ const config: Config = {
       {
           docs: {
               path: 'docs/geode',
-              routeBasePath: 'docs',
+              routeBasePath: 'docs/geode',
               sidebarPath: require.resolve('./sidebars.geode.ts'),
               versions: {
                   current: {

@@ -19,23 +19,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 --> Geode provides versatile and reliable event distribution and handling for your cached data and system member events.
 
--   **[How Events Work](how_events_work.html)**
+-   **[How Events Work](how_events_work)**
 
     Members in your cluster receive cache updates from other members through cache events. The other members can be peers to the member, clients or servers or other clusters.
 
--   **[Implementing Geode Event Handlers](event_handler_overview.html)**
+-   **[Implementing Geode Event Handlers](event_handler_overview)**
 
     You can specify event handlers for region and region entry operations and for administrative events.
 
--   **[Configuring Peer-to-Peer Event Messaging](configure_p2p_event_messaging.html)**
+-   **[Configuring Peer-to-Peer Event Messaging](configure_p2p_event_messaging)**
 
     You can receive events from cluster peers for any region that is not a local region. Local regions receive only local cache events.
 
--   **[Configuring Client/Server Event Messaging](configure_client_server_event_messaging.html)**
+-   **[Configuring Client/Server Event Messaging](configure_client_server_event_messaging)**
 
     You can receive events from your servers for server-side cache events and query result changes.
 
--   **[Configuring Multi-Site (WAN) Event Queues](configure_multisite_event_messaging.html)**
+-   **[Configuring Multi-Site (WAN) Event Queues](configure_multisite_event_messaging)**
 
     In a multi-site (WAN) installation, Geode uses gateway sender queues to distribute events for regions that are configured with a gateway sender. AsyncEventListeners also use an asynchronous event queue to distribute events for configured regions. This section describes additional options for configuring the event queues that are used by gateway senders or AsyncEventListener implementations.
 

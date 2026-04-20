@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 Configure whether and how redundancy is recovered in a partition region after a member crashes.
-
-<a id="set_crash_redundancy_recovery__section_86CF741758E54DA29519E9CDDF1BC393"></a>
+## {#set_crash_redundancy_recovery__section_86CF741758E54DA29519E9CDDF1BC393}
 Use the partition attribute `recovery-delay` to specify member crash redundancy recovery.
 
 | recovery-delay partition attribute | Effect following a member failure                                                    |

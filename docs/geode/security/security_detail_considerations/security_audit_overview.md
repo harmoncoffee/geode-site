@@ -18,21 +18,19 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="topic_36C918B4202D45F3AC225FFD23B11D7C"></a>
-
-
+## {#topic_36C918B4202D45F3AC225FFD23B11D7C}
 This section gathers discrete details in one convenient location to better help you assess and configure the security of your environment.
 
--   **[External Interfaces, Ports, and Services](security-audit.html)**
+-   **[External Interfaces, Ports, and Services](security-audit)**
 
     @@product_name@@ processes use either UDP or TCP/IP ports to communicate with other processes or clients.
 
--   **[Resources That Must Be Protected](security-audit.html#topic_263072624B8D4CDBAD18B82E07AA44B6)**
+-   **[Resources That Must Be Protected](security-audit#topic_263072624B8D4CDBAD18B82E07AA44B6)**
 
     Certain @@product_name@@ configuration files should be readable and writeable *only* by the dedicated user who runs servers.
 
--   **[Log File Locations](security-audit.html#topic_5B6DF783A14241399DC25C6EE8D0048A)**
+-   **[Log File Locations](security-audit#topic_5B6DF783A14241399DC25C6EE8D0048A)**
 
     By default, the log files are located in the working directory used when you started the corresponding processes.
 
--   **[Where to Place Security Configuration Settings](properties_file.html)**
+-   **[Where to Place Security Configuration Settings](properties_file)**

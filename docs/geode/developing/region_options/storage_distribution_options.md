@@ -23,8 +23,7 @@ limitations under the License.
 
 @@product_name@@ provides several models for data storage and distribution, including partitioned or replicated regions as well as distributed or non-distributed regions (local cache storage).
 
-## <a id="concept_B18B7754E7C7485BA6D66F2DDB7A11FB__section_787D674A64244871AE49CBB58475088E" class="no-quick-link"></a>Peer-to-Peer Region Storage and Distribution
-
+## Peer-to-Peer Region Storage and Distribution {#concept_B18B7754E7C7485BA6D66F2DDB7A11FB__section_787D674A64244871AE49CBB58475088E}
 At its most general, data management means having current data available when and where your applications need it. In a properly configured @@product_name@@ installation, you store your data in your local members and @@product_name@@ automatically distributes it to the other members that need it according to your cache configuration settings. You may be storing very large data objects that require special consideration, or you may have a high volume of data requiring careful configuration to safeguard your application's performance or memory use. You may need to be able to explicitly lock some data during particular operations. Most data management features are available as configuration options, which you can specify either using the `gfsh` cluster configuration service, `cache.xml` file or the API. Once configured, @@product_name@@ manages the data automatically. For example, this is how you manage data distribution, disk storage, data expiration activities, and data partitioning. A few features are managed at run-time through the API.
 
 At the architectural level, data distribution runs between peers in a single cluster and between clients and servers.
@@ -37,6 +36,5 @@ Data storage in any type of installation is based on the peer-to-peer configurat
 
 Storage and distribution models are configured through cache and region attributes. The main choices are partitioned, replicated, or just distributed. All server regions must be partitioned or replicated. Each region’s `data-policy` and `subscription-attributes`, and its `scope` if it is not a partitioned region, interact for finer control of data distribution.
 
-## <a id="concept_B18B7754E7C7485BA6D66F2DDB7A11FB__section_A364D16DFADA49D1A838A7EAF8E4251C" class="no-quick-link"></a>Storing Data in the Local Cache
-
+## Storing Data in the Local Cache {#concept_B18B7754E7C7485BA6D66F2DDB7A11FB__section_A364D16DFADA49D1A838A7EAF8E4251C}
 To store data in your local cache, use a region `refid` with a `RegionShortcut` or `ClientRegionShortcut` that has local state. These automatically set the region `data-policy` to a non-empty policy. Regions without storage can send and receive event distributions without storing anything in your application heap. With the other settings, all entry operations received are stored locally.

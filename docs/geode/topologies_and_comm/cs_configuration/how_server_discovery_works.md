@@ -22,12 +22,10 @@ limitations under the License.
 -->
 
 @@product_name_long@@ locators provide reliable and flexible server discovery services for your clients. You can use all servers for all client requests, or group servers according to function, with the locators directing each client request to the right group of servers.
-
-<a id="how_server_discovery_works__section_91AC081D4C48408B9ABA40430F161E73"></a>
+## {#how_server_discovery_works__section_91AC081D4C48408B9ABA40430F161E73}
 By default, @@product_name@@ clients and servers discover each other on a predefined port (40404) on the localhost. This works, but is not typically the way you would deploy a client/server configuration. The recommended solution is to use one or more dedicated locators. A locator provides both discovery and load balancing services. With server locators, clients are configured with a locator list and locators maintain a dynamic server list. The locator listens at an address and port for connecting clients and gives the clients server information. The clients are configured with locator information and have no configuration specific to the servers.
 
-## <a id="how_server_discovery_works__section_95B62F09EF954A99ABBDEBC2756812E3" class="no-quick-link"></a>Basic Configuration
-
+## Basic Configuration {#how_server_discovery_works__section_95B62F09EF954A99ABBDEBC2756812E3}
 In this figure, only one locator is shown, but the recommended configuration uses multiple locators for high availability.
 
 <img src="/images_svg/server_discovery.svg" alt="Locators track server availability and send clients to the most available servers. Clients send updates and requests to servers. Servers respond and send server events to clients. " id="how_server_discovery_works__image_6DD8320AF78C42F89CFC665F2AF1BEA3" class="image" />
@@ -54,8 +52,7 @@ The client’s `cache.xml` `pool` configuration and `region-attributes`:
 <region-attributes pool-name="PoolA" ...    
 ```
 
-## <a id="how_server_discovery_works__section_7C4C60F40936432899CE86619B8D6CBF" class="no-quick-link"></a>Using Member Groups
-
+## Using Member Groups {#how_server_discovery_works__section_7C4C60F40936432899CE86619B8D6CBF}
 You can control which servers are used with named member groups. Do this if you want your servers to manage different data sets or to direct specific client traffic to a subset of servers, such as those directly connected to a back-end database.
 
 To split data management between servers, configure some servers to host one set of data regions and some to host another set. Assign the servers to two separate member groups. Then, define two separate server pools on the client side and assign the pools to the proper corresponding client regions.

@@ -22,11 +22,10 @@ limitations under the License.
 -->
 
 In a cluster with minimal contention to the concurrent threads reading or updating from the members, you can use rebalancing to dynamically increase or decrease your data and processing capacity.
-
-<a id="rebalancing_pr_data__section_D3649ADD28DB4FF78C47A3E428C80510"></a>
+## {#rebalancing_pr_data__section_D3649ADD28DB4FF78C47A3E428C80510}
 Rebalancing is a member operation. It affects all partitioned regions defined by the member, regardless of whether the member hosts data for the regions. The rebalancing operation performs two tasks:
 
-1.  If the configured partition region redundancy is not satisfied, rebalancing does what it can to recover redundancy. See [Configure High Availability for a Partitioned Region](configuring_ha_for_pr.html).
+1.  If the configured partition region redundancy is not satisfied, rebalancing does what it can to recover redundancy. See [Configure High Availability for a Partitioned Region](configuring_ha_for_pr).
 2.  Rebalancing moves the partitioned region data buckets between host members as needed to establish the most fair balance of data and behavior across the cluster.
 
 For efficiency, when starting multiple members, trigger the rebalance a single time, after you have added all members.
@@ -42,7 +41,7 @@ Kick off a rebalance using one of the following:
     gfsh>rebalance
     ```
 
-    Optionally, you can specify regions to include or exclude from rebalancing, specify a time-out for the rebalance operation or just [simulate a rebalance operation](rebalancing_pr_data.html#rebalancing_pr_data__section_495FEE48ED60433BADB7D36C73279C89). Type `help rebalance` or see [rebalance](../../tools_modules/gfsh/command-pages/rebalance.html) for more information.
+    Optionally, you can specify regions to include or exclude from rebalancing, specify a time-out for the rebalance operation or just [simulate a rebalance operation](rebalancing_pr_data#rebalancing_pr_data__section_495FEE48ED60433BADB7D36C73279C89). Type `help rebalance` or see [rebalance](../../tools_modules/gfsh/command-pages/rebalance) for more information.
 
 -   API call:
 
@@ -66,8 +65,7 @@ System.out.println("Rebalance would transfer " + results.getTotalBucketTransferB
 System.out.println(" and create " + results.getTotalBucketCreatesCompleted() + " buckets.\n");
 ```
 
-## <a id="rebalancing_pr_data__section_1592413D533D454D9E5ACFCDC4685DD1" class="no-quick-link"></a>How Partitioned Region Rebalancing Works
-
+## How Partitioned Region Rebalancing Works {#rebalancing_pr_data__section_1592413D533D454D9E5ACFCDC4685DD1}
 The rebalancing operation runs asynchronously.
 
 By default, rebalancing is performed on one partitioned region at a time. For regions that have colocated data, the rebalancing works on the regions as a group, maintaining the data colocation between the regions.
@@ -85,16 +83,14 @@ Partitioned region rebalancing:
 -   Resets entry time to live and idle time statistics during bucket migration.
 -   Replaces offline members.
 
-## <a id="rebalancing_pr_data__section_BE71EE52DE1A4275BC7854CA597797F4" class="no-quick-link"></a>When to Rebalance a Partitioned Region
-
+## When to Rebalance a Partitioned Region {#rebalancing_pr_data__section_BE71EE52DE1A4275BC7854CA597797F4}
 You typically want to trigger rebalancing when capacity is increased or reduced through member startup, shut down or failure.
 
-You may also need to rebalance when you have uneven hashing of data. Uneven hashing can occur if your keys do not have a hash code method, which ensures uniform distribution, or if you use a `PartitionResolver` to colocate your partitioned region data (see [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data.html#colocating_partitioned_region_data)). In either case, some buckets may receive more data than others. Rebalancing can be used to even out the load between data stores by putting fewer buckets on members that are hosting large buckets.
+You may also need to rebalance when you have uneven hashing of data. Uneven hashing can occur if your keys do not have a hash code method, which ensures uniform distribution, or if you use a `PartitionResolver` to colocate your partitioned region data (see [Colocate Data from Different Partitioned Regions](colocating_partitioned_region_data#colocating_partitioned_region_data)). In either case, some buckets may receive more data than others. Rebalancing can be used to even out the load between data stores by putting fewer buckets on members that are hosting large buckets.
 
-Rebalancing solely for the purpose of restoring lost redundancy, when redundancy is being used for high availability and the region has been configured to not automatically recover redundancy after a loss, is not necessary. Instead, the restore redundancy operation should be triggered. See [Restoring Redundancy in Partitioned Regions](restoring_region_redundancy.html).
+Rebalancing solely for the purpose of restoring lost redundancy, when redundancy is being used for high availability and the region has been configured to not automatically recover redundancy after a loss, is not necessary. Instead, the restore redundancy operation should be triggered. See [Restoring Redundancy in Partitioned Regions](restoring_region_redundancy).
 
-## <a id="rebalancing_pr_data__section_495FEE48ED60433BADB7D36C73279C89" class="no-quick-link"></a>How to Simulate Region Rebalancing
-
+## How to Simulate Region Rebalancing {#rebalancing_pr_data__section_495FEE48ED60433BADB7D36C73279C89}
 You can simulate the rebalance operation before moving any actual data around by executing the `rebalance` command with the following option:
 
 ``` pre
@@ -107,4 +103,4 @@ If you are using `heap_lru` for data eviction, you may notice a difference betwe
 
 ## Automated Rebalancing
 
-The experimental [automated rebalance feature](automated_rebalance.html) triggers a rebalance operation based on a time schedule.
+The experimental [automated rebalance feature](automated_rebalance) triggers a rebalance operation based on a time schedule.

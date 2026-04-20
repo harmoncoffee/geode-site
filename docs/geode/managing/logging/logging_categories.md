@@ -29,8 +29,7 @@ System logging messages typically pertain to startup; logging management; connec
 -   **Distribution**. Report on the distribution of data between system members. These messages include information about region configuration, entry creation and modification, and region and entry invalidation and destruction.
 -   **Cache, region, and entry management**. Cache initialization, listener activity, locking and unlocking, region initialization, and entry updates.
 
-## <a id="how_logging_works__section_578DFE8DD92F4237A8571593EAC9C3B1" class="no-quick-link"></a>Structure of a Log Message
-
+## Structure of a Log Message {#how_logging_works__section_578DFE8DD92F4237A8571593EAC9C3B1}
 Every logged message contains:
 
 -   The message header within square brackets:
@@ -44,8 +43,7 @@ Every logged message contains:
 Cache initialized using "file:/Samples/quickstart/xml/PushConsumer.xml".
 ```
 
-## <a id="how_logging_works__section_43A099C67FF04A1EB0A07B617D653A38" class="no-quick-link"></a>Log File Name
-
+## Log File Name {#how_logging_works__section_43A099C67FF04A1EB0A07B617D653A38}
 Specify your @@product_name@@ system member's main log in the gemfire property `log-file` setting.
 
 @@product_name@@ uses this name for the most recent log file, actively in use if the member is running, or used for the last run. @@product_name@@ creates the main log file when the application starts.
@@ -72,8 +70,7 @@ For applications and the servers, your log file specification can be relative or
 
 To figure out the member's most recent activities, look at the `meta-` log file or, if no meta file exists, the main log file.
 
-## <a id="how_logging_works__section_D464FDFFC30141F385689A47CE5E8D38" class="no-quick-link"></a>How the System Renames Logs
-
+## How the System Renames Logs {#how_logging_works__section_D464FDFFC30141F385689A47CE5E8D38}
 The log file that you specify is the base name used for all logging and logging archives. If a log file with the specified name already exists at startup, the cluster automatically renames it before creating the current log file. This is a typical directory listing after a few runs with `log-file=system.log`:
 
 ``` pre
@@ -115,8 +112,7 @@ bash-2.05$ ls -ltr stat* system*
 
 The statistics and the log file are renamed using the next integer that is available to both, so the log file sequence jumps past the gap in this case.
 
-## <a id="how_logging_works__section_02D8D53AC740490D842C6525FA7DB815" class="no-quick-link"></a>Log Level
-
+## Log Level {#how_logging_works__section_02D8D53AC740490D842C6525FA7DB815}
 The higher the log level, the more important and urgent the message. If you are having problems with your system, a first-level approach is to lower the log-level (thus sending more of the detailed messages to the log file) and recreate the problem. The additional log messages often help uncover the source.
 
 These are the levels, in descending order, with sample output:
@@ -246,4 +242,4 @@ These are the levels, in descending order, with sample output:
     Do not use these settings unless asked to do so by technical support.
 
 **Note:**
-@@product_name@@ no longer supports setting system properties for VERBOSE logging. To enable VERBOSE logging, see [Advanced Users—Configuring Log4j 2 for @@product_name@@](configuring_log4j2.html)
+@@product_name@@ no longer supports setting system properties for VERBOSE logging. To enable VERBOSE logging, see [Advanced Users—Configuring Log4j 2 for @@product_name@@](configuring_log4j2)

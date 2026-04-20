@@ -20,9 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="ACID"></a>
-
+## {#ACID}
 This section introduces @@product_name@@ transactions.
 @@product_name@@ offers an API for client applications
 that do transactional work.
@@ -34,18 +32,15 @@ Optimistic transaction semantics are not
 identical to the Atomicity-Consistency-Isolation-Durability (ACID) semantics
 of a traditional relational database.
 
-### <a id="transaction_semantics__section_8362ACD06C784B5BBB0B7E986F760169" class="no-quick-link"></a>Atomicity
-
+### Atomicity {#transaction_semantics__section_8362ACD06C784B5BBB0B7E986F760169}
 Atomicity is “all or nothing” behavior: a transaction completes successfully only when all of the operations it contains complete successfully. If problems occur during a transaction, perhaps due to other transactions with overlapping changes, the transaction cannot successfully complete until the problems are resolved.
 
 Optimistic transactions provide atomicity and realize speed by using a reservation system, instead of using the traditional relational database technique of a two-phase locking of rows. The reservation prevents other, intersecting transactions from completing, allowing the commit to check for conflicts and to reserve resources in an all-or-nothing fashion prior to making changes to the data. After all changes have been made, locally and remotely, the reservation is released. With the reservation system, an intersecting transaction is simply discarded. The serialization of obtaining locks is avoided.
 
-### <a id="transaction_semantics__section_7C287DA4A5134780B3199CE074E3F890" class="no-quick-link"></a>Consistency
-
+### Consistency {#transaction_semantics__section_7C287DA4A5134780B3199CE074E3F890}
 Consistency requires that data written within a transaction must observe the key and value constraints established for the affected region. Note that validity of the transaction is the responsibility of the application.
 
-### <a id="transaction_semantics__section_126A24EC499D4CF39AE766A0B526A9A5" class="no-quick-link"></a>Isolation
-
+### Isolation {#transaction_semantics__section_126A24EC499D4CF39AE766A0B526A9A5}
 Isolation is the level at which transactional state is
 visible to system components.
 @@product_name@@ transactions have repeatable read isolation.
@@ -63,15 +58,14 @@ cannot see changes until after the commit operation begins.
 After beginning the commit, the changes are visible in the cache,
 but other threads that access the changing data might see partial results
 of the transaction, leading to a dirty read.
-See [Changing the Handling of Dirty Reads](design_considerations.html#transactions-dirty-reads) for how to change the default behavior.
+See [Changing the Handling of Dirty Reads](design_considerations#transactions-dirty-reads) for how to change the default behavior.
 
-### <a id="transaction_semantics__section_F092E368724945BCBF8E5DCB36B97EB4" class="no-quick-link"></a>Durability
-
+### Durability {#transaction_semantics__section_F092E368724945BCBF8E5DCB36B97EB4}
 Relational databases provide durability by using disk storage for
 recovery and transaction logging.
 @@product_name@@ is optimized for performance
 and does not support on-disk durability for transactions.
 
-See [Allowing Transactions to Work on Persistent Regions](design_considerations.html#transactions-persistence)
+See [Allowing Transactions to Work on Persistent Regions](design_considerations#transactions-persistence)
 for how to allow a transaction that operates on a persistent region
 in a non-durable way.

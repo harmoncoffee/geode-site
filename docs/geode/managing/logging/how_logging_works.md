@@ -31,10 +31,10 @@ limitations under the License.
 JAR files to be in the classpath.
 Both of these JARs are distributed in the `<path-to-product>/lib` directory and included in the appropriate `*-dependencies.jar` convenience libraries.
 
-**AlertAppender** is the component that generates @@product_name@@ alerts that are then managed by the JMX Management and Monitoring system. See [Notification Federation](../management/notification_federation_and_alerts.html#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A) for more details.
+**AlertAppender** is the component that generates @@product_name@@ alerts that are then managed by the JMX Management and Monitoring system. See [Notification Federation](../management/notification_federation_and_alerts#topic_212EE5A2ABAB4E8E8EF71807C9ECEF1A) for more details.
 
 **LogWriterAppender** is the component that is configured by all the `log-*` @@product_name@@ properties such as `log-file`, `log-file-size-limit` and `log-disk-space-limit`.
 
 Both of these appenders are created and controlled programmatically. You configure their behavior with the `log-*` @@product_name@@ properties and the alert level that is configured within the JMX Management & Monitoring system. These appenders do not currently support configuration within a `log4j2.xml` config file.
 
-Advanced users may wish to define their own `log4j2.xml`. See [Advanced Users—Configuring Log4j 2 for @@product_name@@](configuring_log4j2.html) for more details.
+Advanced users may wish to define their own `log4j2.xml`. See [Advanced Users—Configuring Log4j 2 for @@product_name@@](configuring_log4j2) for more details.

@@ -26,14 +26,13 @@ Each upgraded member can communicate with other members that are still running t
 client requests even as the upgrade is underway. Interdependent data members can be stopped and started without mutually blocking, a problem
 that can occur when multiple data members are stopped at the same time.
 
-## <a id="rolling-upgrade-limitations-requirements" class="no-quick-link"></a>Rolling Upgrade Limitations and Requirements
-
+## Rolling Upgrade Limitations and Requirements {#rolling-upgrade-limitations-requirements}
 **Versions**
 
 Rolling upgrade requires that the older and newer versions of @@product_name@@ are mutually compatible, which usually means that they
 share the same major version number.
 
-See [Version Compatibilities](upgrade_planning.html#version_compatibilities)
+See [Version Compatibilities](upgrade_planning#version_compatibilities)
 for more details on how different versions of @@product_name@@ can interoperate.
 
 **Components**
@@ -45,12 +44,11 @@ Under some circumstances, rolling upgrades can also be applied within individual
 
 All partitioned regions in your system must have full redundancy.
 Check the redundancy state of all your regions *before* you begin the rolling upgrade and *before* stopping any members.
-See [Checking Redundancy in Partitioned Regions](../../developing/partitioned_regions/checking_region_redundancy.html) for details.
+See [Checking Redundancy in Partitioned Regions](../../developing/partitioned_regions/checking_region_redundancy) for details.
 
-If a rolling update is not possible for your system, follow the [Off-Line Upgrade](upgrade_offline.html) procedure.
+If a rolling update is not possible for your system, follow the [Off-Line Upgrade](upgrade_offline) procedure.
 
-## <a id="rolling-upgrade-guidelines" class="no-quick-link"></a>Rolling Upgrade Guidelines
-
+## Rolling Upgrade Guidelines {#rolling-upgrade-guidelines}
 **Do not create or destroy regions**
 
 When you perform a rolling upgrade, your online cluster will have a mix of members running different versions of @@product_name@@.
@@ -62,7 +60,7 @@ If you have `startup-recovery-delay` disabled (set to -1) for your partitioned r
 region after you restart each member.
 If rebalance occurs automatically, as it will if `startup-recovery-delay` is enabled (set to a value other than -1), make sure that the rebalance completes before you stop the next server.
 If you have `startup-recovery-delay` enabled and set to a high number, you may need to wait extra time until the region has recovered redundancy, because rebalance must complete before new servers are restarted.
-The partitioned region attribute `startup-recovery-delay` is described in [Configure Member Join Redundancy Recovery for a Partitioned Region](../../developing/partitioned_regions/set_join_redundancy_recovery.html).
+The partitioned region attribute `startup-recovery-delay` is described in [Configure Member Join Redundancy Recovery for a Partitioned Region](../../developing/partitioned_regions/set_join_redundancy_recovery).
 
 **Checking component versions while upgrading**
 
@@ -90,17 +88,15 @@ Membership: received new view [frodo(locator1:20786)<v0>:32240|4]
 The way in which your cluster configuration was created determines which commands you use to save
     and restore that cluster configuration during the upgrade procedure.
 
-  - If your system was configured with `gfsh` commands, relying on the underlying **cluster configuration service**, the configuration can be saved in one central location, then applied to all newly-upgraded members. See [Exporting and Importing Cluster Configurations](../../configuring/cluster_config/export-import.html).
-  - If your system was configured with **XML properties** specified through the Java API or configuration files, you must save the configuration for each member before you bring it down, then re-import it for that member's upgraded counterpart. See [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/running/deploying_config_files.html).
+  - If your system was configured with `gfsh` commands, relying on the underlying **cluster configuration service**, the configuration can be saved in one central location, then applied to all newly-upgraded members. See [Exporting and Importing Cluster Configurations](../../configuring/export-import).
+  - If your system was configured with **XML properties** specified through the Java API or configuration files, you must save the configuration for each member before you bring it down, then re-import it for that member's upgraded counterpart. See [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/running/deploying_config_files).
 
-## <a id="rolling-upgrade-procedure" class="no-quick-link"></a>Rolling Upgrade Procedure
-
+## Rolling Upgrade Procedure {#rolling-upgrade-procedure}
 Begin by installing the new version of the software alongside the older version of the software on all hosts. You will need both versions of the software during the upgrade procedure.
 
 Upgrade locators first, then data members, then clients.
 
-### <a id="upgrade-locators" class="no-quick-link"></a>Upgrade Locators
-
+### Upgrade Locators {#upgrade-locators}
 1.  On the machine hosting the first locator you wish to upgrade, open a terminal console.
 
 2.  Start a `gfsh` prompt, using the version from your current @@product_name@@ installation, and connect to the currently running locator.
@@ -177,8 +173,7 @@ For example, use the `list members` command to view locators and data members:
 
     The server entries show that the servers are running an older version of @@product_name@@, in this case `(version:GEODE 1.2)`.
 
-### <a id="upgrade-servers" class="no-quick-link"></a>Upgrade Servers
-
+### Upgrade Servers {#upgrade-servers}
 After you have upgraded all of the system's locators, upgrade the servers.
 
 1. Upgrade each server, one at a time, by stopping it and restarting it. Restart the server with the same command-line options with which it was originally started in the previous installation. For example:
@@ -215,6 +210,5 @@ After you have upgraded all of the system's locators, upgrade the servers.
 
 3. Shut down,restart, and rebalance servers until all data members are running the new version of @@product_name@@.
 
-### <a id="upgrade-clients" class="no-quick-link"></a>Upgrade Clients
-
-Upgrade @@product_name@@ clients, following the guidelines described in [Upgrading Clients](upgrade_clients.html).
+### Upgrade Clients {#upgrade-clients}
+Upgrade @@product_name@@ clients, following the guidelines described in [Upgrading Clients](upgrade_clients).

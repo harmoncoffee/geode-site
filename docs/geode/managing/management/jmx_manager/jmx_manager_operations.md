@@ -18,10 +18,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="topic_686158E9AFBD47518BE1B4BEB232C190"></a>
-
-
+## {#topic_686158E9AFBD47518BE1B4BEB232C190}
 JMX Manager nodes are members that manage other @@product_name@@ members (as well as themselves). A JMX Manager node can manage all other members in the cluster. Typically a locator will function as the JMX Manager, but you can also turn any other member such as a server into a JMX Manager node as well.
 
 To allow a server to become a JMX Manager you configure @@product_name@@ property `jmx-manager=true`, in the server's`gemfire.properties` file. This property configures the node to become a JMX Manager node passively; if gfsh cannot locate a JMX Manager when connecting to the cluster, the server node will be started as a JMX Manager node.
@@ -44,7 +41,7 @@ By default, any locator can become a JMX Manager when started. When you start up
 
 For most deployments, you only need to have one JMX Manager per cluster. However, you can run more than one JMX Manager if necessary. If you want to provide high-availability and redundancy for the Pulse monitoring tool, or if you are running additional JMX clients other than gfsh, then use the `jmx-manager-start=true` property to force individual nodes (either locators or servers) to become JMX Managers at startup. Since there is some performance overhead to being a JMX Manager, we recommend using locators as JMX Managers. If you do not want a locator to become a JMX manager, then you must use the `jmx-manager=false` property when you start the locator.
 
-After the node becomes a JMX Manager, all other `jmx-manager-*` configuration properties listed in [Configuring a JMX Manager](jmx_manager_operations.html#topic_263072624B8D4CDBAD18B82E07AA44B6) are applied.
+After the node becomes a JMX Manager, all other `jmx-manager-*` configuration properties listed in [Configuring a JMX Manager](jmx_manager_operations#topic_263072624B8D4CDBAD18B82E07AA44B6) are applied.
 
 The following is an example of starting a new locator that also starts an embedded JMX Manager (after detecting that another JMX Manager does not exist). In addition, `gfsh` also automatically connects you to the new JMX Manager. For example:
 
@@ -82,8 +79,7 @@ Using the Java API, any managed node that has been configured with `jmx-manager=
 **Note:**
 If you start the JMX Manager programmatically and wish to enable command processing, you must also add the absolute path of `gfsh-dependencies.jar` (located in the `lib` directory of your installation) to the CLASSPATH of your application. Do not copy this library to your CLASSPATH, because this library refers to other dependencies in `lib` by a relative path.
 
-## <a id="topic_263072624B8D4CDBAD18B82E07AA44B6" class="no-quick-link"></a>Configuring a JMX Manager
-
+## Configuring a JMX Manager {#topic_263072624B8D4CDBAD18B82E07AA44B6}
 In the `gemfire.properties` file, you configure a JMX manager as follows.
 
 | Property | Description | Default |
@@ -101,8 +97,7 @@ In the `gemfire.properties` file, you configure a JMX manager as follows.
 | `jmx-manager-update-rate` | The rate, in milliseconds, at which this member pushes updates to any JMX Managers. This value should be greater than or equal to `statistic-sample-rate`. Setting it too high causes `gfsh` and Pulse to display stale values. | 2000 |
 
 
-## <a id="topic_5B6DF783A14241399DC25C6EE8D0048A" class="no-quick-link"></a>Stopping a JMX Manager
-
+## Stopping a JMX Manager {#topic_5B6DF783A14241399DC25C6EE8D0048A}
 To stop a JMX Manager using gfsh, simply shut down the locator or server hosting the JMX Manager.
 
 For a locator:

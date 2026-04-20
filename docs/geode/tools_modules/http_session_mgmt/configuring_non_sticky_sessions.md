@@ -23,16 +23,14 @@ limitations under the License.
 
 This section describes the configuration of non-sticky sessions
 
-## <a id="sticky_vs_non-sticky_overview__section_B2396FB0879248DBA85ADFDBBEFA987D" class="no-quick-link"></a>Why use non-sticky sessions?
-
+## Why use non-sticky sessions? {#sticky_vs_non-sticky_overview__section_B2396FB0879248DBA85ADFDBBEFA987D}
 Some situations require that sessions be 'non-sticky', which means that client requests are directed to any server in a cluster of application servers rather than returning to the same server with each request for a given client. Non-sticky sessions allow for more effective load balancing as a client operating in a model using sticky session replication will return to the same server each time regardless of load. To achieve a non-sticky session model, you must configure your deployment as described for the following modules/topologies.
 
 
 **Note:**
 Non-sticky sessions affect performance because sessions need to be re-created every time a request hits a different server. This may not be noticeable when the session attributes are small, but may become more evident as the session attributes increase in size and/or number.
 
-## <a id="sticky_vs_non-sticky_overview__section_B2396FB0879248DBA85ADFDBBEFA987E" class="no-quick-link"></a>Configuring Non-Sticky Session Replication for Tomcat and TC Server
-
+## Configuring Non-Sticky Session Replication for Tomcat and TC Server {#sticky_vs_non-sticky_overview__section_B2396FB0879248DBA85ADFDBBEFA987E}
 **Peer-to-Peer**
 
 For peer-to-peer topologies, apply the following settings to enable non-sticky sessions to work correctly:
@@ -47,8 +45,7 @@ For peer-to-peer topologies, apply the following settings to enable non-sticky s
 -   If the local client cache is a **PROXY** cache, then expiration must be configured to notify the client via callback, which can be done by setting `gemfire.EXPIRE_SENDS_ENTRY_AS_CALLBACK` to true. This allows the client cache to retrieve and expire the actual session object, resulting in more consistent behavior.
 
 
-## <a id="sticky_vs_non-sticky_overview__section_E0E0E5A1C9484D4AA13878273F16A920" class="no-quick-link"></a>Configuring Non-Sticky Session Replication for WebLogic
-
+## Configuring Non-Sticky Session Replication for WebLogic {#sticky_vs_non-sticky_overview__section_E0E0E5A1C9484D4AA13878273F16A920}
 **Peer-to-Peer**
 
 No additional configuration is required.

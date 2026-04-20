@@ -20,8 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="limit_server_subscription_queue_size__section_1791DFB89502480EB57F81D16AC0EBAC"></a>
+## {#limit_server_subscription_queue_size__section_1791DFB89502480EB57F81D16AC0EBAC}
 These are options for limiting the amount of server memory the subscription queues consume.
 
 -   Optional: Conflate the subscription queue messages.

@@ -20,9 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="topic_long-running-queries"></a>
-
+## {#topic_long-running-queries}
 @@product_name@@ can monitor and throw an exception when
 a query runs longer than a configured amount of time.
 This feature is enabled by setting the `critical-heap-percentage` attribute 

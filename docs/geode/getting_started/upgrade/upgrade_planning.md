@@ -25,15 +25,14 @@ Before you upgrade your system, back it up.  Make backup copies of all existing 
 server-side code, configuration files, and data across the entire cluster.  To get a backup of the
 data that includes the most recent changes may require that traffic across the cluster is stopped
 before the backup is made.
-The discussion at [Creating Backups for System Recovery and Operational Management](../../managing/disk_storage/backup_restore_disk_store.html#backup_restore_disk_store)
+The discussion at [Creating Backups for System Recovery and Operational Management](../../managing/disk_storage/backup_restore_disk_store#backup_restore_disk_store)
 explains the process, and the
-[backup disk-store](../../tools_modules/gfsh/command-pages/backup.html) command reference page describes
+[backup disk-store](../../tools_modules/gfsh/command-pages/backup) command reference page describes
 how to use the `gfsh backup disk-store` command to make a backup.
 
-## <a id="guidelines-upgrading" class="no-quick-link"></a>Guidelines for Upgrading
-
+## Guidelines for Upgrading {#guidelines-upgrading}
 -   Schedule your upgrade during a period of low user activity for your system and network.
--   Verify that the machines hosting the cluster members meet the [Host Machine Requirements](../system_requirements/host_machine.html) of the upgraded cluster.
+-   Verify that the machines hosting the cluster members meet the [Host Machine Requirements](../system_requirements/host_machine) of the upgraded cluster.
 -   **Important:** After all locators have been upgraded, *do not start or restart any processes* that use the older version of the software. The older process will either not be allowed to join the cluster or, if allowed to join, can potentially cause a deadlock.
 -   Verify that all members that you wish to upgrade are members of the same cluster.
 A list of cluster members will be output with the `gfsh` command:
@@ -48,20 +47,19 @@ A list of cluster members will be output with the `gfsh` command:
   configuration was created determines which commands you use to save and restore that cluster
   configuration during the upgrade procedure.  There are two possibilites:
 
-  - With `gfsh` commands, relying on the underlying **cluster configuration service** to record the configuration: see [Exporting and Importing Cluster Configurations](../../configuring/cluster_config/export-import.html).
-  - With **XML properties** specified through the Java API or configuration files: see [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/running/deploying_config_files.html).
+  - With `gfsh` commands, relying on the underlying **cluster configuration service** to record the configuration: see [Exporting and Importing Cluster Configurations](../../configuring/export-import).
+  - With **XML properties** specified through the Java API or configuration files: see [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/running/deploying_config_files).
 
 -   Do not modify region attributes or data, either via `gfsh` or `cache.xml` configuration, during the upgrade process.
 
--   If possible, follow the [Rolling Upgrade](upgrade_rolling.html) procedure.  A multi-site
+-   If possible, follow the [Rolling Upgrade](upgrade_rolling) procedure.  A multi-site
 installation can also do rolling upgrades within each site.  If a rolling upgrade is not possible,
-follow the [Off-Line Upgrade](upgrade_offline.html) procedure.
+follow the [Off-Line Upgrade](upgrade_offline) procedure.
 A rolling upgrade is not possible for a cluster that has partitioned regions without redundancy.
 Without the redundancy, region entries will be lost when individual servers are taken out of the
 cluster during a rolling upgrade.
 
-## <a id="version_compatibilities" class="no-quick-link"></a>Version Compatibilities
-
+## Version Compatibilities {#version_compatibilities}
 Your choice of upgrade procedure depends, in part, on the versions of @@product_name_long@@ involved.
 
 - **Version Compatibility Between Peers and Cache Servers**

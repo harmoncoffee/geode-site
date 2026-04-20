@@ -21,12 +21,12 @@ limitations under the License.
 
 You have several options for preventing situations that can cause slow receivers of data distributions. The slow receiver options control only peer-to-peer communication using TCP/IP. This discussion does not apply to client/server or multi-site communication, or to communication using the UDP unicast or multicast protocols.
 
-Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../basic_config/book_intro.html).
+Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../basic_config/book_intro).
 
--   **[Preventing Slow Receivers](slow_receivers_preventing_problems.html)**
+-   **[Preventing Slow Receivers](slow_receivers_preventing_problems)**
 
     During system integration, you can identify and eliminate potential causes of slow receivers in peer-to-peer communication.
 
--   **[Managing Slow Receivers](slow_receivers_managing.html)**
+-   **[Managing Slow Receivers](slow_receivers_managing)**
 
     If the receiver fails to receive a message, the sender continues to attempt to deliver the message as long as the receiving member is still in the cluster.

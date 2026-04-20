@@ -21,10 +21,10 @@ limitations under the License.
 
 You can configure and limit port usage for situations that involve firewalls, for example, between client-server or server-server connections.
 
--   **[Firewalls and Connections](firewalls_connections.html)**
+-   **[Firewalls and Connections](firewalls_connections)**
 
     Be aware of possible connection problems that can result from running a firewall on your machine.
 
--   **[Firewalls and Ports](firewalls_ports.html)**
+-   **[Firewalls and Ports](firewalls_ports)**
 
     Make sure your port settings are configured correctly for firewalls.

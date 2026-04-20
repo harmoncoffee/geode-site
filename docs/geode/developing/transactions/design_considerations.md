@@ -20,9 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="transaction-considerations"></a>
-
+## {#transaction-considerations}
 Designs that incorporate more complex features introduce further
 considerations.
 This section discusses how transactions interact with other 
@@ -38,16 +36,14 @@ This section discusses how transactions interact with other
 -  **[Mixing Transactions with Non-transactional Operations](#transactions-nontransactions)**
 -  **[Changing the Handling of Dirty Reads](#transactions-dirty-reads)**
 
-## <a id="colocate-PRs" class="no-quick-link"></a>Colocate Partitioned Regions
-
+## Colocate Partitioned Regions {#colocate-PRs}
 For performance,
 transactions that operate on more than one partitioned region
 require that those partitioned regions colocate their entries.
-[Colocate Data from Different Partitioned Regions](../partitioned_regions/colocating_partitioned_region_data.html) describes how to colocate 
+[Colocate Data from Different Partitioned Regions](../partitioned_regions/colocating_partitioned_region_data) describes how to colocate 
 entries.
 
-## <a id="copy-on-read-transactions" class="no-quick-link"></a>Region Operations Return References
-
+## Region Operations Return References {#copy-on-read-transactions}
 For performance,
 server-invoked region operations return references to region entries.
 Any assignment to that reference changes the entry within the region.
@@ -62,10 +58,9 @@ as the change will not be seen as part of the transactional state.
 There are two ways to work with a reference: make a copy,
 or configure the system to return copies instead of references.
 There is a performance penalty to having the system return copies.
-Both ways are detailed in [Copy on Read Behavior](../../basic_config/data_entries_custom_classes/copy_on_read.html).
+Both ways are detailed in [Copy on Read Behavior](../../basic_config/data_entries_custom_classes/copy_on_read).
 
-## <a id="first-op-with-mixed-types" class="no-quick-link"></a>First Operation with Mixed Region Types
-
+## First Operation with Mixed Region Types {#first-op-with-mixed-types}
 When more than one region participates in a transaction,
 and there is at least one partitioned and at least one
 replicated region,
@@ -74,8 +69,7 @@ region to avoid a `TransactionDataNotColocatedException`.
 Write the transaction to do its first operation on a partitioned
 region, even if the operation will be spurious.
 
-## <a id="transactions-persistence" class="no-quick-link"></a> Allowing Transactions to Work on Persistent Regions
-
+## Allowing Transactions to Work on Persistent Regions {#transactions-persistence}
 @@product_name@@'s implementation of atomic transactions prohibits
 regions with persistence from participating in transactions.
 The invocation of a persistent region operation within a transaction
@@ -97,16 +91,14 @@ for disk writes that occur with the commit of a transaction.
 A server crash during the commit may succeed in some,
 but not all of the disk writes.
 
-## <a id="transactions-queries" class="no-quick-link"></a>Mixing Transactions with Queries and Indexes
-
+## Mixing Transactions with Queries and Indexes {#transactions-queries}
 Queries and query results reflect region state, and not any state or
 changes that occur within a transaction.
 Likewise, the contents and updates to an index do not intersect with any
 changes made within a transaction.
 Therefore, do not mix transactions with queries or indexed regions.
 
-## <a id="transactions-eviction" class="no-quick-link"></a>Mixing Transactions with Eviction
-
+## Mixing Transactions with Eviction {#transactions-eviction}
 LRU eviction and transactions work well together.
 Any eviction operation on a region entry that is operated on
 from within a transaction is deferred until the transaction is committed.
@@ -115,13 +107,11 @@ has had its LRU clock reset,
 eviction is not likely to choose those entries as victims
 immediately after the commit.
 
-## <a id="transactions-expiration" class="no-quick-link"></a>Mixing Transactions with Expiration
-
+## Mixing Transactions with Expiration {#transactions-expiration}
 A transaction disables expiration on any region entries affected
 by the transaction.
 
-## <a id="transactions-nontransactions" class="no-quick-link"></a>Mixing Transactions with Non-transactional Operations
-
+## Mixing Transactions with Non-transactional Operations {#transactions-nontransactions}
 For best performance, non-transactional operations do not acquire the exclusive locks used to check
 for conflicts in a transaction. A transaction operating on the same data as a non-transactional actor
 is unable to detect the conflict caused by a non-transactional operation.
@@ -135,8 +125,7 @@ intermingle with the transaction’s changes. The other sources can include dist
 members, loading activities, and other direct cache modification calls from the same member. When
 this happens, after your commit finishes, the cache state may not be what you expected.
 
-## <a id="transactions-dirty-reads" class="no-quick-link"></a>Changing the Handling of Dirty Reads
-
+## Changing the Handling of Dirty Reads {#transactions-dirty-reads}
 An application requiring a strict,
 but slower isolation model,
 such that dirty reads of transitional states are not allowed,

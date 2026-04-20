@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 This topic lists the errors that can occur when using delta propagation.
-
-<a id="errors_in_delta_propagation__section_877AC61D691C44078A782683F90D169B"></a>
+## {#errors_in_delta_propagation__section_877AC61D691C44078A782683F90D169B}
 Errors in delta propagation fall into two categories based on how they are handled by the system:
 
 -   Problems applying the delta that can be remedied by requesting the full value in place of the delta. Your `put` operation does not see errors or exceptions related to this type of delta propagation failure. The system automatically does a full value distribution from the sender to the receiver where the problem occurs. This type of error includes:

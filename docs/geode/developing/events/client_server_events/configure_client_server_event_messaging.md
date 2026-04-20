@@ -20,8 +20,7 @@ limitations under the License.
 -->
 
 You can receive events from your servers for server-side cache events and query result changes.
-
-<a id="receiving_events_from_servers__section_F21FB253CCC244708CB953B6D5866A91"></a>
+## {#receiving_events_from_servers__section_F21FB253CCC244708CB953B6D5866A91}
 For cache updates, you can configure to receive entry keys and values or just entry keys, with the data retrieved lazily when requested. The queries are run continuously against server cache events, with the server sending the deltas for your query result sets.
 
 Before you begin, set up your client/server installation and configure and program your basic event messaging.
@@ -30,7 +29,7 @@ Servers receive updates for all entry events in their client's client regions.
 
 To receive entry events in the client from the server:
 
-1.  Set the client pool `subscription-enabled` to true. See [&lt;pool&gt;](../../reference/topics/client-cache.html#cc-pool).
+1.  Set the client pool `subscription-enabled` to true. See [&lt;pool&gt;](../../reference/topics/client-cache#cc-pool).
 2.  Program the client to register interest in the entries you need.
 
     **Note:**
@@ -68,6 +67,6 @@ To receive entry events in the client from the server:
 
         You can call the register interest methods multiple times for a single region. Each interest registration adds to the server’s list of registered interest criteria for the client. So if a client registers interest in key ‘A’, then registers interest in regular expression "B\*", the server will send updates for all entries with key ‘A’ or key beginning with the letter ‘B’.
 
-    3.  For highly available event messaging, configure server redundancy. See [Configuring Highly Available Servers](configuring_highly_available_servers.html).
+    3.  For highly available event messaging, configure server redundancy. See [Configuring Highly Available Servers](configuring_highly_available_servers).
     4.  To have events enqueued for your clients during client downtime, configure durable client/server messaging.
     5.  Write any continuous queries (CQs) that you want to run to receive continuously streaming updates to client queries. CQ events do not update the client cache. If you have dependencies between CQs and/or interest registrations, so that you want the two types of subscription events to arrive as closely together on the client, use a single server pool for everything. Using different pools can lead to time differences in the delivery of events because the pools might use different servers to process and deliver the event messages.

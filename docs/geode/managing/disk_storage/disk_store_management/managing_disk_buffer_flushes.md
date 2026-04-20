@@ -23,14 +23,12 @@ limitations under the License.
 
 You can configure @@product_name@@ to write immediately to disk and you may be able to modify your operating system behavior to perform buffer flushes more frequently.
 
-Typically, @@product_name@@ writes disk data into the operating system's disk buffers and the operating system periodically flushes the buffers to disk. Increasing the frequency of writes to disk decreases the likelihood of data loss from application or machine crashes, but it impacts performance. Your other option, which may give you better performance, is to use @@product_name@@'s in-memory data backups. Do this by storing your data in multiple replicated regions or in partitioned regions that are configured with redundant copies. See [Region Types](../../developing/region_options/region_types.html#region_types).
+Typically, @@product_name@@ writes disk data into the operating system's disk buffers and the operating system periodically flushes the buffers to disk. Increasing the frequency of writes to disk decreases the likelihood of data loss from application or machine crashes, but it impacts performance. Your other option, which may give you better performance, is to use @@product_name@@'s in-memory data backups. Do this by storing your data in multiple replicated regions or in partitioned regions that are configured with redundant copies. See [Region Types](../../developing/region_options/region_types#region_types).
 
-## <a id="disk_buffer_flushes__section_448348BD28B14F478D81CC2EDC6C7049" class="no-quick-link"></a>Modifying Disk Flushes for the Operating System
-
+## Modifying Disk Flushes for the Operating System {#disk_buffer_flushes__section_448348BD28B14F478D81CC2EDC6C7049}
 You may be able to change the operating system settings for periodic flushes. You may also be able to perform explicit disk flushes from your application code. For information on these options, see your operating system's documentation. For example, in Linux you can change the disk flush interval by modifying the setting `/proc/sys/vm/dirty_expire_centiseconds`. It defaults to 30 seconds. To alter this setting, see the Linux documentation for `dirty_expire_centiseconds`.
 
-## <a id="disk_buffer_flushes__section_D1068505581A43EE8395DBE97297C60F" class="no-quick-link"></a>Modifying @@product_name@@ to Flush Buffers on Disk Writes
-
+## Modifying @@product_name@@ to Flush Buffers on Disk Writes {#disk_buffer_flushes__section_D1068505581A43EE8395DBE97297C60F}
 You can have @@product_name@@ flush the disk buffers on every disk write. Do this by setting the system property `gemfire.syncWrites` to true at the command line when you start your @@product_name@@ member. You can only modify this setting when you start a member. When this is set, @@product_name@@ uses a Java `RandomAccessFile` with the flags "rwd", which causes every file update to be written synchronously to the storage device. This only guarantees your data if your disk stores are on a local device. See the Java documentation for `java.IO.RandomAccessFile`.
 
 To modify the setting for a @@product_name@@ application, add this to the java command line when you start the member:

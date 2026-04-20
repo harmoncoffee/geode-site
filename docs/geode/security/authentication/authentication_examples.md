@@ -48,8 +48,7 @@ then the password provided within the `credentials` parameter
 is compared to the data structure's known password for that user name.
 Upon a match, the authentication is successful.
 
-## <a id="username_password_authentication_example"></a>Username, Password Authentication Example
-
+## Username, Password Authentication Example {#username_password_authentication_example}
 ``` pre
 public Object authenticate(final Properties credentials)
          throws AuthenticationFailedException {
@@ -73,8 +72,7 @@ public Object authenticate(final Properties credentials)
 }
 ```
 
-## <a id="token_with_expiry_authentication_example"></a>Token with Expiry Authentication Example
-
+## Token with Expiry Authentication Example {#token_with_expiry_authentication_example}
 ``` pre
 public Object authenticate(final Properties credentials)
          throws AuthenticationFailedException, AuthenticationExpiredException {

@@ -21,7 +21,7 @@ limitations under the License.
 **Note:** This feature is experimental and is subject to change in future releases of @@product_name_long@@.
 
 Automated rebalance triggers a rebalance
-(see [Rebalancing Partitioned Region Data](rebalancing_pr_data.html))
+(see [Rebalancing Partitioned Region Data](rebalancing_pr_data))
 operation based on a
 time schedule.
 At the scheduled intervals, the balance of the partitioned regions

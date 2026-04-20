@@ -23,8 +23,7 @@ limitations under the License.
 
 Event handlers are synchronous. If you need to change the cache or perform any other distributed operation from event handler callbacks, be careful to avoid activities that might block and affect your overall system performance.
 
-## <a id="writing_callbacks_that_modify_the_cache__section_98E49363C91945DEB0A3B2FD9A209969" class="no-quick-link"></a>Operations to Avoid in Event Handlers
-
+## Operations to Avoid in Event Handlers {#writing_callbacks_that_modify_the_cache__section_98E49363C91945DEB0A3B2FD9A209969}
 Do not perform distributed operations of any kind directly from your event handler. @@product_name@@ is a highly distributed system and many operations that may seem local invoke distributed operations.
 
 These are common distributed operations that can get you into trouble:
@@ -36,8 +35,7 @@ These are common distributed operations that can get you into trouble:
 
 To be on the safe side, do not make any calls to the @@product_name@@ API directly from your event handler. Make all @@product_name@@ API calls from within a separate thread or executor.
 
-## <a id="writing_callbacks_that_modify_the_cache__section_78648D4177E14EA695F0B059E336137C" class="no-quick-link"></a>How to Perform Distributed Operations Based on Events
-
+## How to Perform Distributed Operations Based on Events {#writing_callbacks_that_modify_the_cache__section_78648D4177E14EA695F0B059E336137C}
 If you need to use the @@product_name@@ API from your handlers, make your work asynchronous to the event handler. You can spawn a separate thread or use a solution like the `java.util.concurrent.Executor` interface.
 
 This example shows a serial executor where the callback creates a `Runnable` that can be pulled off a queue and run by another object. This preserves the ordering of events.

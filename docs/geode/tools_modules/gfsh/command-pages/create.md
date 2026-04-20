@@ -66,13 +66,12 @@ Create async-event-queues, disk-stores, gateway receivers, gateway senders, inde
 
 This assures that when WAN receivers are started, their associated regions are in place. Otherwise,
 the `create region` command may fail if events are received before the region exists.
-For more on this topic, see [Configuring a Multi-site (WAN) System](../../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system.html).
+For more on this topic, see [Configuring a Multi-site (WAN) System](../../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system).
 
-## <a id="topic_ryz_pb1_dk" class="no-quick-link"></a>create async-event-queue
-
+## create async-event-queue {#topic_ryz_pb1_dk}
 Creates an asynchronous event queue for batching events before they are delivered by a gateway sender.
 
-See [Configuring Multi-Site (WAN) Event Queues](../../../developing/events/configure_multisite_event_messaging.html#configure_multisite_event_messaging).
+See [Configuring Multi-Site (WAN) Event Queues](../../../developing/events/configure_multisite_event_messaging#configure_multisite_event_messaging).
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -206,11 +205,10 @@ create async-event-queue --id=value --listener=value [--groups=value(,value)*]
 create async-event-queue --id=myAEQ --listener=myApp.myListener
 ```
 
-## <a id="topic_w2t_l3m_qq" class="no-quick-link"></a>create defined indexes
-
+## create defined indexes {#topic_w2t_l3m_qq}
 Creates all the defined indexes.
 
-See also [define index](define.html) and [clear defined indexes](clear.html).
+See also [define index](define) and [clear defined indexes](clear).
 
 **Availability:** Online. You must be connected in <span class="keyword parmname">gfsh</span> to a JMX Manager member to use this command.
 
@@ -251,11 +249,10 @@ Message : Region ' /r3' not found: from  /r3Occurred on following members
 1. india(s1:17866)<v1>:27809
 ```
 
-## <a id="topic_bkn_zty_ck" class="no-quick-link"></a>create disk-store
-
+## create disk-store {#topic_bkn_zty_ck}
 Defines a pool of one or more disk stores, which can be used by regions and client subscription queues, and gateway sender queues for WAN distribution.
 
-See [Disk Storage](../../../managing/disk_storage/chapter_overview.html)
+See [Disk Storage](../../../managing/disk_storage/chapter_overview)
 
 **Availability:** Online. You must be connected in <span class="keyword parmname">gfsh</span> to a JMX Manager member to use this command.
 
@@ -369,8 +366,7 @@ Member  | Result
 server1 | Success
 ```
 
-## <a id="topic_a4x_pb1_dk" class="no-quick-link"></a>create gateway-receiver
-
+## create gateway-receiver {#topic_a4x_pb1_dk}
 Creates gateway receivers. You can only have one gateway receiver on each member, and unlike a gateway sender, you do not need to specify an identifier for the gateway receiver.
 
 The create occurs on all servers,
@@ -382,7 +378,7 @@ this `gfsh` command exits with an exit code indicating success.
 Outputs a tabular format status of each member's gateway receiver,
 independent of the success or failure of the creation.
 
-See [Gateway Receivers](../../../topologies_and_comm/topology_concepts/multisite_overview.html).
+See [Gateway Receivers](../../../topologies_and_comm/topology_concepts/multisite_overview).
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
@@ -428,11 +424,10 @@ Member  | Status
 server1 | GatewayReceiver created on member "server1" and will listen on the port "0"
 ```
 
-## <a id="topic_hg2_bjz_ck" class="no-quick-link"></a>create gateway-sender
-
+## create gateway-sender {#topic_hg2_bjz_ck}
 Creates a gateway sender on one or more members of a cluster.
 
-See [Gateway Senders](../../../topologies_and_comm/topology_concepts/multisite_overview.html).
+See [Gateway Senders](../../../topologies_and_comm/topology_concepts/multisite_overview).
 
 **Note:**
 The gateway sender configuration for a specific sender `id` must be identical on each @@product_name@@ member that hosts the gateway sender.
@@ -496,13 +491,12 @@ Member  | Status
 server1 | GatewaySender "sender2" created on "server1"
 ```
 
-## <a id="topic_960A5B6FD3D84E1881EE118E299DD12D" class="no-quick-link"></a>create index
-
+## create index {#topic_960A5B6FD3D84E1881EE118E299DD12D}
 Create an index that can be used when executing queries.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
 
-See [Working with Indexes](../../../developing/query_index/query_index.html).
+See [Working with Indexes](../../../developing/query_index/query_index).
 
 **Syntax:**
 
@@ -547,8 +541,7 @@ Occurred on following members
 1. ubuntu(server1:17682)<v1>:27574
 ```
 
-## <a id="create_jndi-binding" class="no-quick-link"></a>create jndi-binding
-
+## create jndi-binding {#create_jndi-binding}
 Create a JNDI binding that specifies resource attributes which describe a
 JDBC connection.
 
@@ -596,11 +589,10 @@ gfsh>create jndi-binding --name=jndi1 --type=SIMPLE \
   --url="jdbc:derby:newDB;create=true"
 ```
 
-## <a id="create_lucene_index" class="no-quick-link"></a>create lucene index
+## create lucene index {#create_lucene_index}
+Create a Lucene index. For details on Lucene index creation, see [Apache Lucene Integration](../../../tools_modules/lucene_integration).
 
-Create a Lucene index. For details on Lucene index creation, see [Apache Lucene Integration](../../../tools_modules/lucene_integration.html).
-
-For additional Lucene-related gfsh commands, see [describe lucene index](describe.html#describe_lucene_index), [destroy lucene index](destroy.html#destroy_lucene_index), [list lucene indexes](list.html#list_lucene_indexes) and [search lucene](search.html#search_lucene).
+For additional Lucene-related gfsh commands, see [describe lucene index](describe#describe_lucene_index), [destroy lucene index](destroy#destroy_lucene_index), [list lucene indexes](list#list_lucene_indexes) and [search lucene](search#search_lucene).
 
 **Availability:** Online. You must be connected in <span class="keyword parmname">gfsh</span> to a JMX Manager member to use this command.
 
@@ -645,15 +637,14 @@ gfsh>create lucene index --name=testIndex --region=testRegion
 192.168.1.23(server505:17200)<v1>:1025 | Successfully created lucene index
 ```
 
-## <a id="topic_54B0985FEC5241CA9D26B0CE0A5EA863" class="no-quick-link"></a>create region
-
+## create region {#topic_54B0985FEC5241CA9D26B0CE0A5EA863}
 Create a region with given path and configuration.
 
 You must specify either a `--type` or a `--template-region` for initial configuration when creating a region. Specifying a `--key-constraint` and `--value-constraint` makes object type information available during querying and indexing.
 
-See [Region Data Storage and Distribution](../../../developing/region_options/chapter_overview.html).
+See [Region Data Storage and Distribution](../../../developing/region_options/chapter_overview).
 
-See [Specifying JSON within Command-Line Options](../json_in_gfsh.html)
+See [Specifying JSON within Command-Line Options](../json_in_gfsh)
 for syntax details.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.

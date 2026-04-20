@@ -23,23 +23,20 @@ limitations under the License.
 
 To import a @@product_name@@ cache or region data snapshot that you previously exported into another cluster or region, use the `cache.getSnapshotService.load` API, `region.getSnapshotService.load` API, or the `gfsh` command-line interface (`import data`).
 
-## <a id="concept_62B1E24DA7F342E9BB16C0818F7A7B70__section_4B2C73CA1A734D9D96693A52BF99D75A" class="no-quick-link"></a>Import Requirements
-
+## Import Requirements {#concept_62B1E24DA7F342E9BB16C0818F7A7B70__section_4B2C73CA1A734D9D96693A52BF99D75A}
 Before you import a region snapshot:
 
 -   Make sure the cache is configured correctly. Configure all registered PdxSerializers, DataSerializers, and Instantiators; create regions; and ensure the classpath contains any required classes.
 -   When you import a snapshot containing PDX types, you must wait until the exported type definitions are imported into the cache before inserting data that causes type conflicts. It is recommended that you wait for the import to complete before inserting data.
 
-## <a id="concept_62B1E24DA7F342E9BB16C0818F7A7B70__section_F5FA11694BFC46D4A813A259FE670C69" class="no-quick-link"></a>Import Limitations
-
+## Import Limitations {#concept_62B1E24DA7F342E9BB16C0818F7A7B70__section_F5FA11694BFC46D4A813A259FE670C69}
 During an import, the `CacheWriter` and `CacheListener` callbacks are not invoked.
 
 If an error occurs during import, the import is halted and the region will contain some but not all snapshot data.
 
 The state of a cache client is indeterminate after an import. It is likely that the data in the client's cache is inconsistent with the imported data. Take the client offline during the import and restart it after the import completes.
 
-## <a id="concept_62B1E24DA7F342E9BB16C0818F7A7B70__section_4F1A3A60FABA49A295CA18FBF572998D" class="no-quick-link"></a>Importing Cache Snapshots
-
+## Importing Cache Snapshots {#concept_62B1E24DA7F342E9BB16C0818F7A7B70__section_4F1A3A60FABA49A295CA18FBF572998D}
 When you import a cache snapshot, the snapshot file is imported into the same region (match determined by name) that was used during snapshot export. When you import a cache, you import all snapshot files located within a directory into the cache. The API attempts to load all files in the specified directory.
 
 **Java API:**
@@ -51,8 +48,7 @@ Cache cache = ...
 cache.getSnapshotService().load(mySnapshotDir, SnapshotFormat.GEMFIRE);
 ```
 
-## <a id="concept_62B1E24DA7F342E9BB16C0818F7A7B70__section_97054643976345A099A7BDDC63DE30E9" class="no-quick-link"></a>Importing a Region Snapshot
-
+## Importing a Region Snapshot {#concept_62B1E24DA7F342E9BB16C0818F7A7B70__section_97054643976345A099A7BDDC63DE30E9}
 **Java API:**
 
 ``` pre
@@ -78,5 +74,5 @@ gfsh>import data --region=region1 --file=region1_2012_10_10.gfd --member=server2
 
 The snapshot file must already reside on the specified member at the location specified in the `--file` argument before import.
 
-For more information on this command, see [import data](../../tools_modules/gfsh/command-pages/import.html#topic_jw2_2ld_2l).
-For an example of how to invoke this command with additional options, see [Export Example with Options](exporting_a_snapshot.html#export_example_with_options).
+For more information on this command, see [import data](../../tools_modules/gfsh/command-pages/import#topic_jw2_2ld_2l).
+For an example of how to invoke this command with additional options, see [Export Example with Options](exporting_a_snapshot#export_example_with_options).

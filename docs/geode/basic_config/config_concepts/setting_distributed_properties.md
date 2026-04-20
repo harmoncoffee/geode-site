@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 @@product_name@@ provides a default configuration for out-of-the-box systems. To use non-default configurations and to fine-tune your member communication, you can use a mix of various options to customize your configuration.
-
-<a id="setting_distributed_properties__section_67EBCC53EB174B108DA7271E2CD2B76C"></a>
+## {#setting_distributed_properties__section_67EBCC53EB174B108DA7271E2CD2B76C}
 @@product_name@@ properties are used to join a cluster and configure system member behavior. Configure your @@product_name@@ properties through the `gemfire.properties` file, the Java API, or command-line input. Generally, you store all your properties in the `gemfire.properties` file, but you may need to provide properties through other means, for example, to pass in security properties for a username and password that you have received from keyboard input.
 
 **Note:**
@@ -68,9 +67,9 @@ Set properties by any combination of the following. The system looks for the set
         gfsh>start server --name=server_name --mcast-port=10338 --properties-file=serverConfig/gemfire.properties --security-properties-file=gfsecurity.properties
         ```
 
-        See [Running @@product_name@@ Server Processes](../../configuring/running/running_the_cacheserver.html) for more information on running cache servers.
+        See [Running @@product_name@@ Server Processes](../../configuring/running/running_the_cacheserver) for more information on running cache servers.
 
-3.  Entry in a `gemfire.properties` file. See [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/running/deploying_config_files.html). Example:
+3.  Entry in a `gemfire.properties` file. See [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/running/deploying_config_files). Example:
 
     ``` pre
     cache-xml-file=cache.xml

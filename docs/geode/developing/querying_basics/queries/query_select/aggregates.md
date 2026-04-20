@@ -30,7 +30,7 @@ The aggregate functions
 
 The following sections provide descriptions and limitations (if any) about the aggregate functions, how do they work and how they can be used. 
 
-## <a id="groupBy"></a>GROUP BY
+## GROUP BY {#groupBy}
 You can collect data across multiple entries and group the results by one or more columns through the usage of the `GROUP BY` statement.
 It's important to note some facts about its usage:
 
@@ -60,8 +60,7 @@ FROM /portfolio pf
 GROUP BY pf.status
 ```
 
-## <a id="min"></a>MIN
-
+## MIN {#min}
 The `MIN` keyword returns the minimum or smallest value from the selected expression. The expression itself must always evaluate to `java.lang.Comparable`. The `MIN` statement returns the actual type of the selected element as its result. 
 
 The following are example `MIN` queries that return region entries (the entries implement the `java.lang.Comparable` interface).
@@ -106,8 +105,7 @@ WHERE pf.ID > 0
 GROUP BY pf.status
 ```
 
-## <a id="max"></a>MAX
-
+## MAX {#max}
 The `MAX` keyword returns the maximum or highest value from the selected expression. The expression itself must always evaluate to `java.lang.Comparable`. The `MAX` statement returns the type of the selected element as its result. 
 
 The following are example `MAX` queries that return region entries (the entries implement the `java.lang.Comparable` interface).
@@ -152,8 +150,7 @@ WHERE pf.ID > 0
 GROUP BY pf.status
 ```
 
-## <a id="count"></a>COUNT
-
+## COUNT {#count}
 The `COUNT` keyword returns the number of results that match the query selection conditions specified in the `WHERE` clause. Using `COUNT` allows you to determine the size of a results set.
 The `COUNT` statement always returns a `java.lang.Integer` or `java.lang.Long` as the result (depending on how big the value is); you should take this into consideration when executing the query: if an overflow occurs while computing the `COUNT` function because the value is higher than `Long.MAX_VALUE` (2<sup>63</sup> - 1), the result will be incorrect.
 
@@ -204,8 +201,7 @@ FROM /exampleRegion p, p.positions.values pos
 WHERE p.ID > 0 OR p.status = 'active' OR pos.secId = 'IBM'
 ```
 
-## <a id="sum"></a>SUM
-
+## SUM {#sum}
 The `SUM` keyword returns the summation of all results that match the query selection conditions specified in the `WHERE` clause. Using `SUM` allows you to aggregate specific numeric values within a results set.
 For partitioned regions, each node's buckets compute a sum over that node and return the result to the coordinator node executing the query, which then aggregates the sums across all nodes.
 
@@ -273,8 +269,7 @@ GROUP BY pf.status
 ORDER BY sm DESC
 ```
 
-## <a id="avg"></a>AVG
-
+## AVG {#avg}
 The `AVG` keyword returns the arithmetic mean of the set formed by the selected expression.
 For partitioned regions, each node's buckets provide both a sum and the number of elements to the node executing the query (coordinator), such that a correct average may be computed.
 

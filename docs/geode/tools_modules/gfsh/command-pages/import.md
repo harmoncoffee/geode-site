@@ -29,8 +29,7 @@ You can import an exported cluster configuration to create a new cluster or impo
 
     Import user data from a file to a region.
 
-## <a id="import-cluster-config" class="no-quick-link"></a>import cluster-configuration
-
+## import cluster-configuration {#import-cluster-config}
 Imports a previously exported cluster configuration from a ZIP file or an XML file. This command is useful when spinning up a new cluster.
 
 - In a given cluster, only one locator needs to perform the import. 
@@ -72,8 +71,7 @@ gfsh>import cluster-configuration --zip-file-name=/home/username/myClusterConfig
 Cluster configuration successfully imported
 ```
 
-## <a id="import-data" class="no-quick-link"></a>import data
-
+## import data {#import-data}
 Import user data from a file or files to a region.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -88,7 +86,7 @@ import data --region=value --file=value --member=value [--invoke-callbacks=value
 
 In this scenario, data from replicated and partitioned regions is imported sequentially from a single file on the specified member.
 
-See [export data](export.html#topic_263B70069BFC4A7185F86B3272011734) for an explanation of the difference between serial and parallel data exports.
+See [export data](export#topic_263B70069BFC4A7185F86B3272011734) for an explanation of the difference between serial and parallel data exports.
 
 If the data was exported from a partitioned region in parallel format, use the `--parallel` option to import the data:
 

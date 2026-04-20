@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 In a client/server configuration, by putting servers into logical member groups, you can control which servers your clients use and target specific servers for specific data or tasks. You can configure servers to manage different data sets or to direct specific client traffic to a subset of servers, such as those directly connected to a back-end database.
-
-<a id="configure_servers_into_logical_groups__section_411EA6C46AD4456C987C0759A05340F2"></a>
+## {#configure_servers_into_logical_groups__section_411EA6C46AD4456C987C0759A05340F2}
 You can also define member groups to deploy JARs in parallel or to perform administrative commands across a member group.
 
 To add servers to a member group, you can configure the following:

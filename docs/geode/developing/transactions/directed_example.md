@@ -20,9 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-<a id="transaction-example"></a>
-
+## {#transaction-example}
 An application can run a transaction directly or
 invoke a function which contains a transaction.
 This section illustrates these two use cases with code fragments
@@ -32,7 +30,7 @@ An expected use case operates on two regions within a transaction.
 For performance purposes the
 @@product_name@@ transaction implementation requires that region entries
 of partitioned regions be colocated.
-See [Custom-Partitioning and Colocating Data](../partitioned_regions/overview_custom_partitioning_and_data_colocation.html) for details on how to colocate region entries.
+See [Custom-Partitioning and Colocating Data](../partitioned_regions/overview_custom_partitioning_and_data_colocation) for details on how to colocate region entries.
 
 
 ## Transaction within an Application
@@ -235,7 +233,7 @@ public class TransactionalFunction extends Function {
 The application-side details on function implementation are
 not covered in this example.
 The application sets up the function context and the argument.
-See the section on [Function Execution](../function_exec/chapter_overview.html) for details on functions.
+See the section on [Function Execution](../function_exec/chapter_overview) for details on functions.
 
 The function implementation needs to catch the commit conflict exception
 such that it can retry the entire transaction.
@@ -251,6 +249,6 @@ It can save a network hop from the secondary to the primary.
 Note that the variable `qtyAvailable` is a reference,
 because the `Region.get` operation returns a reference
 within this server-side code.
-Read [Region Operations Return References](design_considerations.html#copy-on-read-transactions)
+Read [Region Operations Return References](design_considerations#copy-on-read-transactions)
 for details and how to work around the
 implications of a reference as a return value when working with server code.

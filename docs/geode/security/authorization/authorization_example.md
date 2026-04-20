@@ -19,15 +19,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-## <a id="overview"></a>Disclaimer
-
+## Disclaimer {#overview}
 The security implementation of every installation is unique. These examples are provided for illustrative purposes only and must not be used in a production environment.
 
 The examples demonstrate the basics for implementing both user authorization (`SecurityManager.authorize`) and method invocation authorization (`MethodInvocationAuthorizer.authorize`) during query executions.
 The remainder of the examples may be found within the @@product_name_long@@ source code under the `geode-core/src/main/java/org/apache/geode/examples/security` directory.
 
-## <a id="user_authorization_example"></a>User Authorization Example
-
+## User Authorization Example {#user_authorization_example}
 This example assumes that a set of users, a set of roles that a user might take on within the system, and a mapping of users to their roles are described in a JSON format file.
 The roles define a set of authorized resource permissions granted for users in those roles.
 Code not shown here parses the file to compose a data structure with the information on roles and users.
@@ -56,10 +54,9 @@ public boolean authorize(final Object principal, final ResourcePermission contex
 }
 ```
 
-## <a id="method_authorization_example"></a>Method Invocation Authorization Example
-
+## Method Invocation Authorization Example {#method_authorization_example}
 This example assumes that the entire domain model is deployed to the cluster and that the user is allowed to modify these classes.
-The `authorize` callback denies access to methods that have been permanently forbidden by the [RestrictedMethodAuthorizer](method_invocation_authorizers.html#restrictedMethodAuthorizer) and returns `false` right away.
+The `authorize` callback denies access to methods that have been permanently forbidden by the [RestrictedMethodAuthorizer](method_invocation_authorizers#restrictedMethodAuthorizer) and returns `false` right away.
 When the method is not permanently forbidden, the implementation checks whether the method has been annotated with a custom annotation. When the necessary annotation is found, authorization is granted by returning the value `true`.
 If the annotation is not found, then the method returns `false`, denying the invocation of the method during the query execution.
 
@@ -75,8 +72,7 @@ public boolean authorize(Method method, Object target) {
   }
 ```
 
-## <a id="token_with_expiry_authorization_example"></a>Token with Expiry Authorization Example
-
+## Token with Expiry Authorization Example {#token_with_expiry_authorization_example}
 This example assumes that the system is using an expirable token that needs to be checked for expiry
 before resource permissions are verified.
 

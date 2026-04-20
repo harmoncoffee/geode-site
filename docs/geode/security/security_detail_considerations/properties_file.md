@@ -20,8 +20,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<a id="implementing_security__section_155ED414321E4D4ABBD7ED3508E7BD62"></a>
-
+## {#implementing_security__section_155ED414321E4D4ABBD7ED3508E7BD62}
 Any security-related (properties that begin with `security-*`) configuration properties that are normally configured in `gemfire.properties` can be moved to a separate `gfsecurity.properties` file. Placing these configuration settings in a separate file allows you to restrict access to security configuration data. This way, you can still allow read or write access for your `gemfire.properties` file.
 
 Upon startup, @@product_name@@ processes will look for the `gfsecurity.properties` file in the following locations in order:

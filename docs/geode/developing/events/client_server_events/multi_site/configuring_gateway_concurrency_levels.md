@@ -25,13 +25,12 @@ By default, @@product_name@@ uses multiple dispatcher threads to process region 
 
 By default, a gateway sender queue or asynchronous event queue uses 5 dispatcher threads per queue. This provides support for applications that have the ability to process queued events concurrently for distribution to another @@product_name@@ site or listener. If your application does not require concurrent distribution, or if you do not have enough resources to support the requirements of multiple dispatcher threads, then you can configure a single dispatcher thread to process a queue.
 
--   [Using Multiple Dispatcher Threads to Process a Queue](configuring_gateway_concurrency_levels.html#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_20E8EFCE89EB4DC7AA822D03C8E0F470)
--   [Performance and Memory Considerations](configuring_gateway_concurrency_levels.html#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_C4C83B5C0FDD4913BA128365EE7E4E35)
--   [Configuring the Ordering Policy for Serial Queues](configuring_gateway_concurrency_levels.html#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_4835BA30CDFD4B658BD2576F6BC2E23F)
--   [Examples—Configuring Dispatcher Threads and Ordering Policy for a Serial Gateway Sender Queue](configuring_gateway_concurrency_levels.html#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_752F08F9064B4F67A80DA0A994671EA0)
+-   [Using Multiple Dispatcher Threads to Process a Queue](configuring_gateway_concurrency_levels#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_20E8EFCE89EB4DC7AA822D03C8E0F470)
+-   [Performance and Memory Considerations](configuring_gateway_concurrency_levels#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_C4C83B5C0FDD4913BA128365EE7E4E35)
+-   [Configuring the Ordering Policy for Serial Queues](configuring_gateway_concurrency_levels#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_4835BA30CDFD4B658BD2576F6BC2E23F)
+-   [Examples—Configuring Dispatcher Threads and Ordering Policy for a Serial Gateway Sender Queue](configuring_gateway_concurrency_levels#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_752F08F9064B4F67A80DA0A994671EA0)
 
-## <a id="concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_20E8EFCE89EB4DC7AA822D03C8E0F470" class="no-quick-link"></a>Using Multiple Dispatcher Threads to Process a Queue
-
+## Using Multiple Dispatcher Threads to Process a Queue {#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_20E8EFCE89EB4DC7AA822D03C8E0F470}
 When multiple dispatcher threads are configured for a parallel queue, @@product_name@@ simply uses multiple threads to process the contents of each individual queue. The total number of queues that are created is still determined by the number of @@product_name@@ members that host the region.
 
 When multiple dispatcher threads are configured for a serial queue, @@product_name@@ creates an additional copy of the queue for each thread on each member that hosts the queue. To obtain the maximum throughput, increase the number of dispatcher threads until your network is saturated.
@@ -39,25 +38,22 @@ When multiple dispatcher threads are configured for a serial queue, @@product_na
 The following diagram illustrates a serial gateway sender queue that is configured with multiple dispatcher threads.
 <img src="/images/MultisiteConcurrency_WAN_Gateway.png" id="concept_6C52A037E39E4FD6AE4C6A982A4A1A85__image_093DAC58EBEE456485562C92CA79899F" class="image" width="624" />
 
-## <a id="concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_C4C83B5C0FDD4913BA128365EE7E4E35" class="no-quick-link"></a>Performance and Memory Considerations
-
+## Performance and Memory Considerations {#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_C4C83B5C0FDD4913BA128365EE7E4E35}
 When a serial gateway sender or an asynchronous event queue uses multiple dispatcher threads, consider the following:
 
 -   Queue attributes are repeated for each copy of the queue that is created for a dispatcher thread. That is, each concurrent queue points to the same disk store, so the same disk directories are used. If persistence is enabled and overflow occurs, the threads that insert entries into the queues compete for the disk. This applies to application threads and dispatcher threads, so it can affect application performance.
 -   The `maximum-queue-memory` setting applies to each copy of the serial queue. If you configure 10 dispatcher threads and the maximum queue memory is set to 100MB, then the total maximum queue memory for the queue is 1000MB on each member that hosts the queue.
 
-## <a id="concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_4835BA30CDFD4B658BD2576F6BC2E23F" class="no-quick-link"></a>Configuring the Ordering Policy for Serial Queues
-
+## Configuring the Ordering Policy for Serial Queues {#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_4835BA30CDFD4B658BD2576F6BC2E23F}
 When using multiple `dispatcher-threads` (greater than 1) with a serial event queue, you can also configure the `order-policy` that those threads use to distribute events from the queue. The valid order policy values are:
 
 -   **key (default)**. All updates to the same key are distributed in order. @@product_name@@ preserves key ordering by placing all updates to the same key in the same dispatcher thread queue. You typically use key ordering when updates to entries have no relationship to each other, such as for an application that uses a single feeder to distribute stock updates to several other systems.
 -   **thread**. All region updates from a given thread are distributed in order. @@product_name@@ preserves thread ordering by placing all region updates from the same thread into the same dispatcher thread queue. In general, use thread ordering when updates to one region entry affect updates to another region entry.
--   **partition**. All region events that share the same partitioning key are distributed in order. Specify partition ordering when applications use a [PartitionResolver](/org/apache/geode/cache/PartitionResolver.html) to implement [custom partitioning](../partitioned_regions/using_custom_partition_resolvers.html). With partition ordering, all entries that share the same "partitioning key" (RoutingObject) are placed into the same dispatcher thread queue.
+-   **partition**. All region events that share the same partitioning key are distributed in order. Specify partition ordering when applications use a [PartitionResolver](/org/apache/geode/cache/PartitionResolver) to implement [custom partitioning](../partitioned_regions/using_custom_partition_resolvers). With partition ordering, all entries that share the same "partitioning key" (RoutingObject) are placed into the same dispatcher thread queue.
 
 You cannot configure the `order-policy` for a parallel event queue, because parallel queues cannot preserve event ordering for regions. Only the ordering of events for a given partition (or in a given queue of a distributed region) can be preserved.
 
-## <a id="concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_752F08F9064B4F67A80DA0A994671EA0" class="no-quick-link"></a>Examples—Configuring Dispatcher Threads and Ordering Policy for a Serial Gateway Sender Queue
-
+## Examples—Configuring Dispatcher Threads and Ordering Policy for a Serial Gateway Sender Queue {#concept_6C52A037E39E4FD6AE4C6A982A4A1A85__section_752F08F9064B4F67A80DA0A994671EA0}
 To increase the number of dispatcher threads and set the ordering policy for a serial gateway sender, use one of the following mechanisms.
 
 -   **cache.xml configuration**

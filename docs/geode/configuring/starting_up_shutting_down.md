@@ -25,18 +25,17 @@ Determine the proper startup and shutdown procedures, and write your startup and
 
 Well-designed procedures for starting and stopping your system can speed startup and protect your data. The processes you need to start and stop include server and locator processes and your other @@product_name@@ applications, including clients. The procedures you use depend in part on your system’s configuration and the dependencies between your system processes.
 
-Use the following guidelines to create startup and shutdown procedures and scripts. Some of these instructions use [`gfsh`](../../tools_modules/gfsh/chapter_overview.html).
+Use the following guidelines to create startup and shutdown procedures and scripts. Some of these instructions use [`gfsh`](../../tools_modules/gfsh/chapter_overview).
 
-## <a id="starting_up_shutting_down__section_3D111558326D4A38BE48C17D44BB66DB" class="no-quick-link"></a>Starting Up Your System
-
+## Starting Up Your System {#starting_up_shutting_down__section_3D111558326D4A38BE48C17D44BB66DB}
 You should follow certain order guidelines when starting your @@product_name@@ system.
 
 Start servers before you start their client applications. In each cluster, follow these guidelines for member startup:
 
--   Start locators first. See [Running @@product_name@@ Locator Processes](running_the_locator.html) for examples of locator start up commands.
--   Start cache servers before the rest of your processes unless the implementation requires that other processes be started ahead of them. See [Running @@product_name@@ Server Processes](running_the_cacheserver.html) for examples of server start up commands.
+-   Start locators first. See [Running @@product_name@@ Locator Processes](running_the_locator) for examples of locator start up commands.
+-   Start cache servers before the rest of your processes unless the implementation requires that other processes be started ahead of them. See [Running @@product_name@@ Server Processes](running_the_cacheserver) for examples of server start up commands.
 -   If your cluster uses both persistent replicated and non-persistent replicated regions, you should start up all the persistent replicated members in parallel before starting the non-persistent regions. This way, persistent members will not delay their startup for other persistent members with later data.
--   For a system that includes persistent regions, see [Start Up and Shut Down with Disk Stores](../../managing/disk_storage/starting_system_with_disk_stores.html).
+-   For a system that includes persistent regions, see [Start Up and Shut Down with Disk Stores](../../managing/disk_storage/starting_system_with_disk_stores).
 -   If you are running producer processes and consumer or event listener processes, start the consumers first. This ensures the consumers and listeners do not miss any notifications or updates.
 -   If you are starting up your locators and peer members all at once, you can use the `locator-wait-time` property (in seconds) upon process start up. This timeout allows peers to wait for the locators to finish starting up before attempting to join the cluster. 
 
@@ -47,8 +46,7 @@ Start servers before you start their client applications. In each cluster, follo
 **Note:**
 You can optionally override the default timeout period for shutting down individual processes. This override setting must be specified during member startup. See [Shutting Down the System](#starting_up_shutting_down__section_mnx_4cp_cv) for details.
 
-## <a id="starting_up_shutting_down__section_2F8ABBFCE641463C8A8721841407993D" class="no-quick-link"></a>Starting Up After Losing Data on Disk
-
+## Starting Up After Losing Data on Disk {#starting_up_shutting_down__section_2F8ABBFCE641463C8A8721841407993D}
 This information pertains to catastrophic loss of @@product_name@@ disk store files. If you lose disk store files, your next startup may hang, waiting for the lost disk stores to come back online. If your system hangs at startup, use the `gfsh` command `show missing-disk-store` to list missing disk stores and, if needed, revoke missing disk stores so your system startup can complete. You must use the Disk Store ID to revoke a disk store. These are the two commands:
 
 ``` pre
@@ -64,12 +62,10 @@ gfsh>revoke missing-disk-store --id=60399215-532b-406f-b81f-9b5bd8d1b55a
 **Note:**
 This `gfsh` command requires that you be connected to the cluster via a JMX Manager node.
 
-## <a id="starting_up_shutting_down__section_mnx_4cp_cv" class="no-quick-link"></a>Shutting Down the System
-
+## Shutting Down the System {#starting_up_shutting_down__section_mnx_4cp_cv}
 Shut down your @@product_name@@ system by using either the `gfsh` `shutdown` command or by shutting down individual members one at a time.
 
-## <a id="starting_up_shutting_down__section_0EB4DDABB6A348BA83B786EEE7C84CF1" class="no-quick-link"></a>Using the shutdown Command
-
+## Using the shutdown Command {#starting_up_shutting_down__section_0EB4DDABB6A348BA83B786EEE7C84CF1}
 If you are using persistent regions, (members are persisting data to disk), you should use the `gfsh` `shutdown` command to stop the running system in an orderly fashion. This command synchronizes persistent partitioned regions before shutting down, which makes the next startup of the cluster as efficient as possible.
 
 If possible, all members should be running before you shut them down so synchronization can occur. Shut down the system using the following `gfsh` command:
@@ -98,8 +94,7 @@ To shutdown all members including locators after a grace period, specify a time-
 gfsh>shutdown --include-locators=true --time-out=60
 ```
 
-## <a id="starting_up_shutting_down__section_A07D40BC118544D0984860A3B4A5CB29" class="no-quick-link"></a>Shutting Down System Members Individually
-
+## Shutting Down System Members Individually {#starting_up_shutting_down__section_A07D40BC118544D0984860A3B4A5CB29}
 If you are not using persistent regions, you can shut down the cluster by shutting down each member in the reverse order of their startup. (See [Starting Up Your System](#starting_up_shutting_down__section_3D111558326D4A38BE48C17D44BB66DB) for the recommended order of member startup.)
 
 Shut down the cluster members according to the type of member. For example, use the following mechanisms to shut down members:
@@ -140,8 +135,7 @@ If a `kill` command appears the only way to rid the system of a server,
 then `kill` *all* the processes of the cluster
 or use `kill -INT`, which will allow an orderly shutdown of the process. 
 
-## <a id="starting_up_shutting_down__section_7CF680CF8A924C57A7052AE2F975DA81" class="no-quick-link"></a>Option for System Member Shutdown Behavior
-
+## Option for System Member Shutdown Behavior {#starting_up_shutting_down__section_7CF680CF8A924C57A7052AE2F975DA81}
 The `DISCONNECT_WAIT` command line argument sets the maximum time for each individual step in the shutdown process. If any step takes longer than the specified amount, it is forced to end. Each operation is given this grace period, so the total length of time the cache member takes to shut down depends on the number of operations and the `DISCONNECT_WAIT` setting. During the shutdown process, @@product_name@@ produces messages such as:
 
 ``` pre

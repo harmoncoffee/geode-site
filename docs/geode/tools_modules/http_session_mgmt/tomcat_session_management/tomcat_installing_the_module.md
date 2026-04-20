@@ -61,4 +61,4 @@ This adds jar files to the `lib` subdirectory and XML files to the `conf` subdir
     
     **Note:** Without these libraries, Tomcat will fail to start with `ClassNotFoundException` errors for Geode classes. The Geode session management module requires the complete Geode runtime, not just the module JARs included in the zip file.
 
-Proceed to [Setting Up the HTTP Module for Tomcat](./tomcat_setting_up_the_module.html) to complete your Tomcat configuration.
+Proceed to [Setting Up the HTTP Module for Tomcat](./tomcat_setting_up_the_module) to complete your Tomcat configuration.

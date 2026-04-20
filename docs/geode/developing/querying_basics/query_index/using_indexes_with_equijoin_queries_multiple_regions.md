@@ -22,8 +22,7 @@ limitations under the License.
 -->
 
 To query across multiple regions, identify all equi-join conditions. Then, create as few indexes for the equi-join conditions as you can while still joining all regions.
-
-<a id="concept_DB2407C49F064B04AA58BC9D1DBA3666__section_70735ED43C4D47B0A19B910BB7E3A1DA"></a>
+## {#concept_DB2407C49F064B04AA58BC9D1DBA3666__section_70735ED43C4D47B0A19B910BB7E3A1DA}
 If there are equi-join conditions that redundantly join two regions (in order to more finely filter the data, for example), then creating redundant indexes for these joins will negatively impact performance. Create indexes only on one equi-join condition for each region pair.
 
 In this example query:

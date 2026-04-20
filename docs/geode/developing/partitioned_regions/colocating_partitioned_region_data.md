@@ -23,9 +23,7 @@ By default, @@product_name@@ allocates the data locations for a partitioned regi
 Colocation is required for some operations,
 and it increases performance for others by reducing the number of data
 accesses to entries that are hosted on other cluster members.
-
-<a id="colocating_partitioned_region_data__section_131EC040055E48A6B35E981B5C845A65"></a>
-
+## {#colocating_partitioned_region_data__section_131EC040055E48A6B35E981B5C845A65}
 Data colocation between partitioned regions generally improves the performance of data-intensive operations. You can reduce network hops for iterative operations on related data sets. Compute-heavy applications that are data-intensive can significantly increase overall throughput. For example, a query run on a patient's health records, insurance, and billing information is more efficient if all data is grouped in a single member. Similarly, a financial risk analytical application runs faster if all trades, risk sensitivities, and reference data associated with a single instrument are together.
 
 **Procedure**
@@ -121,6 +119,6 @@ Data colocation between partitioned regions generally improves the performance o
     -   gfsh:
 
         Specify a partition resolver as described in the configuration
-        section of [Custom-Partition Your Region Data](using_custom_partition_resolvers.html).
+        section of [Custom-Partition Your Region Data](using_custom_partition_resolvers).
 
 4.  If you want to persist data in the colocated regions, persist the central region and then persist the other regions as needed. Use the same disk store for all of the colocated regions that you persist.

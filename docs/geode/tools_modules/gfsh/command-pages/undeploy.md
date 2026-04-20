@@ -30,9 +30,7 @@ If `--jars` is not specified, the command will undeploy all deployed JARs. If `-
 ``` pre
 undeploy [--jars=value(,value)*] [--groups=value(,value)*]
 ```
-
-<a id="concept_234FEC313B4A468E8851DD9B1B759B98__table_mcj_l5g_2w"></a>
-
+## {#concept_234FEC313B4A468E8851DD9B1B759B98__table_mcj_l5g_2w}
 | Name                                          | Description                                                  | Default Value                       |
 |-----------------------------------------------|--------------------------------------------------------------|-------------------------------------|
 | <span class="keyword parmname">&#8209;&#8209;groups</span> | Group(s) from which the specified JAR(s) will be undeployed. | undeploy will occur on all members |

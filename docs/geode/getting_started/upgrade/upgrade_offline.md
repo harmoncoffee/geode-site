@@ -25,20 +25,18 @@ Use the offline upgrade procedure when you cannot, or choose not to, perform a r
 For example, a rolling upgrade is not possible for a cluster that has partitioned regions without redundancy.
 (Without the redundancy, region entries would be lost when individual servers were taken out of the cluster during a rolling upgrade.)
 
-## <a id="offline-upgrade-guidelines" class="no-quick-link"></a>Offline Upgrade Guidelines
-
+## Offline Upgrade Guidelines {#offline-upgrade-guidelines}
 **Versions**
 
 For best reliability and performance, all server components of a @@product_name@@ system should run the same version of the software.
-See [Version Compatibilities](upgrade_planning.html#version_compatibilities) for more details on how different versions of @@product_name@@ can interoperate.
+See [Version Compatibilities](upgrade_planning#version_compatibilities) for more details on how different versions of @@product_name@@ can interoperate.
 
 **Data member interdependencies**
 
 When you restart your upgraded servers, interdependent data members may hang on startup waiting for each other. In this case, start the servers in
 separate command shells so they can start simultaneously and communicate with one another to resolve dependencies.
 
-## <a id="offline-upgrade-procedure" class="no-quick-link"></a>Offline Upgrade Procedure
-
+## Offline Upgrade Procedure {#offline-upgrade-procedure}
 1.  Stop any connected clients.
 
 1.  On a machine hosting a locator, open a terminal console.
@@ -108,4 +106,4 @@ were used when starting the system under the previous version of the software. (
 handy as a reference.) Interdependent data members may hang on startup waiting for each other. In this case, start servers in
 separate shells so they can communicate with one another to resolve dependencies.
 
-1. Upgrade @@product_name@@ clients, following the guidelines described in [Upgrading Clients](upgrade_clients.html).
+1. Upgrade @@product_name@@ clients, following the guidelines described in [Upgrading Clients](upgrade_clients).

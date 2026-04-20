@@ -21,16 +21,15 @@ limitations under the License.
 
 Close durable client CQs and durable clients.
 
--   **[close durable-client](../../../tools_modules/gfsh/command-pages/close.html#topic_4125AAAB9FE44CD787166E48B694C41D)**
+-   **[close durable-client](../../../tools_modules/gfsh/command-pages/close#topic_4125AAAB9FE44CD787166E48B694C41D)**
 
     Attempts to close a durable client. The client must be disconnected for this command to work.
 
--   **[close durable-cq](../../../tools_modules/gfsh/command-pages/close.html#topic_1BC15B3132BA480DB227921A9B3ABDD1)**
+-   **[close durable-cq](../../../tools_modules/gfsh/command-pages/close#topic_1BC15B3132BA480DB227921A9B3ABDD1)**
 
     Closes the durable continuous query (CQ) registered by the durable client and drain events held for the durable CQ from the subscription queue.
 
-## <a id="topic_4125AAAB9FE44CD787166E48B694C41D" class="no-quick-link"></a>close durable-client
-
+## close durable-client {#topic_4125AAAB9FE44CD787166E48B694C41D}
 Attempts to close a durable client. The client must be disconnected for this command to work.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -41,9 +40,7 @@ Attempts to close a durable client. The client must be disconnected for this com
 close durable-client --durable-client-id=value [--members=value(,value)*]
 [--groups=value(,value)*]
 ```
-
-<a id="topic_4125AAAB9FE44CD787166E48B694C41D__table_618C978BA2B442A9A979243B50856885"></a>
-
+## {#topic_4125AAAB9FE44CD787166E48B694C41D__table_618C978BA2B442A9A979243B50856885}
 | Name                                                       | Description                                                            |
 |------------------------------------------------------------|------------------------------------------------------------------------|
 | &#8209;&#8209;durable-client-id  | *Required.* The ID of the durable client.                              |
@@ -84,8 +81,7 @@ Occurred on members
 1.server1
 ```
 
-## <a id="topic_1BC15B3132BA480DB227921A9B3ABDD1" class="no-quick-link"></a>close durable-cq
-
+## close durable-cq {#topic_1BC15B3132BA480DB227921A9B3ABDD1}
 Closes the durable continuous query (CQ) registered by the durable client and drain events held for the durable CQ from the subscription queue.
 
 **Availability:** Online. You must be connected in `gfsh` to a JMX Manager member to use this command.
@@ -96,9 +92,7 @@ Closes the durable continuous query (CQ) registered by the durable client and dr
 close durable-cq --durable-client-id=value --durable-cq-name=value 
 [--members=value(,value)*] [--groups=value(,value)*]
 ```
-
-<a id="topic_1BC15B3132BA480DB227921A9B3ABDD1__table_CEFFFECABBDF4DC4A37E8861422EEB5C"></a>
-
+## {#topic_1BC15B3132BA480DB227921A9B3ABDD1__table_CEFFFECABBDF4DC4A37E8861422EEB5C}
 | Name                                                 | Description                                                                                          |
 |-----------------------------------------------------------|------------------------------------------------------------------------------------------------------|
 | &#8209;&#8209;durable-client-id | Required. The ID of the durable client.                                                              |

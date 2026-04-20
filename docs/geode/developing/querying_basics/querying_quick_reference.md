@@ -22,32 +22,30 @@ limitations under the License.
 -->
 
 This topic answers some frequently asked questions on querying functionality. It provides examples to help you get started with @@product_name@@ querying.
+## {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_AFAD97A4BA2D45CF91ED1525A54DDFD6}
+For additional information on @@product_name@@ querying, see [Querying](chapter_overview).
 
-<a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_AFAD97A4BA2D45CF91ED1525A54DDFD6"></a>
-For additional information on @@product_name@@ querying, see [Querying](../developing/querying_basics/chapter_overview.html).
-
--   [How do I write and execute a query against a @@product_name@@ region?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_7A4D2C6A4E2C4F4384C158FFCA9CA1C0)
--   [Can I see query string examples, listed by query type?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_641D97CD874D4182961C85429ACA1B05)
--   [Which APIs should I use to write my queries?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5383407F9D004D4EB4E695252EBA1EF0)
--   [How do I invoke an object's method in a query?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3E6E4B33D57846008EF4404D2B687597)
--   [Can I invoke a static method on an object in a query?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_9221C29BC1FD49D7BBD26BB34D5BDEB8)
--   [How do I write a reusable query?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_907DBBBA1AEC4570A15B3491B0A7DF0E)
--   [When should I create indexes to use in my queries?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3A9528E8E43140BAA0D5A1457CCAB2D2)
--   [How do I create an index?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_76CDCCFBDB134A339DBE556C28D48F11)
--   [Can I query a partitioned region? Can I perform a join query on a partitioned region?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_EDD17817450C4FC0B510CD87DB2FCD16)
--   [How can I improve the performance of a partitioned region query?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5FF905E0D10D4CDF9E6F49A70848AF69)
--   [Which query language elements are supported in @@product_name@@?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_FBC59A5420FD40D6907A302A1D50DF7E)
--   [How do I debug queries?](querying_quick_reference.html#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_314B88A55B514B88A12DC36227A2D4EF)
+-   [How do I write and execute a query against a @@product_name@@ region?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_7A4D2C6A4E2C4F4384C158FFCA9CA1C0)
+-   [Can I see query string examples, listed by query type?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_641D97CD874D4182961C85429ACA1B05)
+-   [Which APIs should I use to write my queries?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5383407F9D004D4EB4E695252EBA1EF0)
+-   [How do I invoke an object's method in a query?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3E6E4B33D57846008EF4404D2B687597)
+-   [Can I invoke a static method on an object in a query?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_9221C29BC1FD49D7BBD26BB34D5BDEB8)
+-   [How do I write a reusable query?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_907DBBBA1AEC4570A15B3491B0A7DF0E)
+-   [When should I create indexes to use in my queries?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3A9528E8E43140BAA0D5A1457CCAB2D2)
+-   [How do I create an index?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_76CDCCFBDB134A339DBE556C28D48F11)
+-   [Can I query a partitioned region? Can I perform a join query on a partitioned region?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_EDD17817450C4FC0B510CD87DB2FCD16)
+-   [How can I improve the performance of a partitioned region query?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5FF905E0D10D4CDF9E6F49A70848AF69)
+-   [Which query language elements are supported in @@product_name@@?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_FBC59A5420FD40D6907A302A1D50DF7E)
+-   [How do I debug queries?](querying_quick_reference#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_314B88A55B514B88A12DC36227A2D4EF)
 -   [Can I use implicit attributes or methods in my query?](#reference_D5CE64F5FD6F4A808AEFB748C867189E__implicit_attributes)
 -   [How do I perform a case-insensitive search on a field in OQL?](#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_ayq_hqw_1r)
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_7A4D2C6A4E2C4F4384C158FFCA9CA1C0" class="no-quick-link"></a>How do I write and execute a query against a @@product_name@@ region?
-
+## How do I write and execute a query against a @@product_name@@ region? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_7A4D2C6A4E2C4F4384C158FFCA9CA1C0}
 To write and execute a query in @@product_name@@, you can use any of the following mechanisms. Sample query code follows.
 
 -   @@product_name@@ querying APIs
--   [gfsh](../tools_modules/gfsh/chapter_overview.html) command-line interface; in particular the [query](../tools_modules/gfsh/command-pages/query.html) command
--   REST API [query endpoints](../rest_apps/rest_queries.html#concept_mmg_d35_m4)
+-   [gfsh](../tools_modules/gfsh/chapter_overview) command-line interface; in particular the [query](../tools_modules/gfsh/command-pages/query) command
+-   REST API [query endpoints](../rest_apps/rest_queries#concept_mmg_d35_m4)
 
 **Sample @@product_name@@ Query Code (Java)**
 
@@ -71,8 +69,7 @@ To write and execute a query in @@product_name@@, you can use any of the followi
  Portfolio p = (Portfolio)results.iterator().next(); /* Region containing Portfolio object. */
 ```
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_641D97CD874D4182961C85429ACA1B05" class="no-quick-link"></a>Can I see query string examples, listed by query type?
-
+## Can I see query string examples, listed by query type? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_641D97CD874D4182961C85429ACA1B05}
 The following example query strings use the `/exampleRegion` whose keys are the portfolio ID and whose values correspond to the summarized data shown in the following class definitions:
 
 ``` pre
@@ -91,7 +88,7 @@ class Position implements DataSerializable {
 
 **Basic WHERE Clause Examples**
 
-In the following examples, the status field is type String and the ID field is type int. See [Supported Literals](../developing/query_additional/literals.html#literals) for a complete list of literals supported in @@product_name@@ querying.
+In the following examples, the status field is type String and the ID field is type int. See [Supported Literals](queries/query_additional/literals#literals) for a complete list of literals supported in @@product_name@@ querying.
 
 1.  Select all active portfolios.
 
@@ -133,7 +130,7 @@ SELECT p.ID, p.status FROM /exampleRegion p WHERE p.ID > 0
 
 **Using the NOT Operator**
 
-See [Operators](../developing/query_additional/operators.html#operators) for a complete list of supported operators.
+See [Operators](queries/query_additional/operators#operators) for a complete list of supported operators.
 
 ``` pre
 SELECT DISTINCT * FROM /exampleRegion WHERE NOT (status = 'active') AND ID = 2
@@ -145,7 +142,7 @@ SELECT * FROM /exampleRegion WHERE NOT (ID IN SET(1,2))
 
 **Using the AND and OR Operators**
 
-See [Operators](../developing/query_additional/operators.html#operators) for a complete list of supported operators.
+See [Operators](queries/query_additional/operators#operators) for a complete list of supported operators.
 
 ``` pre
 SELECT * FROM /exampleRegion WHERE ID > 4 AND ID < 9
@@ -193,7 +190,7 @@ SELECT * FROM /exampleRegion p WHERE p.ID > 0 LIMIT 2
 
 **Using MIN and MAX**
 
-See [MIN](../developing/query_select/aggregates.html#min) and [MAX](../developing/query_select/aggregates.html#max)for more information.
+See [MIN](queries/query_select/aggregates#min) and [MAX](queries/query_select/aggregates#max)for more information.
 
 ``` pre
 SELECT MIN(ID)
@@ -221,7 +218,7 @@ WHERE p.ID > 0 OR p.status = 'active' OR pos.secId = 'IBM'
 
 **Using AVG**
 
-See [AVG](../developing/query_select/aggregates.html#avg) for more information.
+See [AVG](queries/query_select/aggregates#avg) for more information.
 
 ``` pre
 SELECT AVG(ID)
@@ -249,7 +246,7 @@ WHERE p.ID > 0 OR p.status = 'active' OR pos.secId = 'IBM'
 
 **Using COUNT**
 
-See [COUNT](../developing/query_select/aggregates.html#count) for more information.
+See [COUNT](queries/query_select/aggregates#count) for more information.
 
 ``` pre
 SELECT COUNT(*)
@@ -295,7 +292,7 @@ WHERE p.ID > 0 OR p.status = 'active' OR pos.secId = 'IBM'
 
 **Using SUM**
 
-See [SUM](../developing/query_select/aggregates.html#sum) for more information.
+See [SUM](queries/query_select/aggregates#sum) for more information.
 
 ``` pre
 SELECT SUM(ID)
@@ -323,7 +320,7 @@ WHERE p.ID > 0 OR p.status = 'active' OR pos.secId = 'IBM'
 
 **Using GROUP BY**
 
-See [GROUP BY](../developing/query_select/aggregates.html#groupBy) for more information.
+See [GROUP BY](queries/query_select/aggregates#groupBy) for more information.
 
 ``` pre
 SELECT p.status, MAX(p.ID) 
@@ -598,7 +595,7 @@ SELECT DISTINCT * FROM /Portfolios WHERE TRUE
 
 **Using IN and SET**
 
-See also [IN and SET](../developing/query_select/the_where_clause.html#the_where_clause__section_AC12146509F141378E493078540950C7).
+See also [IN and SET](queries/query_select/the_where_clause.md#the_where_clause__section_AC12146509F141378E493078540950C7).
 
 ``` pre
 SELECT * FROM /exampleRegion portfolio WHERE portfolio.ID IN SET(1, 2)
@@ -638,7 +635,7 @@ SELECT * FROM /exampleRegion WHERE sp.containsAll(set('20', '21', '22'))
 
 **Invoking Methods on Objects**
 
-See [Method Invocations](../developing/query_select/the_where_clause.html#the_where_clause__section_D2F8D17B52B04895B672E2FCD675A676) for more information.
+See [Method Invocations](queries/query_select/the_where_clause.md#the_where_clause__section_D2F8D17B52B04895B672E2FCD675A676) for more information.
 
 ``` pre
 SELECT * FROM /exampleRegion p WHERE p.length > 1
@@ -702,14 +699,12 @@ Using ELEMENT(expr) extracts a single element from a collection or array. This f
 ELEMENT(SELECT DISTINCT * FROM /exampleRegion WHERE id = 'XYZ-1').status = 'active'
 ```
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5383407F9D004D4EB4E695252EBA1EF0" class="no-quick-link"></a>Which APIs should I use to write my queries?
+## Which APIs should I use to write my queries? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5383407F9D004D4EB4E695252EBA1EF0}
+If you are querying a Java application's local cache or querying other members, use [org.apache.geode.cache.Cache.getQueryService](/org/apache/geode/cache/query/QueryService).
 
-If you are querying a Java application's local cache or querying other members, use [org.apache.geode.cache.Cache.getQueryService](/org/apache/geode/cache/query/QueryService.html).
+If you are writing a Java client to server query, use [org.apache.geode.cache.client.Pool.getQueryService](/org/apache/geode/cache/client/Pool).
 
-If you are writing a Java client to server query, use [org.apache.geode.cache.client.Pool.getQueryService](/org/apache/geode/cache/client/Pool.html).
-
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3E6E4B33D57846008EF4404D2B687597" class="no-quick-link"></a>How do I invoke an object's method in a query?
-
+## How do I invoke an object's method in a query? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3E6E4B33D57846008EF4404D2B687597}
 To use a method in a query, use the attribute name that maps to the public method you want to invoke. For example:
 
 ``` pre
@@ -717,8 +712,7 @@ To use a method in a query, use the attribute name that maps to the public metho
 SELECT DISTINCT * FROM /exampleRegion p WHERE p.positions.size >= 2 - maps to positions.size()
 ```
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_9221C29BC1FD49D7BBD26BB34D5BDEB8" class="no-quick-link"></a>Can I invoke a static method on an object in a query?
-
+## Can I invoke a static method on an object in a query? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_9221C29BC1FD49D7BBD26BB34D5BDEB8}
 No, you cannot invoke a static method on an object. For example, the following query is invalid.
 
 ``` pre
@@ -732,8 +726,7 @@ To work around this limitation, write a reusable query that uses a query bind pa
 SELECT DISTINCT * FROM /exampleRegion WHERE aDay = $1
 ```
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_907DBBBA1AEC4570A15B3491B0A7DF0E" class="no-quick-link"></a>How do I write a reusable query?
-
+## How do I write a reusable query? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_907DBBBA1AEC4570A15B3491B0A7DF0E}
 Using query APIs, you can set query bind parameters that are passed values at query run time. For example:
 
 ``` pre
@@ -756,18 +749,16 @@ SelectResults results = (SelectResults) query.execute(params);
 
 If you use a query bind parameter in place of a region path in your path expression, the parameter value must reference a collection (and not a String such as the name of the region path.)
 
-See [Using Query Bind Parameters](../developing/query_additional/using_query_bind_parameters.html#concept_173E775FE46B47DF9D7D1E40680D34DF) for more details.
+See [Using Query Bind Parameters](queries/query_additional/using_query_bind_parameters#concept_173E775FE46B47DF9D7D1E40680D34DF) for more details.
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3A9528E8E43140BAA0D5A1457CCAB2D2" class="no-quick-link"></a>When should I create indexes to use in my queries?
-
+## When should I create indexes to use in my queries? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_3A9528E8E43140BAA0D5A1457CCAB2D2}
 Determine whether your query’s performance will benefit from an index. For example, in the following query, an index on pkid can speed up the query.
 
 ``` pre
 SELECT DISTINCT * FROM /exampleRegion portfolio WHERE portfolio.pkid = '123'
 ```
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_76CDCCFBDB134A339DBE556C28D48F11" class="no-quick-link"></a>How do I create an index?
-
+## How do I create an index? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_76CDCCFBDB134A339DBE556C28D48F11}
 An index can be created programmatically using APIs or by using xml. Here are two examples:
 
 **Sample Code**
@@ -778,7 +769,7 @@ QueryService qs = cache.getQueryService();
  qs.createKeyIndex("myKeyIndex", "id", "exampleRegion");
 ```
 
-For more information on using this API, see the [JavaDocs](/index.html).
+For more information on using this API, see the [JavaDocs](/index).
 
 **Sample XML**
 
@@ -796,24 +787,20 @@ For more information on using this API, see the [JavaDocs](/index.html).
  <entry>
 ```
 
-For more details on indexes, see [Working with Indexes](../developing/query_index/query_index.html).
+For more details on indexes, see [Working with Indexes](queries/query_index/query_index).
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_30D8C9A5472E4768AB7A0D598C9A496E" class="no-quick-link"></a>Can I create indexes on overflow regions?
+## Can I create indexes on overflow regions? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_30D8C9A5472E4768AB7A0D598C9A496E}
+You can create indexes on overflow regions, but you are subject to some limitations. For example, the data contained in the index itself cannot be overflowed to disk. See [Using Indexes with Overflow Regions](query_index/indexes_with_overflow_regions#concept_87BE7DB32C714EB0BF7532AF93569328) for more information.
 
-You can create indexes on overflow regions, but you are subject to some limitations. For example, the data contained in the index itself cannot be overflowed to disk. See [Using Indexes with Overflow Regions](../developing/query_index/indexes_with_overflow_regions.html#concept_87BE7DB32C714EB0BF7532AF93569328) for more information.
-
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_EDD17817450C4FC0B510CD87DB2FCD16" class="no-quick-link"></a>Can I query a partitioned region? Can I perform a join query on a partitioned region?
-
+## Can I query a partitioned region? Can I perform a join query on a partitioned region? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_EDD17817450C4FC0B510CD87DB2FCD16}
 You can query partitioned regions, but there are some limitations. You cannot perform join queries on partitioned regions, however you can perform equi-join queries on colocated partitioned regions by executing a function on a local data set.
 
-For a full list of restrictions, see [Partitioned Region Query Restrictions](../developing/query_additional/partitioned_region_query_restrictions.html#concept_5353476380D44CC1A7F586E5AE1CE7E8).
+For a full list of restrictions, see [Partitioned Region Query Restrictions](queries/query_additional/partitioned_region_query_restrictions#concept_5353476380D44CC1A7F586E5AE1CE7E8).
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5FF905E0D10D4CDF9E6F49A70848AF69" class="no-quick-link"></a>How can I improve the performance of a partitioned region query?
+## How can I improve the performance of a partitioned region query? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_5FF905E0D10D4CDF9E6F49A70848AF69}
+If you know the data you need to query, you can target particular nodes in your queries (thus reducing the number of servers the query needs to access) by executing the query with the FunctionService. See [Querying a Partitioned Region on a Single Node](queries/query_additional/query_on_a_single_node#concept_30B18A6507534993BD55C2C9E0544A97) for details. If you are querying data that has been partitioned by a key or specific field, you should first create a key index and then execute the query using the FunctionService with the key or field as a filter. See [Optimizing Queries on Data Partitioned by a Key or Field Value](queries/query_additional/partitioned_region_key_or_field_value#concept_3010014DFBC9479783B2B45982014454).
 
-If you know the data you need to query, you can target particular nodes in your queries (thus reducing the number of servers the query needs to access) by executing the query with the FunctionService. See [Querying a Partitioned Region on a Single Node](../developing/query_additional/query_on_a_single_node.html#concept_30B18A6507534993BD55C2C9E0544A97) for details. If you are querying data that has been partitioned by a key or specific field, you should first create a key index and then execute the query using the FunctionService with the key or field as a filter. See [Optimizing Queries on Data Partitioned by a Key or Field Value](../developing/query_additional/partitioned_region_key_or_field_value.html#concept_3010014DFBC9479783B2B45982014454).
-
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_FBC59A5420FD40D6907A302A1D50DF7E" class="no-quick-link"></a>Which query language elements are supported in @@product_name@@?
-
+## Which query language elements are supported in @@product_name@@? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_FBC59A5420FD40D6907A302A1D50DF7E}
 | Supported elements ||          |
 |----------|----------|----------|
 | AND      | LIMIT    | TO_DATE  |
@@ -828,10 +815,9 @@ If you know the data you need to query, you can target particular nodes in your 
 | IS_DEFINED| TRUE    | |
 | IS_UNDEFINED        | |
 
-For more information and examples on using each supported keyword, see [Supported Keywords](../developing/query_additional/supported_keywords.html#reference_07214B0F8DC94659B0F2D68B67195BD8).
+For more information and examples on using each supported keyword, see [Supported Keywords](queries/query_additional/supported_keywords#reference_07214B0F8DC94659B0F2D68B67195BD8).
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_314B88A55B514B88A12DC36227A2D4EF" class="no-quick-link"></a>How do I debug queries?
-
+## How do I debug queries? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_314B88A55B514B88A12DC36227A2D4EF}
 You can debug a specific query at the query level by adding the &lt;trace&gt; keyword before the query string that you want to debug. Here is an example:
 
 ``` pre
@@ -863,8 +849,7 @@ Or you can set the property programmatically:
 System.setProperty("gemfire.Query.VERBOSE","true");
 ```
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__implicit_attributes" class="no-quick-link"></a>Can I use implicit attributes or methods in my query?
-
+## Can I use implicit attributes or methods in my query? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__implicit_attributes}
 If an implicit attribute or method name can only be associated with one untyped iterator, the @@product_name@@ query processor will assume that it is associated with that iterator. However, if more than one untyped iterator is in scope, then the query will fail with a `TypeMismatchException`. The following query fails because the query processor does not fully type expressions:
 
 ``` pre
@@ -891,8 +876,7 @@ Using HINT *indexname* allows you to instruct the query engine to prefer and fil
             
 ```
 
-## <a id="reference_D5CE64F5FD6F4A808AEFB748C867189E__section_ayq_hqw_1r" class="no-quick-link"></a>How do I perform a case-insensitive search on a field in OQL?
-
+## How do I perform a case-insensitive search on a field in OQL? {#reference_D5CE64F5FD6F4A808AEFB748C867189E__section_ayq_hqw_1r}
 You can use the Java String class methods `toUpperCase` and `toLowerCase` to transform fields where you want to perform a case-insensitive search. For example:
 
 ``` pre
