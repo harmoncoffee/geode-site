@@ -97,16 +97,6 @@ const config: Config = {
         [
             '@docusaurus/plugin-content-docs',
             {
-                id: 'community',
-                path: 'community',
-                routeBasePath: 'community',
-                sidebarPath: './community/sidebars.ts',
-                editUrl: `https://github.com/apache/${siteRepoName}/tree/main/`,
-            },
-        ],
-        [
-            '@docusaurus/plugin-content-docs',
-            {
                 id: 'geode_native_cpp',
                 path: 'docs/geode_native_cpp',
                 routeBasePath: 'docs/geode_native_cpp',
@@ -165,11 +155,9 @@ const config: Config = {
       },
       items: [
           {
-              type: 'docSidebar',
-              sidebarId: 'community',
+              to: '/community',
               position: 'left',
               label: 'Community',
-              docsPluginId: 'community',
           },
           {
               href: `https://issues.apache.org/jira/browse/GEODE/`,
