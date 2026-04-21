@@ -14,12 +14,17 @@ import {
     useActiveDocContext,} from '@docusaurus/plugin-content-docs/client';
 import {translate} from '@docusaurus/Translate';
 
-
+const VERSIONED_DOC_PLUGIN_IDS = new Set([
+    'default',
+    'geode_native_cpp',
+    'geode_native_dotnet',
+]);
 
 const getVersionMainDoc = (version) =>
     version.docs.find((doc) => doc.id === version.mainDocId);
 
 export default function Index({
+                                                          docsPluginId: docsPluginIdProp,
                                                           mobile,
                                                           dropdownActiveClassDisabled,
                                                           dropdownItemsBefore,
@@ -28,7 +33,11 @@ export default function Index({
                                                       }) {
 
     const activePlugin = useActivePlugin();
-    const docsPluginId = activePlugin?.pluginId ?? 'default';
+    const docsPluginId = docsPluginIdProp ?? activePlugin?.pluginId ?? 'default';
+
+    if (!VERSIONED_DOC_PLUGIN_IDS.has(docsPluginId)) {
+        return null;
+    }
 
     const activeDocContext = useActiveDocContext(docsPluginId);
     const versions = useVersions(docsPluginId);

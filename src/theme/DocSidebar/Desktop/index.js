@@ -8,11 +8,18 @@
 import React from 'react';
 import clsx from 'clsx';
 import {useThemeConfig} from '@docusaurus/theme-common';
+import {useActivePlugin} from '@docusaurus/plugin-content-docs/client';
 import Logo from '@theme/Logo';
 import CollapseButton from '@theme/DocSidebar/Desktop/CollapseButton';
 import Content from '@theme/DocSidebar/Desktop/Content';
 import DocsVersionDropdownNavbarItem from '@theme/NavbarItem/DocsVersionDropdownNavbarItem';
 import styles from './styles.module.css';
+
+const VERSIONED_DOC_PLUGIN_IDS = new Set([
+  'default',
+  'geode_native_cpp',
+  'geode_native_dotnet',
+]);
 
 function DocSidebarDesktop({path, sidebar, onCollapse, isHidden, docsPluginId}) {
     const {
@@ -21,6 +28,9 @@ function DocSidebarDesktop({path, sidebar, onCollapse, isHidden, docsPluginId}) 
             sidebar: {hideable},
         },
     } = useThemeConfig();
+    const activePlugin = useActivePlugin();
+    const resolvedDocsPluginId = docsPluginId ?? activePlugin?.pluginId ?? 'default';
+    const showVersionSwitch = VERSIONED_DOC_PLUGIN_IDS.has(resolvedDocsPluginId);
 
     return (
         <div
@@ -30,13 +40,16 @@ function DocSidebarDesktop({path, sidebar, onCollapse, isHidden, docsPluginId}) 
                 isHidden && styles.sidebarHidden,
             )}>
             {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
-            <div className={styles.sidebarVersionSwitch}>
-                <span>Version: </span>
-                <DocsVersionDropdownNavbarItem
-                    dropdownItemsBefore={[]}
-                    dropdownItemsAfter={[]}
-                />
-            </div>
+            {showVersionSwitch && (
+                <div className={styles.sidebarVersionSwitch}>
+                    <span>Version: </span>
+                    <DocsVersionDropdownNavbarItem
+                        docsPluginId={resolvedDocsPluginId}
+                        dropdownItemsBefore={[]}
+                        dropdownItemsAfter={[]}
+                    />
+                </div>
+            )}
             <Content path={path} sidebar={sidebar} />
             {hideable && <CollapseButton onClick={onCollapse} />}
         </div>
