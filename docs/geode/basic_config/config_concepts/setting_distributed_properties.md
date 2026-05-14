@@ -67,9 +67,9 @@ Set properties by any combination of the following. The system looks for the set
         gfsh>start server --name=server_name --mcast-port=10338 --properties-file=serverConfig/gemfire.properties --security-properties-file=gfsecurity.properties
         ```
 
-        See [Running @@product_name@@ Server Processes](../../configuring/running/running_the_cacheserver) for more information on running cache servers.
+        See [Running @@product_name@@ Server Processes](../../configuring/running_the_cacheserver) for more information on running cache servers.
 
-3.  Entry in a `gemfire.properties` file. See [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/running/deploying_config_files). Example:
+3.  Entry in a `gemfire.properties` file. See [Deploying Configuration Files without the Cluster Configuration Service](../../configuring/deployingconfig/deploying_config_files). Example:
 
     ``` pre
     cache-xml-file=cache.xml

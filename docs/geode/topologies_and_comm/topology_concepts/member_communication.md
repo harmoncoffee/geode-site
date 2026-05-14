@@ -42,4 +42,4 @@ Using the protocols and addresses you determined above, do the following:
 
 -   Set up membership in your systems.
 -   Set up communication between system members. See [Configuring Peer Communication](../p2p_configuration/setting_up_peer_communication).
--   As needed, set up communication between your systems. See [Configuring a Client/Server System](../cs_configuration/setting_up_a_client_server_system#setting_up_a_client_server_system).
+-   As needed, set up communication between your systems. See [Configuring a Client/Server System](../cs_configuration/setting_up_a_client_server_system).
