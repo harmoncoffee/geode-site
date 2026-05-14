@@ -27,7 +27,7 @@ Follow these guidelines to use custom domain classes for your cached entry keys 
 Each member’s `CLASSPATH` must include classes for all objects the member accesses.
 
 -   For Java applications, use the standard Java `CLASSPATH`.
--   For the cache server process, use the `CLASSPATH` environment variable or the `gfsh start server`'s `--classpath` parameter. See [Running @@product_name@@ Server Processes](../../configuring/running/running_the_cacheserver).
+-   For the cache server process, use the `CLASSPATH` environment variable or the `gfsh start server`'s `--classpath` parameter. See [Running @@product_name@@ Server Processes](../../configuring/running_the_cacheserver).
 
 Data is sent between clients and servers in serialized form and the server stores client data in serialized form. The server does not need to deserialize data to send it to another client or to access it through a `PDXInstance`, but it does need to deserialize it to access it in other ways. The server `CLASSPATH` must include the classes for:
 
