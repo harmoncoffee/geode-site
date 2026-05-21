@@ -32,7 +32,7 @@ Besides the disk stores you specify, @@product_name_long@@ has a default disk st
 -   [Configuring Disk Stores on Gateway Senders](using_disk_stores#defining_disk_stores__config-disk-store-gateway)
 
 ## Design Your Disk Stores {#defining_disk_stores__section_0CD724A12EE4418587046AAD9EEC59C5}
-Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../basic_config/book_intro).
+Before you begin, you should understand @@product_name@@ [Basic Configuration and Programming](../../book_intro).
 
 1.  Work with your system designers and developers to plan for anticipated disk storage requirements in your testing and production caching systems. Take into account space and functional requirements.
     -   For efficiency, separate data that is only overflowed in separate disk stores from data that is persisted or persisted and overflowed. Regions can be overflowed, persisted, or both. Server subscription queues are only overflowed.

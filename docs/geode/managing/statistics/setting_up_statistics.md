@@ -24,7 +24,7 @@ limitations under the License.
 You can configure statistics and statistics archiving in several ways.
 
 ## Configure Cluster or Server Statistics {#setting_up_statistics__section_215BB4074BD64834BAADA87BE84C34DE}
-In this procedure it is assumed that you understand [Basic Configuration and Programming](../../basic_config/book_intro).
+In this procedure it is assumed that you understand [Basic Configuration and Programming](../../book_intro).
 
 Execute the following commands to modify the cluster's configuration and enable cluster or server statistics.
 

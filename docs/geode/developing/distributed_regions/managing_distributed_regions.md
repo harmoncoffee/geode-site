@@ -23,7 +23,7 @@ limitations under the License.
 
 Plan the configuration and ongoing management of your distributed, replicated, and preloaded regions, and configure the regions.
 ## {#configure_distributed_region__section_11E9E1B3EB5845D9A4FB226A992B8D0D}
-Before you begin, understand [Basic Configuration and Programming](../../basic_config/book_intro).
+Before you begin, understand [Basic Configuration and Programming](../../book_intro).
 
 1.  Choose the region shortcut setting that most closely matches your region configuration. See **`org.apache.geode.cache.RegionShortcut`** or [Region Shortcuts](../../reference/region_shortcuts/chapter_overview_regionshortcuts#concept_ymp_rkz_4dffhdfhk). To create a replicated region, use one of the `REPLICATE` shortcut settings. To create a preloaded region, set your region `data-policy` to `preloaded`. This `cache.xml` declaration creates a replicated region:
 

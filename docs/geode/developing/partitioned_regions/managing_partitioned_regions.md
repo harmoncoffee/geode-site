@@ -23,7 +23,7 @@ limitations under the License.
 
 Plan the configuration and ongoing management of your partitioned region for host and accessor members and configure the regions for startup.
 ## {#configure_partitioned_regions__section_241583D88E244AB6AB5CD05BF55F6A0A}
-Before you begin, understand [Basic Configuration and Programming](../../basic_config/book_intro).
+Before you begin, understand [Basic Configuration and Programming](../../book_intro).
 
 1.  Start your region configuration using one of the `PARTITION` region shortcut settings. See [Region Shortcuts and Custom Named Region Attributes](../../basic_config/data_regions/region_shortcuts).
 2.  If you need high availability for your partitioned region, configure for that. See [Configure High Availability for a Partitioned Region](configuring_ha_for_pr).
