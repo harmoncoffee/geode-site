@@ -24,7 +24,7 @@ limitations under the License.
 To use distributed and replicated regions, you should understand how they work and your options for managing them.
 ## {#how_distribution_works__section_2F892A4987C547E68CA78067133C2C2C}
 **Note:**
-The management of replicated and distributed regions supplements the general information for managing data regions provided in [Basic Configuration and Programming](../../book_intro). See also `org.apache.geode.cache.PartitionAttributes`.
+The management of replicated and distributed regions supplements the general information for managing data regions provided in [Basic Configuration and Programming](../../developing/book_intro). See also `org.apache.geode.cache.PartitionAttributes`.
 
 A distributed region automatically sends entry value updates to remote caches and receives updates from them.
 

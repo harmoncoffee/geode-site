@@ -23,7 +23,7 @@ limitations under the License.
 
 You configure logging in a member's `gemfire.properties` or at startup with `gfsh`.
 ## {#setting_up_logging__section_35F8A9028A91441785BCACD6CD40A498}
-Before you begin, make sure you understand [Basic Configuration and Programming](../../book_intro).
+Before you begin, make sure you understand [Basic Configuration and Programming](../../developing/book_intro).
 
 1.  Run a time synchronization service such as NTP on all @@product_name@@ host machines. This is the only way to produce logs that are useful for troubleshooting. Synchronized time stamps ensure that log messages from different hosts can be merged to accurately reproduce a chronological history of a distributed run.
 2.  Use a sniffer to monitor your logs Look for new or unexpected warnings, errors, or severe messages. The logs output by your system have their own characteristics, indicative of your system configuration and of the particular behavior of your applications, so you must become familiar with your applications' logs to use them effectively.

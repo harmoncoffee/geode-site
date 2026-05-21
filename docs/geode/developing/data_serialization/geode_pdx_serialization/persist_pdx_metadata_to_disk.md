@@ -25,7 +25,7 @@ limitations under the License.
 ## {#persist_pdx_metadata_to_disk__section_7F357A8E56B54BFB9A5778C0F89E034E}
 **Prerequisites**
 
--   Understand generally how to configure the @@product_name@@ cache. See [Basic Configuration and Programming](../../book_intro).
+-   Understand generally how to configure the @@product_name@@ cache. See [Basic Configuration and Programming](../../developing/book_intro).
 -   Understand how @@product_name@@ disk stores work. See [Disk Storage](../../managing/disk_storage/chapter_overview).
 
 **Procedure**
