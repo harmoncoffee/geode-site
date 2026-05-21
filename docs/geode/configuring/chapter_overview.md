@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Configuring and Running a Cluster
 ---
 
@@ -54,26 +54,26 @@ You can also use `gfsh` to start and stop locators, servers, and @@product_name@
 
     You can connect `gfsh` via HTTP or HTTPS to a remote cluster and manage the cluster using `gfsh` commands.
 
--   **[Deploying Configuration Files without the Cluster Configuration Service](running/deploying_config_files)**
+-   **[Deploying Configuration Files without the Cluster Configuration Service](./deployingconfig/deploying_config_files)**
 
     You can deploy your @@product_name_long@@ configuration files in your system directory structure or in jar files. You determine how you want to deploy your configuration files and set them up accordingly.
 
--   **[Starting Up and Shutting Down Your System](running/starting_up_shutting_down)**
+-   **[Starting Up and Shutting Down Your System](./starting_up_shutting_down)**
 
     Determine the proper startup and shutdown procedures, and write your startup and shutdown scripts.
 
--   **[Running @@product_name@@ Locator Processes](running/running_the_locator)**
+-   **[Running @@product_name@@ Locator Processes](./running_the_locator)**
 
     The locator is a @@product_name@@ process that tells new, connecting members where running members are located and provides load balancing for server use.
 
--   **[Running @@product_name@@ Server Processes](running/running_the_cacheserver)**
+-   **[Running @@product_name@@ Server Processes](./running_the_cacheserver)**
 
     A @@product_name@@ server is a process that runs as a long-lived, configurable member of a client/server system.
 
--   **[Managing System Output Files](running/managing_output_files)**
+-   **[Managing System Output Files](./managing_output_files)**
 
     @@product_name@@ output files are optional and can become quite large. Work with your system administrator to determine where to place them to avoid interfering with other system activities.
 
--   **[Firewall Considerations](running/firewall_ports_config)**
+-   **[Firewall Considerations](./firewall/firewall_ports_config)**
 
     You can configure and limit port usage for situations that involve firewalls, for example, between client-server or server-server connections.
