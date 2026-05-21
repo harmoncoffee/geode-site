@@ -26,31 +26,31 @@ You can also use `gfsh` to start and stop locators, servers, and @@product_name@
 
 `gfsh` is the recommended means of configuring and managing your @@product_name_long@@ cluster, however you can still configure many aspects of a cluster using the older methods of the cache.xml and gemfire.properties files. See [cache.xml](../reference/cache/chapter_overview_cache_xml#cache_xml) and the [Reference](../reference/book_intro#reference) for configuration parameters. You can also configure some aspects of a cluster using a Java API. See [Managing @@product_name_long@@](../managing/book_intro#managing_gemfire_intro).
 
--   **[Overview of the Cluster Configuration Service](cluster_config/gfsh_persist)**
+-   **[Overview of the Cluster Configuration Service](./gfsh_persist)**
 
     The @@product_name_long@@ cluster configuration service persists cluster configurations created by `gfsh` commands to the locators in a cluster and distributes the configurations to members of the cluster.
 
--   **[Tutorial—Creating and Using a Cluster Configuration](cluster_config/persisting_configurations)**
+-   **[Tutorial—Creating and Using a Cluster Configuration](./persisting_configurations)**
 
     A short walk-through that uses a single computer to demonstrate how to use `gfsh` to create a cluster configuration for a @@product_name@@ cluster.
 
--   **[Deploying Application JARs to @@product_name_long@@ Members](cluster_config/deploying_application_jars)**
+-   **[Deploying Application JARs to @@product_name_long@@ Members](./deploying_application_jars)**
 
     You can dynamically deploy your application JAR files to specific members or to all members in your cluster. @@product_name@@ automatically keeps track of JAR file versions; autoloads the deployed JAR files to the CLASSPATH; and auto-registers any functions that the JAR contains.
 
--   **[Using Member Groups](cluster_config/using_member_groups)**
+-   **[Using Member Groups](./using_member_groups)**
 
     @@product_name_long@@ allows you to organize your cluster members into logical member groups.
 
--   **[Exporting and Importing Cluster Configurations](cluster_config/export-import)**
+-   **[Exporting and Importing Cluster Configurations](./export-import)**
 
     The cluster configuration service exports and imports configurations created using `gfsh` for an entire @@product_name_long@@ cluster.
 
--   **[Cluster Configuration Files and Troubleshooting](cluster_config/gfsh_config_troubleshooting)**
+-   **[Cluster Configuration Files and Troubleshooting](./gfsh_config_troubleshooting)**
 
     When you use the cluster configuration service in @@product_name@@, you can examine the generated configuration files in the `cluster_config` directory on the locator. `gfsh` saves configuration files at the cluster-level and at the individual group-level.
 
--   **[Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](cluster_config/gfsh_remote)**
+-   **[Using gfsh to Manage a Remote Cluster Over HTTP or HTTPS](./gfsh_remote)**
 
     You can connect `gfsh` via HTTP or HTTPS to a remote cluster and manage the cluster using `gfsh` commands.
 
@@ -77,5 +77,3 @@ You can also use `gfsh` to start and stop locators, servers, and @@product_name@
 -   **[Firewall Considerations](running/firewall_ports_config)**
 
     You can configure and limit port usage for situations that involve firewalls, for example, between client-server or server-server connections.
-
-
