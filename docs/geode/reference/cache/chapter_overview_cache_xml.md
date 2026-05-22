@@ -19,27 +19,27 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 # {#cache_xml}
-Use the cache.xml file to set up general cache facilities and behavior and to create and initialize cached data regions. These sections document cache.xml requirements; provide hierarchical diagrams of `<cache>` and `<client-cache>         `elements; and describe the function of each element.
+Use the cache.xml file to set up general cache facilities and behavior and to create and initialize cached data regions. These sections document cache.xml requirements; provide hierarchical diagrams, examples, and syntax; and describe how the cache initializes at startup.
 
 **Note:**
-You can configure most elements of the cache.xml file and apply it to your entire cluster by using the [gfsh](../../tools_modules/gfsh/chapter_overview) and [cluster configuration service](../../configuring/gfsh_persist). See [gfsh Limitations](../../configuring/gfsh_persist#concept_r22_hyw_bl__section_bn3_23p_y4) for a list of items you cannot configure in gfsh and must still configure in cache.xml.
+You can configure most elements of the cache.xml file and apply it to your entire cluster by using the [gfsh](../../tools_modules/gfsh/chapter_overview) and [cluster configuration service](../../configuring/cluster_config/gfsh_persist#using-cluster-config-svc).
 
--   **[cache.xml Quick Reference](../../reference/topics/elements_ref)**
+-   **[cache.xml Quick Reference](../topics/elements_ref)**
 
     This section documents cache.xml file requirements and variables. It also points you to specific element sections for server, client, and WAN configuration.
 
--   **[&lt;cache&gt; Element Hierarchy](../../reference/topics/cache-elements-list)**
+-   **[<cache> Element Hierarchy](../topics/cache-elements-list)**
 
     This section shows the hierarchy of `<cache>` element sub-elements that you use to configure @@product_name@@ caches and servers.
 
--   **[&lt;cache&gt; Element Reference](../../reference/cache/cache_xml)**
+-   **[<cache> Element Reference](cache_xml)**
 
     This section documents the `cache.xml` sub-elements used for @@product_name@@ server configuration. All elements are sub-elements of the `<cache>` element.
 
--   **[&lt;client-cache&gt; Element Hierarchy](../../reference/topics/client-cache-elements-list)**
+-   **[<client-cache> Element Hierarchy](../topics/client-cache-elements-list)**
 
     This section shows the hierarchy of `<client-cache>` element sub-elements that you use to configure @@product_name@@ caches and clients.
 
--   **[&lt;client-cache&gt; Element Reference](../../reference/topics/client-cache)**
+-   **[<client-cache> Element Reference](../topics/client-cache)**
 
     This section documents all `cache.xml` elements that you use to configure @@product_name@@ clients. All elements are sub-elements of the `<client-cache>` element.
