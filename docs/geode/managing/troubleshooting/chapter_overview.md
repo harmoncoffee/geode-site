@@ -1,4 +1,4 @@
-﻿---
+---
 title:  Troubleshooting and System Recovery
 ---
 
@@ -33,13 +33,13 @@ This section provides strategies for handling common errors and failure situatio
 
     This section describes alerts for and appropriate responses to various kinds of system failures. It also helps you plan a strategy for data recovery.
 
--   **[Handling Forced Cache Disconnection Using Autoreconnect](../member-reconnect)**
+-   **[Handling Forced Cache Disconnection Using Autoreconnect](member-reconnect)**
 
-    A Geode member may be forcibly disconnected from a cluster if the member is unresponsive for a period of time, or if a network partition separates one or more members into a group that is too small to act as the cluster.
+    A Geode member may be forcibly disconnected from a cluster if the member is unresponsive for a period of time, or if a network partition separates one or more members into a group that is too small to function.
 
--   **[Recovering from Application and Cache Server Crashes](recovering_from_app_crashes)**
+-   **[Recovering from Application and Cache Server Crashes](recovering_from_server_crashes/recovering_from_app_crashes)**
 
-    When the application or cache server crashes, its local cache is lost, and any resources it owned (for example, distributed locks) are released. The member must recreate its local cache upon recovery.
+    When the application or cache server crashes, its local cache is lost, and any resources it owned (for example, distributed locks) are released. The member must recreate its local cache upon restart.
 
 -   **[Recovering from Machine Crashes](recovering_from_machine_crashes)**
 
@@ -51,7 +51,7 @@ This section provides strategies for handling common errors and failure situatio
 
 -   **[Preventing and Recovering from Disk Full Errors](prevent_and_recover_disk_full_errors)**
 
-    It is important to monitor the disk usage of Geode members. If a member lacks sufficient disk space for a disk store, the member attempts to shut down the disk store and its associated cache, and logs an error message. A shutdown due to a member running out of disk space can cause loss of data, data file corruption, log file corruption and other error conditions that can negatively impact your applications.
+    It is important to monitor the disk usage of Geode members. If a member lacks sufficient disk space for a disk store, the member attempts to shut down the disk store and its associated cache, which may result in data loss.
 
 -   **[Understanding and Recovering from Network Outages](recovering_from_network_outages)**
 
@@ -60,5 +60,4 @@ This section provides strategies for handling common errors and failure situatio
 -   **[Log Messages and Solutions](log_messages_and_solutions)**
 
     This section provides strategies for responding to a variety of system log messages.
-
 
