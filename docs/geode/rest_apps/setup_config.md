@@ -54,7 +54,7 @@ the REST API service (as well as the other embedded web services, such as Pulse)
 
 You can configure the Developer REST API service to run over HTTPS by enabling SSL for the `http`
 component in `gemfire.properties` or `gfsecurity.properties`, or on server startup.  See
-[SSL](../security/ssl_overview) for details on configuring SSL parameters.  These SSL
+[SSL](../security/ssl/ssl_overview) for details on configuring SSL parameters.  These SSL
 parameters apply to all HTTP services hosted on the configured server, which can include the
 following:
 
@@ -75,7 +75,7 @@ You must configure PDX if either or both of the following conditions apply:
 
 To configure PDX in your cluster, perform the following steps:
 
-1.  Start a locator running the [cluster configuration service](../configuring/cluster_config/gfsh_persist) (enabled by default). For example: 
+1.  Start a locator running the [cluster configuration service](../configuring/gfsh_persist) (enabled by default). For example: 
 
     ``` pre
     gfsh>start locator --name=locator1
@@ -144,7 +144,7 @@ gfsh>start server --name=server1 --start-rest-api=true \
 --classpath=/myapps/testfunctions.jar
 ```
 
-You can specify these properties either upon server startup or in the server’s gemfire.properties configuration file. For example:
+You can specify these properties either upon server startup or in the server's gemfire.properties configuration file. For example:
 
 ```
 gfsh>start server --name=serverX --server-port=40405 --cache-xml-file=cache-config.xml \
@@ -182,7 +182,7 @@ Verify that the @@product_name@@ REST API service is up and running. To validate
     http://<http-service-bind-address>:<http-service-port>/geode/docs/index.html
     ```
 
-    where *http-service-bind-address* is the address and *http-service-port* is the port number that you specified when starting the Development REST API service on the server. For example, based on the server started in an earlier example, you would enter:
+    where *http-service-bind-address* is the address and *http-service-port* is the port number that you specified when starting the Development REST API service on the server. For example, based on the startup command above:
 
     ``` pre
     http://localhost:8080/geode/docs/index.html
