@@ -26,7 +26,7 @@ limitations under the License.
 **Prerequisites**
 
 -   Understand generally how to configure the @@product_name@@ cache. See [Basic Configuration and Programming](../../book_intro).
--   Understand how @@product_name@@ disk stores work. See [Disk Storage](../../managing/disk_storage/chapter_overview).
+-   Understand how @@product_name@@ disk stores work. See [Disk Storage](../../../managing/disk_storage/chapter_overview).
 
 **Procedure**
 
@@ -35,7 +35,7 @@ limitations under the License.
     **Note:**
     If you are using PDX serialized objects as region entry keys and you are using persistent regions, then you must configure your PDX disk store to be a different one than the disk store used by the persistent regions.
 
-3.  (Optional) If you later want to rename the PDX types that are persisted to disk, you can do so on your offline disk-stores by executing the `pdx rename` command. See [pdx rename](../../tools_modules/gfsh/command-pages/pdx).
+3.  (Optional) If you later want to rename the PDX types that are persisted to disk, you can do so on your offline disk-stores by executing the `pdx rename` command. See [pdx rename](../../../tools_modules/gfsh/command-pages/pdx).
 
 **Example cache.xml:**
 
