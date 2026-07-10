@@ -28,7 +28,7 @@ Optionally, program your application code to deserialize individual fields out o
 **Procedure**
 
 1.  Use one of these serialization options for each object type that you want to serialize using PDX serialization:
-    -   [Using Automatic Reflection-Based PDX Serialization](auto_serialization)
+    -   [Using Automatic Reflection-Based PDX Serialization](reflection_based_pdx/auto_serialization)
     -   [Serializing Your Domain Object with a PdxSerializer](use_pdx_serializer)
     -   [Implementing PdxSerializable in Your Domain Object](use_pdx_serializable)
 
@@ -38,11 +38,11 @@ Optionally, program your application code to deserialize individual fields out o
     gfsh>configure pdx --read-serialized=true
     ```
 
-    By using gfsh, this configuration can be propagated across the cluster through the [Cluster Configuration Service](../../configuring/gfsh_persist). Alternately, you would need to configure `pdx read-serialized` in each server's `cache.xml` file.
+    By using gfsh, this configuration can be propagated across the cluster through the [Cluster Configuration Service](../../../configuring/gfsh_persist). Alternately, you would need to configure `pdx` `read-serialized` in each server's `cache.xml` file.
 
 3.  If you are storing any @@product_name@@ data on disk, then you must configure PDX serialization to use persistence. See [Persisting PDX Metadata to Disk](persist_pdx_metadata_to_disk) for more information.
 4.  (Optional) Wherever you run explicit application code to retrieve and manage your cached entries, you may want to manage your data objects without using full deserialization. To do this, see [Programming Your Application to Use PdxInstances](program_application_for_pdx).
 
 ## PDX and Multi-Site (WAN) Deployments
 
-For multisite (WAN) installations only: If you will use PDX serialization in any of your WAN-enabled regions, for each cluster, you must choose a unique integer between 0 (zero) and 255 and set the `distributed-system-id` in every member's `gemfire.properties` file. See [Configuring a Multi-site (WAN) System](../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system).
+For multisite (WAN) installations only: If you will use PDX serialization in any of your WAN-enabled regions, for each cluster, you must choose a unique integer between 0 (zero) and 255 and set the `distributed-system-id` in every member's `gemfire.properties` file. See [Configuring a Multi-site (WAN) System](../../../topologies_and_comm/multi_site_configuration/setting_up_a_multisite_system).
