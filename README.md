@@ -27,10 +27,13 @@ The project website is built with [Docusaurus](https://docusaurus.io/).
 
 
 ### Updating the website
-The Apache Geode project website is stored in the `src` folder.
+Source code for the Apache Geode project website is stored in the `src` folder.
+
+
 
 ### Updating the project documentation
 Apache Geode project document is stored as Markdown files in the `docs` folder.
+
 
 
 ### Adding a blog post
