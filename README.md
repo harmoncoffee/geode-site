@@ -24,17 +24,25 @@ This repository contains the source files for the [Apache Geode website](https:/
 The project website is built with [Docusaurus](https://docusaurus.io/).
 
 ## Update procedures
-
+Instructions for maintaining various components of the Apache Geode project website.
 
 ### Updating the website
 Source code for the Apache Geode project website is stored in the `src` folder.
 
+Elements of the home page are stored in `src/components/Homepage Features` and `src/pages`. These pages are written in TypeScript.
 
+Subpages are stored in `src/pages`. These pages are written in Markdown.
+
+Page styles are stored as CSS files that reside in the same folders as the pages they style.
 
 ### Updating the project documentation
 Apache Geode project document is stored as Markdown files in the `docs` folder.
 
+To edit projet documentation:
 
+1. Locate the Markdown file for the document you wish to edit.
+2. Edit that file to introduce the changes you'd like to see.
+3. Open a pull request and ask a project maintainer to review it.
 
 ### Adding a blog post
 Posts on the Apache Geode project blog are stored as Markdown files in the `blog` folder.
@@ -44,7 +52,7 @@ To add a new blog post:
 1. Create a new Markdown file in the `blog` folder. The filename should follow the convention `YYYY-MM-DD-title-slug.md`.
 2. Add the appropriate header to the top of the Markdown file. Use an [existing blog post](blog/2026-02-12-modernize-geode-site.md) as a guide.
 3. If you're a new author, add your bio details to `authors.yml`.
-4. Compose your blog post, open a pull request, and as a project maintainer to review it.
+4. Compose your blog post, open a pull request, and ask a project maintainer to review it.
 
 ## License
 This project is licensed under the [Apache License 2.0](LICENSE). See [NOTICE](NOTICE) for additional details.
