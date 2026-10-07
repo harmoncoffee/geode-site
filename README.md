@@ -36,9 +36,9 @@ Subpages are stored in `src/pages`. These pages are written in Markdown.
 Page styles are stored as CSS files that reside in the same folders as the pages they style.
 
 ### Updating the project documentation
-Apache Geode project document is stored as Markdown files in the `docs` folder.
+Apache Geode project documentation is stored as Markdown files in the `docs` folder.
 
-To edit projet documentation:
+To edit project documentation:
 
 1. Locate the Markdown file for the document you wish to edit.
 2. Edit that file to introduce the changes you'd like to see.
