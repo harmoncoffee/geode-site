@@ -1,3 +1,5 @@
+[<img src="https://geode.apache.org/img/Apache_Geode_logo.png" align="center"/>](http://geode.apache.org)
+
 # Apache Geode Website and Project Documentation
 
 <!--
@@ -17,21 +19,21 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-[<img src="https://geode.apache.org/img/Apache_Geode_logo.png" align="center"/>](http://geode.apache.org)
-
 This repository contains the source files for the [Apache Geode website](https://geode.apache.org). The project website also contains the documentation for the Apache Geode project.
 
-## Update procedure
 The project website is built with [Docusaurus](https://docusaurus.io/).
 
-## Updating the website
+## Update procedures
+
+
+### Updating the website
 The Apache Geode project website is stored in the `src` folder.
 
-## Updating the project documentation
+### Updating the project documentation
 Apache Geode project document is stored as Markdown files in the `docs` folder.
 
 
-## Adding a blog post
+### Adding a blog post
 Posts on the Apache Geode project blog are stored as Markdown files in the `blog` folder.
 
 To add a new blog post:
