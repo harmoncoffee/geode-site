@@ -1,48 +1,45 @@
-# Apache Website Template
- 
-This project contains a template website that aims to follow all the various required Apache Website Policies.
+# Apache Geode Website and Project Documentation
 
-This template was generated using [Docusaurus](https://docusaurus.io/).
+<!--
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
 
-## Usage
+     http://www.apache.org/licenses/LICENSE-2.0
 
-You can directly copy from the root path of this template repository to your website repository.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
 
-> [!NOTE]
-> TODO: Integrate it with [template support of Docusaurus](https://docusaurus.io/docs/api/misc/create-docusaurus#git-strategy).
+[<img src="https://geode.apache.org/img/Apache_Geode_logo.png" align="center"/>](http://geode.apache.org)
 
-Most of the configurations are inherited from Docusaurus https://docusaurus.io/docs/configuration.
+This repository contains the source files for the [Apache Geode website](https://geode.apache.org). The project website also contains the documentation for the Apache Geode project.
 
-Specificly, our template defines a few metadata fields to customize for every project:
+## Update procedure
+The project website is built with [Docusaurus](https://docusaurus.io/).
 
-```typescript
-const projectName = "Template";
-const mainRepoName = "apache-website-template";
-const siteRepoName = "apache-website-template";
-```
+## Updating the website
+The Apache Geode project website is stored in the `src` folder.
 
-For example, Apache Fury can customize these fields as:
+## Updating the project documentation
+Apache Geode project document is stored as Markdown files in the `docs` folder.
 
-```typescript
-const projectName = "Fury";
-const mainRepoName = "incubator-fury";
-const siteRepoName = "incubator-fury-site";
-```
 
-More placeholders and preset are under developed.
+## Adding a blog post
+Posts on the Apache Geode project blog are stored as Markdown files in the `blog` folder.
 
-## Deploy
+To add a new blog post:
 
-This template contains [a GitHub Actions workflow](.github/workflows/deploy.yml) to deploy the generated website content to the `asf-site` branch. It would work automatically, without any other ections required.
+1. Create a new Markdown file in the `blog` folder. The filename should follow the convention `YYYY-MM-DD-title-slug.md`.
+2. Add the appropriate header to the top of the Markdown file. Use an [existing blog post](blog/2026-02-12-modernize-geode-site.md) as a guide.
+3. If you're a new author, add your bio details to `authors.yml`.
+4. Compose your blog post, open a pull request, and as a project maintainer to review it.
 
-### Local Setup
-
-To run the local build use: 
-
-Install Dependencies:
-```pnpm install```
-
-Start the development server: 
-```pnpm start```
-
-Note that this should start a local development server that will auto-reload when you make changes to source files. 
+## License
+This project is licensed under the [Apache License 2.0](LICENSE). See [NOTICE](NOTICE) for additional details.
