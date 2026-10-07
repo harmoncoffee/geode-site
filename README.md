@@ -19,7 +19,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-This repository contains the source files for the [Apache Geode website](https://geode.apache.org). The project website also contains the documentation for the Apache Geode project.
+This repository contains the source files for the [Apache Geode project website](https://geode.apache.org).
+
+The project website also contains the documentation for the Apache Geode project, as well as the Apache Geode community blog.
 
 The project website is built with [Docusaurus](https://docusaurus.io/).
 
